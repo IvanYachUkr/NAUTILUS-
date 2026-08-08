@@ -29,7 +29,7 @@ pip install -r requirements.txt
 Hugging Face will use its normal local cache. If you want a custom cache location, set `HF_HOME` yourself before running, for example:
 
 ```powershell
-$env:HF_HOME = "D:\huggingface_cache"
+$env:HF_HOME = ".\.cache\huggingface"
 ```
 
 The script does not contain a machine-specific cache path.

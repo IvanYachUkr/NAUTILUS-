@@ -138,6 +138,17 @@ def find_images(image_dir: Path, limit: int | None) -> list[Path]:
         images = images[:limit]
     return images
 
+def repo_relative_path(path: Path) -> str:
+    """Return a portable path relative to the repository root."""
+    repo_root = Path(__file__).resolve().parent.parent
+    absolute_path = path.resolve()
+
+    try:
+        relative_path = absolute_path.relative_to(repo_root)
+    except ValueError:
+        relative_path = Path(os.path.relpath(absolute_path, repo_root))
+
+    return relative_path.as_posix()
 
 def distance_km(a_lat: float, a_lon: float, b_lat: float, b_lon: float) -> float:
     # geopy.geodesic matches the distance style used by GeoCLIP's evaluation code.
@@ -199,7 +210,7 @@ def evaluate_one_image(
 
     return {
         "location_id": image_path.stem,
-        "image": str(image_path),
+        "image": repo_relative_path(image_path),
         "ground_truth": truth,
         "top1": top1,
         "topk_best": best_candidate,

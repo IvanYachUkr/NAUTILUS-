@@ -1,7 +1,7 @@
 [
   {
     "location_id": "loc_001",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-easy\\loc_001.png",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_001.png",
     "ground_truth": {
       "lat": 48.8521298,
       "lon": 2.3696389,
@@ -65,7 +65,7 @@
   },
   {
     "location_id": "loc_002",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-easy\\loc_002.png",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_002.png",
     "ground_truth": {
       "lat": 52.5206008,
       "lon": 13.4151229,
@@ -129,7 +129,7 @@
   },
   {
     "location_id": "loc_003",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-easy\\loc_003.png",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_003.png",
     "ground_truth": {
       "lat": 47.8005438,
       "lon": 13.0529765,
@@ -193,7 +193,7 @@
   },
   {
     "location_id": "loc_004",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-easy\\loc_004.png",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_004.png",
     "ground_truth": {
       "lat": 48.8126024,
       "lon": 14.3129755,
@@ -257,7 +257,7 @@
   },
   {
     "location_id": "loc_005",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-easy\\loc_005.png",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_005.png",
     "ground_truth": {
       "lat": 44.8747121,
       "lon": 13.849302,
@@ -321,7 +321,7 @@
   },
   {
     "location_id": "loc_006",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-easy\\loc_006.png",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_006.png",
     "ground_truth": {
       "lat": 50.9008842,
       "lon": 14.8455043,
@@ -385,7 +385,7 @@
   },
   {
     "location_id": "loc_007",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-easy\\loc_007.png",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_007.png",
     "ground_truth": {
       "lat": 45.9577599,
       "lon": 14.7424922,
@@ -449,7 +449,7 @@
   },
   {
     "location_id": "loc_008",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-easy\\loc_008.png",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_008.png",
     "ground_truth": {
       "lat": 60.8634735,
       "lon": 7.1179637,

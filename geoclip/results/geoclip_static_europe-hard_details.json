@@ -1,7 +1,7 @@
 [
   {
     "location_id": "loc_018",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-hard\\loc_018.png",
+    "image": "demo_and_extension/data/starting-images/europe-hard/loc_018.png",
     "ground_truth": {
       "lat": 37.3439407,
       "lon": 22.5909077,
@@ -65,7 +65,7 @@
   },
   {
     "location_id": "loc_019",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-hard\\loc_019.png",
+    "image": "demo_and_extension/data/starting-images/europe-hard/loc_019.png",
     "ground_truth": {
       "lat": 45.8911426,
       "lon": 24.3372001,
@@ -129,7 +129,7 @@
   },
   {
     "location_id": "loc_020",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-hard\\loc_020.png",
+    "image": "demo_and_extension/data/starting-images/europe-hard/loc_020.png",
     "ground_truth": {
       "lat": 41.5643939,
       "lon": 24.9701484,
@@ -193,7 +193,7 @@
   },
   {
     "location_id": "loc_021",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-hard\\loc_021.png",
+    "image": "demo_and_extension/data/starting-images/europe-hard/loc_021.png",
     "ground_truth": {
       "lat": 46.706018,
       "lon": 20.0496719,
@@ -257,7 +257,7 @@
   },
   {
     "location_id": "loc_022",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-hard\\loc_022.png",
+    "image": "demo_and_extension/data/starting-images/europe-hard/loc_022.png",
     "ground_truth": {
       "lat": 57.1907677,
       "lon": 26.1476727,
@@ -321,7 +321,7 @@
   },
   {
     "location_id": "loc_023",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-hard\\loc_023.png",
+    "image": "demo_and_extension/data/starting-images/europe-hard/loc_023.png",
     "ground_truth": {
       "lat": 55.5966197,
       "lon": 23.8297989,
@@ -385,7 +385,7 @@
   },
   {
     "location_id": "loc_024",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-hard\\loc_024.png",
+    "image": "demo_and_extension/data/starting-images/europe-hard/loc_024.png",
     "ground_truth": {
       "lat": 56.601125,
       "lon": 8.163942,
@@ -449,7 +449,7 @@
   },
   {
     "location_id": "loc_025",
-    "image": "G:\\_UTN\\Computer Vision\\Final Group Project\\repo\\demo_and_extension\\data\\starting-images\\europe-hard\\loc_025.png",
+    "image": "demo_and_extension/data/starting-images/europe-hard/loc_025.png",
     "ground_truth": {
       "lat": 64.942839,
       "lon": 26.9554129,
