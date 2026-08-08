@@ -1,0 +1,2282 @@
+import { existsSync } from "node:fs";
+import { basename, extname, join, relative, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { parseGoogleMapsStreetViewUrl } from "../shared/google-maps-url.js";
+import { validateCases } from "../src/data-contract.js";
+import { matchRecordingToLocation } from "./lib/recordings.mjs";
+import {
+  COMPETITIONS_DIR,
+  GENERATED_COMPETITIONS_DIR,
+  GENERATED_DIR,
+  RECORDINGS_INBOX_DIR,
+  RESULTS_DIR,
+  STARTING_IMAGES_DIR,
+  ROOT,
+  ensureWorkspaceDirectories,
+  listJsonFiles,
+  readJson,
+  resetGeneratedDirectory,
+  writeJsonAtomic,
+  writeTextAtomic,
+} from "./lib/workspace.mjs";
+
+export const OPEN_GUESSR_COMPETITION_MAX_LOCATIONS = 20;
+
+export async function buildData({
+  write = true,
+  quiet = false,
+  now = new Date(),
+} = {}) {
+  await ensureWorkspaceDirectories();
+
+  const warnings = [];
+  const errors = [];
+
+  const { competitions, embeddedLocations } = await loadCompetitions({
+    errors,
+    warnings,
+  });
+
+  const locations = mergeLocations(
+    embeddedLocations,
+    competitions,
+    errors,
+  );
+
+  const results = await loadResults(locations, errors);
+  const rawRecordings = await loadRecordings(warnings);
+
+  const recordings = resolveRecordingLocations(
+    rawRecordings,
+    locations,
+    competitions,
+    warnings,
+  );
+
+  const recordingIndex = indexRecordings(recordings);
+
+  const atlasCases = compileAtlasCases({
+    locations,
+    results,
+    recordingIndex,
+    warnings,
+  });
+
+  const atlasErrors = validateCases(atlasCases);
+
+  errors.push(
+    ...atlasErrors.map(
+      (message) => `Generated atlas data: ${message}`,
+    ),
+  );
+
+  if (errors.length) {
+    const error = new Error(
+      `Data build failed:\n- ${errors.join("\n- ")}`,
+    );
+
+    error.validationErrors = errors;
+    throw error;
+  }
+
+  const generatedAt = now.toISOString();
+
+  const competitionOutputs = buildCompetitionOutputs(
+    competitions,
+    locations,
+  );
+
+  const competitionArchives = buildCompetitionArchives(
+    competitions,
+    locations,
+  );
+
+  const report = {
+    schemaVersion: "1.0",
+    generatedAt,
+
+    limits: {
+      openGuessrCompetitionLocations:
+        OPEN_GUESSR_COMPETITION_MAX_LOCATIONS,
+    },
+
+    counts: {
+      locations: locations.length,
+      competitions: competitions.length,
+      competitionParts: competitionOutputs.length,
+      resultFiles: results.length,
+
+      recordings: recordings.length,
+
+      matchedRecordings: recordings.filter(
+        (item) => item.atlasLocationId,
+      ).length,
+
+      unmatchedRecordings: recordings.filter(
+        (item) => !item.atlasLocationId,
+      ).length,
+
+      recordingsWithPrediction: recordings.filter(
+        (item) => isCoordinate(item.prediction),
+      ).length,
+
+      recordingsWithoutPrediction: recordings.filter(
+        (item) => !isCoordinate(item.prediction),
+      ).length,
+
+      atlasCases: atlasCases.length,
+
+      atlasRuns: atlasCases.reduce(
+        (sum, item) => sum + item.runs.length,
+        0,
+      ),
+
+      recordingOnlyRuns: atlasCases.reduce(
+        (sum, item) =>
+          sum +
+          item.runs.filter(
+            (run) => !isCoordinate(run.prediction),
+          ).length,
+        0,
+      ),
+    },
+
+    warnings,
+  };
+
+  if (write) {
+    await resetGeneratedDirectory();
+
+    await Promise.all([
+      writeJsonAtomic(
+        join(GENERATED_DIR, "locations.resolved.json"),
+        {
+          schemaVersion: "1.0",
+          generatedAt,
+          locations,
+        },
+      ),
+
+      writeJsonAtomic(
+        join(GENERATED_DIR, "competitions.resolved.json"),
+        {
+          schemaVersion: "1.0",
+          generatedAt,
+          competitions,
+        },
+      ),
+
+      writeJsonAtomic(
+        join(GENERATED_DIR, "recordings.index.json"),
+        {
+          schemaVersion: "1.0",
+          generatedAt,
+          recordings: recordings.map(summarizeRecording),
+        },
+      ),
+
+      writeJsonAtomic(
+        join(GENERATED_DIR, "atlas-cases.json"),
+        atlasCases,
+      ),
+
+      writeJsonAtomic(
+        join(GENERATED_DIR, "build-report.json"),
+        report,
+      ),
+    ]);
+
+    for (const output of competitionOutputs) {
+      await writeTextAtomic(
+        join(GENERATED_COMPETITIONS_DIR, output.filename),
+        `${output.urls.join("\n")}\n`,
+      );
+    }
+
+    for (const archive of competitionArchives) {
+      await writeTextAtomic(
+        join(GENERATED_COMPETITIONS_DIR, archive.filename),
+        `${archive.urls.join("\n")}\n`,
+      );
+    }
+
+    await writeJsonAtomic(
+      join(GENERATED_COMPETITIONS_DIR, "index.json"),
+      {
+        schemaVersion: "1.0",
+        generatedAt,
+
+        maxLocationsPerCompetition:
+          OPEN_GUESSR_COMPETITION_MAX_LOCATIONS,
+
+        competitions: competitions.map((competition) => ({
+          id: competition.id,
+          name: competition.name,
+          shortName: competition.shortName,
+          datasetId: competition.datasetId,
+          order: competition.order,
+          description: competition.description,
+          count: competition.locationIds.length,
+          partCount: competition.parts.length,
+          sourceFile: competition.sourceFile,
+
+          parts: competition.parts.map((part) => ({
+            id: part.id,
+            part: part.part,
+            partCount: part.partCount,
+            count: part.locationIds.length,
+            filename: `${part.id}.txt`,
+            locationIds: part.locationIds,
+            localLocationIds: part.localLocationIds,
+          })),
+
+          archiveFilename:
+            competition.parts.length > 1
+              ? `${competition.id}-all.txt`
+              : null,
+        })),
+
+        files: competitionOutputs.map(
+          ({ urls, ...output }) => ({
+            ...output,
+            count: urls.length,
+          }),
+        ),
+      },
+    );
+  }
+
+  if (!quiet) {
+    console.log(
+      `Built ${locations.length} location(s), ` +
+      `${competitions.length} competition definition(s), ` +
+      `${competitionOutputs.length} OpenGuessr TXT part(s), ` +
+      `and ${atlasCases.length} atlas case(s).`,
+    );
+
+    for (const warning of warnings) {
+      console.warn(`Warning: ${warning}`);
+    }
+  }
+
+  return {
+    locations,
+    competitions,
+    results,
+    recordings,
+    atlasCases,
+    competitionOutputs,
+    competitionArchives,
+    report,
+  };
+}
+
+async function loadCompetitions({
+  errors,
+  warnings,
+}) {
+  const files = await listJsonFiles(COMPETITIONS_DIR);
+
+  const seenCompetitionIds = new Set();
+  const competitions = [];
+  const embeddedLocations = [];
+
+  for (const path of files) {
+    const input = await readJson(path);
+    const source = relative(ROOT, path).replaceAll("\\", "/");
+
+    const fallbackId = slugify(
+      basename(path, extname(path)),
+    );
+
+    const id = nonEmptyString(input?.id)
+      ? input.id.trim()
+      : fallbackId;
+
+    const name = nonEmptyString(input?.name)
+      ? input.name.trim()
+      : humanize(id);
+
+    const shortName =
+      firstString(
+        input?.shortName,
+        input?.short_name,
+        name,
+      ) ?? name;
+
+    const datasetId =
+      firstString(
+        input?.datasetId,
+        input?.dataset_id,
+        id,
+      ) ?? id;
+
+    const order = Number.isInteger(Number(input?.order))
+      ? Number(input.order)
+      : Number.MAX_SAFE_INTEGER;
+
+    if (!id) {
+      errors.push(
+        `${source}: competition id could not be derived.`,
+      );
+      continue;
+    }
+
+    if (seenCompetitionIds.has(id)) {
+      errors.push(
+        `${source}: duplicate competition id "${id}".`,
+      );
+      continue;
+    }
+
+    seenCompetitionIds.add(id);
+
+    /*
+     * Current project format:
+     *
+     * Each competition JSON contains its locations directly.
+     *
+     * Example:
+     *
+     * {
+     *   "id": "europe-easy",
+     *   "locations": [...]
+     * }
+     *
+     * The old locationIds -> data/locations/*.json mechanism
+     * is intentionally no longer supported.
+     */
+    if (
+      !Array.isArray(input?.locations) ||
+      input.locations.length === 0
+    ) {
+      errors.push(
+        `${source}: locations must contain at least one embedded location.`,
+      );
+      continue;
+    }
+
+    const locationIds = [];
+    const localLocationIds = [];
+    const seenLocalIds = new Set();
+
+    input.locations.forEach(
+      (locationInput, index) => {
+        const prefix =
+          `${source}: locations[${index}]`;
+
+        const localId = requiredString(
+          locationInput?.id,
+          `${prefix}.id`,
+          errors,
+        );
+
+        if (!localId) return;
+
+        if (seenLocalIds.has(localId)) {
+          errors.push(
+            `${prefix}: duplicate local location id "${localId}".`,
+          );
+          return;
+        }
+
+        seenLocalIds.add(localId);
+
+        const atlasId =
+          `${slugify(id)}--${slugify(localId)}`;
+
+        const normalized = normalizeLocation(
+          locationInput,
+          {
+            source,
+            sourceIndex: index,
+            localId,
+            atlasId,
+            competitionId: id,
+            errors,
+          },
+        );
+
+        if (!normalized) return;
+
+        embeddedLocations.push(normalized);
+        locationIds.push(atlasId);
+        localLocationIds.push(localId);
+      },
+    );
+
+    const splitIfNeeded =
+      input?.splitIfNeeded !== false;
+
+    if (
+      locationIds.length >
+      OPEN_GUESSR_COMPETITION_MAX_LOCATIONS &&
+      !splitIfNeeded
+    ) {
+      errors.push(
+        `${source}: OpenGuessr currently accepts at most ` +
+        `${OPEN_GUESSR_COMPETITION_MAX_LOCATIONS} links; ` +
+        `remove splitIfNeeded:false or split the source file.`,
+      );
+    }
+
+    if (
+      locationIds.length >
+      OPEN_GUESSR_COMPETITION_MAX_LOCATIONS
+    ) {
+      warnings.push(
+        `${id} contains ${locationIds.length} locations and ` +
+        `is exported as ${Math.ceil(
+          locationIds.length /
+          OPEN_GUESSR_COMPETITION_MAX_LOCATIONS,
+        )} OpenGuessr competition parts.`,
+      );
+    }
+
+    const partCount = Math.max(
+      1,
+      Math.ceil(
+        locationIds.length /
+        OPEN_GUESSR_COMPETITION_MAX_LOCATIONS,
+      ),
+    );
+
+    const parts = chunk(
+      locationIds,
+      OPEN_GUESSR_COMPETITION_MAX_LOCATIONS,
+    ).map(
+      (partLocationIds, index) => {
+        const offset =
+          index *
+          OPEN_GUESSR_COMPETITION_MAX_LOCATIONS;
+
+        const part = index + 1;
+
+        const partId =
+          partCount > 1
+            ? `${id}-part-${String(part).padStart(
+              2,
+              "0",
+            )}`
+            : id;
+
+        return {
+          id: partId,
+          part,
+          partCount,
+          locationIds: partLocationIds,
+
+          localLocationIds:
+            localLocationIds.slice(
+              offset,
+              offset + partLocationIds.length,
+            ),
+        };
+      },
+    );
+
+    competitions.push({
+      schemaVersion:
+        input?.schemaVersion ?? "1.0",
+
+      id,
+      name,
+      shortName,
+      datasetId,
+      order,
+
+      description:
+        input?.description ?? "",
+
+      locationIds,
+      localLocationIds,
+
+      splitIfNeeded,
+      parts,
+
+      openGuessr: {
+        roundLengthSeconds:
+          input?.openGuessr?.roundLengthSeconds ??
+          null,
+
+        duration:
+          input?.openGuessr?.duration ?? null,
+
+        visibility:
+          input?.openGuessr?.visibility ?? null,
+
+        restriction:
+          input?.openGuessr?.restriction ?? null,
+      },
+
+      sourceFile: source,
+      sourceFormat: "embedded-locations",
+    });
+  }
+
+  competitions.sort(
+    (a, b) =>
+      a.order - b.order ||
+      a.name.localeCompare(b.name),
+  );
+
+  return {
+    competitions,
+    embeddedLocations,
+  };
+}
+
+function normalizeLocation(
+  input,
+  {
+    source,
+    sourceIndex = null,
+    localId,
+    atlasId,
+    competitionId,
+    errors,
+  },
+) {
+  const prefix =
+    sourceIndex === null
+      ? source
+      : `${source}: locations[${sourceIndex}]`;
+
+  const country =
+    firstString(input?.country);
+
+  const city =
+    firstString(
+      input?.city_or_region,
+      input?.city,
+      input?.region,
+    );
+
+  const sceneType =
+    firstString(
+      input?.scene_type,
+      input?.sceneType,
+    );
+
+  const difficulty =
+    firstString(
+      input?.difficulty,
+    )?.toLowerCase();
+
+  const primaryClueType =
+    firstString(
+      input?.primary_clue_type,
+      input?.primaryClueType,
+    );
+
+  const selectionNotes =
+    firstString(
+      input?.selection_notes,
+      input?.selectionNotes,
+      input?.summary,
+    );
+
+  const googleMapsUrl =
+    firstString(
+      input?.google_maps_link,
+      input?.googleMapsUrl,
+    );
+
+  if (!country) {
+    errors.push(
+      `${prefix}: country must be a non-empty string.`,
+    );
+  }
+
+  if (!city) {
+    errors.push(
+      `${prefix}: city_or_region must be a non-empty string.`,
+    );
+  }
+
+  if (!sceneType) {
+    errors.push(
+      `${prefix}: scene_type must be a non-empty string.`,
+    );
+  }
+
+  if (!googleMapsUrl) {
+    errors.push(
+      `${prefix}: google_maps_link must be a non-empty string.`,
+    );
+  }
+
+  if (
+    !["easy", "medium", "hard"].includes(
+      difficulty,
+    )
+  ) {
+    errors.push(
+      `${prefix}: difficulty must be easy, medium, or hard.`,
+    );
+  }
+
+  if (
+    !country ||
+    !city ||
+    !sceneType ||
+    !googleMapsUrl ||
+    !["easy", "medium", "hard"].includes(
+      difficulty,
+    )
+  ) {
+    return null;
+  }
+
+  if (
+    input?.groundTruth ||
+    input?.startingView?.viewpoint
+  ) {
+    errors.push(
+      `${prefix}: do not enter groundTruth or ` +
+      `startingView.viewpoint manually; coordinates ` +
+      `are derived from google_maps_link.`,
+    );
+  }
+
+  let parsed;
+
+  try {
+    parsed =
+      parseGoogleMapsStreetViewUrl(
+        googleMapsUrl,
+      );
+  } catch (error) {
+    errors.push(
+      `${prefix}: ${error.message}`,
+    );
+    return null;
+  }
+
+  const title =
+    firstString(
+      input?.title,
+      input?.landmark,
+      city,
+    ) ?? localId;
+
+  const summary =
+    selectionNotes ||
+    `${sceneType} evaluation scene in ${city}, ${country}.`;
+
+  const tags = unique(
+    [
+      ...(Array.isArray(input?.tags)
+        ? input.tags.map(String)
+        : []),
+
+      primaryClueType,
+      sceneType,
+      localId,
+    ].filter(Boolean),
+  );
+
+  return {
+    schemaVersion:
+      input?.schemaVersion ?? "1.0",
+
+    id: atlasId,
+    localId,
+
+    title,
+
+    landmark:
+      firstString(
+        input?.landmark,
+        title,
+      ),
+
+    city,
+
+    region:
+      firstString(
+        input?.region,
+        city,
+      ),
+
+    country,
+
+    countryCode:
+      firstString(
+        input?.countryCode,
+        input?.country_code,
+      ) ?? "",
+
+    difficulty,
+    sceneType,
+
+    primaryClueType:
+      primaryClueType ?? "",
+
+    selectionNotes:
+      selectionNotes ?? "",
+
+    summary,
+    tags,
+
+    ...(input?.visual
+      ? { visual: input.visual }
+      : {}),
+
+    googleMapsUrl:
+      parsed.sourceUrl,
+
+    canonicalGoogleMapsUrl:
+      parsed.canonicalUrl,
+
+    coordinateSource:
+      parsed.coordinateSource,
+
+    groundTruth: {
+      ...parsed.viewpoint,
+
+      label:
+        firstString(
+          input?.groundTruthLabel,
+          `${city}, ${country}`,
+        ),
+    },
+
+    startingView: {
+      viewpoint:
+        parsed.viewpoint,
+
+      ...(Number.isFinite(parsed.heading)
+        ? { heading: parsed.heading }
+        : {}),
+
+      ...(Number.isFinite(parsed.pitch)
+        ? { pitch: parsed.pitch }
+        : {}),
+
+      ...(Number.isFinite(parsed.fov)
+        ? { fov: parsed.fov }
+        : {}),
+
+      ...(parsed.panoId
+        ? { panoId: parsed.panoId }
+        : {}),
+
+      label:
+        firstString(
+          input?.startingViewLabel,
+          `Starting panorama: ${city}`,
+        ),
+
+      originalUrl:
+        parsed.sourceUrl,
+    },
+
+    sourceFile: source,
+    sourceIndex,
+    sourceCompetitionId:
+      competitionId,
+
+    competitions: [],
+  };
+}
+
+function mergeLocations(
+  embeddedLocations,
+  competitions,
+  errors,
+) {
+  const byId = new Map();
+
+  for (const location of embeddedLocations) {
+    if (byId.has(location.id)) {
+      errors.push(
+        `Duplicate internal location id "${location.id}".`,
+      );
+    } else {
+      byId.set(
+        location.id,
+        location,
+      );
+    }
+  }
+
+  for (const competition of competitions) {
+    competition.parts.forEach((part) => {
+      part.locationIds.forEach(
+        (locationId, roundIndex) => {
+          const location =
+            byId.get(locationId);
+
+          if (!location) return;
+
+          const overallIndex =
+            (part.part - 1) *
+            OPEN_GUESSR_COMPETITION_MAX_LOCATIONS +
+            roundIndex +
+            1;
+
+          location.competitions.push({
+            competitionId:
+              competition.id,
+
+            competitionName:
+              competition.name,
+
+            competitionShortName:
+              competition.shortName,
+
+            competitionDatasetId:
+              competition.datasetId,
+
+            competitionOrder:
+              competition.order,
+
+            competitionDescription:
+              competition.description,
+
+            partId:
+              part.id,
+
+            part:
+              part.part,
+
+            partCount:
+              part.partCount,
+
+            round:
+              roundIndex + 1,
+
+            overallIndex,
+          });
+        },
+      );
+    });
+  }
+
+  return [...byId.values()];
+}
+
+async function loadResults(
+  locations,
+  errors,
+) {
+  const files =
+    await listJsonFiles(
+      RESULTS_DIR,
+      { recursive: true },
+    );
+
+  const results = [];
+
+  for (const path of files) {
+    const input =
+      await readJson(path);
+
+    const source =
+      relative(ROOT, path)
+        .replaceAll("\\", "/");
+
+    if (
+      !nonEmptyString(input?.locationId) &&
+      !nonEmptyString(input?.atlasLocationId)
+    ) {
+      errors.push(
+        `${source}: locationId or atlasLocationId must be a non-empty string.`,
+      );
+      continue;
+    }
+
+    if (!Array.isArray(input?.runs)) {
+      errors.push(
+        `${source}: runs must be an array.`,
+      );
+      continue;
+    }
+
+    const location =
+      resolveLocationReference(
+        input,
+        locations,
+      );
+
+    if (!location) {
+      errors.push(
+        `${source}: could not resolve location ` +
+        `"${input.locationId ?? input.atlasLocationId}"` +
+        `${input.competitionId
+          ? ` in competition "${input.competitionId}"`
+          : ""
+        }.`,
+      );
+
+      continue;
+    }
+
+    results.push({
+      ...input,
+      atlasLocationId:
+        location.id,
+
+      locationId:
+        location.localId,
+
+      sourceFile:
+        source,
+    });
+  }
+
+  return results;
+}
+
+async function loadRecordings(
+  warnings,
+) {
+  const files =
+    await listJsonFiles(
+      RECORDINGS_INBOX_DIR,
+      { recursive: true },
+    );
+
+  const recordings = [];
+
+  for (const path of files) {
+    try {
+      const input =
+        await readJson(path);
+
+      if (!Array.isArray(input.samples)) {
+        warnings.push(
+          `${relative(ROOT, path)} was ignored because it does not contain a samples array.`,
+        );
+        continue;
+      }
+
+      if (
+        isPhantomResultScreenRecording(
+          input,
+        )
+      ) {
+        warnings.push(
+          `${relative(ROOT, path)} was ignored because it is a phantom result-screen round ` +
+          `created by recorder 0.5.0 after the real round had already been finalized.`,
+        );
+
+        continue;
+      }
+
+      recordings.push({
+        ...input,
+
+        sourceFile:
+          relative(ROOT, path)
+            .replaceAll("\\", "/"),
+      });
+    } catch (error) {
+      warnings.push(
+        `${relative(ROOT, path)} was ignored: ${error.message}`,
+      );
+    }
+  }
+
+  return recordings;
+}
+
+export function isPhantomResultScreenRecording(
+  recording,
+) {
+  if (
+    !recording ||
+    typeof recording !== "object"
+  ) {
+    return false;
+  }
+
+  const startSource =
+    recording.round?.startSource ??
+    null;
+
+  const samples =
+    Array.isArray(recording.samples)
+      ? recording.samples
+      : [];
+
+  const onlyResultInitialSample =
+    samples.length <= 1 &&
+    samples.every((sample) =>
+      String(
+        sample?.reason ?? "",
+      ).includes(
+        "result_visible_initial_view",
+      ),
+    );
+
+  return Boolean(
+    recording.partial === true &&
+    !isCoordinate(
+      recording.prediction,
+    ) &&
+    startSource === "result_visible" &&
+    onlyResultInitialSample,
+  );
+}
+
+function resolveRecordingLocations(
+  recordings,
+  locations,
+  competitions,
+  warnings,
+) {
+  return recordings.map((recording) => {
+    const direct =
+      resolveLocationReference(
+        recording,
+        locations,
+      );
+
+    if (direct) {
+      return enrichRecordingLocation(
+        recording,
+        direct,
+        recording.locationMatch,
+      );
+    }
+
+    const match =
+      matchRecordingToLocation(
+        recording,
+        locations,
+        competitions,
+      );
+
+    if (!match) {
+      warnings.push(
+        `${recording.sourceFile} could not be matched to a known location and remains indexed but unattached.`,
+      );
+
+      return recording;
+    }
+
+    return enrichRecordingLocation(
+      recording,
+      match.location,
+      {
+        method:
+          match.method,
+
+        distanceMeters:
+          Number.isFinite(
+            match.distanceMeters,
+          )
+            ? Number(
+              match.distanceMeters.toFixed(
+                3,
+              ),
+            )
+            : null,
+
+        derivedDuringBuild:
+          true,
+      },
+      match.membership,
+    );
+  });
+}
+
+function enrichRecordingLocation(
+  recording,
+  location,
+  locationMatch = null,
+  membership = null,
+) {
+  const resolvedMembership =
+    membership ??
+    location.competitions.find(
+      (item) =>
+        item.competitionId ===
+        recording.competitionId,
+    ) ??
+    location.competitions[0] ??
+    null;
+
+  const recovered =
+    recoverNmpzSamples(
+      recording,
+      location,
+    );
+
+  return {
+    ...recording,
+    ...recovered,
+
+    atlasLocationId:
+      location.id,
+
+    locationId:
+      location.localId,
+
+    competitionId:
+      recording.competitionId ??
+      resolvedMembership?.competitionId ??
+      null,
+
+    competitionPartId:
+      recording.competitionPartId ??
+      resolvedMembership?.partId ??
+      null,
+
+    competitionPart:
+      recording.competitionPart ??
+      resolvedMembership?.part ??
+      null,
+
+    competitionRound:
+      recording.competitionRound ??
+      resolvedMembership?.round ??
+      null,
+
+    competitionOverallIndex:
+      recording.competitionOverallIndex ??
+      resolvedMembership?.overallIndex ??
+      null,
+
+    ...(locationMatch
+      ? { locationMatch }
+      : {}),
+  };
+}
+
+function recoverNmpzSamples(
+  recording,
+  location,
+) {
+  if (
+    Array.isArray(recording.samples) &&
+    recording.samples.length > 0
+  ) {
+    return {};
+  }
+
+  if (
+    recording.condition !== "static-image" &&
+    recording.captureMode !== "nmpz" &&
+    recording.restriction !== "nmpz"
+  ) {
+    return {};
+  }
+
+  const view =
+    location?.startingView;
+
+  const lat = Number(
+    view?.viewpoint?.lat ??
+    location?.groundTruth?.lat,
+  );
+
+  const lng = Number(
+    view?.viewpoint?.lng ??
+    location?.groundTruth?.lng,
+  );
+
+  if (
+    !Number.isFinite(lat) ||
+    !Number.isFinite(lng)
+  ) {
+    return {};
+  }
+
+  const durationMs =
+    Number.isFinite(
+      recording.durationMs,
+    )
+      ? Math.max(
+        0,
+        Number(recording.durationMs),
+      )
+      : 0;
+
+  const base = {
+    roundIndex:
+      Number.isInteger(
+        recording.round?.index,
+      )
+        ? recording.round.index
+        : Math.max(
+          0,
+          Number(
+            recording.competitionOverallIndex ??
+            1,
+          ) - 1,
+        ),
+
+    lat,
+    lng,
+
+    heading:
+      Number.isFinite(view?.heading)
+        ? view.heading
+        : null,
+
+    pitch:
+      Number.isFinite(view?.pitch)
+        ? view.pitch
+        : null,
+
+    zoom:
+      null,
+
+    fov:
+      Number.isFinite(view?.fov)
+        ? view.fov
+        : null,
+
+    panoId:
+      view?.panoId ??
+      null,
+
+    source:
+      "competition-definition",
+  };
+
+  const samples = [
+    {
+      ...base,
+
+      seq: 0,
+      tMs: 0,
+
+      capturedAt:
+        recording.startedAt ??
+        null,
+
+      reason:
+        "nmpz_starting_view_recovered",
+    },
+  ];
+
+  if (durationMs > 0) {
+    samples.push({
+      ...base,
+
+      seq: 1,
+      tMs: durationMs,
+
+      capturedAt:
+        recording.stoppedAt ??
+        null,
+
+      reason:
+        "nmpz_round_end_recovered",
+    });
+  }
+
+  return {
+    samples,
+
+    sampleCount:
+      samples.length,
+
+    captureSources: {
+      ...(recording.captureSources ?? {}),
+
+      "competition-definition":
+        samples.length,
+    },
+
+    keyMoments:
+      Array.isArray(
+        recording.keyMoments,
+      ) &&
+        recording.keyMoments.length
+        ? recording.keyMoments
+        : [
+          {
+            id: "nmpz-start",
+            label: "NMPZ view shown",
+
+            description:
+              "Fixed starting view recovered from the competition definition after the round.",
+
+            tMs: 0,
+          },
+
+          ...(durationMs > 0
+            ? [
+              {
+                id: "round-end",
+                label: "Round ended",
+
+                description:
+                  "End of the fixed-view recording.",
+
+                tMs:
+                  durationMs,
+              },
+            ]
+            : []),
+        ],
+
+    recoveredStartingView:
+      true,
+  };
+}
+
+function indexRecordings(
+  recordings,
+) {
+  const byId =
+    new Map();
+
+  const byMatchKey =
+    new Map();
+
+  const byLocation =
+    new Map();
+
+  for (const recording of recordings) {
+    if (recording.id) {
+      byId.set(
+        recording.id,
+        recording,
+      );
+    }
+
+    if (recording.atlasLocationId) {
+      if (
+        !byLocation.has(
+          recording.atlasLocationId,
+        )
+      ) {
+        byLocation.set(
+          recording.atlasLocationId,
+          [],
+        );
+      }
+
+      byLocation
+        .get(
+          recording.atlasLocationId,
+        )
+        .push(recording);
+    }
+
+    if (
+      !recording.atlasLocationId ||
+      !recording.model ||
+      !recording.condition
+    ) {
+      continue;
+    }
+
+    const key =
+      recordingMatchKey(
+        recording.atlasLocationId,
+        recording.model,
+        recording.condition,
+      );
+
+    const current =
+      byMatchKey.get(key);
+
+    if (
+      !current ||
+      recordingTimestamp(recording) >
+      recordingTimestamp(current)
+    ) {
+      byMatchKey.set(
+        key,
+        recording,
+      );
+    }
+  }
+
+  for (
+    const list
+    of byLocation.values()
+  ) {
+    list.sort(
+      (a, b) =>
+        recordingTimestamp(a) -
+        recordingTimestamp(b),
+    );
+  }
+
+  return {
+    byId,
+    byMatchKey,
+    byLocation,
+  };
+}
+
+function compileAtlasCases({
+  locations,
+  results,
+  recordingIndex,
+  warnings,
+}) {
+  const resultsByLocation =
+    new Map();
+
+  for (const result of results) {
+    if (
+      !resultsByLocation.has(
+        result.atlasLocationId,
+      )
+    ) {
+      resultsByLocation.set(
+        result.atlasLocationId,
+        [],
+      );
+    }
+
+    resultsByLocation
+      .get(
+        result.atlasLocationId,
+      )
+      .push(...result.runs);
+  }
+
+  const cases = [];
+
+  for (const location of locations) {
+    const rawRuns =
+      resultsByLocation.get(
+        location.id,
+      ) ?? [];
+
+    const usedRecordingIds =
+      new Set();
+
+    const runs =
+      rawRuns.map((run) => {
+        const recording =
+          findRecordingForRun(
+            location.id,
+            run,
+            recordingIndex,
+          );
+
+        if (recording?.id) {
+          usedRecordingIds.add(
+            recording.id,
+          );
+        }
+
+        return combineRunAndRecording(
+          run,
+          recording,
+        );
+      });
+
+    for (
+      const recording
+      of recordingIndex.byLocation.get(
+        location.id,
+      ) ?? []
+    ) {
+      if (
+        recording.id &&
+        usedRecordingIds.has(
+          recording.id,
+        )
+      ) {
+        continue;
+      }
+
+      if (
+        !nonEmptyString(
+          recording.model,
+        ) ||
+        !nonEmptyString(
+          recording.condition,
+        )
+      ) {
+        warnings.push(
+          `${recording.sourceFile} was matched to ${location.id} ` +
+          `but cannot be shown because model or condition is missing.`,
+        );
+
+        continue;
+      }
+
+      runs.push(
+        recordingToRun(
+          recording,
+        ),
+      );
+
+      if (
+        !isCoordinate(
+          recording.prediction,
+        )
+      ) {
+        warnings.push(
+          `${location.id} imported recording ` +
+          `${recording.id ?? recording.sourceFile} for model ` +
+          `"${recording.model}", but no prediction coordinate was captured. ` +
+          `Playback is available; pin comparison and error statistics are disabled for this run.`,
+        );
+      }
+    }
+
+    if (runs.length === 0) {
+      warnings.push(
+        `${location.id} has no model result or matched recording yet.`,
+      );
+    }
+
+    cases.push({
+      id:
+        location.id,
+
+      localId:
+        location.localId,
+
+      title:
+        location.title,
+
+      landmark:
+        location.landmark,
+
+      city:
+        location.city,
+
+      region:
+        location.region,
+
+      country:
+        location.country,
+
+      countryCode:
+        location.countryCode,
+
+      difficulty:
+        location.difficulty,
+
+      sceneType:
+        location.sceneType,
+
+      primaryClueType:
+        location.primaryClueType,
+
+      selectionNotes:
+        location.selectionNotes,
+
+      summary:
+        location.summary,
+
+      tags:
+        location.tags,
+
+      competitions:
+        location.competitions,
+
+      ...(location.visual
+        ? { visual: location.visual }
+        : {}),
+
+      groundTruth:
+        location.groundTruth,
+
+      startingView:
+        location.startingView,
+
+      startingImage:
+        resolveStartingImage(
+          location,
+        ),
+
+      runs,
+    });
+  }
+
+  return cases;
+}
+
+function resolveStartingImage(
+  location,
+) {
+  const memberships = [
+    ...(location.competitions ?? []),
+  ].sort(
+    (a, b) =>
+      (a.competitionOrder ??
+        Number.MAX_SAFE_INTEGER) -
+      (b.competitionOrder ??
+        Number.MAX_SAFE_INTEGER) ||
+      (a.overallIndex ??
+        Number.MAX_SAFE_INTEGER) -
+      (b.overallIndex ??
+        Number.MAX_SAFE_INTEGER),
+  );
+
+  for (
+    const membership
+    of memberships
+  ) {
+    const competitionId =
+      membership?.competitionId;
+
+    if (
+      !nonEmptyString(
+        competitionId,
+      ) ||
+      !nonEmptyString(
+        location.localId,
+      )
+    ) {
+      continue;
+    }
+
+    const absolutePath =
+      join(
+        STARTING_IMAGES_DIR,
+        competitionId,
+        `${location.localId}.png`,
+      );
+
+    if (
+      !existsSync(
+        absolutePath,
+      )
+    ) {
+      continue;
+    }
+
+    return {
+      path:
+        relative(
+          ROOT,
+          absolutePath,
+        ).replaceAll("\\", "/"),
+
+      competitionId,
+
+      locationId:
+        location.localId,
+
+      source:
+        "canonical-nmpz",
+    };
+  }
+
+  return null;
+}
+
+function combineRunAndRecording(
+  run,
+  recording,
+) {
+  const prediction =
+    isCoordinate(
+      recording?.prediction,
+    )
+      ? {
+        lat: Number(
+          recording.prediction.lat,
+        ),
+
+        lng: Number(
+          recording.prediction.lng,
+        ),
+
+        label:
+          run.prediction?.label ??
+          "Recorded OpenGuessr prediction",
+      }
+      : run.prediction ??
+      null;
+
+  return {
+    ...run,
+    prediction,
+
+    hypothesis:
+      run.hypothesis ?? "",
+
+    cues:
+      Array.isArray(run.cues)
+        ? run.cues
+        : [],
+
+    ...(recording
+      ? {
+        exploration:
+          recording,
+
+        durationSeconds:
+          Number.isFinite(
+            recording.durationMs,
+          )
+            ? recording.durationMs /
+            1000
+            : run.durationSeconds,
+
+        recordingId:
+          recording.id ??
+          null,
+
+        recordingSourceFile:
+          recording.sourceFile,
+
+        competitionId:
+          recording.competitionId ??
+          run.competitionId ??
+          null,
+
+        competitionPartId:
+          recording.competitionPartId ??
+          null,
+
+        competitionRound:
+          recording.competitionRound ??
+          null,
+      }
+      : {}),
+  };
+}
+
+function recordingToRun(
+  recording,
+) {
+  const hasPrediction =
+    isCoordinate(
+      recording.prediction,
+    );
+
+  return {
+    id:
+      recording.id ??
+      `recording-${Math.random()
+        .toString(36)
+        .slice(2)}`,
+
+    model:
+      recording.model,
+
+    condition:
+      recording.condition,
+
+    prediction:
+      hasPrediction
+        ? {
+          lat: Number(
+            recording.prediction.lat,
+          ),
+
+          lng: Number(
+            recording.prediction.lng,
+          ),
+
+          label:
+            "Recorded OpenGuessr prediction",
+        }
+        : null,
+
+    runStatus:
+      hasPrediction
+        ? "complete"
+        : "recording-only",
+
+    hypothesis:
+      "",
+
+    cues:
+      [],
+
+    notes:
+      hasPrediction
+        ? "Recorder data is available; the model explanation and human cue review have not been imported yet."
+        : "Recorder data is available, but the submitted prediction coordinate was not captured. Playback remains available.",
+
+    isMock:
+      false,
+
+    accuracy: {
+      country: null,
+      region: null,
+    },
+
+    durationSeconds:
+      Number.isFinite(
+        recording.durationMs,
+      )
+        ? recording.durationMs /
+        1000
+        : null,
+
+    exploration:
+      recording,
+
+    recordingId:
+      recording.id ??
+      null,
+
+    recordingSourceFile:
+      recording.sourceFile,
+
+    competitionId:
+      recording.competitionId ??
+      null,
+
+    competitionPartId:
+      recording.competitionPartId ??
+      null,
+
+    competitionRound:
+      recording.competitionRound ??
+      null,
+  };
+}
+
+function findRecordingForRun(
+  atlasLocationId,
+  run,
+  recordingIndex,
+) {
+  if (
+    run.recordingId &&
+    recordingIndex.byId.has(
+      run.recordingId,
+    )
+  ) {
+    return recordingIndex.byId.get(
+      run.recordingId,
+    );
+  }
+
+  const key =
+    recordingMatchKey(
+      atlasLocationId,
+      run.model,
+      run.condition,
+    );
+
+  return (
+    recordingIndex.byMatchKey.get(
+      key,
+    ) ?? null
+  );
+}
+
+function buildCompetitionOutputs(
+  competitions,
+  locations,
+) {
+  const locationMap =
+    new Map(
+      locations.map(
+        (item) => [
+          item.id,
+          item,
+        ],
+      ),
+    );
+
+  return competitions.flatMap(
+    (competition) =>
+      competition.parts.map(
+        (part) => ({
+          competitionId:
+            competition.id,
+
+          competitionName:
+            competition.name,
+
+          partId:
+            part.id,
+
+          part:
+            part.part,
+
+          partCount:
+            part.partCount,
+
+          filename:
+            `${part.id}.txt`,
+
+          locationIds:
+            part.locationIds,
+
+          localLocationIds:
+            part.localLocationIds,
+
+          urls:
+            part.locationIds.map(
+              (id) =>
+                locationMap.get(id)
+                  .googleMapsUrl,
+            ),
+        }),
+      ),
+  );
+}
+
+function buildCompetitionArchives(
+  competitions,
+  locations,
+) {
+  const locationMap =
+    new Map(
+      locations.map(
+        (item) => [
+          item.id,
+          item,
+        ],
+      ),
+    );
+
+  return competitions
+    .filter(
+      (competition) =>
+        competition.parts.length >
+        1,
+    )
+    .map(
+      (competition) => ({
+        competitionId:
+          competition.id,
+
+        filename:
+          `${competition.id}-all.txt`,
+
+        urls:
+          competition.locationIds.map(
+            (id) =>
+              locationMap.get(id)
+                .googleMapsUrl,
+          ),
+      }),
+    );
+}
+
+function resolveLocationReference(
+  reference,
+  locations,
+) {
+  if (
+    nonEmptyString(
+      reference?.atlasLocationId,
+    )
+  ) {
+    const exact =
+      locations.find(
+        (item) =>
+          item.id ===
+          reference.atlasLocationId,
+      );
+
+    if (exact) return exact;
+  }
+
+  if (
+    !nonEmptyString(
+      reference?.locationId,
+    )
+  ) {
+    return null;
+  }
+
+  const locationId =
+    reference.locationId.trim();
+
+  const exact =
+    locations.find(
+      (item) =>
+        item.id === locationId,
+    );
+
+  if (exact) return exact;
+
+  let candidates =
+    locations.filter(
+      (item) =>
+        item.localId ===
+        locationId,
+    );
+
+  if (
+    nonEmptyString(
+      reference?.competitionId,
+    )
+  ) {
+    candidates =
+      candidates.filter((item) =>
+        item.competitions.some(
+          (membership) =>
+            membership.competitionId ===
+            reference.competitionId,
+        ),
+      );
+  }
+
+  return candidates.length === 1
+    ? candidates[0]
+    : null;
+}
+
+function summarizeRecording(
+  recording,
+) {
+  return {
+    id:
+      recording.id ?? null,
+
+    sessionId:
+      recording.sessionId ??
+      null,
+
+    competitionId:
+      recording.competitionId ??
+      null,
+
+    competitionPartId:
+      recording.competitionPartId ??
+      null,
+
+    competitionRound:
+      recording.competitionRound ??
+      null,
+
+    atlasLocationId:
+      recording.atlasLocationId ??
+      null,
+
+    locationId:
+      recording.locationId ??
+      null,
+
+    model:
+      recording.model ?? null,
+
+    condition:
+      recording.condition ?? null,
+
+    startedAt:
+      recording.startedAt ??
+      null,
+
+    stoppedAt:
+      recording.stoppedAt ??
+      null,
+
+    sampleCount:
+      Array.isArray(
+        recording.samples,
+      )
+        ? recording.samples.length
+        : 0,
+
+    hasPrediction:
+      Boolean(
+        recording.prediction,
+      ),
+
+    sourceFile:
+      recording.sourceFile,
+  };
+}
+
+function recordingMatchKey(
+  atlasLocationId,
+  model,
+  condition,
+) {
+  return (
+    `${String(atlasLocationId).trim()}` +
+    `\u0000${String(model).trim()}` +
+    `\u0000${String(condition).trim()}`
+  );
+}
+
+function recordingTimestamp(
+  recording,
+) {
+  const value =
+    Date.parse(
+      recording.stoppedAt ??
+      recording.receivedAt ??
+      recording.startedAt ??
+      0,
+    );
+
+  return Number.isFinite(value)
+    ? value
+    : 0;
+}
+
+function chunk(
+  items,
+  size,
+) {
+  const chunks = [];
+
+  for (
+    let index = 0;
+    index < items.length;
+    index += size
+  ) {
+    chunks.push(
+      items.slice(
+        index,
+        index + size,
+      ),
+    );
+  }
+
+  return chunks;
+}
+
+function requiredString(
+  value,
+  label,
+  errors,
+) {
+  if (!nonEmptyString(value)) {
+    errors.push(
+      `${label} must be a non-empty string.`,
+    );
+
+    return null;
+  }
+
+  return value.trim();
+}
+
+function firstString(
+  ...values
+) {
+  for (const value of values) {
+    if (nonEmptyString(value)) {
+      return value.trim();
+    }
+  }
+
+  return null;
+}
+
+function nonEmptyString(
+  value,
+) {
+  return (
+    typeof value === "string" &&
+    value.trim().length > 0
+  );
+}
+
+function slugify(
+  value,
+) {
+  return String(value ?? "")
+    .normalize("NFKD")
+    .replace(
+      /[\u0300-\u036f]/g,
+      "",
+    )
+    .toLowerCase()
+    .replace(
+      /[^a-z0-9]+/g,
+      "-",
+    )
+    .replace(
+      /^-+|-+$/g,
+      "",
+    )
+    .slice(
+      0,
+      100,
+    );
+}
+
+function humanize(
+  value,
+) {
+  return String(value ?? "")
+    .replace(
+      /[-_]+/g,
+      " ",
+    )
+    .replace(
+      /\b\w/g,
+      (character) =>
+        character.toUpperCase(),
+    );
+}
+
+function unique(
+  values,
+) {
+  return [...new Set(values)];
+}
+
+function isCoordinate(
+  value,
+) {
+  if (
+    value?.lat === null ||
+    value?.lat === "" ||
+    value?.lat === undefined
+  ) {
+    return false;
+  }
+
+  if (
+    value?.lng === null ||
+    value?.lng === "" ||
+    value?.lng === undefined
+  ) {
+    return false;
+  }
+
+  return (
+    Number.isFinite(
+      Number(value.lat),
+    ) &&
+    Number(value.lat) >= -90 &&
+    Number(value.lat) <= 90 &&
+    Number.isFinite(
+      Number(value.lng),
+    ) &&
+    Number(value.lng) >= -180 &&
+    Number(value.lng) <= 180
+  );
+}
+
+async function runCli() {
+  const checkOnly =
+    process.argv.includes(
+      "--check",
+    );
+
+  const result =
+    await buildData({
+      write: !checkOnly,
+    });
+
+  if (checkOnly) {
+    console.log(
+      `Data check passed: ` +
+      `${result.locations.length} locations, ` +
+      `${result.competitions.length} competitions, ` +
+      `${result.atlasCases.length} atlas cases.`,
+    );
+  }
+}
+
+const isDirect =
+  process.argv[1]
+    ? resolve(process.argv[1]) ===
+    fileURLToPath(import.meta.url)
+    : false;
+
+if (isDirect) {
+  runCli().catch((error) => {
+    console.error(
+      error instanceof Error
+        ? error.message
+        : String(error),
+    );
+
+    process.exitCode = 1;
+  });
+}
