@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenGuessr Research Recorder</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <span class="eyebrow">Research instrumentation</span>
+          <h1>Round recorder</h1>
+        </div>
+        <label class="switch" title="Enable or disable the recorder UI">
+          <input id="enabled" type="checkbox" />
+          <span aria-hidden="true"></span>
+        </label>
+      </header>
+
+      <section class="status-card" aria-live="polite">
+        <div class="status-line">
+          <span id="status-dot" class="status-dot"></span>
+          <strong id="status-title">Checking page…</strong>
+        </div>
+        <p id="status-detail">Open an OpenGuessr round to begin.</p>
+        <dl>
+          <div><dt>Session</dt><dd id="session-progress">—</dd></div>
+          <div><dt>Prediction</dt><dd id="prediction-state">—</dd></div>
+          <div><dt>Capture</dt><dd id="capture-mode">—</dd></div>
+          <div><dt>Page probe</dt><dd id="page-state">—</dd></div>
+          <div><dt>Last save</dt><dd id="last-save">—</dd></div>
+        </dl>
+      </section>
+
+      <form id="settings-form">
+        <label>
+          <span>Competition setup</span>
+          <input id="competition-id" name="competitionId" list="competition-options" autocomplete="off" />
+          <datalist id="competition-options"></datalist>
+        </label>
+
+        <label>
+          <span>Model</span>
+          <input id="model" name="model" autocomplete="off" />
+        </label>
+
+        <label>
+          <span>Condition</span>
+          <select id="condition" name="condition">
+            <option value="interactive-panorama">Interactive panorama</option>
+            <option value="static-image">Static image / NMPZ</option>
+          </select>
+        </label>
+
+        <details>
+          <summary>Collector and fallback</summary>
+          <label>
+            <span>Collector URL</span>
+            <input id="collector-url" name="collectorUrl" type="url" />
+          </label>
+          <label>
+            <span>Download fallback folder</span>
+            <input id="download-subfolder" name="downloadSubfolder" />
+          </label>
+          <label class="checkbox-row">
+            <input id="fallback-download" name="fallbackDownload" type="checkbox" />
+            <span>Download JSON when the local collector is unavailable</span>
+          </label>
+        </details>
+
+        <div class="actions">
+          <button class="primary" type="submit">Save setup</button>
+          <button id="test-collector" type="button">Test collector</button>
+        </div>
+        <div class="actions">
+          <button id="arm-recording" class="accent" type="button">Arm current competition</button>
+          <button id="stop-recording" type="button">Stop recording</button>
+        </div>
+      </form>
+
+      <section class="recovery-card">
+        <div class="recovery-heading">
+          <strong>Recovery and inspection</strong>
+          <span>A checkpoint does not end the round.</span>
+        </div>
+        <div class="secondary-actions">
+          <button id="save-checkpoint" class="accent" type="button">Save checkpoint</button>
+          <button id="finalize-round" type="button">Finalize round</button>
+          <button id="export-diagnostics" type="button">Download diagnostics</button>
+          <button id="reset-session" type="button">Reset tab session</button>
+        </div>
+      </section>
+
+      <p class="privacy-note">
+        The recorder never starts merely because the extension is enabled. Arm it explicitly from the OpenGuessr start prompt or this popup. It then waits for the first live round and records until the competition ends or you stop it. Ground truth is not displayed during play.
+      </p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schema/location.schema.json",
+  "schemaVersion": "1.0",
+  "id": "city-landmark-slug",
+  "title": "Readable scene title",
+  "landmark": "Landmark or area",
+  "city": "City",
+  "region": "Region",
+  "country": "Country",
+  "countryCode": "XX",
+  "difficulty": "medium",
+  "sceneType": "urban",
+  "summary": "Short description of why this scene belongs in the evaluation.",
+  "tags": [
+    "tag-one",
+    "tag-two"
+  ],
+  "googleMapsUrl": "PASTE_FULL_GOOGLE_STREET_VIEW_URL_HERE",
+  "groundTruthLabel": "Ground-truth label shown in the atlas",
+  "startingViewLabel": "Description of the reproducible starting view"
+}
