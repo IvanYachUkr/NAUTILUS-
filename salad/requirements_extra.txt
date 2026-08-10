@@ -1,0 +1,6 @@
+numpy
+pandas
+pillow
+tqdm
+torchvision
+faiss-cpu
