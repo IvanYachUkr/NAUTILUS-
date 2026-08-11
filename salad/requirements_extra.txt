@@ -4,3 +4,7 @@ pillow
 tqdm
 torchvision
 faiss-cpu
+geopy
+huggingface_hub
+pytorch-lightning
+pytorch-metric-learning

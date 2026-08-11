@@ -1,49 +1,30 @@
 #!/usr/bin/env python3
 r"""
-Batch evaluation for SALAD + OSV-5M retrieval on the project's static images.
+Batch evaluation for SALAD + OSV-5M retrieval.
 
-This intentionally mirrors geoclip_batch_eval.py, but adds an --index switch.
+Maintained search modes:
+- fp32: exact exhaustive search over every FP32 reference shard.
+- ivfflat: persistent FAISS IndexIVFFlat over the same raw FP32 vectors.
+
+IVF-Flat does not compress the SALAD descriptors. It accelerates retrieval by
+probing only a configurable number of coarse inverted lists.
+
+All images in the selected dataset are embedded first and searched together.
+Thus exact FP32 mode scans the full reference database once per evaluator run,
+not once per query image.
 
 Examples:
-    .\.venv\Scripts\python.exe salad_batch_eval.py --index fp32
-    .\.venv\Scripts\python.exe salad_batch_eval.py --index sqfp16
-    .\.venv\Scripts\python.exe salad_batch_eval.py --index sq8
-    .\.venv\Scripts\python.exe salad_batch_eval.py --index sq4
-    .\.venv\Scripts\python.exe salad_batch_eval.py --dataset europe-medium --index sq8
-    .\.venv\Scripts\python.exe salad_batch_eval.py --limit 10 --index fp32
-
-Expected layout:
-
-repo/
-├─ salad/
-│  ├─ .venv/
-│  ├─ salad_batch_eval.py
-│  ├─ osv-5m_europe/
-│  │  └─ salad_embeddings_fp32/
-│  │     ├─ embeddings_00000.npy
-│  │     ├─ embeddings_00000.json
-│  │     ├─ ...
-│  │     └─ reference.csv
-│  └─ salad_compression_benchmark/
-│     ├─ sqfp16.faiss
-│     ├─ sq8.faiss
-│     ├─ sq4.faiss
-│     ├─ pq256.faiss
-│     ├─ pq128.faiss
-│     └─ pq64.faiss
-└─ demo_and_extension/
-   └─ data/
-      ├─ competitions/europe-easy.json
-      └─ starting-images/europe-easy/loc_001.png ...
-
-Notes:
-- fp32 = exact exhaustive search over all float32 embedding shards.
-- compressed options load the corresponding FAISS index.
-- SALAD produces image descriptors. GPS comes from the retrieved OSV-5M
-  reference image metadata.
+    .\.venv\Scripts\python.exe salad_batch_eval.py --dataset europe-easy --index ivfflat --nprobe 32 --top-k 5
+    .\.venv\Scripts\python.exe salad_batch_eval.py --dataset europe-easy --index fp32 --top-k 5
 """
 
 from __future__ import annotations
+
+from pathlib import Path
+import os
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+os.environ.setdefault("TORCH_HOME", str(SCRIPT_DIR / ".torch_cache"))
 
 import argparse
 import csv
@@ -78,15 +59,7 @@ IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 DESCRIPTOR_DIM = 8448
 IMAGE_SIZE = (322, 322)
 
-INDEX_CHOICES = (
-    "fp32",
-    "sqfp16",
-    "sq8",
-    "sq4",
-    "pq256",
-    "pq128",
-    "pq64",
-)
+INDEX_CHOICES = ("fp32", "ivfflat")
 
 GOOGLE_MAPS_COORD_RE = re.compile(
     r"/maps/@(?P<lat>[+-]?(?:\d+(?:\.\d*)?|\.\d+)),"
@@ -143,10 +116,19 @@ def parse_args() -> argparse.Namespace:
         help="Float32 master embedding directory.",
     )
     parser.add_argument(
-        "--index-dir",
+        "--ivf-dir",
         type=Path,
-        default=script_dir / "salad_compression_benchmark",
-        help="Directory containing compressed FAISS indexes.",
+        default=script_dir / "osv-5m_europe" / "salad_ivfflat",
+        help="Directory containing the Windows-safe IVF files.",
+    )
+    parser.add_argument(
+        "--nprobe",
+        type=int,
+        default=64,
+        help=(
+            "Number of IVF coarse lists to search. Higher is slower and "
+            "closer to exact FP32 retrieval. Default: 32."
+        ),
     )
     parser.add_argument(
         "--output-dir",
@@ -272,6 +254,22 @@ def embed_image(model, transform, image_path: Path, device: str) -> np.ndarray:
     return descriptor.detach().float().cpu().numpy().astype(np.float32, copy=False)
 
 
+def embed_images(model, transform, image_paths: list[Path], device: str):
+    descriptors = []
+    descriptor_seconds = []
+    total_start = time.perf_counter()
+    for idx, image_path in enumerate(image_paths, start=1):
+        start = time.perf_counter()
+        descriptor = embed_image(model, transform, image_path, device)
+        elapsed = time.perf_counter() - start
+        descriptors.append(descriptor[0])
+        descriptor_seconds.append(elapsed)
+        print(f"[embed {idx}/{len(image_paths)}] {image_path.name} ({elapsed:.2f} s)")
+    queries = np.stack(descriptors, axis=0).astype(np.float32, copy=False)
+    total_seconds = time.perf_counter() - total_start
+    return queries, descriptor_seconds, total_seconds
+
+
 def embedding_shards(master_dir: Path) -> list[Path]:
     shards = sorted(master_dir.glob("embeddings_*.npy"))
     if not shards:
@@ -315,7 +313,8 @@ class FP32ShardedSearcher:
         best_distances = np.full((len(query), k), np.inf, dtype=np.float32)
         best_indices = np.full((len(query), k), -1, dtype=np.int64)
 
-        for shard in self.shards:
+        for shard_no, shard in enumerate(self.shards, start=1):
+            print(f"[search fp32] shard {shard_no}/{len(self.shards)} for {len(query)} queries")
             reference = np.load(shard, mmap_mode="r")
             if reference.shape[1] != DESCRIPTOR_DIM:
                 raise RuntimeError(
@@ -340,23 +339,148 @@ class FP32ShardedSearcher:
         return best_distances, best_indices
 
 
-class FaissSearcher:
-    def __init__(self, index_path: Path):
-        if not index_path.exists():
+
+class IVFFlatSearcher:
+    """Windows-safe disk-backed IVF-Flat search over raw FP32 vectors."""
+
+    def __init__(self, ivf_dir: Path, nprobe: int):
+        info_path = ivf_dir / "index_info.json"
+        if not info_path.exists():
             raise FileNotFoundError(
-                f"FAISS index not found: {index_path}\n"
-                "Build it first with benchmark_salad_compression.py."
+                f"IVF metadata not found: {info_path}\n"
+                "Build it first with build_salad_ivfflat_index.py."
             )
-        self.index = faiss.read_index(str(index_path))
 
-    def search(self, query: np.ndarray, k: int) -> tuple[np.ndarray, np.ndarray]:
-        return self.index.search(query, k)
+        self.info = json.loads(info_path.read_text(encoding="utf-8"))
+        if self.info.get("format") != "windows_safe_ivfflat_v1":
+            raise RuntimeError(
+                "Unsupported IVF format. Expected windows_safe_ivfflat_v1."
+            )
+
+        self.nlist = int(self.info["nlist"])
+        self.ntotal = int(self.info["ntotal"])
+        self.dimension = int(self.info["dimension"])
+        if self.dimension != DESCRIPTOR_DIM:
+            raise RuntimeError(
+                f"IVF descriptor dimension mismatch: {self.dimension}"
+            )
+        if not (1 <= nprobe <= self.nlist):
+            raise ValueError(
+                f"--nprobe must be in [1, {self.nlist}], got {nprobe}"
+            )
+        self.nprobe = int(nprobe)
+
+        self.centroids = np.load(ivf_dir / "centroids.npy")
+        self.offsets = np.load(ivf_dir / "offsets.npy")
+        if self.centroids.shape != (self.nlist, DESCRIPTOR_DIM):
+            raise RuntimeError(
+                f"Unexpected centroids shape: {self.centroids.shape}"
+            )
+        if self.offsets.shape != (self.nlist + 1,):
+            raise RuntimeError(
+                f"Unexpected offsets shape: {self.offsets.shape}"
+            )
+
+        self.ids = np.memmap(
+            ivf_dir / "ids.dat",
+            mode="r",
+            dtype=np.int64,
+            shape=(self.ntotal,),
+        )
+        self.vectors = np.memmap(
+            ivf_dir / "vectors.dat",
+            mode="r",
+            dtype=np.float32,
+            shape=(self.ntotal, DESCRIPTOR_DIM),
+        )
+
+        self.coarse = faiss.IndexFlatL2(DESCRIPTOR_DIM)
+        self.coarse.add(np.asarray(self.centroids, dtype=np.float32))
+
+    def search(self, query: np.ndarray, k: int):
+        nquery = len(query)
+        best_d = np.full((nquery, k), np.inf, dtype=np.float32)
+        best_i = np.full((nquery, k), -1, dtype=np.int64)
+
+        _, probed = self.coarse.search(query, self.nprobe)
+
+        list_to_queries: dict[int, list[int]] = {}
+        for qi in range(nquery):
+            for list_no in probed[qi]:
+                list_to_queries.setdefault(int(list_no), []).append(qi)
+
+        selected_lists = sorted(list_to_queries)
+        total_rows = sum(
+            int(self.offsets[l + 1] - self.offsets[l])
+            for l in selected_lists
+        )
+        print(
+            f"[search ivfflat] {nquery} queries, nprobe={self.nprobe}, "
+            f"{len(selected_lists)} unique lists, {total_rows:,} rows "
+            f"across selected lists"
+        )
+
+        for pos, list_no in enumerate(selected_lists, start=1):
+            start = int(self.offsets[list_no])
+            end = int(self.offsets[list_no + 1])
+            if end <= start:
+                continue
+
+            q_ids = np.asarray(list_to_queries[list_no], dtype=np.int64)
+            refs = np.asarray(self.vectors[start:end], dtype=np.float32)
+            global_ids = np.asarray(self.ids[start:end], dtype=np.int64)
+
+            local = faiss.IndexFlatL2(DESCRIPTOR_DIM)
+            local.add(refs)
+            local_k = min(k, len(refs))
+            d, local_i = local.search(query[q_ids], local_k)
+
+            if local_k < k:
+                pad = k - local_k
+                d = np.pad(d, ((0, 0), (0, pad)), constant_values=np.inf)
+                local_i = np.pad(
+                    local_i,
+                    ((0, 0), (0, pad)),
+                    constant_values=-1,
+                )
+
+            mapped = np.full(local_i.shape, -1, dtype=np.int64)
+            valid = local_i >= 0
+            mapped[valid] = global_ids[local_i[valid]]
+
+            new_d, new_i = merge_topk(
+                best_d[q_ids],
+                best_i[q_ids],
+                d[:, :k],
+                mapped[:, :k],
+                k,
+            )
+            best_d[q_ids] = new_d
+            best_i[q_ids] = new_i
+
+            if pos == 1 or pos % 25 == 0 or pos == len(selected_lists):
+                print(
+                    f"  [ivf list {pos}/{len(selected_lists)}] "
+                    f"list={list_no}, rows={end-start:,}"
+                )
+
+            del local, refs, global_ids
+
+        return best_d, best_i
 
 
-def load_searcher(index_name: str, master_dir: Path, index_dir: Path):
+def load_searcher(
+    index_name: str,
+    master_dir: Path,
+    ivf_dir: Path,
+    nprobe: int,
+):
     if index_name == "fp32":
         return FP32ShardedSearcher(master_dir)
-    return FaissSearcher(index_dir / f"{index_name}.faiss")
+    if index_name == "ivfflat":
+        return IVFFlatSearcher(ivf_dir, nprobe)
+    raise ValueError(index_name)
+
 
 
 def weighted_coordinate(candidates: list[dict[str, Any]]) -> tuple[float, float]:
@@ -375,101 +499,55 @@ def weighted_coordinate(candidates: list[dict[str, Any]]) -> tuple[float, float]
     return lat, lon
 
 
-def evaluate_one_image(
-    model,
-    transform,
-    searcher,
+def build_result_from_retrieval(
     reference: pd.DataFrame,
     image_path: Path,
     truth: dict[str, Any],
-    top_k: int,
-    device: str,
+    distances_row: np.ndarray,
+    indices_row: np.ndarray,
+    descriptor_seconds: float,
+    shared_search_seconds: float,
 ) -> dict[str, Any]:
-    descriptor_start = time.perf_counter()
-    descriptor = embed_image(model, transform, image_path, device)
-    descriptor_seconds = time.perf_counter() - descriptor_start
-
-    search_start = time.perf_counter()
-    distances, indices = searcher.search(descriptor, top_k)
-    search_seconds = time.perf_counter() - search_start
-
     candidates: list[dict[str, Any]] = []
-
-    for rank, (retrieval_distance, row_id) in enumerate(
-        zip(distances[0], indices[0]),
-        start=1,
-    ):
+    for rank, (retrieval_distance, row_id) in enumerate(zip(distances_row, indices_row), start=1):
         if int(row_id) < 0:
             continue
-
         ref = reference.iloc[int(row_id)]
         pred_lat = float(ref["latitude"])
         pred_lon = float(ref["longitude"])
-        error = distance_km(
-            truth["lat"],
-            truth["lon"],
-            pred_lat,
-            pred_lon,
-        )
-
-        candidates.append(
-            {
-                "rank": rank,
-                "reference_row_id": int(row_id),
-                "reference_id": str(ref["id"]),
-                "reference_split": str(ref["split"]),
-                "lat": pred_lat,
-                "lon": pred_lon,
-                "distance": float(retrieval_distance),
-                "error_km": error,
-            }
-        )
-
+        error = distance_km(truth["lat"], truth["lon"], pred_lat, pred_lon)
+        candidates.append({
+            "rank": rank,
+            "reference_row_id": int(row_id),
+            "reference_id": str(ref["id"]),
+            "reference_split": str(ref["split"]),
+            "lat": pred_lat,
+            "lon": pred_lon,
+            "distance": float(retrieval_distance),
+            "error_km": error,
+        })
     if not candidates:
         raise RuntimeError("No retrieval candidates returned.")
-
     top1 = candidates[0]
     oracle = min(candidates, key=lambda c: c["error_km"])
-
     mean_lat = float(np.mean([c["lat"] for c in candidates]))
     mean_lon = float(np.mean([c["lon"] for c in candidates]))
-    mean_error = distance_km(
-        truth["lat"],
-        truth["lon"],
-        mean_lat,
-        mean_lon,
-    )
-
+    mean_error = distance_km(truth["lat"], truth["lon"], mean_lat, mean_lon)
     weighted_lat, weighted_lon = weighted_coordinate(candidates)
-    weighted_error = distance_km(
-        truth["lat"],
-        truth["lon"],
-        weighted_lat,
-        weighted_lon,
-    )
-
+    weighted_error = distance_km(truth["lat"], truth["lon"], weighted_lat, weighted_lon)
     return {
         "location_id": image_path.stem,
         "image": repo_relative_path(image_path),
         "ground_truth": truth,
         "top1": top1,
-        "topk_mean": {
-            "lat": mean_lat,
-            "lon": mean_lon,
-            "error_km": mean_error,
-        },
-        "topk_weighted": {
-            "lat": weighted_lat,
-            "lon": weighted_lon,
-            "error_km": weighted_error,
-        },
+        "topk_mean": {"lat": mean_lat, "lon": mean_lon, "error_km": mean_error},
+        "topk_weighted": {"lat": weighted_lat, "lon": weighted_lon, "error_km": weighted_error},
         "topk_oracle": oracle,
         "descriptor_seconds": descriptor_seconds,
-        "search_seconds": search_seconds,
-        "inference_seconds": descriptor_seconds + search_seconds,
+        "search_seconds": shared_search_seconds,
+        "inference_seconds": descriptor_seconds + shared_search_seconds,
         "candidates": candidates,
     }
-
 
 def error_summary(values: list[float]) -> dict[str, Any]:
     return {
@@ -502,7 +580,9 @@ def build_summary(
 
     descriptor_times = [float(r["descriptor_seconds"]) for r in results]
     search_times = [float(r["search_seconds"]) for r in results]
-    total_times = [float(r["inference_seconds"]) for r in results]
+    shared_search_seconds = search_times[0] if search_times else 0.0
+    total_descriptor_seconds = sum(descriptor_times)
+    total_pipeline_seconds = total_descriptor_seconds + shared_search_seconds
 
     return {
         "dataset": dataset,
@@ -519,9 +599,11 @@ def build_summary(
             "model_load_seconds": round_float(model_load_seconds, 3),
             "index_load_seconds": round_float(index_load_seconds, 3),
             "mean_descriptor_seconds": round_float(statistics.mean(descriptor_times), 3),
-            "mean_search_seconds": round_float(statistics.mean(search_times), 3),
-            "mean_total_seconds": round_float(statistics.mean(total_times), 3),
-            "total_seconds": round_float(sum(total_times), 3),
+            "shared_batched_search_seconds": round_float(shared_search_seconds, 3),
+            "amortized_search_seconds_per_image": round_float(shared_search_seconds / len(results), 3),
+            "mean_total_seconds_per_image_amortized": round_float(total_pipeline_seconds / len(results), 3),
+            "total_descriptor_seconds": round_float(total_descriptor_seconds, 3),
+            "total_pipeline_seconds_excluding_model_load": round_float(total_pipeline_seconds, 3),
         },
     }
 
@@ -623,8 +705,10 @@ def print_summary(summary: dict[str, Any]) -> None:
     print(f'  Model load:             {timing["model_load_seconds"]:.3f} s')
     print(f'  Index load:             {timing["index_load_seconds"]:.3f} s')
     print(f'  Mean descriptor/image:  {timing["mean_descriptor_seconds"]:.3f} s')
-    print(f'  Mean search/image:      {timing["mean_search_seconds"]:.3f} s')
-    print(f'  Mean total/image:       {timing["mean_total_seconds"]:.3f} s')
+    print(f'  Shared DB search:        {timing["shared_batched_search_seconds"]:.3f} s')
+    print(f'  Amortized search/image: {timing["amortized_search_seconds_per_image"]:.3f} s')
+    print(f'  Amortized total/image:  {timing["mean_total_seconds_per_image_amortized"]:.3f} s')
+    print(f'  Total pipeline:         {timing["total_pipeline_seconds_excluding_model_load"]:.3f} s')
     print("=" * 72)
 
 
@@ -635,6 +719,8 @@ def main() -> None:
         raise ValueError("--top-k must be at least 1")
     if args.limit is not None and args.limit < 1:
         raise ValueError("--limit must be at least 1")
+    if args.nprobe < 1:
+        raise ValueError("--nprobe must be at least 1")
     if args.device == "cuda" and not torch.cuda.is_available():
         raise RuntimeError(
             "CUDA requested, but torch.cuda.is_available() is False."
@@ -649,7 +735,7 @@ def main() -> None:
     )
 
     master_dir = args.master_dir.expanduser().resolve()
-    index_dir = args.index_dir.expanduser().resolve()
+    ivf_dir = args.ivf_dir.expanduser().resolve()
     reference_csv = master_dir / "reference.csv"
     output_dir = args.output_dir.expanduser().resolve()
 
@@ -660,6 +746,9 @@ def main() -> None:
     print(f"Competition: {competition_path}")
     print(f"Images:      {image_dir}")
     print(f"Reference:   {reference_csv}")
+    if args.index == "ivfflat":
+        print(f"IVF dir:     {ivf_dir}")
+        print(f"nprobe:      {args.nprobe}")
 
     if not competition_path.exists():
         raise FileNotFoundError(competition_path)
@@ -705,57 +794,70 @@ def main() -> None:
     searcher = load_searcher(
         index_name=args.index,
         master_dir=master_dir,
-        index_dir=index_dir,
+        ivf_dir=ivf_dir,
+        nprobe=args.nprobe,
     )
     index_load_seconds = time.perf_counter() - start
     print(f"Search backend ready in {index_load_seconds:.2f} s.")
+    if args.index == "ivfflat":
+        if searcher.ntotal != len(reference):
+            raise RuntimeError(
+                f"IVF index has {searcher.ntotal:,} vectors but "
+                f"reference.csv has {len(reference):,} rows."
+            )
+        print(
+            f"IVF configuration: nlist={searcher.nlist:,}, "
+            f"nprobe={searcher.nprobe:,}, ntotal={searcher.ntotal:,}"
+        )
 
     results: list[dict[str, Any]] = []
 
     try:
+        print("\nEmbedding all evaluation images...")
+        queries, descriptor_times, descriptor_total_seconds = embed_images(
+            model=model,
+            transform=transform,
+            image_paths=images,
+            device=args.device,
+        )
+        print(f"Embedded {len(images)} image(s) in {descriptor_total_seconds:.2f} s.")
+
+        print(f"\nSearching all {len(images)} queries together against '{args.index}'...")
+        search_start = time.perf_counter()
+        all_distances, all_indices = searcher.search(queries, args.top_k)
+        shared_search_seconds = time.perf_counter() - search_start
+        print(f"Shared batched search finished in {shared_search_seconds:.2f} s.")
+
         for index, image_path in enumerate(images, start=1):
             truth = ground_truth[image_path.stem]
             label = truth.get("city_or_region") or image_path.stem
-
-            print(f"\n[{index}/{len(images)}] {image_path.name} | {label}")
-
-            result = evaluate_one_image(
-                model=model,
-                transform=transform,
-                searcher=searcher,
+            result = build_result_from_retrieval(
                 reference=reference,
                 image_path=image_path,
                 truth=truth,
-                top_k=args.top_k,
-                device=args.device,
+                distances_row=all_distances[index - 1],
+                indices_row=all_indices[index - 1],
+                descriptor_seconds=descriptor_times[index - 1],
+                shared_search_seconds=shared_search_seconds,
             )
             results.append(result)
-
             top1 = result["top1"]
             weighted = result["topk_weighted"]
             oracle = result["topk_oracle"]
-
+            print(f"\n[{index}/{len(images)}] {image_path.name} | {label}")
             print(
                 f'  Top-1: ref={top1["reference_id"]}, '
                 f'lat={top1["lat"]:.6f}, lon={top1["lon"]:.6f}, '
                 f'error={top1["error_km"]:.2f} km, '
                 f'L2={top1["distance"]:.6f}'
             )
-
             if args.top_k > 1:
-                print(
-                    f'  Weighted top-{args.top_k}: '
-                    f'error={weighted["error_km"]:.2f} km'
-                )
-                print(
-                    f'  Oracle top-{args.top_k}: '
-                    f'rank={oracle["rank"]}, '
-                    f'error={oracle["error_km"]:.2f} km'
-                )
-
+                print(f'  Weighted top-{args.top_k}: error={weighted["error_km"]:.2f} km')
+                print(f'  Oracle top-{args.top_k}: rank={oracle["rank"]}, error={oracle["error_km"]:.2f} km')
             print(
                 f'  Descriptor: {result["descriptor_seconds"]:.2f} s | '
-                f'Search: {result["search_seconds"]:.2f} s'
+                f'Shared search: {shared_search_seconds:.2f} s total '
+                f'({shared_search_seconds / len(images):.2f} s/image amortized)'
             )
 
     except KeyboardInterrupt:
@@ -773,7 +875,10 @@ def main() -> None:
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    base_name = f"salad_{args.index}_{args.dataset}"
+    if args.index == "ivfflat":
+        base_name = f"salad_ivfflat_nprobe{args.nprobe}_{args.dataset}"
+    else:
+        base_name = f"salad_fp32_{args.dataset}"
     csv_path = output_dir / f"{base_name}.csv"
     details_path = output_dir / f"{base_name}_details.json"
     summary_path = output_dir / f"{base_name}_summary.json"

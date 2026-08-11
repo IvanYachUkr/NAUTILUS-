@@ -6,7 +6,7 @@ Set-Location $Here
 $LogDir = Join-Path $Here "logs"
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 $Stamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$Log = Join-Path $LogDir "overnight_$Stamp.log"
+$Log = Join-Path $LogDir "fp32_build_$Stamp.log"
 
 function Run-Step {
     param(
@@ -25,29 +25,18 @@ function Run-Step {
     }
 }
 
-Run-Step "1/4 SMOKE TEST" {
+Run-Step "1/2 FP32 SMOKE TEST" {
     powershell -ExecutionPolicy Bypass -File .\smoke_test.ps1
 }
 
-Run-Step "2/4 FULL FLOAT32 SALAD REFERENCE EMBEDDINGS" {
+Run-Step "2/2 FULL FLOAT32 SALAD REFERENCE EMBEDDINGS" {
     python .\build_salad_reference_embeddings.py `
       --device cuda `
-      --batch-size 8 `
-      --workers 4
-}
-
-Run-Step "3/4 OPENGUESSR QUERY EMBEDDINGS" {
-    python .\embed_openguessr_queries.py `
-      --device cuda
-}
-
-Run-Step "4/4 COMPRESSION BENCHMARK - SCALAR QUANTIZATION" {
-    python .\benchmark_salad_compression.py `
-      --methods sqfp16 sq8 sq4 `
-      --top-k 10
+      --batch-size 64 `
+      --workers 1
 }
 
 Write-Host "`n============================================================"
-Write-Host "OVERNIGHT PIPELINE COMPLETE"
+Write-Host "FP32 REFERENCE BUILD COMPLETE"
 Write-Host "Log: $Log"
 Write-Host "============================================================"
