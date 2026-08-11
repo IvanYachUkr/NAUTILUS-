@@ -1,0 +1,78 @@
+{
+  "dataset": "europe-easy",
+  "model": "SALAD + OSV-5M",
+  "index": "ivfflat",
+  "n_images": 8,
+  "generated_at_utc": "2026-08-11T10:16:06.677970+00:00",
+  "distance_unit": "km",
+  "top1_error": {
+    "mean_km": 1215.551,
+    "median_km": 992.96,
+    "std_km": 726.994,
+    "rmse_km": 1416.363,
+    "min_km": 110.254,
+    "max_km": 2437.092,
+    "threshold_accuracy": {
+      "within_1_km_percent": 0.0,
+      "within_25_km_percent": 0.0,
+      "within_200_km_percent": 12.5,
+      "within_750_km_percent": 25.0,
+      "within_2500_km_percent": 100.0
+    }
+  },
+  "topk_mean_error": {
+    "mean_km": 572.654,
+    "median_km": 483.262,
+    "std_km": 372.628,
+    "rmse_km": 683.217,
+    "min_km": 105.417,
+    "max_km": 1257.589,
+    "threshold_accuracy": {
+      "within_1_km_percent": 0.0,
+      "within_25_km_percent": 0.0,
+      "within_200_km_percent": 12.5,
+      "within_750_km_percent": 75.0,
+      "within_2500_km_percent": 100.0
+    }
+  },
+  "topk_weighted_error": {
+    "mean_km": 572.196,
+    "median_km": 482.426,
+    "std_km": 372.658,
+    "rmse_km": 682.849,
+    "min_km": 107.722,
+    "max_km": 1258.753,
+    "threshold_accuracy": {
+      "within_1_km_percent": 0.0,
+      "within_25_km_percent": 0.0,
+      "within_200_km_percent": 12.5,
+      "within_750_km_percent": 75.0,
+      "within_2500_km_percent": 100.0
+    }
+  },
+  "topk_oracle_error": {
+    "mean_km": 325.899,
+    "median_km": 329.207,
+    "std_km": 204.735,
+    "rmse_km": 384.872,
+    "min_km": 54.653,
+    "max_km": 732.611,
+    "threshold_accuracy": {
+      "within_1_km_percent": 0.0,
+      "within_25_km_percent": 0.0,
+      "within_200_km_percent": 37.5,
+      "within_750_km_percent": 100.0,
+      "within_2500_km_percent": 100.0
+    }
+  },
+  "timing": {
+    "model_load_seconds": 24.661,
+    "index_load_seconds": 0.939,
+    "mean_descriptor_seconds": 0.73,
+    "shared_batched_search_seconds": 73.137,
+    "amortized_search_seconds_per_image": 9.142,
+    "mean_total_seconds_per_image_amortized": 9.872,
+    "total_descriptor_seconds": 5.839,
+    "total_pipeline_seconds_excluding_model_load": 78.976
+  }
+}
