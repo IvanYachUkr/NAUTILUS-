@@ -3,3 +3,5 @@ salad_embeddings_fp32/
 salad_ivfflat/
 train/
 test/
+raw_metadata/
+metadata/
