@@ -13,3 +13,10 @@ For an interactive run, the generator attaches a recording using:
    condition.
 
 The extension's model field must therefore use the same spelling as `run.model`.
+
+## Recorded agent benchmark
+
+Canonical completed interactive-agent runs are published under
+[`../recorded-agent-benchmark/`](../recorded-agent-benchmark/). That directory
+keeps the raw non-video recorder evidence separate from optional visualization
+result annotations.

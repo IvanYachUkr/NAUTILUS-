@@ -5,6 +5,7 @@ The current benchmark uses the competition files as the location source of truth
 ## Editable / collected inputs
 
 - `competitions/` - **primary location definitions** for Easy, Medium, and Hard. Each file embeds its ordered locations and full Google Street View URLs.
+- `recorded-agent-benchmark/` - curated canonical agent-run logs, metadata, reports, and score summaries; WebM files are intentionally external.
 - `results/` - optional model hypotheses, cues, ratings, and other result annotations.
 - `recordings/inbox/` - completed per-round recorder JSON. These files include predictions and, for interactive runs, camera/event telemetry.
 - `recordings/sessions/` - full-competition session manifests.

@@ -2,6 +2,22 @@
 
 This repository contains the benchmark data, OpenGuessr recording pipeline, visualization, and static geo-localization baselines for the final computer-vision geo-localization project.
 
+## Recorded model leaderboard
+
+Official OpenGuessr competition points for the **interactive panorama** condition
+(25 locations, 300 seconds per round). The maximum possible score is 125,000.
+
+| Rank | Model | Easy (8 / 40k) | Medium (9 / 45k) | Hard (8 / 40k) | **Total (25 / 125k)** | Max |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: |
+| **1** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | 39,745 | **40,155** | 30,373 | **110,273** | **88.2%** |
+| **2** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **39,985** | 35,485 | **32,368** | **107,838** | **86.3%** |
+| **3** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | 23,729 | 29,986 | 26,366 | **80,081** | **64.1%** |
+
+All entries completed 25/25 rounds. The linked folders contain the canonical
+round telemetry, session manifests, video metadata, and detailed run reports;
+WebM recordings are stored separately. Static/NMPZ agent submissions are not
+yet included in this leaderboard.
+
 ## Current benchmark
 
 The benchmark contains **25 European locations** split by difficulty:
@@ -42,6 +58,7 @@ repo/
 │       ├── recordings/        # per-round JSON + session manifests
 │       ├── starting-images/   # static/NMPZ canonical PNGs
 │       ├── exploration-videos/# interactive per-location WebMs
+│       ├── recorded-agent-benchmark/ # curated non-video agent-run evidence
 │       ├── results/           # optional model annotations/results
 │       └── generated/         # rebuildable demo output; do not hand-edit
 ├── geoclip/
