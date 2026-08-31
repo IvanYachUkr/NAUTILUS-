@@ -1,15 +1,15 @@
 # GPT-5.6 Sol (xhigh)
 
-Recorder label: `gpt-5.6-sol-xhigh-recorded`
+Three complete recorded runs, **75/75 official rounds**.
 
-Recorder version: `0.7.21`
-Official total: **110,273 / 125,000**
+| Run | Recorder label | Easy | Medium | Hard | **Total** | Report |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| Original | `gpt-5.6-sol-xhigh-recorded` | 39,745 | 40,155 | 30,373 | **110,273** | [report](report.md) |
+| Recorded R2 | `gpt-5-6-sol-xhigh-recorded-r2` | 39,820 | 41,265 | 26,351 | **107,436** | [run](runs/recorded-r2/) |
+| Recorded R3 | `gpt-5-6-sol-xhigh-recorded-r3` | 39,982 | 41,514 | 33,220 | **114,716** | [run](runs/recorded-r3/) |
+| **Three-run mean** | — | **39,849** | **40,978** | **29,981** | **110,808** | — |
 
-| Dataset | Rounds | Score | Logs |
-| --- | ---: | ---: | --- |
-| Easy | 8 | 39,745 | [`europe-easy/`](europe-easy/) |
-| Medium | 9 | 40,155 | [`europe-medium/`](europe-medium/) |
-| Hard | 8 | 30,373 | [`europe-hard/`](europe-hard/) |
-
-See [`report.md`](report.md) for the round-by-round audit and
-[`../README.md`](../README.md) for the shared file layout.
+The original run's files remain in the model root. Later runs are isolated
+under `runs/` and retain complete manifests, authoritative round JSON,
+non-video metadata, and disclosed recovery segments. See
+[`../README.md`](../README.md) for the shared layout and Drive archive.
