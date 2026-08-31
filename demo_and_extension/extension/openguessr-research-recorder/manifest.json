@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "OpenGuessr Research Round Recorder",
   "description": "Explicitly armed OpenGuessr research recorder with canonical NMPZ images, per-round interactive tab video, camera/event trajectories, and prediction capture.",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "minimum_chrome_version": "127",
   "permissions": [
     "activeTab",

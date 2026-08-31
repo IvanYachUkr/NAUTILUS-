@@ -1,4 +1,10 @@
-# OpenGuessr Research Round Recorder 0.7.8
+# OpenGuessr Research Round Recorder 0.7.9
+
+Version 0.7.9 adds the narrow page adapter used by the optional NAUTILUS
+OpenGuessr MCP. It can place a model-chosen coordinate, verify the resulting
+Leaflet marker, submit only that verified marker, report sanitized control
+state, and continue to the next round. It never returns correct-location or
+network-response data, and the recorder continues to work without the MCP.
 
 Chrome Manifest V3 extension for collecting the project experiments.
 

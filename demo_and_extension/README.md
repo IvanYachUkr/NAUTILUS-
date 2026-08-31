@@ -59,6 +59,7 @@ data/results/            optional model annotations/results
 data/generated/          rebuildable demo files; do not edit manually
 
 extension/openguessr-research-recorder/  Chrome recorder extension
+openguessr-mcp/                       benchmark-safe Playwright MCP proxy
 scripts/                              build/collector/inspection utilities
 src/                                  visualization application
 tests/                                automated tests
@@ -79,8 +80,13 @@ From this folder:
 
 ```powershell
 npm ci
+npm ci --prefix openguessr-mcp
 npm run verify
 ```
+
+`npm run verify` also runs the OpenGuessr MCP tests. Its setup, Grok launcher,
+safety boundary, and separate benchmark condition are documented in
+[`openguessr-mcp/README.md`](openguessr-mcp/README.md).
 
 Start the local collector and demo:
 

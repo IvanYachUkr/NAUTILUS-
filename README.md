@@ -45,6 +45,21 @@ archive. The benchmark README discloses an 11-round recorder path-collision
 caveat found by capture-ID validation; it does not change the official scores.
 Static/NMPZ agent submissions are not yet included in this leaderboard.
 
+## OpenGuessr MCP controller
+
+The repository now includes a benchmark-safe [NAUTILUS OpenGuessr MCP](demo_and_extension/openguessr-mcp/).
+It layers four precise OpenGuessr actions over Microsoft Playwright MCP while
+retaining only screenshot and physical mouse/keyboard controls. The adapter
+places coordinates chosen by the model, verifies the rendered Leaflet marker,
+and refuses unverified submissions without exposing correct-location or
+network data.
+
+MCP-assisted results are a separate **coordinate-actuator MCP** condition and
+must not be merged into the raw-GUI leaderboard above. This separation makes
+it possible to measure geographic reasoning with substantially less
+belief-to-pin controller noise while preserving the original computer-use
+benchmark.
+
 ## Current benchmark
 
 The benchmark contains **25 European locations** split by difficulty:

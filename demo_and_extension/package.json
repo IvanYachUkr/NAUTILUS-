@@ -10,6 +10,7 @@
     "data:check": "node scripts/build-data.mjs --check",
     "links:inspect": "node scripts/inspect-links.mjs",
     "test": "node --test",
+    "test:mcp": "npm test --prefix openguessr-mcp",
     "check:extension": "node scripts/check-extension.mjs",
     "verify": "node scripts/build-data.mjs && node scripts/check-extension.mjs && node --test",
     "recordings:import": "node scripts/import-session-recording.mjs",

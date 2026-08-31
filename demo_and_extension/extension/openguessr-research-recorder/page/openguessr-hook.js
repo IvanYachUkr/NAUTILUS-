@@ -13,6 +13,16 @@
   let lastUrl = location.href;
   let latestMapPrediction = null;
   let leafletHookInstalled = false;
+  const trackedGuessMaps = [];
+  let verifiedAgentPin = null;
+  let mcpPlacementInProgress = false;
+
+  Object.defineProperty(window, "__NAUTILUS_OPENGUESSR_MCP__", {
+    value: Object.freeze({ command: handleMcpCommand }),
+    configurable: false,
+    enumerable: false,
+    writable: false,
+  });
 
   emit("page-context", pageContext());
 
@@ -72,9 +82,11 @@
     const originalFire = mapPrototype.fire;
     function wrappedFire(type, data) {
       try {
+        trackGuessMap(this);
         if (type === "click") {
           const point = normalizeLatLng(data?.latlng);
           if (point && isLikelyGuessMap(this)) {
+            if (!mcpPlacementInProgress) verifiedAgentPin = null;
             latestMapPrediction = {
               ...point,
               capturedAt: new Date().toISOString(),
@@ -98,6 +110,188 @@
       at: new Date().toISOString(),
     });
     return true;
+  }
+
+  async function handleMcpCommand(request) {
+    const action = request?.action;
+    if (action === "place-guess") return placeMcpGuess(request);
+    if (action === "get-state") return getMcpState();
+    if (action === "submit-guess") return submitMcpGuess();
+    if (action === "continue") return continueMcpRound();
+    return { ok: false, error: `Unsupported OpenGuessr action: ${String(action)}` };
+  }
+
+  async function placeMcpGuess(request) {
+    const latitude = finite(request?.latitude);
+    const longitude = finite(request?.longitude);
+    if (!isCoordinate(latitude, longitude)) {
+      return { ok: false, error: "Latitude or longitude is outside the valid coordinate range." };
+    }
+
+    const map = currentGuessMap();
+    if (!map) {
+      return {
+        ok: false,
+        error: "Open the OpenGuessr guess map first, then retry coordinate placement.",
+      };
+    }
+
+    verifiedAgentPin = null;
+    mcpPlacementInProgress = true;
+    try {
+      const latlng = window.L?.latLng?.(latitude, longitude) ?? {
+        lat: latitude,
+        lng: longitude,
+      };
+      map.fire("click", { latlng, source: "nautilus-openguessr-mcp" });
+    } catch (error) {
+      return {
+        ok: false,
+        error: `OpenGuessr rejected coordinate placement: ${limit(error?.message ?? error, 240)}`,
+      };
+    } finally {
+      mcpPlacementInProgress = false;
+    }
+
+    for (let attempt = 0; attempt < 5; attempt += 1) {
+      if (mapHasPin(map, latitude, longitude)) {
+        verifiedAgentPin = { latitude, longitude, map };
+        return {
+          ok: true,
+          action: "place-guess",
+          verified: true,
+          pin: { latitude, longitude },
+        };
+      }
+      await delay(40);
+    }
+
+    latestMapPrediction = null;
+    return {
+      ok: false,
+      error: "OpenGuessr did not render a marker at the requested coordinates.",
+    };
+  }
+
+  function getMcpState() {
+    const guessControl = findVisibleControl(GUESS_TEXT);
+    const continueControl = findVisibleControl(NEXT_TEXT);
+    const bodyText = document.body?.innerText?.slice(0, 15000) ?? "";
+    return {
+      ok: true,
+      action: "get-state",
+      path: location.pathname,
+      controls: {
+        guess: Boolean(guessControl),
+        continue: Boolean(continueControl),
+      },
+      resultVisible: Boolean(continueControl || RESULT_TEXT.test(bodyText)),
+      verifiedPin: verifiedAgentPin
+        ? {
+            latitude: verifiedAgentPin.latitude,
+            longitude: verifiedAgentPin.longitude,
+          }
+        : null,
+    };
+  }
+
+  async function submitMcpGuess() {
+    const pin = verifiedAgentPin;
+    if (!pin || !mapHasPin(pin.map, pin.latitude, pin.longitude)) {
+      verifiedAgentPin = null;
+      return {
+        ok: false,
+        error: "A verified pin from openguessr_place_guess is required before submission.",
+      };
+    }
+
+    const control = findVisibleControl(GUESS_TEXT);
+    if (!control) {
+      return { ok: false, error: "The visible OpenGuessr Guess control was not found." };
+    }
+
+    const submittedPin = { latitude: pin.latitude, longitude: pin.longitude };
+    control.click();
+    verifiedAgentPin = null;
+    await delay(0);
+    return {
+      ok: true,
+      action: "submit-guess",
+      submitted: true,
+      pin: submittedPin,
+    };
+  }
+
+  async function continueMcpRound() {
+    const control = findVisibleControl(NEXT_TEXT);
+    if (!control) {
+      return { ok: false, error: "The visible OpenGuessr Continue control was not found." };
+    }
+    control.click();
+    verifiedAgentPin = null;
+    latestMapPrediction = null;
+    await delay(0);
+    return { ok: true, action: "continue", continued: true };
+  }
+
+  function trackGuessMap(map) {
+    if (!isLikelyGuessMap(map)) return;
+    const previousIndex = trackedGuessMaps.indexOf(map);
+    if (previousIndex >= 0) trackedGuessMaps.splice(previousIndex, 1);
+    trackedGuessMaps.push(map);
+    if (trackedGuessMaps.length > 8) trackedGuessMaps.shift();
+  }
+
+  function currentGuessMap() {
+    for (let index = trackedGuessMaps.length - 1; index >= 0; index -= 1) {
+      const map = trackedGuessMaps[index];
+      if (isLikelyGuessMap(map)) return map;
+    }
+    return null;
+  }
+
+  function mapHasPin(map, latitude, longitude) {
+    if (!map || typeof map.eachLayer !== "function") return false;
+    let found = false;
+    try {
+      map.eachLayer((layer) => {
+        if (found || typeof layer?.getLatLng !== "function") return;
+        const point = normalizeLatLng(layer.getLatLng());
+        if (
+          point &&
+          Math.abs(point.lat - latitude) <= 1e-6 &&
+          wrappedLongitudeDistance(point.lng, longitude) <= 1e-6
+        ) {
+          found = true;
+        }
+      });
+    } catch {
+      return false;
+    }
+    return found;
+  }
+
+  function wrappedLongitudeDistance(left, right) {
+    const raw = Math.abs(left - right) % 360;
+    return Math.min(raw, 360 - raw);
+  }
+
+  function findVisibleControl(pattern) {
+    const controls = document.querySelectorAll(
+      "button, [role='button'], input[type='submit'], input[type='button'], a",
+    );
+    for (const control of controls) {
+      if (!pattern.test(getLabel(control))) continue;
+      if (control.disabled || control.getAttribute?.("aria-disabled") === "true") continue;
+      const rect = control.getBoundingClientRect?.();
+      if (rect && (rect.width <= 0 || rect.height <= 0)) continue;
+      return control;
+    }
+    return null;
+  }
+
+  function delay(milliseconds) {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
   }
 
   function emitLatestMapPrediction(trigger) {
