@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-08-08T19:43:31.394Z",
+  "generatedAt": "2026-08-31T09:48:00.496Z",
   "limits": {
     "openGuessrCompetitionLocations": 20
   },
@@ -9,14 +9,18 @@
     "competitions": 3,
     "competitionParts": 3,
     "resultFiles": 0,
-    "recordings": 50,
-    "matchedRecordings": 50,
-    "unmatchedRecordings": 0,
-    "recordingsWithPrediction": 50,
-    "recordingsWithoutPrediction": 0,
+    "recordings": 90,
+    "matchedRecordings": 89,
+    "unmatchedRecordings": 1,
+    "recordingsWithPrediction": 87,
+    "recordingsWithoutPrediction": 3,
     "atlasCases": 25,
-    "atlasRuns": 50,
-    "recordingOnlyRuns": 0
+    "atlasRuns": 89,
+    "recordingOnlyRuns": 2
   },
-  "warnings": []
+  "warnings": [
+    "data/recordings/inbox/europe-easy/unmatched-location/2026-08-31T08-11-50-129Z__gemini-3-7-flash-high-v2__interactive-panorama__round-1.json could not be matched to a known location and remains indexed but unattached.",
+    "europe-easy--loc-001 imported recording ogrr-2026-08-31T08-14-44-303Z-26b91681-d489-4725-bd5d-7110b941432a for model \"gemini 3.7 flash -high v2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-medium--loc-011 imported recording ogrr-2026-08-31T09-23-39-120Z-015d9071-a0b6-4303-8054-39ab4a01ff8d for model \"gemini-3.7-flash-high v3\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run."
+  ]
 }

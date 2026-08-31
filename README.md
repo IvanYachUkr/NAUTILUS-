@@ -12,6 +12,7 @@ Official OpenGuessr competition points for the **interactive panorama** conditio
 | **1** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | 39,745 | **40,155** | 30,373 | **110,273** | **88.2%** |
 | **2** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **39,985** | 35,485 | **32,368** | **107,838** | **86.3%** |
 | **3** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | 23,729 | 29,986 | 26,366 | **80,081** | **64.1%** |
+| **4** | [Gemini 3.7 Flash (high)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/) | 18,479 | 23,721 | 22,150 | **64,350** | **51.5%** |
 
 All entries completed 25/25 rounds. The linked folders contain the canonical
 round telemetry, session manifests, video metadata, and detailed run reports;
