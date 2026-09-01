@@ -1,5 +1,7 @@
 import { randomUUID } from "node:crypto";
+import { appendFileSync, mkdirSync } from "node:fs";
 import http from "node:http";
+import { dirname, resolve } from "node:path";
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
@@ -17,6 +19,7 @@ export async function startOpenGuessrProxyServer({
   upstreamFactory,
   host = "127.0.0.1",
   port = 8931,
+  auditLogPath,
 } = {}) {
   if (typeof upstreamFactory !== "function") {
     throw new TypeError("upstreamFactory is required.");
@@ -28,11 +31,23 @@ export async function startOpenGuessrProxyServer({
     throw new RangeError("port must be an integer between 0 and 65535.");
   }
 
+  let onAuditEvent;
+  if (auditLogPath !== undefined) {
+    if (typeof auditLogPath !== "string" || !auditLogPath.trim()) {
+      throw new TypeError("auditLogPath must be a non-empty file path.");
+    }
+    const resolvedAuditLogPath = resolve(auditLogPath);
+    mkdirSync(dirname(resolvedAuditLogPath), { recursive: true });
+    onAuditEvent = (event) => {
+      appendFileSync(resolvedAuditLogPath, `${JSON.stringify(event)}\n`, "utf8");
+    };
+  }
+
   const sessions = new Map();
   let closing = false;
   const httpServer = http.createServer(async (request, response) => {
     try {
-      await routeRequest({ request, response, sessions, upstreamFactory });
+      await routeRequest({ request, response, sessions, upstreamFactory, onAuditEvent });
     } catch (error) {
       if (!response.headersSent) {
         sendJson(response, 500, rpcError(-32603, safeError(error)));
@@ -79,7 +94,7 @@ export async function startOpenGuessrProxyServer({
   };
 }
 
-async function routeRequest({ request, response, sessions, upstreamFactory }) {
+async function routeRequest({ request, response, sessions, upstreamFactory, onAuditEvent }) {
   const url = new URL(request.url ?? "/", "http://localhost");
   if (url.pathname === "/healthz") {
     if (request.method !== "GET") {
@@ -110,7 +125,7 @@ async function routeRequest({ request, response, sessions, upstreamFactory }) {
       return;
     }
 
-    const session = await createSession({ upstreamFactory, sessions });
+    const session = await createSession({ upstreamFactory, sessions, onAuditEvent });
     try {
       await session.transport.handleRequest(request, response, body);
     } catch (error) {
@@ -134,9 +149,9 @@ async function routeRequest({ request, response, sessions, upstreamFactory }) {
   response.writeHead(405, { Allow: "GET, POST, DELETE" }).end();
 }
 
-async function createSession({ upstreamFactory, sessions }) {
+async function createSession({ upstreamFactory, sessions, onAuditEvent }) {
   const upstream = await upstreamFactory();
-  const proxy = createOpenGuessrProxy({ upstream });
+  const proxy = createOpenGuessrProxy({ upstream, onAuditEvent });
   let session;
   const transport = new StreamableHTTPServerTransport({
     sessionIdGenerator: () => randomUUID(),

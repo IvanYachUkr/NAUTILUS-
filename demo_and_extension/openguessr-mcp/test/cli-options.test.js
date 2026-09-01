@@ -29,6 +29,19 @@ test("CLI options accept explicit ports and a loopback upstream", () => {
   );
 });
 
+test("CLI options accept an explicit benchmark audit-log path", () => {
+  let options;
+  assert.doesNotThrow(() => {
+    options = parseCliOptions(["--audit-log", "C:\\benchmark\\run-1\\mcp-audit.jsonl"]);
+  });
+  assert.deepEqual(options, {
+    host: "127.0.0.1",
+    port: 8931,
+    upstreamUrl: "http://127.0.0.1:8932/mcp",
+    auditLogPath: "C:\\benchmark\\run-1\\mcp-audit.jsonl",
+  });
+});
+
 test("CLI options reject unknown flags and invalid ports", () => {
   assert.throws(() => parseCliOptions(["--wat"]), /unknown option/i);
   assert.throws(() => parseCliOptions(["--port", "eight"]), /port/i);

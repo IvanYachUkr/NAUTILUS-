@@ -8,7 +8,7 @@ export function parseCliOptions(args) {
   for (let index = 0; index < args.length; index += 1) {
     const flag = args[index];
     const value = args[index + 1];
-    if (!["--host", "--port", "--upstream"].includes(flag)) {
+    if (!["--host", "--port", "--upstream", "--audit-log"].includes(flag)) {
       throw new Error(`Unknown option: ${flag}`);
     }
     if (!value || value.startsWith("--")) {
@@ -18,6 +18,7 @@ export function parseCliOptions(args) {
 
     if (flag === "--host") options.host = value;
     if (flag === "--upstream") options.upstreamUrl = value;
+    if (flag === "--audit-log") options.auditLogPath = value;
     if (flag === "--port") {
       const port = Number(value);
       if (!Number.isInteger(port) || port < 1 || port > 65535) {

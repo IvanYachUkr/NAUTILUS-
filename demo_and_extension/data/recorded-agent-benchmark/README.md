@@ -49,6 +49,22 @@ dataset prompts are under [`grok-4.6-xhigh/prompts/`](grok-4.6-xhigh/prompts/).
 The corresponding WebMs and complete downloadable bundles are stored in the
 [shared Drive archive](https://drive.google.com/drive/folders/1Na3KE6yjYo1rxVunhIc2H_7cwZpyB6g0).
 
+## Coordinate-actuator MCP evidence
+
+Grok's separate MCP-assisted evidence is under
+[`grok-4.6-xhigh/mcp-assisted/`](grok-4.6-xhigh/mcp-assisted/) for the earlier
+180-second Easy condition and
+[`grok-4.6-xhigh/mcp-one-shot/`](grok-4.6-xhigh/mcp-one-shot/) for the
+300-second Medium/Hard condition. Each valid new Medium/Hard run retains the
+raw Grok transcript, a rendered official leaderboard image, and an ordered
+JSONL actuator audit. Two interrupted Medium replacement attempts are retained
+and explicitly excluded instead of being silently discarded.
+
+These results measure the model with precise model-chosen coordinate actuation;
+they are not part of the raw-GUI leaderboard. Easy was not rerun under the
+Medium/Hard prompt and timer, so the per-difficulty MCP means are not presented
+as a combined 25-round total.
+
 Scores are official OpenGuessr competition points, not the transient XP
 animation shown after individual guesses. Repeated runs use the same 25 fixed
 locations and therefore quantify run/controller variability, not independent

@@ -116,6 +116,13 @@ two child processes:
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts\Start-GrokOpenGuessr.ps1 -PromptFile path\to\prompt.md -TranscriptPath path\to\transcript.txt
 ```
 
+Add `-AuditLogPath path\to\mcp-audit.jsonl` to retain an ordered JSONL record
+of the four OpenGuessr actuator calls. Each record contains a timestamp,
+sequence number, logical round, model-supplied arguments, and the sanitized
+controller result. Screenshot bytes, browser metadata, correct-location data,
+and upstream page envelopes are not written. Audit failures are deliberately
+non-fatal so observability cannot change a scored run.
+
 If the Bridge extension is unavailable, start a separate Chrome profile with a
 loopback-only debugging port. This leaves the user's ordinary Chrome profile
 and tabs untouched:
@@ -137,6 +144,11 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts\Start-GrokOpenGu
 
 The launcher accepts only a loopback CDP endpoint. It does not alter Chrome's
 normal profile or enable remote debugging globally.
+
+All custom-tool responses are reduced at the proxy boundary to their
+documented fields. Unexpected adapter properties, page paths, and other page
+metadata are discarded before either the model response or audit log is
+created.
 
 Inspect its resolved topology and allowlist without starting anything:
 

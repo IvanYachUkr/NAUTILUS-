@@ -60,6 +60,20 @@ it possible to measure geographic reasoning with substantially less
 belief-to-pin controller noise while preserving the original computer-use
 benchmark.
 
+### Grok MCP-assisted results
+
+| Dataset / prompt | Valid runs | Rounds per run | Seconds per round | Mean official score | Mean max |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [Easy — earlier one-pin condition](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | 3 | 8 | 180 | **39,873.67 / 40,000** | **99.68%** |
+| [Medium — one-shot control](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | 3 | 9 | 300 | **35,740 / 45,000** | **79.42%** |
+| [Hard — one-shot control](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | 3 | 8 | 300 | **29,412 / 40,000** | **73.53%** |
+
+The Medium/Hard prompt was chosen by a same-scenes Medium diagnostic: the
+one-shot control scored **36,973**, versus **35,412** with progressive pin
+refinement. Easy was not rerun with the 300-second one-shot prompt, so these
+three rows are separate per-difficulty results and must not be combined into a
+single 25-round score.
+
 ## Current benchmark
 
 The benchmark contains **25 European locations** split by difficulty:

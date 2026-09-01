@@ -23,6 +23,12 @@ test("the Grok launcher validates the Chrome topology and exact tool allowlist w
   assert.equal(config.upstreamArgs.includes("--shared-browser-context"), true);
   assert.equal(config.connectionMode, "extension");
   assert.equal(config.upstreamArgs.includes("--extension"), true);
+  assert.equal(config.upstreamArgs.includes("--init-script"), true);
+  assert.equal(config.upstreamArgs.includes("--init-page"), true);
+  assert.equal(
+    config.upstreamArgs.some((value) => value.endsWith("browser\\openguessr-adapter.js")),
+    true,
+  );
   assert.deepEqual(config.allowedMcpTools, [
     "playwright__browser_take_screenshot",
     "playwright__browser_mouse_click_xy",
@@ -61,10 +67,44 @@ test("the Grok launcher supports an isolated Chrome CDP endpoint without requiri
   assert.equal(config.upstreamArgs.includes("--extension"), false);
   assert.equal(config.upstreamArgs.includes(`--cdp-endpoint=${endpoint}`), true);
   assert.equal(config.upstreamArgs.includes("--init-script"), true);
+  const viewportIndex = config.upstreamArgs.indexOf("--viewport-size");
+  assert.notEqual(viewportIndex, -1);
+  assert.equal(config.upstreamArgs[viewportIndex + 1], "1496x686");
+  const blockedOriginsIndex = config.upstreamArgs.indexOf("--blocked-origins");
+  assert.notEqual(blockedOriginsIndex, -1);
+  assert.equal(config.upstreamArgs[blockedOriginsIndex + 1], "https://sonic.impactify.media");
+  const actionTimeoutIndex = config.upstreamArgs.indexOf("--timeout-action");
+  assert.notEqual(actionTimeoutIndex, -1);
+  assert.equal(config.upstreamArgs[actionTimeoutIndex + 1], "20000");
   assert.equal(
     config.upstreamArgs.some((value) => value.endsWith("browser\\openguessr-adapter.js")),
     true,
   );
+  assert.equal(config.processesStarted, false);
+});
+
+test("the Grok launcher forwards an explicit per-run MCP audit log", async () => {
+  const packageRoot = new URL("..", import.meta.url);
+  const auditLogPath = "C:\\benchmark\\medium-r2\\mcp-audit.jsonl";
+  const result = await runPowerShell([
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "scripts/Start-GrokOpenGuessr.ps1",
+    "-PromptFile",
+    "package.json",
+    "-AuditLogPath",
+    auditLogPath,
+    "-ValidateOnly",
+  ], packageRoot);
+
+  assert.equal(result.code, 0, result.stderr);
+  const config = JSON.parse(result.stdout);
+  assert.equal(config.auditLogPath, auditLogPath);
+  const auditIndex = config.proxyArgs.indexOf("--audit-log");
+  assert.notEqual(auditIndex, -1);
+  assert.equal(config.proxyArgs[auditIndex + 1], auditLogPath);
   assert.equal(config.processesStarted, false);
 });
 

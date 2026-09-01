@@ -59,6 +59,68 @@ test("a safe visual call is forwarded without changing its arguments or result",
   ]);
 });
 
+test("a timed-out screenshot is retried once through the same safe upstream tool", async () => {
+  const calls = [];
+  const timeout = {
+    content: [{ type: "text", text: "TimeoutError: taking page screenshot" }],
+    isError: true,
+  };
+  const expected = {
+    content: [{ type: "image", data: "aGVsbG8=", mimeType: "image/jpeg" }],
+  };
+  const proxy = createOpenGuessrProxy({
+    upstream: {
+      async listTools() {
+        return { tools: upstreamTools };
+      },
+      async callTool(request) {
+        calls.push(request);
+        return calls.length === 1 ? timeout : expected;
+      },
+    },
+  });
+
+  const actual = await proxy.callTool({
+    name: "browser_take_screenshot",
+    arguments: { scale: "css", type: "jpeg" },
+  });
+
+  assert.deepEqual(actual, expected);
+  assert.deepEqual(calls, [
+    { name: "browser_take_screenshot", arguments: { scale: "css", type: "jpeg" } },
+    { name: "browser_take_screenshot", arguments: { scale: "css", type: "jpeg" } },
+  ]);
+});
+
+test("a screenshot request-timeout rejection is retried once", async () => {
+  const calls = [];
+  const expected = {
+    content: [{ type: "image", data: "aGVsbG8=", mimeType: "image/jpeg" }],
+  };
+  const proxy = createOpenGuessrProxy({
+    upstream: {
+      async listTools() {
+        return { tools: upstreamTools };
+      },
+      async callTool(request) {
+        calls.push(request);
+        if (calls.length === 1) {
+          throw new Error("MCP error -32001: Request timed out");
+        }
+        return expected;
+      },
+    },
+  });
+
+  const actual = await proxy.callTool({
+    name: "browser_take_screenshot",
+    arguments: { scale: "css", type: "jpeg" },
+  });
+
+  assert.deepEqual(actual, expected);
+  assert.equal(calls.length, 2);
+});
+
 test("an unlisted upstream tool cannot be reached through the proxy", async () => {
   const calls = [];
   const proxy = createOpenGuessrProxy({
@@ -125,6 +187,43 @@ test("coordinate placement uses the hidden page adapter and returns its verified
   assert.equal(calls[0].arguments.function.includes("2.3522"), true);
 });
 
+test("custom tool results expose only the documented safe state fields", async () => {
+  const proxy = createOpenGuessrProxy({
+    upstream: fakeUpstream({
+      tools: upstreamTools,
+      callResult: {
+        content: [
+          {
+            type: "text",
+            text: [
+              "### Result",
+              JSON.stringify({
+                ok: true,
+                action: "get-state",
+                path: "/competitions/secret-id",
+                hiddenTarget: { latitude: 1, longitude: 2 },
+                controls: { guess: true, continue: false },
+                resultVisible: false,
+                verifiedPin: { latitude: 48.8566, longitude: 2.3522 },
+              }),
+            ].join("\n"),
+          },
+        ],
+      },
+    }),
+  });
+
+  const result = await proxy.callTool({ name: "openguessr_get_state", arguments: {} });
+
+  assert.deepEqual(JSON.parse(result.content[0].text), {
+    ok: true,
+    action: "get-state",
+    controls: { guess: true, continue: false },
+    resultVisible: false,
+    verifiedPin: { latitude: 48.8566, longitude: 2.3522 },
+  });
+});
+
 test("a page-adapter failure is returned as a failed MCP tool result", async () => {
   const proxy = createOpenGuessrProxy({
     upstream: fakeUpstream({
@@ -150,6 +249,90 @@ test("a page-adapter failure is returned as a failed MCP tool result", async () 
     ok: false,
     error: "Open the OpenGuessr guess map first.",
   });
+});
+
+test("custom-tool auditing records ordered placement refinements and round transitions", async () => {
+  const auditEvents = [];
+  const responses = [
+    { ok: true, action: "place-guess", verified: true, pin: { latitude: 50, longitude: 8 } },
+    { ok: true, action: "place-guess", verified: true, pin: { latitude: 50.2, longitude: 8.4 } },
+    { ok: true, action: "submit-guess", submitted: true, pin: { latitude: 50.2, longitude: 8.4 } },
+    { ok: true, action: "continue", continued: true },
+    { ok: true, action: "place-guess", verified: true, pin: { latitude: 41, longitude: 12 } },
+  ];
+  const proxy = createOpenGuessrProxy({
+    upstream: {
+      async listTools() {
+        return { tools: upstreamTools };
+      },
+      async callTool() {
+        const payload = responses.shift();
+        return { content: [{ type: "text", text: `### Result\n${JSON.stringify(payload)}` }] };
+      },
+    },
+    onAuditEvent(event) {
+      auditEvents.push(event);
+    },
+    now: () => "2026-09-01T15:00:00.000Z",
+  });
+
+  await proxy.callTool({
+    name: "openguessr_place_guess",
+    arguments: { latitude: 50, longitude: 8 },
+  });
+  await proxy.callTool({
+    name: "openguessr_place_guess",
+    arguments: { latitude: 50.2, longitude: 8.4 },
+  });
+  await proxy.callTool({ name: "openguessr_submit_guess", arguments: {} });
+  await proxy.callTool({ name: "openguessr_continue", arguments: {} });
+  await proxy.callTool({
+    name: "openguessr_place_guess",
+    arguments: { latitude: 41, longitude: 12 },
+  });
+
+  assert.deepEqual(auditEvents, [
+    {
+      timestamp: "2026-09-01T15:00:00.000Z",
+      sequence: 1,
+      round: 1,
+      tool: "openguessr_place_guess",
+      arguments: { latitude: 50, longitude: 8 },
+      result: { ok: true, action: "place-guess", verified: true, pin: { latitude: 50, longitude: 8 } },
+    },
+    {
+      timestamp: "2026-09-01T15:00:00.000Z",
+      sequence: 2,
+      round: 1,
+      tool: "openguessr_place_guess",
+      arguments: { latitude: 50.2, longitude: 8.4 },
+      result: { ok: true, action: "place-guess", verified: true, pin: { latitude: 50.2, longitude: 8.4 } },
+    },
+    {
+      timestamp: "2026-09-01T15:00:00.000Z",
+      sequence: 3,
+      round: 1,
+      tool: "openguessr_submit_guess",
+      arguments: {},
+      result: { ok: true, action: "submit-guess", submitted: true, pin: { latitude: 50.2, longitude: 8.4 } },
+    },
+    {
+      timestamp: "2026-09-01T15:00:00.000Z",
+      sequence: 4,
+      round: 1,
+      tool: "openguessr_continue",
+      arguments: {},
+      result: { ok: true, action: "continue", continued: true },
+    },
+    {
+      timestamp: "2026-09-01T15:00:00.000Z",
+      sequence: 5,
+      round: 2,
+      tool: "openguessr_place_guess",
+      arguments: { latitude: 41, longitude: 12 },
+      result: { ok: true, action: "place-guess", verified: true, pin: { latitude: 41, longitude: 12 } },
+    },
+  ]);
 });
 
 function tool(name) {

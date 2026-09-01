@@ -1,4 +1,7 @@
 import assert from "node:assert/strict";
+import { existsSync, mkdtempSync, readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import test from "node:test";
 
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -107,6 +110,55 @@ test("the HTTP MCP refuses a non-loopback listener", async () => {
     }),
     /loopback/i,
   );
+});
+
+test("the HTTP MCP appends custom-tool audit events to a JSONL file", async (t) => {
+  const auditLogPath = join(mkdtempSync(join(tmpdir(), "openguessr-audit-")), "nested", "audit.jsonl");
+  const proxyServer = await startOpenGuessrProxyServer({
+    host: "127.0.0.1",
+    port: 0,
+    auditLogPath,
+    upstreamFactory: async () => ({
+      async listTools() {
+        return { tools: [] };
+      },
+      async callTool({ name }) {
+        assert.equal(name, "browser_evaluate");
+        return {
+          content: [{
+            type: "text",
+            text: '### Result\n{"ok":true,"action":"place-guess","verified":true,"pin":{"latitude":51.5,"longitude":-0.1}}',
+          }],
+        };
+      },
+      async close() {},
+    }),
+  });
+  t.after(() => proxyServer.close());
+
+  const client = await connectClient(proxyServer.url, "audit-client");
+  t.after(() => client.close());
+  await client.callTool({
+    name: "openguessr_place_guess",
+    arguments: { latitude: 51.5, longitude: -0.1 },
+  });
+
+  assert.equal(existsSync(auditLogPath), true);
+  const events = readFileSync(auditLogPath, "utf8").trim().split("\n").map(JSON.parse);
+  assert.equal(Number.isNaN(Date.parse(events[0].timestamp)), false);
+  delete events[0].timestamp;
+  assert.deepEqual(events, [{
+    sequence: 1,
+    round: 1,
+    tool: "openguessr_place_guess",
+    arguments: { latitude: 51.5, longitude: -0.1 },
+    result: {
+      ok: true,
+      action: "place-guess",
+      verified: true,
+      pin: { latitude: 51.5, longitude: -0.1 },
+    },
+  }]);
 });
 
 async function connectClient(url, name) {

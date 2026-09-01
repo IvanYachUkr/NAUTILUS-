@@ -125,7 +125,6 @@
     return {
       ok: true,
       action: "get-state",
-      path: location.pathname,
       controls: { guess: Boolean(guess), continue: Boolean(next) },
       resultVisible: Boolean(next),
       verifiedPin: verifiedPin
@@ -215,7 +214,7 @@
 
   function findVisibleControl(pattern) {
     const controls = document.querySelectorAll(
-      "button, [role='button'], input[type='submit'], input[type='button'], a",
+      "button, [role='button'], input[type='submit'], input[type='button'], a, .standard-button",
     );
     for (const control of controls) {
       if (!pattern.test(label(control))) continue;

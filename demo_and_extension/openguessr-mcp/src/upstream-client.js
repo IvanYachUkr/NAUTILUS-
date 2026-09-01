@@ -10,23 +10,63 @@ export async function connectHttpUpstream(value) {
     throw new Error("The Playwright MCP upstream must use HTTP or HTTPS.");
   }
 
+  let connection = await openConnection(url);
+  let closed = false;
+  let resetPromise = null;
+
+  async function resetAfterTimeout(staleConnection) {
+    if (closed || connection !== staleConnection) return;
+    if (!resetPromise) {
+      resetPromise = (async () => {
+        await staleConnection.client.close().catch(() => {});
+        if (!closed && connection === staleConnection) {
+          connection = await openConnection(url);
+        }
+      })().finally(() => {
+        resetPromise = null;
+      });
+    }
+    await resetPromise;
+  }
+
+  return {
+    listTools: () => connection.client.listTools(),
+    async callTool(request, options = {}) {
+      const activeConnection = connection;
+      try {
+        return await activeConnection.client.callTool(request, undefined, {
+          timeout: options.timeout,
+          maxTotalTimeout: options.maxTotalTimeout,
+        });
+      } catch (error) {
+        if (isRequestTimeout(error)) {
+          await resetAfterTimeout(activeConnection);
+        }
+        throw error;
+      }
+    },
+    async close() {
+      if (closed) return;
+      closed = true;
+      await resetPromise?.catch(() => {});
+      await connection.client.close();
+    },
+  };
+}
+
+async function openConnection(url) {
   const client = new Client({
     name: "nautilus-openguessr-mcp-proxy",
     version: "0.1.0",
   });
   const transport = new StreamableHTTPClientTransport(url);
   await client.connect(transport);
-  let closed = false;
+  return { client, transport };
+}
 
-  return {
-    listTools: () => client.listTools(),
-    callTool: (request) => client.callTool(request),
-    async close() {
-      if (closed) return;
-      closed = true;
-      await client.close();
-    },
-  };
+function isRequestTimeout(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  return error?.code === -32001 || /Request\s*timed?\s*out|RequestTimeout/i.test(message);
 }
 
 function isLoopbackHostname(hostname) {

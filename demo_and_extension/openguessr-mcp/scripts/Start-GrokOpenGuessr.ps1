@@ -17,12 +17,19 @@ param(
 
   [string]$TranscriptPath,
 
+  [string]$AuditLogPath,
+
   [switch]$ValidateOnly
 )
 
 $ErrorActionPreference = 'Stop'
 $packageRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $resolvedPrompt = (Resolve-Path -LiteralPath $PromptFile).Path
+$resolvedAuditLogPath = $(if ([string]::IsNullOrWhiteSpace($AuditLogPath)) {
+    $null
+  } else {
+    [System.IO.Path]::GetFullPath($AuditLogPath)
+  })
 $proxyUrl = "http://127.0.0.1:$ProxyPort/mcp"
 $upstreamUrl = "http://127.0.0.1:$UpstreamPort/mcp"
 $playwrightCli = Join-Path $packageRoot 'node_modules\@playwright\mcp\cli.js'
@@ -67,12 +74,16 @@ if ($connectionMode -eq 'cdp') {
   $upstreamArgs += @(
     "--cdp-endpoint=$CdpEndpoint",
     '--init-script', $adapterScript,
-    '--init-page', $adapterInitPage
+    '--init-page', $adapterInitPage,
+    '--viewport-size', '1496x686',
+    '--blocked-origins', 'https://sonic.impactify.media'
   )
 } else {
   $upstreamArgs += @(
     '--extension',
-    '--browser', 'chrome'
+    '--browser', 'chrome',
+    '--init-script', $adapterScript,
+    '--init-page', $adapterInitPage
   )
 }
 $upstreamArgs += @(
@@ -80,6 +91,7 @@ $upstreamArgs += @(
   '--snapshot-mode=none',
   '--image-responses=allow',
   '--codegen=none',
+  '--timeout-action', '20000',
   '--shared-browser-context',
   '--host', '127.0.0.1',
   "--allowed-hosts=127.0.0.1:$UpstreamPort,localhost:$UpstreamPort",
@@ -91,6 +103,9 @@ $proxyArgs = @(
   '--port', $ProxyPort.ToString(),
   '--upstream', $upstreamUrl
 )
+if ($null -ne $resolvedAuditLogPath) {
+  $proxyArgs += @('--audit-log', $resolvedAuditLogPath)
+}
 
 function Assert-PortAvailable {
   param([int]$Port)
@@ -171,6 +186,7 @@ if ($ValidateOnly) {
     model = 'grok-4.6'
     reasoningEffort = 'xhigh'
     prompt = $resolvedPrompt
+    auditLogPath = $resolvedAuditLogPath
     proxyUrl = $proxyUrl
     upstreamUrl = $upstreamUrl
     allowedMcpTools = $allowedMcpTools

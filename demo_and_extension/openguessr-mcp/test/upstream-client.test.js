@@ -47,3 +47,59 @@ test("the upstream client refuses a non-loopback MCP URL", async () => {
     /loopback/i,
   );
 });
+
+test("a timed-out upstream request resets the MCP session before the next call", async (t) => {
+  let sessionCount = 0;
+  const upstreamServer = await startOpenGuessrProxyServer({
+    host: "127.0.0.1",
+    port: 0,
+    upstreamFactory: async () => {
+      const sessionNumber = ++sessionCount;
+      let release;
+      return {
+        async listTools() {
+          return {
+            tools: [
+              {
+                name: "browser_take_screenshot",
+                description: "Take a screenshot",
+                inputSchema: { type: "object", properties: {} },
+              },
+            ],
+          };
+        },
+        async callTool() {
+          if (sessionNumber > 1) {
+            return { content: [{ type: "text", text: "fresh session" }] };
+          }
+          return new Promise((resolve) => {
+            release = resolve;
+          });
+        },
+        async close() {
+          release?.({ content: [{ type: "text", text: "closed stale session" }] });
+        },
+      };
+    },
+  });
+  t.after(() => upstreamServer.close());
+
+  const upstream = await connectHttpUpstream(upstreamServer.url);
+  t.after(() => upstream.close());
+
+  await assert.rejects(
+    upstream.callTool(
+      { name: "browser_take_screenshot", arguments: {} },
+      { timeout: 50, maxTotalTimeout: 50 },
+    ),
+    /timed out/i,
+  );
+
+  const result = await upstream.callTool(
+    { name: "browser_take_screenshot", arguments: {} },
+    { timeout: 1_000, maxTotalTimeout: 1_000 },
+  );
+
+  assert.equal(result.content[0].text, "fresh session");
+  assert.equal(sessionCount, 2);
+});

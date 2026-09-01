@@ -4,7 +4,7 @@ import { parseCliOptions } from "../src/cli-options.js";
 import { startOpenGuessrProxyServer } from "../src/http-server.js";
 import { connectHttpUpstream } from "../src/upstream-client.js";
 
-const HELP = `Usage: openguessr-mcp [--host 127.0.0.1] [--port 8931] [--upstream URL]
+const HELP = `Usage: openguessr-mcp [--host 127.0.0.1] [--port 8931] [--upstream URL] [--audit-log FILE]
 
 Runs a benchmark-safe OpenGuessr MCP proxy. The Playwright MCP upstream must
 already be listening on a loopback URL (default: http://127.0.0.1:8932/mcp).
@@ -18,6 +18,7 @@ if (process.argv.includes("--help") || process.argv.includes("-h")) {
     const server = await startOpenGuessrProxyServer({
       host: options.host,
       port: options.port,
+      auditLogPath: options.auditLogPath,
       upstreamFactory: () => connectHttpUpstream(options.upstreamUrl),
     });
     process.stdout.write(

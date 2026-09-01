@@ -30,6 +30,10 @@ test("real Playwright MCP places, verifies, and submits a coordinate through the
   t.after(() => client.close());
 
   const listed = await client.listTools();
+  const screenshot = await client.callTool({
+    name: "browser_take_screenshot",
+    arguments: { scale: "css", type: "jpeg" },
+  });
   const placement = await client.callTool({
     name: "openguessr_place_guess",
     arguments: { latitude: 48.8566, longitude: 2.3522 },
@@ -48,6 +52,8 @@ test("real Playwright MCP places, verifies, and submits a coordinate through the
   });
 
   assert.equal(listed.tools.some(({ name }) => name === "browser_evaluate"), false);
+  assert.equal(screenshot.isError, undefined);
+  assert.equal(screenshot.content.some(({ type }) => type === "image"), true);
   assert.deepEqual(JSON.parse(placement.content[0].text), {
     ok: true,
     action: "place-guess",
@@ -66,7 +72,7 @@ async function startFixtureServer() {
   const html = `<!doctype html>
 <html><body>
   <div id="guess-map" class="leaflet-container" style="width:500px;height:320px"></div>
-  <button id="guess">Guess</button>
+  <div id="guess" class="standard-button" style="width:120px;height:40px">Guess</div>
   <script>
     window.fixtureSubmitted = false;
     class FixtureMap {

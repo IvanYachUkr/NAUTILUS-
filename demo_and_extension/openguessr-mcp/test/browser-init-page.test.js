@@ -29,3 +29,23 @@ test("the CDP page initializer installs the packaged adapter for the current pag
     ["evaluate", expected],
   ]);
 });
+
+test("the CDP page initializer tolerates navigation destroying the current evaluation context", async () => {
+  const calls = [];
+  const context = {
+    async addInitScript(options) {
+      calls.push(["addInitScript", options]);
+    },
+  };
+  const page = {
+    context: () => context,
+    async evaluate() {
+      calls.push(["evaluate"]);
+      throw new Error("page.evaluate: Execution context was destroyed, most likely because of a navigation");
+    },
+  };
+
+  await initializeAdapter({ page });
+
+  assert.deepEqual(calls.map(([name]) => name), ["addInitScript", "evaluate"]);
+});

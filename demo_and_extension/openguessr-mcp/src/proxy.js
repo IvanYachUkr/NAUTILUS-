@@ -64,10 +64,16 @@ const CUSTOM_COMMANDS = new Map([
   ["openguessr_continue", "continue"],
 ]);
 
-export function createOpenGuessrProxy({ upstream }) {
+const SAFE_TOOL_TIMEOUT_MS = 20_000;
+const SCREENSHOT_TIMEOUT_MS = 15_000;
+
+export function createOpenGuessrProxy({ upstream, onAuditEvent, now = () => new Date().toISOString() }) {
   if (!upstream?.listTools || !upstream?.callTool) {
     throw new TypeError("An upstream MCP client with listTools and callTool is required.");
   }
+
+  let auditSequence = 0;
+  let round = 1;
 
   return {
     async listTools() {
@@ -81,10 +87,26 @@ export function createOpenGuessrProxy({ upstream }) {
     async callTool(request) {
       const name = request?.name;
       if (SAFE_UPSTREAM_TOOL_NAMES.has(name)) {
-        return upstream.callTool({
+        const forwardedRequest = {
           name,
           arguments: request.arguments ?? {},
-        });
+        };
+        const options = {
+          timeout: name === "browser_take_screenshot" ? SCREENSHOT_TIMEOUT_MS : SAFE_TOOL_TIMEOUT_MS,
+          maxTotalTimeout:
+            name === "browser_take_screenshot" ? SCREENSHOT_TIMEOUT_MS : SAFE_TOOL_TIMEOUT_MS,
+        };
+        let result;
+        try {
+          result = await upstream.callTool(forwardedRequest, options);
+        } catch (error) {
+          if (name !== "browser_take_screenshot" || !isTimeoutError(error)) throw error;
+          return upstream.callTool(forwardedRequest, options);
+        }
+        if (name === "browser_take_screenshot" && isTimeoutResult(result)) {
+          return upstream.callTool(forwardedRequest, options);
+        }
+        return result;
       }
 
       const command = CUSTOM_COMMANDS.get(name);
@@ -96,8 +118,26 @@ export function createOpenGuessrProxy({ upstream }) {
         arguments: {
           function: buildPageAdapterCall(command, args),
         },
+      }, {
+        timeout: SAFE_TOOL_TIMEOUT_MS,
+        maxTotalTimeout: SAFE_TOOL_TIMEOUT_MS,
       });
-      const payload = parseEvaluationResult(upstreamResult);
+      const payload = sanitizeCommandPayload(command, parseEvaluationResult(upstreamResult));
+      if (typeof onAuditEvent === "function") {
+        try {
+          await onAuditEvent({
+            timestamp: String(now()),
+            sequence: ++auditSequence,
+            round,
+            tool: name,
+            arguments: args,
+            result: payload,
+          });
+        } catch {
+          // Observability must never change benchmark behavior.
+        }
+      }
+      if (command === "continue" && payload.ok === true) round += 1;
       return {
         content: [{ type: "text", text: JSON.stringify(payload) }],
         ...(payload.ok === true ? {} : { isError: true }),
@@ -181,10 +221,67 @@ function parseEvaluationResult(result) {
   };
 }
 
+function sanitizeCommandPayload(command, payload) {
+  if (payload?.ok !== true) {
+    return {
+      ok: false,
+      error: String(payload?.error ?? "OpenGuessr command failed.").slice(0, 240),
+    };
+  }
+
+  if (command === "place-guess") {
+    return {
+      ok: true,
+      action: "place-guess",
+      verified: payload.verified === true,
+      pin: safePin(payload.pin),
+    };
+  }
+  if (command === "get-state") {
+    return {
+      ok: true,
+      action: "get-state",
+      controls: {
+        guess: payload.controls?.guess === true,
+        continue: payload.controls?.continue === true,
+      },
+      resultVisible: payload.resultVisible === true,
+      verifiedPin: safePin(payload.verifiedPin),
+    };
+  }
+  if (command === "submit-guess") {
+    return {
+      ok: true,
+      action: "submit-guess",
+      submitted: payload.submitted === true,
+      pin: safePin(payload.pin),
+    };
+  }
+  return {
+    ok: true,
+    action: "continue",
+    continued: payload.continued === true,
+  };
+}
+
+function safePin(value) {
+  if (!Number.isFinite(value?.latitude) || !Number.isFinite(value?.longitude)) return null;
+  return { latitude: value.latitude, longitude: value.longitude };
+}
+
 function textFromContent(content) {
   return (content ?? [])
     .filter((item) => item?.type === "text" && typeof item.text === "string")
     .map((item) => item.text)
     .join("\n")
     .trim();
+}
+
+function isTimeoutResult(result) {
+  return result?.isError === true && /TimeoutError/i.test(textFromContent(result.content));
+}
+
+function isTimeoutError(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  return /TimeoutError|Request\s*timed?\s*out|RequestTimeout/i.test(message);
 }
