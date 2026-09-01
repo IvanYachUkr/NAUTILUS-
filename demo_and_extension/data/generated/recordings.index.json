@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-08-31T09:48:00.496Z",
+  "generatedAt": "2026-08-31T22:55:16.418Z",
   "recordings": [
     {
       "id": "ogrr-2026-08-08T17-02-01-844Z-5ca7eb92-dc73-4e39-9db8-656b74086f48",
@@ -83,6 +83,22 @@
       "sourceFile": "data/recordings/inbox/europe-easy/loc-001/2026-08-31T08-26-39-749Z__gemini-3-7-flash-high-v3__interactive-panorama__round-1.json"
     },
     {
+      "id": "ogrr-2026-08-31T21-38-08-670Z-2f71fae7-f3af-4e62-9a70-8cb488a9aea4",
+      "sessionId": "session-2026-08-31T21-37-03-936Z-c4e4892a-834e-428d-b4dc-e8d14acb6bd6",
+      "competitionId": "europe-easy",
+      "competitionPartId": "europe-easy",
+      "competitionRound": 1,
+      "atlasLocationId": "europe-easy--loc-001",
+      "locationId": "loc_001",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:38:08.670Z",
+      "stoppedAt": "2026-08-31T21:38:09.477Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-easy/loc-001/2026-08-31T21-38-08-670Z__gemini-3-7-flash-high-aid__interactive-panorama__round-1.json"
+    },
+    {
       "id": "ogrr-2026-08-08T17-02-25-360Z-97cfa445-8104-42fd-95ff-2fe2382c7ee4",
       "sessionId": "session-2026-08-08T17-02-01-844Z-2037247d-1f81-4f40-80cf-37973eae4280",
       "competitionId": "europe-easy",
@@ -145,6 +161,22 @@
       "sampleCount": 1,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-easy/loc-002/2026-08-31T08-27-06-363Z__gemini-3-7-flash-high-v3__interactive-panorama__round-2.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T21-38-49-049Z-ab720985-c010-4513-bcc9-ec60d80f3706",
+      "sessionId": "session-2026-08-31T21-37-03-936Z-c4e4892a-834e-428d-b4dc-e8d14acb6bd6",
+      "competitionId": "europe-easy",
+      "competitionPartId": "europe-easy",
+      "competitionRound": 2,
+      "atlasLocationId": "europe-easy--loc-002",
+      "locationId": "loc_002",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:38:49.049Z",
+      "stoppedAt": "2026-08-31T21:39:15.610Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-easy/loc-002/2026-08-31T21-38-49-049Z__gemini-3-7-flash-high-aid__interactive-panorama__round-2.json"
     },
     {
       "id": "ogrr-2026-08-08T17-02-49-093Z-25ac8808-77b4-4961-a0f8-ec2ca51f8025",
@@ -211,6 +243,22 @@
       "sourceFile": "data/recordings/inbox/europe-easy/loc-003/2026-08-31T08-29-25-081Z__gemini-3-7-flash-high-v3__interactive-panorama__round-3.json"
     },
     {
+      "id": "ogrr-2026-08-31T21-40-40-560Z-96ecdbe7-c3a1-441c-990e-bfba77fb3d1b",
+      "sessionId": "session-2026-08-31T21-37-03-936Z-c4e4892a-834e-428d-b4dc-e8d14acb6bd6",
+      "competitionId": "europe-easy",
+      "competitionPartId": "europe-easy",
+      "competitionRound": 3,
+      "atlasLocationId": "europe-easy--loc-003",
+      "locationId": "loc_003",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:40:40.560Z",
+      "stoppedAt": "2026-08-31T21:41:09.558Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-easy/loc-003/2026-08-31T21-40-40-560Z__gemini-3-7-flash-high-aid__interactive-panorama__round-3.json"
+    },
+    {
       "id": "ogrr-2026-08-08T17-03-06-487Z-b15b39bf-29aa-4f89-8a50-f306d34cf974",
       "sessionId": "session-2026-08-08T17-02-01-844Z-2037247d-1f81-4f40-80cf-37973eae4280",
       "competitionId": "europe-easy",
@@ -273,6 +321,22 @@
       "sampleCount": 1,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-easy/loc-004/2026-08-31T08-32-39-860Z__gemini-3-7-flash-high-v3__interactive-panorama__round-4.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T21-41-53-203Z-19e162e8-3244-4c19-9959-3a01ede2b42e",
+      "sessionId": "session-2026-08-31T21-37-03-936Z-c4e4892a-834e-428d-b4dc-e8d14acb6bd6",
+      "competitionId": "europe-easy",
+      "competitionPartId": "europe-easy",
+      "competitionRound": 4,
+      "atlasLocationId": "europe-easy--loc-004",
+      "locationId": "loc_004",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:41:53.203Z",
+      "stoppedAt": "2026-08-31T21:42:24.597Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-easy/loc-004/2026-08-31T21-41-53-203Z__gemini-3-7-flash-high-aid__interactive-panorama__round-4.json"
     },
     {
       "id": "ogrr-2026-08-08T17-03-27-177Z-aac52a02-f367-4e06-a9a6-783db233a62f",
@@ -339,6 +403,22 @@
       "sourceFile": "data/recordings/inbox/europe-easy/loc-005/2026-08-31T08-37-45-943Z__gemini-3-7-flash-high-v3__interactive-panorama__round-5.json"
     },
     {
+      "id": "ogrr-2026-08-31T21-43-11-866Z-0c92caea-79b6-4022-a515-45dd319c4c40",
+      "sessionId": "session-2026-08-31T21-37-03-936Z-c4e4892a-834e-428d-b4dc-e8d14acb6bd6",
+      "competitionId": "europe-easy",
+      "competitionPartId": "europe-easy",
+      "competitionRound": 5,
+      "atlasLocationId": "europe-easy--loc-005",
+      "locationId": "loc_005",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:43:11.866Z",
+      "stoppedAt": "2026-08-31T21:43:45.373Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-easy/loc-005/2026-08-31T21-43-11-866Z__gemini-3-7-flash-high-aid__interactive-panorama__round-5.json"
+    },
+    {
       "id": "ogrr-2026-08-08T17-03-50-118Z-c0ecd742-aa08-4be9-99d2-b9a2024f5f83",
       "sessionId": "session-2026-08-08T17-02-01-844Z-2037247d-1f81-4f40-80cf-37973eae4280",
       "competitionId": "europe-easy",
@@ -401,6 +481,22 @@
       "sampleCount": 2,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-easy/loc-006/2026-08-31T08-42-54-320Z__gemini-3-7-flash-high-v3__interactive-panorama__round-6.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T21-44-33-790Z-fc8c83cf-2049-4984-87a7-297fb17f94cf",
+      "sessionId": "session-2026-08-31T21-37-03-936Z-c4e4892a-834e-428d-b4dc-e8d14acb6bd6",
+      "competitionId": "europe-easy",
+      "competitionPartId": "europe-easy",
+      "competitionRound": 6,
+      "atlasLocationId": "europe-easy--loc-006",
+      "locationId": "loc_006",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:44:33.790Z",
+      "stoppedAt": "2026-08-31T21:45:30.224Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-easy/loc-006/2026-08-31T21-44-33-790Z__gemini-3-7-flash-high-aid__interactive-panorama__round-6.json"
     },
     {
       "id": "ogrr-2026-08-08T17-04-13-443Z-2e47a70b-684c-49f5-aee1-14004333dae3",
@@ -467,6 +563,22 @@
       "sourceFile": "data/recordings/inbox/europe-easy/loc-007/2026-08-31T08-49-34-570Z__gemini-3-7-flash-high-v3__interactive-panorama__round-7.json"
     },
     {
+      "id": "ogrr-2026-08-31T21-46-20-623Z-a59c9ff3-2347-4915-8f64-40974a1df2d4",
+      "sessionId": "session-2026-08-31T21-37-03-936Z-c4e4892a-834e-428d-b4dc-e8d14acb6bd6",
+      "competitionId": "europe-easy",
+      "competitionPartId": "europe-easy",
+      "competitionRound": 7,
+      "atlasLocationId": "europe-easy--loc-007",
+      "locationId": "loc_007",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:46:20.623Z",
+      "stoppedAt": "2026-08-31T21:47:11.074Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-easy/loc-007/2026-08-31T21-46-20-623Z__gemini-3-7-flash-high-aid__interactive-panorama__round-7.json"
+    },
+    {
       "id": "ogrr-2026-08-08T17-04-32-375Z-68131bc0-0073-48fb-ab22-1b0c2060c618",
       "sessionId": "session-2026-08-08T17-02-01-844Z-2037247d-1f81-4f40-80cf-37973eae4280",
       "competitionId": "europe-easy",
@@ -529,6 +641,22 @@
       "sampleCount": 1,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-easy/loc-008/2026-08-31T08-55-11-564Z__gemini-3-7-flash-high-v3__interactive-panorama__round-8.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T21-48-02-285Z-27ecda8d-e273-473a-9106-c00cd5f135d7",
+      "sessionId": "session-2026-08-31T21-37-03-936Z-c4e4892a-834e-428d-b4dc-e8d14acb6bd6",
+      "competitionId": "europe-easy",
+      "competitionPartId": "europe-easy",
+      "competitionRound": 8,
+      "atlasLocationId": "europe-easy--loc-008",
+      "locationId": "loc_008",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:48:02.285Z",
+      "stoppedAt": "2026-08-31T21:48:41.695Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-easy/loc-008/2026-08-31T21-48-02-285Z__gemini-3-7-flash-high-aid__interactive-panorama__round-8.json"
     },
     {
       "id": "ogrr-2026-08-31T08-11-50-129Z-71d67627-b064-4dda-8044-035a668117d0",
@@ -595,6 +723,22 @@
       "sourceFile": "data/recordings/inbox/europe-hard/loc-018/2026-08-29T16-02-18-350Z__gemini-3-7-flash-high__interactive-panorama__round-1_old.json"
     },
     {
+      "id": "ogrr-2026-08-31T22-14-01-298Z-ddc2531a-e1bf-460d-9c38-1868cc5fb52b",
+      "sessionId": "session-2026-08-31T22-14-01-298Z-1122aaf1-8e67-4cda-8d2d-fe914865bb44",
+      "competitionId": "europe-hard",
+      "competitionPartId": "europe-hard",
+      "competitionRound": 1,
+      "atlasLocationId": "europe-hard--loc-018",
+      "locationId": "loc_018",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:14:01.298Z",
+      "stoppedAt": "2026-08-31T22:15:02.951Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-hard/loc-018/2026-08-31T22-14-01-298Z__gemini-3-7-flash-high-aid__interactive-panorama__round-1.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-46-29-715Z-4381da8d-49b3-44cb-8411-1f27d385566f",
       "sessionId": "session-2026-08-08T18-46-08-519Z-a43bf27b-9f91-426b-9283-58472324c9c2",
       "competitionId": "europe-hard",
@@ -641,6 +785,22 @@
       "sampleCount": 2,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-hard/loc-019/2026-08-29T16-03-23-159Z__gemini-3-7-flash-high__interactive-panorama__round-2_old.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T22-16-07-640Z-6b251f40-51ad-4f67-b63e-6dfee5c7814f",
+      "sessionId": "session-2026-08-31T22-14-01-298Z-1122aaf1-8e67-4cda-8d2d-fe914865bb44",
+      "competitionId": "europe-hard",
+      "competitionPartId": "europe-hard",
+      "competitionRound": 2,
+      "atlasLocationId": "europe-hard--loc-019",
+      "locationId": "loc_019",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:16:07.640Z",
+      "stoppedAt": "2026-08-31T22:16:51.872Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-hard/loc-019/2026-08-31T22-16-07-640Z__gemini-3-7-flash-high-aid__interactive-panorama__round-2.json"
     },
     {
       "id": "ogrr-2026-08-08T18-46-40-332Z-3e226e2c-7a9f-4f7e-9953-86f64a87e976",
@@ -691,6 +851,22 @@
       "sourceFile": "data/recordings/inbox/europe-hard/loc-020/2026-08-29T16-09-11-977Z__gemini-3-7-flash-high__interactive-panorama__round-3_old.json"
     },
     {
+      "id": "ogrr-2026-08-31T22-17-55-428Z-16e1d569-01f9-4021-a81d-a2f8eecd9add",
+      "sessionId": "session-2026-08-31T22-14-01-298Z-1122aaf1-8e67-4cda-8d2d-fe914865bb44",
+      "competitionId": "europe-hard",
+      "competitionPartId": "europe-hard",
+      "competitionRound": 3,
+      "atlasLocationId": "europe-hard--loc-020",
+      "locationId": "loc_020",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:17:55.428Z",
+      "stoppedAt": "2026-08-31T22:18:49.878Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-hard/loc-020/2026-08-31T22-17-55-428Z__gemini-3-7-flash-high-aid__interactive-panorama__round-3.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-46-50-477Z-fe2d54c0-c054-40fc-b047-db028e087c91",
       "sessionId": "session-2026-08-08T18-46-08-519Z-a43bf27b-9f91-426b-9283-58472324c9c2",
       "competitionId": "europe-hard",
@@ -737,6 +913,22 @@
       "sampleCount": 1,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-hard/loc-021/2026-08-29T16-15-10-986Z__gemini-3-7-flash-high__interactive-panorama__round-4_old.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T22-20-02-590Z-3caaccea-b351-401d-a788-75852b6016b7",
+      "sessionId": "session-2026-08-31T22-14-01-298Z-1122aaf1-8e67-4cda-8d2d-fe914865bb44",
+      "competitionId": "europe-hard",
+      "competitionPartId": "europe-hard",
+      "competitionRound": 4,
+      "atlasLocationId": "europe-hard--loc-021",
+      "locationId": "loc_021",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:20:02.590Z",
+      "stoppedAt": "2026-08-31T22:21:09.945Z",
+      "sampleCount": 74,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-hard/loc-021/2026-08-31T22-20-02-590Z__gemini-3-7-flash-high-aid__interactive-panorama__round-4.json"
     },
     {
       "id": "ogrr-2026-08-08T18-46-59-592Z-1d123867-4236-466a-aa64-506937b90bf0",
@@ -787,6 +979,22 @@
       "sourceFile": "data/recordings/inbox/europe-hard/loc-022/2026-08-29T16-21-17-976Z__gemini-3-7-flash-high__interactive-panorama__round-5_old.json"
     },
     {
+      "id": "ogrr-2026-08-31T22-23-22-389Z-33aaec0f-b4fe-43b0-a48f-57283660575e",
+      "sessionId": "session-2026-08-31T22-14-01-298Z-1122aaf1-8e67-4cda-8d2d-fe914865bb44",
+      "competitionId": "europe-hard",
+      "competitionPartId": "europe-hard",
+      "competitionRound": 5,
+      "atlasLocationId": "europe-hard--loc-022",
+      "locationId": "loc_022",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:23:22.389Z",
+      "stoppedAt": "2026-08-31T22:24:31.748Z",
+      "sampleCount": 126,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-hard/loc-022/2026-08-31T22-23-22-389Z__gemini-3-7-flash-high-aid__interactive-panorama__round-5.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-47-09-701Z-ce212494-f0b0-405b-8fe1-c39fc1a09da6",
       "sessionId": "session-2026-08-08T18-46-08-519Z-a43bf27b-9f91-426b-9283-58472324c9c2",
       "competitionId": "europe-hard",
@@ -833,6 +1041,22 @@
       "sampleCount": 2,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-hard/loc-023/2026-08-29T16-27-13-102Z__gemini-3-7-flash-high__interactive-panorama__round-6_old.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T22-25-53-762Z-afbf4608-dbcc-4812-a058-50aa5a27f95d",
+      "sessionId": "session-2026-08-31T22-14-01-298Z-1122aaf1-8e67-4cda-8d2d-fe914865bb44",
+      "competitionId": "europe-hard",
+      "competitionPartId": "europe-hard",
+      "competitionRound": 6,
+      "atlasLocationId": "europe-hard--loc-023",
+      "locationId": "loc_023",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:25:53.762Z",
+      "stoppedAt": "2026-08-31T22:26:49.285Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-hard/loc-023/2026-08-31T22-25-53-762Z__gemini-3-7-flash-high-aid__interactive-panorama__round-6.json"
     },
     {
       "id": "ogrr-2026-08-08T18-47-20-350Z-915e3b88-67aa-49a4-9199-429c7577a9d5",
@@ -883,6 +1107,22 @@
       "sourceFile": "data/recordings/inbox/europe-hard/loc-024/2026-08-29T16-33-11-707Z__gemini-3-7-flash-high__interactive-panorama__round-7_old.json"
     },
     {
+      "id": "ogrr-2026-08-31T22-28-16-358Z-f3ea2a66-f7c2-4ac9-ae24-4ddf2767af4a",
+      "sessionId": "session-2026-08-31T22-14-01-298Z-1122aaf1-8e67-4cda-8d2d-fe914865bb44",
+      "competitionId": "europe-hard",
+      "competitionPartId": "europe-hard",
+      "competitionRound": 7,
+      "atlasLocationId": "europe-hard--loc-024",
+      "locationId": "loc_024",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:28:16.358Z",
+      "stoppedAt": "2026-08-31T22:29:28.443Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-hard/loc-024/2026-08-31T22-28-16-358Z__gemini-3-7-flash-high-aid__interactive-panorama__round-7.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-47-29-838Z-a542dc5a-2bb3-4c01-b0c8-1ae6717662b3",
       "sessionId": "session-2026-08-08T18-46-08-519Z-a43bf27b-9f91-426b-9283-58472324c9c2",
       "competitionId": "europe-hard",
@@ -929,6 +1169,22 @@
       "sampleCount": 1,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-hard/loc-025/2026-08-29T16-38-54-908Z__gemini-3-7-flash-high__interactive-panorama__round-8_old.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T22-31-17-943Z-c0bfdd95-8186-40c0-a285-1505f69739d8",
+      "sessionId": "session-2026-08-31T22-14-01-298Z-1122aaf1-8e67-4cda-8d2d-fe914865bb44",
+      "competitionId": "europe-hard",
+      "competitionPartId": "europe-hard",
+      "competitionRound": 8,
+      "atlasLocationId": "europe-hard--loc-025",
+      "locationId": "loc_025",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:31:17.943Z",
+      "stoppedAt": "2026-08-31T22:32:30.480Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-hard/loc-025/2026-08-31T22-31-17-943Z__gemini-3-7-flash-high-aid__interactive-panorama__round-8.json"
     },
     {
       "id": "ogrr-2026-08-29T15-05-00-000Z-8178029f-54e7-4543-8a38-d1409f50dc47",
@@ -1107,6 +1363,22 @@
       "sourceFile": "data/recordings/inbox/europe-medium/loc-009/2026-08-08T18-41-01-486Z__manual__interactive-panorama__round-1.json"
     },
     {
+      "id": "ogrr-2026-08-31T21-54-06-436Z-9dc8ccfe-cf54-41c2-82d8-9e730362b8b7",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 1,
+      "atlasLocationId": "europe-medium--loc-009",
+      "locationId": "loc_009",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:54:06.436Z",
+      "stoppedAt": "2026-08-31T21:54:59.865Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-009/2026-08-31T21-54-06-436Z__gemini-3-7-flash-high-aid__interactive-panorama__round-1.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-37-55-438Z-5ca84b03-59d4-4102-9e1b-dc92a5849bee",
       "sessionId": "session-2026-08-08T18-37-36-450Z-9f83944c-9018-4ade-a70d-2e0b85d4a3fd",
       "competitionId": "europe-medium",
@@ -1153,6 +1425,22 @@
       "sampleCount": 1,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-medium/loc-010/2026-08-31T09-22-24-721Z__gemini-3-7-flash-high-v3__interactive-panorama__round-1.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T21-55-59-528Z-d60be40d-6635-436b-b573-4337c750cfc1",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 2,
+      "atlasLocationId": "europe-medium--loc-010",
+      "locationId": "loc_010",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:55:59.528Z",
+      "stoppedAt": "2026-08-31T21:56:44.867Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-010/2026-08-31T21-55-59-528Z__gemini-3-7-flash-high-aid__interactive-panorama__round-2.json"
     },
     {
       "id": "ogrr-2026-08-08T18-38-06-092Z-1b226d38-d915-4448-92c9-9720f72d25ea",
@@ -1203,6 +1491,22 @@
       "sourceFile": "data/recordings/inbox/europe-medium/loc-011/2026-08-31T09-23-39-120Z__gemini-3-7-flash-high-v3__interactive-panorama__round-2.json"
     },
     {
+      "id": "ogrr-2026-08-31T21-58-05-340Z-e546694a-3973-4dc3-b1f2-0d5ffd661c6a",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 3,
+      "atlasLocationId": "europe-medium--loc-011",
+      "locationId": "loc_011",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T21:58:05.340Z",
+      "stoppedAt": "2026-08-31T21:59:01.052Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-011/2026-08-31T21-58-05-340Z__gemini-3-7-flash-high-aid__interactive-panorama__round-3.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-38-18-705Z-0486130c-8275-44b6-a966-648ddf440a49",
       "sessionId": "session-2026-08-08T18-37-36-450Z-9f83944c-9018-4ade-a70d-2e0b85d4a3fd",
       "competitionId": "europe-medium",
@@ -1249,6 +1553,22 @@
       "sampleCount": 1,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-medium/loc-012/2026-08-31T09-30-54-755Z__gemini-3-7-flash-high-v3__interactive-panorama__round-2.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T22-00-12-271Z-67af1352-e440-4111-9c0c-e722b0b8c63c",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 4,
+      "atlasLocationId": "europe-medium--loc-012",
+      "locationId": "loc_012",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:00:12.271Z",
+      "stoppedAt": "2026-08-31T22:01:09.992Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-012/2026-08-31T22-00-12-271Z__gemini-3-7-flash-high-aid__interactive-panorama__round-4.json"
     },
     {
       "id": "ogrr-2026-08-08T18-38-28-768Z-5e799dee-8646-42d0-b837-e7b9f916106e",
@@ -1299,6 +1619,22 @@
       "sourceFile": "data/recordings/inbox/europe-medium/loc-013/2026-08-31T09-37-13-514Z__gemini-3-7-flash-high-v3__interactive-panorama__round-3.json"
     },
     {
+      "id": "ogrr-2026-08-31T22-02-27-219Z-480c2e45-01a3-448c-b939-734d7ab6fb56",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 5,
+      "atlasLocationId": "europe-medium--loc-013",
+      "locationId": "loc_013",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:02:27.219Z",
+      "stoppedAt": "2026-08-31T22:03:20.638Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-013/2026-08-31T22-02-27-219Z__gemini-3-7-flash-high-aid__interactive-panorama__round-5.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-38-45-270Z-03cf056c-51ee-41cc-8c89-798d26435e89",
       "sessionId": "session-2026-08-08T18-37-36-450Z-9f83944c-9018-4ade-a70d-2e0b85d4a3fd",
       "competitionId": "europe-medium",
@@ -1347,6 +1683,22 @@
       "sourceFile": "data/recordings/inbox/europe-medium/loc-014/2026-08-31T09-42-59-112Z__gemini-3-7-flash-high-v3__interactive-panorama__round-4.json"
     },
     {
+      "id": "ogrr-2026-08-31T22-04-46-832Z-033bf8e1-663c-4c52-a5ae-cab7a6dbd43c",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 6,
+      "atlasLocationId": "europe-medium--loc-014",
+      "locationId": "loc_014",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:04:46.832Z",
+      "stoppedAt": "2026-08-31T22:05:39.858Z",
+      "sampleCount": 2,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-014/2026-08-31T22-04-46-832Z__gemini-3-7-flash-high-aid__interactive-panorama__round-6.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-38-54-814Z-82fd63c3-9376-4b6d-a8df-2ad18a51f9ca",
       "sessionId": "session-2026-08-08T18-37-36-450Z-9f83944c-9018-4ade-a70d-2e0b85d4a3fd",
       "competitionId": "europe-medium",
@@ -1377,6 +1729,22 @@
       "sampleCount": 121,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-medium/loc-015/2026-08-08T18-43-11-924Z__manual__interactive-panorama__round-7.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T22-06-40-027Z-d0562ae5-0216-49aa-93c1-30c3866144e3",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 7,
+      "atlasLocationId": "europe-medium--loc-015",
+      "locationId": "loc_015",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:06:40.027Z",
+      "stoppedAt": "2026-08-31T22:07:14.580Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-015/2026-08-31T22-06-40-027Z__gemini-3-7-flash-high-aid__interactive-panorama__round-7.json"
     },
     {
       "id": "ogrr-2026-08-08T18-39-07-755Z-377875fb-b65a-4577-985b-fdf2531763b2",
@@ -1411,6 +1779,22 @@
       "sourceFile": "data/recordings/inbox/europe-medium/loc-016/2026-08-08T18-43-30-733Z__manual__interactive-panorama__round-8.json"
     },
     {
+      "id": "ogrr-2026-08-31T22-08-09-982Z-241da5b6-1118-4024-8b2c-8e148713938b",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 8,
+      "atlasLocationId": "europe-medium--loc-016",
+      "locationId": "loc_016",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:08:09.982Z",
+      "stoppedAt": "2026-08-31T22:08:46.492Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-016/2026-08-31T22-08-09-982Z__gemini-3-7-flash-high-aid__interactive-panorama__round-8.json"
+    },
+    {
       "id": "ogrr-2026-08-08T18-39-17-555Z-bf1bace5-c5c7-42ae-8a2b-44cb32cb5c7d",
       "sessionId": "session-2026-08-08T18-37-36-450Z-9f83944c-9018-4ade-a70d-2e0b85d4a3fd",
       "competitionId": "europe-medium",
@@ -1441,6 +1825,22 @@
       "sampleCount": 307,
       "hasPrediction": true,
       "sourceFile": "data/recordings/inbox/europe-medium/loc-017/2026-08-08T18-43-47-449Z__manual__interactive-panorama__round-9.json"
+    },
+    {
+      "id": "ogrr-2026-08-31T22-09-41-444Z-9bed3f6f-644a-4ec2-864d-8405dc2f7634",
+      "sessionId": "session-2026-08-31T21-54-06-436Z-ce4be949-5d2e-4b2a-8109-5da83fd3a22f",
+      "competitionId": "europe-medium",
+      "competitionPartId": "europe-medium",
+      "competitionRound": 9,
+      "atlasLocationId": "europe-medium--loc-017",
+      "locationId": "loc_017",
+      "model": "gemini 3.7 Flash - high (aid)",
+      "condition": "interactive-panorama",
+      "startedAt": "2026-08-31T22:09:41.444Z",
+      "stoppedAt": "2026-08-31T22:10:19.751Z",
+      "sampleCount": 1,
+      "hasPrediction": true,
+      "sourceFile": "data/recordings/inbox/europe-medium/loc-017/2026-08-31T22-09-41-444Z__gemini-3-7-flash-high-aid__interactive-panorama__round-9.json"
     }
   ]
 }
