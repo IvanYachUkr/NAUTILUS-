@@ -2,50 +2,29 @@
 
 This repository contains the benchmark data, OpenGuessr recording pipeline, visualization, and static geo-localization baselines for the final computer-vision geo-localization project.
 
-## OpenGuessr MCP controller
-
-The repository includes the benchmark-safe [NAUTILUS OpenGuessr MCP](demo_and_extension/openguessr-mcp/),
-with its source, launcher, prompts, tests, and usage documentation. It layers four
-precise OpenGuessr actions over Microsoft Playwright MCP while retaining only
-screenshot and physical mouse/keyboard controls. The adapter places coordinates
-chosen by the model, verifies the rendered Leaflet marker, and refuses unverified
-submissions without exposing correct-location or network data.
-
-MCP-assisted results are a separate **coordinate-actuator MCP** condition and
-must not be merged into the raw-GUI leaderboard below. This separation makes it
-possible to measure geographic reasoning with substantially less belief-to-pin
-controller noise while preserving the original computer-use benchmark.
-
-### Grok MCP-assisted results
-
-| Dataset / prompt | Valid runs | Rounds per run | Seconds per round | Mean official score | Mean max |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| [Easy — earlier one-pin condition](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | 3 | 8 | 180 | **39,873.67 / 40,000** | **99.68%** |
-| [Medium — one-shot control](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | 3 | 9 | 300 | **35,740 / 45,000** | **79.42%** |
-| [Hard — one-shot control](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | 3 | 8 | 300 | **29,412 / 40,000** | **73.53%** |
-
-The Medium/Hard prompt was chosen by a same-scenes Medium diagnostic: the
-one-shot control scored **36,973**, versus **35,412** with progressive pin
-refinement. Easy was not rerun with the 300-second one-shot prompt, so these
-three rows are separate per-difficulty results and must not be combined into a
-single 25-round score.
-
 ## Recorded model leaderboard
 
 Official OpenGuessr competition points for the **interactive panorama** condition
-(25 locations, 300 seconds per round). The ranking uses each model's mean over
-all published complete runs; the `Runs` column makes the unequal sample count
-explicit. The maximum per run is 125,000 points.
+(25 locations total). The leaderboard includes every published controller
+condition. Complete 25-round conditions use their mean across full runs; the
+clearly labelled Grok MCP composite sums its separate Easy, Medium, and Hard
+three-run means. The maximum aggregate is 125,000 points.
 
 | Rank | Model | Runs | Mean Easy | Mean Medium | Mean Hard | **Mean total** | Mean max | Best run |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | **1** | [Gemini 3.7 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/) | **1** | **39,999** | **43,026** | **37,004** | **120,029** | **96.0%** | **120,029** |
 | **2** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **3** | 39,397 | 40,515 | 31,349 | **111,260** | **89.0%** | **114,794** |
 | **3** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | **3** | 39,849 | 40,978 | 29,981 | **110,808** | **88.6%** | **114,716** |
-| **4** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | **60.0%** | **80,081** |
-| **5** | [Gemini 3.7 Flash (high, unaided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/) | **1** | 18,479 | 23,721 | 22,150 | **64,350** | **51.5%** | **64,350** |
+| **4** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) + [MCP](demo_and_extension/openguessr-mcp/) **(composite)** | **3 / difficulty** | [**39,874**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | [**35,740**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | [**29,412**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | **105,026** | **84.0%** | — |
+| **5** | [Grok 4.6 (xhigh, raw GUI)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | **60.0%** | **80,081** |
+| **6** | [Gemini 3.7 Flash (high, unaided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/) | **1** | 18,479 | 23,721 | 22,150 | **64,350** | **51.5%** | **64,350** |
 
-### Complete run scores
+The Grok MCP row is a composite of **75 completed scored rounds** across nine
+valid difficulty-specific games, rather than a synthetic claim that one
+25-round game was played. Easy used 180 seconds per round; Medium and Hard used
+300 seconds. Each linked score opens its underlying summaries and run evidence.
+
+### Complete 25-round run scores
 
 | Model | Run | Easy | Medium | Hard | **Total** | Max |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -61,7 +40,7 @@ explicit. The maximum per run is 125,000 points.
 | Grok 4.6 (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
 | Gemini 3.7 Flash (high, unaided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
 
-Across all published runs, **275/275 official rounds** were submitted and recorded.
+Across the complete 25-round runs, **275/275 official rounds** were submitted and recorded.
 The best individual totals were Easy **39,999** (Gemini aided), Medium
 **44,152** (Sol max R3), Hard **37,004** (Gemini aided), and overall
 **120,029** (Gemini aided). Repeated runs reuse the same fixed locations, so
@@ -74,6 +53,17 @@ The six new repeated-run WebM sets are stored separately in the shared Drive
 archive. The benchmark README discloses an 11-round recorder path-collision
 caveat found by capture-ID validation; it does not change the official scores.
 Static/NMPZ agent submissions are not yet included in this leaderboard.
+
+### OpenGuessr MCP source and evidence
+
+The benchmark-safe [NAUTILUS OpenGuessr MCP](demo_and_extension/openguessr-mcp/)
+contains its source, launcher, exact Grok prompts, tests, and usage documentation.
+It places and verifies coordinates chosen by the model without exposing the
+correct location, network data, or hidden target coordinates. The full
+[Easy evidence](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/)
+and [Medium/Hard evidence](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/)
+include individual scores, transcripts, actuator audits, official result images,
+excluded attempts, and the Medium refinement diagnostic.
 
 ## Current benchmark
 
