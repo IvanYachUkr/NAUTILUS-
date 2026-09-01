@@ -11,30 +11,32 @@ explicit. The maximum per run is 125,000 points.
 
 | Rank | Model | Runs | Mean Easy | Mean Medium | Mean Hard | **Mean total** | Mean max | Best run |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| **1** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **3** | 39,397 | 40,515 | 31,349 | **111,260** | **89.0%** | **114,794** |
-| **2** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | **3** | **39,849** | **40,978** | **29,981** | **110,808** | **88.6%** | **114,716** |
-| **3** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | **60.0%** | **80,081** |
-| **4** | [Gemini 3.7 Flash (high)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high_old/) | **1** | 18,479 | 23,721 | 22,150 | **64,350** | **51.5%** | **64,350** |
+| **1** | [Gemini 3.7 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/) | **1** | **39,999** | **43,026** | **37,004** | **120,029** | **96.0%** | **120,029** |
+| **2** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **3** | 39,397 | 40,515 | 31,349 | **111,260** | **89.0%** | **114,794** |
+| **3** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | **3** | 39,849 | 40,978 | 29,981 | **110,808** | **88.6%** | **114,716** |
+| **4** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | **60.0%** | **80,081** |
+| **5** | [Gemini 3.7 Flash (high, unaided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/) | **1** | 18,479 | 23,721 | 22,150 | **64,350** | **51.5%** | **64,350** |
 
 ### Complete run scores
 
 | Model | Run | Easy | Medium | Hard | **Total** | Max |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Gemini 3.7 Flash (high, aided) | [Original](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md) | **39,999** | 43,026 | **37,004** | **120,029** | **96.0%** |
 | GPT-5.6 Sol (max) | [Original](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md) | 39,985 | 35,485 | 32,368 | **107,838** | 86.3% |
 | GPT-5.6 Sol (max) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/) | 39,724 | **44,152** | 30,918 | **114,794** | **91.8%** |
 | GPT-5.6 Sol (max) | [Recorded R4](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/) | 38,482 | 41,907 | 30,760 | **111,149** | 88.9% |
 | GPT-5.6 Sol (xhigh) | [Original](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md) | 39,745 | 40,155 | 30,373 | **110,273** | 88.2% |
 | GPT-5.6 Sol (xhigh) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/) | 39,820 | 41,265 | 26,351 | **107,436** | 85.9% |
-| GPT-5.6 Sol (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/) | 39,982 | 41,514 | **33,220** | **114,716** | **91.8%** |
+| GPT-5.6 Sol (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/) | 39,982 | 41,514 | 33,220 | **114,716** | **91.8%** |
 | Grok 4.6 (xhigh) | [Original](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/report.md) | 23,729 | 29,986 | 26,366 | **80,081** | 64.1% |
 | Grok 4.6 (xhigh) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/) | 24,688 | 28,192 | 18,682 | **71,562** | 57.2% |
 | Grok 4.6 (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
-| Gemini 3.7 Flash (high) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high_old/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
+| Gemini 3.7 Flash (high, unaided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
 
-Across all ten published runs, **250/250 official rounds** were submitted and recorded.
-The best individual totals were Easy **39,985** (Sol max original), Medium
-**44,152** (Sol max R3), Hard **33,220** (Sol xhigh R3), and overall
-**114,794** (Sol max R3). Repeated runs reuse the same fixed locations, so
+Across all published runs, **275/275 official rounds** were submitted and recorded.
+The best individual totals were Easy **39,999** (Gemini aided), Medium
+**44,152** (Sol max R3), Hard **37,004** (Gemini aided), and overall
+**120,029** (Gemini aided). Repeated runs reuse the same fixed locations, so
 their means measure run/controller variability rather than new-location
 generalization.
 

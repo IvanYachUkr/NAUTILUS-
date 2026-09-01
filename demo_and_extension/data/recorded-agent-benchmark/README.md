@@ -1,11 +1,8 @@
 # Recorded interactive-agent benchmark
 
-The repeated-run subset contains nine complete 25-round interactive-panorama
-runs: three each for GPT-5.6 Sol max, GPT-5.6 Sol xhigh, and Grok 4.6 xhigh.
-Together they contain **225/225 recorded official rounds**. A separately
-published single Gemini 3.7 Flash high run is under
-[`gemini-3.7-flash-high_old/`](gemini-3.7-flash-high_old/) and is included in
-the repository-root leaderboard with its one-run sample count shown explicitly.
+The benchmark contains published runs for GPT-5.6 Sol max, GPT-5.6 Sol xhigh, Grok 4.6 xhigh, and Gemini 3.7 Flash.
+
+The top-ranking overall model run is [`gemini-3.7-flash-high-aided/`](gemini-3.7-flash-high-aided/), achieving **120,029 / 125,000 points** (96.0% accuracy) with a pin-placement helper. The original unaided run is under [`gemini-3.7-flash-high/`](gemini-3.7-flash-high/).
 
 The original published run remains directly under each model directory.
 Additional runs live under `runs/recorded-rN/`. A run contains:
