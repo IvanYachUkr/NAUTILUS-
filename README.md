@@ -2,6 +2,34 @@
 
 This repository contains the benchmark data, OpenGuessr recording pipeline, visualization, and static geo-localization baselines for the final computer-vision geo-localization project.
 
+## OpenGuessr MCP controller
+
+The repository includes the benchmark-safe [NAUTILUS OpenGuessr MCP](demo_and_extension/openguessr-mcp/),
+with its source, launcher, prompts, tests, and usage documentation. It layers four
+precise OpenGuessr actions over Microsoft Playwright MCP while retaining only
+screenshot and physical mouse/keyboard controls. The adapter places coordinates
+chosen by the model, verifies the rendered Leaflet marker, and refuses unverified
+submissions without exposing correct-location or network data.
+
+MCP-assisted results are a separate **coordinate-actuator MCP** condition and
+must not be merged into the raw-GUI leaderboard below. This separation makes it
+possible to measure geographic reasoning with substantially less belief-to-pin
+controller noise while preserving the original computer-use benchmark.
+
+### Grok MCP-assisted results
+
+| Dataset / prompt | Valid runs | Rounds per run | Seconds per round | Mean official score | Mean max |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [Easy — earlier one-pin condition](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | 3 | 8 | 180 | **39,873.67 / 40,000** | **99.68%** |
+| [Medium — one-shot control](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | 3 | 9 | 300 | **35,740 / 45,000** | **79.42%** |
+| [Hard — one-shot control](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | 3 | 8 | 300 | **29,412 / 40,000** | **73.53%** |
+
+The Medium/Hard prompt was chosen by a same-scenes Medium diagnostic: the
+one-shot control scored **36,973**, versus **35,412** with progressive pin
+refinement. Easy was not rerun with the 300-second one-shot prompt, so these
+three rows are separate per-difficulty results and must not be combined into a
+single 25-round score.
+
 ## Recorded model leaderboard
 
 Official OpenGuessr competition points for the **interactive panorama** condition
@@ -47,35 +75,6 @@ archive. The benchmark README discloses an 11-round recorder path-collision
 caveat found by capture-ID validation; it does not change the official scores.
 Static/NMPZ agent submissions are not yet included in this leaderboard.
 
-## OpenGuessr MCP controller
-
-The repository now includes a benchmark-safe [NAUTILUS OpenGuessr MCP](demo_and_extension/openguessr-mcp/).
-It layers four precise OpenGuessr actions over Microsoft Playwright MCP while
-retaining only screenshot and physical mouse/keyboard controls. The adapter
-places coordinates chosen by the model, verifies the rendered Leaflet marker,
-and refuses unverified submissions without exposing correct-location or
-network data.
-
-MCP-assisted results are a separate **coordinate-actuator MCP** condition and
-must not be merged into the raw-GUI leaderboard above. This separation makes
-it possible to measure geographic reasoning with substantially less
-belief-to-pin controller noise while preserving the original computer-use
-benchmark.
-
-### Grok MCP-assisted results
-
-| Dataset / prompt | Valid runs | Rounds per run | Seconds per round | Mean official score | Mean max |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| [Easy — earlier one-pin condition](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | 3 | 8 | 180 | **39,873.67 / 40,000** | **99.68%** |
-| [Medium — one-shot control](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | 3 | 9 | 300 | **35,740 / 45,000** | **79.42%** |
-| [Hard — one-shot control](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | 3 | 8 | 300 | **29,412 / 40,000** | **73.53%** |
-
-The Medium/Hard prompt was chosen by a same-scenes Medium diagnostic: the
-one-shot control scored **36,973**, versus **35,412** with progressive pin
-refinement. Easy was not rerun with the 300-second one-shot prompt, so these
-three rows are separate per-difficulty results and must not be combined into a
-single 25-round score.
-
 ## Current benchmark
 
 The benchmark contains **25 European locations** split by difficulty:
@@ -108,6 +107,7 @@ repo/
 │   ├── README.md              # detailed recorder + demo workflow
 │   ├── ARCHITECTURE.md        # technical data flow
 │   ├── extension/             # Chrome recorder extension
+│   ├── openguessr-mcp/        # MCP controller, prompts, launcher, and tests
 │   ├── scripts/               # build, collector, inspection tools
 │   ├── src/                   # visualization application
 │   ├── tests/
