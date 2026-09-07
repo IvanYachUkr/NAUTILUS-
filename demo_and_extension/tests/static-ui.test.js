@@ -2,27 +2,38 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { buildStreetViewUrl } from "../src/geo.js";
+import { overviewPredictionRuns } from "../src/app.js";
 
 const appSource = await readFile(new URL("../src/app.js", import.meta.url), "utf8");
+const buildSiteSource = await readFile(new URL("../scripts/build-site.mjs", import.meta.url), "utf8");
+const indexSource = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const storyStylesSource = await readFile(new URL("../src/story-redesign.css", import.meta.url), "utf8");
 
-test("static/NMPZ suppresses playback UI and playback drawer", () => {
+function styleBlock(source, selector) {
+  const start = source.indexOf(`${selector} {`);
+  assert.notEqual(start, -1, `Missing style rule for ${selector}`);
+  return source.slice(start, source.indexOf("}", start) + 1);
+}
+
+test("the public site suppresses playback UI and the playback drawer", () => {
   assert.ok(appSource.includes('const isStatic = run?.condition === "static-image";'));
   assert.ok(appSource.includes("elements.explorationPlayer.hidden = true;"));
   assert.ok(appSource.includes("mapController.setPlayback(null);"));
-  assert.ok(appSource.includes('const playbackAllowed = run?.condition !== "static-image";'));
+  assert.ok(appSource.includes("EXPLORATION_PLAYBACK_ENABLED &&"));
+  assert.ok(appSource.includes("if (!EXPLORATION_PLAYBACK_ENABLED) return null;"));
   assert.ok(appSource.includes('"Static / NMPZ · fixed view"'));
 });
 
 test("ground truth uses canonical static imagery while predictions keep an optional Street View link", () => {
-  assert.ok(appSource.includes("No canonical static image yet"));
+  assert.ok(appSource.includes("No canonical scene image yet"));
   assert.ok(!appSource.includes("Open ground-truth Street View ↗"));
   assert.ok(appSource.includes("Open Street View at prediction ↗"));
   assert.ok(appSource.includes("safeStreetViewUrl(run.prediction)"));
 });
 
-test("interactive playback embeds the round video directly instead of using a frame-inspector tab", () => {
-  assert.ok(appSource.includes("Open captured image ↗"));
-  assert.ok(appSource.includes("Show round video in side panel"));
+test("interactive playback keeps restorable video review code behind the website feature gate", () => {
+  assert.ok(appSource.includes("Review captured frame"));
+  assert.ok(appSource.includes("resolvePlaybackReviewMedia"));
   assert.ok(appSource.includes('event.target.closest("[data-open-current-view]")'));
   assert.ok(appSource.includes('drawerMode = "playback";'));
   assert.ok(appSource.includes("evidenceVideoMarkup"));
@@ -56,8 +67,44 @@ test("prediction coordinates create a Google Street View deep link", () => {
 
 
 test("map overview only includes cases with a prediction for the selected run slice", () => {
-  assert.ok(appSource.includes("getOverviewMapCases(filteredCases)"));
-  assert.ok(appSource.includes("matchingRun && hasCoordinate(matchingRun.prediction)"));
+  const cases = [
+    {
+      id: "matching",
+      runs: [{
+        id: "grok-match",
+        model: "Grok 4.6 · xhigh",
+        condition: "interactive-panorama",
+        runKind: "model-prediction",
+        prediction: { lat: 48, lng: 14 },
+      }],
+    },
+    {
+      id: "wrong-model",
+      runs: [{
+        id: "sol-only",
+        model: "GPT-5.6 Sol · xhigh",
+        condition: "interactive-panorama",
+        runKind: "model-prediction",
+        prediction: { lat: 49, lng: 15 },
+      }],
+    },
+    {
+      id: "missing-pin",
+      runs: [{
+        id: "grok-no-pin",
+        model: "Grok 4.6 · xhigh",
+        condition: "interactive-panorama",
+        runKind: "model-prediction",
+        prediction: null,
+      }],
+    },
+  ];
+
+  assert.deepEqual(
+    overviewPredictionRuns(cases, "Grok 4.6 · xhigh", "interactive-panorama")
+      .map((entry) => entry.caseId),
+    ["matching"],
+  );
   assert.ok(appSource.includes("predicted locations"));
 });
 
@@ -75,4 +122,74 @@ test("static direction remains visible without re-enabling playback", async () =
   assert.ok(cssSource.includes("width: 78px;"));
   assert.ok(mapSource.includes("const size = isStatic ? 78 : 46;"));
   assert.ok(appSource.includes('if (run?.condition === "static-image") return null;'));
+});
+
+test("view changes inside the explorer cannot move the long project page through scroll anchoring", async () => {
+  const cssSource = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
+  assert.match(cssSource, /\.atlas-app\s*\{[^}]*overflow-anchor:\s*none;/s);
+});
+
+test("the full-site header returns to a two-column grid at narrow viewports", async () => {
+  const cssSource = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
+  const finalNarrowBlock = cssSource.slice(cssSource.lastIndexOf("@media (max-width: 900px)"));
+
+  assert.match(finalNarrowBlock, /\.app-header\s*\{[^}]*grid-template-columns:\s*1fr auto;/s);
+  assert.match(finalNarrowBlock, /\.header-actions\s*\{[^}]*justify-self:\s*end;/s);
+});
+
+test("the mobile story navigation scrolls without exposing native scrollbars", async () => {
+  const cssSource = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
+
+  assert.match(cssSource, /\.story-nav__links\s*\{[^}]*scrollbar-width:\s*none;/s);
+  assert.match(cssSource, /\.story-nav__links::\-webkit-scrollbar\s*\{[^}]*display:\s*none;/s);
+});
+
+test("story section markers and supporting labels remain readable at desktop and mobile sizes", () => {
+  const eyebrow = styleBlock(storyStylesSource, ".project-story .story-section__eyebrow");
+  const sectionNumber = styleBlock(storyStylesSource, ".project-story .story-section__eyebrow span");
+  const navigation = styleBlock(storyStylesSource, ".project-story .story-nav__links button");
+  const overline = styleBlock(storyStylesSource, ".project-story .story-overline");
+
+  assert.match(eyebrow, /font-size:\s*13px/);
+  assert.match(sectionNumber, /width:\s*44px/);
+  assert.match(sectionNumber, /height:\s*44px/);
+  assert.match(sectionNumber, /font-size:\s*12px/);
+  assert.match(navigation, /font-size:\s*12px/);
+  assert.match(overline, /font-size:\s*13px/);
+
+  const mobileStyles = storyStylesSource.slice(storyStylesSource.indexOf("@media (max-width: 680px)"));
+  assert.match(styleBlock(mobileStyles, ".project-story .story-nav__links button"), /font-size:\s*10px/);
+  assert.match(styleBlock(mobileStyles, ".project-story .story-section__eyebrow"), /font-size:\s*12px/);
+  assert.match(styleBlock(mobileStyles, ".project-story .story-section__eyebrow span"), /font-size:\s*11px/);
+});
+
+test("the document requests the enlarged story typography stylesheet revision", () => {
+  assert.ok(indexSource.includes('./src/story-redesign.css?v=9-1'));
+});
+
+test("the workflow navigation connects evenly centered controls instead of label-sized fragments", async () => {
+  const cssSource = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
+  const progressBlock = cssSource.slice(
+    cssSource.indexOf(".journey-progress {"),
+    cssSource.indexOf(".header-stats"),
+  );
+
+  assert.match(progressBlock, /\.journey-progress button\s*\{[^}]*justify-items:\s*center;/s);
+  assert.match(
+    progressBlock,
+    /\.journey-progress li:not\(:last-child\)::after\s*\{[^}]*left:\s*50%;[^}]*width:\s*100%;/s,
+  );
+  assert.doesNotMatch(cssSource, /\.journey-progress li:not\(:last-child\)::after\s*\{[^}]*left:\s*calc\(100%/s);
+});
+
+test("the public website keeps raw recording review disabled and out of its package", () => {
+  assert.ok(appSource.includes("resolvePlaybackReviewMedia"));
+  assert.ok(appSource.includes("elements.openCurrentView.hidden = !reviewMedia.hasReview;"));
+  assert.ok(!appSource.includes("Review round recording"));
+  assert.ok(!appSource.includes("No round video yet"));
+  assert.ok(!appSource.includes("Video time"));
+
+  assert.ok(buildSiteSource.includes("const RECORDING_REVIEW_ENABLED = false;"));
+  assert.ok(buildSiteSource.includes("if (RECORDING_REVIEW_ENABLED)"));
+  assert.ok(buildSiteSource.includes('normalized.startsWith("data/recordings/")'));
 });

@@ -1,4 +1,4 @@
-import { formatDistance } from "./geo.js";
+import { formatDistance, predictionLocationLabel } from "./geo.js";
 import { explorationDistanceKm } from "./exploration.js";
 import { ensureLeaflet } from "./leaflet-loader.js";
 
@@ -289,7 +289,7 @@ export function createMapController(container, options = {}) {
     const predictionMarker = leaflet
       .marker(predictionPoint, {
         keyboard: true,
-        title: `Prediction: ${run.prediction.label ?? "Recorded prediction"}`,
+        title: `Prediction: ${predictionLocationLabel(run.prediction)}`,
         icon: markerIcon("prediction", "P"),
         zIndexOffset: 800,
       })

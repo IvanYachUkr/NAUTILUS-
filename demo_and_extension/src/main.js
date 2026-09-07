@@ -28,6 +28,7 @@ async function boot() {
     cases,
     syncHash: params.get("syncHash") !== "false",
     mapOptions: {
+      disableGlobe: params.get("offline") === "1",
       disableLeaflet: params.get("offline") === "1",
     },
   });

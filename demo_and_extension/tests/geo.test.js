@@ -4,6 +4,7 @@ import {
   buildStreetViewUrl,
   errorBand,
   formatDistance,
+  predictionLocationLabel,
   haversineKm,
 } from "../src/geo.js";
 
@@ -24,6 +25,17 @@ test("formatDistance changes precision by scale", () => {
   assert.equal(formatDistance(2.345), "2.35 km");
   assert.equal(formatDistance(42.34), "42.3 km");
   assert.equal(formatDistance(432.1), "432 km");
+});
+
+test("predictionLocationLabel prefers a place name and falls back to exact coordinates", () => {
+  assert.equal(
+    predictionLocationLabel({ lat: 50.89700386777002, lng: 14.831542968750002, label: "Zittau, Germany" }),
+    "Zittau, Germany",
+  );
+  assert.equal(
+    predictionLocationLabel({ lat: 50.89700386777002, lng: 14.831542968750002, label: "Recorded OpenGuessr prediction" }),
+    "50.89700, 14.83154",
+  );
 });
 
 test("errorBand follows the evaluation distance buckets", () => {

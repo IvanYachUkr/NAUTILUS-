@@ -2,6 +2,8 @@
 
 This repository contains the benchmark data, OpenGuessr recording pipeline, visualization, and static geo-localization baselines for the final computer-vision geo-localization project.
 
+The [published NAUTILUS website](https://nautilus-geolocation.ivanukr.chatgpt.site/) is developed in [`demo_and_extension/`](demo_and_extension/). See [local website development](#local-website-development) to run it and contribute changes.
+
 ## Recorded model leaderboard
 
 Official OpenGuessr competition points for the **interactive panorama** condition
@@ -139,30 +141,39 @@ Do **not** maintain a separate root `locations.json`. Coordinates and starting c
 
 All current starting URLs are normalized to a level **0-degree pitch** (`90t` in the copied Google Maps URL) for reproducibility.
 
-## Quick start: demo
+## Local website development
 
-Requirements: Node.js 20+ and Chrome.
+Requirements: Git, Node.js 20+, and a browser. Chrome and the recorder extension are only needed when collecting experiments. Viewing and developing the website locally needs no GPT Sites access or API keys.
 
-```powershell
-cd demo_and_extension
+```sh
+git clone https://github.com/IvanYachUkr/NAUTILUS-.git
+cd NAUTILUS-/demo_and_extension
 npm ci
+npm ci --prefix openguessr-mcp
 npm run verify
 npm start
 ```
 
-Then open:
+Open [http://127.0.0.1:4173](http://127.0.0.1:4173). Keep the terminal running, edit files under `demo_and_extension/src/`, and refresh the browser to see changes. The start command prepares the globe assets and rebuilds the atlas data automatically. The second install supplies dependencies for the MCP tests included in `verify`.
 
-```text
-http://127.0.0.1:4173
+On Windows PowerShell, use `npm.cmd` in place of `npm` if script execution is blocked. If the default port is in use, run `npm start -- 4174` and open that port instead.
+
+Before sharing a change, run:
+
+```sh
+npm run verify
+npm run build:site
 ```
 
-`npm start` also starts the local collector used by the recorder extension. Keep it running while collecting new experiments.
+The build writes the GPT Sites deployment output to `demo_and_extension/dist/`. It does not publish anything. The source matches the published site's globe, model selector, and project story; local development uses the repository's original PNG images, while the current hosted version uses compressed WebP copies.
 
-For the full competition-creation, Chrome-extension installation, static recording, and interactive video-arming workflow, read:
+The website currently presents the original Sol xhigh, Sol max, and Grok xhigh runs. Later reruns and other controller conditions remain in the repository and the leaderboard above; they are not combined into the website's original-run scores or prediction pins.
 
-```text
-demo_and_extension/README.md
-```
+Create a branch for your changes and open a pull request against `main`. Friends without repository write access can fork it and submit a pull request from their fork. Keep real predictions, ground truth, and benchmark provenance intact, and regenerate `data/generated/` with the build commands instead of editing it manually.
+
+After review and local verification, merge the changes and publish the approved build to the existing Nautilus GPT Site through the owner's account. Git pushes do not deploy the Site automatically; `.openai/hosting.json` identifies the existing Site and contains no deployment credentials.
+
+`npm start` also starts the local collector used by the recorder extension. For experiment recording and the complete data workflow, read [`demo_and_extension/README.md`](demo_and_extension/README.md).
 
 ## Important interactive-recorder check
 

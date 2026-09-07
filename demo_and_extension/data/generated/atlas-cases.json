@@ -58,13 +58,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-21-38-807Z-2c61c05c-f7d6-4dd5-a118-6d56725611a9",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 48.84958044593268,
+          "lng": 2.371940674031055,
+          "label": "Paris, France"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-21-38-807Z-2c61c05c-f7d6-4dd5-a118-6d56725611a9",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 208.297
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T02-33-39-808Z-d74ae46a-643b-4691-98f8-9226bd3e8f23",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 48.853929206647535,
+          "lng": 2.3689921398964047,
+          "label": "Paris, France"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T02-33-39-808Z-d74ae46a-643b-4691-98f8-9226bd3e8f23",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 277.077
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-23-19-878Z-daaf1168-bb8d-4a65-a260-5bcdf0953ecd",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 41.244772343082076,
+          "lng": -3.9465469856566413,
+          "label": "Sepúlveda, Spain"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-23-19-878Z-daaf1168-bb8d-4a65-a260-5bcdf0953ecd",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 77.033
+      },
+      {
         "id": "ogrr-2026-08-08T17-02-01-844Z-5ca7eb92-dc73-4e39-9db8-656b74086f48",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 48.83681485861938,
           "lng": 2.3895263671875004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Paris, France"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -3367,11 +3434,12 @@
       {
         "id": "ogrr-2026-08-08T17-05-54-986Z-41fd7a8c-5ea4-44d2-a77b-6a37650de5f1",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 48.84162677563422,
           "lng": 2.3730468750000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Paris, France"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -3874,11 +3942,12 @@
       {
         "id": "ogrr-2026-08-29T14-16-36-441Z-528da7ce-9192-43b3-8b9c-97b35029a3b3",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 46.911103863041546,
           "lng": -1.9335937500000002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "46.91110, -1.93359"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -4164,6 +4233,7 @@
       {
         "id": "ogrr-2026-08-31T08-14-44-303Z-26b91681-d489-4725-bd5d-7110b941432a",
         "model": "gemini 3.7 flash -high v2",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": null,
         "runStatus": "recording-only",
@@ -4592,11 +4662,12 @@
       {
         "id": "ogrr-2026-08-31T08-26-39-749Z-9640e9ab-b34d-4fa0-bf97-e2d610b120d6",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 10.315175072905628,
           "lng": -11.52061875791104,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "10.31518, -11.52062"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -4893,11 +4964,12 @@
       {
         "id": "ogrr-2026-08-31T21-38-08-670Z-2f71fae7-f3af-4e62-9a70-8cb488a9aea4",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 48.85299922862513,
           "lng": 2.3698067665100098,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "48.85300, 2.36981"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -5249,13 +5321,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-25-31-047Z-06b7d8a6-28b1-4833-94d3-952a3a5b659c",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 52.52216175358156,
+          "lng": 13.413293356552153,
+          "label": "Berlin, Germany"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-25-31-047Z-06b7d8a6-28b1-4833-94d3-952a3a5b659c",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 193.976
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T02-38-39-618Z-bacbf5f8-644c-4018-b094-797a04efa3a1",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 52.52285371706155,
+          "lng": 13.413257603970417,
+          "label": "Berlin, Germany"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T02-38-39-618Z-bacbf5f8-644c-4018-b094-797a04efa3a1",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 282.479
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-25-18-246Z-d0c1de12-244e-412e-8fbc-9e0d86c68e88",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 53.12040528310657,
+          "lng": 16.328104062622575,
+          "label": "gmina Człopa, Poland"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-25-18-246Z-d0c1de12-244e-412e-8fbc-9e0d86c68e88",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 126.98
+      },
+      {
         "id": "ogrr-2026-08-08T17-02-25-360Z-97cfa445-8104-42fd-95ff-2fe2382c7ee4",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 52.52025003846775,
           "lng": 13.425292968750002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Berlin, Germany"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -8168,11 +8307,12 @@
       {
         "id": "ogrr-2026-08-08T17-06-07-592Z-be8126ed-b335-4bd6-9692-9e7230b11e33",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 52.53881869470077,
           "lng": 13.46923828125,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Berlin, Germany"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -8684,11 +8824,12 @@
       {
         "id": "ogrr-2026-08-29T14-17-06-549Z-eae15524-cd62-49fa-9898-1590049b4451",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 50.26394231806007,
           "lng": 41.13281250000001,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "50.26394, 41.13281"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -9149,11 +9290,12 @@
       {
         "id": "ogrr-2026-08-31T08-27-06-363Z-39d022e6-0faf-45cf-ac15-1f4c3c40a18b",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": -21.28706236629518,
           "lng": -53.199127842423174,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "-21.28706, -53.19913"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -9613,11 +9755,12 @@
       {
         "id": "ogrr-2026-08-31T21-38-49-049Z-ab720985-c010-4513-bcc9-ec60d80f3706",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 52.52149761854428,
           "lng": 13.412997722625734,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "52.52150, 13.41300"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -10140,13 +10283,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-29-09-736Z-e9b65005-77b8-4fab-b026-cdd1167f5114",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 47.80076051599485,
+          "lng": 13.05306209365572,
+          "label": "Salzburg, Austria"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-29-09-736Z-e9b65005-77b8-4fab-b026-cdd1167f5114",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 193.33
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T02-43-43-338Z-e5f91eec-fda5-452e-a38c-0d05ed7b71cb",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 47.80055512536325,
+          "lng": 13.038393919582838,
+          "label": "Salzburg, Austria"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T02-43-43-338Z-e5f91eec-fda5-452e-a38c-0d05ed7b71cb",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 273.063
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-29-21-932Z-b6c995ae-dfe3-497d-a391-a97e4c7cdb9b",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 42.032974332441405,
+          "lng": 16.796895862867213,
+          "label": "Adriatic Sea"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-29-21-932Z-b6c995ae-dfe3-497d-a391-a97e4c7cdb9b",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 93.666
+      },
+      {
         "id": "ogrr-2026-08-08T17-02-49-093Z-25ac8808-77b4-4961-a0f8-ec2ca51f8025",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 47.810373988875114,
           "lng": 13.068237304687502,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Salzburg, Austria"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -11874,11 +12084,12 @@
       {
         "id": "ogrr-2026-08-08T17-06-19-875Z-1bb1f16d-e369-44db-a6c5-61cc05421821",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 47.75567539672843,
           "lng": 12.963867187500002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Gois, Austria"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -12407,11 +12618,12 @@
       {
         "id": "ogrr-2026-08-29T14-22-41-292Z-8b34aa63-90ec-440a-98b8-d7844b6b3311",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 48.198673437598345,
           "lng": 22.5,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "48.19867, 22.50000"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -12881,11 +13093,12 @@
       {
         "id": "ogrr-2026-08-31T08-29-25-081Z-713f0289-3617-4891-9b27-784bf4949e12",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 40.48065204065244,
           "lng": 34.85614700032757,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "40.48065, 34.85615"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -13345,11 +13558,12 @@
       {
         "id": "ogrr-2026-08-31T21-40-40-560Z-96ecdbe7-c3a1-441c-990e-bfba77fb3d1b",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 47.80050300289963,
           "lng": 13.05300235748291,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "47.80050, 13.05300"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -13901,13 +14115,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-33-09-503Z-ceac228b-3352-4404-a7e3-95488f20ca95",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 48.812674912737904,
+          "lng": 14.312765011827324,
+          "label": "Český Krumlov, Czechia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-33-09-503Z-ceac228b-3352-4404-a7e3-95488f20ca95",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 186.77
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T02-48-39-580Z-1aabf0c4-ea25-4e94-9347-1d86ca7949eb",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 48.81265724977165,
+          "lng": 14.312047789805511,
+          "label": "Český Krumlov, Czechia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T02-48-39-580Z-1aabf0c4-ea25-4e94-9347-1d86ca7949eb",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 279.418
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-32-01-482Z-74504103-b675-4924-915e-f8cc71fd7285",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 42.553080288955826,
+          "lng": 18.906375475244214,
+          "label": "Old Royal Capital Cetinje, Montenegro"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-32-01-482Z-74504103-b675-4924-915e-f8cc71fd7285",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 83.645
+      },
+      {
         "id": "ogrr-2026-08-08T17-03-06-487Z-b15b39bf-29aa-4f89-8a50-f306d34cf974",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 48.8141993876411,
           "lng": 14.312267303466799,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Český Krumlov, Czechia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -14429,11 +14710,12 @@
       {
         "id": "ogrr-2026-08-08T17-06-39-561Z-5727d74c-9c74-4e43-bfd0-0d2c1f836882",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 49.17514163882562,
           "lng": 14.133911132812502,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Křtětice, Czechia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -14917,11 +15199,12 @@
       {
         "id": "ogrr-2026-08-29T14-28-34-708Z-db77c34f-b384-46bc-8286-5e7c87db7827",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 48.66507926987768,
           "lng": 24.609375000000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "48.66508, 24.60938"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -15373,11 +15656,12 @@
       {
         "id": "ogrr-2026-08-31T08-32-39-860Z-0914ad22-d6b6-47da-be5d-08362a800838",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 30.306563734231553,
           "lng": 47.67249539216557,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "30.30656, 47.67250"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -15809,11 +16093,12 @@
       {
         "id": "ogrr-2026-08-31T21-41-53-203Z-19e162e8-3244-4c19-9959-3a01ede2b42e",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 48.812503705385446,
           "lng": 14.31299686431885,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "48.81250, 14.31300"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -16365,13 +16650,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-36-42-194Z-f7eaf7d1-6822-4859-a835-8742aa7b3a57",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 44.87348043484903,
+          "lng": 13.850214614158814,
+          "label": "Grad Pula, Croatia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-36-42-194Z-f7eaf7d1-6822-4859-a835-8742aa7b3a57",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 194.917
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T02-53-44-603Z-42c9f4d8-3988-4357-89c4-332287171562",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 44.873434815832226,
+          "lng": 13.849570724369405,
+          "label": "Grad Pula, Croatia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T02-53-44-603Z-42c9f4d8-3988-4357-89c4-332287171562",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 300.401
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-34-39-675Z-b9d00921-cf66-40a6-be73-cfeb1549da3d",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 43.83452678223684,
+          "lng": 10.11678991335929,
+          "label": "Italy"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-34-39-675Z-b9d00921-cf66-40a6-be73-cfeb1549da3d",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 94.764
+      },
+      {
         "id": "ogrr-2026-08-08T17-03-27-177Z-aac52a02-f367-4e06-a9a6-783db233a62f",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 44.883934761876645,
           "lng": 13.881308042281933,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Grad Pula, Croatia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -19221,11 +19573,12 @@
       {
         "id": "ogrr-2026-08-08T17-06-56-517Z-26130217-33ec-4d9e-8f69-578b81f891f2",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 44.87314736472617,
           "lng": 13.850197792053224,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Grad Pula, Croatia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -19720,11 +20073,12 @@
       {
         "id": "ogrr-2026-08-29T14-34-11-089Z-aa302f38-0ecd-48ba-8b05-65833ad51e78",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 45.31003365254538,
           "lng": 24.257812500000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "45.31003, 24.25781"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -20194,11 +20548,12 @@
       {
         "id": "ogrr-2026-08-31T08-37-45-943Z-68c97d50-6405-42f3-9f52-b437007c358e",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": -47.034661344114426,
           "lng": -115.18790110365964,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "-47.03466, -115.18790"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -20676,11 +21031,12 @@
       {
         "id": "ogrr-2026-08-31T21-43-11-866Z-0c92caea-79b6-4022-a515-45dd319c4c40",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 44.874698939874655,
           "lng": 13.84929656982422,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "44.87470, 13.84930"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -21232,13 +21588,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-40-19-685Z-5616dc53-ffe2-462d-b19d-179ac8aa1f3a",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 50.875311142200765,
+          "lng": 15.573169481152897,
+          "label": "Piechowice, Poland"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-40-19-685Z-5616dc53-ffe2-462d-b19d-179ac8aa1f3a",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 246.278
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T02-59-22-264Z-f70e809c-9a33-4734-a757-8578379e89d6",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 50.89630696460586,
+          "lng": 14.83683813811966,
+          "label": "Sieniawka, Poland"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T02-59-22-264Z-f70e809c-9a33-4734-a757-8578379e89d6",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 299.78
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-37-33-016Z-d7edbbb4-7436-41aa-b020-9dd9ca4a7a6c",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 48.45835188280866,
+          "lng": 13.632624138113213,
+          "label": "St. Roman, Austria"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-37-33-016Z-d7edbbb4-7436-41aa-b020-9dd9ca4a7a6c",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 94.422
+      },
+      {
         "id": "ogrr-2026-08-08T17-03-50-118Z-c0ecd742-aa08-4be9-99d2-b9a2024f5f83",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 50.89700386777002,
           "lng": 14.831542968750002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Zittau, Germany"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -25162,11 +25585,12 @@
       {
         "id": "ogrr-2026-08-08T17-07-10-655Z-ff1b02e1-3899-4f37-8200-8a827208319f",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 50.859849704534824,
           "lng": 14.853515625000002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Hrádek nad Nisou, Czechia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -25661,11 +26085,12 @@
       {
         "id": "ogrr-2026-08-29T14-39-50-279Z-7ca8c729-08f1-4efc-b6cd-8e59000ec908",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 50.48803417131152,
           "lng": 26.015625,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "50.48803, 26.01563"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -26106,11 +26531,12 @@
       {
         "id": "ogrr-2026-08-31T08-42-54-320Z-09428e55-0097-43c6-82f0-476bfc265d90",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 56.6573296104741,
           "lng": -103.41633449546988,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "56.65733, -103.41633"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -26597,11 +27023,12 @@
       {
         "id": "ogrr-2026-08-31T21-44-33-790Z-fc8c83cf-2049-4984-87a7-297fb17f94cf",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 50.900896523321286,
           "lng": 14.845490455627441,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "50.90090, 14.84549"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -27124,13 +27551,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-44-44-655Z-28dc9bda-8f90-4014-b605-5b8aa858c5d0",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 45.95783295371863,
+          "lng": 14.745559773994794,
+          "label": "Višnja Gora, Slovenia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-44-44-655Z-28dc9bda-8f90-4014-b605-5b8aa858c5d0",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 93.507
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-05-09-539Z-3e29707c-4a92-48c1-84e0-427c2d19bbd8",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 45.95377535200276,
+          "lng": 14.74322929439897,
+          "label": "Višnja Gora, Slovenia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-05-09-539Z-3e29707c-4a92-48c1-84e0-427c2d19bbd8",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 211.861
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-40-44-847Z-f4ddc045-b16a-4f05-9e6c-75f495425530",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 45.089035564831036,
+          "lng": 17.85164613029343,
+          "label": "Banovci, Croatia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-40-44-847Z-f4ddc045-b16a-4f05-9e6c-75f495425530",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 69.81
+      },
+      {
         "id": "ogrr-2026-08-08T17-04-13-443Z-2e47a70b-684c-49f5-aee1-14004333dae3",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 45.95736765856208,
           "lng": 14.742536544799806,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Višnja Gora, Slovenia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -28203,11 +28697,12 @@
       {
         "id": "ogrr-2026-08-08T17-07-22-275Z-9acb66b3-df0f-412d-b70f-107d6210df0f",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 45.83270778575885,
           "lng": 14.677734375000002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Velike Lašče, Slovenia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -28770,11 +29265,12 @@
       {
         "id": "ogrr-2026-08-29T14-45-48-866Z-4b575fa4-06a5-4bda-9db0-d8972dccf597",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 46.77371684516651,
           "lng": 24.9609375,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "46.77372, 24.96094"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -29244,11 +29740,12 @@
       {
         "id": "ogrr-2026-08-31T08-49-34-570Z-fa94e405-fdd7-4782-95b5-278b601f7c03",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 53.64579505578266,
           "lng": -112.99306083729348,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "53.64580, -112.99306"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -29715,11 +30212,12 @@
       {
         "id": "ogrr-2026-08-31T21-46-20-623Z-a59c9ff3-2347-4915-8f64-40974a1df2d4",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 45.9578051147043,
           "lng": 14.742493629455568,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "45.95781, 14.74249"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -30271,13 +30769,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-47-06-874Z-829cfc55-38f7-4083-a28f-554c42ac890f",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 60.86363802100094,
+          "lng": 7.113352500975845,
+          "label": "Aurland, Norway"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-47-06-874Z-829cfc55-38f7-4083-a28f-554c42ac890f",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 82.493
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-09-03-679Z-8caff96c-b157-4a8b-9a10-c8b2da64f565",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 60.86363802100094,
+          "lng": 7.113346044430707,
+          "label": "Aurland, Norway"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-09-03-679Z-8caff96c-b157-4a8b-9a10-c8b2da64f565",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 228.979
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-42-46-205Z-0fe89c8c-aab8-4042-a671-25fe7e12acc4",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 52.482780222078226,
+          "lng": 14.335811905539428,
+          "label": "Lietzen, Germany"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-42-46-205Z-0fe89c8c-aab8-4042-a671-25fe7e12acc4",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 74.62
+      },
+      {
         "id": "ogrr-2026-08-08T17-04-32-375Z-68131bc0-0073-48fb-ab22-1b0c2060c618",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 62.11568852858908,
           "lng": 7.646484375000001,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Skjåk, Norway"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -30773,11 +31338,12 @@
       {
         "id": "ogrr-2026-08-08T17-07-50-506Z-5e574008-efdd-406f-9281-fd44dd3ca540",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 61.5455500408842,
           "lng": 8.393554687500002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Lom, Norway"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -31261,11 +31827,12 @@
       {
         "id": "ogrr-2026-08-29T14-51-46-561Z-d771879a-de41-41df-97fb-e15c5222a461",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 60.737352124557724,
           "lng": 17.929687500000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "60.73735, 17.92969"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -31706,11 +32273,12 @@
       {
         "id": "ogrr-2026-08-31T08-55-11-564Z-8df06970-7682-4b7d-9508-d756b683ac40",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 71.30141878081267,
           "lng": -117.03981855957987,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "71.30142, -117.03982"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -32170,11 +32738,12 @@
       {
         "id": "ogrr-2026-08-31T21-48-02-285Z-27ecda8d-e273-473a-9106-c00cd5f135d7",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 60.86350360032024,
           "lng": 7.118003368377686,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "60.86350, 7.11800"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -32726,13 +33295,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-18-17-166Z-22c57e83-6c17-4ab3-897a-ff93cb873d14",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 35.28150065789119,
+          "lng": 25.52760266190755,
+          "label": "Vrachasi Municipal Unit, Greece"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-18-17-166Z-22c57e83-6c17-4ab3-897a-ff93cb873d14",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 53.038
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-53-03-055Z-e51ac62f-74ed-431f-82f8-970824d1ea34",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 36.81368259124586,
+          "lng": 22.954718778318366,
+          "label": "Municipality of Monemvasia, Greece"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-53-03-055Z-e51ac62f-74ed-431f-82f8-970824d1ea34",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 131.636
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-21-21-669Z-1b6553f5-59c5-4bf7-84ac-81e4a07d1ac9",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 25.799891182088334,
+          "lng": -1.485463028328855,
+          "label": "Reggane, Algeria"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-21-21-669Z-1b6553f5-59c5-4bf7-84ac-81e4a07d1ac9",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 163.209
+      },
+      {
         "id": "ogrr-2026-08-08T18-46-11-216Z-284d997d-2986-46d2-af82-c1bbf96871c4",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 55.210032235242274,
           "lng": 24.213867187500004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Akliai, Lithuania"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -33231,11 +33867,12 @@
       {
         "id": "ogrr-2026-08-08T18-49-01-938Z-02463f1d-acbf-4b08-a013-8535f5f9026a",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 38.35856464726084,
           "lng": 22.5,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Regional Unit of Phocis, Greece"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -34808,11 +35445,12 @@
       {
         "id": "ogrr-2026-08-29T16-02-18-350Z-eb7121ba-d8bb-435f-99d2-a627dcb26b9c",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 41.48125256786659,
           "lng": 30.937500000000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "41.48125, 30.93750"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -35109,11 +35747,12 @@
       {
         "id": "ogrr-2026-08-31T22-14-01-298Z-ddc2531a-e1bf-460d-9c38-1868cc5fb52b",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 37.41049616115508,
           "lng": 22.75599002838135,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "37.41050, 22.75599"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -35662,13 +36301,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-19-27-826Z-c41f70e0-a1f2-46ae-9066-8e5d1fa878c5",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 44.824708282300236,
+          "lng": 20.739736938304276,
+          "label": "Starčevo, Serbia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-19-27-826Z-c41f70e0-a1f2-46ae-9066-8e5d1fa878c5",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 59.828
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-55-51-283Z-385710f4-300b-477a-a548-b0cd6753841a",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 46.78501604269256,
+          "lng": 24.49440398591396,
+          "label": "Socolu de Câmpie, Romania"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-55-51-283Z-385710f4-300b-477a-a548-b0cd6753841a",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 107.846
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-24-55-332Z-fc237987-4bd1-4e23-bf75-27448780f256",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 46.01222384063238,
+          "lng": 25.117768083790253,
+          "label": "Jibert, Romania"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-24-55-332Z-fc237987-4bd1-4e23-bf75-27448780f256",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 127.561
+      },
+      {
         "id": "ogrr-2026-08-08T18-46-29-715Z-4381da8d-49b3-44cb-8411-1f27d385566f",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 46.92695384561422,
           "lng": 20.522460937500004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Mezőtúr, Hungary"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -36139,11 +36845,12 @@
       {
         "id": "ogrr-2026-08-08T18-49-12-646Z-7300cfd1-d364-4132-b358-0b3b477b8d56",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 55.8363728160116,
           "lng": 24.345703125,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Paįstrys, Lithuania"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -39383,11 +40090,12 @@
       {
         "id": "ogrr-2026-08-29T16-03-23-159Z-b3b1a05e-5550-4f95-9046-6e25126ec49c",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 46.2901309672608,
           "lng": 35.15625000000001,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "46.29013, 35.15625"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -39857,11 +40565,12 @@
       {
         "id": "ogrr-2026-08-31T22-16-07-640Z-6b251f40-51ad-4f67-b63e-6dfee5c7814f",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 46.54230521496953,
           "lng": 24.557404518127445,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "46.54231, 24.55740"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -40395,13 +41104,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-21-02-200Z-7609e434-c77c-4f61-9a5e-578456b2adaa",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 43.858296779161854,
+          "lng": 18.410842639076183,
+          "label": "Sarajevo, Bosnia and Herzegovina"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-21-02-200Z-7609e434-c77c-4f61-9a5e-578456b2adaa",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 37.549
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-58-32-623Z-def8d9f3-c639-4384-aae1-1f336c92a5af",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 43.88205730390537,
+          "lng": 19.04550691897319,
+          "label": "Rogatica municipality, Bosnia and Herzegovina"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-58-32-623Z-def8d9f3-c639-4384-aae1-1f336c92a5af",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 127.084
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-27-52-453Z-ff43c5da-0f37-42a9-9264-d25477e32bd5",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 44.15068115978094,
+          "lng": 19.84401674665929,
+          "label": "Gornje Leskovice, Serbia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-27-52-453Z-ff43c5da-0f37-42a9-9264-d25477e32bd5",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 141.265
+      },
+      {
         "id": "ogrr-2026-08-08T18-46-40-332Z-3e226e2c-7a9f-4f7e-9953-86f64a87e976",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 45.86209124108815,
           "lng": 25.927734375000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Reci, Romania"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -40900,11 +41676,12 @@
       {
         "id": "ogrr-2026-08-08T18-49-26-790Z-de9a9555-63a5-46da-affb-2efe7a27c978",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 56.517839920175156,
           "lng": 26.411132812500004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Jēkabpils novads, Latvia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -44718,11 +45495,12 @@
       {
         "id": "ogrr-2026-08-29T16-09-11-977Z-1fa5668f-8a8d-45b1-a75b-c28d26635eb5",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 43.80755245671751,
           "lng": 35.50781250000001,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "43.80755, 35.50781"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -45192,11 +45970,12 @@
       {
         "id": "ogrr-2026-08-31T22-17-55-428Z-16e1d569-01f9-4021-a81d-a2f8eecd9add",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 41.62450765699063,
           "lng": 24.68499183654785,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "41.62451, 24.68499"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -45730,13 +46509,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-22-03-052Z-02f153f5-e2d5-4c2e-9820-546cfb6b04dd",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 46.27103747280263,
+          "lng": 20.296066274796043,
+          "label": "Szeged, Hungary"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-22-03-052Z-02f153f5-e2d5-4c2e-9820-546cfb6b04dd",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 56.938
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T04-01-05-611Z-e8147790-4b68-48f5-a5f2-86c0e78f8917",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 45.0502402697946,
+          "lng": 20.146475219554276,
+          "label": "Indjija Municipality, Serbia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T04-01-05-611Z-e8147790-4b68-48f5-a5f2-86c0e78f8917",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 102.987
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-32-00-111Z-6f331700-fdce-41c2-9c95-40d49bd51aeb",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 46.195042108660154,
+          "lng": 21.07453780284779,
+          "label": "Pecica, Romania"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-32-00-111Z-6f331700-fdce-41c2-9c95-40d49bd51aeb",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 166.391
+      },
+      {
         "id": "ogrr-2026-08-08T18-46-50-477Z-fe2d54c0-c054-40fc-b047-db028e087c91",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 50.13193412740999,
           "lng": 26.630859375,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Pluzhne Rural Hromada, Ukraine"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -46224,11 +47070,12 @@
       {
         "id": "ogrr-2026-08-08T18-49-43-067Z-dda86b80-7747-4d78-9b1f-d644df665db2",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 46.941113282631854,
           "lng": 19.995117187500004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Szentkirály, Hungary"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -47639,11 +48486,12 @@
       {
         "id": "ogrr-2026-08-29T16-15-10-986Z-1cabaf9a-7347-4c81-8b57-bf78697a0ebf",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 47.25299898389147,
           "lng": 31.992187500000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "47.25300, 31.99219"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -48084,11 +48932,12 @@
       {
         "id": "ogrr-2026-08-31T22-20-02-590Z-3caaccea-b351-401d-a788-75852b6016b7",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 45.852001594653856,
           "lng": 19.7819995880127,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "45.85200, 19.78200"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -49863,13 +50712,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-23-39-943Z-d5dcf8ef-8621-4691-a9f2-5ba3a5853a64",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 56.96893619436121,
+          "lng": 24.142749950084127,
+          "label": "Riga, Latvia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-23-39-943Z-d5dcf8ef-8621-4691-a9f2-5ba3a5853a64",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 94.935
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T04-03-07-606Z-32eb509a-5e9e-4be0-a2a9-8db683a60471",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 58.41322259056804,
+          "lng": 27.043530256188387,
+          "label": "Luunja vald, Estonia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T04-03-07-606Z-32eb509a-5e9e-4be0-a2a9-8db683a60471",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 99.902
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-36-15-788Z-c24c3a5c-af1f-44d3-a1f2-522a665d5307",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 52.908902047770255,
+          "lng": 23.711413471413252,
+          "label": "Michnówka, Poland"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-36-15-788Z-c24c3a5c-af1f-44d3-a1f2-522a665d5307",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 162.501
+      },
+      {
         "id": "ogrr-2026-08-08T18-46-59-592Z-1d123867-4236-466a-aa64-506937b90bf0",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 54.98983971612658,
           "lng": 23.203125000000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Zypliabūdis, Lithuania"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -50323,11 +51239,12 @@
       {
         "id": "ogrr-2026-08-08T18-49-51-560Z-1809b5f1-0089-47b4-aff7-71bb418c415a",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 55.18749676646467,
           "lng": 23.4228515625,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Žardiškiai, Lithuania"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -54279,11 +55196,12 @@
       {
         "id": "ogrr-2026-08-29T16-21-17-976Z-db216478-283f-42f4-9a01-aaece9000d2b",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 58.05498914021489,
           "lng": 30.234375000000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "58.05499, 30.23438"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -54735,11 +55653,12 @@
       {
         "id": "ogrr-2026-08-31T22-23-22-389Z-33aaec0f-b4fe-43b0-a48f-57283660575e",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 56.94959850765264,
           "lng": 25.549993515014652,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "56.94960, 25.54999"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -57398,13 +58317,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-25-49-082Z-7eb5eff5-bb18-41eb-932f-5a3ee7b5e8fc",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 58.39019698411526,
+          "lng": 26.999438486360607,
+          "label": "Luunja vald, Estonia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-25-49-082Z-7eb5eff5-bb18-41eb-932f-5a3ee7b5e8fc",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 74.935
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T04-05-21-346Z-931432d9-dd99-4e28-b75a-4fe490d803a1",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 56.68037378950137,
+          "lng": 24.318871190309295,
+          "label": "Baldones pagasts, Latvia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T04-05-21-346Z-931432d9-dd99-4e28-b75a-4fe490d803a1",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 133.64
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-39-56-601Z-89a8220b-d423-43ad-af1f-22f3d39133f0",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 54.16243396806781,
+          "lng": 24.678288805696003,
+          "label": "Vydenių seniūnija, Lithuania"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-39-56-601Z-89a8220b-d423-43ad-af1f-22f3d39133f0",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 154.314
+      },
+      {
         "id": "ogrr-2026-08-08T18-47-09-701Z-ce212494-f0b0-405b-8fe1-c39fc1a09da6",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 52.65229711967942,
           "lng": 17.402343750000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Charbowo, Poland"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -57875,11 +58861,12 @@
       {
         "id": "ogrr-2026-08-08T18-50-12-136Z-68790a35-dfa9-44b6-a715-abc9716fb40c",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 52.272412974684926,
           "lng": 18.676757812500004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Kamień, Poland"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -60582,11 +61569,12 @@
       {
         "id": "ogrr-2026-08-29T16-27-13-102Z-a7f1b958-f633-4016-8a2c-ea72c6b8d028",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 56.72933998996593,
           "lng": 29.179687500000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "56.72934, 29.17969"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -61056,11 +62044,12 @@
       {
         "id": "ogrr-2026-08-31T22-25-53-762Z-afbf4608-dbcc-4812-a058-50aa5a27f95d",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 55.98500080613319,
           "lng": 24.250001907348633,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "55.98500, 24.25000"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -61583,13 +62572,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-27-50-603Z-26378ad5-b9a8-4397-ab92-ab1d9645a24c",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 55.485079037526134,
+          "lng": 8.69867358390724,
+          "label": "Esbjerg Municipality, Denmark"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-27-50-603Z-26378ad5-b9a8-4397-ab92-ab1d9645a24c",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 53.971
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T04-08-08-820Z-2982e5bb-9710-4d38-9c0a-b16f6bdf70ff",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 54.86712424019824,
+          "lng": 11.90240893640114,
+          "label": "Guldborgsund Municipality, Denmark"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T04-08-08-820Z-2982e5bb-9710-4d38-9c0a-b16f6bdf70ff",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 101.554
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-43-34-397Z-30562b30-4239-48d2-bac5-75053eb45d1d",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 53.54030739150022,
+          "lng": 12.812348297151324,
+          "label": "Schloen-Dratow, Germany"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-43-34-397Z-30562b30-4239-48d2-bac5-75053eb45d1d",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 142.255
+      },
+      {
         "id": "ogrr-2026-08-08T18-47-20-350Z-915e3b88-67aa-49a4-9199-429c7577a9d5",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 56.22736092651515,
           "lng": 9.228515625000002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Engesvang, Denmark"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -62077,11 +63133,12 @@
       {
         "id": "ogrr-2026-08-08T18-50-21-479Z-a438dd97-d859-4777-8668-3fb9cc356627",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 56.47734228034747,
           "lng": 9.536132812500002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Viborg Municipality, Denmark"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -65189,11 +66246,12 @@
       {
         "id": "ogrr-2026-08-29T16-33-11-707Z-921d0205-4cbd-4eb0-b75f-95ba8cf19103",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 55.154927860998235,
           "lng": 20.390625000000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "55.15493, 20.39063"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -65663,11 +66721,12 @@
       {
         "id": "ogrr-2026-08-31T22-28-16-358Z-f3ea2a66-f7c2-4ac9-ae24-4ddf2767af4a",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 56.98500520165265,
           "lng": 9.650008678436281,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "56.98501, 9.65001"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -66201,13 +67260,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-29-18-027Z-d03149b8-e866-4e16-aff8-6e279ab20ce7",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 61.501734289732326,
+          "lng": 24.99500210643431,
+          "label": "Kuhmoinen, Finland"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-29-18-027Z-d03149b8-e866-4e16-aff8-6e279ab20ce7",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 99.078
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T04-10-15-157Z-129e1492-4d0f-4be0-8a1c-e6a26fd949bf",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 62.237232893654486,
+          "lng": 26.33991619332598,
+          "label": "Hankasalmi, Finland"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T04-10-15-157Z-129e1492-4d0f-4be0-8a1c-e6a26fd949bf",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 111.038
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-46-58-846Z-96e20d7b-ae61-4237-81af-d7c360921c80",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 61.64816245852389,
+          "lng": 30.743081920921217,
+          "label": "Sortavala Urban Okrug, Russia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-46-58-846Z-96e20d7b-ae61-4237-81af-d7c360921c80",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 154.716
+      },
+      {
         "id": "ogrr-2026-08-08T18-47-29-838Z-a542dc5a-2bb3-4c01-b0c8-1ae6717662b3",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 63.08770808386712,
           "lng": 27.773437500000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Siilinjärvi, Finland"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -66695,11 +67821,12 @@
       {
         "id": "ogrr-2026-08-08T18-50-34-447Z-1d6e2808-5d18-4f32-b039-7b7b5208386d",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 63.595046013497786,
           "lng": 27.24609375,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Iisalmi, Finland"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -71204,11 +72331,12 @@
       {
         "id": "ogrr-2026-08-29T16-38-54-908Z-6cb28a5d-77f0-4174-89b4-350cd021130b",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 65.20011893733452,
           "lng": 30.937500000000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "65.20012, 30.93750"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -71662,11 +72790,12 @@
       {
         "id": "ogrr-2026-08-31T22-31-17-943Z-c0bfdd95-8186-40c0-a285-1505f69739d8",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 62.89240307751283,
           "lng": 27.678208351135254,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "62.89240, 27.67821"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -72207,13 +73336,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-51-56-941Z-97bf2ed1-70a9-41ce-96f9-2662d0995d67",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 39.4733054109641,
+          "lng": -0.3683728309253254,
+          "label": "Valencia, Spain"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-51-56-941Z-97bf2ed1-70a9-41ce-96f9-2662d0995d67",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 84.901
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-15-39-487Z-df1f7a92-7979-48b2-a46f-b5c9e4ecd9da",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 39.468046261397035,
+          "lng": -0.3694392604255526,
+          "label": "Valencia, Spain"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-15-39-487Z-df1f7a92-7979-48b2-a46f-b5c9e4ecd9da",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 211.142
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-50-38-266Z-0b406fb8-6796-4d0e-a0ca-675be455a4ac",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 36.59788913307022,
+          "lng": -9.92346516773841,
+          "label": "North Atlantic Ocean"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-50-38-266Z-0b406fb8-6796-4d0e-a0ca-675be455a4ac",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 90.073
+      },
+      {
         "id": "ogrr-2026-08-08T18-37-39-657Z-3d403909-8554-4bc8-9ae2-dabd90cacc14",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 39.611941548175515,
           "lng": -2.0654296875000004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Alarcón, Spain"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -72684,11 +73880,12 @@
       {
         "id": "ogrr-2026-08-08T18-41-01-486Z-0bfa2976-16cf-488b-bf13-60e8301282e6",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 39.47756137542002,
           "lng": -0.41336059570312506,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Mislata, Spain"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -76485,11 +77682,12 @@
       {
         "id": "ogrr-2026-08-29T15-05-00-000Z-8178029f-54e7-4543-8a38-d1409f50dc47",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 41.77565172563976,
           "lng": 5.451436066466932,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "41.77565, 5.45144"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -76623,11 +77821,12 @@
       {
         "id": "ogrr-2026-08-31T21-54-06-436Z-9dc8ccfe-cf54-41c2-82d8-9e730362b8b7",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 39.46679779299604,
           "lng": -0.36608934402465826,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "39.46680, -0.36609"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -77187,13 +78386,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-53-57-849Z-16c58a00-b6b6-490a-9ea5-7709d582ffa4",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 44.49356657962078,
+          "lng": 11.34304714760691,
+          "label": "Bologna, Italy"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-53-57-849Z-16c58a00-b6b6-490a-9ea5-7709d582ffa4",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 98.254
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-19-40-805Z-3c606b39-2f27-4d2d-9318-78c4f970d28f",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 45.69275137290873,
+          "lng": 9.650182606499873,
+          "label": "Bergamo, Italy"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-19-40-805Z-3c606b39-2f27-4d2d-9318-78c4f970d28f",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 218.549
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-52-39-858Z-643ca409-0acd-45d9-89cf-def7ef535b7a",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 34.88593094075317,
+          "lng": 6.249393188605286,
+          "label": "M'Ziraa, Algeria"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-52-39-858Z-643ca409-0acd-45d9-89cf-def7ef535b7a",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 55.188
+      },
+      {
         "id": "ogrr-2026-08-08T18-37-55-438Z-5ca84b03-59d4-4102-9e1b-dc92a5849bee",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 41.96916009891858,
           "lng": 12.436523437500002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Rome, Italy"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -77692,11 +78958,12 @@
       {
         "id": "ogrr-2026-08-08T18-41-25-443Z-e8e4677a-74bb-4587-9dfe-4fe1329cf55a",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 44.52924799227042,
           "lng": 11.348876953125002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Bologna, Italy"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -81487,11 +82754,12 @@
       {
         "id": "ogrr-2026-08-29T15-10-00-000Z-58c82d40-9546-4041-b564-66da5ec8e7ff",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 45.74202472463841,
           "lng": 21.751547622795723,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "45.74202, 21.75155"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -81625,11 +82893,12 @@
       {
         "id": "ogrr-2026-08-31T09-22-24-721Z-f6d8fb13-5b6e-4666-93c4-ab60c0122cc4",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 23.11507042493036,
           "lng": -2.4979644180271303,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "23.11507, -2.49796"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -81915,11 +83184,12 @@
       {
         "id": "ogrr-2026-08-31T21-55-59-528Z-d60be40d-6635-436b-b573-4337c750cfc1",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 44.49310943361521,
           "lng": 11.324994564056398,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "44.49311, 11.32499"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -82471,13 +83741,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-56-11-917Z-186b5bd7-b519-429f-a7b6-53de2bcb87fd",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 52.11325243469633,
+          "lng": 5.228245003435696,
+          "label": "Zeist, Netherlands"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-56-11-917Z-186b5bd7-b519-429f-a7b6-53de2bcb87fd",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 128.646
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-23-51-970Z-55ffb4b5-7cf7-427f-9229-2614a5e3ac83",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 52.11027428492664,
+          "lng": 5.0833392130443,
+          "label": "Utrecht, Netherlands"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-23-51-970Z-55ffb4b5-7cf7-427f-9229-2614a5e3ac83",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 218.686
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-54-14-243Z-f885bb3d-d212-4332-8286-fa91e970173c",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 53.38332836757156,
+          "lng": 7.451621693318997,
+          "label": "Ihlow, Germany"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-54-14-243Z-f885bb3d-d212-4332-8286-fa91e970173c",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 128.282
+      },
+      {
         "id": "ogrr-2026-08-08T18-38-06-092Z-1b226d38-d915-4448-92c9-9720f72d25ea",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 52.343386601688664,
           "lng": 4.916381835937501,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Amsterdam, Netherlands"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -82948,11 +84285,12 @@
       {
         "id": "ogrr-2026-08-08T18-41-55-975Z-b9ea1b94-7eff-40aa-8bcf-2f242b1febfa",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 51.04186737064577,
           "lng": 3.7380981445312504,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Ghent, Belgium"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -85298,11 +86636,12 @@
       {
         "id": "ogrr-2026-08-29T15-15-00-000Z-9e458498-ef11-46ec-ab2a-3c89141dab28",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 49.89927365124892,
           "lng": 17.812657118683365,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "49.89927, 17.81266"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -85436,6 +86775,7 @@
       {
         "id": "ogrr-2026-08-31T09-23-39-120Z-015d9071-a0b6-4303-8054-39ab4a01ff8d",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": null,
         "runStatus": "recording-only",
@@ -85891,11 +87231,12 @@
       {
         "id": "ogrr-2026-08-31T21-58-05-340Z-e546694a-3973-4dc3-b1f2-0d5ffd661c6a",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 52.11239765051737,
           "lng": 5.07969617843628,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "52.11240, 5.07970"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -86429,13 +87770,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T04-58-49-354Z-2d85223e-8b2b-4cb9-a141-f533892c9eb0",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 51.144894309328016,
+          "lng": 3.624170156917557,
+          "label": "Waarschoot, Belgium"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T04-58-49-354Z-2d85223e-8b2b-4cb9-a141-f533892c9eb0",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 130.188
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-28-24-718Z-7034ab25-3246-4692-941b-49e7481fc9f2",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 51.055207338584964,
+          "lng": 3.315279305345307,
+          "label": "Wingene, Belgium"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-28-24-718Z-7034ab25-3246-4692-941b-49e7481fc9f2",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 267.749
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T22-57-17-426Z-ebeaab60-140f-4ccc-8c9e-d20b3ca76469",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 50.51342652633956,
+          "lng": 6.133183859036247,
+          "label": "Robertville, Belgium"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T22-57-17-426Z-ebeaab60-140f-4ccc-8c9e-d20b3ca76469",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 150.665
+      },
+      {
         "id": "ogrr-2026-08-08T18-38-18-705Z-0486130c-8275-44b6-a966-648ddf440a49",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 50.87628648155156,
           "lng": 4.301147460937501,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Ganshoren, Belgium"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -86917,11 +88325,12 @@
       {
         "id": "ogrr-2026-08-08T18-42-12-098Z-5ebb3d84-26fd-4be2-96e5-845396812af1",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 51.062046091049666,
           "lng": 3.7243652343750004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Ghent, Belgium"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -88518,11 +89927,12 @@
       {
         "id": "ogrr-2026-08-29T15-20-00-000Z-0930e5d1-ce60-430e-9494-393f5857c1f0",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 49.773876003288976,
           "lng": 15.192755157220644,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "49.77388, 15.19276"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -88656,11 +90066,12 @@
       {
         "id": "ogrr-2026-08-31T09-30-54-755Z-ee29ad85-8455-4a4e-802f-66f76c009181",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 44.59046718130883,
           "lng": 9.843750000000002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "44.59047, 9.84375"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -89131,11 +90542,12 @@
       {
         "id": "ogrr-2026-08-31T22-00-12-271Z-67af1352-e440-4111-9c0c-e722b0b8c63c",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 50.98750552958094,
           "lng": 3.746402263641358,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "50.98751, 3.74640"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -89687,13 +91099,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-01-34-431Z-82e8b58c-5c91-45ee-824e-cb8cb56e1daa",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 40.204050425113294,
+          "lng": -8.27404216345078,
+          "label": "Vila Nova de Poiares, Portugal"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-01-34-431Z-82e8b58c-5c91-45ee-824e-cb8cb56e1daa",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 127.367
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-33-26-386Z-81c57fb9-67e7-4e24-9756-05d3cb1e129d",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 40.20509926855807,
+          "lng": -8.412510831609467,
+          "label": "Coimbra, Portugal"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-33-26-386Z-81c57fb9-67e7-4e24-9756-05d3cb1e129d",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 160.491
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-01-05-344Z-c6e91abe-5d68-42df-9ae9-825a9eb4e863",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 37.50972584293751,
+          "lng": -5.2928066157177165,
+          "label": "Fuentes de Andalucía, Spain"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-01-05-344Z-c6e91abe-5d68-42df-9ae9-825a9eb4e863",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 173.041
+      },
+      {
         "id": "ogrr-2026-08-08T18-38-28-768Z-5e799dee-8646-42d0-b837-e7b9f916106e",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 41.09698928680882,
           "lng": -8.519897460937502,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Gondomar, Portugal"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -90192,11 +91671,12 @@
       {
         "id": "ogrr-2026-08-08T18-42-30-279Z-7636d48f-aeb9-419e-9661-362563bef1c5",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 40.20865129168435,
           "lng": -8.421020507812502,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Coimbra, Portugal"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -92197,11 +93677,12 @@
       {
         "id": "ogrr-2026-08-29T15-25-00-000Z-082b9fdd-7c61-4d86-a95e-2bfbfa5afdb7",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 42.389337911232424,
           "lng": -1.2172735495906826,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "42.38934, -1.21727"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -92335,11 +93816,12 @@
       {
         "id": "ogrr-2026-08-31T09-37-13-514Z-f3d1964f-6c1a-4e91-a7b4-48b9b2986f7e",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": -53.120405283106564,
           "lng": -127.61718750000001,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "-53.12041, -127.61719"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -92807,11 +94289,12 @@
       {
         "id": "ogrr-2026-08-31T22-02-27-219Z-480c2e45-01a3-448c-b939-734d7ab6fb56",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 40.215605387583174,
           "lng": -8.43380928039551,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "40.21561, -8.43381"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -93372,13 +94855,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-04-18-139Z-fc866380-39a6-4117-a1a9-df4adf0be8b6",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 58.636935048101215,
+          "lng": 11.642946100153713,
+          "label": "Munkedals kommun, Sweden"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-04-18-139Z-fc866380-39a6-4117-a1a9-df4adf0be8b6",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 127.257
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-36-35-762Z-6cbed3bd-ca66-4738-b92f-66ba574df616",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 57.70781573480824,
+          "lng": 11.998362855313223,
+          "label": "Gothenburg, Sweden"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-36-35-762Z-6cbed3bd-ca66-4738-b92f-66ba574df616",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 138.64
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-04-53-648Z-2e209124-0789-48e9-adba-38dca83f0386",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 59.265880628258095,
+          "lng": 21.51440937735571,
+          "label": "Baltic Sea"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-04-53-648Z-2e209124-0789-48e9-adba-38dca83f0386",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 141.34
+      },
+      {
         "id": "ogrr-2026-08-08T18-38-45-270Z-03cf056c-51ee-41cc-8c89-798d26435e89",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 59.64761247680739,
           "lng": 15.534667968750002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Svansboda, Sweden"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -93860,11 +95410,12 @@
       {
         "id": "ogrr-2026-08-08T18-42-50-267Z-6ff12e0b-7ec1-4617-a437-7f6ba5f5dc82",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 59.86989270601673,
           "lng": 17.649536132812504,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Uppsala, Sweden"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -96251,11 +97802,12 @@
       {
         "id": "ogrr-2026-08-29T15-30-00-000Z-4db80682-ec06-4573-bee4-84d603c0e45e",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 60.31241514626134,
           "lng": 22.17832385725818,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "60.31242, 22.17832"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -96389,11 +97941,12 @@
       {
         "id": "ogrr-2026-08-31T09-42-59-112Z-eff5a480-a729-4290-b186-679424b862f6",
         "model": "gemini-3.7-flash-high v3",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": -21.950491482396412,
           "lng": -124.80468750000001,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "-21.95049, -124.80469"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -96879,11 +98432,12 @@
       {
         "id": "ogrr-2026-08-31T22-04-46-832Z-033bf8e1-663c-4c52-a5ae-cab7a6dbd43c",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 59.848103773053275,
           "lng": 17.614109516143802,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "59.84810, 17.61411"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -97435,13 +98989,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-07-03-226Z-dc4419ee-11a7-4219-b28f-4002753df7b8",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 57.79794388498275,
+          "lng": 21.931438705229937,
+          "label": "Saare County, Estonia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-07-03-226Z-dc4419ee-11a7-4219-b28f-4002753df7b8",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 150.436
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-39-34-451Z-6be13d1a-18fe-4f53-baab-3f44c24349fc",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 56.9449741808516,
+          "lng": 24.525454414706665,
+          "label": "Ropažu novads, Latvia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-39-34-451Z-6be13d1a-18fe-4f53-baab-3f44c24349fc",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 199.779
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-08-05-117Z-b26bd641-4cbc-4097-aa8d-4133e45c3e51",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 58.401711667608,
+          "lng": 27.667119270675176,
+          "label": "Гдовский муниципальный округ, Russia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-08-05-117Z-b26bd641-4cbc-4097-aa8d-4133e45c3e51",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 122.9
+      },
+      {
         "id": "ogrr-2026-08-08T18-38-54-814Z-82fd63c3-9376-4b6d-a8df-2ad18a51f9ca",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 59.143701546512716,
           "lng": 24.78515625,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Loone, Estonia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -97923,11 +99544,12 @@
       {
         "id": "ogrr-2026-08-08T18-43-11-924Z-0df5ed55-1959-46e3-9898-6c7416f1b35f",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 58.90900125861461,
           "lng": 25.592651367187504,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Sillaotsa, Estonia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -100459,11 +102081,12 @@
       {
         "id": "ogrr-2026-08-29T15-35-00-000Z-1f6384f7-182f-4f2f-bee4-52b95750341d",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 59.15095016218099,
           "lng": 30.236218691651395,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "59.15095, 30.23622"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -100597,11 +102220,12 @@
       {
         "id": "ogrr-2026-08-31T22-06-40-027Z-d0562ae5-0216-49aa-93c1-30c3866144e3",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 59.439796507837286,
           "lng": 24.636003971099857,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "59.43980, 24.63600"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -101135,13 +102759,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-10-18-249Z-ff859edf-829c-4a39-9a9a-7ff6c6f7d213",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 46.11894150610708,
+          "lng": 14.694506454929376,
+          "label": "Moravče, Slovenia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-10-18-249Z-ff859edf-829c-4a39-9a9a-7ff6c6f7d213",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 149.223
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-43-48-343Z-dfada52a-4719-48e7-99a9-54dc287e6d9e",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 46.23685258143994,
+          "lng": 15.352179715818362,
+          "label": "Šentjur, Slovenia"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-43-48-343Z-dfada52a-4719-48e7-99a9-54dc287e6d9e",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 102.286
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-11-05-054Z-1fbeb1ac-e10a-4194-b001-4470e7f16b10",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 46.92025531537454,
+          "lng": 22.393629464486676,
+          "label": "Vadu Crișului, Romania"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-11-05-054Z-1fbeb1ac-e10a-4194-b001-4470e7f16b10",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 124.927
+      },
+      {
         "id": "ogrr-2026-08-08T18-39-07-755Z-377875fb-b65a-4577-985b-fdf2531763b2",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 48.54716780625758,
           "lng": 18.522949218750004,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Veľké Pole, Slovakia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -101640,11 +103331,12 @@
       {
         "id": "ogrr-2026-08-08T18-43-30-733Z-7405d4d8-1461-4c1c-b74c-510901246d2d",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 48.59044611105615,
           "lng": 18.638305664062504,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Kľak, Slovakia"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -104905,11 +106597,12 @@
       {
         "id": "ogrr-2026-08-29T15-40-00-000Z-f74a52ef-8dd6-448e-beff-454863024741",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 48.48137640363698,
           "lng": 30.641677083839987,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "48.48138, 30.64168"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -105043,11 +106736,12 @@
       {
         "id": "ogrr-2026-08-31T22-08-09-982Z-241da5b6-1118-4024-8b2c-8e148713938b",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 49.20809526859308,
           "lng": 18.751194477081302,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "49.20810, 18.75119"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -105570,13 +107264,80 @@
     },
     "runs": [
       {
+        "id": "benchmark-gpt-5-6-sol-xhigh-ogrr-2026-08-13T05-13-25-598Z-6e200649-5d1b-4f5e-8231-816b4af1f4d4",
+        "model": "GPT-5.6 Sol · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 53.28492154619624,
+          "lng": -9.010094437198996,
+          "label": "Galway, Ireland"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T05-13-25-598Z-6e200649-5d1b-4f5e-8231-816b4af1f4d4",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 138.653
+      },
+      {
+        "id": "benchmark-gpt-5-6-sol-max-ogrr-2026-08-13T03-46-33-214Z-09523ceb-1076-4b43-ac3d-c8f33c25869f",
+        "model": "GPT-5.6 Sol · max",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 53.12040528310657,
+          "lng": 19.951187566856618,
+          "label": "gmina Lubowidz, Poland"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "gpt-5-6-sol-max",
+        "sourcePredictionId": "ogrr-2026-08-13T03-46-33-214Z-09523ceb-1076-4b43-ac3d-c8f33c25869f",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 224.086
+      },
+      {
+        "id": "benchmark-grok-4-6-xhigh-ogrr-2026-08-13T23-14-11-574Z-7e8e5031-fa29-4d43-9035-0a2afbab3ace",
+        "model": "Grok 4.6 · xhigh",
+        "condition": "interactive-panorama",
+        "prediction": {
+          "lat": 50.3454604086048,
+          "lng": 0.06886149950749766,
+          "label": "English Channel"
+        },
+        "runKind": "model-prediction",
+        "benchmarkId": "grok-4-6-xhigh",
+        "sourcePredictionId": "ogrr-2026-08-13T23-14-11-574Z-7e8e5031-fa29-4d43-9035-0a2afbab3ace",
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 166.377
+      },
+      {
         "id": "ogrr-2026-08-08T18-39-17-555Z-bf1bace5-c5c7-42ae-8a2b-44cb32cb5c7d",
         "model": "manual",
+        "runKind": "recording",
         "condition": "static-image",
         "prediction": {
           "lat": 54.381723779684656,
           "lng": -5.943603515625001,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Ballynahinch, United Kingdom"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -106064,11 +107825,12 @@
       {
         "id": "ogrr-2026-08-08T18-43-47-449Z-758f2e35-76aa-4aee-a528-f63b059a9307",
         "model": "manual",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 53.27548469612009,
           "lng": -9.063720703125002,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "Galway, Ireland"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -111743,11 +113505,12 @@
       {
         "id": "ogrr-2026-08-29T15-45-00-000Z-ebeb5967-7473-4b56-8e26-091b6cf0e339",
         "model": "gemini 3.7 flash -high",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 52.80503396825989,
           "lng": 5.6610447708796405,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "52.80503, 5.66104"
         },
         "runStatus": "complete",
         "hypothesis": "",
@@ -111881,11 +113644,12 @@
       {
         "id": "ogrr-2026-08-31T22-09-41-444Z-9bed3f6f-644a-4ec2-864d-8405dc2f7634",
         "model": "gemini 3.7 Flash - high (aid)",
+        "runKind": "recording",
         "condition": "interactive-panorama",
         "prediction": {
           "lat": 53.27210599724221,
           "lng": -6.115801334381104,
-          "label": "Recorded OpenGuessr prediction"
+          "label": "53.27211, -6.11580"
         },
         "runStatus": "complete",
         "hypothesis": "",

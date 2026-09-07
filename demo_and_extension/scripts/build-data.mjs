@@ -3,11 +3,14 @@ import { basename, extname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseGoogleMapsStreetViewUrl } from "../shared/google-maps-url.js";
 import { validateCases } from "../src/data-contract.js";
+import { RECORDED_BENCHMARKS } from "../src/project-story.js";
 import { matchRecordingToLocation } from "./lib/recordings.mjs";
 import {
   COMPETITIONS_DIR,
+  DATA_DIR,
   GENERATED_COMPETITIONS_DIR,
   GENERATED_DIR,
+  RECORDED_AGENT_BENCHMARK_DIR,
   RECORDINGS_INBOX_DIR,
   RESULTS_DIR,
   STARTING_IMAGES_DIR,
@@ -31,6 +34,7 @@ export async function buildData({
 
   const warnings = [];
   const errors = [];
+  const predictionLocationLabels = await loadPredictionLocationLabels();
 
   const { competitions, embeddedLocations } = await loadCompetitions({
     errors,
@@ -43,7 +47,13 @@ export async function buildData({
     errors,
   );
 
-  const results = await loadResults(locations, errors);
+  const resultFiles = await loadResults(locations, errors);
+  const benchmarkPredictionResults = await loadRecordedBenchmarkPredictions(
+    locations,
+    predictionLocationLabels,
+    errors,
+  );
+  const results = [...resultFiles, ...benchmarkPredictionResults];
   const rawRecordings = await loadRecordings(warnings);
 
   const recordings = resolveRecordingLocations(
@@ -59,6 +69,7 @@ export async function buildData({
     locations,
     results,
     recordingIndex,
+    predictionLocationLabels,
     warnings,
   });
 
@@ -104,7 +115,8 @@ export async function buildData({
       locations: locations.length,
       competitions: competitions.length,
       competitionParts: competitionOutputs.length,
-      resultFiles: results.length,
+      resultFiles: resultFiles.length,
+      benchmarkPredictionRuns: benchmarkPredictionResults.length,
 
       recordings: recordings.length,
 
@@ -269,6 +281,32 @@ export async function buildData({
     competitionArchives,
     report,
   };
+}
+
+async function loadPredictionLocationLabels() {
+  const sourceNames = [
+    "prediction-locations.json",
+    "benchmark-prediction-locations.json",
+  ];
+  const labels = new Map();
+
+  for (const sourceName of sourceNames) {
+    const input = await readJson(join(DATA_DIR, sourceName));
+    const entries = Object.entries(input?.labelsByRecordingId ?? {});
+
+    if (input?.schemaVersion !== "1.0" || entries.length === 0) {
+      throw new Error(`data/${sourceName} must provide schemaVersion 1.0 and prediction labels.`);
+    }
+
+    for (const [recordingId, label] of entries) {
+      if (!nonEmptyString(recordingId) || !nonEmptyString(label)) {
+        throw new Error(`data/${sourceName} contains an invalid recording id or place label.`);
+      }
+      labels.set(recordingId, label.trim());
+    }
+  }
+
+  return labels;
 }
 
 async function loadCompetitions({
@@ -929,6 +967,87 @@ async function loadResults(
   return results;
 }
 
+async function loadRecordedBenchmarkPredictions(
+  locations,
+  predictionLocationLabels,
+  errors,
+) {
+  const locationsById = new Map(locations.map((location) => [location.id, location]));
+  const results = [];
+
+  for (const benchmark of RECORDED_BENCHMARKS) {
+    const benchmarkDirectory = join(
+      RECORDED_AGENT_BENCHMARK_DIR,
+      benchmark.dataDirectory ?? benchmark.id,
+    );
+    const files = (await listJsonFiles(benchmarkDirectory, { recursive: true }))
+      .filter((path) => {
+        const parts = relative(benchmarkDirectory, path).split(/[\\/]/);
+        // The story scores describe the original difficulty runs. Later repeats
+        // under runs/ must not become extra pins for the same model selection.
+        return parts.length === 3 && parts[1] === "rounds" &&
+          /^round-\d+\.json$/i.test(parts[2]);
+      })
+      .sort((left, right) => left.localeCompare(right));
+
+    for (const path of files) {
+      const input = await readJson(path);
+      const source = relative(ROOT, path).replaceAll("\\", "/");
+      const location = locationsById.get(input.atlasLocationId);
+
+      if (!location) {
+        errors.push(`${source}: atlasLocationId must reference a benchmark location.`);
+        continue;
+      }
+
+      if (!isCoordinate(input.prediction)) {
+        errors.push(`${source}: benchmark prediction must contain valid coordinates.`);
+        continue;
+      }
+
+      const prediction = {
+        lat: Number(input.prediction.lat),
+        lng: Number(input.prediction.lng),
+      };
+
+      results.push({
+        schemaVersion: "1.0",
+        atlasLocationId: location.id,
+        locationId: location.localId,
+        sourceFile: source,
+        runs: [
+          {
+            id: `benchmark-${benchmark.id}-${input.id}`,
+            model: `${benchmark.model} · ${benchmark.reasoning}`,
+            condition: input.condition,
+            prediction: {
+              ...prediction,
+              label: resolvePredictionLocationLabel(
+                null,
+                { id: input.id, prediction },
+                predictionLocationLabels,
+              ),
+            },
+            runKind: "model-prediction",
+            benchmarkId: benchmark.id,
+            sourcePredictionId: input.id,
+            hypothesis: "",
+            cues: [],
+            notes: "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+            isMock: false,
+            accuracy: { country: null, region: null },
+            durationSeconds: Number.isFinite(input.durationMs)
+              ? input.durationMs / 1000
+              : null,
+          },
+        ],
+      });
+    }
+  }
+
+  return results;
+}
+
 async function loadRecordings(
   warnings,
 ) {
@@ -1412,6 +1531,7 @@ function compileAtlasCases({
   locations,
   results,
   recordingIndex,
+  predictionLocationLabels,
   warnings,
 }) {
   const resultsByLocation =
@@ -1465,6 +1585,7 @@ function compileAtlasCases({
         return combineRunAndRecording(
           run,
           recording,
+          predictionLocationLabels,
         );
       });
 
@@ -1502,6 +1623,7 @@ function compileAtlasCases({
       runs.push(
         recordingToRun(
           recording,
+          predictionLocationLabels,
         ),
       );
 
@@ -1666,6 +1788,7 @@ function resolveStartingImage(
 function combineRunAndRecording(
   run,
   recording,
+  predictionLocationLabels,
 ) {
   const prediction =
     isCoordinate(
@@ -1681,11 +1804,22 @@ function combineRunAndRecording(
         ),
 
         label:
-          run.prediction?.label ??
-          "Recorded OpenGuessr prediction",
+          resolvePredictionLocationLabel(
+            run.prediction?.label,
+            recording,
+            predictionLocationLabels,
+          ),
       }
-      : run.prediction ??
-      null;
+      : isCoordinate(run.prediction)
+        ? {
+          ...run.prediction,
+          label: resolvePredictionLocationLabel(
+            run.prediction?.label,
+            { id: run.recordingId, prediction: run.prediction },
+            predictionLocationLabels,
+          ),
+        }
+        : null;
 
   return {
     ...run,
@@ -1738,6 +1872,7 @@ function combineRunAndRecording(
 
 function recordingToRun(
   recording,
+  predictionLocationLabels,
 ) {
   const hasPrediction =
     isCoordinate(
@@ -1754,6 +1889,9 @@ function recordingToRun(
     model:
       recording.model,
 
+    runKind:
+      "recording",
+
     condition:
       recording.condition,
 
@@ -1769,7 +1907,11 @@ function recordingToRun(
           ),
 
           label:
-            "Recorded OpenGuessr prediction",
+            resolvePredictionLocationLabel(
+              null,
+              recording,
+              predictionLocationLabels,
+            ),
         }
         : null,
 
@@ -1827,6 +1969,35 @@ function recordingToRun(
       recording.competitionRound ??
       null,
   };
+}
+
+function resolvePredictionLocationLabel(
+  currentLabel,
+  recording,
+  predictionLocationLabels,
+) {
+  if (
+    nonEmptyString(currentLabel) &&
+    currentLabel !== "Recorded OpenGuessr prediction" &&
+    currentLabel !== "Recorded prediction"
+  ) {
+    return currentLabel.trim();
+  }
+
+  const resolved = recording?.id
+    ? predictionLocationLabels.get(recording.id)
+    : null;
+
+  if (nonEmptyString(resolved)) {
+    return resolved.trim();
+  }
+
+  return formatPredictionCoordinate(recording?.prediction);
+}
+
+function formatPredictionCoordinate(prediction) {
+  if (!isCoordinate(prediction)) return "Prediction location unavailable";
+  return `${Number(prediction.lat).toFixed(5)}, ${Number(prediction.lng).toFixed(5)}`;
 }
 
 function findRecordingForRun(

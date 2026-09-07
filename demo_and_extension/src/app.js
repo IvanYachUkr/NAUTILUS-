@@ -10,8 +10,27 @@ import {
   errorBand,
   formatCoordinate,
   formatDistance,
+  predictionLocationLabel,
 } from "./geo.js";
-import { createMapController } from "./map-controller.js";
+import { createGlobeController } from "./globe-controller.js";
+import {
+  buildImmersiveView,
+  EXPLORATION_PLAYBACK_ENABLED,
+  mapLegendItems,
+  mapResetActionLabel,
+  nextCaseId,
+  resolvePlaybackReviewMedia,
+  shouldFocusLocationCard,
+  shouldShowPlaybackMarker,
+} from "./immersive-view.js";
+import {
+  buildProjectSnapshot,
+  projectSectionAtViewport,
+  projectStoryMarkup,
+  setActiveProjectSection,
+  scrollToMethodStage,
+  scrollToProjectSection,
+} from "./project-story.js";
 
 const CONDITION_LABELS = {
   "static-image": "Static image",
@@ -71,10 +90,10 @@ export function createExplorer({
   }
 
   rootElement.classList.add("geo-evidence-atlas-host");
-  rootElement.innerHTML = shellMarkup();
+  rootElement.innerHTML = shellMarkup(data);
 
   const elements = collectElements(rootElement);
-  const mapController = createMapController(elements.map, {
+  const mapController = createGlobeController(elements.map, {
     ...mapOptions,
     onCaseSelect(caseId) {
       selectedCaseId = caseId;
@@ -272,11 +291,59 @@ export function createExplorer({
   return api;
 
   function bindEvents() {
+    const projectSections = [...rootElement.querySelectorAll("[data-site-section-id]")];
+    let storyNavigationFrame = 0;
+
+    const updateStoryNavigation = () => {
+      storyNavigationFrame = 0;
+      const sectionId = projectSectionAtViewport(projectSections, window.innerHeight * 0.38);
+      if (sectionId) setActiveProjectSection(rootElement, sectionId);
+    };
+
+    const onStoryPositionChange = () => {
+      if (storyNavigationFrame) return;
+      storyNavigationFrame = window.requestAnimationFrame(updateStoryNavigation);
+    };
+
     const onClick = (event) => {
+      const methodNavigation = event.target.closest("[data-method-stage]");
+      if (methodNavigation && rootElement.contains(methodNavigation)) {
+        scrollToMethodStage(rootElement, methodNavigation.dataset.methodStage);
+        return;
+      }
+
+      const siteNavigation = event.target.closest("[data-scroll-target]");
+      if (siteNavigation && rootElement.contains(siteNavigation)) {
+        const sectionId = siteNavigation.dataset.scrollTarget;
+        setActiveProjectSection(rootElement, sectionId);
+        scrollToProjectSection(rootElement, sectionId);
+        return;
+      }
+
+      const backButton = event.target.closest("[data-back-overview]");
+      if (backButton && rootElement.contains(backButton)) {
+        enterOverview();
+        render({ fitMap: true });
+        return;
+      }
+
       const overviewButton = event.target.closest("[data-overview]");
       if (overviewButton && rootElement.contains(overviewButton)) {
         enterOverview();
         render({ fitMap: true });
+        return;
+      }
+
+      const nextButton = event.target.closest("[data-next-location]");
+      if (nextButton && rootElement.contains(nextButton)) {
+        const nextId = nextCaseId(getFilteredCases(), selectedCaseId);
+        if (nextId) {
+          selectedCaseId = nextId;
+          if (!["stats", "truth", "prediction", "playback"].includes(drawerMode)) {
+            clearDrawerState();
+          }
+          render({ focusActiveCard: true, fitMap: true });
+        }
         return;
       }
 
@@ -322,14 +389,20 @@ export function createExplorer({
       }
 
       const openCurrentViewButton = event.target.closest("[data-open-current-view]");
-      if (openCurrentViewButton && rootElement.contains(openCurrentViewButton)) {
+      if (
+        EXPLORATION_PLAYBACK_ENABLED &&
+        openCurrentViewButton &&
+        rootElement.contains(openCurrentViewButton)
+      ) {
         const caseItem = getSelectedCase();
         const run = caseItem ? getSelectedRun(caseItem) : null;
         const sample = run?.exploration?.samples?.[playbackIndex] ?? null;
         const frame = run?.exploration && sample ? playbackFrameForSample(run.exploration, sample) : null;
-        const capturedImageUrl = assetImageUrl(frame?.image);
-        const roundVideoUrl = assetVideoUrl(run?.exploration?.video);
-        if (roundVideoUrl && !capturedImageUrl) {
+        const reviewMedia = resolvePlaybackReviewMedia({
+          imageUrl: assetImageUrl(frame?.image),
+          videoUrl: assetVideoUrl(run?.exploration?.video),
+        });
+        if (reviewMedia.videoUrl && !reviewMedia.imageUrl) {
           event.preventDefault();
           drawerMode = "playback";
           drawerSample = sample;
@@ -344,7 +417,11 @@ export function createExplorer({
       }
 
       const momentButton = event.target.closest("[data-moment-index]");
-      if (momentButton && rootElement.contains(momentButton)) {
+      if (
+        EXPLORATION_PLAYBACK_ENABLED &&
+        momentButton &&
+        rootElement.contains(momentButton)
+      ) {
         const index = Number(momentButton.dataset.momentIndex);
         const momentTimeMs = Number(momentButton.dataset.momentTimeMs);
 
@@ -404,6 +481,7 @@ export function createExplorer({
     };
 
     const onPlayToggle = () => {
+      if (!EXPLORATION_PLAYBACK_ENABLED) return;
       if (playbackPlaying) {
         stopPlayback();
       } else {
@@ -413,6 +491,7 @@ export function createExplorer({
     };
 
     const onTimelineInput = (event) => {
+      if (!EXPLORATION_PLAYBACK_ENABLED) return;
       const index = Number(event.target.value);
       if (Number.isInteger(index)) {
         setPlaybackIndex(index, { keepPlaying: playbackPlaying });
@@ -420,6 +499,7 @@ export function createExplorer({
     };
 
     const onSpeedChange = (event) => {
+      if (!EXPLORATION_PLAYBACK_ENABLED) return;
       playbackSpeed = Number(event.target.value) || 1;
       renderPlaybackView();
     };
@@ -449,6 +529,9 @@ export function createExplorer({
     elements.timeline.addEventListener("input", onTimelineInput);
     elements.speedSelect.addEventListener("change", onSpeedChange);
     window.addEventListener("hashchange", onHashChange);
+    window.addEventListener("scroll", onStoryPositionChange, { passive: true });
+    window.addEventListener("resize", onStoryPositionChange);
+    updateStoryNavigation();
 
     disposers.push(() => rootElement.removeEventListener("click", onClick));
     disposers.push(() => elements.search.removeEventListener("input", onSearch));
@@ -462,6 +545,11 @@ export function createExplorer({
     disposers.push(() => elements.timeline.removeEventListener("input", onTimelineInput));
     disposers.push(() => elements.speedSelect.removeEventListener("change", onSpeedChange));
     disposers.push(() => window.removeEventListener("hashchange", onHashChange));
+    disposers.push(() => window.removeEventListener("scroll", onStoryPositionChange));
+    disposers.push(() => window.removeEventListener("resize", onStoryPositionChange));
+    disposers.push(() => {
+      if (storyNavigationFrame) window.cancelAnimationFrame(storyNavigationFrame);
+    });
   }
 
   function render({
@@ -476,24 +564,29 @@ export function createExplorer({
     const caseItem = getSelectedCase();
     ensureRunControlState(caseItem, filteredCases);
     const run = caseItem ? getSelectedRun(caseItem) : null;
+    const overviewRuns = caseItem
+      ? []
+      : overviewPredictionRuns(filteredCases, selectedModel, selectedCondition);
+    const overviewCaseIds = new Set(overviewRuns.map((entry) => entry.caseId));
+    const mapCases = caseItem
+      ? [caseItem]
+      : filteredCases.filter((item) => overviewCaseIds.has(item.id));
 
     resetPlaybackIfSelectionChanged(caseItem, run);
+    renderImmersiveShell(caseItem, run, filteredCases);
     renderLocationList(filteredCases);
     renderRunControls(caseItem, run, filteredCases);
-    renderMapHeader(caseItem, run, filteredCases);
+    renderMapHeader(caseItem, run, filteredCases, overviewRuns);
     renderComparison(caseItem, run);
     renderExplorationPlayer(caseItem, run);
     renderDrawer(caseItem, run, getStatsCases(caseItem, filteredCases));
-
-    const mapCases = caseItem
-      ? [caseItem]
-      : getOverviewMapCases(filteredCases);
 
     mapController.update(
       {
         cases: mapCases,
         caseItem,
         run,
+        overviewRuns,
         overview: !caseItem,
         playback: getPlaybackDescriptor(run),
       },
@@ -530,13 +623,53 @@ export function createExplorer({
       );
     }
 
-    if (focusActiveCard && selectedCaseId) {
+    if (shouldFocusLocationCard({
+      requested: focusActiveCard && Boolean(selectedCaseId),
+      listHidden: elements.datasetBrowser.hidden,
+    })) {
       window.requestAnimationFrame(() => {
         elements.locationList
           .querySelector(`[data-case-id="${cssEscape(selectedCaseId)}"]`)
           ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
       });
     }
+  }
+
+  function renderImmersiveShell(caseItem, run, filteredCases) {
+    const view = buildImmersiveView({ cases: filteredCases, caseItem, run });
+    const imageUrl = caseItem ? assetImageUrl(caseItem.startingImage) : null;
+
+    rootElement.dataset.viewState = view.state;
+    elements.appShell.dataset.viewState = view.state;
+    elements.backOverview.hidden = view.state === "overview";
+    elements.datasetBrowser.hidden = view.state === "detail";
+    elements.sceneRunSummary.hidden = view.state === "overview";
+    elements.nextLocation.hidden = view.state === "overview";
+
+    if (imageUrl && caseItem) {
+      if (elements.sceneImage.getAttribute("src") !== imageUrl) {
+        elements.sceneImage.src = imageUrl;
+      }
+      elements.sceneImage.alt = `Starting street scene in ${caseItem.city}, ${caseItem.country}`;
+      elements.sceneImage.hidden = false;
+    } else {
+      elements.sceneImage.hidden = true;
+      elements.sceneImage.removeAttribute("src");
+      elements.sceneImage.alt = "";
+    }
+
+    elements.detailModel.textContent = view.model ?? "No completed run";
+    elements.detailCondition.textContent = view.conditionLabel ?? "—";
+    elements.detailError.textContent = run && hasCoordinate(run.prediction)
+      ? formatDistance(run.errorKm)
+      : "Recording only";
+
+    const nextId = nextCaseId(filteredCases, caseItem?.id ?? null);
+    const nextCase = filteredCases.find((item) => item.id === nextId) ?? null;
+    elements.nextLabel.textContent = nextCase
+      ? `${nextCase.city}, ${nextCase.country}`
+      : "Next location";
+
   }
 
   function renderFilterOptions() {
@@ -629,7 +762,22 @@ export function createExplorer({
       .join("");
   }
 
-  function renderMapHeader(caseItem, run, filteredCases) {
+  function renderMapHeader(caseItem, run, filteredCases, overviewRuns = []) {
+    elements.resetMapLabel.textContent = mapResetActionLabel({
+      hasSelection: Boolean(caseItem),
+      hasRun: Boolean(run),
+      hasPrediction: hasCoordinate(run?.prediction),
+    });
+    elements.mapLegend.innerHTML = mapLegendMarkup(
+      mapLegendItems({
+        overview: !caseItem,
+        hasPrediction: caseItem
+          ? hasCoordinate(run?.prediction)
+          : overviewRuns.length > 0,
+        hasExploration: Boolean(run?.exploration?.path?.length > 1),
+      }),
+    );
+
     if (!caseItem) {
       const competition = filteredCases
         .flatMap((item) => item.competitions ?? [])
@@ -637,10 +785,8 @@ export function createExplorer({
       elements.mapEyebrow.textContent = competition
         ? `Competition · ${competition.competitionId}`
         : "Location overview";
-      const predictedCases = getOverviewMapCases(filteredCases);
       elements.mapTitle.textContent = competition?.competitionName ?? "European evaluation scenes";
-      elements.mapSubtitle.textContent = `${predictedCases.length} predicted locations · ${filteredCases.length} matching dataset locations · select a pin or a location on the left`;
-      elements.resetMapLabel.textContent = "Fit predictions";
+      elements.mapSubtitle.textContent = `${overviewRuns.length} predicted locations from the selected model · ${filteredCases.length} matching dataset locations · select a prediction or location pin`;
       return;
     }
 
@@ -654,18 +800,15 @@ export function createExplorer({
 
     if (!run) {
       elements.mapSubtitle.textContent = `${caseItem.localId ?? caseItem.id} · no model result or completed recording imported yet`;
-      elements.resetMapLabel.textContent = "Focus location";
       return;
     }
 
     if (!hasCoordinate(run.prediction)) {
       elements.mapSubtitle.textContent = `${run.model} · ${CONDITION_LABELS[run.condition]} · recording imported · prediction not captured`;
-      elements.resetMapLabel.textContent = "Fit recording";
       return;
     }
 
     elements.mapSubtitle.textContent = `${run.model} · ${CONDITION_LABELS[run.condition]} · ${formatDistance(run.errorKm)} pin error`;
-    elements.resetMapLabel.textContent = "Fit run";
   }
 
   function renderComparison(caseItem, run) {
@@ -682,7 +825,7 @@ export function createExplorer({
 
     elements.truthLabel.textContent = caseItem.groundTruth.label;
     elements.predictionLabel.textContent = hasCoordinate(run.prediction)
-      ? run.prediction.label || "Recorded prediction"
+      ? predictionLocationLabel(run.prediction)
       : "Prediction not captured";
     elements.pinError.textContent = hasCoordinate(run.prediction)
       ? formatDistance(run.errorKm)
@@ -695,7 +838,7 @@ export function createExplorer({
     const samples = run?.exploration?.samples ?? [];
     const isStatic = run?.condition === "static-image";
 
-    if (caseItem && run && isStatic) {
+    if (!EXPLORATION_PLAYBACK_ENABLED || (caseItem && run && isStatic)) {
       stopPlayback();
       elements.explorationPlayer.hidden = true;
       mapController.setPlayback(null);
@@ -714,28 +857,34 @@ export function createExplorer({
     if (!Number.isFinite(playbackTimeMs)) playbackTimeMs = sample.tMs ?? 0;
     const durationMs = run.exploration.durationMs ?? samples.at(-1)?.tMs ?? 0;
     const capturedFrame = playbackFrameForSample(run.exploration, sample);
-    const capturedImageUrl = assetImageUrl(capturedFrame?.image);
-    const roundVideoUrl = assetVideoUrl(run.exploration?.video);
-    const visualUrl = capturedImageUrl || roundVideoUrl;
+    const reviewMedia = resolvePlaybackReviewMedia({
+      imageUrl: assetImageUrl(capturedFrame?.image),
+      videoUrl: assetVideoUrl(run.exploration?.video),
+    });
+    const visualUrl = reviewMedia.imageUrl || reviewMedia.videoUrl;
 
     elements.playerEyebrow.textContent = "Interactive exploration";
-    elements.playToggle.textContent = playbackPlaying ? "Pause" : "Play";
+    const playbackAction = playbackPlaying ? "Pause" : "Play";
+    elements.playToggle.innerHTML = `
+      <i class="ph-fill ph-${playbackPlaying ? "pause" : "play"}" aria-hidden="true"></i>
+      <span>${playbackAction}</span>
+    `;
     elements.playToggle.setAttribute("aria-label", playbackPlaying ? "Pause exploration playback" : "Play exploration playback");
     elements.timeline.max = String(Math.max(0, samples.length - 1));
     elements.timeline.value = String(playbackIndex);
     elements.timeline.setAttribute("aria-valuetext", `${formatSeconds(playbackTimeMs)} of ${formatSeconds(durationMs)}`);
     elements.timeLabel.textContent = `${formatSeconds(playbackTimeMs)} / ${formatSeconds(durationMs)}`;
     elements.speedSelect.value = String(playbackSpeed);
-    elements.openCurrentView.href = capturedImageUrl || roundVideoUrl || "#";
-    elements.openCurrentView.textContent = capturedImageUrl
-      ? "Open captured image ↗"
-      : roundVideoUrl
-        ? "Show round video in side panel"
-        : "No visual recording";
-    const hasVisualRecording = Boolean(capturedImageUrl || roundVideoUrl);
-    elements.openCurrentView.toggleAttribute("aria-disabled", !hasVisualRecording);
-    elements.openCurrentView.classList.toggle("is-disabled", !hasVisualRecording);
-    if (roundVideoUrl && !capturedImageUrl) elements.openCurrentView.removeAttribute("target");
+    elements.openCurrentView.href = visualUrl || "#";
+    const reviewLabel = reviewMedia.imageUrl ? "Review captured frame" : "Review exploration";
+    elements.openCurrentView.innerHTML = `
+      <i class="ph ph-${reviewMedia.imageUrl ? "frame-corners" : "path"}" aria-hidden="true"></i>
+      <span>${reviewLabel}</span>
+    `;
+    elements.openCurrentView.hidden = !reviewMedia.hasReview;
+    elements.openCurrentView.toggleAttribute("aria-disabled", !reviewMedia.hasReview);
+    elements.openCurrentView.classList.toggle("is-disabled", !reviewMedia.hasReview);
+    if (reviewMedia.videoUrl && !reviewMedia.imageUrl) elements.openCurrentView.removeAttribute("target");
 
     elements.keyMoments.innerHTML = keyMomentMarkup(run.exploration.keyMoments ?? [], samples);
     elements.sampleReadout.innerHTML = sampleReadoutMarkup(sample, run.exploration, playbackIndex, capturedFrame);
@@ -754,7 +903,8 @@ export function createExplorer({
       ? (drawerRunId ? detailCase.runs.find((item) => item.id === drawerRunId) : null) ??
       chooseRun(detailCase, selectedModel, selectedCondition)
       : null;
-    const playbackAllowed = run?.condition !== "static-image";
+    const playbackAllowed =
+      EXPLORATION_PLAYBACK_ENABLED && run?.condition !== "static-image";
     const valid =
       drawerMode === "stats" ||
       (drawerMode === "truth" && Boolean(detailCase)) ||
@@ -820,6 +970,7 @@ export function createExplorer({
   }
 
   function startPlayback() {
+    if (!EXPLORATION_PLAYBACK_ENABLED) return;
     const run = getSelectedCase() ? getSelectedRun(getSelectedCase()) : null;
     const samples = run?.exploration?.samples ?? [];
     if (samples.length < 2) return;
@@ -880,6 +1031,7 @@ export function createExplorer({
   }
 
   function setPlaybackIndex(index, { keepPlaying = false, exactTimeMs = null } = {}) {
+    if (!EXPLORATION_PLAYBACK_ENABLED) return;
     const caseItem = getSelectedCase();
     const run = caseItem ? getSelectedRun(caseItem) : null;
     const samples = run?.exploration?.samples ?? [];
@@ -896,16 +1048,22 @@ export function createExplorer({
   }
 
   function getPlaybackDescriptor(run) {
+    if (!EXPLORATION_PLAYBACK_ENABLED) return null;
     if (run?.condition === "static-image") return null;
     const samples = run?.exploration?.samples ?? [];
     if (!samples.length) return null;
 
     playbackIndex = clamp(playbackIndex, 0, samples.length - 1);
     const sample = samples[playbackIndex];
+    const showMarker = shouldShowPlaybackMarker({
+      playing: playbackPlaying,
+      index: playbackIndex,
+      drawerMode,
+    });
     return {
       index: playbackIndex,
-      sample,
-      trace: samples.slice(0, playbackIndex + 1),
+      sample: showMarker ? sample : null,
+      trace: showMarker ? samples.slice(0, playbackIndex + 1) : [],
     };
   }
 
@@ -968,10 +1126,11 @@ export function createExplorer({
   }
 
   function getOverviewMapCases(filteredCases) {
-    return filteredCases.filter((item) => {
-      const matchingRun = chooseRun(item, selectedModel, selectedCondition);
-      return Boolean(matchingRun && hasCoordinate(matchingRun.prediction));
-    });
+    const caseIds = new Set(
+      overviewPredictionRuns(filteredCases, selectedModel, selectedCondition)
+        .map((entry) => entry.caseId),
+    );
+    return filteredCases.filter((item) => caseIds.has(item.id));
   }
 
   function getStatsCases(caseItem, filteredCases) {
@@ -1002,7 +1161,9 @@ export function createExplorer({
   }
 
   function getScopeRuns(caseItem, filteredCases) {
-    return caseItem?.runs ?? filteredCases.flatMap((item) => item.runs);
+    return caseItem
+      ? modelPredictionRuns(caseItem.runs)
+      : filteredCases.flatMap((item) => modelPredictionRuns(item.runs));
   }
 
   function locationCardMarkup(item) {
@@ -1089,19 +1250,17 @@ export function createExplorer({
   function truthDrawerMarkup(caseItem, run) {
     const imageUrl = assetImageUrl(caseItem.startingImage);
     const interactive = run?.condition === "interactive-panorama";
-    const videoUrl = interactive ? assetVideoUrl(run?.exploration?.video) : null;
-    const visualMarkup = interactive
-      ? videoUrl
-        ? evidenceVideoMarkup(videoUrl, imageUrl, `Interactive round video · ${caseItem.city}, ${caseItem.country}`, 0)
+    const reviewMedia = resolvePlaybackReviewMedia({
+      imageUrl,
+      videoUrl: interactive ? assetVideoUrl(run?.exploration?.video) : null,
+    });
+    const visualMarkup = reviewMedia.videoUrl
+      ? evidenceVideoMarkup(reviewMedia.videoUrl, reviewMedia.imageUrl, `Interactive exploration · ${caseItem.city}, ${caseItem.country}`, 0)
+      : reviewMedia.imageUrl
+        ? evidenceImageMarkup(reviewMedia.imageUrl, `${interactive ? "Interactive starting scene" : "Canonical static view"} · ${caseItem.city}, ${caseItem.country}`)
         : `<div class="evidence-image evidence-image--missing">
-            <strong>No round video yet</strong>
-            <span>Record the interactive condition with recorder v0.7.3 and run <code>npm run data:build</code>.</span>
-          </div>`
-      : imageUrl
-        ? evidenceImageMarkup(imageUrl, `Canonical static view · ${caseItem.city}, ${caseItem.country}`)
-        : `<div class="evidence-image evidence-image--missing">
-            <strong>No canonical static image yet</strong>
-            <span>Record the static/NMPZ condition and run <code>npm run data:build</code>.</span>
+            <strong>No canonical scene image yet</strong>
+            <span>The location data and coordinates remain available.</span>
           </div>`;
 
     return `
@@ -1114,7 +1273,7 @@ export function createExplorer({
       </div>
       ${visualMarkup}
       <dl class="detail-list">
-        <div><dt>Condition</dt><dd>${escapeHtml(interactive ? "Interactive panorama video" : "Static / NMPZ image")}</dd></div>
+        <div><dt>Condition</dt><dd>${escapeHtml(interactive ? "Interactive panorama" : "Static / NMPZ image")}</dd></div>
         <div><dt>Difficulty</dt><dd>${escapeHtml(DIFFICULTY_LABELS[caseItem.difficulty] ?? caseItem.difficulty)}</dd></div>
         <div><dt>Scene type</dt><dd>${escapeHtml(caseItem.sceneType || "—")}</dd></div>
         <div><dt>Coordinates</dt><dd><code>${escapeHtml(formatCoordinate(caseItem.groundTruth))}</code></dd></div>
@@ -1137,7 +1296,7 @@ export function createExplorer({
       <div class="detail-hero detail-hero--prediction">
         <span class="detail-badge">${predictionAvailable ? "P" : "R"}</span>
         <div>
-          <h3>${escapeHtml(predictionAvailable ? (run.prediction.label || `${caseItem.city} prediction`) : "Recording imported")}</h3>
+          <h3>${escapeHtml(predictionAvailable ? predictionLocationLabel(run.prediction) : "Recording imported")}</h3>
           <p>${escapeHtml(run.model)} · ${escapeHtml(CONDITION_LABELS[run.condition] ?? run.condition)}</p>
         </div>
       </div>
@@ -1166,7 +1325,10 @@ export function createExplorer({
     }
     const frame = playbackFrameForSample(run.exploration, sample);
     const imageUrl = assetImageUrl(frame?.image);
-    const videoUrl = assetVideoUrl(run.exploration?.video);
+    const reviewMedia = resolvePlaybackReviewMedia({
+      imageUrl,
+      videoUrl: assetVideoUrl(run.exploration?.video),
+    });
     const seekMs = Number.isFinite(exactSeekMs)
       ? Math.max(0, exactSeekMs)
       : Number.isFinite(sample.tMs)
@@ -1180,16 +1342,16 @@ export function createExplorer({
           <p>${formatSeconds(sample.tMs)} · ${escapeHtml(frame?.type || sample.reason || "sample")}</p>
         </div>
       </div>
-      ${imageUrl
-        ? evidenceImageMarkup(imageUrl, `${frame?.label || "Captured exploration frame"} · ${formatSeconds(frame?.tMs ?? sample.tMs)}`)
-        : videoUrl
-          ? evidenceVideoMarkup(videoUrl, null, `Recorded interactive round · ${formatSeconds(seekMs)}`, seekMs)
+      ${reviewMedia.imageUrl
+        ? evidenceImageMarkup(reviewMedia.imageUrl, `${frame?.label || "Captured exploration frame"} · ${formatSeconds(frame?.tMs ?? sample.tMs)}`)
+        : reviewMedia.videoUrl
+          ? evidenceVideoMarkup(reviewMedia.videoUrl, null, `Interactive exploration · ${formatSeconds(seekMs)}`, seekMs)
           : `<div class="evidence-image evidence-image--missing">
-              <strong>No visual recording for this point</strong>
-              <span>The timeline still uses the recorded API camera samples.</span>
+              <strong>No captured frame for this point</strong>
+              <span>The timeline still uses the exploration camera samples.</span>
             </div>`}
       <dl class="detail-list">
-        <div><dt>Video time</dt><dd>${formatSeconds(seekMs)}</dd></div>
+        <div><dt>Playback time</dt><dd>${formatSeconds(seekMs)}</dd></div>
         <div><dt>Heading</dt><dd>${formatDegrees(sample.heading)}</dd></div>
         <div><dt>Pitch</dt><dd>${formatDegrees(sample.pitch)}</dd></div>
         <div><dt>Zoom</dt><dd>${formatNumber(sample.zoom)}</dd></div>
@@ -1197,7 +1359,7 @@ export function createExplorer({
         <div><dt>Source</dt><dd>${escapeHtml(sample.source || run.exploration?.source || "—")}</dd></div>
         <div><dt>Coordinates</dt><dd><code>${escapeHtml(formatCoordinate(sample))}</code></dd></div>
       </dl>
-      ${videoUrl ? `<p class="drawer-muted">The player contains only this location/round. Use its native timeline to inspect any moment; selecting a playback action seeks this player near the same recorded time.</p>` : ""}
+      ${reviewMedia.videoUrl ? `<p class="drawer-muted">The player contains only this location/round. Selecting a playback action seeks this player near the same exploration time.</p>` : ""}
     `;
   }
 
@@ -1206,99 +1368,160 @@ export function createExplorer({
   }
 }
 
-function shellMarkup() {
+function shellMarkup(cases = []) {
+  const projectSnapshot = buildProjectSnapshot(cases);
+
   return `
-    <div class="atlas-app">
+    <div class="atlas-app" data-app-shell data-view-state="overview" data-site-section-id="explorer">
+      <img class="scene-backdrop" data-scene-image alt="" hidden />
+      <div class="scene-vignette" aria-hidden="true"></div>
+
       <header class="app-header">
         <div class="app-brand">
-          <span class="app-brand__mark" aria-hidden="true">N</span>
           <div>
-            <strong>NAUTILUS-</strong>
-            <small>MLLM geolocation evaluation</small>
+            <strong>NAUTILUS</strong>
+            <small>Explainable · agentic image geolocation</small>
           </div>
         </div>
 
-        <div class="run-controls" aria-label="Run controls">
-          <label>
-            <span>Model</span>
-            <select data-model-select></select>
-          </label>
-          <label>
-            <span>Condition</span>
-            <select data-condition-select></select>
-          </label>
-          <button class="stats-button" type="button" data-stats-button>Stats</button>
+        <nav class="journey-guide" aria-label="Run method">
+          <span class="journey-guide__label">Run method</span>
+          <ol class="journey-progress">
+            <li><button type="button" data-method-stage="observe" aria-label="Read the Observe method stage"><span>1</span><b>Observe</b></button></li>
+            <li><button type="button" data-method-stage="hypothesize" aria-label="Read the Hypothesize method stage"><span>2</span><b>Hypothesize</b></button></li>
+            <li><button type="button" data-method-stage="explore" aria-label="Read the Explore method stage"><span>3</span><b>Explore</b></button></li>
+            <li><button type="button" data-method-stage="pin" aria-label="Read the Pin method stage"><span>4</span><b>Pin</b></button></li>
+          </ol>
+        </nav>
+
+        <div class="header-actions">
+          <button class="site-jump" type="button" data-scroll-target="research" aria-label="Read the project">
+            <span>Project</span>
+            <i class="ph ph-arrow-down" aria-hidden="true"></i>
+          </button>
+          <button class="stats-button header-stats" type="button" data-stats-button aria-label="Open statistics">
+            <i class="ph ph-chart-line-up" aria-hidden="true"></i>
+            <span>Statistics</span>
+          </button>
         </div>
       </header>
 
       <div class="workspace">
         <aside class="location-rail" aria-label="Location selection">
-          <div class="rail-heading">
-            <div>
-              <span class="section-label">Dataset</span>
-              <h1>Locations</h1>
+          <section class="scene-story" aria-live="polite">
+            <button class="back-to-globe" type="button" data-back-overview hidden>
+              <i class="ph ph-arrow-left" aria-hidden="true"></i>
+              <span>Back to globe</span>
+            </button>
+
+            <div class="scene-story__heading">
+              <span class="section-label" data-map-eyebrow></span>
+              <h1 data-map-title></h1>
+              <p data-map-subtitle></p>
+              <button class="project-entry" type="button" data-scroll-target="research">
+                <span>Read the project</span>
+                <i class="ph ph-arrow-down-right" aria-hidden="true"></i>
+              </button>
             </div>
-            <span class="result-count" data-result-count></span>
-          </div>
 
-          <label class="search-field">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
-            <input data-search type="search" placeholder="Search location" autocomplete="off" />
-          </label>
+            <div class="scene-run-summary" data-scene-run-summary hidden>
+              <div>
+                <span>Model</span>
+                <strong data-detail-model>—</strong>
+              </div>
+              <div>
+                <span>Condition</span>
+                <strong data-detail-condition>—</strong>
+              </div>
+              <div class="scene-run-summary__error">
+                <span>Pin error</span>
+                <strong data-detail-error>—</strong>
+              </div>
+            </div>
 
-          <div class="filter-grid" aria-label="Location filters">
-            <label class="filter-grid__wide"><span>Competition</span><select data-competition-filter></select></label>
-            <label><span>Country</span><select data-country-filter></select></label>
-            <label><span>Difficulty</span><select data-difficulty-filter></select></label>
-            <label class="filter-grid__wide"><span>Scene type</span><select data-scene-filter></select></label>
-            <button class="text-button filter-grid__clear" type="button" data-clear-filters>Clear filters</button>
-          </div>
+            <footer class="comparison-bar" data-comparison hidden>
+              <div class="comparison-item comparison-item--truth">
+                <span class="comparison-item__badge"><i class="ph-fill ph-map-pin" aria-hidden="true"></i></span>
+                <div><small>Ground truth</small><strong data-truth-label></strong></div>
+              </div>
+              <div class="comparison-item comparison-item--prediction">
+                <span class="comparison-item__badge"><i class="ph-fill ph-crosshair" aria-hidden="true"></i></span>
+                <div><small>Prediction</small><strong data-prediction-label></strong></div>
+              </div>
+              <div class="comparison-stat"><small>Pin error</small><strong data-pin-error></strong></div>
+              <div class="comparison-stat"><small>Run time</small><strong data-run-time></strong></div>
+              <div class="comparison-stat comparison-stat--wide"><small>Exploration</small><strong data-route-meta></strong></div>
+            </footer>
+          </section>
 
-          <button class="overview-card is-active" type="button" data-overview aria-pressed="true">
-            <span class="overview-card__icon" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span><strong>All locations</strong><small>Overview map</small></span>
-            <b data-overview-count></b>
-          </button>
+          <section class="dataset-browser" data-dataset-browser>
+            <div class="rail-heading">
+              <div>
+                <span class="section-label">Benchmark atlas</span>
+                <h2>Locations</h2>
+              </div>
+              <span class="result-count" data-result-count></span>
+            </div>
 
-          <div class="location-list" data-location-list></div>
+            <label class="search-field">
+              <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+              <input data-search type="search" placeholder="Search city or country" autocomplete="off" />
+            </label>
+
+            <details class="filter-panel">
+              <summary>
+                <span><i class="ph ph-funnel" aria-hidden="true"></i> Filter locations</span>
+                <i class="ph ph-caret-down" aria-hidden="true"></i>
+              </summary>
+              <div class="filter-grid" aria-label="Location filters">
+                <label class="filter-grid__wide"><span>Competition</span><select data-competition-filter></select></label>
+                <label><span>Country</span><select data-country-filter></select></label>
+                <label><span>Difficulty</span><select data-difficulty-filter></select></label>
+                <label class="filter-grid__wide"><span>Scene type</span><select data-scene-filter></select></label>
+                <button class="text-button filter-grid__clear" type="button" data-clear-filters>Clear filters</button>
+              </div>
+            </details>
+
+            <button class="overview-card is-active" type="button" data-overview aria-pressed="true">
+              <span class="overview-card__icon" aria-hidden="true"><i class="ph-fill ph-globe-hemisphere-west"></i></span>
+              <span><strong>All locations</strong><small>Globe overview</small></span>
+              <b data-overview-count></b>
+            </button>
+
+            <div class="location-list" data-location-list></div>
+          </section>
         </aside>
 
         <main class="map-workspace" data-map-workspace>
           <section class="map-panel">
-            <header class="map-toolbar">
-              <div class="map-toolbar__title">
-                <span class="section-label" data-map-eyebrow></span>
-                <h2 data-map-title></h2>
-                <p data-map-subtitle></p>
-              </div>
-              <div class="map-toolbar__actions">
-                <button class="secondary-button" type="button" data-reset-map>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 1-2.34-5.66L20 7.7"></path><path d="M20 3v4.7h-4.7"></path></svg>
-                  <span data-reset-map-label>Fit all</span>
-                </button>
-              </div>
-            </header>
-
             <div class="map-stage" data-map></div>
 
-            <div class="map-legend" aria-label="Map legend">
-              <span><i class="legend-dot legend-dot--location"></i> Location</span>
-              <span><i class="legend-dot legend-dot--truth"></i> Truth</span>
-              <span><i class="legend-dot legend-dot--prediction"></i> Prediction</span>
-              <span><i class="legend-line"></i> Exploration</span>
-              <span><i class="legend-line legend-line--active"></i> Playback</span>
+            <div class="map-utilities">
+              <div class="map-legend" data-map-legend aria-label="Globe legend">
+                ${mapLegendMarkup(mapLegendItems({ overview: true }))}
+              </div>
+              <button class="secondary-button" type="button" data-reset-map>
+                <i class="ph ph-crosshair" aria-hidden="true"></i>
+                <span data-reset-map-label>Show all predictions</span>
+              </button>
             </div>
 
             <section class="exploration-player" data-exploration-player hidden>
               <div class="player-header">
                 <div>
                   <span class="section-label" data-player-eyebrow>Recorded exploration</span>
-                  <h3>Playback timeline</h3>
+                  <h3>Replay the model's route</h3>
                 </div>
-                <a class="secondary-button player-open" data-open-current-view target="_blank" rel="noopener noreferrer">Open captured image ↗</a>
+                <a class="secondary-button player-open" data-open-current-view target="_blank" rel="noopener noreferrer">
+                  <i class="ph ph-frame-corners" aria-hidden="true"></i>
+                  <span>Open captured image</span>
+                </a>
               </div>
               <div class="player-controls">
-                <button class="play-toggle" type="button" data-play-toggle>Play</button>
+                <button class="play-toggle" type="button" data-play-toggle>
+                  <i class="ph-fill ph-play" aria-hidden="true"></i>
+                  <span>Play</span>
+                </button>
                 <input class="timeline" data-timeline type="range" min="0" max="0" value="0" step="1" aria-label="Exploration timeline" />
                 <select class="speed-select" data-speed-select aria-label="Playback speed">
                   ${PLAYBACK_SPEEDS.map((speed) => `<option value="${speed}">${speed}×</option>`).join("")}
@@ -1309,20 +1532,22 @@ function shellMarkup() {
               <div class="sample-readout" data-sample-readout></div>
             </section>
 
-            <footer class="comparison-bar" data-comparison hidden>
-              <div class="comparison-item comparison-item--truth">
-                <span class="comparison-item__badge">T</span>
-                <div><small>Ground truth</small><strong data-truth-label></strong></div>
+            <div class="experience-dock" aria-label="Run and location controls">
+              <div class="run-controls" aria-label="Run controls">
+                <label>
+                  <span>Model</span>
+                  <select data-model-select></select>
+                </label>
+                <label>
+                  <span>Condition</span>
+                  <select data-condition-select></select>
+                </label>
               </div>
-              <div class="comparison-separator" aria-hidden="true"></div>
-              <div class="comparison-item comparison-item--prediction">
-                <span class="comparison-item__badge">P</span>
-                <div><small>Prediction</small><strong data-prediction-label></strong></div>
-              </div>
-              <div class="comparison-stat"><small>Pin error</small><strong data-pin-error></strong></div>
-              <div class="comparison-stat"><small>Run time</small><strong data-run-time></strong></div>
-              <div class="comparison-stat comparison-stat--wide"><small>Exploration</small><strong data-route-meta></strong></div>
-            </footer>
+              <button class="next-location" type="button" data-next-location hidden>
+                <span><small>Continue exploring</small><strong data-next-label>Next location</strong></span>
+                <i class="ph ph-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
           </section>
 
           <aside class="detail-drawer" data-drawer hidden>
@@ -1332,7 +1557,7 @@ function shellMarkup() {
                   <span class="section-label">Selected pin</span>
                   <h2 data-drawer-title>Details</h2>
                 </div>
-                <button class="icon-button" type="button" data-close-drawer aria-label="Close details">×</button>
+                <button class="icon-button" type="button" data-close-drawer aria-label="Close details"><i class="ph ph-x" aria-hidden="true"></i></button>
               </header>
               <div class="detail-drawer__body" data-drawer-body></div>
             </div>
@@ -1340,11 +1565,31 @@ function shellMarkup() {
         </main>
       </div>
     </div>
+    ${projectStoryMarkup(projectSnapshot)}
   `;
+}
+
+function mapLegendMarkup(items = []) {
+  return items
+    .map((item) => {
+      const markerClass = ["error", "exploration", "playback"].includes(item.kind)
+        ? `legend-line legend-line--${item.kind}`
+        : `legend-dot legend-dot--${item.kind}`;
+      return `<span><i class="${markerClass}" aria-hidden="true"></i>${escapeHtml(item.label)}</span>`;
+    })
+    .join("");
 }
 
 function collectElements(root) {
   const selectors = {
+    appShell: "[data-app-shell]",
+    sceneImage: "[data-scene-image]",
+    backOverview: "[data-back-overview]",
+    datasetBrowser: "[data-dataset-browser]",
+    sceneRunSummary: "[data-scene-run-summary]",
+    detailModel: "[data-detail-model]",
+    detailCondition: "[data-detail-condition]",
+    detailError: "[data-detail-error]",
     search: "[data-search]",
     resultCount: "[data-result-count]",
     competitionFilter: "[data-competition-filter]",
@@ -1361,6 +1606,7 @@ function collectElements(root) {
     mapEyebrow: "[data-map-eyebrow]",
     mapTitle: "[data-map-title]",
     mapSubtitle: "[data-map-subtitle]",
+    mapLegend: "[data-map-legend]",
     resetMapLabel: "[data-reset-map-label]",
     comparison: "[data-comparison]",
     truthLabel: "[data-truth-label]",
@@ -1380,6 +1626,8 @@ function collectElements(root) {
     drawer: "[data-drawer]",
     drawerTitle: "[data-drawer-title]",
     drawerBody: "[data-drawer-body]",
+    nextLocation: "[data-next-location]",
+    nextLabel: "[data-next-label]",
   };
 
   return Object.fromEntries(
@@ -1391,12 +1639,35 @@ function collectElements(root) {
   );
 }
 
+export function modelPredictionRuns(runs = []) {
+  const availableRuns = Array.isArray(runs) ? runs : [];
+  const predictionRuns = availableRuns.filter(
+    (run) => run?.runKind === "model-prediction",
+  );
+  return predictionRuns.length > 0 ? predictionRuns : availableRuns;
+}
+
+export function overviewPredictionRuns(cases = [], model = null, condition = null) {
+  return cases.flatMap((caseItem) => {
+    const runs = modelPredictionRuns(caseItem?.runs);
+    const run = model
+      ? runs.find((item) => item.model === model && item.condition === condition) ??
+        runs.find((item) => item.model === model)
+      : chooseRun(caseItem, model, condition);
+
+    return run && hasCoordinate(run.prediction)
+      ? [{ caseId: caseItem.id, run }]
+      : [];
+  });
+}
+
 function chooseRun(caseItem, model, condition) {
+  const runs = modelPredictionRuns(caseItem.runs);
   return (
-    caseItem.runs.find((run) => run.model === model && run.condition === condition) ??
-    caseItem.runs.find((run) => run.model === model) ??
-    caseItem.runs.find((run) => run.condition === condition) ??
-    caseItem.runs[0]
+    runs.find((run) => run.model === model && run.condition === condition) ??
+    runs.find((run) => run.model === model) ??
+    runs.find((run) => run.condition === condition) ??
+    runs[0]
   );
 }
 

@@ -14,6 +14,10 @@ export const ROOT = resolve(fileURLToPath(new URL("../..", import.meta.url)));
 export const DATA_DIR = join(ROOT, "data");
 export const COMPETITIONS_DIR = join(DATA_DIR, "competitions");
 export const RESULTS_DIR = join(DATA_DIR, "results");
+export const RECORDED_AGENT_BENCHMARK_DIR = join(
+  DATA_DIR,
+  "recorded-agent-benchmark",
+);
 export const RECORDINGS_DIR = join(DATA_DIR, "recordings");
 export const STARTING_IMAGES_DIR = join(DATA_DIR, "starting-images");
 export const RECORDINGS_INBOX_DIR = join(RECORDINGS_DIR, "inbox");

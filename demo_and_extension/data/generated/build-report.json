@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-08-31T22:55:16.418Z",
+  "generatedAt": "2026-09-07T20:48:04.309Z",
   "limits": {
     "openGuessrCompetitionLocations": 20
   },
@@ -9,13 +9,14 @@
     "competitions": 3,
     "competitionParts": 3,
     "resultFiles": 0,
+    "benchmarkPredictionRuns": 75,
     "recordings": 115,
     "matchedRecordings": 114,
     "unmatchedRecordings": 1,
     "recordingsWithPrediction": 112,
     "recordingsWithoutPrediction": 3,
     "atlasCases": 25,
-    "atlasRuns": 114,
+    "atlasRuns": 189,
     "recordingOnlyRuns": 2
   },
   "warnings": [

@@ -69,6 +69,21 @@ export function formatCoordinate(point, digits = 5) {
   return `${point.lat.toFixed(digits)}, ${point.lng.toFixed(digits)}`;
 }
 
+export function predictionLocationLabel(prediction) {
+  assertCoordinate(prediction, "prediction");
+  const label = typeof prediction.label === "string" ? prediction.label.trim() : "";
+
+  if (
+    label &&
+    label !== "Recorded OpenGuessr prediction" &&
+    label !== "Recorded prediction"
+  ) {
+    return label;
+  }
+
+  return formatCoordinate(prediction);
+}
+
 export function buildStreetViewUrl(view) {
   if (!view || typeof view !== "object") {
     throw new TypeError("Street View configuration is required.");

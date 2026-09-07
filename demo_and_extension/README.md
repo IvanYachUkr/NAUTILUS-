@@ -2,6 +2,8 @@
 
 This folder contains the experiment data pipeline, Chrome recorder extension, local collector, and visualization for the geo-localization evaluation.
 
+It also contains the source for the [published NAUTILUS website](https://nautilus-geolocation.ivanukr.chatgpt.site/): the globe, model predictions, and project story. For cloning and contributing, see the [website development guide](../README.md#local-website-development).
+
 The current repository includes complete **manual reference runs** for 25 European locations in two conditions:
 
 - **Static image / NMPZ** - one canonical starting PNG per location.
@@ -101,6 +103,17 @@ http://127.0.0.1:4173
 ```
 
 Keep `npm start` running during experiment recording. The collector receives recorder JSON/video/image artifacts and writes them into the repository.
+
+For website development, edit `src/` and refresh the browser. The `prestart` step copies the installed globe library and textures into the ignored `src/vendor/` directory. Use `npm start -- 4174` to select another port, and `npm.cmd` instead of `npm` if Windows PowerShell blocks scripts.
+
+Verify and build a candidate before opening a pull request:
+
+```sh
+npm run verify
+npm run build:site
+```
+
+`build:site` writes the deployable website to the ignored `dist/` directory. Local development and verification need no GPT Sites account or API keys. Publishing to the existing GPT Site is a separate step after review; pushing to GitHub does not publish the website.
 
 ---
 

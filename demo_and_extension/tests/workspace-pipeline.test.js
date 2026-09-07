@@ -47,6 +47,66 @@ test("all 25 source locations are partitioned exactly once by difficulty", async
   }
 });
 
+test("reference prediction pins retain resolved place names as the recording archive grows", async () => {
+  const built = await buildData({ write: false, quiet: true });
+  const predictedRuns = built.atlasCases.flatMap((item) =>
+    item.runs
+      .filter((run) => Number.isFinite(run.prediction?.lat) && Number.isFinite(run.prediction?.lng))
+      .map((run) => ({ caseId: item.id, run })),
+  );
+
+  assert.ok(
+    predictedRuns.every(({ run }) =>
+      typeof run.prediction.label === "string" &&
+      run.prediction.label.length > 0 &&
+      !run.prediction.label.startsWith("Recorded"),
+    ),
+  );
+
+  const referenceRuns = predictedRuns.filter(({ run }) =>
+    run.runKind === "model-prediction" || run.model === "manual",
+  );
+  assert.equal(referenceRuns.length, 125);
+  assert.ok(referenceRuns.every(({ run }) =>
+    !/^-?\d+\.\d{5}, -?\d+\.\d{5}$/.test(run.prediction.label),
+  ));
+
+  const bogatynia = referenceRuns
+    .filter(({ caseId }) => caseId === "europe-easy--loc-006")
+    .map(({ run }) => [run.model, run.condition, run.prediction.label]);
+  assert.deepEqual(bogatynia, [
+    ["GPT-5.6 Sol · xhigh", "interactive-panorama", "Piechowice, Poland"],
+    ["GPT-5.6 Sol · max", "interactive-panorama", "Sieniawka, Poland"],
+    ["Grok 4.6 · xhigh", "interactive-panorama", "St. Roman, Austria"],
+    ["manual", "interactive-panorama", "Zittau, Germany"],
+    ["manual", "static-image", "Hrádek nad Nisou, Czechia"],
+  ]);
+});
+
+test("canonical benchmark predictions are available independently of replay recordings", async () => {
+  const built = await buildData({ write: false, quiet: true });
+  const expectedModels = [
+    "GPT-5.6 Sol · xhigh",
+    "GPT-5.6 Sol · max",
+    "Grok 4.6 · xhigh",
+  ];
+  const predictionRuns = built.atlasCases.flatMap((item) =>
+    item.runs.filter((run) => run.runKind === "model-prediction"),
+  );
+
+  assert.equal(predictionRuns.length, 75);
+  assert.deepEqual([...new Set(predictionRuns.map((run) => run.model))], expectedModels);
+
+  for (const item of built.atlasCases) {
+    const runs = item.runs.filter((run) => run.runKind === "model-prediction");
+    assert.deepEqual(runs.map((run) => run.model), expectedModels, item.id);
+    assert.ok(runs.every((run) => run.condition === "interactive-panorama"), item.id);
+    assert.ok(runs.every((run) => Number.isFinite(run.prediction?.lat)), item.id);
+    assert.ok(runs.every((run) => Number.isFinite(run.prediction?.lng)), item.id);
+    assert.ok(runs.every((run) => run.exploration === undefined), item.id);
+  }
+});
+
 test("recording matching is restricted to the selected competition and uses the spawn coordinate", async () => {
   const built = await buildData({ write: false, quiet: true });
   const recording = {

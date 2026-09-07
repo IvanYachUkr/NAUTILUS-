@@ -1,6 +1,8 @@
 .DS_Store
 node_modules/
 coverage/
+dist/
+src/vendor/
 *.log
 
 # Local collector audit log. It is append-only diagnostic history and is not

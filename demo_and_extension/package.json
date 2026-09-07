@@ -5,7 +5,10 @@
   "type": "module",
   "description": "OpenStreetMap visualization, competition data pipeline, and OpenGuessr research recorder for MLLM geolocation experiments.",
   "scripts": {
+    "prestart": "npm run prepare:globe",
     "start": "node scripts/serve.mjs",
+    "prepare:globe": "node scripts/prepare-globe-assets.mjs",
+    "build:site": "node scripts/build-site.mjs",
     "data:build": "node scripts/build-data.mjs",
     "data:check": "node scripts/build-data.mjs --check",
     "links:inspect": "node scripts/inspect-links.mjs",
@@ -22,5 +25,9 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "globe.gl": "2.46.2",
+    "three-globe": "2.44.0"
   }
 }
