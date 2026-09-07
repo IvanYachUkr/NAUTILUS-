@@ -324,6 +324,7 @@ export function createExplorer({
       if (backButton && rootElement.contains(backButton)) {
         enterOverview();
         render({ fitMap: true });
+        rootElement.querySelector("[data-discover-location]").focus({ preventScroll: true });
         return;
       }
 
@@ -347,6 +348,18 @@ export function createExplorer({
         return;
       }
 
+      const discoverButton = event.target.closest("[data-discover-location]");
+      if (discoverButton && rootElement.contains(discoverButton)) {
+        const candidates = getFilteredCases();
+        const destination = candidates[Math.floor(Math.random() * candidates.length)];
+        if (destination) {
+          clearDrawerState();
+          api.selectCase(destination.id);
+          elements.backOverview.focus({ preventScroll: true });
+        }
+        return;
+      }
+
       const caseButton = event.target.closest("[data-case-id]");
       if (caseButton && rootElement.contains(caseButton)) {
         selectedCaseId = caseButton.dataset.caseId;
@@ -354,6 +367,10 @@ export function createExplorer({
           clearDrawerState();
         }
         render({ focusActiveCard: true, fitMap: true });
+        if (caseButton.closest("[data-project-story]")) {
+          scrollToProjectSection(rootElement, "explorer");
+          elements.backOverview.focus({ preventScroll: true });
+        }
         return;
       }
 
@@ -712,6 +729,7 @@ export function createExplorer({
   }
 
   function renderLocationList(filteredCases) {
+    rootElement.querySelector("[data-discover-location]").disabled = filteredCases.length === 0;
     elements.resultCount.textContent = `${filteredCases.length} / ${data.length}`;
     elements.overviewCount.textContent = String(filteredCases.length);
     elements.overviewButton.classList.toggle("is-active", selectedCaseId === null);
@@ -783,10 +801,10 @@ export function createExplorer({
         .flatMap((item) => item.competitions ?? [])
         .find((membership) => membership.competitionId === filters.competition);
       elements.mapEyebrow.textContent = competition
-        ? `Competition · ${competition.competitionId}`
-        : "Location overview";
-      elements.mapTitle.textContent = competition?.competitionName ?? "European evaluation scenes";
-      elements.mapSubtitle.textContent = `${overviewRuns.length} predicted locations from the selected model · ${filteredCases.length} matching dataset locations · select a prediction or location pin`;
+        ? competition.competitionName
+        : "An atlas of machine perception";
+      elements.mapTitle.innerHTML = "Follow the<br /><em>guess.</em>";
+      elements.mapSubtitle.textContent = `${overviewRuns.length} prediction${overviewRuns.length === 1 ? "" : "s"}. ${filteredCases.length} real place${filteredCases.length === 1 ? "" : "s"}. Explore the distance between what a model sees and where it thinks it is.`;
       return;
     }
 
@@ -1170,6 +1188,7 @@ export function createExplorer({
     const active = item.id === selectedCaseId;
     const matchingRun = chooseRun(item, selectedModel, selectedCondition);
     const membership = preferredMembership(item, filters.competition);
+    const thumbnail = assetImageUrl(item.startingImage);
     const runMeta = matchingRun
       ? `<span>${escapeHtml(CONDITION_LABELS[matchingRun.condition] ?? matchingRun.condition)}</span><b>${hasCoordinate(matchingRun.prediction) ? escapeHtml(formatDistance(matchingRun.errorKm)) : "Recording only"}</b>`
       : `<span>${escapeHtml(DIFFICULTY_LABELS[item.difficulty])}</span><b>Awaiting run</b>`;
@@ -1182,8 +1201,10 @@ export function createExplorer({
         class="location-card ${active ? "is-active" : ""}"
         type="button"
         data-case-id="${escapeAttribute(item.id)}"
+        data-difficulty="${escapeAttribute(item.difficulty)}"
         aria-pressed="${active}"
       >
+        ${thumbnail ? `<img class="location-card__image" src="${escapeAttribute(thumbnail)}" alt="" loading="lazy" decoding="async" />` : ""}
         <span class="location-card__pin" aria-hidden="true"></span>
         <span class="location-card__body">
           <strong>${escapeHtml(item.city)}</strong>
@@ -1378,9 +1399,10 @@ function shellMarkup(cases = []) {
 
       <header class="app-header">
         <div class="app-brand">
+          <i class="ph ph-compass app-brand__mark" aria-hidden="true"></i>
           <div>
             <strong>NAUTILUS</strong>
-            <small>Explainable · agentic image geolocation</small>
+            <small>A field guide to machine perception</small>
           </div>
         </div>
 
@@ -1418,6 +1440,10 @@ function shellMarkup(cases = []) {
               <span class="section-label" data-map-eyebrow></span>
               <h1 data-map-title></h1>
               <p data-map-subtitle></p>
+              <button class="discover-location" type="button" data-discover-location>
+                <span>Take me somewhere</span>
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+              </button>
               <button class="project-entry" type="button" data-scroll-target="research">
                 <span>Read the project</span>
                 <i class="ph ph-arrow-down-right" aria-hidden="true"></i>
@@ -1455,17 +1481,18 @@ function shellMarkup(cases = []) {
           </section>
 
           <section class="dataset-browser" data-dataset-browser>
+            <div class="dataset-browser__controls">
             <div class="rail-heading">
               <div>
-                <span class="section-label">Benchmark atlas</span>
-                <h2>Locations</h2>
+                <span class="section-label">Choose a place to begin</span>
+                <h2>The field collection</h2>
               </div>
               <span class="result-count" data-result-count></span>
             </div>
 
             <label class="search-field">
               <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
-              <input data-search type="search" placeholder="Search city or country" autocomplete="off" />
+              <input data-search type="search" aria-label="Search city or country" placeholder="Search city or country" autocomplete="off" />
             </label>
 
             <details class="filter-panel">
@@ -1487,13 +1514,18 @@ function shellMarkup(cases = []) {
               <span><strong>All locations</strong><small>Globe overview</small></span>
               <b data-overview-count></b>
             </button>
+            </div>
 
-            <div class="location-list" data-location-list></div>
+            <div class="location-list" data-location-list aria-label="Street scene collection" tabindex="0"></div>
           </section>
         </aside>
 
         <main class="map-workspace" data-map-workspace>
           <section class="map-panel">
+            <div class="globe-caption" aria-hidden="true">
+              <span>Europe / An experiment in seeing</span>
+              <span><i class="ph ph-hand" aria-hidden="true"></i> Drag to rotate · Scroll to zoom</span>
+            </div>
             <div class="map-stage" data-map></div>
 
             <div class="map-utilities">

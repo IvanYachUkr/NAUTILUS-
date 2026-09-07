@@ -105,7 +105,7 @@ test("map overview only includes cases with a prediction for the selected run sl
       .map((entry) => entry.caseId),
     ["matching"],
   );
-  assert.ok(appSource.includes("predicted locations"));
+  assert.ok(appSource.includes("${overviewRuns.length} prediction"));
 });
 
 test("static/NMPZ never creates a map playback descriptor", () => {

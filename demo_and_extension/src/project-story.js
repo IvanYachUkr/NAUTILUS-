@@ -141,7 +141,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           <div class="story-intro__grid">
             <div>
               <p class="story-overline">Evaluating explainability and agentic exploration in MLLM image geolocation</p>
-              <h2>A correct pin is<br />not enough.</h2>
+              <h2>A correct pin is<br /><em>not enough.</em></h2>
             </div>
             <div class="story-intro__copy">
               <p>NAUTILUS tests whether vision-capable models can geolocate European street scenes and show evidence that a person can actually verify.</p>
@@ -157,14 +157,17 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
             <figure class="scene-frame scene-frame--wide">
               <img src="./data/starting-images/europe-easy/loc_001.png" alt="Paris street scene at Place de la Bastille" loading="lazy" />
               <figcaption><span>Easy · Urban</span><strong>Paris, France</strong></figcaption>
+              <button class="scene-frame__open" type="button" data-case-id="europe-easy--loc-001" aria-label="Explore Paris in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
             <figure class="scene-frame">
               <img src="./data/starting-images/europe-medium/loc_009.png" alt="Residential street scene in Valencia" loading="lazy" />
               <figcaption><span>Medium · Urban</span><strong>Valencia, Spain</strong></figcaption>
+              <button class="scene-frame__open" type="button" data-case-id="europe-medium--loc-009" aria-label="Explore Valencia in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
             <figure class="scene-frame">
               <img src="./data/starting-images/europe-hard/loc_018.png" alt="Rural road scene in Greece" loading="lazy" />
               <figcaption><span>Hard · Rural</span><strong>Peloponnese, Greece</strong></figcaption>
+              <button class="scene-frame__open" type="button" data-case-id="europe-hard--loc-018" aria-label="Explore Peloponnese in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
           </div>
         </section>
@@ -172,7 +175,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
         <section class="story-section method-section" id="method" data-site-section-id="method">
           <div class="story-section__eyebrow"><span>02</span> Method</div>
           <div class="story-heading-row">
-            <h2>Follow the guess,<br />step by step.</h2>
+            <h2>From first glance<br /><em>to final pin.</em></h2>
             <p>Every run uses the same four-stage protocol. The final prediction matters, but so does the path that produced it.</p>
           </div>
 
@@ -274,7 +277,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           <div class="story-section__eyebrow"><span>04</span> Explainability</div>
           <div class="evidence-grid">
             <div class="evidence-copy">
-              <h2>Can the clue survive inspection?</h2>
+              <h2>Can the clue survive <em>inspection?</em></h2>
               <p>A polished explanation can still be wrong. Human review treats each reported clue as evidence to test, not prose to admire.</p>
               <div class="cue-rubric" aria-label="Cue review rubric">
                 <span><i class="ph ph-eye" aria-hidden="true"></i> Visible</span>
@@ -323,7 +326,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           <div class="closing-panel">
             <div>
               <span>Open the evidence</span>
-              <h3>Twenty-five scenes. Every route. Every pin.</h3>
+              <h3>Every guess has a story.<br /><em>Go find one.</em></h3>
             </div>
             <div class="closing-panel__actions">
               <button class="story-cta story-cta--light" type="button" data-scroll-target="explorer">
