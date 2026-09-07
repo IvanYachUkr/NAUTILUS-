@@ -11,28 +11,72 @@ export const METHOD_STAGE_IDS = ["observe", "hypothesize", "explore", "pin"];
 
 export const RECORDED_BENCHMARKS = [
   {
+    id: "gpt-6-astra-low",
+    dataDirectory: "gpt-6-astra-low",
+    model: "GPT-6 Astra",
+    reasoning: "low",
+    points: (119_160 + 119_818 + 118_759) / 3,
+    maxPoints: 125_000,
+    sample: "3 runs · mean score",
+    runs: [
+      { label: "Run 1", easy: 39_997, medium: 44_189, hard: 34_974, total: 119_160 },
+      { label: "Run 2", easy: 39_998, medium: 44_686, hard: 35_134, total: 119_818 },
+      { label: "Run 3", easy: 39_998, medium: 43_482, hard: 35_279, total: 118_759 },
+    ],
+  },
+  {
+    id: "gemini-3-7-flash-high-aided",
+    dataDirectory: "gemini-3.7-flash-high-aided",
+    model: "Gemini 3.7 Flash",
+    reasoning: "high, aided",
+    points: 120_029,
+    maxPoints: 125_000,
+    sample: "1 run",
+  },
+  {
     id: "gpt-5-6-sol-xhigh",
     dataDirectory: "gpt-5.6-sol-xhigh",
     model: "GPT-5.6 Sol",
     reasoning: "xhigh",
-    points: 110_273,
+    points: (110_273 + 107_436 + 114_716) / 3,
     maxPoints: 125_000,
+    sample: "3 runs · mean score",
   },
   {
     id: "gpt-5-6-sol-max",
     dataDirectory: "gpt-5.6-sol-max",
     model: "GPT-5.6 Sol",
     reasoning: "max",
-    points: 107_838,
+    points: (107_838 + 114_794 + 111_149) / 3,
     maxPoints: 125_000,
+    sample: "3 runs · mean score",
   },
   {
     id: "grok-4-6-xhigh",
     dataDirectory: "grok-4.6-xhigh",
     model: "Grok 4.6",
     reasoning: "xhigh",
-    points: 80_081,
+    points: (80_081 + 71_562 + 73_222) / 3,
     maxPoints: 125_000,
+    sample: "3 runs · mean score",
+  },
+  {
+    id: "grok-4-6-xhigh-mcp",
+    dataDirectory: "grok-4.6-xhigh",
+    model: "Grok 4.6 + MCP",
+    reasoning: "xhigh",
+    points: 105_026,
+    maxPoints: 125_000,
+    sample: "3 runs per difficulty · composite mean",
+  },
+  {
+    id: "gemini-3-7-flash-high-unaided",
+    dataDirectory: "gemini-3.7-flash-high",
+    model: "Gemini 3.7 Flash",
+    reasoning: "high, unaided",
+    points: 64_350,
+    maxPoints: 125_000,
+    sample: "1 run",
   },
 ];
 
@@ -244,7 +288,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           <div class="story-section__eyebrow"><span>03</span> Recorded benchmark</div>
           <div class="story-heading-row">
             <h2>${formatInteger(snapshot.locationCount)} European scenes.<br />Three difficulty bands.</h2>
-            <p>The current public benchmark contains complete recorded interactive runs. Scores below are official OpenGuessr competition points—not accuracy percentages or transient XP.</p>
+            <p>Interactive OpenGuessr results on the same fixed locations. Repeated conditions are ranked by mean points; percentages show the share of the maximum score. Controller conditions and continuation composites are labelled.</p>
           </div>
 
           <figure class="results-scene" aria-hidden="true">
@@ -262,12 +306,13 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           <div class="leaderboard" aria-label="Recorded benchmark leaderboard">
             <header>
               <span>Rank / model</span>
-              <span>Official points</span>
+              <span>Mean points</span>
               <span>Share of 125,000</span>
             </header>
             ${leaderboard.map(leaderboardRowMarkup).join("")}
           </div>
-          <p class="results-note"><i class="ph ph-info" aria-hidden="true"></i> Each entry covers the same 25 scenes: 8 easy, 9 medium, and 8 hard rounds. The explorer keeps model beliefs, pin coordinates, and controller failures visible rather than silently correcting them.</p>
+          <p class="results-note"><i class="ph ph-info" aria-hidden="true"></i> Each condition covers 8 easy, 9 medium, and 8 hard scenes. Repeats measure variation on these fixed locations. Grok MCP combines separate difficulty means; its Easy timer was 180 seconds and Medium/Hard 300 seconds.</p>
+          ${astraResultsMarkup(leaderboard.find((entry) => entry.id === "gpt-6-astra-low"))}
         </section>
 
         <section class="story-section evidence-section" id="evidence" data-site-section-id="evidence">
@@ -358,7 +403,7 @@ function leaderboardRowMarkup(entry) {
     <article class="leaderboard-row">
       <div class="leaderboard-row__model">
         <span>${String(entry.rank).padStart(2, "0")}</span>
-        <div><strong>${model}</strong><small>${reasoning} reasoning · 25 recorded rounds</small></div>
+        <div><strong>${model}</strong><small>${reasoning} reasoning · ${escapeMarkup(entry.sample ?? "1 run")}</small></div>
       </div>
       <strong class="leaderboard-row__score">${formatInteger(points)}</strong>
       <div class="leaderboard-row__progress">
@@ -366,6 +411,24 @@ function leaderboardRowMarkup(entry) {
         <span>${Number(entry.scorePercent).toFixed(1)}%</span>
       </div>
     </article>
+  `;
+}
+
+function astraResultsMarkup(entry) {
+  if (!entry?.runs?.length) return "";
+  return `
+    <details class="benchmark-repeat-details" open>
+      <summary>GPT-6 Astra · low reasoning · three runs</summary>
+      <p>300 seconds per round, using Chrome screenshots and visible controls. Mean: <strong>119,245.67 / 125,000</strong> (95.3965%).</p>
+      <div class="benchmark-repeat-table">
+        <table aria-label="GPT-6 Astra low individual run scores">
+          <thead><tr><th scope="col">Run</th><th scope="col">Easy</th><th scope="col">Medium</th><th scope="col">Hard</th><th scope="col">Total</th></tr></thead>
+          <tbody>${entry.runs.map((run) => `<tr><th scope="row">${escapeMarkup(run.label)}</th><td>${formatInteger(run.easy)}</td><td>${formatInteger(run.medium)}</td><td>${formatInteger(run.hard)}</td><td><strong>${formatInteger(run.total)}</strong></td></tr>`).join("")}</tbody>
+        </table>
+      </div>
+      <p>Run 1 Hard and Run 3 Medium combine completed round results with official continuation leaderboards after interruptions. The contaminated Medium attempt and the unverified crash round are excluded.</p>
+      <p><a href="https://github.com/IvanYachUkr/NAUTILUS-/tree/main/demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low" target="_blank" rel="noopener noreferrer">Reports, scores and screenshot evidence <span aria-hidden="true">↗</span></a>. Videos remain local. Astra prediction coordinates still require validation, so its results are shown here without globe pins.</p>
+    </details>
   `;
 }
 

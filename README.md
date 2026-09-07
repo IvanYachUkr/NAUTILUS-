@@ -15,22 +15,30 @@ three-run means. The maximum aggregate is 125,000 points.
 | Rank | Model | Runs | Mean Easy | Mean Medium | Mean Hard | **Mean total** | Mean max | Best run |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | **1** | [Gemini 3.7 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/) | **1** | **39,999** | **43,026** | **37,004** | **120,029** | **96.0%** | **120,029** |
-| **2** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **3** | 39,397 | 40,515 | 31,349 | **111,260** | **89.0%** | **114,794** |
-| **3** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | **3** | 39,849 | 40,978 | 29,981 | **110,808** | **88.6%** | **114,716** |
-| **4** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) + [MCP](demo_and_extension/openguessr-mcp/) **(composite)** | **3 / difficulty** | [**39,874**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | [**35,740**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | [**29,412**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | **105,026** | **84.0%** | — |
-| **5** | [Grok 4.6 (xhigh, raw GUI)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | **60.0%** | **80,081** |
-| **6** | [Gemini 3.7 Flash (high, unaided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/) | **1** | 18,479 | 23,721 | 22,150 | **64,350** | **51.5%** | **64,350** |
+| **2** | [GPT-6 Astra (low)](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/) | **3** | 39,998 | 44,119 | 35,129 | **119,246** | **95.4%** | **119,818** |
+| **3** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **3** | 39,397 | 40,515 | 31,349 | **111,260** | **89.0%** | **114,794** |
+| **4** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | **3** | 39,849 | 40,978 | 29,981 | **110,808** | **88.6%** | **114,716** |
+| **5** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) + [MCP](demo_and_extension/openguessr-mcp/) **(composite)** | **3 / difficulty** | [**39,874**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | [**35,740**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | [**29,412**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | **105,026** | **84.0%** | — |
+| **6** | [Grok 4.6 (xhigh, raw GUI)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | **60.0%** | **80,081** |
+| **7** | [Gemini 3.7 Flash (high, unaided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/) | **1** | 18,479 | 23,721 | 22,150 | **64,350** | **51.5%** | **64,350** |
 
 The Grok MCP row is a composite of **75 completed scored rounds** across nine
 valid difficulty-specific games, rather than a synthetic claim that one
 25-round game was played. Easy used 180 seconds per round; Medium and Hard used
 300 seconds. Each linked score opens its underlying summaries and run evidence.
 
+Astra low uses 300 seconds per round. Run 1 Hard and Run 3 Medium combine verified
+completed rounds with remaining-round continuations after interruptions. Its
+[score provenance and exclusions](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/) are explicit; all Astra videos remain local and no Astra files were uploaded to Google Drive.
+
 ### Complete 25-round run scores
 
 | Model | Run | Easy | Medium | Hard | **Total** | Max |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | Gemini 3.7 Flash (high, aided) | [Original](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md) | **39,999** | 43,026 | **37,004** | **120,029** | **96.0%** |
+| GPT-6 Astra (low) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md) | 39,997 | 44,189 | 34,974 | **119,160** | 95.3% |
+| GPT-6 Astra (low) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md) | 39,998 | 44,686 | 35,134 | **119,818** | 95.9% |
+| GPT-6 Astra (low) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_20260907.md) | 39,998 | 43,482 | 35,279 | **118,759** | 95.0% |
 | GPT-5.6 Sol (max) | [Original](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md) | 39,985 | 35,485 | 32,368 | **107,838** | 86.3% |
 | GPT-5.6 Sol (max) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/) | 39,724 | **44,152** | 30,918 | **114,794** | **91.8%** |
 | GPT-5.6 Sol (max) | [Recorded R4](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/) | 38,482 | 41,907 | 30,760 | **111,149** | 88.9% |
@@ -42,16 +50,18 @@ valid difficulty-specific games, rather than a synthetic claim that one
 | Grok 4.6 (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
 | Gemini 3.7 Flash (high, unaided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
 
-Across the complete 25-round runs, **275/275 official rounds** were submitted and recorded.
+Across the complete 25-location evaluations, **350 scored results** are represented.
+Astra adds 75 results, including the disclosed continuation composites; screenshot
+and video availability is documented per run.
 The best individual totals were Easy **39,999** (Gemini aided), Medium
-**44,152** (Sol max R3), Hard **37,004** (Gemini aided), and overall
+**44,686** (Astra low R2), Hard **37,004** (Gemini aided), and overall
 **120,029** (Gemini aided). Repeated runs reuse the same fixed locations, so
 their means measure run/controller variability rather than new-location
 generalization.
 
 The linked folders contain the session manifests, raw round telemetry, matched
 video metadata, reports, prompts where applicable, and recovery-segment logs.
-The six new repeated-run WebM sets are stored separately in the shared Drive
+The six earlier Sol/Grok repeated-run WebM sets are stored separately in the shared Drive
 archive. The benchmark README discloses an 11-round recorder path-collision
 caveat found by capture-ID validation; it does not change the official scores.
 Static/NMPZ agent submissions are not yet included in this leaderboard.

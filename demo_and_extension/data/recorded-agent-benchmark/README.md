@@ -1,10 +1,16 @@
 # Recorded interactive-agent benchmark
 
-The benchmark contains published runs for GPT-5.6 Sol max, GPT-5.6 Sol xhigh, Grok 4.6 xhigh, and Gemini 3.7 Flash.
+The benchmark contains published runs for GPT-6 Astra low, GPT-5.6 Sol max, GPT-5.6 Sol xhigh, Grok 4.6 xhigh, and Gemini 3.7 Flash.
 
 The top-ranking overall model run is [`gemini-3.7-flash-high-aided/`](gemini-3.7-flash-high-aided/), achieving **120,029 / 125,000 points** (96.0% accuracy) with a pin-placement helper. The original unaided run is under [`gemini-3.7-flash-high/`](gemini-3.7-flash-high/).
 
-The original published run remains directly under each model directory.
+## GPT-6 Astra low
+
+[`gpt-6-astra-low/`](gpt-6-astra-low/) adds three 25-location evaluations: **119,160**, **119,818**, and **118,759** points; mean **119,245.67 / 125,000**. Its summary, reports, and hashed screenshot evidence document the interrupted-tier composites and excluded attempts. Astra videos remain local; no Astra files were uploaded to Google Drive. Raw prediction coordinates are not yet validated for the globe.
+
+## Earlier model evidence layout
+
+The original published run remains directly under each earlier model directory.
 Additional runs live under `runs/recorded-rN/`. A run contains:
 
 - `README.md`: scores, recorder label, and canonical session IDs.

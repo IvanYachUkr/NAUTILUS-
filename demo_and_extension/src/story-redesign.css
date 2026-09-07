@@ -428,6 +428,38 @@
 
 .project-story .results-note i { color: #7ea9ff; }
 
+.project-story .benchmark-repeat-details {
+  margin-top: 28px;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid rgba(131, 173, 222, 0.22);
+  border-radius: 16px;
+  background: #101f33;
+  color: #bdcce0;
+}
+.project-story .benchmark-repeat-details summary {
+  color: #f3f7fd;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+}
+.project-story .benchmark-repeat-details p { line-height: 1.65; }
+.project-story .benchmark-repeat-details a { color: #9ebcff; }
+.project-story .benchmark-repeat-table { overflow-x: auto; }
+.project-story .benchmark-repeat-table table {
+  width: 100%;
+  min-width: 450px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.project-story .benchmark-repeat-table th,
+.project-story .benchmark-repeat-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(131, 173, 222, 0.16);
+  text-align: right;
+  white-space: nowrap;
+}
+.project-story .benchmark-repeat-table th:first-child { text-align: left; }
+
 .project-story .evidence-section {
   max-width: none;
   padding-right: max(24px, calc((100vw - 1476px) / 2));
