@@ -17,11 +17,13 @@ export const RECORDED_BENCHMARKS = [
     dataDirectory: "glm-5.3-flash-max",
     model: "GLM-5.3-Flash + MCP",
     reasoning: "Max",
-    points: 111_161,
+    points: (111_161 + 113_530 + 108_249) / 3,
     maxPoints: 125_000,
-    sample: "1 complete run · partial attempts excluded",
+    sample: "3 runs · mean score · resumptions disclosed",
     runs: [
       { label: "Run 1", easy: 39_773, medium: 41_229, hard: 30_159, total: 111_161 },
+      { label: "Run 2 (resumed)", easy: 39_900, medium: 41_142, hard: 32_488, total: 113_530 },
+      { label: "Run 3 (resumed)", easy: 39_954, medium: 38_026, hard: 30_269, total: 108_249 },
     ],
   },
   {

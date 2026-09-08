@@ -6,7 +6,7 @@ The [published NAUTILUS website](https://nautilus-geolocation.ivanukr.chatgpt.si
 
 ## Recorded model leaderboard
 
-Official OpenGuessr competition points for the **interactive panorama** condition
+Recorded OpenGuessr competition points for the **interactive panorama** condition
 (25 locations total). The leaderboard includes every published controller
 condition. Complete 25-round conditions use their mean across full runs; the
 clearly labelled Grok MCP composite sums its separate Easy, Medium, and Hard
@@ -17,7 +17,7 @@ three-run means. The maximum aggregate is 125,000 points.
 | **1** | [Gemini 3.7 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/) | **1** | **39,999** | **43,026** | **37,004** | **120,029** | **96.0%** | **120,029** |
 | **2** | [GPT-6 Astra (low)](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/) | **3** | 39,998 | 44,119 | 35,129 | **119,246** | **95.4%** | **119,818** |
 | **3** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **3** | 39,397 | 40,515 | 31,349 | **111,260** | **89.0%** | **114,794** |
-| **4** | [GLM-5.3-Flash (Max) + MCP](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/) | **1 complete** | 39,773 | 41,229 | 30,159 | **111,161** | **88.9%** | **111,161** |
+| **4** | [GLM-5.3-Flash (Max) + MCP](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/) | **3** | 39,876 | 40,132 | 30,972 | **110,980** | **88.8%** | **113,530** |
 | **5** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | **3** | 39,849 | 40,978 | 29,981 | **110,808** | **88.6%** | **114,716** |
 | **6** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) + [MCP](demo_and_extension/openguessr-mcp/) **(composite)** | **3 / difficulty** | [**39,874**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | [**35,740**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | [**29,412**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | **105,026** | **84.0%** | — |
 | **7** | [Grok 4.6 (xhigh, raw GUI)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | **60.0%** | **80,081** |
@@ -33,11 +33,13 @@ completed rounds with remaining-round continuations after interruptions. Its
 [score provenance and exclusions](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/) are explicit; all Astra videos remain local and no Astra files were uploaded to Google Drive.
 
 GLM ran through ZCode at Max reasoning with the screenshot-only coordinate MCP.
-Its ranked result uses the completed 25-round run only. The user imposed a
-03:00 Berlin cutoff; [all achieved scores and unfinished-run status](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/)
-are published separately from the full-run mean. Image compression, unsuccessful
-panorama drags, setup exclusions, and recording gaps are disclosed there. This is
-a score-only Git publication; GLM media and raw chats remain local, with no Drive upload.
+Its ranked result averages **three completed 25-round evaluations**. Run 2 resumed
+after the overnight cutoff; Run 3 Easy combines seven preserved results with a
+one-location continuation, and its final Medium result was recovered after a
+transport failure. [All 75 scores, provenance, and exclusions](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/)
+are published with image hashes. Image compression, unsuccessful panorama drags,
+and recording gaps are disclosed there. GLM media and raw chats remain local,
+with no Drive upload.
 
 ### Complete 25-round run scores
 
@@ -48,6 +50,8 @@ a score-only Git publication; GLM media and raw chats remain local, with no Driv
 | GPT-6 Astra (low) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md) | 39,998 | 44,686 | 35,134 | **119,818** | 95.9% |
 | GPT-6 Astra (low) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_20260907.md) | 39,998 | 43,482 | 35,279 | **118,759** | 95.0% |
 | GLM-5.3-Flash (Max) + MCP | [Run 1](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/#run-1-individual-scores) | 39,773 | 41,229 | 30,159 | **111,161** | 88.9% |
+| GLM-5.3-Flash (Max) + MCP | [Run 2 (resumed)](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/#run-2-individual-scores) | 39,900 | 41,142 | 32,488 | **113,530** | 90.8% |
+| GLM-5.3-Flash (Max) + MCP | [Run 3 (resumed)](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/#run-3-individual-scores) | 39,954 | 38,026 | 30,269 | **108,249** | 86.6% |
 | GPT-5.6 Sol (max) | [Original](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md) | 39,985 | 35,485 | 32,368 | **107,838** | 86.3% |
 | GPT-5.6 Sol (max) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/) | 39,724 | **44,152** | 30,918 | **114,794** | **91.8%** |
 | GPT-5.6 Sol (max) | [Recorded R4](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/) | 38,482 | 41,907 | 30,760 | **111,149** | 88.9% |
@@ -59,10 +63,10 @@ a score-only Git publication; GLM media and raw chats remain local, with no Driv
 | Grok 4.6 (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
 | Gemini 3.7 Flash (high, unaided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
 
-Across the complete 25-location evaluations, **375 scored results** are represented.
+Across the complete 25-location evaluations, **425 scored results** are represented.
 Astra adds 75 results, including the disclosed continuation composites; screenshot
-and video availability is documented per run. GLM adds 25 completed-run results;
-its partial-attempt scores are preserved in its report but excluded from this full-run count.
+and video availability is documented per run. GLM adds 75 completed-run results,
+including its disclosed resumptions; setup failures and a routing-only replay are excluded.
 The best individual totals were Easy **39,999** (Gemini aided), Medium
 **44,686** (Astra low R2), Hard **37,004** (Gemini aided), and overall
 **120,029** (Gemini aided). Repeated runs reuse the same fixed locations, so
