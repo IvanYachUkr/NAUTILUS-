@@ -1,4 +1,5 @@
 import { normalizeCases, upsertCase as mergeCase } from "./data-contract.js";
+import { assetImageUrl } from "./asset-url.js";
 import {
   explorationDistanceKm,
   nearestSampleIndex,
@@ -1957,13 +1958,6 @@ function writeSelectionToHash(caseItem, run) {
 function structuredCloneSafe(value) {
   if (typeof structuredClone === "function") return structuredClone(value);
   return JSON.parse(JSON.stringify(value));
-}
-
-function assetImageUrl(image) {
-  const raw = typeof image?.path === "string" ? image.path.trim() : "";
-  if (!raw) return null;
-  if (/^(?:https?:|data:|blob:)/i.test(raw)) return raw;
-  return `/${raw.replace(/^[/\\]+/, "")}`;
 }
 
 function assetVideoUrl(video) {

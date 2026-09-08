@@ -13,7 +13,7 @@ import {
 } from "../src/project-story.js";
 
 const cases = [
-  { id: "one", difficulty: "easy" },
+  { id: "europe-easy--loc-001", difficulty: "easy", startingImage: { path: "data/starting-images/europe-easy/loc_001.png" } },
   { id: "two", difficulty: "easy" },
   { id: "three", difficulty: "medium" },
   { id: "four", difficulty: "hard" },
@@ -127,6 +127,32 @@ test("project story renders every research section with live benchmark values", 
   assert.ok(markup.includes('value="110273" max="125000"'));
   assert.ok(markup.includes("https://github.com/IvanYachUkr/NAUTILUS-"));
   assert.ok(markup.includes('alt="Paris street scene at Place de la Bastille"'));
+});
+
+test("all story images follow the dataset's PNG or WebP paths", () => {
+  const scenes = [
+    ["easy", "001"], ["easy", "004"],
+    ["medium", "009"], ["medium", "013"],
+    ["hard", "018"], ["hard", "022"],
+  ];
+
+  for (const extension of ["png", "webp"]) {
+    const imageCases = scenes.map(([difficulty, number]) => ({
+      id: `europe-${difficulty}--loc-${number}`,
+      difficulty,
+      startingImage: { path: `data/starting-images/europe-${difficulty}/loc_${number}.${extension}` },
+    }));
+    const markup = projectStoryMarkup(buildProjectSnapshot(imageCases));
+    const sources = [...markup.matchAll(/<img src="([^"]+)"/g)].map((match) => match[1]);
+
+    assert.equal(sources.length, 7);
+    assert.deepEqual(new Set(sources), new Set(imageCases.map((item) => `/${item.startingImage.path}`)));
+  }
+});
+
+test("story scenes without a supplied image do not request a guessed filename", () => {
+  const markup = projectStoryMarkup(buildProjectSnapshot([{ id: "europe-easy--loc-001", difficulty: "easy" }]));
+  assert.doesNotMatch(markup, /<img\b/);
 });
 
 test("project navigation scrolls the requested section without changing the URL hash", () => {

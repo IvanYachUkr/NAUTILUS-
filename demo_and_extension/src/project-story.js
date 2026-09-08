@@ -1,3 +1,5 @@
+import { assetImageUrl } from "./asset-url.js";
+
 export const PROJECT_SECTION_IDS = [
   "explorer",
   "research",
@@ -38,11 +40,14 @@ export const RECORDED_BENCHMARKS = [
 
 export function buildProjectSnapshot(cases = [], benchmarks = RECORDED_BENCHMARKS) {
   const difficultyCounts = { easy: 0, medium: 0, hard: 0 };
+  const sceneImages = {};
 
   for (const item of cases) {
     if (Object.hasOwn(difficultyCounts, item?.difficulty)) {
       difficultyCounts[item.difficulty] += 1;
     }
+    const imageUrl = assetImageUrl(item?.startingImage);
+    if (item?.id && imageUrl) sceneImages[item.id] = imageUrl;
   }
 
   const leaderboard = benchmarks
@@ -56,6 +61,7 @@ export function buildProjectSnapshot(cases = [], benchmarks = RECORDED_BENCHMARK
   return {
     locationCount: cases.length,
     difficultyCounts,
+    sceneImages,
     leaderboard,
   };
 }
@@ -155,17 +161,17 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
 
           <div class="scene-triptych" aria-label="Representative benchmark scenes">
             <figure class="scene-frame scene-frame--wide">
-              <img src="./data/starting-images/europe-easy/loc_001.png" alt="Paris street scene at Place de la Bastille" loading="lazy" />
+              ${sceneImageMarkup(snapshot, "europe-easy--loc-001", "Paris street scene at Place de la Bastille")}
               <figcaption><span>Easy · Urban</span><strong>Paris, France</strong></figcaption>
               <button class="scene-frame__open" type="button" data-case-id="europe-easy--loc-001" aria-label="Explore Paris in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
             <figure class="scene-frame">
-              <img src="./data/starting-images/europe-medium/loc_009.png" alt="Residential street scene in Valencia" loading="lazy" />
+              ${sceneImageMarkup(snapshot, "europe-medium--loc-009", "Residential street scene in Valencia")}
               <figcaption><span>Medium · Urban</span><strong>Valencia, Spain</strong></figcaption>
               <button class="scene-frame__open" type="button" data-case-id="europe-medium--loc-009" aria-label="Explore Valencia in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
             <figure class="scene-frame">
-              <img src="./data/starting-images/europe-hard/loc_018.png" alt="Rural road scene in Greece" loading="lazy" />
+              ${sceneImageMarkup(snapshot, "europe-hard--loc-018", "Rural road scene in Greece")}
               <figcaption><span>Hard · Rural</span><strong>Peloponnese, Greece</strong></figcaption>
               <button class="scene-frame__open" type="button" data-case-id="europe-hard--loc-018" aria-label="Explore Peloponnese in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
@@ -180,7 +186,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           </div>
 
           <figure class="method-scene" aria-hidden="true">
-            <img src="./data/starting-images/europe-medium/loc_013.png" alt="" loading="lazy" />
+            ${sceneImageMarkup(snapshot, "europe-medium--loc-013")}
           </figure>
 
           <ol class="method-steps">
@@ -251,7 +257,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           </div>
 
           <figure class="results-scene" aria-hidden="true">
-            <img src="./data/starting-images/europe-easy/loc_004.png" alt="" loading="lazy" />
+            ${sceneImageMarkup(snapshot, "europe-easy--loc-004")}
           </figure>
 
           <div class="benchmark-facts" aria-label="Benchmark composition">
@@ -290,7 +296,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
 
             <article class="evidence-example">
               <div class="evidence-example__image">
-                <img src="./data/starting-images/europe-easy/loc_001.png" alt="Bastille scene used for an evidence example" loading="lazy" />
+                ${sceneImageMarkup(snapshot, "europe-easy--loc-001", "Bastille scene used for an evidence example")}
               </div>
               <div class="evidence-example__body">
                 <span>Example evidence trace · Paris</span>
@@ -309,7 +315,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
         <section class="story-section team-section" id="team" data-site-section-id="team">
           <div class="story-section__eyebrow"><span>05</span> The team</div>
           <figure class="team-scene" aria-hidden="true">
-            <img src="./data/starting-images/europe-hard/loc_022.png" alt="" loading="lazy" />
+            ${sceneImageMarkup(snapshot, "europe-hard--loc-022")}
           </figure>
           <div class="team-layout">
             <div>
@@ -349,6 +355,12 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
       </footer>
     </div>
   `;
+}
+
+function sceneImageMarkup(snapshot, caseId, alt = "") {
+  const imageUrl = snapshot.sceneImages?.[caseId];
+  if (!imageUrl) return "";
+  return `<img src="${escapeMarkup(imageUrl)}" alt="${escapeMarkup(alt)}" loading="lazy" />`;
 }
 
 function leaderboardRowMarkup(entry) {

@@ -121,13 +121,7 @@ async function copyProjectPath(projectRelativePath, destinationRelativePath) {
     throw new Error(`Refusing to copy path outside the project: ${projectRelativePath}`);
   }
 
-  let sourceStats;
-  try {
-    sourceStats = await stat(source);
-  } catch (error) {
-    if (error?.code === "ENOENT") return;
-    throw error;
-  }
+  const sourceStats = await stat(source);
 
   const destination = join(
     clientDir,

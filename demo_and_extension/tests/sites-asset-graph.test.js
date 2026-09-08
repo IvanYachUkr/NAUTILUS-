@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
 import { readFile, stat } from "node:fs/promises";
 import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import test from "node:test";
 
 const projectDir = fileURLToPath(new URL("..", import.meta.url));
@@ -56,4 +56,17 @@ test("the Sites build emits a revisioned, self-contained globe asset graph", asy
   assert.match(globeLoader, /vendor\/globe\.gl\.min\.js/);
   assert.match(globeController, /vendor\/earth-blue-marble\.jpg/);
   assert.match(globeController, /vendor\/earth-topology\.png/);
+
+  const { buildProjectSnapshot, projectStoryMarkup } = await import(
+    pathToFileURL(join(clientDir, assetRoot, "project-story.js")).href
+  );
+  const cases = JSON.parse(await readFile(join(clientDir, "data/generated/atlas-cases.json"), "utf8"));
+  const story = projectStoryMarkup(buildProjectSnapshot(cases));
+  const storyImages = [...story.matchAll(/<img src="([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(storyImages.length, 7, "all research, method, evidence and team images must render");
+
+  for (const imagePath of new Set(storyImages)) {
+    const info = await stat(join(clientDir, imagePath.replace(/^\//, "")));
+    assert.ok(info.size > 0, `${imagePath} must be included in the deployment`);
+  }
 });
