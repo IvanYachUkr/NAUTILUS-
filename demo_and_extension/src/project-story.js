@@ -11,6 +11,18 @@ export const METHOD_STAGE_IDS = ["observe", "hypothesize", "explore", "pin"];
 
 export const RECORDED_BENCHMARKS = [
   {
+    id: "glm-5-3-flash-max",
+    dataDirectory: "glm-5.3-flash-max",
+    model: "GLM-5.3-Flash + MCP",
+    reasoning: "Max",
+    points: 111_161,
+    maxPoints: 125_000,
+    sample: "1 complete run · partial attempts excluded",
+    runs: [
+      { label: "Run 1", easy: 39_773, medium: 41_229, hard: 30_159, total: 111_161 },
+    ],
+  },
+  {
     id: "gpt-6-astra-low",
     dataDirectory: "gpt-6-astra-low",
     model: "GPT-6 Astra",

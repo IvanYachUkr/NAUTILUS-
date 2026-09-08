@@ -1,0 +1,382 @@
+[
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_R01_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "easy",
+    "round": 1,
+    "bytes": 222682,
+    "sha256": "45489eccf9ff8440acab0b1e01524119fd429ddf83156225d2ef711eb51f331e",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_R02_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "easy",
+    "round": 2,
+    "bytes": 241476,
+    "sha256": "f80276861dc9cf5aff3e08402b49d61f75c06e2fecbbcc20dfec1b440a7a7951",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_R03_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "easy",
+    "round": 3,
+    "bytes": 216800,
+    "sha256": "fbb846f0a368e3948cc0fe8563bd81b4af25c49223ae0d5b0085deda6b9ed374",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_R04_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "easy",
+    "round": 4,
+    "bytes": 185099,
+    "sha256": "e74b11263f0d14e3dca19023c9aaab054091de7cba3544d29ba2d90d4c452a1c",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_R05_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "easy",
+    "round": 5,
+    "bytes": 204692,
+    "sha256": "85ec6f90f7477027a207362a53b02155f57a73c4a9022b8ec7190b341201c935",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_R06_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "easy",
+    "round": 6,
+    "bytes": 202530,
+    "sha256": "e6ba6da704ba423fd80de0d4952f28c5bde3582b0d392a40d929d8bc224a2fe8",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_R07_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "easy",
+    "round": 7,
+    "bytes": 168933,
+    "sha256": "b6474f1d0254ad1652e8ae22de3f042b5edf1ab1cf2908dd335da1967e176a89",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_R08_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "easy",
+    "round": 8,
+    "bytes": 150279,
+    "sha256": "4e1aaf635928408b6d51e416ef82e01fda21e8d30619f08c303478005583782f",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_EASY_LEADERBOARD.jpeg",
+    "role": "leaderboard",
+    "run": 1,
+    "tier": "easy",
+    "round": null,
+    "bytes": 97231,
+    "sha256": "967c57bfec62728ba52163fb26c3e3c6facd029960186763efc19f06f82b50bd",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R01_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 1,
+    "bytes": 253957,
+    "sha256": "36cc12fadc14184f9d60b2747180ace3b7c5b89e71d44ea2dd75c34cbceed752",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R02_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 2,
+    "bytes": 321975,
+    "sha256": "647c494f1fe1555d8e71d96ef1c36d38634521fd14138e19506ae445c63eab9e",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R03_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 3,
+    "bytes": 274032,
+    "sha256": "1330a892f2bc365affd447cc4244adbe5fef5d56dea038834f2f5f523643d821",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R04_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 4,
+    "bytes": 293090,
+    "sha256": "46c4ff3436c63916b94ac453e5d1b151c89324dc56824b1479deff6220070ab7",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R05_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 5,
+    "bytes": 236724,
+    "sha256": "c9468107702776245028afc9427aa872be940e2fcf74113672bceaad83903736",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R06_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 6,
+    "bytes": 237559,
+    "sha256": "f9e0061e6e642046d9fdb5963b9f0fb1af9d262a59aab9c4fc7c3faae0e400d6",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R07_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 7,
+    "bytes": 207200,
+    "sha256": "666e9ddbb59990b093de08080d6a1910de735cb7714e9c4225cbf37bd69382e7",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R08_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 8,
+    "bytes": 168542,
+    "sha256": "517b659830b48bb61a7cba6eb25e794343826fecea890cc127c4a52efd3c52d6",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_R09_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "medium",
+    "round": 9,
+    "bytes": 191208,
+    "sha256": "ad6e542b7f35beec484285fb25cd13b959f752faaea2c21f965227e0729e3848",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_MEDIUM_LEADERBOARD.jpeg",
+    "role": "leaderboard",
+    "run": 1,
+    "tier": "medium",
+    "round": null,
+    "bytes": 90069,
+    "sha256": "825a2be28118a2c76d6f71be26c52208cd5a23ad1d819e0d9cc1be8cb03ae89e",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_R01_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "hard",
+    "round": 1,
+    "bytes": 199699,
+    "sha256": "b97d7d411fdaee331693dc9926477ca86b7f0cfde6f7243a6fc15444c18facee",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_R02_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "hard",
+    "round": 2,
+    "bytes": 204289,
+    "sha256": "9889e69127c2196001dcfee75cdbc23716246ca9cbf171ed598de6ceff569d5d",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_R03_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "hard",
+    "round": 3,
+    "bytes": 321509,
+    "sha256": "a32fb7ffb578435cdc643cd17f70d9a3a34601ecbcbeef358be73c10f89e386d",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_R04_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "hard",
+    "round": 4,
+    "bytes": 203998,
+    "sha256": "7cf4f79552083865c6dd519360a21adb58857bfcc87692edacc634f04b433646",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_R05_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "hard",
+    "round": 5,
+    "bytes": 271431,
+    "sha256": "5f56bd49ecb6f76e8b75bf71cc6158430d43e04a60eb7d688ac104da71a16c7c",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_R06_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "hard",
+    "round": 6,
+    "bytes": 265171,
+    "sha256": "9cb0999d56801c235c2a226d53edc0fdd4dc15341acae3cc2c65dc7780d53052",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_R07_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "hard",
+    "round": 7,
+    "bytes": 151057,
+    "sha256": "f31078e5b197e74713b15eb14b44eebd744c1933be32e2d7a7be616d03c2749f",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_R08_RESULT.jpeg",
+    "role": "round-result",
+    "run": 1,
+    "tier": "hard",
+    "round": 8,
+    "bytes": 255343,
+    "sha256": "370e4a635dc6a6a5ce42a654c8f462485254ca4ac133919de993d67cfa6b0390",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R1_HARD_LEADERBOARD.jpeg",
+    "role": "leaderboard",
+    "run": 1,
+    "tier": "hard",
+    "round": null,
+    "bytes": 90442,
+    "sha256": "9ff9a874436e8b3a2e75508126a13e50b1d69c13c87ade575ae1d6b7eb6f99e9",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_R01_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "easy",
+    "round": 1,
+    "bytes": 224071,
+    "sha256": "d41bc31a32bdaaf52397e2af05ac196d3dd7108a193abbdf8ffd848266e007d8",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_R02_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "easy",
+    "round": 2,
+    "bytes": 209424,
+    "sha256": "619b717e7cf9d3d69e81fa2de2f7ba5d3982c70404f627ef6bb001dacfcf2144",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_R03_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "easy",
+    "round": 3,
+    "bytes": 173335,
+    "sha256": "fd2f54a83440d9219c6ff82b0341f4042d6d3b13e39f3e6b8d885c0222c9c03a",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_R04_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "easy",
+    "round": 4,
+    "bytes": 202413,
+    "sha256": "5db94d199edbbdeac622b7f4e60455fa9cc49e5709b2ec8b644752406bcd58db",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_R05_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "easy",
+    "round": 5,
+    "bytes": 189680,
+    "sha256": "6e3de28d2154e14a585c0c075b047ed8319d6fa51616dfd0236af313e61f24aa",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_R06_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "easy",
+    "round": 6,
+    "bytes": 237553,
+    "sha256": "4223b662fdaf3714aaa7de266af774ff1ca5e0ea5c5d811c071332a6dd203e4d",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_R07_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "easy",
+    "round": 7,
+    "bytes": 224493,
+    "sha256": "e207654f40aba764cff4981377ee4f6c9b0136566b72af13153563bdd310cadd",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_R08_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "easy",
+    "round": 8,
+    "bytes": 129806,
+    "sha256": "3109ea65a9b33af778549a92ccec0dd509e18dd558bb49ee1f63e021645645ae",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_EASY_LEADERBOARD.jpeg",
+    "role": "leaderboard",
+    "run": 2,
+    "tier": "easy",
+    "round": null,
+    "bytes": 96718,
+    "sha256": "d31249b90b48a9964ee97f2f8ad01b07a03547af5c6945e22ecef405cc08ac63",
+    "availability": "local-only"
+  },
+  {
+    "filename": "GLM_FLASH_MAX_R2_MEDIUM_R01_RESULT.jpeg",
+    "role": "round-result",
+    "run": 2,
+    "tier": "medium",
+    "round": 1,
+    "bytes": 255699,
+    "sha256": "393748aeffa089af6449b0ec910d142f357e25d2922329f7d44703b1867c679e",
+    "availability": "local-only"
+  }
+]

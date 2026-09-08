@@ -28,15 +28,15 @@ test("project snapshot derives the live benchmark mix and ranks recorded runs", 
   assert.deepEqual(snapshot.difficultyCounts, { easy: 2, medium: 1, hard: 1 });
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.points),
-    [120_029, 357_737 / 3, 333_781 / 3, 332_425 / 3, 105_026, 74_955, 64_350],
+    [120_029, 357_737 / 3, 333_781 / 3, 111_161, 332_425 / 3, 105_026, 74_955, 64_350],
   );
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.scorePercent),
-    [96.0, 95.4, 89.0, 88.6, 84.0, 60.0, 51.5],
+    [96.0, 95.4, 89.0, 88.9, 88.6, 84.0, 60.0, 51.5],
   );
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.rank),
-    [1, 2, 3, 4, 5, 6, 7],
+    [1, 2, 3, 4, 5, 6, 7, 8],
   );
 });
 
