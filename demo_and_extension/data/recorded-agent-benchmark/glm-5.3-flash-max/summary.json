@@ -1,0 +1,408 @@
+{
+  "model": "GLM-5.3-Flash",
+  "reasoning": "Max",
+  "requestedRuns": 3,
+  "deadlineBerlin": "2026-09-08T03:00:00+02:00",
+  "stopConfirmedAt": "2026-09-08T03:00:32+02:00",
+  "stopNote": "Cancellation was confirmed at 03:00:32 Berlin, 32 seconds after the requested cutoff. No scored submission occurred after 03:00. Run 2 stopped during Medium round 2 without submitting it; Run 3 was not started. The requested three full runs were not completed.",
+  "runs": [
+    {
+      "run": 1,
+      "status": "complete",
+      "recorderLabel": "glm-5.3-flash-max-r1-verified-20260908",
+      "tiers": [
+        {
+          "tier": "easy",
+          "competitionId": 24730,
+          "status": "complete",
+          "officialTotal": 39773,
+          "rounds": [
+            {
+              "round": 1,
+              "distance": "122 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R1_EASY_R01_RESULT.jpeg",
+              "resultImageSha256": "45489eccf9ff8440acab0b1e01524119fd429ddf83156225d2ef711eb51f331e"
+            },
+            {
+              "round": 2,
+              "distance": "254 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R1_EASY_R02_RESULT.jpeg",
+              "resultImageSha256": "f80276861dc9cf5aff3e08402b49d61f75c06e2fecbbcc20dfec1b440a7a7951"
+            },
+            {
+              "round": 3,
+              "distance": "360 m",
+              "points": 4998,
+              "resultImage": "GLM_FLASH_MAX_R1_EASY_R03_RESULT.jpeg",
+              "resultImageSha256": "fbb846f0a368e3948cc0fe8563bd81b4af25c49223ae0d5b0085deda6b9ed374"
+            },
+            {
+              "round": 4,
+              "distance": "36.6 km",
+              "points": 4820,
+              "resultImage": "GLM_FLASH_MAX_R1_EASY_R04_RESULT.jpeg",
+              "resultImageSha256": "e74b11263f0d14e3dca19023c9aaab054091de7cba3544d29ba2d90d4c452a1c"
+            },
+            {
+              "round": 5,
+              "distance": "587 m",
+              "points": 4997,
+              "resultImage": "GLM_FLASH_MAX_R1_EASY_R05_RESULT.jpeg",
+              "resultImageSha256": "85ec6f90f7477027a207362a53b02155f57a73c4a9022b8ec7190b341201c935"
+            },
+            {
+              "round": 6,
+              "distance": "4,906 m",
+              "points": 4976,
+              "resultImage": "GLM_FLASH_MAX_R1_EASY_R06_RESULT.jpeg",
+              "resultImageSha256": "e6ba6da704ba423fd80de0d4952f28c5bde3582b0d392a40d929d8bc224a2fe8"
+            },
+            {
+              "round": 7,
+              "distance": "3,025 m",
+              "points": 4985,
+              "resultImage": "GLM_FLASH_MAX_R1_EASY_R07_RESULT.jpeg",
+              "resultImageSha256": "b6474f1d0254ad1652e8ae22de3f042b5edf1ab1cf2908dd335da1967e176a89"
+            },
+            {
+              "round": 8,
+              "distance": "269 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R1_EASY_R08_RESULT.jpeg",
+              "resultImageSha256": "4e1aaf635928408b6d51e416ef82e01fda21e8d30619f08c303478005583782f"
+            }
+          ],
+          "scoredRounds": 8,
+          "scoredSubtotal": 39773,
+          "leaderboardImage": "GLM_FLASH_MAX_R1_EASY_LEADERBOARD.jpeg",
+          "leaderboardImageSha256": "967c57bfec62728ba52163fb26c3e3c6facd029960186763efc19f06f82b50bd",
+          "existingLocalVideoFiles": 3
+        },
+        {
+          "tier": "medium",
+          "competitionId": 24725,
+          "status": "complete",
+          "officialTotal": 41229,
+          "rounds": [
+            {
+              "round": 1,
+              "distance": "718 m",
+              "points": 4996,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R01_RESULT.jpeg",
+              "resultImageSha256": "36cc12fadc14184f9d60b2747180ace3b7c5b89e71d44ea2dd75c34cbceed752"
+            },
+            {
+              "round": 2,
+              "distance": "198.1 km",
+              "points": 4101,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R02_RESULT.jpeg",
+              "resultImageSha256": "647c494f1fe1555d8e71d96ef1c36d38634521fd14138e19506ae445c63eab9e"
+            },
+            {
+              "round": 3,
+              "distance": "21.5 km",
+              "points": 4893,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R03_RESULT.jpeg",
+              "resultImageSha256": "1330a892f2bc365affd447cc4244adbe5fef5d56dea038834f2f5f523643d821"
+            },
+            {
+              "round": 4,
+              "distance": "136.3 km",
+              "points": 4363,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R04_RESULT.jpeg",
+              "resultImageSha256": "46c4ff3436c63916b94ac453e5d1b151c89324dc56824b1479deff6220070ab7"
+            },
+            {
+              "round": 5,
+              "distance": "1,113 m",
+              "points": 4994,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R05_RESULT.jpeg",
+              "resultImageSha256": "c9468107702776245028afc9427aa872be940e2fcf74113672bceaad83903736"
+            },
+            {
+              "round": 6,
+              "distance": "303.7 km",
+              "points": 3690,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R06_RESULT.jpeg",
+              "resultImageSha256": "f9e0061e6e642046d9fdb5963b9f0fb1af9d262a59aab9c4fc7c3faae0e400d6"
+            },
+            {
+              "round": 7,
+              "distance": "164.1 km",
+              "points": 4243,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R07_RESULT.jpeg",
+              "resultImageSha256": "666e9ddbb59990b093de08080d6a1910de735cb7714e9c4225cbf37bd69382e7"
+            },
+            {
+              "round": 8,
+              "distance": "2,513 m",
+              "points": 4987,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R08_RESULT.jpeg",
+              "resultImageSha256": "517b659830b48bb61a7cba6eb25e794343826fecea890cc127c4a52efd3c52d6"
+            },
+            {
+              "round": 9,
+              "distance": "7.5 km",
+              "points": 4962,
+              "resultImage": "GLM_FLASH_MAX_R1_MEDIUM_R09_RESULT.jpeg",
+              "resultImageSha256": "ad6e542b7f35beec484285fb25cd13b959f752faaea2c21f965227e0729e3848"
+            }
+          ],
+          "scoredRounds": 9,
+          "scoredSubtotal": 41229,
+          "leaderboardImage": "GLM_FLASH_MAX_R1_MEDIUM_LEADERBOARD.jpeg",
+          "leaderboardImageSha256": "825a2be28118a2c76d6f71be26c52208cd5a23ad1d819e0d9cc1be8cb03ae89e",
+          "existingLocalVideoFiles": 9
+        },
+        {
+          "tier": "hard",
+          "competitionId": 24726,
+          "status": "complete",
+          "officialTotal": 30159,
+          "rounds": [
+            {
+              "round": 1,
+              "distance": "299.8 km",
+              "points": 3704,
+              "resultImage": "GLM_FLASH_MAX_R1_HARD_R01_RESULT.jpeg",
+              "resultImageSha256": "b97d7d411fdaee331693dc9926477ca86b7f0cfde6f7243a6fc15444c18facee"
+            },
+            {
+              "round": 2,
+              "distance": "43.9 km",
+              "points": 4785,
+              "resultImage": "GLM_FLASH_MAX_R1_HARD_R02_RESULT.jpeg",
+              "resultImageSha256": "9889e69127c2196001dcfee75cdbc23716246ca9cbf171ed598de6ceff569d5d"
+            },
+            {
+              "round": 3,
+              "distance": "610 km",
+              "points": 2716,
+              "resultImage": "GLM_FLASH_MAX_R1_HARD_R03_RESULT.jpeg",
+              "resultImageSha256": "a32fb7ffb578435cdc643cd17f70d9a3a34601ecbcbeef358be73c10f89e386d"
+            },
+            {
+              "round": 4,
+              "distance": "22.5 km",
+              "points": 4889,
+              "resultImage": "GLM_FLASH_MAX_R1_HARD_R04_RESULT.jpeg",
+              "resultImageSha256": "7cf4f79552083865c6dd519360a21adb58857bfcc87692edacc634f04b433646"
+            },
+            {
+              "round": 5,
+              "distance": "513.8 km",
+              "points": 2990,
+              "resultImage": "GLM_FLASH_MAX_R1_HARD_R05_RESULT.jpeg",
+              "resultImageSha256": "5f56bd49ecb6f76e8b75bf71cc6158430d43e04a60eb7d688ac104da71a16c7c"
+            },
+            {
+              "round": 6,
+              "distance": "578.7 km",
+              "points": 2802,
+              "resultImage": "GLM_FLASH_MAX_R1_HARD_R06_RESULT.jpeg",
+              "resultImageSha256": "9cb0999d56801c235c2a226d53edc0fdd4dc15341acae3cc2c65dc7780d53052"
+            },
+            {
+              "round": 7,
+              "distance": "72.4 km",
+              "points": 4651,
+              "resultImage": "GLM_FLASH_MAX_R1_HARD_R07_RESULT.jpeg",
+              "resultImageSha256": "f31078e5b197e74713b15eb14b44eebd744c1933be32e2d7a7be616d03c2749f"
+            },
+            {
+              "round": 8,
+              "distance": "322.2 km",
+              "points": 3622,
+              "resultImage": "GLM_FLASH_MAX_R1_HARD_R08_RESULT.jpeg",
+              "resultImageSha256": "370e4a635dc6a6a5ce42a654c8f462485254ca4ac133919de993d67cfa6b0390"
+            }
+          ],
+          "scoredRounds": 8,
+          "scoredSubtotal": 30159,
+          "leaderboardImage": "GLM_FLASH_MAX_R1_HARD_LEADERBOARD.jpeg",
+          "leaderboardImageSha256": "9ff9a874436e8b3a2e75508126a13e50b1d69c13c87ade575ae1d6b7eb6f99e9",
+          "existingLocalVideoFiles": 8
+        }
+      ],
+      "scoredRounds": 25,
+      "scoredSubtotal": 111161,
+      "total": 111161
+    },
+    {
+      "run": 2,
+      "status": "deadline-stopped",
+      "recorderLabel": "glm-5.3-flash-max-r2-20260908",
+      "tiers": [
+        {
+          "tier": "easy",
+          "competitionId": 24734,
+          "status": "complete",
+          "officialTotal": 39900,
+          "rounds": [
+            {
+              "round": 1,
+              "distance": "119 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R2_EASY_R01_RESULT.jpeg",
+              "resultImageSha256": "d41bc31a32bdaaf52397e2af05ac196d3dd7108a193abbdf8ffd848266e007d8"
+            },
+            {
+              "round": 2,
+              "distance": "118 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R2_EASY_R02_RESULT.jpeg",
+              "resultImageSha256": "619b717e7cf9d3d69e81fa2de2f7ba5d3982c70404f627ef6bb001dacfcf2144"
+            },
+            {
+              "round": 3,
+              "distance": "187 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R2_EASY_R03_RESULT.jpeg",
+              "resultImageSha256": "fd2f54a83440d9219c6ff82b0341f4042d6d3b13e39f3e6b8d885c0222c9c03a"
+            },
+            {
+              "round": 4,
+              "distance": "269 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R2_EASY_R04_RESULT.jpeg",
+              "resultImageSha256": "5db94d199edbbdeac622b7f4e60455fa9cc49e5709b2ec8b644752406bcd58db"
+            },
+            {
+              "round": 5,
+              "distance": "191 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R2_EASY_R05_RESULT.jpeg",
+              "resultImageSha256": "6e3de28d2154e14a585c0c075b047ed8319d6fa51616dfd0236af313e61f24aa"
+            },
+            {
+              "round": 6,
+              "distance": "2,612 m",
+              "points": 4987,
+              "resultImage": "GLM_FLASH_MAX_R2_EASY_R06_RESULT.jpeg",
+              "resultImageSha256": "4223b662fdaf3714aaa7de266af774ff1ca5e0ea5c5d811c071332a6dd203e4d"
+            },
+            {
+              "round": 7,
+              "distance": "16.3 km",
+              "points": 4919,
+              "resultImage": "GLM_FLASH_MAX_R2_EASY_R07_RESULT.jpeg",
+              "resultImageSha256": "e207654f40aba764cff4981377ee4f6c9b0136566b72af13153563bdd310cadd"
+            },
+            {
+              "round": 8,
+              "distance": "265 m",
+              "points": 4999,
+              "resultImage": "GLM_FLASH_MAX_R2_EASY_R08_RESULT.jpeg",
+              "resultImageSha256": "3109ea65a9b33af778549a92ccec0dd509e18dd558bb49ee1f63e021645645ae"
+            }
+          ],
+          "scoredRounds": 8,
+          "scoredSubtotal": 39900,
+          "leaderboardImage": "GLM_FLASH_MAX_R2_EASY_LEADERBOARD.jpeg",
+          "leaderboardImageSha256": "d31249b90b48a9964ee97f2f8ad01b07a03547af5c6945e22ecef405cc08ac63",
+          "existingLocalVideoFiles": 8
+        },
+        {
+          "tier": "medium",
+          "competitionId": 24728,
+          "status": "deadline-stopped",
+          "officialTotal": null,
+          "rounds": [
+            {
+              "round": 1,
+              "distance": "739 m",
+              "points": 4996,
+              "resultImage": "GLM_FLASH_MAX_R2_MEDIUM_R01_RESULT.jpeg",
+              "resultImageSha256": "393748aeffa089af6449b0ec910d142f357e25d2922329f7d44703b1867c679e"
+            }
+          ],
+          "scoredRounds": 1,
+          "scoredSubtotal": 4996,
+          "existingLocalVideoFiles": 1
+        },
+        {
+          "tier": "hard",
+          "competitionId": 24729,
+          "status": "not-started",
+          "officialTotal": null,
+          "rounds": [],
+          "scoredRounds": 0,
+          "scoredSubtotal": 0,
+          "existingLocalVideoFiles": 0
+        }
+      ],
+      "scoredRounds": 9,
+      "scoredSubtotal": 44896,
+      "total": null
+    },
+    {
+      "run": 3,
+      "status": "not-started",
+      "recorderLabel": "glm-5.3-flash-max-r3-20260908",
+      "tiers": [
+        {
+          "tier": "easy",
+          "competitionId": 24735,
+          "status": "not-started",
+          "officialTotal": null,
+          "rounds": [],
+          "scoredRounds": 0,
+          "scoredSubtotal": 0,
+          "existingLocalVideoFiles": 0
+        },
+        {
+          "tier": "medium",
+          "competitionId": 24731,
+          "status": "not-started",
+          "officialTotal": null,
+          "rounds": [],
+          "scoredRounds": 0,
+          "scoredSubtotal": 0,
+          "existingLocalVideoFiles": 0
+        },
+        {
+          "tier": "hard",
+          "competitionId": 24732,
+          "status": "not-started",
+          "officialTotal": null,
+          "rounds": [],
+          "scoredRounds": 0,
+          "scoredSubtotal": 0,
+          "existingLocalVideoFiles": 0
+        }
+      ],
+      "scoredRounds": 0,
+      "scoredSubtotal": 0,
+      "total": null
+    }
+  ],
+  "completedRuns": 1,
+  "scoredRounds": 34,
+  "maxPointsPerRun": 125000,
+  "secondsPerRound": 300,
+  "controller": "ZCode screenshot-only NAUTILUS MCP with verified model-chosen coordinate placement",
+  "mean": {
+    "easy": 39773,
+    "medium": 41229,
+    "hard": 30159,
+    "total": 111161
+  },
+  "meanIncludes": "Completed 25-round runs only; partial and unstarted runs are excluded.",
+  "scoreProvenance": "Settled result screenshots and model transcriptions. Displayed result XP is recorded as round points; completed tier sums match official competition leaderboard totals. Partial tiers have no claimed official total. Distances retain displayed rounding.",
+  "localEvidence": "Result/leaderboard image hashes are published; images, videos, raw recorder telemetry and ZCode chats remain local.",
+  "excludedSetupAttempts": [
+    {
+      "competitionId": 24724,
+      "reason": "Screenshot exceeded ZCode inline image limit; no verified geographic score.",
+      "points": null
+    },
+    {
+      "competitionId": 24727,
+      "reason": "Missing page adapter; manual fallback excluded from actuator runs.",
+      "modelReportedPoints": 3924,
+      "modelReportedDistance": "242.3 km"
+    }
+  ]
+}

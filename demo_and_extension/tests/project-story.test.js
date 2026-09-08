@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 
 import {
   RECORDED_BENCHMARKS,
@@ -26,15 +28,15 @@ test("project snapshot derives the live benchmark mix and ranks recorded runs", 
   assert.deepEqual(snapshot.difficultyCounts, { easy: 2, medium: 1, hard: 1 });
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.points),
-    [110_273, 107_838, 80_081],
+    [120_029, 357_737 / 3, 333_781 / 3, 111_161, 332_425 / 3, 105_026, 74_955, 64_350],
   );
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.scorePercent),
-    [88.2, 86.3, 64.1],
+    [96.0, 95.4, 89.0, 88.9, 88.6, 84.0, 60.0, 51.5],
   );
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.rank),
-    [1, 2, 3],
+    [1, 2, 3, 4, 5, 6, 7, 8],
   );
 });
 
@@ -123,8 +125,11 @@ test("project story renders every research section with live benchmark values", 
 
   assert.ok(markup.includes("4 European scenes"));
   assert.ok(markup.includes("2 easy"));
-  assert.ok(markup.includes("110,273"));
-  assert.ok(markup.includes('value="110273" max="125000"'));
+  assert.ok(markup.includes("119,246"));
+  assert.ok(markup.includes('value="119245.66666666667" max="125000"'));
+  assert.ok(markup.includes("119,818"));
+  assert.ok(markup.includes("Run 1 Hard and Run 3 Medium"));
+  assert.ok(markup.includes("without globe pins"));
   assert.ok(markup.includes("https://github.com/IvanYachUkr/NAUTILUS-"));
   assert.ok(markup.includes('alt="Paris street scene at Place de la Bastille"'));
 });
@@ -153,6 +158,29 @@ test("all story images follow the dataset's PNG or WebP paths", () => {
 test("story scenes without a supplied image do not request a guessed filename", () => {
   const markup = projectStoryMarkup(buildProjectSnapshot([{ id: "europe-easy--loc-001", difficulty: "easy" }]));
   assert.doesNotMatch(markup, /<img\b/);
+});
+
+test("Astra displayed scores match the published summary and hashed evidence", async () => {
+  const base = new URL("../data/recorded-agent-benchmark/gpt-6-astra-low/", import.meta.url);
+  const summary = JSON.parse(await readFile(new URL("summary.json", base), "utf8"));
+  const entry = RECORDED_BENCHMARKS.find((item) => item.id === "gpt-6-astra-low");
+  assert.equal(entry.points, summary.mean.total);
+  assert.equal(summary.runs.length, 3);
+  for (const [index, run] of summary.runs.entries()) {
+    assert.equal(run.easy + run.medium + run.hard, run.total);
+    for (const key of ["easy", "medium", "hard", "total"]) {
+      assert.equal(entry.runs[index][key], run[key]);
+    }
+  }
+  const evidence = JSON.parse(await readFile(new URL("evidence-manifest.json", base), "utf8"));
+  assert.equal(evidence.filter((item) => item.role === "valid-round-result").length, 73);
+  assert.equal(evidence.filter((item) => item.role === "leaderboard").length, 9);
+  assert.equal(evidence.filter((item) => item.role === "excluded-attempt").length, 2);
+  for (const item of evidence) {
+    const data = await readFile(new URL(item.path, base));
+    assert.equal(data.length, item.bytes, item.path);
+    assert.equal(createHash("sha256").update(data).digest("hex"), item.sha256, item.path);
+  }
 });
 
 test("project navigation scrolls the requested section without changing the URL hash", () => {
