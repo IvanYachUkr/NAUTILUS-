@@ -50,6 +50,7 @@ export const RECORDED_BENCHMARKS = [
   {
     id: "gpt-5-6-sol-xhigh",
     dataDirectory: "gpt-5.6-sol-xhigh",
+    globePredictions: true,
     model: "GPT-5.6 Sol",
     reasoning: "xhigh",
     points: (110_273 + 107_436 + 114_716) / 3,
@@ -59,6 +60,7 @@ export const RECORDED_BENCHMARKS = [
   {
     id: "gpt-5-6-sol-max",
     dataDirectory: "gpt-5.6-sol-max",
+    globePredictions: true,
     model: "GPT-5.6 Sol",
     reasoning: "max",
     points: (107_838 + 114_794 + 111_149) / 3,
@@ -68,6 +70,7 @@ export const RECORDED_BENCHMARKS = [
   {
     id: "grok-4-6-xhigh",
     dataDirectory: "grok-4.6-xhigh",
+    globePredictions: true,
     model: "Grok 4.6",
     reasoning: "xhigh",
     points: (80_081 + 71_562 + 73_222) / 3,

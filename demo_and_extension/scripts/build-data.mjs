@@ -976,6 +976,8 @@ async function loadRecordedBenchmarkPredictions(
   const results = [];
 
   for (const benchmark of RECORDED_BENCHMARKS) {
+    // Score-only rows and composite runs are not validated per-location pins.
+    if (!benchmark.globePredictions) continue;
     const benchmarkDirectory = join(
       RECORDED_AGENT_BENCHMARK_DIR,
       benchmark.dataDirectory ?? benchmark.id,
