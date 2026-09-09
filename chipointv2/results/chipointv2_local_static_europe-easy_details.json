@@ -1,0 +1,170 @@
+[
+  {
+    "location_id": "loc_001",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_001.png",
+    "ground_truth": {
+      "lat": 48.8521298,
+      "lon": 2.3696389,
+      "country": "France",
+      "city_or_region": "Paris",
+      "difficulty": "easy",
+      "primary_clue_type": "landmark"
+    },
+    "prediction": {
+      "lat": 48.87811259629535,
+      "lon": 2.317335268273333,
+      "raw_fused_top1_lat": 48.89082717895508,
+      "raw_fused_top1_lon": 2.368563175201416,
+      "raw_fused_top1_score": 5.568833827972412,
+      "cluster_size": 9,
+      "error_km": 4.8036708436112505
+    }
+  },
+  {
+    "location_id": "loc_002",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_002.png",
+    "ground_truth": {
+      "lat": 52.5206008,
+      "lon": 13.4151229,
+      "country": "Germany",
+      "city_or_region": "Berlin",
+      "difficulty": "easy",
+      "primary_clue_type": "landmark"
+    },
+    "prediction": {
+      "lat": 52.568270477068566,
+      "lon": 13.174864595910382,
+      "raw_fused_top1_lat": 52.517494201660156,
+      "raw_fused_top1_lon": 13.302986145019531,
+      "raw_fused_top1_score": 5.721982479095459,
+      "cluster_size": 9,
+      "error_km": 17.14098096181591
+    }
+  },
+  {
+    "location_id": "loc_003",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_003.png",
+    "ground_truth": {
+      "lat": 47.8005438,
+      "lon": 13.0529765,
+      "country": "Austria",
+      "city_or_region": "Salzburg",
+      "difficulty": "easy",
+      "primary_clue_type": "landmark"
+    },
+    "prediction": {
+      "lat": 48.254135955356745,
+      "lon": 13.185938453106248,
+      "raw_fused_top1_lat": 48.568458557128906,
+      "raw_fused_top1_lon": 13.468520164489746,
+      "raw_fused_top1_score": 4.108735084533691,
+      "cluster_size": 4,
+      "error_km": 51.40102721495823
+    }
+  },
+  {
+    "location_id": "loc_004",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_004.png",
+    "ground_truth": {
+      "lat": 48.8126024,
+      "lon": 14.3129755,
+      "country": "Czechia",
+      "city_or_region": "Český Krumlov",
+      "difficulty": "easy",
+      "primary_clue_type": "landmark"
+    },
+    "prediction": {
+      "lat": 49.991768669423465,
+      "lon": 14.105840498040713,
+      "raw_fused_top1_lat": 50.08639144897461,
+      "raw_fused_top1_lon": 14.413344383239746,
+      "raw_fused_top1_score": 8.075910568237305,
+      "cluster_size": 5,
+      "error_km": 132.00271017509178
+    }
+  },
+  {
+    "location_id": "loc_005",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_005.png",
+    "ground_truth": {
+      "lat": 44.8747121,
+      "lon": 13.849302,
+      "country": "Croatia",
+      "city_or_region": "Pula",
+      "difficulty": "easy",
+      "primary_clue_type": "landmark"
+    },
+    "prediction": {
+      "lat": 42.145301818847656,
+      "lon": 41.66862106323243,
+      "raw_fused_top1_lat": 42.145301818847656,
+      "raw_fused_top1_lon": 41.66862106323242,
+      "raw_fused_top1_score": 4.965494155883789,
+      "cluster_size": 1,
+      "error_km": 2258.6294852857104
+    }
+  },
+  {
+    "location_id": "loc_006",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_006.png",
+    "ground_truth": {
+      "lat": 50.9008842,
+      "lon": 14.8455043,
+      "country": "Poland",
+      "city_or_region": "Sieniawka, Gmina Bogatynia",
+      "difficulty": "easy",
+      "primary_clue_type": "text"
+    },
+    "prediction": {
+      "lat": 50.81611477863047,
+      "lon": 19.276159624487935,
+      "raw_fused_top1_lat": 49.84559631347656,
+      "raw_fused_top1_lon": 18.9935359954834,
+      "raw_fused_top1_score": 8.005380630493164,
+      "cluster_size": 5,
+      "error_km": 312.06236798293224
+    }
+  },
+  {
+    "location_id": "loc_007",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_007.png",
+    "ground_truth": {
+      "lat": 45.9577599,
+      "lon": 14.7424922,
+      "country": "Slovenia",
+      "city_or_region": "Višnja Gora, Ivančna Gorica Municipality",
+      "difficulty": "easy",
+      "primary_clue_type": "text"
+    },
+    "prediction": {
+      "lat": 45.872570120674126,
+      "lon": 6.647144107546062,
+      "raw_fused_top1_lat": 45.14133834838867,
+      "raw_fused_top1_lon": 5.769758224487305,
+      "raw_fused_top1_score": 4.6197381019592285,
+      "cluster_size": 3,
+      "error_km": 627.8514443634849
+    }
+  },
+  {
+    "location_id": "loc_008",
+    "image": "demo_and_extension/data/starting-images/europe-easy/loc_008.png",
+    "ground_truth": {
+      "lat": 60.8634735,
+      "lon": 7.1179637,
+      "country": "Norway",
+      "city_or_region": "Flåm, Aurland Municipality",
+      "difficulty": "easy",
+      "primary_clue_type": "mixed"
+    },
+    "prediction": {
+      "lat": 60.49816632705546,
+      "lon": 6.612167386546488,
+      "raw_fused_top1_lat": 60.88105392456055,
+      "raw_fused_top1_lon": 6.842484474182129,
+      "raw_fused_top1_score": 8.317181587219238,
+      "cluster_size": 6,
+      "error_km": 49.201944216596715
+    }
+  }
+]

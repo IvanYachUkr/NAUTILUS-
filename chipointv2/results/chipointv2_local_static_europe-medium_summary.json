@@ -1,0 +1,53 @@
+{
+  "dataset": "europe-medium",
+  "model": "Chipoint v2 local public street-view fused retrieval",
+  "model_repo": "chiikabu-labs/chipoint-2",
+  "pipeline": "3-tower street retrieval; top-200/tower; z-score fusion; top-64 pool; cluster-consensus prediction",
+  "reranker": "not used",
+  "device": "NVIDIA GeForce GTX 1070",
+  "retrieval_dtype": "torch.float32",
+  "gallery_chunk_rows": 500000,
+  "top_k_prediction": 10,
+  "n_images": 9,
+  "generated_at_utc": "2026-09-09T11:09:26.583836+00:00",
+  "distance_unit": "km",
+  "prediction_error": {
+    "mean_km": 254.803,
+    "median_km": 270.288,
+    "std_km": 161.722,
+    "rmse_km": 301.792,
+    "min_km": 20.496,
+    "max_km": 509.68
+  },
+  "prediction_threshold_accuracy": {
+    "within_1_km_percent": 0.0,
+    "within_25_km_percent": 22.222,
+    "within_200_km_percent": 33.333,
+    "within_750_km_percent": 100.0,
+    "within_2500_km_percent": 100.0
+  },
+  "best_prediction_case": {
+    "location_id": "loc_012",
+    "city_or_region": "Merelbeke, Merelbeke-Melle",
+    "error_km": 20.496
+  },
+  "worst_prediction_case": {
+    "location_id": "loc_014",
+    "city_or_region": "Uppsala",
+    "error_km": 509.68
+  },
+  "timing": {
+    "query_encoding_seconds_by_tower": {
+      "so400m256": 19.814,
+      "gopt": 12.035,
+      "dinov3": 8.511
+    },
+    "retrieval_seconds_by_tower": {
+      "so400m256": 138.054,
+      "gopt": 168.326,
+      "dinov3": 140.21
+    },
+    "total_query_encoding_seconds": 40.361,
+    "total_gallery_retrieval_seconds": 446.59
+  }
+}
