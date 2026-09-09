@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0",
+  "competitionId": "europe-medium",
+  "locationId": "loc_016",
+  "runs": [
+    {
+      "id": "static-baseline-geoclip-europe-medium-loc_016",
+      "model": "GeoCLIP",
+      "condition": "static-image",
+      "runKind": "model-prediction",
+      "runStatus": "complete",
+      "prediction": {
+        "lat": 43.8030319,
+        "lng": 19.5182438
+      },
+      "hypothesis": "",
+      "cues": [],
+      "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+      "isMock": false,
+      "accuracy": {
+        "country": null,
+        "region": null
+      },
+      "durationSeconds": 17.483,
+      "baselineId": "geoclip",
+      "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
+      "reportedErrorKm": 551.585
+    },
+    {
+      "id": "static-baseline-salad-europe-medium-loc_016",
+      "model": "SALAD + OSV-5M",
+      "condition": "static-image",
+      "runKind": "model-prediction",
+      "runStatus": "complete",
+      "prediction": {
+        "lat": 48.4821627,
+        "lng": 20.0729169
+      },
+      "hypothesis": "",
+      "cues": [],
+      "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+      "isMock": false,
+      "accuracy": {
+        "country": null,
+        "region": null
+      },
+      "durationSeconds": 75.524,
+      "baselineId": "salad",
+      "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
+      "reportedErrorKm": 75.24
+    },
+    {
+      "id": "static-baseline-plonk-europe-medium-loc_016",
+      "model": "PLONK OSV-5M",
+      "condition": "static-image",
+      "runKind": "model-prediction",
+      "runStatus": "complete",
+      "prediction": {
+        "lat": 49.1739311,
+        "lng": 19.274229
+      },
+      "hypothesis": "",
+      "cues": [],
+      "notes": "PLONK OSV-5M final static-image prediction.",
+      "isMock": false,
+      "accuracy": {
+        "country": null,
+        "region": null
+      },
+      "durationSeconds": 4.446,
+      "baselineId": "plonk",
+      "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
+      "reportedErrorKm": 47.226
+    },
+    {
+      "id": "static-baseline-chipointv2-europe-medium-loc_016",
+      "model": "Chipoint v2",
+      "condition": "static-image",
+      "runKind": "model-prediction",
+      "runStatus": "complete",
+      "prediction": {
+        "lat": 46.0837456,
+        "lng": 14.4763027
+      },
+      "hypothesis": "",
+      "cues": [],
+      "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+      "isMock": false,
+      "accuracy": {
+        "country": null,
+        "region": null
+      },
+      "durationSeconds": null,
+      "baselineId": "chipointv2",
+      "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
+      "reportedErrorKm": 460.643
+    }
+  ]
+}

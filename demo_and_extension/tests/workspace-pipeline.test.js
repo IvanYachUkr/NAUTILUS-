@@ -54,7 +54,6 @@ test("reference prediction pins retain resolved place names as the recording arc
       .filter((run) => Number.isFinite(run.prediction?.lat) && Number.isFinite(run.prediction?.lng))
       .map((run) => ({ caseId: item.id, run })),
   );
-
   assert.ok(
     predictedRuns.every(({ run }) =>
       typeof run.prediction.label === "string" &&
@@ -66,15 +65,59 @@ test("reference prediction pins retain resolved place names as the recording arc
   const referenceRuns = predictedRuns.filter(({ run }) =>
     run.runKind === "model-prediction" || run.model === "manual",
   );
-  assert.equal(referenceRuns.length, 125);
-  assert.ok(referenceRuns.every(({ run }) =>
+
+  // 75 original interactive model predictions
+  // + 100 static baseline predictions
+  // + 50 manual reference runs
+  assert.equal(referenceRuns.length, 225);
+
+  const placeNamedReferenceRuns = referenceRuns.filter(
+    ({ run }) =>
+      run.model === "manual" ||
+      (
+        run.runKind === "model-prediction" &&
+        run.condition === "interactive-panorama"
+      ),
+  );
+
+  const staticBaselineRuns = referenceRuns.filter(
+    ({ run }) =>
+      run.runKind === "model-prediction" &&
+      run.condition === "static-image",
+  );
+
+  // Original interactive model predictions + manual references keep
+  // resolved place-name labels.
+  assert.equal(placeNamedReferenceRuns.length, 125);
+  assert.ok(placeNamedReferenceRuns.every(({ run }) =>
     !/^-?\d+\.\d{5}, -?\d+\.\d{5}$/.test(run.prediction.label),
   ));
 
-  const bogatynia = referenceRuns
-    .filter(({ caseId }) => caseId === "europe-easy--loc-006")
+  // The four static baselines contribute 4 x 25 = 100 predictions.
+  // Their result CSVs contain exact coordinates, not authoritative
+  // reverse-geocoded place labels.
+  assert.equal(staticBaselineRuns.length, 100);
+  assert.ok(staticBaselineRuns.every(({ run }) =>
+    Number.isFinite(run.prediction?.lat) &&
+    Number.isFinite(run.prediction?.lng),
+  ));
+
+  const originalReferenceModels = new Set([
+    "GPT-5.6 Sol · xhigh",
+    "GPT-5.6 Sol · max",
+    "Grok 4.6 · xhigh",
+    "manual",
+  ]);
+
+  const bogatyniaOriginalReferences = referenceRuns
+    .filter(
+      ({ caseId, run }) =>
+        caseId === "europe-easy--loc-006" &&
+        originalReferenceModels.has(run.model),
+    )
     .map(({ run }) => [run.model, run.condition, run.prediction.label]);
-  assert.deepEqual(bogatynia, [
+
+  assert.deepEqual(bogatyniaOriginalReferences, [
     ["GPT-5.6 Sol · xhigh", "interactive-panorama", "Piechowice, Poland"],
     ["GPT-5.6 Sol · max", "interactive-panorama", "Sieniawka, Poland"],
     ["Grok 4.6 · xhigh", "interactive-panorama", "St. Roman, Austria"],
@@ -85,25 +128,79 @@ test("reference prediction pins retain resolved place names as the recording arc
 
 test("canonical benchmark predictions are available independently of replay recordings", async () => {
   const built = await buildData({ write: false, quiet: true });
-  const expectedModels = [
+
+  const expectedInteractiveModels = [
     "GPT-5.6 Sol · xhigh",
     "GPT-5.6 Sol · max",
     "Grok 4.6 · xhigh",
   ];
+
+  const expectedStaticBaselineModels = [
+    "GeoCLIP",
+    "SALAD + OSV-5M",
+    "PLONK OSV-5M",
+    "Chipoint v2",
+  ];
+
   const predictionRuns = built.atlasCases.flatMap((item) =>
     item.runs.filter((run) => run.runKind === "model-prediction"),
   );
 
-  assert.equal(predictionRuns.length, 75);
-  assert.deepEqual([...new Set(predictionRuns.map((run) => run.model))], expectedModels);
+  const interactivePredictionRuns = predictionRuns.filter(
+    (run) => run.condition === "interactive-panorama",
+  );
+  const staticPredictionRuns = predictionRuns.filter(
+    (run) => run.condition === "static-image",
+  );
+
+  assert.equal(predictionRuns.length, 175);
+  assert.equal(interactivePredictionRuns.length, 75);
+  assert.equal(staticPredictionRuns.length, 100);
+
+  assert.deepEqual(
+    [...new Set(interactivePredictionRuns.map((run) => run.model))],
+    expectedInteractiveModels,
+  );
+
+  assert.deepEqual(
+    [...new Set(staticPredictionRuns.map((run) => run.model))],
+    expectedStaticBaselineModels,
+  );
 
   for (const item of built.atlasCases) {
     const runs = item.runs.filter((run) => run.runKind === "model-prediction");
-    assert.deepEqual(runs.map((run) => run.model), expectedModels, item.id);
-    assert.ok(runs.every((run) => run.condition === "interactive-panorama"), item.id);
-    assert.ok(runs.every((run) => Number.isFinite(run.prediction?.lat)), item.id);
-    assert.ok(runs.every((run) => Number.isFinite(run.prediction?.lng)), item.id);
-    assert.ok(runs.every((run) => run.exploration === undefined), item.id);
+
+    const interactiveRuns = runs.filter(
+      (run) => run.condition === "interactive-panorama",
+    );
+    const staticRuns = runs.filter(
+      (run) => run.condition === "static-image",
+    );
+
+    assert.deepEqual(
+      interactiveRuns.map((run) => run.model),
+      expectedInteractiveModels,
+      item.id,
+    );
+
+    assert.deepEqual(
+      staticRuns.map((run) => run.model),
+      expectedStaticBaselineModels,
+      item.id,
+    );
+
+    assert.ok(
+      runs.every((run) => Number.isFinite(run.prediction?.lat)),
+      item.id,
+    );
+    assert.ok(
+      runs.every((run) => Number.isFinite(run.prediction?.lng)),
+      item.id,
+    );
+    assert.ok(
+      runs.every((run) => run.exploration === undefined),
+      item.id,
+    );
   }
 });
 

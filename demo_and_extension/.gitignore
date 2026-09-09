@@ -14,3 +14,5 @@ data/exploration-videos/**/.partial/
 
 # Completed per-round JSON in data/recordings/inbox/ is intentionally NOT
 # ignored: the manual reference recordings are part of the reproducible demo.
+
+/.venv/
