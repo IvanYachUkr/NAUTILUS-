@@ -1,0 +1,324 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-hard--loc-020",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-020-gemini-3-7-flash-high-aided-7b2e0384cd",
+          "label": "Balkan Mountain Architecture",
+          "text": "Balkan Mountain Architecture",
+          "description": "Whitewashed multi-story houses with hipped terracotta tile roofs and wide eaves perched on hillside slopes.",
+          "groundingPhrase": "Balkan Mountain Architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1865,
+            "y": 0.3655,
+            "w": 0.098,
+            "h": 0.143
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Balkan Mountain Architecture: Whitewashed multi-story houses with hipped terracotta tile roofs and wide eaves perched on hillside slopes."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Bulgarian Mountain Architecture: White stucco cubic alpine houses with dark hipped terracotta tile roofs and terraced gardening."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "cream-stucco houses with red hipped roofs"
+            }
+          ],
+          "groundingLabel": "Balkan Mountain Architecture"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-gemini-3-7-flash-high-aided-ee9afd9533",
+          "label": "Bridge & Infrastructure",
+          "text": "Bridge & Infrastructure",
+          "description": "Small stream bridge with galvanized steel vertical picket balustrade, overhead utility lines, and roadside blue fountain/hydrant post.",
+          "groundingPhrase": "Bridge & Infrastructure",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.4505,
+            "y": 0.5405,
+            "w": 0.544,
+            "h": 0.448
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Bridge & Infrastructure: Small stream bridge with galvanized steel vertical picket balustrade, overhead utility lines, and roadside blue fountain/hydrant post."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Concrete bridge with grey vertical metal railings over a mountain ravine"
+            }
+          ],
+          "groundingLabel": "Bridge"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-gemini-3-7-flash-high-aided-d85ecab13a",
+          "label": "High Mountain Terrain",
+          "text": "High Mountain Terrain",
+          "description": "Distinctive concrete bridge sidewalk with tubular silver safety railing over the mountain creek.",
+          "groundingPhrase": "High Mountain Terrain",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.4145,
+            "y": 0.2815,
+            "w": 0.58,
+            "h": 0.195
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "High Mountain Terrain: Steep mountain ridges covered in dense coniferous and deciduous forests (spruce, pine, beech)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Mountain Road Safety Infrastructure: Distinctive concrete bridge sidewalk with tubular silver safety railing over the mountain creek."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "dense mixed pine/beech slopes."
+            }
+          ],
+          "groundingLabel": "High Mountain Terrain"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-gemini-3-7-flash-high-aided-4d3779b76a",
+          "label": "Pedestrian Presence",
+          "text": "Pedestrian Presence",
+          "description": "Local resident walking uphill along the curved asphalt mountain road.",
+          "groundingPhrase": "Pedestrian Presence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Pedestrian Presence: Local resident walking uphill along the curved asphalt mountain road."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-020-gemini-3-7-flash-high-aided-38e28d76c8",
+          "label": "Geographic Match",
+          "text": "Geographic Match",
+          "description": "Classic scenery of the Rhodope Mountains (Родопи) in southern Bulgaria (Smolyan / Devin / Chepelare region).",
+          "groundingPhrase": "Geographic Match",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Geographic Match: Classic scenery of the Rhodope Mountains (Родопи) in southern Bulgaria (Smolyan / Devin / Chepelare region)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-020-gemini-3-7-flash-high-aided-70a0ba52e0",
+          "label": "Rhodope Landscape Morphology",
+          "text": "Rhodope Landscape Morphology",
+          "description": "Steep, lush green forested mountain ridges characteristic of the southern Bulgarian Rhodopes.",
+          "groundingPhrase": "Rhodope Landscape Morphology",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0055,
+            "y": 0.0215,
+            "w": 0.988,
+            "h": 0.962
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Rhodope Landscape Morphology: Steep, lush green forested mountain ridges characteristic of the southern Bulgarian Rhodopes."
+            }
+          ],
+          "groundingLabel": "Rhodope Landscape Morphology"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-gemini-3-7-flash-high-aided-5c11a30c39",
+          "label": "Agricultural Polytunnels",
+          "text": "Agricultural Polytunnels",
+          "description": "Smallholder hillside greenhouses on steep terraced parcels.",
+          "groundingPhrase": "Agricultural Polytunnels",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.7565,
+            "y": 0.6665,
+            "w": 0.212,
+            "h": 0.257
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Agricultural Polytunnels: Smallholder hillside greenhouses on steep terraced parcels."
+            }
+          ],
+          "groundingLabel": "Agricultural Polytunnels"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-gemini-3-7-flash-high-aided-551e3d80e1",
+          "label": "Utility Network",
+          "text": "Utility Network",
+          "description": "Bulgarian timber utility poles, low-voltage cabling, and blue roadside reflector bollards.",
+          "groundingPhrase": "Utility Network",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.7565,
+            "y": 0.6665,
+            "w": 0.213,
+            "h": 0.257
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Utility Network: Bulgarian timber utility poles, low-voltage cabling, and blue roadside reflector bollards."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "roadside blue water fountain (чешма)"
+            }
+          ],
+          "groundingLabel": "Utility Network"
+        }
+      ]
+    }
+  ]
+}

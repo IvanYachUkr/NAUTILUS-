@@ -1,0 +1,260 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-easy--loc-001",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-001-gemini-3-7-flash-high-aided-a86cb512e2",
+          "label": "July Column (Colonne de Juillet)",
+          "text": "July Column (Colonne de Juillet)",
+          "description": "Centrally framed tall green bronze column topped with the golden winged Génie de la Liberté at Place de la Bastille.",
+          "groundingPhrase": "July Column",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.4615,
+            "y": 0.1865,
+            "w": 0.028,
+            "h": 0.255
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "July Column (Colonne de Juillet): Gilded Génie de la Liberté atop the green column along the central road axis."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "July Column (Colonne de Juillet): Centrally framed tall green bronze column topped with the golden winged Génie de la Liberté at Place de la Bastille."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Place de la Bastille with the July Column (Colonne de Juillet)"
+            }
+          ],
+          "groundingLabel": "July Column"
+        },
+        {
+          "id": "cue-europe-easy-loc-001-gemini-3-7-flash-high-aided-c415ca65a3",
+          "label": "Road Surface Text",
+          "text": "Road Surface Text",
+          "description": "Road pavement clearly painted with \"Place de la...\" heading into the roundabout.",
+          "groundingPhrase": "Road Surface Text",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4445,
+            "y": 0.5205,
+            "w": 0.096,
+            "h": 0.296
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Road Surface Text: \"Place de la Bastille\" painted on the road lane."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Asphalt Lettering: Road pavement clearly painted with \"Place de la...\" heading into the roundabout."
+            }
+          ],
+          "groundingLabel": "Road Surface Text"
+        },
+        {
+          "id": "cue-europe-easy-loc-001-gemini-3-7-flash-high-aided-04ae5aca44",
+          "label": "Public Transit",
+          "text": "Public Transit",
+          "description": "Prominent blue street sign reading \"Bastille\", plus green RATP \"BUS\" stop indicator (lines 29/91).",
+          "groundingPhrase": "Public Transit",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Public Transit: Blue RATP \"Bastille\" bus stop sign outside Opéra Bastille."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Public Transit & Signage: Prominent blue street sign reading \"Bastille\", plus green RATP \"BUS\" stop indicator (lines 29/91)."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Opéra Bastille curved facade"
+            }
+          ],
+          "groundingLabel": "Public Transit"
+        },
+        {
+          "id": "cue-europe-easy-loc-001-gemini-3-7-flash-high-aided-b266da241d",
+          "label": "Architecture & Lighting",
+          "text": "Architecture & Lighting",
+          "description": "Dark green Parisian lamp posts, Haussmannian perimeter buildings, French EU license plates.",
+          "groundingPhrase": "Architecture & Lighting",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Architecture & Lighting: Dark green Parisian lamp posts, Haussmannian perimeter buildings, French EU license plates."
+            }
+          ],
+          "groundingLabel": "Architecture"
+        },
+        {
+          "id": "cue-europe-easy-loc-001-gemini-3-7-flash-high-aided-ffbc0fc0c6",
+          "label": "Shared Mobility",
+          "text": "Shared Mobility",
+          "description": "Cyclist on the left in a turquoise Paris Vélib' Métropole bike lane.",
+          "groundingPhrase": "Shared Mobility",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Shared Mobility: Green Vélib' bike in the adjacent cycle lane."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Vélib' Bicycle: Cyclist on the left in a turquoise Paris Vélib' Métropole bike lane."
+            }
+          ],
+          "groundingLabel": "Mobility"
+        },
+        {
+          "id": "cue-europe-easy-loc-001-gemini-3-7-flash-high-aided-82d899cff2",
+          "label": "Opéra Bastille Architecture",
+          "text": "Opéra Bastille Architecture",
+          "description": "Distinct curved modernist glass and light granite facade of the Opéra National de Paris Bastille on the right.",
+          "groundingPhrase": "Opéra Bastille Architecture",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.6565,
+            "y": 0.0045,
+            "w": 0.339,
+            "h": 0.672
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Opéra Bastille Architecture: Distinct curved modernist glass and light granite facade of the Opéra National de Paris Bastille on the right."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "bus station sign \"Bastille\"."
+            }
+          ],
+          "groundingLabel": "Opra Bastille Architecture"
+        }
+      ]
+    }
+  ],
+  "imagePath": "data/starting-images/europe-easy/loc_001.png"
+}

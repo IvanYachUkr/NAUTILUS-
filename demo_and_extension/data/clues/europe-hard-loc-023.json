@@ -1,0 +1,328 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-hard--loc-023",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-cf38d0527c",
+          "label": "Road Number on Gravel",
+          "text": "Road Number on Gravel",
+          "description": "\"3426\" (Lithuanian 4-digit rajoninis kelias numbering system where 34xx corresponds to Panevėžys/Kupiškis County).",
+          "groundingPhrase": "Road Number on Gravel",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4215,
+            "y": 0.6215,
+            "w": 0.063,
+            "h": 0.109
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Road Number on Gravel: \"3426\" (Lithuanian 4-digit rajoninis kelias numbering system where 34xx corresponds to Panevėžys/Kupiškis County)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Gravel Road Surface: Wide unpaved white crushed limestone gravel thoroughfare typical of rural Lithuania."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Gravel road stencil \"3426\""
+            }
+          ],
+          "groundingLabel": "Road Number"
+        },
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-93287a39e4",
+          "label": "Lithuanian Gravel Plain (Žvyrkelis)",
+          "text": "Lithuanian Gravel Plain (Žvyrkelis)",
+          "description": "Wide straight unpaved crushed stone road through expansive cereal fields.",
+          "groundingPhrase": "Lithuanian Gravel Plain",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Lithuanian Gravel Plain (Žvyrkelis): Wide straight unpaved crushed stone road through expansive cereal fields."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-9d99ec5cb4",
+          "label": "Soviet-Era Agricultural Ruins",
+          "text": "Soviet-Era Agricultural Ruins",
+          "description": "White cinderblock / brick former Soviet collective farm buildings along the road verge.",
+          "groundingPhrase": "Soviet-Era Agricultural Ruins",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Soviet-Era Agricultural Ruins: Concrete brick collective farm (kolkhoz) barn ruins alongside the road."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Agricultural Kolūkis Ruins: White cinderblock / brick former Soviet collective farm buildings along the road verge."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "derelict Soviet-era collective farm (kolūkis) structures."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-9f1e25e6ee",
+          "label": "Flora & Shelterbelts",
+          "text": "Flora & Shelterbelts",
+          "description": "Spruce/pine windbreak grove on the left and open agricultural horizons under summer cloud cover.",
+          "groundingPhrase": "Flora & Shelterbelts",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Flora & Shelterbelts: Spruce/pine windbreak grove on the left and open agricultural horizons under summer cloud cover."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-0c98d4a50f",
+          "label": "Regional Location",
+          "text": "Regional Location",
+          "description": "Road 3426 in Panevėžys / Pasvalys / Kupiškis County, northeastern Lithuania.",
+          "groundingPhrase": "Regional Location",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Regional Location: Road 3426 in Panevėžys / Pasvalys / Kupiškis County, northeastern Lithuania."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-6595dd2388",
+          "label": "Road Designation on Surface",
+          "text": "Road Designation on Surface",
+          "description": "White numeral marking \"3426\" designating Lithuanian 4-digit district route Kelias 3426.",
+          "groundingPhrase": "Road Designation on Surface",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.1075,
+            "y": 0.4565,
+            "w": 0.655,
+            "h": 0.534
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Road Designation on Surface: White numeral marking \"3426\" designating Lithuanian 4-digit district route Kelias 3426."
+            }
+          ],
+          "groundingLabel": "Road Designation"
+        },
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-40f5f84c31",
+          "label": "Baltic Glacial Lowland",
+          "text": "Baltic Glacial Lowland",
+          "description": "Wide, flat agricultural plain with open grain and rapeseed fields.",
+          "groundingPhrase": "Baltic Glacial Lowland",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Baltic Glacial Lowland: Wide, flat agricultural plain with open grain and rapeseed fields."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-5c0c60e0d3",
+          "label": "Boundary Tree Lines",
+          "text": "Boundary Tree Lines",
+          "description": "Distant pine/spruce copses and concrete utility poles across open farmland.",
+          "groundingPhrase": "Boundary Tree Lines",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0045,
+            "y": 0.3825,
+            "w": 0.309,
+            "h": 0.107
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Boundary Tree Lines: Distant pine/spruce copses and concrete utility poles across open farmland."
+            }
+          ],
+          "groundingLabel": "Boundary Tree Lines"
+        },
+        {
+          "id": "cue-europe-hard-loc-023-gemini-3-7-flash-high-aided-16f67f101f",
+          "label": "flat open arable plains",
+          "text": "flat open arable plains",
+          "description": "Flat open arable plains with canola/cereal crops.",
+          "groundingPhrase": "flat open arable plains",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0075,
+            "y": 0.4505,
+            "w": 0.986,
+            "h": 0.537
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "flat open arable plains with canola/cereal crops"
+            }
+          ],
+          "groundingLabel": "flat open arable plains"
+        }
+      ]
+    }
+  ]
+}

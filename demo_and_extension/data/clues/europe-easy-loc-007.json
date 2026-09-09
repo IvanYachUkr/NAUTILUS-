@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-easy--loc-007",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-0281361f0f",
+          "label": "Railway Station Sign",
+          "text": "Railway Station Sign",
+          "description": "Clear lettering \"VIŠNJA GORA\" on the facade of the railway building.",
+          "groundingPhrase": "Railway Station Sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7575,
+            "y": 0.6665,
+            "w": 0.213,
+            "h": 0.323
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Railway Station Sign: Station building inscribed with \"VIŠNJA GORA\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Station Name Plaque: Clear lettering \"VIŠNJA GORA\" on the facade of the railway building."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Railway station sign \"VIŠNJA GORA\""
+            }
+          ],
+          "groundingLabel": "Railway Station Sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-f0fedd9532",
+          "label": "Slovenian Road Direction Signs",
+          "text": "Slovenian Road Direction Signs",
+          "description": "Yellow directional markers pointing towards motorway access for \"Ljubljana\" and primary route to \"Novo mesto\".",
+          "groundingPhrase": "Slovenian Road Direction Signs",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4575,
+            "y": 0.3825,
+            "w": 0.149,
+            "h": 0.508
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Slovenian Road Direction Signs: Yellow directional signs pointing towards motorway + Ljubljana (NW) and Novo mesto (SE)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Slovenian Road Direction Sign: Yellow directional markers pointing towards motorway access for \"Ljubljana\" and primary route to \"Novo mesto\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "green motorway sign to \"Ljubljana\""
+            }
+          ],
+          "groundingLabel": "Slovenian Road Direction Signs"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-421abf308a",
+          "label": "Street Name Sign",
+          "text": "Street Name Sign",
+          "description": "White rectangular sign labeled \"Ulica Antona Tomšiča\".",
+          "groundingPhrase": "Street Name Sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4605,
+            "y": 0.3895,
+            "w": 0.103,
+            "h": 0.123
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name Sign: White rectangular sign labeled \"Ulica Antona Tomšiča\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Street Name Infrastructure: Local sign indicating \"Ulica Antona Tomšiča\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "blue street sign \"Ulica Antona Tomšiča\"."
+            }
+          ],
+          "groundingLabel": "Street Name Sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-77f3ee7cd6",
+          "label": "Landscape & Flora",
+          "text": "Landscape & Flora",
+          "description": "Lush green rolling hills characteristic of Dolenjska (Lower Carniola).",
+          "groundingPhrase": "Landscape & Flora",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0065,
+            "y": 0.0235,
+            "w": 0.988,
+            "h": 0.963
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Landscape & Flora: Lush green rolling hills characteristic of Dolenjska (Lower Carniola)."
+            }
+          ],
+          "groundingLabel": "Landscape"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-9004e8b24e",
+          "label": "Railway Track",
+          "text": "Railway Track",
+          "description": "Rail electrification masts, level crossing cues, and telecom mast behind the station.",
+          "groundingPhrase": "Railway Track",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Railway Track: Standard-gauge railway line and platform behind station building."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Railway Corridor & Telecommunications: Rail electrification masts, level crossing cues, and telecom mast behind the station."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-a702ad0369",
+          "label": "Slovenian Alpine/Karstic Topography",
+          "text": "Slovenian Alpine/Karstic Topography",
+          "description": "Rolling forested pre-Alpine hills and terracotta gabled settlement.",
+          "groundingPhrase": "Slovenian Alpine/Karstic Topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Slovenian Alpine/Karstic Topography: Rolling forested pre-Alpine hills and terracotta gabled settlement."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

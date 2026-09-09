@@ -1,0 +1,336 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-hard--loc-018",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-daf10e99d0",
+          "label": "Greek Text on Asphalt",
+          "text": "Greek Text on Asphalt",
+          "description": "Painted letters in Greek script \"Επαρ.Οδ. Παράλιο Άστρος\" (Provincial Road of Paralio Astros).",
+          "groundingPhrase": "Greek Text on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3965,
+            "y": 0.5055,
+            "w": 0.139,
+            "h": 0.31
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Greek Text on Asphalt: \"Επαρ.Οδ. ... Παράλιο...\" (Provincial Road / Επαρχιακή Οδός leading to Παράλιο Άστρος)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Greek Road Markings: Painted letters in Greek script \"Επαρ.Οδ. Παράλιο Άστρος\" (Provincial Road of Paralio Astros)."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Greek road stencil \"Επαρ.Οδ...\" / \"Παράλιο...\""
+            }
+          ],
+          "groundingLabel": "Greek Text"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-e8ded4526c",
+          "label": "Greek Alphabet & Geography",
+          "text": "Greek Alphabet & Geography",
+          "description": "Regional road connecting to Paralio Astros, Arcadia, Peloponnese peninsula, Greece.",
+          "groundingPhrase": "Greek Alphabet & Geography",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.7565,
+            "y": 0.6625,
+            "w": 0.215,
+            "h": 0.325
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Greek Alphabet & Geography: Regional road connecting to Paralio Astros, Arcadia, Peloponnese peninsula, Greece."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Greek Alphabet: Distinct Greek orthography (Επαρ.Οδ., Παράλιο, Άστρος)."
+            }
+          ],
+          "groundingLabel": "Greek Alphabet"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-79aeeb341c",
+          "label": "Mediterranean Scrub & Flora",
+          "text": "Mediterranean Scrub & Flora",
+          "description": "Cypress, Greek juniper, wild olive scrub, dry limestone rocky soil.",
+          "groundingPhrase": "Mediterranean Scrub & Flora",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0045,
+            "y": 0.3625,
+            "w": 0.454,
+            "h": 0.444
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Mediterranean Scrub & Flora: Cypress, Greek juniper, wild olive scrub, dry limestone rocky soil."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "dry limestone terrain"
+            }
+          ],
+          "groundingLabel": "Mediterranean Scrub"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-0cc82efc7f",
+          "label": "Road Infrastructure",
+          "text": "Road Infrastructure",
+          "description": "Single-carriageway rural highway with coarse gravel asphalt and white center/edge markings.",
+          "groundingPhrase": "Road Infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.1345,
+            "y": 0.4955,
+            "w": 0.628,
+            "h": 0.495
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Road Infrastructure: Single-carriageway rural highway with coarse gravel asphalt and white center/edge markings."
+            }
+          ],
+          "groundingLabel": "Road Infrastructure"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-b404ed3c37",
+          "label": "Vehicle",
+          "text": "Vehicle",
+          "description": "White passenger van in the distance ahead on the eastbound descent toward the Argolic Gulf.",
+          "groundingPhrase": "Vehicle",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.4805,
+            "y": 0.4835,
+            "w": 0.02,
+            "h": 0.035
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Vehicle: White passenger van in the distance ahead on the eastbound descent toward the Argolic Gulf."
+            }
+          ],
+          "groundingLabel": "Vehicle"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-3100f182d8",
+          "label": "Peloponnesian Shrubland",
+          "text": "Peloponnesian Shrubland",
+          "description": "Dense Mediterranean maquis, cypress trees (Cupressus), Kermes oak, and limestone rock outcroppings.",
+          "groundingPhrase": "Peloponnesian Shrubland",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0045,
+            "y": 0.3625,
+            "w": 0.453,
+            "h": 0.443
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Peloponnesian Shrubland: Dense Mediterranean maquis, cypress trees (Cupressus), Kermes oak, and limestone rock outcroppings."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "wild cypress/juniper scrub (maquis)"
+            }
+          ],
+          "groundingLabel": "Peloponnesian Shrubland"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-657453218d",
+          "label": "Red Terra Rossa Soil",
+          "text": "Red Terra Rossa Soil",
+          "description": "Distinctive Mediterranean karst soil bordering the uncurbed asphalt lane.",
+          "groundingPhrase": "Red Terra Rossa Soil",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5655,
+            "y": 0.5325,
+            "w": 0.199,
+            "h": 0.3
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Red Terra Rossa Soil: Distinctive Mediterranean karst soil bordering the uncurbed asphalt lane."
+            }
+          ],
+          "groundingLabel": "Red Terra Rossa Soil"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-a6aee2341e",
+          "label": "Tour Coach",
+          "text": "Tour Coach",
+          "description": "White excursion bus traveling towards the Argolic Gulf coast.",
+          "groundingPhrase": "Tour Coach",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4515,
+            "y": 0.8965,
+            "w": 0.077,
+            "h": 0.093
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Tour Coach: White excursion bus traveling towards the Argolic Gulf coast."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "tourist coach bus."
+            }
+          ],
+          "groundingLabel": "Tour Coach"
+        }
+      ]
+    }
+  ]
+}

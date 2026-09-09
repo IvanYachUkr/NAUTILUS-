@@ -1,0 +1,374 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-017",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-d175c19c61",
+          "label": "Irish Yellow Dashed Road Markings",
+          "text": "Irish Yellow Dashed Road Markings",
+          "description": "Yellow broken outer road line and broken yellow/white lane dividers combined with left-hand traffic driving rules.",
+          "groundingPhrase": "Irish Yellow Dashed Road Markings",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3195,
+            "y": 0.6695,
+            "w": 0.101,
+            "h": 0.17
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Irish Yellow Dashed Road Markings: Yellow dashed broken center lines and yellow edge lines (distinctive national road marking system in Ireland)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Irish Road Markings: Yellow broken outer road line and broken yellow/white lane dividers combined with left-hand traffic driving rules."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Broken yellow centerline with solid white outer edge lines"
+            }
+          ],
+          "groundingLabel": "Irish Yellow Dashed Road Markings"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-aac75ae8be",
+          "label": "Left-Hand Drive Traffic Layout",
+          "text": "Left-Hand Drive Traffic Layout",
+          "description": "British Isles driving on the left with raised pavement on the inside curve.",
+          "groundingPhrase": "Left-Hand Drive Traffic Layout",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Left-Hand Drive Traffic Layout: British Isles driving on the left with raised pavement on the inside curve."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "left-hand drive"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-2ad02b0b4a",
+          "label": "Irish Stone Walls & Cottages",
+          "text": "Irish Stone Walls & Cottages",
+          "description": "Curving mortared fieldstone boundary walls, whitewashed detached homes with slate roofs and brick chimneys.",
+          "groundingPhrase": "Irish Stone Walls & Cottages",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0015,
+            "y": 0.4215,
+            "w": 0.996,
+            "h": 0.359
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Irish Stone Walls & Cottages: Curving mortared fieldstone boundary walls, whitewashed detached homes with slate roofs and brick chimneys."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Stone Masonry: Traditional curved drystone field wall construction characteristic of rural/suburban Ireland."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "limestone dry-stone boundary walls"
+            }
+          ],
+          "groundingLabel": "Irish Stone Walls"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-2c95c5c8b4",
+          "label": "Driveway Infrastructure",
+          "text": "Driveway Infrastructure",
+          "description": "Black wrought-iron security gate and entrance signage at property boundary.",
+          "groundingPhrase": "Driveway Infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Driveway Infrastructure: Black wrought-iron security gate and entrance signage at property boundary."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-f8e1e8608e",
+          "label": "Geographic Environment",
+          "text": "Geographic Environment",
+          "description": "Rolling green coastal topography with broadleaf trees and temperate oceanic sky.",
+          "groundingPhrase": "Geographic Environment",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Geographic Environment: Rolling green coastal topography with broadleaf trees and temperate oceanic sky."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-c6ca382df5",
+          "label": "Irish Residential Architecture",
+          "text": "Irish Residential Architecture",
+          "description": "White-rendered bungalow with multi-pane bay windows, traditional chimney pots, and slate hipped roof.",
+          "groundingPhrase": "Irish Residential Architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.3535,
+            "y": 0.2995,
+            "w": 0.644,
+            "h": 0.256
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Irish Residential Architecture: White-rendered bungalow with multi-pane bay windows, traditional chimney pots, and slate hipped roof."
+            }
+          ],
+          "groundingLabel": "Irish Residential Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-fe1c43a909",
+          "label": "Estate Entry",
+          "text": "Estate Entry",
+          "description": "Iron driveway gates and stone pillar boundary.",
+          "groundingPhrase": "Estate Entry",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.7575,
+            "y": 0.2995,
+            "w": 0.239,
+            "h": 0.256
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Estate Entry: Iron driveway gates and stone pillar boundary."
+            }
+          ],
+          "groundingLabel": "Estate Entry"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-de21b989ef",
+          "label": "Atlantic Temperate Climate",
+          "text": "Atlantic Temperate Climate",
+          "description": "Typical Irish overcast maritime cloud structure and deep green lush hedgerows.",
+          "groundingPhrase": "Atlantic Temperate Climate",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Atlantic Temperate Climate: Typical Irish overcast maritime cloud structure and deep green lush hedgerows."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-b6b4d8b4ae",
+          "label": "white rendered houses",
+          "text": "white rendered houses",
+          "description": "White rendered houses with dual chimneys.",
+          "groundingPhrase": "white rendered houses",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3535,
+            "y": 0.2995,
+            "w": 0.645,
+            "h": 0.256
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "white rendered houses with dual chimneys"
+            }
+          ],
+          "groundingLabel": "white rendered houses"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-465c995e85",
+          "label": "gorse bushes",
+          "text": "gorse bushes",
+          "description": "Gorse bushes.",
+          "groundingPhrase": "gorse bushes",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0025,
+            "y": 0.2695,
+            "w": 0.82,
+            "h": 0.263
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "gorse bushes."
+            }
+          ],
+          "groundingLabel": "georse bushes"
+        }
+      ]
+    }
+  ]
+}

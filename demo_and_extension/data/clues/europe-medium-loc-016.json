@@ -1,0 +1,368 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-016",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-6790c54d02",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "\"Jelšová\" (Slovak Jelšová ulica with Slovak caron on 'š').",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"Jelšová\" (Slovak Jelšová ulica with Slovak caron on 'š')."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Street Name on Asphalt: Exact Slovak road name \"Jelšová\"."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-40bd91a30a",
+          "label": "Slovak Valley Residential Architecture",
+          "text": "Slovak Valley Residential Architecture",
+          "description": "Stucco 2-story family houses with brick bases, tiled gabled roofs with snow guards (sneholamy), and private balconies.",
+          "groundingPhrase": "Slovak Valley Residential Architecture",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.0845,
+            "y": 0.0945,
+            "w": 0.352,
+            "h": 0.479
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Slovak Valley Residential Architecture: Stucco 2-story family houses with brick bases, tiled gabled roofs with snow guards (sneholamy), and private balconies."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Slovak Orthography: Diacritics \"š\" and \"á\" identifying Slovak language."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Slovak mountain architecture with dark tin hipped roofs"
+            }
+          ],
+          "groundingLabel": "Slovak Valley"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-f152f95f8a",
+          "label": "Utility Infrastructure",
+          "text": "Utility Infrastructure",
+          "description": "Built-in stone wall gas/electric distribution cabinet (SPP/plyn) and wooden telegraph post with transformer box.",
+          "groundingPhrase": "Utility Infrastructure",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Utility Infrastructure: Built-in stone wall gas/electric distribution cabinet (SPP/plyn) and wooden telegraph post with transformer box."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-2ea600e324",
+          "label": "Mountain Setting",
+          "text": "Mountain Setting",
+          "description": "Forested Carpathian hill ridges enclosing the residential valley.",
+          "groundingPhrase": "Mountain Setting",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4885,
+            "y": 0.3065,
+            "w": 0.155,
+            "h": 0.14
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Mountain Setting: Forested Carpathian hill ridges enclosing the residential valley."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Carpathian Mountain Setting: Steep green forested slopes enclosing the mountain basin."
+            }
+          ],
+          "groundingLabel": "Mountain Setting"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-0c98d4a50f",
+          "label": "Regional Location",
+          "text": "Regional Location",
+          "description": "Jelšová ulica in the Banská Bystrica / Central Slovakia mountain valley region.",
+          "groundingPhrase": "Regional Location",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Regional Location: Jelšová ulica in the Banská Bystrica / Central Slovakia mountain valley region."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-d1d9b12ecd",
+          "label": "Slovak Residential Architecture",
+          "text": "Slovak Residential Architecture",
+          "description": "Yellow-rendered family houses with exposed brick lower levels, wrap-around balconies, and standing-seam tin/slate roofs.",
+          "groundingPhrase": "Slovak Residential Architecture",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.0845,
+            "y": 0.0945,
+            "w": 0.352,
+            "h": 0.479
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Slovak Residential Architecture: Yellow-rendered family houses with exposed brick lower levels, wrap-around balconies, and standing-seam tin/slate roofs."
+            }
+          ],
+          "groundingLabel": "Residential Architecture; Slovaki Residential Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-9fec08e457",
+          "label": "Infrastructure",
+          "text": "Infrastructure",
+          "description": "Slovak power utility poles, outdoor electrical junction panels, and mountain roadside drainage.",
+          "groundingPhrase": "Infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Infrastructure: Slovak power utility poles, outdoor electrical junction panels, and mountain roadside drainage."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-91607efab6",
+          "label": "Road stencil \"Jelšová\"",
+          "text": "Road stencil \"Jelšová\"",
+          "description": "Road stencil \"Jelšová\".",
+          "groundingPhrase": "Road stencil \"Jelšová\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4685,
+            "y": 0.5835,
+            "w": 0.072,
+            "h": 0.232
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Jelšová\""
+            }
+          ],
+          "groundingLabel": "Road stencil \"Jelov"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-fb12d46a0f",
+          "label": "elevated brick basements",
+          "text": "elevated brick basements",
+          "description": "Elevated brick basements.",
+          "groundingPhrase": "elevated brick basements",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0845,
+            "y": 0.4605,
+            "w": 0.331,
+            "h": 0.113
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "elevated brick basements"
+            }
+          ],
+          "groundingLabel": "elevated brick basements"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-6caf800bd6",
+          "label": "wooden telephone pole",
+          "text": "wooden telephone pole",
+          "description": "Wooden telephone pole with meter box.",
+          "groundingPhrase": "wooden telephone pole",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.8345,
+            "y": 0.0035,
+            "w": 0.092,
+            "h": 0.672
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "wooden telephone pole with meter box."
+            }
+          ],
+          "groundingLabel": "wooden telephone pole"
+        }
+      ]
+    }
+  ]
+}

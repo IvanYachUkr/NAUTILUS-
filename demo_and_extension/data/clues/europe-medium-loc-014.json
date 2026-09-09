@@ -1,0 +1,318 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-014",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-6790c54d02",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "\"Bergagatan\" (Swedish \"-gatan\" street suffix).",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"Bergagatan\" (Swedish \"-gatan\" street suffix)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Street Name on Asphalt: Clearly painted road name \"Bergagatan\"."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-1e364f6dba",
+          "label": "Swedish Wooden Architecture",
+          "text": "Swedish Wooden Architecture",
+          "description": "Classic vertical green timber-clad villa (träpanel) with white trim, red tiled roof, and brick chimney.",
+          "groundingPhrase": "Swedish Wooden Architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.5705,
+            "y": 0.2585,
+            "w": 0.305,
+            "h": 0.387
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Swedish Wooden Architecture: Classic vertical green timber-clad villa (träpanel) with white trim, red tiled roof, and brick chimney."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Swedish Suffix & Nomenclature: Suffix \"-gatan\" distinct to Swedish road naming."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "green vertical timber villa with white trim (#39)"
+            }
+          ],
+          "groundingLabel": "Swedish Wooden Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-def11f86a1",
+          "label": "Nordic Residential Setting",
+          "text": "Nordic Residential Setting",
+          "description": "Vertical painted wooden siding (sage green and ochre faluröd palettes), white window trim, and dark tile roofs.",
+          "groundingPhrase": "Nordic Residential Setting",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0065,
+            "y": 0.0165,
+            "w": 0.987,
+            "h": 0.969
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Nordic Residential Setting: Suburban cul-de-sac with manicured cedar/thuja hedges and Nordic lamppost design."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Swedish Residential Architecture: Vertical painted wooden siding (sage green and ochre faluröd palettes), white window trim, and dark tile roofs."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Swedish electrical box"
+            }
+          ],
+          "groundingLabel": "Nordic Residential Setting"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-4df66f46ea",
+          "label": "Vehicle Fleet",
+          "text": "Vehicle Fleet",
+          "description": "Black station wagon parked in driveway typical of Swedish suburban residential areas.",
+          "groundingPhrase": "Vehicle Fleet",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Vehicle Fleet: Black station wagon parked in driveway typical of Swedish suburban residential areas."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Street Fixtures: Swedish utility boxes and residential streetlamp style."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-0c98d4a50f",
+          "label": "Regional Location",
+          "text": "Regional Location",
+          "description": "Bergagatan situated in Uppsala, Sweden.",
+          "groundingPhrase": "Regional Location",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Regional Location: Bergagatan situated in Uppsala, Sweden."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-6d6a45db5f",
+          "label": "Nordic Flora",
+          "text": "Nordic Flora",
+          "description": "Dense thuja hedges, birch (Betula) trees, and manicured suburban gardens.",
+          "groundingPhrase": "Nordic Flora",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0035,
+            "y": 0.2395,
+            "w": 0.349,
+            "h": 0.543
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Nordic Flora: Dense thuja hedges, birch (Betula) trees, and manicured suburban gardens."
+            }
+          ],
+          "groundingLabel": "Nordica Flora"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-a6fed1c550",
+          "label": "Road stencil \"Bergagatan\"",
+          "text": "Road stencil \"Bergagatan\"",
+          "description": "Road stencil \"Bergagatan\".",
+          "groundingPhrase": "Road stencil \"Bergagatan\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4125,
+            "y": 0.5815,
+            "w": 0.117,
+            "h": 0.235
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Bergagatan\""
+            }
+          ],
+          "groundingLabel": "Road stencil; Bergagatan"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-1a96fa12fd",
+          "label": "Scandinavian overcast lighting",
+          "text": "Scandinavian overcast lighting",
+          "description": "Scandinavian overcast lighting.",
+          "groundingPhrase": "Scandinavian overcast lighting",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.0095,
+            "y": 0.0035,
+            "w": 0.986,
+            "h": 0.411
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Scandinavian overcast lighting."
+            }
+          ],
+          "groundingLabel": "Scandinavian overcast lighting"
+        }
+      ]
+    }
+  ]
+}

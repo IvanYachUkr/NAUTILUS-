@@ -1,0 +1,296 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-easy--loc-003",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-003-gemini-3-7-flash-high-aided-28558e0fef",
+          "label": "Festung Hohensalzburg",
+          "text": "Festung Hohensalzburg",
+          "description": "The massive hilltop fortress dominating the ridge across the valley.",
+          "groundingPhrase": "Festung Hohensalzburg",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.7575,
+            "y": 0.6655,
+            "w": 0.211,
+            "h": 0.259
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Festung Hohensalzburg: Medieval hilltop castle dominating the skyline over the old town."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Festung Hohensalzburg: The massive hilltop fortress dominating the ridge across the valley."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Hohensalzburg Fortress (Festung Hohensalzburg)"
+            }
+          ],
+          "groundingLabel": "Festung Hohensalzburg"
+        },
+        {
+          "id": "cue-europe-easy-loc-003-gemini-3-7-flash-high-aided-c57c622843",
+          "label": "Salzach River & Bridges",
+          "text": "Salzach River & Bridges",
+          "description": "The turquoise Alpine river flowing through the center between Altstadt and Neustadt.",
+          "groundingPhrase": "Salzach River & Bridges",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.2925,
+            "y": 0.5445,
+            "w": 0.695,
+            "h": 0.164
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Salzach River & Bridges: River bisecting the city with arched footbridges and classical riverside facades."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Salzach River: The turquoise Alpine river flowing through the center between Altstadt and Neustadt."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Salzach River view from Kapuzinerberg wall."
+            }
+          ],
+          "groundingLabel": "Salzach River"
+        },
+        {
+          "id": "cue-europe-easy-loc-003-gemini-3-7-flash-high-aided-0e66690b64",
+          "label": "Altstadt Architecture",
+          "text": "Altstadt Architecture",
+          "description": "Green baroque domes of Dom zu Salzburg (Salzburg Cathedral) and Franciscan Church.",
+          "groundingPhrase": "Altstadt Architecture",
+          "source": "panorama",
+          "category": "landmark",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Altstadt Architecture: Green baroque domes of Dom zu Salzburg (Salzburg Cathedral) and Franciscan Church."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Salzburg Old Town (Altstadt) Architecture: Domes of the Salzburger Dom and historic baroque city towers."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-003-gemini-3-7-flash-high-aided-64a7ed6e77",
+          "label": "Alpine Backdrop",
+          "text": "Alpine Backdrop",
+          "description": "The Northern Limestone Alps / Untersberg massif rising in the southern background.",
+          "groundingPhrase": "Alpine Backdrop",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0025,
+            "y": 0.0715,
+            "w": 0.192,
+            "h": 0.297
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Alpine Backdrop: Snow-dusted Alps (Untersberg range) rising in the background."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Alps Mountain Ridge: The Northern Limestone Alps / Untersberg massif rising in the southern background."
+            }
+          ],
+          "groundingLabel": "Alpine Backdrop"
+        },
+        {
+          "id": "cue-europe-easy-loc-003-gemini-3-7-flash-high-aided-462a8e2e5c",
+          "label": "Viewpoint Location",
+          "text": "Viewpoint Location",
+          "description": "Old stone wall parapet on the eastern cliff (Kapuzinerberg).",
+          "groundingPhrase": "Viewpoint Location",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0065,
+            "y": 0.0185,
+            "w": 0.986,
+            "h": 0.966
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Viewpoint Location: Old stone wall parapet on the eastern cliff (Kapuzinerberg)."
+            }
+          ],
+          "groundingLabel": "Viewpoint Location"
+        },
+        {
+          "id": "cue-europe-easy-loc-003-gemini-3-7-flash-high-aided-5ce4bc8188",
+          "label": "Stone Bastion Foreground",
+          "text": "Stone Bastion Foreground",
+          "description": "Stone wall and lookout tower characteristic of the historic Kapuzinerberg fortifications / Basteiweg.",
+          "groundingPhrase": "Stone Bastion Foreground",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.0305,
+            "y": 0.5345,
+            "w": 0.516,
+            "h": 0.455
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Stone Bastion Foreground: Stone wall and lookout tower characteristic of the historic Kapuzinerberg fortifications / Basteiweg."
+            }
+          ],
+          "groundingLabel": "Stone Bastion Foreground"
+        },
+        {
+          "id": "cue-europe-easy-loc-003-gemini-3-7-flash-high-aided-057a847f10",
+          "label": "Salzburg Cathedral spires",
+          "text": "Salzburg Cathedral spires",
+          "description": "Salzburg Cathedral spires.",
+          "groundingPhrase": "Salzburg Cathedral spires",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.0025,
+            "y": 0.0685,
+            "w": 0.192,
+            "h": 0.3
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Salzburg Cathedral spires"
+            }
+          ],
+          "groundingLabel": "Salzburg Cathedral spires"
+        }
+      ]
+    }
+  ]
+}

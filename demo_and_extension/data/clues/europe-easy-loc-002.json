@@ -1,0 +1,308 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-easy--loc-002",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-3078149a15",
+          "label": "Berliner Fernsehturm (TV Tower)",
+          "text": "Berliner Fernsehturm (TV Tower)",
+          "description": "Towering sphere and spire rising directly behind the commercial center.",
+          "groundingPhrase": "Berliner Fernsehturm",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.4655,
+            "y": 0.8935,
+            "w": 0.037,
+            "h": 0.097
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Berliner Fernsehturm (TV Tower): Towering sphere and spire rising directly behind the commercial center."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Berliner Fernsehturm (TV Tower): Towering directly over the plaza behind the central buildings."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Berlin TV Tower (Fernsehturm)"
+            }
+          ],
+          "groundingLabel": "Berliner Fernsehturm"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-5d651106bc",
+          "label": "U-Bahn Entrance",
+          "text": "U-Bahn Entrance",
+          "description": "Clear blue signage reading \"U Alexanderplatz\" directly ahead.",
+          "groundingPhrase": "U-Bahn Entrance",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5395,
+            "y": 0.4295,
+            "w": 0.106,
+            "h": 0.09
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "U-Bahn Entrance: Blue square sign labeled \"U Alexanderplatz\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "U-Bahn Station Entrance: Clear blue signage reading \"U Alexanderplatz\" directly ahead."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "U-Bahn entrance \"U Alexanderplatz\""
+            }
+          ],
+          "groundingLabel": "U-Bahn Entrance"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-1c85a20f9b",
+          "label": "Urban Architecture",
+          "text": "Urban Architecture",
+          "description": "Alexanderhaus/Berolinahaus grid facades, GALERIA department store, Park Inn hotel tower.",
+          "groundingPhrase": "Urban Architecture",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.1675,
+            "y": 0.0045,
+            "w": 0.536,
+            "h": 0.492
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Urban Architecture: Alexanderhaus/Berolinahaus grid facades, GALERIA department store, Park Inn hotel tower."
+            }
+          ],
+          "groundingLabel": "Urban Architecture"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-22127a4b91",
+          "label": "Commercial Signage",
+          "text": "Commercial Signage",
+          "description": "White delivery truck with Berlin area phone code 030 - 43 59 690 (Spedition & Logistik).",
+          "groundingPhrase": "Commercial Signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7585,
+            "y": 0.6665,
+            "w": 0.21,
+            "h": 0.259
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Commercial Signage: White delivery truck with Berlin area phone code 030 - 43 59 690 (Spedition & Logistik)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Local Vehicle Phone Code: Delivery truck with Berlin telephone area code 030 - 43 59 690."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "local 030 Berlin phone prefixes."
+            }
+          ],
+          "groundingLabel": "Commercial Signage"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-2e15a37a70",
+          "label": "Transit & Bikes",
+          "text": "Transit & Bikes",
+          "description": "Yellow Berlin BVG double-decker bus on the left viaduct approach and Nextbike bike-share station.",
+          "groundingPhrase": "Transit & Bikes",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.0735,
+            "y": 0.4675,
+            "w": 0.715,
+            "h": 0.233
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Transit & Bikes: Bright yellow BVG city buses and Nextbike sharing station."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Public Transit: Yellow Berlin BVG double-decker bus on the left viaduct approach and Nextbike bike-share station."
+            }
+          ],
+          "groundingLabel": "Transit"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-f8ff29ba35",
+          "label": "Surrounding Landmark Architecture",
+          "text": "Surrounding Landmark Architecture",
+          "description": "The Alexanderhaus, Park Inn by Radisson skyscraper, and Galeria Kaufhof.",
+          "groundingPhrase": "Surrounding Landmark Architecture",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.1675,
+            "y": 0.0055,
+            "w": 0.536,
+            "h": 0.491
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Surrounding Landmark Architecture: The Alexanderhaus, Park Inn by Radisson skyscraper, and Galeria Kaufhof."
+            }
+          ],
+          "groundingLabel": "Landmark Architecture"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-8b5e6c1f35",
+          "label": "Alexanderhaus",
+          "text": "Alexanderhaus",
+          "description": "Alexanderhaus.",
+          "groundingPhrase": "Alexanderhaus",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4785,
+            "y": 0.0045,
+            "w": 0.221,
+            "h": 0.493
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Alexanderhaus"
+            }
+          ],
+          "groundingLabel": "Alexanderhaus"
+        }
+      ]
+    }
+  ]
+}

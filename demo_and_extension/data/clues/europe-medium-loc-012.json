@@ -1,0 +1,358 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-012",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-2eae3a0e9e",
+          "label": "Road Number on Asphalt",
+          "text": "Road Number on Asphalt",
+          "description": "Bold marking \"N444\" painted on the lane center.",
+          "groundingPhrase": "Road Number on Asphalt",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.0035,
+            "y": 0.9225,
+            "w": 0.074,
+            "h": 0.069
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Road Number on Asphalt: \"N444\" painted on the road lane."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Highway Number on Asphalt: Bold marking \"N444\" painted on the lane center."
+            }
+          ],
+          "groundingLabel": "Road Number"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-764adaac26",
+          "label": "Commercial Storefront",
+          "text": "Commercial Storefront",
+          "description": "Dutch-language business \"FOTO AKTIEF - Portret • Reportage • Studio\".",
+          "groundingPhrase": "Commercial Storefront",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5875,
+            "y": 0.2525,
+            "w": 0.177,
+            "h": 0.278
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Commercial Storefront: \"FOTO AKTIEF - PORTRET REPORTAGE STUDIO\" in Flemish Dutch."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Commercial Storefront: Dutch-language business \"FOTO AKTIEF - Portret • Reportage • Studio\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "storefront \"FOTO AKTIEF\""
+            }
+          ],
+          "groundingLabel": "Commercial Storefront"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-73a3a3e860",
+          "label": "Belgian Lintbebouwing",
+          "text": "Belgian Lintbebouwing",
+          "description": "Red/brown brick masonry houses, whitewashed facades, slate roofs, and typical Belgian roadside residential typology.",
+          "groundingPhrase": "Belgian Lintbebouwing",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.7595,
+            "y": 0.6705,
+            "w": 0.207,
+            "h": 0.197
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Belgian Lintbebouwing: Distinctive Belgian roadside ribbon architecture with mixed brick and whitewashed gables."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Belgian Flemish Architecture: Red/brown brick masonry houses, whitewashed facades, slate roofs, and typical Belgian roadside residential typology."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Flemish pitched-roof brick houses"
+            }
+          ],
+          "groundingLabel": "Belgian Lintbebouwing"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-82e9ee0da7",
+          "label": "Belgian Utility Poles",
+          "text": "Belgian Utility Poles",
+          "description": "Tall concrete overhead electricity poles and reddish-brick sidewalk/cycleway.",
+          "groundingPhrase": "Belgian Utility Poles",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Belgian Utility Poles: Tall concrete overhead electricity poles and reddish-brick sidewalk/cycleway."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-7be42d5055",
+          "label": "Regional Route",
+          "text": "Regional Route",
+          "description": "Belgian Gewestweg N444 corridor in East Flanders (Oost-Vlaanderen).",
+          "groundingPhrase": "Regional Route",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Regional Route: Belgian Gewestweg N444 corridor in East Flanders (Oost-Vlaanderen)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-103b57f5d7",
+          "label": "Belgian License Plates",
+          "text": "Belgian License Plates",
+          "description": "Vehicles with characteristic Belgian red-on-white license plates.",
+          "groundingPhrase": "Belgian License Plates",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.7595,
+            "y": 0.6695,
+            "w": 0.208,
+            "h": 0.253
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Belgian License Plates: Vehicles with characteristic Belgian red-on-white license plates."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Belgian license plates"
+            }
+          ],
+          "groundingLabel": "Belgian License Plates"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-38c599af7e",
+          "label": "Regional Road Geography",
+          "text": "Regional Road Geography",
+          "description": "Flemish regional route N444 running through East Flanders near Gent.",
+          "groundingPhrase": "Regional Road Geography",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0065,
+            "y": 0.4675,
+            "w": 0.986,
+            "h": 0.523
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Regional Road Geography: Flemish regional route N444 running through East Flanders near Gent."
+            }
+          ],
+          "groundingLabel": "Regional Road Geography"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-8ad7b89509",
+          "label": "Road stencil \"N444\"",
+          "text": "Road stencil \"N444\"",
+          "description": "Road stencil \"N444\".",
+          "groundingPhrase": "Road stencil \"N444\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4625,
+            "y": 0.6295,
+            "w": 0.064,
+            "h": 0.185
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"N444\""
+            }
+          ],
+          "groundingLabel": "Road stencil \"N444"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-469aa6e70c",
+          "label": "roadside bollards",
+          "text": "roadside bollards",
+          "description": "Roadside bollards.",
+          "groundingPhrase": "roadside bollards",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0055,
+            "y": 0.5195,
+            "w": 0.29,
+            "h": 0.161
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "roadside bollards."
+            }
+          ],
+          "groundingLabel": "roadside bollards"
+        }
+      ]
+    }
+  ]
+}
