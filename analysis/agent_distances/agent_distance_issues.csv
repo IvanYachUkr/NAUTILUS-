@@ -1,4 +1,6 @@
 ﻿issue,series_id,dataset,location_id,file,details
+partial_skipped,,europe-medium,,gemini-3.8-flash-high-aided/runs/recorded-r3/europe-medium/rounds/round-09.json,partial=true
+partial_skipped,,europe-medium,loc_015,gemini-3.8-flash-medium-aided/europe-medium/rounds/round-07.json,partial=true
 partial_skipped,,europe-hard,loc_022,gpt-5.6-sol-max/runs/recorded-r4/europe-hard/recovery-segments/round-05-segment-01.json,partial=true
 partial_skipped,,europe-medium,loc_014,gpt-5.6-sol-max/runs/recorded-r4/europe-medium/recovery-segments/round-06-segment-01.json,partial=true
 partial_skipped,,europe-hard,loc_019,gpt-5.6-sol-xhigh/runs/recorded-r3/europe-hard/recovery-segments/round-02-segment-01.json,partial=true

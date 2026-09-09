@@ -61,9 +61,9 @@ GLM ran through ZCode at Max reasoning with the screenshot-only coordinate MCP. 
 | Grok 4.6 (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
 | Gemini 3.7 Flash (high, unaided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
 
-Across all published runs, **550 official rounds** were submitted and recorded (including Astra and GLM continuation composites). The best individual totals were Easy **40,000** (Gemini medium R2/R3), Medium **44,686** (Astra low R2), Hard **38,168** (Gemini medium R3), and overall **121,492** (Gemini medium R3). Repeated runs reuse the same fixed locations, so
-their means measure run/controller variability rather than new-location
-generalization.
+The complete-run table above represents **28 complete 25-location evaluations, or 700 official scored rounds**, including the disclosed Astra and GLM continuation composites. The Grok MCP composite adds a separate **75 scored rounds** across nine difficulty-specific games and is reported separately because it is not a single 25-round evaluation.
+
+The best individual totals were Easy **40,000** (Gemini medium R2/R3), Medium **44,686** (Astra low R2), Hard **38,168** (Gemini medium R3), and overall **121,492** (Gemini medium R3). Repeated runs reuse the same fixed locations, so their means measure run/controller variability rather than new-location generalization.
 
 The linked folders contain the session manifests, raw round telemetry, matched video metadata, reports, prompts where applicable, and recovery-segment logs.
 
@@ -74,6 +74,8 @@ Static/NMPZ agent submissions are not yet included in this leaderboard.
 ### Interactive distance analysis
 
 In addition to OpenGuessr points, the repository contains an independent kilometer-distance analysis under [`analysis/`](analysis/).
+
+The analysis scans all compatible interactive run evidence currently present in the repository, so its coverage can change as new recorded runs are added. A scored run can also have fewer coordinate-backed rounds than score-backed rounds when an authoritative final prediction coordinate was not captured.
 
 Distances are not derived from OpenGuessr points.
 
@@ -128,12 +130,14 @@ analysis/agent_distances/
 The current coverage check is:
 
 ```text
-Coordinate-recomputed recorder rounds: 275
+Coordinate-recomputed recorder rounds: 548
 GLM verified-coordinate rounds:         75
 Astra displayed-distance rounds:        75
-Total scored rounds:                   425
-Complete 25-round series:               17
+Total distance-backed rounds:          698
+Run series:                              28
+Complete 25-round series:                26
 ```
+Two current recorder-backed series contain 24 usable prediction-coordinate rounds rather than 25. They remain in the per-round analysis but are not counted as complete 25-round distance series.
 
 ### OpenGuessr MCP source and evidence
 
