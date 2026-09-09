@@ -38,6 +38,28 @@ const CONDITION_LABELS = {
   "interactive-panorama": "Interactive panorama",
 };
 
+
+const STATIC_BASELINE_ORDER = [
+  "GeoCLIP",
+  "SALAD + OSV-5M",
+  "PLONK OSV-5M",
+  "Chipoint v2",
+];
+
+const STATIC_BASELINE_MODELS = new Set(STATIC_BASELINE_ORDER);
+
+function isStaticBaselineModel(model) {
+  return STATIC_BASELINE_MODELS.has(model);
+}
+
+function splitModelsForSelector(models = []) {
+  const available = new Set(models);
+  return {
+    regular: models.filter((model) => !STATIC_BASELINE_MODELS.has(model)),
+    baselines: STATIC_BASELINE_ORDER.filter((model) => available.has(model)),
+  };
+}
+
 const DIFFICULTY_LABELS = {
   easy: "Easy",
   medium: "Medium",
@@ -488,6 +510,11 @@ export function createExplorer({
 
     const onModelChange = (event) => {
       selectedModel = event.target.value || null;
+
+      if (isStaticBaselineModel(selectedModel)) {
+        selectedCondition = "static-image";
+      }
+
       drawerSample = null;
       render({ fitMap: true });
     };
@@ -753,34 +780,85 @@ export function createExplorer({
 
   function renderRunControls(caseItem, run, filteredCases) {
     const scope = getScopeRuns(caseItem, filteredCases);
-    const models = unique(scope.map((item) => item.model));
-    const conditions = unique(scope.map((item) => item.condition));
+    const allModels = unique(scope.map((item) => item.model));
+    const { regular: regularModels, baselines: baselineModels } =
+      splitModelsForSelector(allModels);
 
     const hasRuns = scope.length > 0;
     elements.modelSelect.disabled = !hasRuns;
-    elements.conditionSelect.disabled = !hasRuns;
 
     if (!hasRuns) {
-      elements.modelSelect.innerHTML = `<option value="">No runs yet</option>`;
-      elements.conditionSelect.innerHTML = `<option value="">No runs yet</option>`;
+      elements.modelSelect.innerHTML = '<option value="">No runs yet</option>';
+      elements.conditionSelect.innerHTML = '<option value="">No runs yet</option>';
+      elements.conditionSelect.disabled = true;
       return;
     }
 
-    elements.modelSelect.innerHTML = models
-      .map(
-        (model) =>
-          `<option value="${escapeAttribute(model)}" ${model === (run?.model ?? selectedModel) ? "selected" : ""}>${escapeHtml(model)}</option>`,
-      )
-      .join("");
+    const activeModel = run?.model ?? selectedModel;
+    const activeCondition = run?.condition ?? selectedCondition;
 
+    const optionMarkup = (model) =>
+      '<option value="' +
+      escapeAttribute(model) +
+      '" ' +
+      (model === activeModel ? "selected" : "") +
+      ">" +
+      escapeHtml(model) +
+      "</option>";
+
+    const modelGroups = [];
+
+    if (regularModels.length) {
+      modelGroups.push(
+        '<optgroup label="MLLM agents">' +
+        regularModels.map(optionMarkup).join("") +
+        "</optgroup>",
+      );
+    }
+
+    if (baselineModels.length) {
+      modelGroups.push(
+        '<optgroup label="Static baselines">' +
+        baselineModels.map(optionMarkup).join("") +
+        "</optgroup>",
+      );
+    }
+
+    elements.modelSelect.innerHTML = modelGroups.join("");
+
+    if (isStaticBaselineModel(activeModel)) {
+      elements.conditionSelect.innerHTML =
+        '<option value="static-image" selected>' +
+        escapeHtml(CONDITION_LABELS["static-image"] ?? "Static image") +
+        "</option>";
+      elements.conditionSelect.disabled = true;
+      return;
+    }
+
+    const modelConditions = unique(
+      scope
+        .filter((item) => item.model === activeModel)
+        .map((item) => item.condition),
+    );
+
+    const conditions = modelConditions.length
+      ? modelConditions
+      : unique(scope.map((item) => item.condition));
+
+    elements.conditionSelect.disabled = conditions.length === 0;
     elements.conditionSelect.innerHTML = conditions
       .map(
         (condition) =>
-          `<option value="${escapeAttribute(condition)}" ${condition === (run?.condition ?? selectedCondition) ? "selected" : ""}>${escapeHtml(CONDITION_LABELS[condition] ?? condition)}</option>`,
+          '<option value="' +
+          escapeAttribute(condition) +
+          '" ' +
+          (condition === activeCondition ? "selected" : "") +
+          ">" +
+          escapeHtml(CONDITION_LABELS[condition] ?? condition) +
+          "</option>",
       )
       .join("");
   }
-
   function renderMapHeader(caseItem, run, filteredCases, overviewRuns = []) {
     elements.resetMapLabel.textContent = mapResetActionLabel({
       hasSelection: Boolean(caseItem),
@@ -1169,16 +1247,30 @@ export function createExplorer({
   function ensureRunControlState(caseItem, filteredCases) {
     const scope = getScopeRuns(caseItem, filteredCases);
     const models = unique(scope.map((item) => item.model));
-    const conditions = unique(scope.map((item) => item.condition));
 
     if (!selectedModel || !models.includes(selectedModel)) {
       selectedModel = models[0] ?? null;
     }
+
+    if (isStaticBaselineModel(selectedModel)) {
+      selectedCondition = "static-image";
+      return;
+    }
+
+    const modelConditions = unique(
+      scope
+        .filter((item) => item.model === selectedModel)
+        .map((item) => item.condition),
+    );
+
+    const conditions = modelConditions.length
+      ? modelConditions
+      : unique(scope.map((item) => item.condition));
+
     if (!selectedCondition || !conditions.includes(selectedCondition)) {
       selectedCondition = conditions[0] ?? null;
     }
   }
-
   function getScopeRuns(caseItem, filteredCases) {
     return caseItem
       ? modelPredictionRuns(caseItem.runs)
@@ -1685,7 +1777,7 @@ export function overviewPredictionRuns(cases = [], model = null, condition = nul
     const runs = modelPredictionRuns(caseItem?.runs);
     const run = model
       ? runs.find((item) => item.model === model && item.condition === condition) ??
-        runs.find((item) => item.model === model)
+      runs.find((item) => item.model === model)
       : chooseRun(caseItem, model, condition);
 
     return run && hasCoordinate(run.prediction)
