@@ -1,0 +1,268 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-easy--loc-004",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-004-gemini-3-7-flash-high-aided-d08fbae853",
+          "label": "Cloak Bridge (Plášťový most) Baroque Statue",
+          "text": "Cloak Bridge (Plášťový most) Baroque Statue",
+          "description": "Foreground Catholic saint statue with crucifix on the stone balustrade of Plášťový most.",
+          "groundingPhrase": "Cloak Bridge Baroque Statue",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.2485,
+            "y": 0.1845,
+            "w": 0.137,
+            "h": 0.559
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Cloak Bridge (Plášťový most) Baroque Statue: Statue of St. John of Nepomuk / saint on bridge balustrade."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Cloak Bridge Sandstone Statue: Foreground Catholic saint statue with crucifix on the stone balustrade of Plášťový most."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "multi-tiered Cloak Bridge (Plášťový most)"
+            }
+          ],
+          "groundingLabel": "Cloak Bridge Baroque Statue"
+        },
+        {
+          "id": "cue-europe-easy-loc-004-gemini-3-7-flash-high-aided-de7597a8f1",
+          "label": "Vltava River Horseshoe Bend",
+          "text": "Vltava River Horseshoe Bend",
+          "description": "River loop with wooden footbridge (Lávka pod Zámkem) and weir enclosing the town center.",
+          "groundingPhrase": "Vltava River Horseshoe Bend",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4235,
+            "y": 0.6635,
+            "w": 0.339,
+            "h": 0.232
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Vltava River Horseshoe Bend: River loop with wooden footbridge (Lávka pod Zámkem) and weir enclosing the town center."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Vltava River Horseshoe Bend: Deep meander and wooden weir/sluice encircling the medieval town center."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Horseshoe bend of Vltava River"
+            }
+          ],
+          "groundingLabel": "Vltava River Horseshoe Bend"
+        },
+        {
+          "id": "cue-europe-easy-loc-004-gemini-3-7-flash-high-aided-67a9e629ca",
+          "label": "St. Vitus Church (Kostel svatého Víta)",
+          "text": "St. Vitus Church (Kostel svatého Víta)",
+          "description": "Distinct slender Gothic church tower dominating the inner town skyline.",
+          "groundingPhrase": "St. Vitus Church",
+          "source": "panorama",
+          "category": "landmark",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "St. Vitus Church (Kostel svatého Víta): Gothic tower rising over red-roofed peninsula."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "St. Vitus Church Spire: Distinct slender Gothic church tower dominating the inner town skyline."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "St. Vitus Church tower in Český Krumlov."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-004-gemini-3-7-flash-high-aided-9e2ba0964a",
+          "label": "Bohemian Renaissance Architecture",
+          "text": "Bohemian Renaissance Architecture",
+          "description": "Sgraffito walls, terracotta-tiled roofscapes, and steep medieval gables.",
+          "groundingPhrase": "Bohemian Renaissance Architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0065,
+            "y": 0.0075,
+            "w": 0.977,
+            "h": 0.977
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Bohemian Renaissance Architecture: Characteristic pastel facades and steep gables in South Bohemia."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "South Bohemian Renaissance Architecture: Sgraffito walls, terracotta-tiled roofscapes, and steep medieval gables."
+            }
+          ],
+          "groundingLabel": "Bohemian Renaissance Architecture"
+        },
+        {
+          "id": "cue-europe-easy-loc-004-gemini-3-7-flash-high-aided-d38b44d56b",
+          "label": "Castle Wall",
+          "text": "Castle Wall",
+          "description": "Tall stone wall of the Upper Castle (Horní hrad) on the bridge overlook.",
+          "groundingPhrase": "Castle Wall",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.0225,
+            "y": 0.0045,
+            "w": 0.243,
+            "h": 0.833
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Castle Wall: Tall stone wall of the Upper Castle (Horní hrad) on the bridge overlook."
+            }
+          ],
+          "groundingLabel": "Castle Wall"
+        },
+        {
+          "id": "cue-europe-easy-loc-004-gemini-3-7-flash-high-aided-d2831b93d0",
+          "label": "Surrounding Forested Bluffs",
+          "text": "Surrounding Forested Bluffs",
+          "description": "Dense green Bohemian rolling hills framing the river valley.",
+          "groundingPhrase": "Surrounding Forested Bluffs",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.6535,
+            "y": 0.2905,
+            "w": 0.29,
+            "h": 0.385
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Surrounding Forested Bluffs: Dense green Bohemian rolling hills framing the river valley."
+            }
+          ],
+          "groundingLabel": "Forested Bluffs"
+        }
+      ]
+    }
+  ]
+}

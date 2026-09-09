@@ -1,0 +1,324 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-010",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-010-gemini-3-7-flash-high-aided-6790c54d02",
+          "label": "Street Text on Asphalt",
+          "text": "Street Text on Asphalt",
+          "description": "Partial road name painted in asphalt reading \"Via Francesco R...\".",
+          "groundingPhrase": "Street Text on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4715,
+            "y": 0.5385,
+            "w": 0.067,
+            "h": 0.28
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Text on Asphalt: \"Via Francesco R...\" painted on Italian street surface."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Street Name on Asphalt: Partial road name painted in asphalt reading \"Via Francesco R...\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Via Francesco Roncati\""
+            }
+          ],
+          "groundingLabel": "Street Text"
+        },
+        {
+          "id": "cue-europe-medium-loc-010-gemini-3-7-flash-high-aided-c83abde856",
+          "label": "Bolognese Architecture",
+          "text": "Bolognese Architecture",
+          "description": "Classic Bologna red-brick residential villas with dark green shutters, terracotta accents, and lush garden fencing.",
+          "groundingPhrase": "Bolognese Architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.7285,
+            "y": 0.0075,
+            "w": 0.269,
+            "h": 0.638
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Bolognese Architecture: Exposed red-brick and terracotta villas/palazzine (Bologna la Rossa) with dark green window shutters (persiane)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Bolognese Architecture: Classic Bologna red-brick residential villas with dark green shutters, terracotta accents, and lush garden fencing."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Bologna red terracotta brick palazzine"
+            }
+          ],
+          "groundingLabel": "Bolognese Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-010-gemini-3-7-flash-high-aided-fb15afe48b",
+          "label": "Italian Street Furniture",
+          "text": "Italian Street Furniture",
+          "description": "Hera-style municipal sorting containers and Italian \"P\" parking signs.",
+          "groundingPhrase": "Italian Street Furniture",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.1605,
+            "y": 0.4905,
+            "w": 0.228,
+            "h": 0.256
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Italian Street Furniture: Hera-style municipal sorting containers and Italian \"P\" parking signs."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Italian Parking & Transit Signage: Blue \"P\" parking sign and white chevron road markings."
+            }
+          ],
+          "groundingLabel": "Italian Street Furniture"
+        },
+        {
+          "id": "cue-europe-medium-loc-010-gemini-3-7-flash-high-aided-4df66f46ea",
+          "label": "Vehicle Fleet",
+          "text": "Vehicle Fleet",
+          "description": "Italian-style license plates and compact European vehicle models.",
+          "groundingPhrase": "Vehicle Fleet",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Vehicle Fleet: Italian registration plates on parked VW Golf and scooters."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Vehicle Characteristics: Italian-style license plates and compact European vehicle models."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-010-gemini-3-7-flash-high-aided-7b30e30693",
+          "label": "Flora & Environment",
+          "text": "Flora & Environment",
+          "description": "Dense leafy residential avenue characteristic of Northern Italy (Emilia-Romagna).",
+          "groundingPhrase": "Flora & Environment",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Flora & Environment: Dense leafy residential avenue characteristic of Northern Italy (Emilia-Romagna)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-010-gemini-3-7-flash-high-aided-8728805325",
+          "label": "Waste Infrastructure",
+          "text": "Waste Infrastructure",
+          "description": "Large metallic municipal waste dumpsters with yellow/blue lids characteristic of Emilia-Romagna (Hera waste management).",
+          "groundingPhrase": "Waste Infrastructure",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1605,
+            "y": 0.4905,
+            "w": 0.227,
+            "h": 0.256
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Waste Infrastructure: Large metallic municipal waste dumpsters with yellow/blue lids characteristic of Emilia-Romagna (Hera waste management)."
+            }
+          ],
+          "groundingLabel": "Waste Infrastructure"
+        },
+        {
+          "id": "cue-europe-medium-loc-010-gemini-3-7-flash-high-aided-e18bd5235b",
+          "label": "green shutters (persiane)",
+          "text": "green shutters (persiane)",
+          "description": "Green shutters (persiane).",
+          "groundingPhrase": "green shutters",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1515,
+            "y": 0.4155,
+            "w": 0.034,
+            "h": 0.1
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "green shutters (persiane)"
+            }
+          ],
+          "groundingLabel": "green shutters"
+        },
+        {
+          "id": "cue-europe-medium-loc-010-gemini-3-7-flash-high-aided-e0f2a18111",
+          "label": "Bologna FC balcony banner",
+          "text": "Bologna FC balcony banner",
+          "description": "Bologna FC balcony banner.",
+          "groundingPhrase": "Bologna FC balcony banner",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.7575,
+            "y": 0.6695,
+            "w": 0.21,
+            "h": 0.254
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Bologna FC balcony banner."
+            }
+          ],
+          "groundingLabel": "Bologna FC balcony banner"
+        }
+      ]
+    }
+  ]
+}

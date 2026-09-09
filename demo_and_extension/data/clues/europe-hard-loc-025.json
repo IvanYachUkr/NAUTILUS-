@@ -1,0 +1,340 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-hard--loc-025",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-1f0f2ff93a",
+          "label": "Nordic Double Solid White Center Lines",
+          "text": "Nordic Double Solid White Center Lines",
+          "description": "Continuous double solid white center line coupled with solid white edge markings on dark asphalt.",
+          "groundingPhrase": "Nordic Double Solid White Center Lines",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4405,
+            "y": 0.4415,
+            "w": 0.136,
+            "h": 0.449
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Nordic Double Solid White Center Lines: Smooth dark asphalt highway marked with parallel white center lines."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Finnish Road Markings: Continuous double solid white center line coupled with solid white edge markings on dark asphalt."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Double solid white centerline with solid white outer edge lines"
+            }
+          ],
+          "groundingLabel": "Nordic Double Solid White Center Lines"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-0d9f1546f2",
+          "label": "Boreal Taiga & Forest Ecology",
+          "text": "Boreal Taiga & Forest Ecology",
+          "description": "Dense, tall Scots pine (Pinus sylvestris) and Norway spruce (Picea abies) interspersed with white birch (Betula pendula).",
+          "groundingPhrase": "Boreal Taiga & Forest Ecology",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0055,
+            "y": 0.0105,
+            "w": 0.988,
+            "h": 0.976
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Boreal Taiga & Forest Ecology: Tall dense stands of Scots pine (Pinus sylvestris), birch (Betula), and spruce (Picea)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Boreal Taiga Biome: Dense, tall Scots pine (Pinus sylvestris) and Norway spruce (Picea abies) interspersed with white birch (Betula pendula)."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "dense boreal taiga forest (Scots pine, Norway spruce, bilberry ground cover)"
+            }
+          ],
+          "groundingLabel": "Boreal Taiga"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-b3f747b49a",
+          "label": "Shield Geology",
+          "text": "Shield Geology",
+          "description": "Lichen-covered granite bedrock outcrop and low bilberry/lingonberry undergrowth.",
+          "groundingPhrase": "Shield Geology",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Shield Geology: Lichen-covered granite bedrock outcrop and low bilberry/lingonberry undergrowth."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-4842351364",
+          "label": "Camera Car Artifact",
+          "text": "Camera Car Artifact",
+          "description": "Black car hood visible at bottom of frame.",
+          "groundingPhrase": "Camera Car Artifact",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.7565,
+            "y": 0.6635,
+            "w": 0.214,
+            "h": 0.326
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Camera Car Artifact: Black car hood visible at bottom of frame."
+            }
+          ],
+          "groundingLabel": "Camera Car Artifact"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-d4169c270d",
+          "label": "Regional Signature",
+          "text": "Regional Signature",
+          "description": "Quintessential landscape of Finnish Lakeland / Central Finland (Keski-Suomi / Pirkanmaa / Savonia).",
+          "groundingPhrase": "Regional Signature",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Regional Signature: Quintessential landscape of Finnish Lakeland / Central Finland (Keski-Suomi / Pirkanmaa / Savonia)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-ae07c3ad71",
+          "label": "Understory Flora",
+          "text": "Understory Flora",
+          "description": "Lichen-encrusted forest floor, bilberry / cowberry heath (Vaccinium), and grassy roadside cut.",
+          "groundingPhrase": "Understory Flora",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.7595,
+            "y": 0.6695,
+            "w": 0.207,
+            "h": 0.198
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Understory Flora: Lichen-encrusted forest floor, bilberry / cowberry heath (Vaccinium), and grassy roadside cut."
+            }
+          ],
+          "groundingLabel": "Understory Flora"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-bbf6baa611",
+          "label": "Topography",
+          "text": "Topography",
+          "description": "Undulating glacial esker and moraine formation typical of the Finnish Lakeland and central boreal forest.",
+          "groundingPhrase": "Topography",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Topography: Undulating glacial esker and moraine formation typical of the Finnish Lakeland and central boreal forest."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-837d1dd5fe",
+          "label": "Google Coverage Vehicle",
+          "text": "Google Coverage Vehicle",
+          "description": "Gen 4 black car roof signature under crisp northern blue skies.",
+          "groundingPhrase": "Google Coverage Vehicle",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.2345,
+            "y": 0.8455,
+            "w": 0.458,
+            "h": 0.148
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Google Coverage Vehicle: Gen 4 black car roof signature under crisp northern blue skies."
+            }
+          ],
+          "groundingLabel": "Google Coverage Vehicle"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-55245a52fe",
+          "label": "smooth dark asphalt",
+          "text": "smooth dark asphalt",
+          "description": "Smooth dark asphalt with wide snow ditches.",
+          "groundingPhrase": "smooth dark asphalt",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.2345,
+            "y": 0.8465,
+            "w": 0.458,
+            "h": 0.147
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "smooth dark asphalt with wide snow ditches."
+            }
+          ],
+          "groundingLabel": "smooth dark asphalt"
+        }
+      ]
+    }
+  ]
+}

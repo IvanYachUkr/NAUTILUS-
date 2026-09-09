@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-easy--loc-008",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-008-gemini-3-7-flash-high-aided-c7d37b839b",
+          "label": "Ferry Pier Gate Signage",
+          "text": "Ferry Pier Gate Signage",
+          "description": "Waterfront ferry pier building with large lettering \"FLÅM\".",
+          "groundingPhrase": "Ferry Pier Gate Signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7585,
+            "y": 0.6695,
+            "w": 0.209,
+            "h": 0.255
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Ferry Pier Gate Signage: Dual harbor entrance overhead arches marked \"FLÅM\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Harbor Terminal Sign: Pier canopy prominently labeled \"FLÅM\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Waterfront ferry pier building with large lettering \"FLÅM\""
+            }
+          ],
+          "groundingLabel": "Ferry Pier Gate Signage"
+        },
+        {
+          "id": "cue-europe-easy-loc-008-gemini-3-7-flash-high-aided-d18ef530ce",
+          "label": "Aurlandsfjord Landscape",
+          "text": "Aurlandsfjord Landscape",
+          "description": "Dramatic glacial sheer rock cliffs plunging into the emerald Aurlandsfjord (Sognefjord arm).",
+          "groundingPhrase": "Aurlandsfjord Landscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0035,
+            "y": 0.0035,
+            "w": 0.992,
+            "h": 0.476
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Aurlandsfjord Landscape: Dramatic near-vertical fjord mountain slopes surrounding deep dark water."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Norwegian Fjord Morphology: Dramatic glacial sheer rock cliffs plunging into the emerald Aurlandsfjord (Sognefjord arm)."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Norwegian flag"
+            }
+          ],
+          "groundingLabel": "Aurlandsfjord Landscape; Aurlandsfjor"
+        },
+        {
+          "id": "cue-europe-easy-loc-008-gemini-3-7-flash-high-aided-a1621b1718",
+          "label": "Flåmsbrygga Waterfront Architecture",
+          "text": "Flåmsbrygga Waterfront Architecture",
+          "description": "Ægir BrewPub garden pavilion, wooden casks, and waterfront dock facilities.",
+          "groundingPhrase": "Flåmsbrygga Waterfront Architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0015,
+            "y": 0.2105,
+            "w": 0.299,
+            "h": 0.406
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Flåmsbrygga Waterfront Architecture: Wooden timber restaurants/lodges with picnic tables and wooden barrels."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Flåm Waterfront & Brewery Garden: Ægir BrewPub garden pavilion, wooden casks, and waterfront dock facilities."
+            }
+          ],
+          "groundingLabel": "Flmsbrygga Waterfront Architecture"
+        },
+        {
+          "id": "cue-europe-easy-loc-008-gemini-3-7-flash-high-aided-b9dd4d4186",
+          "label": "Norwegian Pennant",
+          "text": "Norwegian Pennant",
+          "description": "Red/blue Norwegian national flag pennant on a tall harbor flagpole.",
+          "groundingPhrase": "Norwegian Pennant",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.7595,
+            "y": 0.6715,
+            "w": 0.207,
+            "h": 0.25
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Norwegian Pennant: Red/blue Norwegian national flag pennant on a tall harbor flagpole."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Norwegian Flag: Pennant flying along the harbour promenade."
+            }
+          ],
+          "groundingLabel": "Norwegian Pennant"
+        },
+        {
+          "id": "cue-europe-easy-loc-008-gemini-3-7-flash-high-aided-3547725bbc",
+          "label": "Walkway Orientation",
+          "text": "Walkway Orientation",
+          "description": "Pedestrian pier path heading toward the cruise ship and fjord ferry dock on Aurlandsfjorden.",
+          "groundingPhrase": "Walkway Orientation",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0025,
+            "y": 0.6415,
+            "w": 0.379,
+            "h": 0.347
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Walkway Orientation: Pedestrian pier path heading toward the cruise ship and fjord ferry dock on Aurlandsfjorden."
+            }
+          ],
+          "groundingLabel": "Walkway Orientation"
+        },
+        {
+          "id": "cue-europe-easy-loc-008-gemini-3-7-flash-high-aided-b985db7e2f",
+          "label": "Cruise Pier Infrastructure",
+          "text": "Cruise Pier Infrastructure",
+          "description": "Flåmsbana railway / cruise passenger terminal gates and walkways.",
+          "groundingPhrase": "Cruise Pier Infrastructure",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.0015,
+            "y": 0.2105,
+            "w": 0.945,
+            "h": 0.412
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Cruise Pier Infrastructure: Flåmsbana railway / cruise passenger terminal gates and walkways."
+            }
+          ],
+          "groundingLabel": "Cruise Pier Infrastructure"
+        },
+        {
+          "id": "cue-europe-easy-loc-008-gemini-3-7-flash-high-aided-a5674d92a5",
+          "label": "Aurlandsfjord mountain backdrop",
+          "text": "Aurlandsfjord mountain backdrop",
+          "description": "Aurlandsfjord mountain backdrop.",
+          "groundingPhrase": "Aurlandsfjord mountain backdrop",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0045,
+            "y": 0.0065,
+            "w": 0.992,
+            "h": 0.474
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Aurlandsfjord mountain backdrop."
+            }
+          ],
+          "groundingLabel": "Aur landsfjordan mountain backdrop"
+        }
+      ]
+    }
+  ]
+}

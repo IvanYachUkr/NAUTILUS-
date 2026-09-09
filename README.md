@@ -14,7 +14,7 @@ three-run means. The maximum aggregate is 125,000 points.
 
 | Rank | Model | Runs | Mean Easy | Mean Medium | Mean Hard | **Mean total** | Mean max | Best run |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| **1** | [Gemini 3.8 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/) | **1** | 39,985 | 43,872 | **37,062** | **120,919** | 96.7% | 120,919 |
+| **1** | [Gemini 3.8 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/) | **3** | 39,985 | 43,445 | **36,961** | **120,391** | **96.3%** | 120,919 |
 | **2** | [Gemini 3.7 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/) | **3** | 39,984 | 43,453 | 36,766 | **120,203** | 96.2% | 120,624 |
 | **3** | [Gemini 3.7 Flash (medium, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/) | **3** | **39,996** | 43,250 | 36,907 | **120,153** | 96.1% | **121,492** |
 | **4** | [Gemini 3.8 Flash (medium, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/) | **3** | 39,986 | 42,813 | 37,005 | **119,804** | 95.8% | 120,677 |
@@ -55,6 +55,8 @@ with no Drive upload.
 | Gemini 3.7 Flash (high, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/) | 39,988 | **44,011** | 36,625 | **120,624** | 96.5% |
 | Gemini 3.7 Flash (high, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/) | 39,964 | 43,323 | 36,668 | **119,955** | 96.0% |
 | Gemini 3.8 Flash (high, aided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/) | 39,985 | 43,872 | 37,062 | **120,919** | 96.7% |
+| Gemini 3.8 Flash (high, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/recorded-r2/) | **39,986** | 43,233 | 36,731 | **119,950** | 96.0% |
+| Gemini 3.8 Flash (high, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/recorded-r3/) | 39,984 | 43,229 | **37,089** | **120,302** | 96.2% |
 | Gemini 3.8 Flash (medium, aided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/) | 39,977 | 41,933 | 37,151 | **119,061** | 95.2% |
 | Gemini 3.8 Flash (medium, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r2/) | 39,997 | 42,649 | 37,027 | **119,673** | 95.7% |
 | Gemini 3.8 Flash (medium, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/) | 39,984 | **43,857** | 36,836 | **120,677** | 96.5% |
@@ -75,7 +77,7 @@ with no Drive upload.
 | Grok 4.6 (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
 | Gemini 3.7 Flash (high, unaided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
 
-Across all published runs, **500 official rounds** were submitted and recorded (including Astra and GLM continuation composites). The best individual totals were Easy **40,000** (Gemini medium R2/R3), Medium **44,686** (Astra low R2), Hard **38,168** (Gemini medium R3), and overall **121,492** (Gemini medium R3). Repeated runs reuse the same fixed locations, so
+Across all published runs, **550 official rounds** were submitted and recorded (including Astra and GLM continuation composites). The best individual totals were Easy **40,000** (Gemini medium R2/R3), Medium **44,686** (Astra low R2), Hard **38,168** (Gemini medium R3), and overall **121,492** (Gemini medium R3). Repeated runs reuse the same fixed locations, so
 their means measure run/controller variability rather than new-location
 generalization.
 

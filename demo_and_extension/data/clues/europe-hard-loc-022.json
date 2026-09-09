@@ -1,0 +1,340 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-hard--loc-022",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-fda78ccf6c",
+          "label": "Unpaved Forest Track",
+          "text": "Unpaved Forest Track",
+          "description": "Single-lane straight dirt/gravel track with grassy center berm and roadside drainage ditches.",
+          "groundingPhrase": "Unpaved Forest Track",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.3805,
+            "y": 0.4485,
+            "w": 0.207,
+            "h": 0.446
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Unpaved Forest Track: Single-lane straight dirt/gravel track with grassy center berm and roadside drainage ditches."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Forest Track Character: Narrow two-track crushed dolomite gravel road with grassy center median (lauku ceļš)."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Unpaved sand/gravel track with green grass centerline strip"
+            }
+          ],
+          "groundingLabel": "Unpaved Forest Track"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-631e2482e4",
+          "label": "Boreal / Wetland Flora",
+          "text": "Boreal / Wetland Flora",
+          "description": "Dense stands of silver birch (Betula), alder (Alnus), and willow thickets in moist lowlands.",
+          "groundingPhrase": "Boreal / Wetland Flora",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Boreal / Wetland Flora: Dense stands of silver birch (Betula), alder (Alnus), and willow thickets in moist lowlands."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Baltic Hemiboreal Forest Flora: Dense stand of silver birch (Betula pendula), grey alder (Alnus incana), and spruce."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "dense silver birch (Betula pendula)"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-bbf6baa611",
+          "label": "Topography",
+          "text": "Topography",
+          "description": "Level forest plain characteristic of central/eastern Latvia.",
+          "groundingPhrase": "Topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Topography: Completely flat lowland terrain with high water table."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Flat Lowland Topography: Level forest plain characteristic of central/eastern Latvia."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-ea09d60613",
+          "label": "Northern Lighting",
+          "text": "Northern Lighting",
+          "description": "Low northern European sun angle and clear blue Nordic sky.",
+          "groundingPhrase": "Northern Lighting",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Northern Lighting: High clear sun angle with pale northern European skies."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Atmospheric Lighting: Low northern European sun angle and clear blue Nordic sky."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-d4169c270d",
+          "label": "Regional Signature",
+          "text": "Regional Signature",
+          "description": "Characteristic Baltic forest/peatland scenery across Latvia, Lithuania, and Southern Estonia.",
+          "groundingPhrase": "Regional Signature",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Regional Signature: Characteristic Baltic forest/peatland scenery across Latvia, Lithuania, and Southern Estonia."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-cb3e5458ad",
+          "label": "Drainage Ditch Ecology",
+          "text": "Drainage Ditch Ecology",
+          "description": "Damp, fern- and sedge-lined roadside ditches typical of Baltic glacial moraines.",
+          "groundingPhrase": "Drainage Ditch Ecology",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.7565,
+            "y": 0.6625,
+            "w": 0.213,
+            "h": 0.325
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Drainage Ditch Ecology: Damp, fern- and sedge-lined roadside ditches typical of Baltic glacial moraines."
+            }
+          ],
+          "groundingLabel": "Drainage Ditch Ecology"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-180cdbd320",
+          "label": "grey alder",
+          "text": "grey alder",
+          "description": "Grey alder.",
+          "groundingPhrase": "grey alder",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.7595,
+            "y": 0.6685,
+            "w": 0.207,
+            "h": 0.255
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "grey alder"
+            }
+          ],
+          "groundingLabel": "grey alder"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-24fa741071",
+          "label": "aspen",
+          "text": "aspen",
+          "description": "Aspen.",
+          "groundingPhrase": "aspen",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "aspen"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-cc656fd902",
+          "label": "lush peatland grasses and ferns",
+          "text": "lush peatland grasses and ferns",
+          "description": "Lush peatland grasses and ferns.",
+          "groundingPhrase": "lush peatland grasses and ferns",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0045,
+            "y": 0.0095,
+            "w": 0.452,
+            "h": 0.969
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "lush peatland grasses and ferns."
+            }
+          ],
+          "groundingLabel": "lush peatland grasses"
+        }
+      ]
+    }
+  ]
+}

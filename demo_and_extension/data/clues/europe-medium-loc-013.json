@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-013",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-6790c54d02",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "\"R. Figueira da Foz\" (Rua Figueira da Foz) in Portuguese.",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"R. Figueira da Foz\" (Rua Figueira da Foz) in Portuguese."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Street Name on Asphalt: Exact road lettering \"R. Figueira da Foz\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"R. Figueira da Foz\""
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-f385ee801e",
+          "label": "Portuguese Architecture & Azulejos",
+          "text": "Portuguese Architecture & Azulejos",
+          "description": "Stucco townhouse facades with granite stone surrounds, terracotta roof tiles, and blue/white ceramic tile panel beside doorway.",
+          "groundingPhrase": "Portuguese Architecture & Azulejos",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.0085,
+            "y": 0.0065,
+            "w": 0.385,
+            "h": 0.575
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Portuguese Architecture & Azulejos: Stucco townhouse facades with granite stone surrounds, terracotta roof tiles, and blue/white ceramic tile panel beside doorway."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Portuguese Signage: Parking sign \"P PRIVATIVO\" and commercial sign \"actualab\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Portuguese parking sign \"P PRIVATIVO\""
+            }
+          ],
+          "groundingLabel": "Portuguese Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-c0bf287326",
+          "label": "Portuguese Signage",
+          "text": "Portuguese Signage",
+          "description": "Granite stonework frames around windows, wrought-iron railings, azulejo tile entryways, and traditional terracotta roofs.",
+          "groundingPhrase": "Portuguese Signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.0085,
+            "y": 0.0075,
+            "w": 0.988,
+            "h": 0.068
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Portuguese Signage: Blue \"P - PRIVATIVO\" parking sign and Portuguese medical laboratory sign (actualab)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Portuguese Residential Architecture: Granite stonework frames around windows, wrought-iron railings, azulejo tile entryways, and traditional terracotta roofs."
+            }
+          ],
+          "groundingLabel": "Portuganian Signage"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-c91ffcfdc5",
+          "label": "Pavement Style",
+          "text": "Pavement Style",
+          "description": "Traditional Portuguese cobblestone (calçada) sidewalk trim.",
+          "groundingPhrase": "Pavement Style",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Pavement Style: Traditional Portuguese cobblestone (calçada) sidewalk trim."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-f63c23c99b",
+          "label": "Urban Geography",
+          "text": "Urban Geography",
+          "description": "Rua da Figueira da Foz is a central arterial residential street in Coimbra, Centro Region, Portugal.",
+          "groundingPhrase": "Urban Geography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Urban Geography: Rua da Figueira da Foz is a central arterial residential street in Coimbra, Centro Region, Portugal."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-868bdf0be8",
+          "label": "Urban Setting & Topography",
+          "text": "Urban Setting & Topography",
+          "description": "Upward slope leading from central transit arteries in Coimbra.",
+          "groundingPhrase": "Urban Setting & Topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Urban Setting & Topography: Upward slope leading from central transit arteries in Coimbra."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-9f720999b2",
+          "label": "Vehicle Characteristics",
+          "text": "Vehicle Characteristics",
+          "description": "Portuguese-spec European hatchbacks with older yellow-stripe and modern format plates.",
+          "groundingPhrase": "Vehicle Characteristics",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Vehicle Characteristics: Portuguese-spec European hatchbacks with older yellow-stripe and modern format plates."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-1545ea3aa6",
+          "label": "azulejo door surrounds",
+          "text": "azulejo door surrounds",
+          "description": "Azulejo door surrounds.",
+          "groundingPhrase": "azulejo door surrounds",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1115,
+            "y": 0.4125,
+            "w": 0.091,
+            "h": 0.157
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "azulejo door surrounds"
+            }
+          ],
+          "groundingLabel": "Azulejo door"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-d1be1cb2b5",
+          "label": "hilly historic stone street",
+          "text": "hilly historic stone street",
+          "description": "Hilly historic stone street.",
+          "groundingPhrase": "hilly historic stone street",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0075,
+            "y": 0.0095,
+            "w": 0.985,
+            "h": 0.975
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "hilly historic stone street."
+            }
+          ],
+          "groundingLabel": "historic stone street"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-011",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-6790c54d02",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "Exact arterial name \"Amsterdamsestraatweg\" marked on the tarmac.",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4385,
+            "y": 0.5405,
+            "w": 0.089,
+            "h": 0.275
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"Amsterdamsestraatweg\" painted in clear white lettering."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Avenue Name on Asphalt: Exact arterial name \"Amsterdamsestraatweg\" marked on the tarmac."
+            }
+          ],
+          "groundingLabel": "Street Name"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-3d872b53ca",
+          "label": "Building Numbers & Clinic",
+          "text": "Building Numbers & Clinic",
+          "description": "Building sign reading \"FYSIO HOLLAND\" with street numbers 642 - 644 - 646.",
+          "groundingPhrase": "Building Numbers & Clinic",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Building Numbers & Clinic: FysioHolland building with house numbers 642 - 644 - 646."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Commercial Signage: Building sign reading \"FYSIO HOLLAND\" with street numbers 642 - 644 - 646."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "banner \"FYSIO HOLLAND #642-646\""
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-9f8367e715",
+          "label": "Dutch Cycling Infrastructure",
+          "text": "Dutch Cycling Infrastructure",
+          "description": "Dedicated red asphalt cycle track (fietspad), yellow traffic bollards, parked Dutch commuter bikes.",
+          "groundingPhrase": "Dutch Cycling Infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7895,
+            "y": 0.5355,
+            "w": 0.207,
+            "h": 0.211
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Dutch Cycling Infrastructure: Dedicated red asphalt cycle track (fietspad), yellow traffic bollards, parked Dutch commuter bikes."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Dutch Cycling & Road Infrastructure: Distinct red cycle lane (fietspad), yellow traffic bollards, and prominent bicycle density."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "red asphalt bike path (fietspad)"
+            }
+          ],
+          "groundingLabel": "Dutch Cycling Infrastructure"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-8a8d50e86a",
+          "label": "Yellow Dutch License Plates",
+          "text": "Yellow Dutch License Plates",
+          "description": "Parked cars displaying standard Netherlands yellow plates.",
+          "groundingPhrase": "Yellow Dutch License Plates",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.9075,
+            "y": 0.1115,
+            "w": 0.029,
+            "h": 0.236
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Yellow Dutch License Plates: Parked cars displaying standard Netherlands yellow plates."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "yellow Dutch plates."
+            }
+          ],
+          "groundingLabel": "Dutch Dutch License Plates"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-f63c23c99b",
+          "label": "Urban Geography",
+          "text": "Urban Geography",
+          "description": "Amsterdamsestraatweg is the historic main northwestern artery of Utrecht passing through Zuilen.",
+          "groundingPhrase": "Urban Geography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Urban Geography: Amsterdamsestraatweg is the historic main northwestern artery of Utrecht passing through Zuilen."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-964709239e",
+          "label": "Dutch Brick Architecture",
+          "text": "Dutch Brick Architecture",
+          "description": "Dark-brick multi-unit facades, mansard dormers, and large rectangular windows.",
+          "groundingPhrase": "Dutch Brick Architecture",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5985,
+            "y": 0.0055,
+            "w": 0.398,
+            "h": 0.621
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Dutch Brick Architecture: Dark-brick multi-unit facades, mansard dormers, and large rectangular windows."
+            }
+          ],
+          "groundingLabel": "Dutch Brick Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-3a86812d65",
+          "label": "Waste Management",
+          "text": "Waste Management",
+          "description": "Dutch underground/sidewalk dual refuse bins and standard Dutch registration plates.",
+          "groundingPhrase": "Waste Management",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Waste Management: Dutch underground/sidewalk dual refuse bins and standard Dutch registration plates."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-99cae3869c",
+          "label": "Road stencil \"Amsterdamsestraatweg\"",
+          "text": "Road stencil \"Amsterdamsestraatweg\"",
+          "description": "Road stencil \"Amsterdamsestraatweg\".",
+          "groundingPhrase": "Road stencil \"Amsterdamsestraatweg\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4385,
+            "y": 0.5405,
+            "w": 0.09,
+            "h": 0.275
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Amsterdamsestraatweg\""
+            }
+          ],
+          "groundingLabel": "Road stencil"
+        }
+      ]
+    }
+  ]
+}

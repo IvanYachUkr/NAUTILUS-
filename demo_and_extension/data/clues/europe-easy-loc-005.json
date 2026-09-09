@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-easy--loc-005",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-c427e85f6f",
+          "label": "Pula Arena (Amfiteatar u Puli)",
+          "text": "Pula Arena (Amfiteatar u Puli)",
+          "description": "Imposing ancient Roman limestone amphitheatre (Pula Arena) clearly visible in the park background.",
+          "groundingPhrase": "Pula Arena",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.0045,
+            "y": 0.0125,
+            "w": 0.99,
+            "h": 0.974
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Pula Arena (Amfiteatar u Puli): Roman amphitheatre limestone arches visible across the park."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Roman Colosseum Structure: Imposing ancient Roman limestone amphitheatre (Pula Arena) clearly visible in the park background."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Roman Amphitheatre (Pula Arena)"
+            }
+          ],
+          "groundingLabel": "Pula Arena"
+        },
+        {
+          "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-6278344f78",
+          "label": "Bilingual Istrian Direction Sign",
+          "text": "Bilingual Istrian Direction Sign",
+          "description": "Yellow highway sign with Croatian/Italian dual names \"Centar / Centro\", \"Verudela\", and \"Galižana / Gallesano\".",
+          "groundingPhrase": "Bilingual Istrian Direction Sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7495,
+            "y": 0.3745,
+            "w": 0.071,
+            "h": 0.106
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Bilingual Istrian Direction Sign: Yellow roundabout sign (Centar / Centro, Verudela, Galižana / Gallesano)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Bilingual Directional Signage: Yellow highway sign with Croatian/Italian dual names \"Centar / Centro\", \"Verudela\", and \"Galižana / Gallesano\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "yellow bilingual Croatian/Italian street signage (\"Centar / Centro\", \"Galižana / Gallesano\")."
+            }
+          ],
+          "groundingLabel": "Bilingual Istrian Direction Sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-c775f92ee3",
+          "label": "Mediterranean Vegetation",
+          "text": "Mediterranean Vegetation",
+          "description": "Mediterranean cypresses, stone pines, and coastal parkland bordering the Adriatic port.",
+          "groundingPhrase": "Mediterranean Vegetation",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0045,
+            "y": 0.0125,
+            "w": 0.989,
+            "h": 0.973
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Mediterranean Vegetation: Mediterranean pines, cypresses, and landscaped park grounds."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Istrian Topography & Coastal Flora: Mediterranean cypresses, stone pines, and coastal parkland bordering the Adriatic port."
+            }
+          ],
+          "groundingLabel": "Mediterranean Vegetation"
+        },
+        {
+          "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-9fec08e457",
+          "label": "Infrastructure",
+          "text": "Infrastructure",
+          "description": "Roundabout intersection with coach bus and passenger cars.",
+          "groundingPhrase": "Infrastructure",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Infrastructure: Roundabout intersection with coach bus and passenger cars."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-c59cf32b13",
+          "label": "Orientation",
+          "text": "Orientation",
+          "description": "Approaching the amphitheatre park along Flavijevska ulica.",
+          "groundingPhrase": "Orientation",
+          "source": "panorama",
+          "category": "landmark",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Orientation: Approaching the amphitheatre park along Flavijevska ulica."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-1d1178cb06",
+          "label": "Road Roundabout Infrastructure",
+          "text": "Road Roundabout Infrastructure",
+          "description": "Cobblestone island roundabout layout at the approach to the amphitheatre park.",
+          "groundingPhrase": "Road Roundabout Infrastructure",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.0045,
+            "y": 0.4515,
+            "w": 0.989,
+            "h": 0.539
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Road Roundabout Infrastructure: Cobblestone island roundabout layout at the approach to the amphitheatre park."
+            }
+          ],
+          "groundingLabel": "Road Roundabout Infrastructure"
+        },
+        {
+          "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-9434985bf2",
+          "label": "Regional Vehicle Markers",
+          "text": "Regional Vehicle Markers",
+          "description": "Tourist coach and European vehicle styling typical of Croatian coastal resort routes.",
+          "groundingPhrase": "Regional Vehicle Markers",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Regional Vehicle Markers: Tourist coach and European vehicle styling typical of Croatian coastal resort routes."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

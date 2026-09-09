@@ -1,0 +1,324 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-015",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-015-gemini-3-7-flash-high-aided-6790c54d02",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "Road name \"Sepakuru...\" painted on tarmac.",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"Sepakuru tn\" (Estonian Sepakuru tänav)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Street Name on Asphalt: Road name \"Sepakuru...\" painted on tarmac."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-015-gemini-3-7-flash-high-aided-6ad4763d2d",
+          "label": "Baltic Gable Architecture",
+          "text": "Baltic Gable Architecture",
+          "description": "Steep-pitched tin/asbestos roofed detached cottage alongside modern Baltic timber-clad and terrace houses.",
+          "groundingPhrase": "Baltic Gable Architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0025,
+            "y": 0.0045,
+            "w": 0.509,
+            "h": 0.658
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Baltic Gable Architecture: Steep-pitched gable roofs on detached suburban homes with timber/stucco siding."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Baltic Vernacular Architecture: Steep-pitched tin/asbestos roofed detached cottage alongside modern Baltic timber-clad and terrace houses."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Baltic wooden residential houses with horizontal timber siding"
+            }
+          ],
+          "groundingLabel": "Baltic Gable Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-015-gemini-3-7-flash-high-aided-29c9c4b98c",
+          "label": "Garden Fences & Grounds",
+          "text": "Garden Fences & Grounds",
+          "description": "Typical low wooden picket and wire-mesh fences seen across Estonian residential towns.",
+          "groundingPhrase": "Garden Fences & Grounds",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0045,
+            "y": 0.4725,
+            "w": 0.992,
+            "h": 0.515
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Garden Fences & Grounds: Picket/wire property fencing with neat flowerbeds (marigolds) and driveway entrances."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Boundary Fencing: Typical low wooden picket and wire-mesh fences seen across Estonian residential towns."
+            }
+          ],
+          "groundingLabel": "Garden Fences"
+        },
+        {
+          "id": "cue-europe-medium-loc-015-gemini-3-7-flash-high-aided-7b30e30693",
+          "label": "Flora & Environment",
+          "text": "Flora & Environment",
+          "description": "Baltic pines, mixed birch, and manicured suburban garden plots.",
+          "groundingPhrase": "Flora & Environment",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.1605,
+            "y": 0.6955,
+            "w": 0.08,
+            "h": 0.104
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Flora & Environment: Birch and Scots pine trees typical of Baltic climate."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Flora & Environment: Baltic pines, mixed birch, and manicured suburban garden plots."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "fenced garden plots"
+            }
+          ],
+          "groundingLabel": "Flora"
+        },
+        {
+          "id": "cue-europe-medium-loc-015-gemini-3-7-flash-high-aided-311fceb964",
+          "label": "Urban District",
+          "text": "Urban District",
+          "description": "Sepakuru tänav located in the Variku residential district of Tartu, Estonia.",
+          "groundingPhrase": "Urban District",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Urban District: Sepakuru tänav located in the Variku residential district of Tartu, Estonia."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-015-gemini-3-7-flash-high-aided-dfbb7d5235",
+          "label": "Estonian Linguistics",
+          "text": "Estonian Linguistics",
+          "description": "Root \"Sepa-\" (smith) and Estonian residential street style.",
+          "groundingPhrase": "Estonian Linguistics",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0055,
+            "y": 0.0115,
+            "w": 0.988,
+            "h": 0.974
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Estonian Linguistics: Root \"Sepa-\" (smith) and Estonian residential street style."
+            }
+          ],
+          "groundingLabel": "Estonian Linguistics"
+        },
+        {
+          "id": "cue-europe-medium-loc-015-gemini-3-7-flash-high-aided-4a47bf39ce",
+          "label": "Road stencil \"Sepakuru tn\"",
+          "text": "Road stencil \"Sepakuru tn\"",
+          "description": "Road stencil \"Sepakuru tn\".",
+          "groundingPhrase": "Road stencil \"Sepakuru tn\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6155,
+            "y": 0.5785,
+            "w": 0.081,
+            "h": 0.193
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Sepakuru tn\""
+            }
+          ],
+          "groundingLabel": "Road stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-015-gemini-3-7-flash-high-aided-657a436508",
+          "label": "wooden utility poles",
+          "text": "wooden utility poles",
+          "description": "Wooden utility poles.",
+          "groundingPhrase": "wooden utility poles",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.4085,
+            "y": 0.4715,
+            "w": 0.197,
+            "h": 0.162
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "wooden utility poles."
+            }
+          ],
+          "groundingLabel": "wooden utility poles"
+        }
+      ]
+    }
+  ]
+}

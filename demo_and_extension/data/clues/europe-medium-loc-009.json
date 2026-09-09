@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-medium--loc-009",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-6790c54d02",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "Exact road name \"Carrer de Císcar\" painted in large white font on the roadway.",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3655,
+            "y": 0.5525,
+            "w": 0.187,
+            "h": 0.259
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"Carrer de Císcar\" in Valencian script."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Street Name on Asphalt: Exact road name \"Carrer de Císcar\" painted in large white font on the roadway."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Carrer de Ciscar\""
+            }
+          ],
+          "groundingLabel": "Street Name"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-7b37fea3b5",
+          "label": "Valencian Ensanche Architecture",
+          "text": "Valencian Ensanche Architecture",
+          "description": "Classic 19th/20th-century residential facades with wrought-iron balconies.",
+          "groundingPhrase": "Valencian Ensanche Architecture",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Valencian Ensanche Architecture: Classic 19th/20th-century residential facades with wrought-iron balconies."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Valencian / Catalan Linguistics: Road naming prefix \"Carrer de...\" indicating the Valencian Community."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Valencian Catalan naming"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-89a59daa0c",
+          "label": "Spanish Street Furniture",
+          "text": "Spanish Street Furniture",
+          "description": "Standard Spanish green Ecovidrio recycling container and grey communal refuse bins.",
+          "groundingPhrase": "Spanish Street Furniture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Spanish Street Furniture: Ecovidrio green bottle bank and urban grey waste containers."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Municipal Infrastructure: Standard Spanish green Ecovidrio recycling container and grey communal refuse bins."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "green Ecovidrio bins."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-22127a4b91",
+          "label": "Commercial Signage",
+          "text": "Commercial Signage",
+          "description": "Generali Seguros branch and local boutique storefronts typical of the Gran Via/Cánovas district.",
+          "groundingPhrase": "Commercial Signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.9005,
+            "y": 0.0075,
+            "w": 0.096,
+            "h": 0.068
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Commercial Signage: Generali Seguros agency and local Valencian bars/boutiques (Malva Rocha)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Commercial Signage: Generali Seguros branch and local boutique storefronts typical of the Gran Via/Cánovas district."
+            }
+          ],
+          "groundingLabel": "Commercial Signage"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-cb80c16a5c",
+          "label": "Urban Setting",
+          "text": "Urban Setting",
+          "description": "Leafy grid boulevard in L'Eixample / Gran Via district of Valencia.",
+          "groundingPhrase": "Urban Setting",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Urban Setting: Leafy grid boulevard in L'Eixample / Gran Via district of Valencia."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-1c85a20f9b",
+          "label": "Urban Architecture",
+          "text": "Urban Architecture",
+          "description": "Ornate Valencian modernist residential apartment blocks with wrought-iron balconies.",
+          "groundingPhrase": "Urban Architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0055,
+            "y": 0.0075,
+            "w": 0.989,
+            "h": 0.978
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Urban Architecture: Ornate Valencian modernist residential apartment blocks with wrought-iron balconies."
+            }
+          ],
+          "groundingLabel": "Urban Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-f298d48123",
+          "label": "modernist balconies in L'Eixample",
+          "text": "modernist balconies in L'Eixample",
+          "description": "Modernist balconies in L'Eixample.",
+          "groundingPhrase": "modernist balconies in L'Eixample",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.8375,
+            "y": 0.0065,
+            "w": 0.158,
+            "h": 0.119
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "modernist balconies in L'Eixample"
+            }
+          ],
+          "groundingLabel": "modernist balconies"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-easy--loc-006",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-006-gemini-3-7-flash-high-aided-4d41014a0d",
+          "label": "Green Directional Sign",
+          "text": "Green Directional Sign",
+          "description": "Green directional sign for B178 towards \"Zittau\" with PL and D country codes.",
+          "groundingPhrase": "Green Directional Sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.0015,
+            "y": 0.3815,
+            "w": 0.186,
+            "h": 0.062
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Green Directional Sign: Polish road directional sign indicating 178 Zittau PL D ->."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Road Directional Sign: Green Czech/German highway sign indicating \"178 / Zittau PL D\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Green directional sign for B178 towards \"Zittau\" with PL and D country codes"
+            }
+          ],
+          "groundingLabel": "Green Directional Sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-006-gemini-3-7-flash-high-aided-a79ca4fba4",
+          "label": "Border Signage",
+          "text": "Border Signage",
+          "description": "Blue rectangular sign in Polish stating \"Granica Państwa\" (State Border).",
+          "groundingPhrase": "Border Signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7585,
+            "y": 0.6675,
+            "w": 0.209,
+            "h": 0.256
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Border Signage: Blue rectangular sign in Polish stating \"Granica Państwa\" (State Border)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Border Warning Sign: Polish state border marker reading \"Granica Państwa\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Polish \"Granica Państwa\" border sign."
+            }
+          ],
+          "groundingLabel": "Border Signage"
+        },
+        {
+          "id": "cue-europe-easy-loc-006-gemini-3-7-flash-high-aided-148b3ca3ed",
+          "label": "Polish Pedestrian Signs",
+          "text": "Polish Pedestrian Signs",
+          "description": "Fluorescent yellow-green border on pedestrian crossing sign.",
+          "groundingPhrase": "Polish Pedestrian Signs",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.9055,
+            "y": 0.4235,
+            "w": 0.048,
+            "h": 0.087
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Polish Pedestrian Signs: Fluorescent yellow-green border on pedestrian crossing sign."
+            }
+          ],
+          "groundingLabel": "Polish Pedestrian Signs"
+        },
+        {
+          "id": "cue-europe-easy-loc-006-gemini-3-7-flash-high-aided-95b5a923c7",
+          "label": "Historic Church Tower",
+          "text": "Historic Church Tower",
+          "description": "Bohemian/Lusatian town church tower in the left background across the Neisse basin.",
+          "groundingPhrase": "Historic Church Tower",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.0015,
+            "y": 0.3785,
+            "w": 0.279,
+            "h": 0.178
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Historic Church Tower: Central European Silesian-style church tower visible across roofs."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Church Spire Landscape: Bohemian/Lusatian town church tower in the left background across the Neisse basin."
+            }
+          ],
+          "groundingLabel": "Historic Church Tower"
+        },
+        {
+          "id": "cue-europe-easy-loc-006-gemini-3-7-flash-high-aided-a991515ad0",
+          "label": "Tri-border Corridor",
+          "text": "Tri-border Corridor",
+          "description": "The specific multi-national transit bypass connecting Czechia (I/35), Poland (332), and Germany (B178/Zittau).",
+          "groundingPhrase": "Tri-border Corridor",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Tri-border Corridor: Roadway connecting Porajów/Sieniawka (Poland) with Zittau (Germany)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Distinct Tri-Border Infrastructure: The specific multi-national transit bypass connecting Czechia (I/35), Poland (332), and Germany (B178/Zittau)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-006-gemini-3-7-flash-high-aided-c415ca65a3",
+          "label": "Road Asphalt Marking",
+          "text": "Road Asphalt Marking",
+          "description": "Explicit road numbering \"B178\" painted on the tarmac approaching the roundabout.",
+          "groundingPhrase": "Road Asphalt Marking",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.2535,
+            "y": 0.4835,
+            "w": 0.737,
+            "h": 0.507
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Road Asphalt Marking: Explicit road numbering \"B178\" painted on the tarmac approaching the roundabout."
+            }
+          ],
+          "groundingLabel": "Road Asphalt Marking"
+        }
+      ]
+    }
+  ]
+}

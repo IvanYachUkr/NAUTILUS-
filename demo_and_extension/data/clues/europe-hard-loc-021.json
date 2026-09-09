@@ -1,0 +1,402 @@
+{
+  "schemaVersion": "1.0",
+  "locationId": "europe-hard--loc-021",
+  "clueSets": [
+    {
+      "id": "gemini-3.7-flash-high-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-91030abf0b",
+          "label": "Pannonian Crop Strips",
+          "text": "Pannonian Crop Strips",
+          "description": "Alternating adjacent parallel strips of blooming sunflowers, ripe golden wheat, and tall green corn/maize.",
+          "groundingPhrase": "Pannonian Crop Strips",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.7605,
+            "y": 0.6705,
+            "w": 0.206,
+            "h": 0.196
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Pannonian Crop Strips: Alternating adjacent parallel strips of blooming sunflowers, ripe golden wheat, and tall green corn/maize."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Tri-Crop Agrarian Mosaic: Alternating wide parcels of blooming sunflowers (Helianthus annuus), golden ripe wheat, and green maize."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "golden wheat"
+            }
+          ],
+          "groundingLabel": "Pannonian Crop Strips"
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-bbf6baa611",
+          "label": "Topography",
+          "text": "Topography",
+          "description": "Perfectly flat lowland plain stretching to the distant horizon.",
+          "groundingPhrase": "Topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Topography: Perfectly flat lowland plain stretching to the distant horizon."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Pannonian Flat Plain Geomorphology: Vast, horizon-to-horizon flat agricultural lowlands."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "perfectly flat horizon"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-152ed91297",
+          "label": "Agricultural Utilities",
+          "text": "Agricultural Utilities",
+          "description": "Slender single wooden telephone pole standing in the field strip boundary.",
+          "groundingPhrase": "Agricultural Utilities",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.0055,
+            "y": 0.0185,
+            "w": 0.988,
+            "h": 0.966
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Agricultural Utilities: Slender single wooden telephone pole standing in the field strip boundary."
+            }
+          ],
+          "groundingLabel": "Agricultural Utilities"
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-0cc82efc7f",
+          "label": "Road Infrastructure",
+          "text": "Road Infrastructure",
+          "description": "Narrow rural asphalt lane with grassy unpaved verge.",
+          "groundingPhrase": "Road Infrastructure",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "not-grounded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Road Infrastructure: Narrow rural asphalt lane with grassy unpaved verge."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-38e28d76c8",
+          "label": "Geographic Match",
+          "text": "Geographic Match",
+          "description": "Classic Pannonian Basin agricultural landscape (Southern Great Plain / Alföld, Hungary or Vojvodina, Serbia).",
+          "groundingPhrase": "Geographic Match",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Geographic Match: Classic Pannonian Basin agricultural landscape (Southern Great Plain / Alföld, Hungary or Vojvodina, Serbia)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-b086c1d08b",
+          "label": "Rural Road Character",
+          "text": "Rural Road Character",
+          "description": "Unmarked single-track asphalt lane with grass verge.",
+          "groundingPhrase": "Rural Road Character",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.4495,
+            "y": 0.8955,
+            "w": 0.08,
+            "h": 0.094
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Rural Road Character: Unmarked single-track asphalt lane with grass verge."
+            }
+          ],
+          "groundingLabel": "Rural Road Character"
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-1e8c201398",
+          "label": "Utility Grid",
+          "text": "Utility Grid",
+          "description": "Thin concrete utility poles aligned along field boundaries without overhead tree canopy.",
+          "groundingPhrase": "Utility Grid",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.7585,
+            "y": 0.6675,
+            "w": 0.211,
+            "h": 0.256
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Utility Grid: Thin concrete utility poles aligned along field boundaries without overhead tree canopy."
+            }
+          ],
+          "groundingLabel": "Utility Grid"
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-ca1a4a079b",
+          "label": "Continental Climate",
+          "text": "Continental Climate",
+          "description": "Intense direct summer sunshine and high-pressure cumulus clouds characteristic of the central Danubian basin.",
+          "groundingPhrase": "Continental Climate",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
+              "text": "Continental Climate: Intense direct summer sunshine and high-pressure cumulus clouds characteristic of the central Danubian basin."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-2af9efdcd2",
+          "label": "Large blooming sunflower fields (napraforgó)",
+          "text": "Large blooming sunflower fields (napraforgó)",
+          "description": "Large blooming sunflower fields (napraforgó).",
+          "groundingPhrase": "Large blooming sunflower fields",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0035,
+            "y": 0.4555,
+            "w": 0.453,
+            "h": 0.239
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Large blooming sunflower fields (napraforgó)"
+            }
+          ],
+          "groundingLabel": "Large blooming sunflower fields"
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-c8ed185ffe",
+          "label": "green corn",
+          "text": "green corn",
+          "description": "Green corn.",
+          "groundingPhrase": "green corn",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0035,
+            "y": 0.4555,
+            "w": 0.452,
+            "h": 0.238
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "green corn"
+            }
+          ],
+          "groundingLabel": "green corn"
+        },
+        {
+          "id": "cue-europe-hard-loc-021-gemini-3-7-flash-high-aided-fa8902f6e3",
+          "label": "single-lane paved road without markings",
+          "text": "single-lane paved road without markings",
+          "description": "Single-lane paved road without markings.",
+          "groundingPhrase": "single-lane paved road without markings",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.0045,
+            "y": 0.6925,
+            "w": 0.991,
+            "h": 0.299
+          },
+          "regionSource": "microsoft/Florence-2-large",
+          "annotationStatus": "needs-review",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "single-lane paved road without markings."
+            }
+          ],
+          "groundingLabel": "single-lane paved road"
+        }
+      ]
+    }
+  ]
+}
