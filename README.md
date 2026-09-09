@@ -14,14 +14,17 @@ three-run means. The maximum aggregate is 125,000 points.
 
 | Rank | Model | Runs | Mean Easy | Mean Medium | Mean Hard | **Mean total** | Mean max | Best run |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| **1** | [Gemini 3.7 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/) | **1** | **39,999** | **43,026** | **37,004** | **120,029** | **96.0%** | **120,029** |
-| **2** | [GPT-6 Astra (low)](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/) | **3** | 39,998 | 44,119 | 35,129 | **119,246** | **95.4%** | **119,818** |
-| **3** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **3** | 39,397 | 40,515 | 31,349 | **111,260** | **89.0%** | **114,794** |
-| **4** | [GLM-5.3-Flash (Max) + MCP](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/) | **3** | 39,876 | 40,132 | 30,972 | **110,980** | **88.8%** | **113,530** |
-| **5** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | **3** | 39,849 | 40,978 | 29,981 | **110,808** | **88.6%** | **114,716** |
-| **6** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) + [MCP](demo_and_extension/openguessr-mcp/) **(composite)** | **3 / difficulty** | [**39,874**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | [**35,740**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | [**29,412**](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | **105,026** | **84.0%** | — |
-| **7** | [Grok 4.6 (xhigh, raw GUI)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | **60.0%** | **80,081** |
-| **8** | [Gemini 3.7 Flash (high, unaided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/) | **1** | 18,479 | 23,721 | 22,150 | **64,350** | **51.5%** | **64,350** |
+| **1** | [Gemini 3.8 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/) | **1** | 39,985 | 43,872 | **37,062** | **120,919** | 96.7% | 120,919 |
+| **2** | [Gemini 3.7 Flash (high, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/) | **3** | 39,984 | 43,453 | 36,766 | **120,203** | 96.2% | 120,624 |
+| **3** | [Gemini 3.7 Flash (medium, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/) | **3** | **39,996** | 43,250 | 36,907 | **120,153** | 96.1% | **121,492** |
+| **4** | [Gemini 3.8 Flash (medium, aided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/) | **3** | 39,986 | 42,813 | 37,005 | **119,804** | 95.8% | 120,677 |
+| **5** | [GPT-6 Astra (low)](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/) | **3** | 39,998 | **44,119** | 35,129 | **119,246** | 95.4% | 119,818 |
+| **6** | [GPT-5.6 Sol (max)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/) | **3** | 39,397 | 40,515 | 31,349 | **111,260** | 89.0% | 114,794 |
+| **7** | [GLM-5.3-Flash (Max) + MCP](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/) | **3** | 39,876 | 40,132 | 30,972 | **110,980** | 88.8% | 113,530 |
+| **8** | [GPT-5.6 Sol (xhigh)](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/) | **3** | 39,849 | 40,978 | 29,981 | **110,808** | 88.6% | 114,716 |
+| **9** | [Grok 4.6 (xhigh)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) + [MCP](demo_and_extension/openguessr-mcp/) **(composite)** | **3 / difficulty** | [39,874](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-assisted/) | [35,740](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | [29,412](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-one-shot/) | **105,026** | 84.0% | — |
+| **10** | [Grok 4.6 (xhigh, raw GUI)](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/) | **3** | 24,164 | 27,757 | 23,034 | **74,955** | 60.0% | 80,081 |
+| **11** | [Gemini 3.7 Flash (high, unaided)](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/) | **1** | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% | 64,350 |
 
 The Grok MCP row is a composite of **75 completed scored rounds** across nine
 valid difficulty-specific games, rather than a synthetic claim that one
@@ -45,9 +48,18 @@ with no Drive upload.
 
 | Model | Run | Easy | Medium | Hard | **Total** | Max |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| Gemini 3.7 Flash (high, aided) | [Original](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md) | **39,999** | 43,026 | **37,004** | **120,029** | **96.0%** |
+| Gemini 3.7 Flash (medium, aided) | [Original](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md) | 39,988 | 44,105 | 37,170 | **121,264** | 97.0% |
+| Gemini 3.7 Flash (medium, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/recorded-r2/) | **40,000** | 42,320 | 35,382 | **117,702** | 94.2% |
+| Gemini 3.7 Flash (medium, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/recorded-r3/) | **40,000** | 43,324 | **38,168** | **121,492** | **97.2%** |
+| Gemini 3.7 Flash (high, aided) | [Original](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md) | 39,999 | 43,026 | 37,004 | **120,029** | 96.0% |
+| Gemini 3.7 Flash (high, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/) | 39,988 | **44,011** | 36,625 | **120,624** | 96.5% |
+| Gemini 3.7 Flash (high, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/) | 39,964 | 43,323 | 36,668 | **119,955** | 96.0% |
+| Gemini 3.8 Flash (high, aided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/) | 39,985 | 43,872 | 37,062 | **120,919** | 96.7% |
+| Gemini 3.8 Flash (medium, aided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/) | 39,977 | 41,933 | 37,151 | **119,061** | 95.2% |
+| Gemini 3.8 Flash (medium, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r2/) | 39,997 | 42,649 | 37,027 | **119,673** | 95.7% |
+| Gemini 3.8 Flash (medium, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/) | 39,984 | **43,857** | 36,836 | **120,677** | 96.5% |
 | GPT-6 Astra (low) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md) | 39,997 | 44,189 | 34,974 | **119,160** | 95.3% |
-| GPT-6 Astra (low) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md) | 39,998 | 44,686 | 35,134 | **119,818** | 95.9% |
+| GPT-6 Astra (low) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md) | 39,998 | **44,686** | 35,134 | **119,818** | 95.9% |
 | GPT-6 Astra (low) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_20260907.md) | 39,998 | 43,482 | 35,279 | **118,759** | 95.0% |
 | GLM-5.3-Flash (Max) + MCP | [Run 1](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/#run-1-individual-scores) | 39,773 | 41,229 | 30,159 | **111,161** | 88.9% |
 | GLM-5.3-Flash (Max) + MCP | [Run 2 (resumed)](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/#run-2-individual-scores) | 39,900 | 41,142 | 32,488 | **113,530** | 90.8% |
@@ -63,13 +75,7 @@ with no Drive upload.
 | Grok 4.6 (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
 | Gemini 3.7 Flash (high, unaided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
 
-Across the complete 25-location evaluations, **425 scored results** are represented.
-Astra adds 75 results, including the disclosed continuation composites; screenshot
-and video availability is documented per run. GLM adds 75 completed-run results,
-including its disclosed resumptions; setup failures and a routing-only replay are excluded.
-The best individual totals were Easy **39,999** (Gemini aided), Medium
-**44,686** (Astra low R2), Hard **37,004** (Gemini aided), and overall
-**120,029** (Gemini aided). Repeated runs reuse the same fixed locations, so
+Across all published runs, **500 official rounds** were submitted and recorded (including Astra and GLM continuation composites). The best individual totals were Easy **40,000** (Gemini medium R2/R3), Medium **44,686** (Astra low R2), Hard **38,168** (Gemini medium R3), and overall **121,492** (Gemini medium R3). Repeated runs reuse the same fixed locations, so
 their means measure run/controller variability rather than new-location
 generalization.
 

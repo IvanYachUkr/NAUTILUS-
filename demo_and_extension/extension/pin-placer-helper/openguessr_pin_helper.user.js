@@ -13,14 +13,48 @@
   'use strict';
   const PANEL_ID = 'nautilus-pin-helper';
 
+  // Comprehensive prototype hooking across Leaflet classes
+  if (typeof window.L !== 'undefined') {
+    const classes = [window.L.Map, window.L.Evented, window.L.Layer, window.L.Handler, window.L.PosAnimation];
+    for (let cls of classes) {
+      if (cls && cls.prototype) {
+        for (let k of Object.getOwnPropertyNames(cls.prototype)) {
+          if (typeof cls.prototype[k] === 'function' && k !== 'constructor') {
+            const orig = cls.prototype[k];
+            cls.prototype[k] = function(...args) {
+              if (this instanceof window.L.Map) {
+                window.L._maps = window.L._maps || {};
+                window.L._maps[this._leaflet_id || 'main'] = this;
+                window._leaflet_active_map = this;
+              } else if (this._map && this._map instanceof window.L.Map) {
+                window._leaflet_active_map = this._map;
+              }
+              return orig.apply(this, args);
+            };
+          }
+        }
+      }
+    }
+  }
+
   function getLeafletMap() {
+    if (window._leaflet_active_map) return window._leaflet_active_map;
     if (window.L && window.L._maps) {
       const m = Object.values(window.L._maps);
       if (m.length) return m[0];
     }
-    for (const k of Object.keys(window)) {
-      try { const v=window[k]; if(v&&typeof v.latLngToContainerPoint==='function') return v; } catch(_){}
+    const mapEl = document.getElementById('map');
+    if (mapEl) {
+      const rect = mapEl.getBoundingClientRect();
+      const ev = new MouseEvent('mousemove', {
+        bubbles: true, cancelable: true, view: window,
+        clientX: rect.left + rect.width / 2,
+        clientY: rect.top + rect.height / 2
+      });
+      mapEl.dispatchEvent(ev);
+      mapEl.dispatchEvent(new Event('scroll'));
     }
+    if (window._leaflet_active_map) return window._leaflet_active_map;
     return null;
   }
 

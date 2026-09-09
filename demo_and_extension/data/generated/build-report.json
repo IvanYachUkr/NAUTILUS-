@@ -1,6 +1,10 @@
 {
   "schemaVersion": "1.0",
+<<<<<<< Updated upstream
   "generatedAt": "2026-09-07T20:48:04.309Z",
+=======
+  "generatedAt": "2026-09-08T22:36:19.860Z",
+>>>>>>> Stashed changes
   "limits": {
     "openGuessrCompetitionLocations": 20
   },
@@ -9,6 +13,7 @@
     "competitions": 3,
     "competitionParts": 3,
     "resultFiles": 0,
+<<<<<<< Updated upstream
     "benchmarkPredictionRuns": 75,
     "recordings": 115,
     "matchedRecordings": 114,
@@ -18,10 +23,38 @@
     "atlasCases": 25,
     "atlasRuns": 189,
     "recordingOnlyRuns": 2
+=======
+    "recordings": 368,
+    "matchedRecordings": 358,
+    "unmatchedRecordings": 10,
+    "recordingsWithPrediction": 347,
+    "recordingsWithoutPrediction": 21,
+    "atlasCases": 25,
+    "atlasRuns": 358,
+    "recordingOnlyRuns": 11
+>>>>>>> Stashed changes
   },
   "warnings": [
     "data/recordings/inbox/europe-easy/unmatched-location/2026-08-31T08-11-50-129Z__gemini-3-7-flash-high-v2__interactive-panorama__round-1.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-easy/unmatched-location/2026-09-01T21-46-19-495Z__gemini-3-7-flash-high-aided-run2__interactive-panorama__round-1.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-easy/unmatched-location/2026-09-03T14-29-28-941Z__gemini-3-7-flash-medium-aided-run2__interactive-panorama__round-6.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-easy/unmatched-location/2026-09-03T14-29-29-457Z__gemini-3-7-flash-medium-aided-run2__interactive-panorama__round-6.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-easy/unmatched-location/2026-09-03T14-31-39-628Z__gemini-3-7-flash-medium-aided-run2__interactive-panorama__round-6.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-medium/unmatched-location/2026-09-03T09-51-24-893Z__gemini-3-7-flash-medium-aided__interactive-panorama__round-9.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-medium/unmatched-location/2026-09-07T18-36-23-212Z__gemini-3-7-flash-medium-aided-run3__interactive-panorama__round-2.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-medium/unmatched-location/2026-09-07T18-36-23-502Z__gemini-3-7-flash-medium-aided-run3__interactive-panorama__round-2.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-medium/unmatched-location/2026-09-08T07-04-47-562Z__gemini-3-8-flash-medium-aided-run2__interactive-panorama__round-2.json could not be matched to a known location and remains indexed but unattached.",
+    "data/recordings/inbox/europe-medium/unmatched-location/2026-09-08T07-04-48-100Z__gemini-3-8-flash-medium-aided-run2__interactive-panorama__round-2.json could not be matched to a known location and remains indexed but unattached.",
     "europe-easy--loc-001 imported recording ogrr-2026-08-31T08-14-44-303Z-26b91681-d489-4725-bd5d-7110b941432a for model \"gemini 3.7 flash -high v2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
-    "europe-medium--loc-011 imported recording ogrr-2026-08-31T09-23-39-120Z-015d9071-a0b6-4303-8054-39ab4a01ff8d for model \"gemini-3.7-flash-high v3\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run."
+    "europe-easy--loc-001 imported recording ogrr-2026-09-08T06-15-57-944Z-8e6c3173-9951-4f1b-84a7-ca7f9b6e95a1 for model \"gemini-3.8-flash-medium aided run2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-easy--loc-006 imported recording ogrr-2026-09-03T14-27-11-122Z-f594fe89-28d7-4f1c-9b8b-2e20636cf91f for model \"gemini-3.7-flash-medium aided run2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-hard--loc-019 imported recording ogrr-2026-09-08T08-20-57-254Z-80d17eeb-16ac-4870-af20-b6ea18deefa8 for model \"gemini-3.8-flash-medium aided run2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-hard--loc-020 imported recording ogrr-2026-09-08T08-24-54-648Z-909468fb-1aac-4402-8d27-2ed8ad9d2efc for model \"gemini-3.8-flash-medium aided run2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-medium--loc-009 imported recording ogrr-2026-09-03T14-56-02-735Z-f3724518-77ed-4ff6-b08f-1005c9558355 for model \"gemini-3.7-flash-medium aided run2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-medium--loc-010 imported recording ogrr-2026-09-08T06-57-27-271Z-4777ab97-7314-466b-af1f-a63c41dabbdc for model \"gemini-3.8-flash-medium aided run2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-medium--loc-011 imported recording ogrr-2026-08-31T09-23-39-120Z-015d9071-a0b6-4303-8054-39ab4a01ff8d for model \"gemini-3.7-flash-high v3\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-medium--loc-013 imported recording ogrr-2026-09-08T21-11-31-644Z-ba082f28-ab47-4b43-890c-ea798d7d5ebd for model \"gemini-3.8-flash-high aided\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-medium--loc-015 imported recording ogrr-2026-09-07T21-20-01-150Z-0d8001ff-5999-4f17-b83f-43d8154246ff for model \"gemini-3.8-flash-medium aided\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run.",
+    "europe-medium--loc-015 imported recording ogrr-2026-09-08T07-46-18-139Z-3529a7fc-be46-47fb-a944-a99188ee6ba4 for model \"gemini-3.8-flash-medium aided run2\", but no prediction coordinate was captured. Playback is available; pin comparison and error statistics are disabled for this run."
   ]
 }

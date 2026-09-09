@@ -1,8 +1,12 @@
 # Recorded interactive-agent benchmark
 
+<<<<<<< Updated upstream
 The benchmark contains published runs for GPT-6 Astra low, GPT-5.6 Sol max, GPT-5.6 Sol xhigh, Grok 4.6 xhigh, and Gemini 3.7 Flash.
+=======
+The benchmark contains published runs for GPT-5.6 Sol max, GPT-5.6 Sol xhigh, Grok 4.6 xhigh, Gemini 3.7 Flash, and Gemini 3.8 Flash.
+>>>>>>> Stashed changes
 
-The top-ranking overall model run is [`gemini-3.7-flash-high-aided/`](gemini-3.7-flash-high-aided/), achieving **120,029 / 125,000 points** (96.0% accuracy) with a pin-placement helper. The original unaided run is under [`gemini-3.7-flash-high/`](gemini-3.7-flash-high/).
+The top-ranking overall model runs are [`gemini-3.7-flash-high-aided/`](gemini-3.7-flash-high-aided/) (**120,203 points** 3-run mean) and [`gemini-3.7-flash-medium-aided/`](gemini-3.7-flash-medium-aided/) (**120,153 points** 3-run mean) with a pin-placement helper. The first Gemini 3.8 Flash run is under [`gemini-3.8-flash-medium-aided/`](gemini-3.8-flash-medium-aided/) (**119,061 points**, single run). The original unaided run is under [`gemini-3.7-flash-high/`](gemini-3.7-flash-high/).
 
 ## GPT-6 Astra low
 
