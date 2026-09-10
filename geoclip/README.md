@@ -36,7 +36,7 @@ The script does not contain a machine-specific cache path.
 
 ## Run evaluation
 
-With the virtual environment activated:
+With the virtual environment activated and from the `geoclip` folder:
 
 ### Easy - default
 
@@ -62,6 +62,12 @@ python geoclip_batch_eval.py --dataset europe-medium
 python geoclip_batch_eval.py --dataset europe-hard
 ```
 
+By default, the evaluator reads images from:
+
+```text
+demo_and_extension/data/starting-images/<dataset>/
+```
+
 The script evaluates **all starting images found for the selected dataset** unless `--limit` is supplied.
 
 Optional examples:
@@ -70,6 +76,54 @@ Optional examples:
 python geoclip_batch_eval.py --dataset europe-medium --top-k 5
 python geoclip_batch_eval.py --dataset europe-easy --limit 5
 ```
+
+## Alternative image roots
+
+The default benchmark image location remains unchanged. Alternative static-image variants can be evaluated with `--images-root`.
+
+The supplied path must be the directory containing the dataset subfolders, for example:
+
+```text
+<images-root>/
+├── europe-easy/
+├── europe-medium/
+└── europe-hard/
+```
+
+### No-location-GUI images
+
+The GUI-reduced benchmark images are stored under:
+
+```text
+demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/
+```
+
+From the repository root, evaluate the three splits with:
+
+```powershell
+.\geoclip\.venv\Scripts\python.exe .\geoclip\geoclip_batch_eval.py `
+    --dataset europe-easy `
+    --images-root .\demo_and_extension\data\starting-images-no-gui-crop\no-location-gui `
+    --output-dir .\geoclip\results-no-location-gui
+```
+
+```powershell
+.\geoclip\.venv\Scripts\python.exe .\geoclip\geoclip_batch_eval.py `
+    --dataset europe-medium `
+    --images-root .\demo_and_extension\data\starting-images-no-gui-crop\no-location-gui `
+    --output-dir .\geoclip\results-no-location-gui
+```
+
+```powershell
+.\geoclip\.venv\Scripts\python.exe .\geoclip\geoclip_batch_eval.py `
+    --dataset europe-hard `
+    --images-root .\demo_and_extension\data\starting-images-no-gui-crop\no-location-gui `
+    --output-dir .\geoclip\results-no-location-gui
+```
+
+Using `--images-root` changes only the image source. Competition definitions and ground-truth extraction remain unchanged.
+
+Using a separate `--output-dir` prevents alternative-condition results from overwriting the standard baseline results.
 
 ## Expected input layout
 
@@ -85,15 +139,20 @@ repo/
         │   ├── europe-easy.json
         │   ├── europe-medium.json
         │   └── europe-hard.json
-        └── starting-images/
-            ├── europe-easy/
-            ├── europe-medium/
-            └── europe-hard/
+        ├── starting-images/
+        │   ├── europe-easy/
+        │   ├── europe-medium/
+        │   └── europe-hard/
+        └── starting-images-no-gui-crop/
+            └── no-location-gui/
+                ├── europe-easy/
+                ├── europe-medium/
+                └── europe-hard/
 ```
 
 ## Output
 
-Results are written to:
+Standard results are written by default to:
 
 ```text
 geoclip/results/
@@ -105,6 +164,14 @@ For each dataset the evaluator creates:
 geoclip_static_<dataset>.csv
 geoclip_static_<dataset>_details.json
 geoclip_static_<dataset>_summary.json
+```
+
+Alternative output directories can be selected with `--output-dir`.
+
+For the no-location-GUI experiment used above, results are written to:
+
+```text
+geoclip/results-no-location-gui/
 ```
 
 The summary includes:
