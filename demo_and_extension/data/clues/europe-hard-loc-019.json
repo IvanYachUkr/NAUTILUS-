@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,42 +24,36 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-4e99e4ae66",
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-aee832185b",
           "label": "Rustic Farmstead & Barn",
           "text": "Rustic Farmstead & Barn",
-          "description": "Traditional timber-plank barn structures (șură) combined with whitewashed living quarters and brick wall courtyard enclosure.",
+          "description": "Weathered timber barn with dark shingled roof on a red-brick foundation wall.",
           "groundingPhrase": "Rustic Farmstead & Barn",
           "source": "panorama",
           "category": "architecture",
           "region": {
-            "x": 0.0045,
-            "y": 0.3715,
-            "w": 0.222,
-            "h": 0.139
+            "x": 0.0035,
+            "y": 0.3735,
+            "w": 0.223,
+            "h": 0.137
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Rustic Farmstead & Barn: Weathered timber barn with dark shingled roof on a red-brick foundation wall."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Transylvanian Farmstead Typology: Traditional timber-plank barn structures (șură) combined with whitewashed living quarters and brick wall courtyard enclosure."
             },
             {
               "runId": "r1",
@@ -69,7 +64,7 @@
           "groundingLabel": "Rustic Farmstead"
         },
         {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-a97da9fe99",
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-9c787a0598",
           "label": "Pastoral Landscape",
           "text": "Pastoral Landscape",
           "description": "Verdant rolling pastures with wooden fence posts and roadside vegetable garden.",
@@ -78,14 +73,14 @@
           "category": "geography",
           "region": {
             "x": 0.0045,
-            "y": 0.3625,
-            "w": 0.476,
-            "h": 0.412
+            "y": 0.3655,
+            "w": 0.512,
+            "h": 0.409
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -109,35 +104,7 @@
           "groundingLabel": "Pastoral Landscape"
         },
         {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-7b3242f681",
-          "label": "Road Markings & Streetlights",
-          "text": "Road Markings & Streetlights",
-          "description": "Single rural asphalt lane with dashed white centerline and slender lampposts lining the village approach.",
-          "groundingPhrase": "Road Markings & Streetlights",
-          "source": "panorama",
-          "category": "signage",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Road Markings & Streetlights: Single rural asphalt lane with dashed white centerline and slender lampposts lining the village approach."
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-bbf6baa611",
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-cd3ae25909",
           "label": "Topography",
           "text": "Topography",
           "description": "Gentle undulating green hills characteristic of the Transylvanian plateau.",
@@ -171,11 +138,1425 @@
           ]
         },
         {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-f249ad1b70",
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-a3583b5d8c",
+          "label": "Road Markings & Streetlights",
+          "text": "Road Markings & Streetlights",
+          "description": "Single rural asphalt lane with dashed white centerline and slender lampposts lining the village approach.",
+          "groundingPhrase": "Road Markings & Streetlights",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.45716979655712053,
+            "y": 0.35374329150339767,
+            "w": 0.10779968701095466,
+            "h": 0.505604434303854
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Road Markings & Streetlights: Single rural asphalt lane with dashed white centerline and slender lampposts lining the village approach."
+            }
+          ],
+          "groundingLabel": "Road Markings"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-4d6c6298f9",
+          "label": "Romanian street light fixtures",
+          "text": "Romanian street light fixtures",
+          "description": "Romanian street light fixtures.",
+          "groundingPhrase": "Romanian street light fixtures",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.46322378716744916,
+            "y": 0.359828381528694,
+            "w": 0.03599374021909235,
+            "h": 0.1222161599127028
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Romanian street light fixtures."
+            }
+          ],
+          "groundingLabel": "Romanian street light fixtures"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-eab3c4cd74",
           "label": "Regional Setting",
           "text": "Regional Setting",
           "description": "Central Romanian / Transylvanian rural village (Mureș / Cluj / Sighișoara region).",
           "groundingPhrase": "Regional Setting",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Regional Setting: Central Romanian / Transylvanian rural village (Mureș / Cluj / Sighișoara region)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-31e3f270f6",
+          "label": "Carpathian Rural Architecture",
+          "text": "Carpathian Rural Architecture",
+          "description": "Traditional Transylvanian timber barn (șură) with large hipped weathered wood-shingle roof and brick footing.",
+          "groundingPhrase": "Carpathian Rural Architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Traditional Transylvanian timber barn (șură) with large hipped weathered wood-shingle roof and brick footing."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Carpathian Rural Architecture: Traditional wooden barn with steep shingled roof, exposed brick base, and rustic timber fencing."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Traditional Transylvanian timber barn (șură) with large hipped weathered wood-shingle roof and brick footing."
+            }
+          ],
+          "groundingLabel": "Carpathian Rural Architecture; Rural Architecture"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-8b8892513c",
+          "label": "Topography & Vegetation",
+          "text": "Topography & Vegetation",
+          "description": "Rolling green pastures, forested hillsides, and clear sky typical of the Transylvanian plateau.",
+          "groundingPhrase": "Topography & Vegetation",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Transylvanian Plateau / Carpathian foothill landscape: rolling green agricultural hills and broad river valleys."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Topography & Vegetation: Rolling green pastures, forested hillsides, and clear sky typical of the Transylvanian plateau."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Transylvanian Plateau / Carpathian foothill landscape: rolling green agricultural hills and broad river valleys."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-a7b1e2dcd2",
+          "label": "Bright continental European sunshine and clear atmospheric conditions",
+          "text": "Bright continental European sunshine and clear atmospheric conditions",
+          "description": "Bright continental European sunshine and clear atmospheric conditions.",
+          "groundingPhrase": "Bright continental European sunshine and clear atmospheric conditions",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Bright continental European sunshine and clear atmospheric conditions."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Bright continental European sunshine and clear atmospheric conditions."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-242b4b5cd1",
+          "label": "Overhead power infrastructure on wooden transmission poles",
+          "text": "Overhead power infrastructure on wooden transmission poles",
+          "description": "Overhead power infrastructure on wooden transmission poles.",
+          "groundingPhrase": "Overhead power infrastructure on wooden transmission poles",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Overhead power infrastructure on wooden transmission poles."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Overhead power infrastructure on wooden transmission poles."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-0ce54c64d7",
+          "label": "Rural Romanian village road layout",
+          "text": "Rural Romanian village road layout",
+          "description": "Single carriageway, unpaved sandy verge, and roadside vegetable cultivation plots.",
+          "groundingPhrase": "Rural Romanian village road layout",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Rural Romanian village road layout: single carriageway, unpaved sandy verge, and roadside vegetable cultivation plots."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Rural Romanian village road layout: single carriageway, unpaved sandy verge, and roadside vegetable cultivation plots."
+            }
+          ],
+          "groundingLabel": "Rural Romanian village road layout"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-a604335126",
+          "label": "Road & Infrastructure",
+          "text": "Road & Infrastructure",
+          "description": "Narrow paved countryside road with dashed centerline and single-wire wooden/concrete utility poles.",
+          "groundingPhrase": "Road & Infrastructure",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3095,
+            "y": 0.4605,
+            "w": 0.453,
+            "h": 0.528
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Road & Infrastructure: Narrow paved countryside road with dashed centerline and single-wire wooden/concrete utility poles."
+            }
+          ],
+          "groundingLabel": "Road"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-324c9bd1b3",
+          "label": "Agricultural Context",
+          "text": "Agricultural Context",
+          "description": "Small-scale subsistence farming with a person hand-tending garden beds along the roadside.",
+          "groundingPhrase": "Agricultural Context",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0055423594615993665,
+            "y": 0.3464327837586891,
+            "w": 0.38163103721298497,
+            "h": 0.19915179803759192
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Agricultural Context: Small-scale subsistence farming with a person hand-tending garden beds along the roadside."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-64aedb0b1f",
+          "label": "Vehicle Meta",
+          "text": "Vehicle Meta",
+          "description": "Faint blue Google car hood characteristic of Romanian coverage.",
+          "groundingPhrase": "Vehicle Meta",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Vehicle Meta: Faint blue Google car hood characteristic of Romanian coverage."
+            }
+          ],
+          "groundingLabel": "Vehicle Meta"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-746cd8060d",
+          "label": "Lush rolling green hills and broad agricultural floodplain valley",
+          "text": "Lush rolling green hills and broad agricultural floodplain valley",
+          "description": "Lush rolling green hills and broad agricultural floodplain valley with vegetable garden plots and hand-split timber fence posts.",
+          "groundingPhrase": "Lush rolling green hills and broad agricultural floodplain valley",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Rolling green pastoral hills, undulating hay meadows, and distant Southern Carpathian mountain foothills."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Lush rolling green hills and broad agricultural floodplain valley with vegetable garden plots and hand-split timber fence posts."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-7f359e2bb9",
+          "label": "Narrow rural asphalt road",
+          "text": "Narrow rural asphalt road",
+          "description": "Narrow rural asphalt road with white centerline dashes, curved modern overhead streetlights, and concrete/wooden utility poles.",
+          "groundingPhrase": "Narrow rural asphalt road",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3105,
+            "y": 0.4615,
+            "w": 0.453,
+            "h": 0.528
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Romanian concrete utility poles and rural road infrastructure."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Narrow rural asphalt road with white centerline dashes, curved modern overhead streetlights, and concrete/wooden utility poles."
+            }
+          ],
+          "groundingLabel": "Narrow rural asphalt road"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-3edc53b8ab",
+          "label": "Village approach",
+          "text": "Village approach",
+          "description": "Village approach with pedestrians walking along the road and local resident cultivating garden plot.",
+          "groundingPhrase": "Village approach",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Linear Saxon/Romanian village (sat adunat) layout with courtyard entrance walls."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Village approach with pedestrians walking along the road and local resident cultivating garden plot."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-5d07004f8e",
+          "label": "Monumental traditional Transylvanian elongated timber agricultural barn (șură)",
+          "text": "Monumental traditional Transylvanian elongated timber agricultural barn (șură)",
+          "description": "Monumental traditional Transylvanian elongated timber agricultural barn (șură) with red ceramic tile roofing.",
+          "groundingPhrase": "Monumental traditional Transylvanian elongated timber agricultural barn",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0035,
+            "y": 0.3745,
+            "w": 0.222,
+            "h": 0.134
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Monumental traditional Transylvanian elongated timber agricultural barn (șură) with red ceramic tile roofing."
+            }
+          ],
+          "groundingLabel": "Monumental traditional Transylvanian; wooden agricultural barn"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-cb06a24970",
+          "label": "Classic Transylvanian vernacular farmstead architecture",
+          "text": "Classic Transylvanian vernacular farmstead architecture",
+          "description": "Large wooden barn with vertical slat cladding, hipped dark shingle roof, and red brick base.",
+          "groundingPhrase": "Classic Transylvanian vernacular farmstead architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Classic Transylvanian vernacular farmstead architecture: large wooden barn with vertical slat cladding, hipped dark shingle roof, and red brick base."
+            }
+          ],
+          "groundingLabel": "Classic Transylvanian vernacular farmstead architecture"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-ead0fd4b1c",
+          "label": "Deciduous tree belts and agricultural plots typical of Sibiu County",
+          "text": "Deciduous tree belts and agricultural plots typical of Sibiu County",
+          "description": "Deciduous tree belts and agricultural plots typical of Sibiu County.",
+          "groundingPhrase": "Deciduous tree belts and agricultural plots typical of Sibiu County",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Deciduous tree belts and agricultural plots typical of Sibiu County."
+            }
+          ],
+          "groundingLabel": "Deciduous tree belts"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-598d199d0a",
+          "label": "Riparian willow and poplar tree line along the valley stream",
+          "text": "Riparian willow and poplar tree line along the valley stream",
+          "description": "Riparian willow and poplar tree line along the valley stream.",
+          "groundingPhrase": "Riparian willow and poplar tree line along the valley stream",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.5655,
+            "y": 0.2005,
+            "w": 0.432,
+            "h": 0.391
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Riparian willow and poplar tree line along the valley stream."
+            }
+          ],
+          "groundingLabel": "Riparian willow"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-e999d7eca7",
+          "label": "Vurpăr / Sibiu County",
+          "text": "Vurpăr / Sibiu County",
+          "description": "Vurpăr / Sibiu County.",
+          "groundingPhrase": "Vurpăr / Sibiu County",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Vurpăr / Sibiu County"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-f088233a1d",
+          "label": "Transylvania",
+          "text": "Transylvania",
+          "description": "Transylvania.",
+          "groundingPhrase": "Transylvania",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Transylvania"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-5d07004f8e",
+          "label": "Monumental traditional Transylvanian elongated timber agricultural barn (șură)",
+          "text": "Monumental traditional Transylvanian elongated timber agricultural barn (șură)",
+          "description": "Monumental traditional Transylvanian elongated timber agricultural barn (șură) with red ceramic tile roofing.",
+          "groundingPhrase": "Monumental traditional Transylvanian elongated timber agricultural barn",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0035,
+            "y": 0.3755,
+            "w": 0.222,
+            "h": 0.133
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Monumental traditional Transylvanian elongated timber agricultural barn (șură) with red ceramic tile roofing."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Monumental traditional Transylvanian elongated timber agricultural barn (șură) with red ceramic tile roofing."
+            }
+          ],
+          "groundingLabel": "Monumental traditional Transylvanian"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-52443edba3",
+          "label": "Linear village settlement (sat adunat)",
+          "text": "Linear village settlement (sat adunat)",
+          "description": "Linear Saxon/Romanian village (sat adunat) layout with courtyard entrance walls.",
+          "groundingPhrase": "Linear village settlement",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Linear Saxon/Romanian village (sat adunat) layout with courtyard entrance walls."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Linear village settlement (sat adunat) with courtyard entrance gates."
+            }
+          ],
+          "groundingLabel": "Linear village settlement"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-665654eef9",
+          "label": "Deciduous oak and hornbeam tree belts lining valley streams",
+          "text": "Deciduous oak and hornbeam tree belts lining valley streams",
+          "description": "Deciduous tree belts and agricultural plots typical of Sibiu County.",
+          "groundingPhrase": "Deciduous oak and hornbeam tree belts lining valley streams",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.5635,
+            "y": 0.2035,
+            "w": 0.434,
+            "h": 0.388
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Deciduous tree belts and agricultural plots typical of Sibiu County."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Deciduous oak and hornbeam tree belts lining valley streams."
+            }
+          ],
+          "groundingLabel": "Deciduous oak"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-8b0cbac6d1",
+          "label": "Romanian reinforced concrete utility poles",
+          "text": "Romanian reinforced concrete utility poles",
+          "description": "Romanian reinforced concrete utility poles with curved crossbars and roadside drainage ditches.",
+          "groundingPhrase": "Romanian reinforced concrete utility poles",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.0105,
+            "y": 0.4615,
+            "w": 0.505,
+            "h": 0.185
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Romanian concrete utility poles and rural road infrastructure."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Romanian reinforced concrete utility poles with curved crossbars and roadside drainage ditches."
+            }
+          ],
+          "groundingLabel": "concrete utility poles"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-775404709d",
+          "label": "Rolling green pastoral hills, undulating hay meadows, and distant Southern Carpathian mo",
+          "text": "Rolling green pastoral hills, undulating hay meadows, and distant Southern Carpathian mo",
+          "description": "Rolling green pastoral hills, undulating hay meadows, and distant Southern Carpathian mountain foothills.",
+          "groundingPhrase": "Rolling green pastoral hills, undulating hay meadows, and distant Southern Carpathian mo",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.18164726840855108,
+            "y": 0.35707574845040024,
+            "w": 0.26151860649247827,
+            "h": 0.10593937112600064
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Rolling green pastoral hills, undulating hay meadows, and distant Southern Carpathian mountain foothills."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Rolling green pastoral hills, undulating hay meadows, and distant Southern Carpathian mountain foothills."
+            }
+          ],
+          "groundingLabel": "green pastoral hills"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-f088233a1d",
+          "label": "Transylvania",
+          "text": "Transylvania",
+          "description": "Transylvania.",
+          "groundingPhrase": "Transylvania",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Transylvania"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Transylvania"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-e999d7eca7",
+          "label": "Vurpăr / Sibiu County",
+          "text": "Vurpăr / Sibiu County",
+          "description": "Vurpăr / Sibiu County.",
+          "groundingPhrase": "Vurpăr / Sibiu County",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Vurpăr / Sibiu County"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-eaedd2c4a7",
+          "label": "Șura Mare / Slimnic",
+          "text": "Șura Mare / Slimnic",
+          "description": "Șura Mare / Slimnic.",
+          "groundingPhrase": "Șura Mare / Slimnic",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Șura Mare / Slimnic"
+            }
+          ],
+          "groundingLabel": "ura Mare / Slimnic"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-gpt-5-6-sol-xhigh-0272792751",
+          "label": "concrete utility poles",
+          "text": "concrete utility poles",
+          "description": "Concrete utility poles with rectangular holes supported Romania.",
+          "groundingPhrase": "concrete utility poles",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.4585,
+            "y": 0.3535,
+            "w": 0.105,
+            "h": 0.183
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "concrete utility poles with rectangular holes supported Romania."
+            }
+          ],
+          "groundingLabel": "concrete utility poles"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-5-6-sol-xhigh-c9676e5149",
+          "label": "rolling Carpathian foothills",
+          "text": "rolling Carpathian foothills",
+          "description": "Rolling Carpathian foothills.",
+          "groundingPhrase": "rolling Carpathian foothills",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "rolling Carpathian foothills"
+            }
+          ],
+          "groundingLabel": "Carpathian foothills"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-5-6-sol-xhigh-778028901a",
+          "label": "Pastoral lane",
+          "text": "Pastoral lane",
+          "description": "Pastoral lane.",
+          "groundingPhrase": "Pastoral lane",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3095,
+            "y": 0.4635,
+            "w": 0.457,
+            "h": 0.529
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Pastoral lane"
+            }
+          ],
+          "groundingLabel": "Pastoral lane"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-0642063beb",
+          "label": "green rolling pasture and distant mountains",
+          "text": "green rolling pasture and distant mountains",
+          "description": "Green rolling pasture and distant mountains.",
+          "groundingPhrase": "green rolling pasture and distant mountains",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "green rolling pasture and distant mountains"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "rolling green pasture"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-ed3e5ca226",
+          "label": "sparse utility poles and pedestrians by rural lane. Initial belief",
+          "text": "sparse utility poles and pedestrians by rural lane. Initial belief",
+          "description": "Concrete/metal utility poles and pedestrians. Initial hypothesis Romania/Transylvania.",
+          "groundingPhrase": "sparse utility poles and pedestrians by rural lane. Initial belief",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.4585,
+            "y": 0.3535,
+            "w": 0.105,
+            "h": 0.183
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "sparse utility poles and pedestrians by rural lane. Initial belief: Romania"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "concrete/metal utility poles and pedestrians. Initial hypothesis Romania/Transylvania"
+            }
+          ],
+          "groundingLabel": "sparse utility poles"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-7967868e33",
+          "label": "timber barn over brick/plaster base",
+          "text": "timber barn over brick/plaster base",
+          "description": "Timber barn over brick/plaster base.",
+          "groundingPhrase": "timber barn over brick/plaster base",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0045,
+            "y": 0.3745,
+            "w": 0.221,
+            "h": 0.134
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "timber barn over brick/plaster base"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "timber barn with steep tiled roof"
+            }
+          ],
+          "groundingLabel": "timber barn"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-9f577d9e95",
+          "label": "simple wire fence posts",
+          "text": "simple wire fence posts",
+          "description": "Simple wire fence posts.",
+          "groundingPhrase": "simple wire fence posts",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0085,
+            "y": 0.4615,
+            "w": 0.507,
+            "h": 0.185
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "simple wire fence posts"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low dark fence posts"
+            }
+          ],
+          "groundingLabel": "simple wire fence posts"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-3b21953d54",
+          "label": "narrow paved road",
+          "text": "narrow paved road",
+          "description": "Narrow road with dashed white center and gravel shoulders.",
+          "groundingPhrase": "narrow paved road",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3037905779889153,
+            "y": 0.49522732063539865,
+            "w": 0.451,
+            "h": 0.5047726793646014
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "narrow paved road with faded dashed white center"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "narrow road with dashed white center and gravel shoulders"
+            }
+          ],
+          "groundingLabel": "narrow paved road"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-8814b463ad",
+          "label": "medium country confidence",
+          "text": "medium country confidence",
+          "description": "Medium country confidence.",
+          "groundingPhrase": "medium country confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "medium country confidence"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-34594c572a",
+          "label": "low locality confidence",
+          "text": "low locality confidence",
+          "description": "Low locality confidence.",
+          "groundingPhrase": "low locality confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low locality confidence."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-d4216eb98b",
+          "label": "Slovakia/Hungary alternatives",
+          "text": "Slovakia/Hungary alternatives",
+          "description": "Slovakia/Hungary alternatives.",
+          "groundingPhrase": "Slovakia/Hungary alternatives",
           "source": "panorama",
           "category": "geography",
           "region": null,
@@ -193,22 +1574,136 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Regional Setting: Central Romanian / Transylvanian rural village (Mureș / Cluj / Sighișoara region)."
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Slovakia/Hungary alternatives."
             }
           ]
         },
         {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-9802db556f",
-          "label": "Subsistence Agriculture",
-          "text": "Subsistence Agriculture",
-          "description": "Smallholder vegetable plot with hand-tilled furrows and agrarian pastoral landscape.",
-          "groundingPhrase": "Subsistence Agriculture",
+          "id": "cue-europe-hard-loc-019-gpt-6-astra-low-1225e49ced",
+          "label": "Transylvania foothills",
+          "text": "Transylvania foothills",
+          "description": "Transylvania foothills.",
+          "groundingPhrase": "Transylvania foothills",
           "source": "panorama",
           "category": "geography",
+          "region": {
+            "x": 0.1795,
+            "y": 0.3675,
+            "w": 0.264,
+            "h": 0.113
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Transylvania foothills"
+            }
+          ],
+          "groundingLabel": "Transylvania foothills"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-grok-4-6-xhigh-6bcc5b2139",
+          "label": "Carpathian farm and village cues produced a correct Romania belief and on-country marker",
+          "text": "Carpathian farm and village cues produced a correct Romania belief and on-country marker",
+          "description": "Carpathian farm and village cues produced a correct Romania belief and on-country marker.",
+          "groundingPhrase": "Carpathian farm and village cues produced a correct Romania belief and on-country marker",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0,
+            "y": 0.3481656911859531,
+            "w": 0.2788200312989046,
+            "h": 0.1586586974852438
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Carpathian farm and village cues produced a correct Romania belief and on-country marker."
+            }
+          ],
+          "groundingLabel": "Carpathian farm; village cues; country marker"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-a192cf0aef",
+          "label": "Eastern-European utility context",
+          "text": "Eastern-European utility context",
+          "description": "Eastern-European utility context.",
+          "groundingPhrase": "Eastern-European utility context",
+          "source": "panorama",
+          "category": "infrastructure",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -221,123 +1716,391 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Subsistence Agriculture: Smallholder vegetable plot with hand-tilled furrows and agrarian pastoral landscape."
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Eastern-European utility context"
             }
-          ]
+          ],
+          "groundingLabel": "European utility context"
         },
         {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-384d11c012",
-          "label": "Rural Road Infrastructure",
-          "text": "Rural Road Infrastructure",
-          "description": "Single-lane uncurbed asphalt with slender concrete street lighting and overhead utility distribution.",
-          "groundingPhrase": "Rural Road Infrastructure",
+          "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-a83cba7670",
+          "label": "sparse roadside development",
+          "text": "sparse roadside development",
+          "description": "Sparse roadside development.",
+          "groundingPhrase": "sparse roadside development",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "sparse roadside development."
+            }
+          ],
+          "groundingLabel": "sparse roadside development"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-f77fd678f2",
+          "label": "broad agricultural basin",
+          "text": "broad agricultural basin",
+          "description": "Broad agricultural basin.",
+          "groundingPhrase": "broad agricultural basin",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "broad agricultural basin"
+            }
+          ],
+          "groundingLabel": "broad agricultural basin"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-ff9cee3fdc",
+          "label": "distant wooded mountains",
+          "text": "distant wooded mountains",
+          "description": "Distant wooded mountains.",
+          "groundingPhrase": "distant wooded mountains",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1829037558685446,
+            "y": 0.34762777143990875,
+            "w": 0.2245602503912363,
+            "h": 0.12017444571201825
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "distant wooded mountains"
+            }
+          ],
+          "groundingLabel": "distant wooded mountains"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-23aec94c6f",
+          "label": "Narrow farm road",
+          "text": "Narrow farm road",
+          "description": "Narrow farm road.",
+          "groundingPhrase": "Narrow farm road",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3095,
+            "y": 0.4605,
+            "w": 0.455,
+            "h": 0.528
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Narrow farm road"
+            }
+          ],
+          "groundingLabel": "Narrow farm road"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-1683c46106",
+          "label": "pedestrians in bright clothes, spring green. Belief",
+          "text": "pedestrians in bright clothes, spring green. Belief",
+          "description": "Rural Romania (Transylvania). Placing pin at 46.30, 24.80.",
+          "groundingPhrase": "pedestrians in bright clothes, spring green. Belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5385,
+            "y": 0.4685,
+            "w": 0.021,
+            "h": 0.041
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "pedestrians in bright clothes, spring green. Belief: rural Romania (Transylvania). Placing pin at 46.30, 24.80."
+            }
+          ],
+          "groundingLabel": "pedestrians"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-4add48f8f1",
+          "label": "hay meadows + wooden post fences,",
+          "text": "hay meadows + wooden post fences,",
+          "description": "Hay meadows + wooden post fences,.",
+          "groundingPhrase": "hay meadows + wooden post fences,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0035,
+            "y": 0.4585,
+            "w": 0.515,
+            "h": 0.32
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "hay meadows + wooden post fences,"
+            }
+          ],
+          "groundingLabel": "hay meadows; wooden post fences"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-8b55f3808f",
+          "label": "concrete power poles + lone lamp,",
+          "text": "concrete power poles + lone lamp,",
+          "description": "Concrete power poles + lone lamp,.",
+          "groundingPhrase": "concrete power poles + lone lamp,",
           "source": "panorama",
           "category": "infrastructure",
           "region": {
-            "x": 0.3105,
-            "y": 0.4585,
-            "w": 0.452,
-            "h": 0.529
+            "x": 0.4645,
+            "y": 0.3585,
+            "w": 0.021,
+            "h": 0.18
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Rural Road Infrastructure: Single-lane uncurbed asphalt with slender concrete street lighting and overhead utility distribution."
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "concrete power poles + lone lamp,"
             }
           ],
-          "groundingLabel": "Rural Road Infrastructure"
+          "groundingLabel": "concrete power poles"
         },
         {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-57d99f722f",
-          "label": "Fencing Style",
-          "text": "Fencing Style",
-          "description": "Long concrete-post wire fence line enclosing green pasture.",
-          "groundingPhrase": "Fencing Style",
+          "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-30a5997679",
+          "label": "rolling hills",
+          "text": "rolling hills",
+          "description": "Rolling hills with pale distant ridge,.",
+          "groundingPhrase": "rolling hills",
           "source": "panorama",
           "category": "geography",
+          "region": {
+            "x": 0.0025,
+            "y": 0.3655,
+            "w": 0.444,
+            "h": 0.117
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "rolling hills with pale distant ridge,"
+            }
+          ],
+          "groundingLabel": "hills"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-c84eb2be0a",
+          "label": "log barn",
+          "text": "log barn",
+          "description": "Log barn with weathered dark roof,.",
+          "groundingPhrase": "log barn",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0035,
+            "y": 0.3755,
+            "w": 0.222,
+            "h": 0.122
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "log barn with weathered dark roof,"
+            }
+          ],
+          "groundingLabel": "log barn"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-unaided-ddc50945b1",
+          "label": "Saxon-Transylvanian village architecture",
+          "text": "Saxon-Transylvanian village architecture",
+          "description": "Saxon-Transylvanian village architecture.",
+          "groundingPhrase": "Saxon-Transylvanian village architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0035,
+            "y": 0.3755,
+            "w": 0.222,
+            "h": 0.133
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Saxon-Transylvanian village architecture"
+            }
+          ],
+          "groundingLabel": "Saxon; Transylvanian village architecture"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-unaided-59da12facf",
+          "label": "fortified church context",
+          "text": "fortified church context",
+          "description": "Fortified church context.",
+          "groundingPhrase": "fortified church context",
+          "source": "panorama",
+          "category": "landmark",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Fencing Style: Long concrete-post wire fence line enclosing green pasture."
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-e433682b13",
-          "label": "Carpathian Basin Geomorphology",
-          "text": "Carpathian Basin Geomorphology",
-          "description": "Gentle terraced hills rolling into distant mountain ridges under bright continental summer skies.",
-          "groundingPhrase": "Carpathian Basin Geomorphology",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.7595,
-            "y": 0.6685,
-            "w": 0.207,
-            "h": 0.199
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Carpathian Basin Geomorphology: Gentle terraced hills rolling into distant mountain ridges under bright continental summer skies."
-            }
-          ],
-          "groundingLabel": "Carpathian Basin Geomorphology"
-        },
-        {
-          "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-ae3be16128",
-          "label": "Romanian street light fixtures",
-          "text": "Romanian street light fixtures",
-          "description": "Romanian street light fixtures.",
-          "groundingPhrase": "Romanian street light fixtures",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.4595,
-            "y": 0.3535,
-            "w": 0.103,
-            "h": 0.183
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -350,11 +2113,11 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Romanian street light fixtures."
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "fortified church context"
             }
           ],
-          "groundingLabel": "Romanian street light fixtures"
+          "groundingLabel": "fortified church context"
         }
       ]
     }

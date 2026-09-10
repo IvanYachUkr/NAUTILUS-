@@ -4,6 +4,23 @@ import { normalizeExploration } from "./exploration.js";
 const VALID_DIFFICULTIES = new Set(["easy", "medium", "hard"]);
 const VALID_CONDITIONS = new Set(["static-image", "interactive-panorama"]);
 const VALID_SOURCES = new Set(["starting-image", "panorama", "map"]);
+const VALID_CLUE_CATEGORIES = new Set([
+  "signage",
+  "landmark",
+  "architecture",
+  "infrastructure",
+  "vegetation",
+  "geography",
+  "linguistic",
+]);
+const VALID_CLUE_STATUSES = new Set([
+  "pending-grounding",
+  "needs-review",
+  "reviewed",
+  "text-only",
+  "not-grounded",
+  "excluded",
+]);
 
 export function validateCases(input) {
   const errors = [];
@@ -51,6 +68,39 @@ export function validateCases(input) {
       if (!isNonEmptyString(item.startingImage?.path)) {
         errors.push(`${path}.startingImage.path must be a non-empty string when startingImage is provided.`);
       }
+    }
+
+    if (item?.clueSets !== undefined && !Array.isArray(item.clueSets)) {
+      errors.push(`${path}.clueSets must be an array when provided.`);
+    } else {
+      const clueSetIds = new Set();
+      (item.clueSets ?? []).forEach((clueSet, setIndex) => {
+        const setPath = `${path}.clueSets[${setIndex}]`;
+        if (!isNonEmptyString(clueSet?.id)) errors.push(`${setPath}.id must be a non-empty string.`);
+        else if (clueSetIds.has(clueSet.id)) errors.push(`${setPath}.id duplicates "${clueSet.id}".`);
+        else clueSetIds.add(clueSet.id);
+        if (clueSet?.benchmarkId !== undefined && !isNonEmptyString(clueSet.benchmarkId)) {
+          errors.push(`${setPath}.benchmarkId must be a non-empty string when provided.`);
+        }
+        if (!isNonEmptyString(clueSet?.model)) errors.push(`${setPath}.model must be a non-empty string.`);
+        if (!Array.isArray(clueSet?.sourceRuns) || clueSet.sourceRuns.length === 0) {
+          errors.push(`${setPath}.sourceRuns must be a non-empty array.`);
+        }
+        if (!Array.isArray(clueSet?.cues)) {
+          errors.push(`${setPath}.cues must be an array.`);
+          return;
+        }
+        clueSet.cues.forEach((cue, cueIndex) => {
+          const cuePath = `${setPath}.cues[${cueIndex}]`;
+          if (!isNonEmptyString(cue?.id)) errors.push(`${cuePath}.id must be a non-empty string.`);
+          if (!isNonEmptyString(cue?.label)) errors.push(`${cuePath}.label must be a non-empty string.`);
+          if (!isNonEmptyString(cue?.description)) errors.push(`${cuePath}.description must be a non-empty string.`);
+          if (!VALID_SOURCES.has(cue?.source)) errors.push(`${cuePath}.source is not supported.`);
+          if (!VALID_CLUE_CATEGORIES.has(cue?.category)) errors.push(`${cuePath}.category is not supported.`);
+          if (!VALID_CLUE_STATUSES.has(cue?.annotationStatus)) errors.push(`${cuePath}.annotationStatus is not supported.`);
+          if (cue?.region != null) collectRegionErrors(errors, cue.region, `${cuePath}.region`);
+        });
+      });
     }
 
     if (!Array.isArray(item?.runs)) {
@@ -163,6 +213,10 @@ export function normalizeCases(input) {
       accent: item.visual?.accent ?? "#d9ff6b",
       motif: item.visual?.motif ?? "grid",
     },
+    clueSets: structuredClone(item.clueSets ?? []).map((clueSet) => ({
+      ...clueSet,
+      benchmarkId: clueSet.benchmarkId ?? clueSet.id,
+    })),
     runs: item.runs.map((run) => ({
       ...run,
       confidence: run.confidence ?? null,
@@ -226,6 +280,20 @@ function collectStreetViewErrors(errors, value, path) {
     (!Number.isFinite(value.fov) || value.fov < 10 || value.fov > 100)
   ) {
     errors.push(`${path}.fov must be between 10 and 100.`);
+  }
+}
+
+function collectRegionErrors(errors, region, path) {
+  for (const key of ["x", "y", "w", "h"]) {
+    if (!Number.isFinite(region?.[key]) || region[key] < 0 || region[key] > 1) {
+      errors.push(`${path}.${key} must be between 0 and 1.`);
+    }
+  }
+  if (Number.isFinite(region?.x) && Number.isFinite(region?.w) && region.x + region.w > 1.000001) {
+    errors.push(`${path}.x + width must not exceed 1.`);
+  }
+  if (Number.isFinite(region?.y) && Number.isFinite(region?.h) && region.y + region.h > 1.000001) {
+    errors.push(`${path}.y + height must not exceed 1.`);
   }
 }
 

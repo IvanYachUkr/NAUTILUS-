@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,61 +24,16 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-6790c54d02",
-          "label": "Street Name on Asphalt",
-          "text": "Street Name on Asphalt",
-          "description": "\"R. Figueira da Foz\" (Rua Figueira da Foz) in Portuguese.",
-          "groundingPhrase": "Street Name on Asphalt",
-          "source": "panorama",
-          "category": "signage",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1",
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Street Name on Asphalt: \"R. Figueira da Foz\" (Rua Figueira da Foz) in Portuguese."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Street Name on Asphalt: Exact road lettering \"R. Figueira da Foz\"."
-            },
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Road stencil \"R. Figueira da Foz\""
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-f385ee801e",
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-aab4c23fa8",
           "label": "Portuguese Architecture & Azulejos",
           "text": "Portuguese Architecture & Azulejos",
           "description": "Stucco townhouse facades with granite stone surrounds, terracotta roof tiles, and blue/white ceramic tile panel beside doorway.",
           "groundingPhrase": "Portuguese Architecture & Azulejos",
           "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.0085,
-            "y": 0.0065,
-            "w": 0.385,
-            "h": 0.575
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -86,19 +42,13 @@
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Portuguese Architecture & Azulejos: Stucco townhouse facades with granite stone surrounds, terracotta roof tiles, and blue/white ceramic tile panel beside doorway."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Portuguese Signage: Parking sign \"P PRIVATIVO\" and commercial sign \"actualab\"."
             },
             {
               "runId": "r1",
@@ -109,75 +59,110 @@
           "groundingLabel": "Portuguese Architecture"
         },
         {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-c0bf287326",
-          "label": "Portuguese Signage",
-          "text": "Portuguese Signage",
-          "description": "Granite stonework frames around windows, wrought-iron railings, azulejo tile entryways, and traditional terracotta roofs.",
-          "groundingPhrase": "Portuguese Signage",
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-fd1106a692",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "\"R. Figueira da Foz\" (Rua Figueira da Foz) in Portuguese.",
+          "groundingPhrase": "Street Name on Asphalt",
           "source": "panorama",
           "category": "signage",
           "region": {
-            "x": 0.0085,
-            "y": 0.0075,
-            "w": 0.988,
-            "h": 0.068
+            "x": 0.4455,
+            "y": 0.5235,
+            "w": 0.083,
+            "h": 0.295
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Portuguese Signage: Blue \"P - PRIVATIVO\" parking sign and Portuguese medical laboratory sign (actualab)."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Portuguese Residential Architecture: Granite stonework frames around windows, wrought-iron railings, azulejo tile entryways, and traditional terracotta roofs."
-            }
-          ],
-          "groundingLabel": "Portuganian Signage"
-        },
-        {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-c91ffcfdc5",
-          "label": "Pavement Style",
-          "text": "Pavement Style",
-          "description": "Traditional Portuguese cobblestone (calçada) sidewalk trim.",
-          "groundingPhrase": "Pavement Style",
-          "source": "panorama",
-          "category": "geography",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
+            "r1",
             "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Pavement Style: Traditional Portuguese cobblestone (calçada) sidewalk trim."
+              "text": "Street Name on Asphalt: \"R. Figueira da Foz\" (Rua Figueira da Foz) in Portuguese."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"R. Figueira da Foz\""
             }
-          ]
+          ],
+          "groundingLabel": "Street Name"
         },
         {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-f63c23c99b",
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-290ad88763",
+          "label": "hilly historic stone street",
+          "text": "hilly historic stone street",
+          "description": "Hilly historic stone street.",
+          "groundingPhrase": "hilly historic stone street",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "hilly historic stone street."
+            }
+          ],
+          "groundingLabel": "historic stone street"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-32f997cebc",
+          "label": "azulejo door surrounds",
+          "text": "azulejo door surrounds",
+          "description": "Azulejo door surrounds.",
+          "groundingPhrase": "azulejo door surrounds",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1125,
+            "y": 0.4145,
+            "w": 0.089,
+            "h": 0.154
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "azulejo door surrounds"
+            }
+          ],
+          "groundingLabel": "azulejo door"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-abb2a73360",
           "label": "Urban Geography",
           "text": "Urban Geography",
           "description": "Rua da Figueira da Foz is a central arterial residential street in Coimbra, Centro Region, Portugal.",
@@ -205,16 +190,106 @@
           ]
         },
         {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-868bdf0be8",
-          "label": "Urban Setting & Topography",
-          "text": "Urban Setting & Topography",
-          "description": "Upward slope leading from central transit arteries in Coimbra.",
-          "groundingPhrase": "Urban Setting & Topography",
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-e843abf1e4",
+          "label": "Portuguese Signage",
+          "text": "Portuguese Signage",
+          "description": "Blue \"P - PRIVATIVO\" parking sign and Portuguese medical laboratory sign (actualab).",
+          "groundingPhrase": "Portuguese Signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.20208372456964008,
+            "y": 0.4452888001587223,
+            "w": 0.027762128325508617,
+            "h": 0.07798045731858541
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Portuguese Signage: Blue \"P - PRIVATIVO\" parking sign and Portuguese medical laboratory sign (actualab)."
+            }
+          ],
+          "groundingLabel": "Portuganian Signage"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-ea1c17aae2",
+          "label": "Pavement Style",
+          "text": "Pavement Style",
+          "description": "Traditional Portuguese cobblestone (calçada) sidewalk trim.",
+          "groundingPhrase": "Pavement Style",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.7167449139280125,
+            "y": 0.5185506671296067,
+            "w": 0.06651017214397492,
+            "h": 0.10316948564059322
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Pavement Style: Traditional Portuguese cobblestone (calçada) sidewalk trim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-medium-aided-1bec2da0bf",
+          "label": "Portuguese Architecture & Streetscape",
+          "text": "Portuguese Architecture & Streetscape",
+          "description": "Azulejos ceramic tilework inside garage archways, whitewashed facades, and carved granite window frames.",
+          "groundingPhrase": "Portuguese Architecture & Streetscape",
           "source": "panorama",
           "category": "geography",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -222,24 +297,761 @@
             "consistent": null
           },
           "sourceRuns": [
+            "r1",
+            "r2",
             "r3"
           ],
           "provenance": [
             {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Portuguese traditional residential architectural features: azulejos ceramic tilework inside garage archways, whitewashed facades, and carved granite window frames."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Portuguese Architecture & Streetscape: Granite window surrounds, white/beige facades, red clay roof tiles, azulejo tiling."
+            },
+            {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Urban Setting & Topography: Upward slope leading from central transit arteries in Coimbra."
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Portuguese traditional residential architectural features: azulejos ceramic tilework inside garage archways, whitewashed facades, and carved granite window frames."
+            }
+          ],
+          "groundingLabel": "Portuguese Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-medium-aided-b7261dcf33",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "Road surface text \"R. Figueira da Foz\" (Rua Figueira da Foz).",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4455,
+            "y": 0.5235,
+            "w": 0.06735054773082942,
+            "h": 0.21881330291156192
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Roadway surface stencil: \"R. Figueira da Foz\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Street Name on Asphalt: Road surface text \"R. Figueira da Foz\" (Rua Figueira da Foz)."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Roadway surface stencil: \"R. Figueira da Foz\"."
+            }
+          ],
+          "groundingLabel": "Street Name"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-medium-aided-995e44d3a8",
+          "label": "Portuguese signage and street plaques",
+          "text": "Portuguese signage and street plaques",
+          "description": "\"P PRIVATIVO\", \"actualab\", \"RESIDENCIAL\".",
+          "groundingPhrase": "Portuguese signage and street plaques",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Portuguese signage and street plaques: \"P PRIVATIVO\", \"actualab\", \"RESIDENCIAL\"."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Portuguese signage and street plaques: \"P PRIVATIVO\", \"actualab\", \"RESIDENCIAL\"."
             }
           ]
         },
         {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-9f720999b2",
-          "label": "Vehicle Characteristics",
-          "text": "Vehicle Characteristics",
-          "description": "Portuguese-spec European hatchbacks with older yellow-stripe and modern format plates.",
-          "groundingPhrase": "Vehicle Characteristics",
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-medium-aided-fa6acc37c4",
+          "label": "Portuguese pavement",
+          "text": "Portuguese pavement",
+          "description": "Small stone mosaic sidewalk tiles (calçada portuguesa).",
+          "groundingPhrase": "Portuguese pavement",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.715962441314554,
+            "y": 0.5201378899856158,
+            "w": 0.07746478873239437,
+            "h": 0.11428004563265703
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Portuguese pavement: small stone mosaic sidewalk tiles (calçada portuguesa)."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Portuguese pavement: small stone mosaic sidewalk tiles (calçada portuguesa)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-medium-aided-50ea8a6bdd",
+          "label": "Distinctive urban topography of Coimbra sloping down towards the Baixa and Mondego river",
+          "text": "Distinctive urban topography of Coimbra sloping down towards the Baixa and Mondego river",
+          "description": "Distinctive urban topography of Coimbra sloping down towards the Baixa and Mondego river basin.",
+          "groundingPhrase": "Distinctive urban topography of Coimbra sloping down towards the Baixa and Mondego river",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Distinctive urban topography of Coimbra sloping down towards the Baixa and Mondego river basin."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Distinctive urban topography of Coimbra sloping down towards the Baixa and Mondego river basin."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-medium-aided-1d7b95d5a0",
+          "label": "Parking Sign",
+          "text": "Parking Sign",
+          "description": "\"P PRIVATIVO\" yellow signpost.",
+          "groundingPhrase": "Parking Sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.1940532081377152,
+            "y": 0.43601507861713207,
+            "w": 0.03442879499217527,
+            "h": 0.10158226278458404
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Parking Sign: \"P PRIVATIVO\" yellow signpost."
+            }
+          ],
+          "groundingLabel": "Portuganian signage; Sign"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-high-aided-557260a6af",
+          "label": "Dense hillside residential street layout characteristic of urban Coimbra",
+          "text": "Dense hillside residential street layout characteristic of urban Coimbra",
+          "description": "Dense hillside residential street layout characteristic of urban Coimbra.",
+          "groundingPhrase": "Dense hillside residential street layout characteristic of urban Coimbra",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Urban hillside slope characteristic of upper Coimbra."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Dense hillside residential street layout characteristic of urban Coimbra."
+            }
+          ],
+          "groundingLabel": "Dense hillside residential street layout characteristic"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-high-aided-752eea6c0f",
+          "label": "Road surface asphalt painted stencil",
+          "text": "Road surface asphalt painted stencil",
+          "description": "Asphalt road surface lettering reading \"R. Figueira da Foz\".",
+          "groundingPhrase": "Road surface asphalt painted stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.45139548693586695,
+            "y": 0.5168636979597983,
+            "w": 0.06012430720506734,
+            "h": 0.21842395041280835
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Asphalt road surface lettering reading \"R. Figueira da Foz\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Road surface asphalt painted stencil: 'R. Figueira da Foz'."
+            }
+          ],
+          "groundingLabel": "Road surface asphalt"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-high-aided-33f3ae650a",
+          "label": "Sign on residential building",
+          "text": "Sign on residential building",
+          "description": "Portuguese clinical sign reading \"actualab - análises clínicas\" and blue private parking sign \"P PRIVATIVO\".",
+          "groundingPhrase": "Sign on residential building",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.1963566904196358,
+            "y": 0.4475612311475822,
+            "w": 0.037214172604909,
+            "h": 0.07181818866219981
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Portuguese clinical sign reading \"actualab - análises clínicas\" and blue private parking sign \"P PRIVATIVO\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Sign on residential building: 'P PRIVATIVO' and 'actualab' with Portuguese blue tile azulejo base trim."
+            }
+          ],
+          "groundingLabel": "Sign"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-high-aided-b010162fd2",
+          "label": "Portuguese traditional architecture",
+          "text": "Portuguese traditional architecture",
+          "description": "Portuguese traditional architecture with sculpted granite window surrounds and black wrought-iron railings.",
+          "groundingPhrase": "Portuguese traditional architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Classic Portuguese traditional calçada portuguesa (limestone mosaic pavement tiles)."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Portuguese traditional architecture with sculpted granite window surrounds and black wrought-iron railings."
+            }
+          ],
+          "groundingLabel": "Portuguese traditional architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-high-aided-01ff765083",
+          "label": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles",
+          "text": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles",
+          "description": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles.",
+          "groundingPhrase": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.10641627543035993,
+            "y": 0.40268339864094044,
+            "w": 0.09702660406885759,
+            "h": 0.16824562273696736
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-high-aided-533cfe0c76",
+          "label": "Rua Figueira da Foz",
+          "text": "Rua Figueira da Foz",
+          "description": "Rua Figueira da Foz.",
+          "groundingPhrase": "Rua Figueira da Foz",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Rua Figueira da Foz"
+            }
+          ],
+          "groundingLabel": "Granite window"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-high-aided-1d850beb6d",
+          "label": "European vehicle license plates featuring the yellow strip on the right side (pre-2020 P",
+          "text": "European vehicle license plates featuring the yellow strip on the right side (pre-2020 P",
+          "description": "European vehicle license plates featuring the yellow strip on the right side (pre-2020 Portuguese plate design).",
+          "groundingPhrase": "European vehicle license plates featuring the yellow strip on the right side (pre-2020 P",
           "source": "panorama",
           "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "European vehicle license plates featuring the yellow strip on the right side (pre-2020 Portuguese plate design)."
+            }
+          ],
+          "groundingLabel": "European vehicle license plates"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-a79b706bd4",
+          "label": "Classic Portuguese traditional calçada portuguesa (limestone mosaic pavement tiles)",
+          "text": "Classic Portuguese traditional calçada portuguesa (limestone mosaic pavement tiles)",
+          "description": "Classic Portuguese traditional calçada portuguesa (limestone mosaic pavement tiles).",
+          "groundingPhrase": "Classic Portuguese traditional calçada portuguesa",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.7157561361836896,
+            "y": 0.5118572611608824,
+            "w": 0.07521773555027711,
+            "h": 0.11403046500539538
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Classic Portuguese traditional calçada portuguesa (limestone mosaic pavement tiles)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Classic Portuguese traditional calçada portuguesa (limestone mosaic pavement tiles)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-115b7504fe",
+          "label": "Asphalt road surface lettering reading \"R. Figueira da Foz\"",
+          "text": "Asphalt road surface lettering reading \"R. Figueira da Foz\"",
+          "description": "Asphalt road surface lettering reading \"R. Figueira da Foz\".",
+          "groundingPhrase": "Asphalt road surface lettering reading \"R. Figueira da Foz\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4486448931116389,
+            "y": 0.5194697608471981,
+            "w": 0.06029136975455268,
+            "h": 0.2026813596326132
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Asphalt road surface lettering reading \"R. Figueira da Foz\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Asphalt road surface lettering reading \"R. Figueira da Foz\"."
+            }
+          ],
+          "groundingLabel": "Asphalt road surface"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-7680d0a7c5",
+          "label": "Urban hillside slope characteristic of upper Coimbra",
+          "text": "Urban hillside slope characteristic of upper Coimbra",
+          "description": "Urban hillside slope characteristic of upper Coimbra.",
+          "groundingPhrase": "Urban hillside slope characteristic of upper Coimbra",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Urban hillside slope characteristic of upper Coimbra."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Urban hillside slope characteristic of upper Coimbra."
+            }
+          ],
+          "groundingLabel": "Urban hillside slope characteristic"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-01ff765083",
+          "label": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles",
+          "text": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles",
+          "description": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles.",
+          "groundingPhrase": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.11243072050672998,
+            "y": 0.41388742502948633,
+            "w": 0.09342834520981788,
+            "h": 0.1493638485281939
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Granite window surrounds, wrought-iron Juliet balconies, and azulejo wall tiles."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-533cfe0c76",
+          "label": "Rua Figueira da Foz",
+          "text": "Rua Figueira da Foz",
+          "description": "Rua Figueira da Foz.",
+          "groundingPhrase": "Rua Figueira da Foz",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Rua Figueira da Foz"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Rua Figueira da Foz"
+            }
+          ],
+          "groundingLabel": "Figueira da Foz; Granite window"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-4fb52369ac",
+          "label": "Portuguese clinical sign reading \"actualab - análises clínicas\" and blue private parking",
+          "text": "Portuguese clinical sign reading \"actualab - análises clínicas\" and blue private parking",
+          "description": "Portuguese clinical sign reading \"actualab - análises clínicas\" and blue private parking sign \"P PRIVATIVO\".",
+          "groundingPhrase": "Portuguese clinical sign reading \"actualab - análises clínicas\" and blue private parking",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.20109546165884193,
+            "y": 0.4487128614652051,
+            "w": 0.028951486697965587,
+            "h": 0.0698378056644016
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Portuguese clinical sign reading \"actualab - análises clínicas\" and blue private parking sign \"P PRIVATIVO\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Portuguese clinical sign reading \"actualab - análises clínicas\" and blue private parking sign \"P PRIVATIVO\"."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-gpt-5-6-sol-xhigh-aabaa742f0",
+          "label": "Lusophone visual context supported Coimbra",
+          "text": "Lusophone visual context supported Coimbra",
+          "description": "Lusophone visual context supported Coimbra.",
+          "groundingPhrase": "Lusophone visual context supported Coimbra",
+          "source": "panorama",
+          "category": "geography",
           "region": null,
           "regionSource": null,
           "annotationStatus": "text-only",
@@ -255,27 +1067,481 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Vehicle Characteristics: Portuguese-spec European hatchbacks with older yellow-stripe and modern format plates."
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Lusophone visual context supported Coimbra."
+            }
+          ],
+          "groundingLabel": "Lusophone visual context; visual context"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-5-6-sol-xhigh-245c420d53",
+          "label": "hilly university-city form",
+          "text": "hilly university-city form",
+          "description": "Hilly university-city form.",
+          "groundingPhrase": "hilly university-city form",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "hilly university-city form"
+            }
+          ],
+          "groundingLabel": "hilly university-city form"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-5-6-sol-xhigh-49ec8be90e",
+          "label": "Portuguese paving/architecture",
+          "text": "Portuguese paving/architecture",
+          "description": "Portuguese paving/architecture.",
+          "groundingPhrase": "Portuguese paving/architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Portuguese paving/architecture"
+            }
+          ],
+          "groundingLabel": "Portuguese paving/architecture"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-0682245451",
+          "label": "granite-trim plaster buildings and iron balconies",
+          "text": "granite-trim plaster buildings and iron balconies",
+          "description": "Granite-trim plaster buildings and iron balconies.",
+          "groundingPhrase": "granite-trim plaster buildings and iron balconies",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.11138836104513064,
+            "y": 0.4204702878365831,
+            "w": 0.08971258907363422,
+            "h": 0.14939333483901723
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "granite-trim plaster buildings and iron balconies"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "pale plaster and granite trim"
+            }
+          ],
+          "groundingLabel": "granite-trim plaster buildings"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-46ac30c68f",
+          "label": "R. Figueira da F... road overlay",
+          "text": "R. Figueira da F... road overlay",
+          "description": "R. Figueira da F... road overlay.",
+          "groundingPhrase": "R. Figueira da F... road overlay",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.44135193982581156,
+            "y": 0.5232879495093979,
+            "w": 0.07112668250197945,
+            "h": 0.2071815102010088
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "R. Figueira da F... road overlay"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "R. Figueira da Foz overlay"
+            }
+          ],
+          "groundingLabel": "road overlay"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-7857547741",
+          "label": "PRIVATIVO parking sign",
+          "text": "PRIVATIVO parking sign",
+          "description": "Portuguese Privativo parking sign.",
+          "groundingPhrase": "PRIVATIVO parking sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.19951346001583525,
+            "y": 0.4506815102010088,
+            "w": 0.02868566904196357,
+            "h": 0.07551489372380737
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "PRIVATIVO parking sign"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Portuguese Privativo parking sign"
+            }
+          ],
+          "groundingLabel": "PRIVATIVO; PRIVAVIVO parking sign"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-fabd22d640",
+          "label": "compact mixed-age parked European cars. Initial belief Portugal",
+          "text": "compact mixed-age parked European cars. Initial belief Portugal",
+          "description": "Compact mixed-age parked European cars. Initial belief Portugal.",
+          "groundingPhrase": "compact mixed-age parked European cars. Initial belief Portugal",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "compact mixed-age parked European cars. Initial belief Portugal"
+            }
+          ],
+          "groundingLabel": "European cars"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-db8a07f9f3",
+          "label": "dense sloping-looking older Portuguese street. Initial belief",
+          "text": "dense sloping-looking older Portuguese street. Initial belief",
+          "description": "Coimbra.",
+          "groundingPhrase": "dense sloping-looking older Portuguese street. Initial belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "dense sloping-looking older Portuguese street. Initial belief: Coimbra"
+            }
+          ],
+          "groundingLabel": "dense sloping-looking older Portuguese street"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-9603d76993",
+          "label": "Coimbra plausible from road name",
+          "text": "Coimbra plausible from road name",
+          "description": "Coimbra plausible from road name.",
+          "groundingPhrase": "Coimbra plausible from road name",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Coimbra plausible from road name"
+            }
+          ],
+          "groundingLabel": "compact mixed-age; Coimbra plausible"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-474f5d3bea",
+          "label": "Rua da Figueira da Foz",
+          "text": "Rua da Figueira da Foz",
+          "description": "Rua da Figueira da Foz.",
+          "groundingPhrase": "Rua da Figueira da Foz",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Rua da Figueira da Foz"
+            }
+          ],
+          "groundingLabel": "Rua da Figueira da Foz"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-44ec6aee27",
+          "label": "Portuguese yellow-edge plates",
+          "text": "Portuguese yellow-edge plates",
+          "description": "Portuguese yellow-edge plates.",
+          "groundingPhrase": "Portuguese yellow-edge plates",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Portuguese yellow-edge plates"
             }
           ]
         },
         {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-1545ea3aa6",
-          "label": "azulejo door surrounds",
-          "text": "azulejo door surrounds",
-          "description": "Azulejo door surrounds.",
-          "groundingPhrase": "azulejo door surrounds",
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-48c154f9ec",
+          "label": "high country confidence",
+          "text": "high country confidence",
+          "description": "High country confidence.",
+          "groundingPhrase": "high country confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "high country confidence"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-e7ed5f2f99",
+          "label": "low city confidence",
+          "text": "low city confidence",
+          "description": "Low city confidence.",
+          "groundingPhrase": "low city confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low city confidence."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-6-astra-low-78d8f28aa7",
+          "label": "wrought balconies",
+          "text": "wrought balconies",
+          "description": "Wrought balconies.",
+          "groundingPhrase": "wrought balconies",
           "source": "panorama",
           "category": "geography",
           "region": {
-            "x": 0.1115,
-            "y": 0.4125,
-            "w": 0.091,
-            "h": 0.157
+            "x": 0.1215,
+            "y": 0.0265,
+            "w": 0.102,
+            "h": 0.163
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "wrought balconies"
+            }
+          ],
+          "groundingLabel": "wrought balconies"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-grok-4-6-xhigh-9ca733e900",
+          "label": "clinic text gave the correct country and Coimbra as an alternative",
+          "text": "clinic text gave the correct country and Coimbra as an alternative",
+          "description": "Clinic text gave the correct country and Coimbra as an alternative.",
+          "groundingPhrase": "clinic text gave the correct country and Coimbra as an alternative",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -288,30 +1554,557 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "azulejo door surrounds"
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "clinic text gave the correct country and Coimbra as an alternative"
             }
-          ],
-          "groundingLabel": "Azulejo door"
+          ]
         },
         {
-          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-aided-d1be1cb2b5",
-          "label": "hilly historic stone street",
-          "text": "hilly historic stone street",
-          "description": "Hilly historic stone street.",
-          "groundingPhrase": "hilly historic stone street",
+          "id": "cue-europe-medium-loc-013-grok-4-6-xhigh-d80a7123de",
+          "label": "Portuguese street text",
+          "text": "Portuguese street text",
+          "description": "Portuguese street text.",
+          "groundingPhrase": "Portuguese street text",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4465,
+            "y": 0.5265,
+            "w": 0.08,
+            "h": 0.289
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Portuguese street text"
+            }
+          ],
+          "groundingLabel": "Portuguese street text"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-grok-4-6-xhigh-99b8c0c662",
+          "label": "but the",
+          "text": "but the",
+          "description": "But the.",
+          "groundingPhrase": "but the",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "but the"
+            }
+          ],
+          "groundingLabel": "clinic text"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-grok-4-6-xhigh-2854e827b8",
+          "label": "tiles",
+          "text": "tiles",
+          "description": "Tiles.",
+          "groundingPhrase": "tiles",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "tiles"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-gpt-5-6-sol-max-28049642bc",
+          "label": "Figueira da Foz street naming",
+          "text": "Figueira da Foz street naming",
+          "description": "Figueira da Foz street naming.",
+          "groundingPhrase": "Figueira da Foz street naming",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4489882629107981,
+            "y": 0.5236499429591785,
+            "w": 0.06254773082942097,
+            "h": 0.20085997718367146
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Figueira da Foz street naming"
+            }
+          ],
+          "groundingLabel": "Figueira da Foz street naming"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-5-6-sol-max-d61e1ce463",
+          "label": "hilly Coimbra road form",
+          "text": "hilly Coimbra road form",
+          "description": "Hilly Coimbra road form.",
+          "groundingPhrase": "hilly Coimbra road form",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "hilly Coimbra road form"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-5-6-sol-max-4e29edfba8",
+          "label": "local urban vegetation",
+          "text": "local urban vegetation",
+          "description": "Local urban vegetation.",
+          "groundingPhrase": "local urban vegetation",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "local urban vegetation."
+            }
+          ],
+          "groundingLabel": "local urban vegetation"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-5-6-sol-max-3981f0bf2b",
+          "label": "painted/tiled facades",
+          "text": "painted/tiled facades",
+          "description": "Painted/tiled facades.",
+          "groundingPhrase": "painted/tiled facades",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "painted/tiled facades"
+            }
+          ],
+          "groundingLabel": "facades"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gpt-5-6-sol-max-279e591ead",
+          "label": "Portuguese text",
+          "text": "Portuguese text",
+          "description": "Portuguese text.",
+          "groundingPhrase": "Portuguese text",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Portuguese text"
+            }
+          ],
+          "groundingLabel": "Portuguese text"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-glm-5-3-flash-max-e6958d59ef",
+          "label": "slopes down to a roundabout with 1970s blocks. Belief",
+          "text": "slopes down to a roundabout with 1970s blocks. Belief",
+          "description": "Coimbra area. Placing pin at 40.2085, -8.4260.",
+          "groundingPhrase": "slopes down to a roundabout with 1970s blocks. Belief",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "slopes down to a roundabout with 1970s blocks. Belief: Coimbra area. Placing pin at 40.2085, -8.4260."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-013-glm-5-3-flash-max-79e5b9ca64",
+          "label": "geranium window boxes + iron balconies,",
+          "text": "geranium window boxes + iron balconies,",
+          "description": "Geranium window boxes + iron balconies,.",
+          "groundingPhrase": "geranium window boxes + iron balconies,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1215,
+            "y": 0.0235,
+            "w": 0.262,
+            "h": 0.398
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "geranium window boxes + iron balconies,"
+            }
+          ],
+          "groundingLabel": "geranium window boxes; iron balconies"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-glm-5-3-flash-max-adea4f068c",
+          "label": "\"R. Figueira da Foz\" road paint,",
+          "text": "\"R. Figueira da Foz\" road paint,",
+          "description": "\"R. Figueira da Foz\" road paint,.",
+          "groundingPhrase": "\"R. Figueira da Foz\" road paint,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4455,
+            "y": 0.5245,
+            "w": 0.06891549295774649,
+            "h": 0.20352829720747978
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "\"R. Figueira da Foz\" road paint,"
+            }
+          ],
+          "groundingLabel": "Figueira da Foz; road paint"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-glm-5-3-flash-max-dab3829788",
+          "label": "blue \"P ESTACIONAMENTO\" sign,",
+          "text": "blue \"P ESTACIONAMENTO\" sign,",
+          "description": "Blue \"P ESTACIONAMENTO\" sign,.",
+          "groundingPhrase": "blue \"P ESTACIONAMENTO\" sign,",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.2013794992175273,
+            "y": 0.44670157730271315,
+            "w": 0.030596244131455397,
+            "h": 0.08575437726303259
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "blue \"P ESTACIONAMENTO\" sign,"
+            }
+          ],
+          "groundingLabel": "P ESTACIONAMENTO; sign"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-glm-5-3-flash-max-857d081493",
+          "label": "green municipal bins,",
+          "text": "green municipal bins,",
+          "description": "Green municipal bins,.",
+          "groundingPhrase": "green municipal bins,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0515,
+            "y": 0.6025,
+            "w": 0.149,
+            "h": 0.146
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "green municipal bins,"
+            }
+          ],
+          "groundingLabel": "green municipal bins"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-unaided-8523533008",
+          "label": "\"R. Figueira da Foz\" stencil",
+          "text": "\"R. Figueira da Foz\" stencil",
+          "description": "\"R. Figueira da Foz\" stencil.",
+          "groundingPhrase": "\"R. Figueira da Foz\" stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4486408450704225,
+            "y": 0.5171266058231239,
+            "w": 0.06424256651017213,
+            "h": 0.22125554287981747
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"R. Figueira da Foz\" stencil"
+            }
+          ],
+          "groundingLabel": "Figueira da Foz"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-unaided-f2657349ee",
+          "label": "Portuguese calçada sidewalk",
+          "text": "Portuguese calçada sidewalk",
+          "description": "Portuguese calçada sidewalk.",
+          "groundingPhrase": "Portuguese calçada sidewalk",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Portuguese calçada sidewalk"
+            }
+          ],
+          "groundingLabel": "Portuguese calada sidewalk"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-gemini-3-7-flash-high-unaided-9c5a103176",
+          "label": "yellow facade trims",
+          "text": "yellow facade trims",
+          "description": "Yellow facade trims.",
+          "groundingPhrase": "yellow facade trims",
           "source": "panorama",
           "category": "architecture",
           "region": {
             "x": 0.0075,
-            "y": 0.0095,
-            "w": 0.985,
-            "h": 0.975
+            "y": 0.0035,
+            "w": 0.385,
+            "h": 0.572
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -322,11 +2115,11 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "hilly historic stone street."
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "yellow facade trims"
             }
           ],
-          "groundingLabel": "historic stone street"
+          "groundingLabel": "yellow facade trims"
         }
       ]
     }

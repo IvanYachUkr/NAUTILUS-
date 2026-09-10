@@ -26,18 +26,35 @@ test("project snapshot derives the live benchmark mix and ranks recorded runs", 
 
   assert.equal(snapshot.locationCount, 4);
   assert.deepEqual(snapshot.difficultyCounts, { easy: 2, medium: 1, hard: 1 });
+  assert.deepEqual(snapshot.evidenceCounts, { reviewed: 0, textOnly: 0, excluded: 0 });
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.points),
-    [120_029, 357_737 / 3, 333_781 / 3, 110_980, 332_425 / 3, 105_026, 74_955, 64_350],
+    [361_171 / 3, 360_608 / 3, 360_458 / 3, 359_411 / 3, 357_737 / 3, 333_781 / 3, 110_980, 332_425 / 3, 105_026, 74_955, 64_350],
   );
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.scorePercent),
-    [96.0, 95.4, 89.0, 88.8, 88.6, 84.0, 60.0, 51.5],
+    [96.3, 96.2, 96.1, 95.8, 95.4, 89.0, 88.8, 88.6, 84.0, 60.0, 51.5],
   );
   assert.deepEqual(
     snapshot.leaderboard.map((entry) => entry.rank),
-    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
   );
+});
+
+test("project snapshot counts each annotation outcome", () => {
+  const snapshot = buildProjectSnapshot([
+    {
+      id: "europe-easy--loc-001",
+      difficulty: "easy",
+      clueSets: [{ cues: [
+        { annotationStatus: "reviewed" },
+        { annotationStatus: "text-only" },
+        { annotationStatus: "excluded" },
+      ] }],
+    },
+  ]);
+
+  assert.deepEqual(snapshot.evidenceCounts, { reviewed: 1, textOnly: 1, excluded: 1 });
 });
 
 test("project navigation accepts only real single-page section ids", () => {
@@ -127,9 +144,11 @@ test("project story renders every research section with live benchmark values", 
   assert.ok(markup.includes("2 easy"));
   assert.ok(markup.includes("119,246"));
   assert.ok(markup.includes('value="119245.66666666667" max="125000"'));
-  assert.ok(markup.includes("119,818"));
-  assert.ok(markup.includes("Run 1 Hard and Run 3 Medium"));
-  assert.ok(markup.includes("without globe pins"));
+  assert.doesNotMatch(markup, /GPT-6 Astra low individual run scores/);
+  assert.doesNotMatch(markup, /Run 1 Hard and Run 3 Medium/);
+  assert.ok(markup.includes("image regions verified"));
+  assert.ok(markup.includes("The gilded figure crowns the July Column"));
+  assert.ok(markup.includes('data-case-model="Gemini 3.7 Flash · high, aided"'));
   assert.ok(markup.includes("https://github.com/IvanYachUkr/NAUTILUS-"));
   assert.ok(markup.includes('alt="Paris street scene at Place de la Bastille"'));
 });

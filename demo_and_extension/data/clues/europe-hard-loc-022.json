@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,21 +24,16 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-fda78ccf6c",
-          "label": "Unpaved Forest Track",
-          "text": "Unpaved Forest Track",
-          "description": "Single-lane straight dirt/gravel track with grassy center berm and roadside drainage ditches.",
-          "groundingPhrase": "Unpaved Forest Track",
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-9133083931",
+          "label": "Boreal / Wetland Flora",
+          "text": "Boreal / Wetland Flora",
+          "description": "Dense stands of silver birch (Betula), alder (Alnus), and willow thickets in moist lowlands.",
+          "groundingPhrase": "Boreal / Wetland Flora",
           "source": "panorama",
           "category": "vegetation",
-          "region": {
-            "x": 0.3805,
-            "y": 0.4485,
-            "w": 0.207,
-            "h": 0.446
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -46,19 +42,53 @@
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Boreal / Wetland Flora: Dense stands of silver birch (Betula), alder (Alnus), and willow thickets in moist lowlands."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "dense silver birch (Betula pendula)"
+            }
+          ],
+          "groundingLabel": "Boreal / Wetland Flora"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-5923fbdd73",
+          "label": "Unpaved Forest Track",
+          "text": "Unpaved Forest Track",
+          "description": "Single-lane straight dirt/gravel track with grassy center berm and roadside drainage ditches.",
+          "groundingPhrase": "Unpaved Forest Track",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.3785,
+            "y": 0.4485,
+            "w": 0.209,
+            "h": 0.447
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Unpaved Forest Track: Single-lane straight dirt/gravel track with grassy center berm and roadside drainage ditches."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Forest Track Character: Narrow two-track crushed dolomite gravel road with grassy center median (lauku ceļš)."
             },
             {
               "runId": "r1",
@@ -69,56 +99,16 @@
           "groundingLabel": "Unpaved Forest Track"
         },
         {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-631e2482e4",
-          "label": "Boreal / Wetland Flora",
-          "text": "Boreal / Wetland Flora",
-          "description": "Dense stands of silver birch (Betula), alder (Alnus), and willow thickets in moist lowlands.",
-          "groundingPhrase": "Boreal / Wetland Flora",
-          "source": "panorama",
-          "category": "vegetation",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1",
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Boreal / Wetland Flora: Dense stands of silver birch (Betula), alder (Alnus), and willow thickets in moist lowlands."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Baltic Hemiboreal Forest Flora: Dense stand of silver birch (Betula pendula), grey alder (Alnus incana), and spruce."
-            },
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "dense silver birch (Betula pendula)"
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-bbf6baa611",
-          "label": "Topography",
-          "text": "Topography",
-          "description": "Level forest plain characteristic of central/eastern Latvia.",
-          "groundingPhrase": "Topography",
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-4e5c124a65",
+          "label": "lush peatland grasses and ferns",
+          "text": "lush peatland grasses and ferns",
+          "description": "Lush peatland grasses and ferns.",
+          "groundingPhrase": "lush peatland grasses and ferns",
           "source": "panorama",
           "category": "geography",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -126,58 +116,19 @@
             "consistent": null
           },
           "sourceRuns": [
-            "r2",
-            "r3"
+            "r1"
           ],
           "provenance": [
             {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Topography: Completely flat lowland terrain with high water table."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Flat Lowland Topography: Level forest plain characteristic of central/eastern Latvia."
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "lush peatland grasses and ferns."
             }
-          ]
-        },
-        {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-ea09d60613",
-          "label": "Northern Lighting",
-          "text": "Northern Lighting",
-          "description": "Low northern European sun angle and clear blue Nordic sky.",
-          "groundingPhrase": "Northern Lighting",
-          "source": "panorama",
-          "category": "infrastructure",
-          "region": null,
-          "regionSource": null,
-          "annotationStatus": "text-only",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2",
-            "r3"
           ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Northern Lighting: High clear sun angle with pale northern European skies."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Atmospheric Lighting: Low northern European sun angle and clear blue Nordic sky."
-            }
-          ]
+          "groundingLabel": "lush peatland grasses"
         },
         {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-d4169c270d",
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-15028e6314",
           "label": "Regional Signature",
           "text": "Regional Signature",
           "description": "Characteristic Baltic forest/peatland scenery across Latvia, Lithuania, and Southern Estonia.",
@@ -205,21 +156,16 @@
           ]
         },
         {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-cb3e5458ad",
-          "label": "Drainage Ditch Ecology",
-          "text": "Drainage Ditch Ecology",
-          "description": "Damp, fern- and sedge-lined roadside ditches typical of Baltic glacial moraines.",
-          "groundingPhrase": "Drainage Ditch Ecology",
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-2e5dd75690",
+          "label": "Northern Lighting",
+          "text": "Northern Lighting",
+          "description": "High clear sun angle with pale northern European skies.",
+          "groundingPhrase": "Northern Lighting",
           "source": "panorama",
-          "category": "vegetation",
-          "region": {
-            "x": 0.7565,
-            "y": 0.6625,
-            "w": 0.213,
-            "h": 0.325
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -227,33 +173,27 @@
             "consistent": null
           },
           "sourceRuns": [
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Drainage Ditch Ecology: Damp, fern- and sedge-lined roadside ditches typical of Baltic glacial moraines."
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Northern Lighting: High clear sun angle with pale northern European skies."
             }
-          ],
-          "groundingLabel": "Drainage Ditch Ecology"
+          ]
         },
         {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-180cdbd320",
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-74957efae5",
           "label": "grey alder",
           "text": "grey alder",
           "description": "Grey alder.",
           "groundingPhrase": "grey alder",
           "source": "panorama",
           "category": "vegetation",
-          "region": {
-            "x": 0.7595,
-            "y": 0.6685,
-            "w": 0.207,
-            "h": 0.255
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -273,7 +213,35 @@
           "groundingLabel": "grey alder"
         },
         {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-24fa741071",
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-7b91640b3a",
+          "label": "Topography",
+          "text": "Topography",
+          "description": "Completely flat lowland terrain with high water table.",
+          "groundingPhrase": "Topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Topography: Completely flat lowland terrain with high water table."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-aea424f793",
           "label": "aspen",
           "text": "aspen",
           "description": "Aspen.",
@@ -281,8 +249,8 @@
           "source": "panorama",
           "category": "vegetation",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -299,23 +267,399 @@
               "text": "aspen"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
         },
         {
-          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-cc656fd902",
-          "label": "lush peatland grasses and ferns",
-          "text": "lush peatland grasses and ferns",
-          "description": "Lush peatland grasses and ferns.",
-          "groundingPhrase": "lush peatland grasses and ferns",
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-ecb839350f",
+          "label": "Flora & Mixed Forest",
+          "text": "Flora & Mixed Forest",
+          "description": "Dense young European alder (Alnus glutinosa), silver birch (Betula pendula), and lush undergrowth.",
+          "groundingPhrase": "Flora & Mixed Forest",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Boreal-nemoral Baltic mixed forest flora: dense young European alder (Alnus glutinosa), silver birch (Betula pendula), and lush undergrowth."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Flora & Mixed Forest: Dense young birch, alder, willow scrub, and mature oak along an unpaved forest track."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Boreal-nemoral Baltic mixed forest flora: dense young European alder (Alnus glutinosa), silver birch (Betula pendula), and lush undergrowth."
+            }
+          ],
+          "groundingLabel": "Flora"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-75bec7016f",
+          "label": "Road Character",
+          "text": "Road Character",
+          "description": "Single-lane unpaved gravel / dirt forestry track with grassy center median (gruntsceļš / meža ceļš).",
+          "groundingPhrase": "Road Character",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3785,
+            "y": 0.4435,
+            "w": 0.209,
+            "h": 0.451
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Single-lane unpaved gravel / dirt forestry track with grassy center median (gruntsceļš / meža ceļš)."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Road Character: Dual-rut gravel/dirt road with a grassy center median."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Single-lane unpaved gravel / dirt forestry track with grassy center median (gruntsceļš / meža ceļš)."
+            }
+          ],
+          "groundingLabel": "Road Character"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-834d06b0e6",
+          "label": "Topography",
+          "text": "Topography",
+          "description": "Characteristic flat-to-undulating Baltic post-glacial plain topography.",
+          "groundingPhrase": "Topography",
           "source": "panorama",
           "category": "geography",
-          "region": {
-            "x": 0.0045,
-            "y": 0.0095,
-            "w": 0.452,
-            "h": 0.969
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Characteristic flat-to-undulating Baltic post-glacial plain topography."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Topography: Flat Baltic lowland terrain under high northern summer sun."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Characteristic flat-to-undulating Baltic post-glacial plain topography."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-236e54a7a4",
+          "label": "Absence of formal roadside fencing, demarcating open state forest land",
+          "text": "Absence of formal roadside fencing, demarcating open state forest land",
+          "description": "Absence of formal roadside fencing, demarcating open state forest land.",
+          "groundingPhrase": "Absence of formal roadside fencing, demarcating open state forest land",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Absence of formal roadside fencing, demarcating open state forest land."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Absence of formal roadside fencing, demarcating open state forest land."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-a4e8cd94f9",
+          "label": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes",
+          "text": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes",
+          "description": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes.",
+          "groundingPhrase": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes."
+            }
+          ],
+          "groundingLabel": "diffuse northern summer sunlight typical"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-50d129fa88",
+          "label": "Regional Characteristic",
+          "text": "Regional Characteristic",
+          "description": "Textbook Baltic rural woodland (Vidzeme / Latgale, Latvia).",
+          "groundingPhrase": "Regional Characteristic",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Regional Characteristic: Textbook Baltic rural woodland (Vidzeme / Latgale, Latvia)."
+            }
+          ],
+          "groundingLabel": "Absence"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-b6594cea4e",
+          "label": "Flat, level horizon under high pale-blue summer sky",
+          "text": "Flat, level horizon under high pale-blue summer sky",
+          "description": "Flat, level horizon under high pale-blue summer sky with scattered light cirrus.",
+          "groundingPhrase": "Flat, level horizon under high pale-blue summer sky",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Pale high-latitude summer sunlight and expansive unbroken canopy."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Flat, level horizon under high pale-blue summer sky with scattered light cirrus."
+            }
+          ],
+          "groundingLabel": "level horizon"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-a9e0b98b91",
+          "label": "Unpaved rural gravel track",
+          "text": "Unpaved rural gravel track",
+          "description": "Unpaved rural gravel track with central grassy median strip traversing flat Baltic glacial terrain.",
+          "groundingPhrase": "Unpaved rural gravel track",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.3985910530482977,
+            "y": 0.45137941980978197,
+            "w": 0.25204196357878067,
+            "h": 0.547014517302818
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Unpaved rural gravel track with central grassy median strip traversing flat Baltic glacial terrain."
+            }
+          ],
+          "groundingLabel": "Unpaved rural gravel track; northern"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-b9bc62d462",
+          "label": "Dense northern deciduous brushwood and secondary forest featuring white birch (Betula pe",
+          "text": "Dense northern deciduous brushwood and secondary forest featuring white birch (Betula pe",
+          "description": "Dense northern deciduous brushwood and secondary forest featuring white birch (Betula pendula), alder, hazel, and willow thickets.",
+          "groundingPhrase": "Dense northern deciduous brushwood and secondary forest featuring white birch (Betula pe",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speckled alder with fern understory."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Dense northern deciduous brushwood and secondary forest featuring white birch (Betula pendula), alder, hazel, and willow thickets."
+            }
+          ],
+          "groundingLabel": "Dense northern deciduous brushwood; northern decidu; northern decor"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-1ca8eebb66",
+          "label": "Absence of stone fences or mountainous relief,",
+          "text": "Absence of stone fences or mountainous relief,",
+          "description": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands.",
+          "groundingPhrase": "Absence of stone fences or mountainous relief,",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -328,11 +672,1251 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "lush peatland grasses and ferns."
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-db9054070f",
+          "label": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Cen",
+          "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Cen",
+          "description": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia.",
+          "groundingPhrase": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Cen",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-f6d355e56d",
+          "label": "Characteristic Baltic road drainage ditches excavated along lush green grassy verges",
+          "text": "Characteristic Baltic road drainage ditches excavated along lush green grassy verges",
+          "description": "Characteristic Baltic road drainage ditches excavated along lush green grassy verges.",
+          "groundingPhrase": "Characteristic Baltic road drainage ditches excavated along lush green grassy verges",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Characteristic Baltic road drainage ditches excavated along lush green grassy verges."
             }
           ],
-          "groundingLabel": "lush peatland grasses"
+          "groundingLabel": "Characteristic Baltic road drainage ditches; lush green grassy verges"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-1bca024fed",
+          "label": "Gaujasrēveļi / Ranka",
+          "text": "Gaujasrēveļi / Ranka",
+          "description": "Gaujasrēveļi / Ranka.",
+          "groundingPhrase": "Gaujasrēveļi / Ranka",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Gaujasrēveļi / Ranka"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-bd7cf0b593",
+          "label": "Vidzeme",
+          "text": "Vidzeme",
+          "description": "Vidzeme.",
+          "groundingPhrase": "Vidzeme",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Vidzeme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-1ca8eebb66",
+          "label": "Absence of stone fences or mountainous relief,",
+          "text": "Absence of stone fences or mountainous relief,",
+          "description": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands.",
+          "groundingPhrase": "Absence of stone fences or mountainous relief,",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-b43301c409",
+          "label": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches",
+          "text": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches",
+          "description": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches.",
+          "groundingPhrase": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.3768804433887569,
+            "y": 0.3865843559436874,
+            "w": 0.24069675376088678,
+            "h": 0.6134156440563125
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-850ab027f8",
+          "label": "Pale high-latitude summer sunlight and expansive unbroken canopy",
+          "text": "Pale high-latitude summer sunlight and expansive unbroken canopy",
+          "description": "Pale high-latitude summer sunlight and expansive unbroken canopy.",
+          "groundingPhrase": "Pale high-latitude summer sunlight and expansive unbroken canopy",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.18502256532066508,
+            "y": 0,
+            "w": 0.22194497228820265,
+            "h": 0.3603172852518257
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Pale high-latitude summer sunlight and expansive unbroken canopy."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Pale high-latitude summer sunlight and expansive unbroken canopy."
+            }
+          ],
+          "groundingLabel": "Pale high-latitude summer sunlight"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-db9054070f",
+          "label": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Cen",
+          "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Cen",
+          "description": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia.",
+          "groundingPhrase": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Cen",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-ddf87789d8",
+          "label": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speck",
+          "text": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speck",
+          "description": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speckled alder with fern understory.",
+          "groundingPhrase": "Hemiboreal mixed forest composed of silver birch , Scots pine, and speck",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speckled alder with fern understory."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speckled alder with fern understory."
+            }
+          ],
+          "groundingLabel": "Hemiboreal mixed forest"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-bd7cf0b593",
+          "label": "Vidzeme",
+          "text": "Vidzeme",
+          "description": "Vidzeme.",
+          "groundingPhrase": "Vidzeme",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Vidzeme"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Vidzeme"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-045fef6d86",
+          "label": "Jaunpiebalga / Lācītes",
+          "text": "Jaunpiebalga / Lācītes",
+          "description": "Jaunpiebalga / Lācītes.",
+          "groundingPhrase": "Jaunpiebalga / Lācītes",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Jaunpiebalga / Lācītes"
+            }
+          ],
+          "groundingLabel": "Jaunpiebalga / Lctes"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-1bca024fed",
+          "label": "Gaujasrēveļi / Ranka",
+          "text": "Gaujasrēveļi / Ranka",
+          "description": "Gaujasrēveļi / Ranka.",
+          "groundingPhrase": "Gaujasrēveļi / Ranka",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Gaujasrēveļi / Ranka"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-gpt-5-6-sol-xhigh-717dabbaaf",
+          "label": "weak Central/Eastern-European cues produced a broad Baltic-to-Hungary ambiguity",
+          "text": "weak Central/Eastern-European cues produced a broad Baltic-to-Hungary ambiguity",
+          "description": "Weak Central/Eastern-European cues produced a broad Baltic-to-Hungary ambiguity.",
+          "groundingPhrase": "weak Central/Eastern-European cues produced a broad Baltic-to-Hungary ambiguity",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "weak Central/Eastern-European cues produced a broad Baltic-to-Hungary ambiguity."
+            }
+          ],
+          "groundingLabel": "weak Central/Eastern-European cues"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-5-6-sol-xhigh-ce71521e8d",
+          "label": "Dirt orchard/hedge track",
+          "text": "Dirt orchard/hedge track",
+          "description": "Dirt orchard/hedge track.",
+          "groundingPhrase": "Dirt orchard/hedge track",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3785,
+            "y": 0.4485,
+            "w": 0.208,
+            "h": 0.446
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Dirt orchard/hedge track"
+            }
+          ],
+          "groundingLabel": "Dirt orchard/hedge track"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-5-6-sol-xhigh-912fd2973c",
+          "label": "temperate farmland",
+          "text": "temperate farmland",
+          "description": "Temperate farmland.",
+          "groundingPhrase": "temperate farmland",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "temperate farmland"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-gpt-6-astra-low-2a25a5530f",
+          "label": "narrow gravel two-track",
+          "text": "narrow gravel two-track",
+          "description": "Narrow gravel two-track with grassy center.",
+          "groundingPhrase": "narrow gravel two-track",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3805,
+            "y": 0.4485,
+            "w": 0.206,
+            "h": 0.445
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "narrow gravel two-track with grassy center"
+            }
+          ],
+          "groundingLabel": "narrow gravel two-track; road markings"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-6-astra-low-8999d043a0",
+          "label": "deciduous/birch-like roadside trees",
+          "text": "deciduous/birch-like roadside trees",
+          "description": "Deciduous/birch-like roadside trees.",
+          "groundingPhrase": "deciduous/birch-like roadside trees",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "deciduous/birch-like roadside trees"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-6-astra-low-8b5d2761ce",
+          "label": "low country/locality confidence",
+          "text": "low country/locality confidence",
+          "description": "Low country/locality confidence.",
+          "groundingPhrase": "low country/locality confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low country/locality confidence."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-6-astra-low-0df436624d",
+          "label": "dense green hedges",
+          "text": "dense green hedges",
+          "description": "Dense green hedges.",
+          "groundingPhrase": "dense green hedges",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "dense green hedges"
+            }
+          ],
+          "groundingLabel": "dense green hedges"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-6-astra-low-458896d742",
+          "label": "flat horizon",
+          "text": "flat horizon",
+          "description": "Flat horizon.",
+          "groundingPhrase": "flat horizon",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "flat horizon"
+            }
+          ],
+          "groundingLabel": "flat horizon"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-6-astra-low-1cfb3a9bcf",
+          "label": "road markings or utility poles visible. Initial hypothesis Baltic states or rural Poland",
+          "text": "road markings or utility poles visible. Initial hypothesis Baltic states or rural Poland",
+          "description": "Road markings or utility poles visible. Initial hypothesis Baltic states or rural Poland.",
+          "groundingPhrase": "road markings or utility poles visible. Initial hypothesis Baltic states or rural Poland",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "road markings or utility poles visible. Initial hypothesis Baltic states or rural Poland"
+            }
+          ],
+          "groundingLabel": "Initial hypothesis Baltic states"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-grok-4-6-xhigh-91bca5b90d",
+          "label": "A straight dirt track",
+          "text": "A straight dirt track",
+          "description": "A straight dirt track.",
+          "groundingPhrase": "A straight dirt track",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3785,
+            "y": 0.4485,
+            "w": 0.209,
+            "h": 0.445
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "A straight dirt track"
+            }
+          ],
+          "groundingLabel": "A straight dirt track"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-grok-4-6-xhigh-7e9e59b99d",
+          "label": "Baltic scrub led Grok to Lithuania. The correction resolved near northeast Poland while",
+          "text": "Baltic scrub led Grok to Lithuania. The correction resolved near northeast Poland while",
+          "description": "Baltic scrub led Grok to Lithuania. The correction resolved near northeast Poland while the reveal was Latvia.",
+          "groundingPhrase": "Baltic scrub led Grok to Lithuania. The correction resolved near northeast Poland while",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Baltic scrub led Grok to Lithuania. The correction resolved near northeast Poland while the reveal was Latvia."
+            }
+          ],
+          "groundingLabel": "Baltic scrub; The correction resolved"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-6b597c98b1",
+          "label": "muted northern-European light",
+          "text": "muted northern-European light",
+          "description": "Muted northern-European light.",
+          "groundingPhrase": "muted northern-European light",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "muted northern-European light."
+            }
+          ],
+          "groundingLabel": "European light"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-8155793591",
+          "label": "flat fields/woodland edge",
+          "text": "flat fields/woodland edge",
+          "description": "Flat fields/woodland edge.",
+          "groundingPhrase": "flat fields/woodland edge",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "flat fields/woodland edge"
+            }
+          ],
+          "groundingLabel": "flat fields/woodland edge"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-19a7b341e6",
+          "label": "wet lowland vegetation",
+          "text": "wet lowland vegetation",
+          "description": "Wet lowland vegetation.",
+          "groundingPhrase": "wet lowland vegetation",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "wet lowland vegetation"
+            }
+          ],
+          "groundingLabel": "wet lowland vegetation"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-ddd5d31372",
+          "label": "Overgrown dirt track",
+          "text": "Overgrown dirt track",
+          "description": "Overgrown dirt track.",
+          "groundingPhrase": "Overgrown dirt track",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3805,
+            "y": 0.4485,
+            "w": 0.206,
+            "h": 0.445
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Overgrown dirt track"
+            }
+          ],
+          "groundingLabel": "Overgrown dirt track"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-1c41a198ae",
+          "label": "sparse development",
+          "text": "sparse development",
+          "description": "Sparse development.",
+          "groundingPhrase": "sparse development",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "sparse development"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-12532b1e80",
+          "label": "young hazel/birch scrub both sides,",
+          "text": "young hazel/birch scrub both sides,",
+          "description": "Young hazel/birch scrub both sides,.",
+          "groundingPhrase": "young hazel/birch scrub both sides,",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0035,
+            "y": 0.0075,
+            "w": 0.3872723004694836,
+            "h": 0.599828183125837
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "young hazel/birch scrub both sides,"
+            }
+          ],
+          "groundingLabel": "young hazel/birch scrub"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-7173623edd",
+          "label": "tall poplars left, flat land,",
+          "text": "tall poplars left, flat land,",
+          "description": "Tall poplars left, flat land,.",
+          "groundingPhrase": "tall poplars left, flat land,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0035,
+            "y": 0.0075,
+            "w": 0.3792300469483568,
+            "h": 0.9712383314319726
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "tall poplars left, flat land,"
+            }
+          ],
+          "groundingLabel": "tall poplars"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-a7eef2adf5",
+          "label": "cool temperate sky. Belief",
+          "text": "cool temperate sky. Belief",
+          "description": "NE Germany / western Poland borderlands. Placing pin at 52.40, 14.60.",
+          "groundingPhrase": "cool temperate sky. Belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "cool temperate sky. Belief: NE Germany / western Poland borderlands. Placing pin at 52.40, 14.60."
+            }
+          ],
+          "groundingLabel": "cool temperate sky"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-d0878fcc9c",
+          "label": "grassy-centered gravel track,",
+          "text": "grassy-centered gravel track,",
+          "description": "Grassy-centered gravel track,.",
+          "groundingPhrase": "grassy-centered gravel track,",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3785,
+            "y": 0.4485,
+            "w": 0.208,
+            "h": 0.446
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "grassy-centered gravel track,"
+            }
+          ],
+          "groundingLabel": "grassy-centered gravel track"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-a05bc2e9fe",
+          "label": "zero infrastructure,",
+          "text": "zero infrastructure,",
+          "description": "Zero infrastructure,.",
+          "groundingPhrase": "zero infrastructure,",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "zero infrastructure,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-unaided-046f01924d",
+          "label": "Latvian birch forest gravel road",
+          "text": "Latvian birch forest gravel road",
+          "description": "Latvian birch forest gravel road.",
+          "groundingPhrase": "Latvian birch forest gravel road",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.3785,
+            "y": 0.4495,
+            "w": 0.208,
+            "h": 0.445
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Latvian birch forest gravel road"
+            }
+          ],
+          "groundingLabel": "Latvian birch; forest gravel road"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-unaided-f10c205dd0",
+          "label": "Baltic rural farmsteads",
+          "text": "Baltic rural farmsteads",
+          "description": "Baltic rural farmsteads.",
+          "groundingPhrase": "Baltic rural farmsteads",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Baltic rural farmsteads"
+            }
+          ],
+          "groundingLabel": "Baltic rural farmsteads"
         }
       ]
     }

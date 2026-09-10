@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,61 +24,16 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-2eae3a0e9e",
-          "label": "Road Number on Asphalt",
-          "text": "Road Number on Asphalt",
-          "description": "Bold marking \"N444\" painted on the lane center.",
-          "groundingPhrase": "Road Number on Asphalt",
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-03118a399b",
+          "label": "Belgian Lintbebouwing",
+          "text": "Belgian Lintbebouwing",
+          "description": "Distinctive Belgian roadside ribbon architecture with mixed brick and whitewashed gables.",
+          "groundingPhrase": "Belgian Lintbebouwing",
           "source": "panorama",
-          "category": "infrastructure",
-          "region": {
-            "x": 0.0035,
-            "y": 0.9225,
-            "w": 0.074,
-            "h": 0.069
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Road Number on Asphalt: \"N444\" painted on the road lane."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Highway Number on Asphalt: Bold marking \"N444\" painted on the lane center."
-            }
-          ],
-          "groundingLabel": "Road Number"
-        },
-        {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-764adaac26",
-          "label": "Commercial Storefront",
-          "text": "Commercial Storefront",
-          "description": "Dutch-language business \"FOTO AKTIEF - Portret • Reportage • Studio\".",
-          "groundingPhrase": "Commercial Storefront",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.5875,
-            "y": 0.2525,
-            "w": 0.177,
-            "h": 0.278
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -86,19 +42,52 @@
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Belgian Lintbebouwing: Distinctive Belgian roadside ribbon architecture with mixed brick and whitewashed gables."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Belgian license plates"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-c3230515c0",
+          "label": "Commercial Storefront",
+          "text": "Commercial Storefront",
+          "description": "\"FOTO AKTIEF - PORTRET REPORTAGE STUDIO\" in Flemish Dutch.",
+          "groundingPhrase": "Commercial Storefront",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5976721439749609,
+            "y": 0.42292006844898566,
+            "w": 0.1660453834115806,
+            "h": 0.12503938296711475
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Commercial Storefront: \"FOTO AKTIEF - PORTRET REPORTAGE STUDIO\" in Flemish Dutch."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Commercial Storefront: Dutch-language business \"FOTO AKTIEF - Portret • Reportage • Studio\"."
             },
             {
               "runId": "r1",
@@ -109,62 +98,50 @@
           "groundingLabel": "Commercial Storefront"
         },
         {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-73a3a3e860",
-          "label": "Belgian Lintbebouwing",
-          "text": "Belgian Lintbebouwing",
-          "description": "Red/brown brick masonry houses, whitewashed facades, slate roofs, and typical Belgian roadside residential typology.",
-          "groundingPhrase": "Belgian Lintbebouwing",
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-fbc05810ec",
+          "label": "Flemish pitched-roof brick houses",
+          "text": "Flemish pitched-roof brick houses",
+          "description": "Flemish pitched-roof brick houses.",
+          "groundingPhrase": "Flemish pitched-roof brick houses",
           "source": "panorama",
           "category": "architecture",
           "region": {
-            "x": 0.7595,
-            "y": 0.6705,
-            "w": 0.207,
-            "h": 0.197
+            "x": 0.0025,
+            "y": 0.0155,
+            "w": 0.1699076682316119,
+            "h": 0.24024096026982789
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
-            "r1",
-            "r2",
-            "r3"
+            "r1"
           ],
           "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Belgian Lintbebouwing: Distinctive Belgian roadside ribbon architecture with mixed brick and whitewashed gables."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Belgian Flemish Architecture: Red/brown brick masonry houses, whitewashed facades, slate roofs, and typical Belgian roadside residential typology."
-            },
             {
               "runId": "r1",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
               "text": "Flemish pitched-roof brick houses"
             }
           ],
-          "groundingLabel": "Belgian Lintbebouwing"
+          "groundingLabel": "Flemish pitched-roof brick houses"
         },
         {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-82e9ee0da7",
-          "label": "Belgian Utility Poles",
-          "text": "Belgian Utility Poles",
-          "description": "Tall concrete overhead electricity poles and reddish-brick sidewalk/cycleway.",
-          "groundingPhrase": "Belgian Utility Poles",
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-c8bc5dee21",
+          "label": "Road Number on Asphalt",
+          "text": "Road Number on Asphalt",
+          "description": "\"N444\" painted on the road lane.",
+          "groundingPhrase": "Road Number on Asphalt",
           "source": "panorama",
-          "category": "architecture",
+          "category": "infrastructure",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -178,12 +155,81 @@
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Belgian Utility Poles: Tall concrete overhead electricity poles and reddish-brick sidewalk/cycleway."
+              "text": "Road Number on Asphalt: \"N444\" painted on the road lane."
             }
-          ]
+          ],
+          "groundingLabel": "road number"
         },
         {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-7be42d5055",
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-3174790bd6",
+          "label": "Belgian Utility Poles",
+          "text": "Belgian Utility Poles",
+          "description": "Tall concrete overhead electricity poles and reddish-brick sidewalk/cycleway.",
+          "groundingPhrase": "Belgian Utility Poles",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.4094733959311424,
+            "y": 0.35610180546599873,
+            "w": 0.019945226917057912,
+            "h": 0.1654448688061108
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Belgian Utility Poles: Tall concrete overhead electricity poles and reddish-brick sidewalk/cycleway."
+            }
+          ],
+          "groundingLabel": "Belgian Utility Poles"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-fb43ee92da",
+          "label": "Road stencil \"N444\"",
+          "text": "Road stencil \"N444\"",
+          "description": "Road stencil \"N444\".",
+          "groundingPhrase": "Road stencil \"N444\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4605,
+            "y": 0.6265,
+            "w": 0.068,
+            "h": 0.191
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"N444\""
+            }
+          ],
+          "groundingLabel": "Road stencil; N444"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-63539a9f48",
           "label": "Regional Route",
           "text": "Regional Route",
           "description": "Belgian Gewestweg N444 corridor in East Flanders (Oost-Vlaanderen).",
@@ -211,115 +257,7 @@
           ]
         },
         {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-103b57f5d7",
-          "label": "Belgian License Plates",
-          "text": "Belgian License Plates",
-          "description": "Vehicles with characteristic Belgian red-on-white license plates.",
-          "groundingPhrase": "Belgian License Plates",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.7595,
-            "y": 0.6695,
-            "w": 0.208,
-            "h": 0.253
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Belgian License Plates: Vehicles with characteristic Belgian red-on-white license plates."
-            },
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Belgian license plates"
-            }
-          ],
-          "groundingLabel": "Belgian License Plates"
-        },
-        {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-38c599af7e",
-          "label": "Regional Road Geography",
-          "text": "Regional Road Geography",
-          "description": "Flemish regional route N444 running through East Flanders near Gent.",
-          "groundingPhrase": "Regional Road Geography",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.0065,
-            "y": 0.4675,
-            "w": 0.986,
-            "h": 0.523
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Regional Road Geography: Flemish regional route N444 running through East Flanders near Gent."
-            }
-          ],
-          "groundingLabel": "Regional Road Geography"
-        },
-        {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-8ad7b89509",
-          "label": "Road stencil \"N444\"",
-          "text": "Road stencil \"N444\"",
-          "description": "Road stencil \"N444\".",
-          "groundingPhrase": "Road stencil \"N444\"",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.4625,
-            "y": 0.6295,
-            "w": 0.064,
-            "h": 0.185
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1"
-          ],
-          "provenance": [
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Road stencil \"N444\""
-            }
-          ],
-          "groundingLabel": "Road stencil \"N444"
-        },
-        {
-          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-469aa6e70c",
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-aided-1e8ee3de41",
           "label": "roadside bollards",
           "text": "roadside bollards",
           "description": "Roadside bollards.",
@@ -327,15 +265,15 @@
           "source": "panorama",
           "category": "geography",
           "region": {
-            "x": 0.0055,
-            "y": 0.5195,
-            "w": 0.29,
-            "h": 0.161
+            "x": 0.0045,
+            "y": 0.5205,
+            "w": 0.291,
+            "h": 0.16
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -351,6 +289,1826 @@
             }
           ],
           "groundingLabel": "roadside bollards"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-medium-aided-1f2f8c262a",
+          "label": "Road Number Markings on Asphalt",
+          "text": "Road Number Markings on Asphalt",
+          "description": "Road surface text \"N444\".",
+          "groundingPhrase": "Road Number Markings on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4605,
+            "y": 0.6265,
+            "w": 0.068,
+            "h": 0.191
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Belgian regional route marking stenciled on road surface: \"N444\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Road Number Markings on Asphalt: Road surface text \"N444\"."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Belgian regional route marking stenciled on road surface: \"N444\"."
+            }
+          ],
+          "groundingLabel": "Road Number Markings"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-medium-aided-24ef465302",
+          "label": "Commercial Signage",
+          "text": "Commercial Signage",
+          "description": "\"FOTO AKTIEF\" / \"PORTRET-REPORTAGE-STUDIO\".",
+          "groundingPhrase": "Commercial Signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6494522691705791,
+            "y": 0.4201428500570408,
+            "w": 0.11893583724569634,
+            "h": 0.14443727989683053
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Flemish commercial signage: \"FOTO AKTIEF - PORTRET REPORTAGE STUDIO\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Commercial Signage: \"FOTO AKTIEF\" / \"PORTRET-REPORTAGE-STUDIO\"."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Flemish commercial signage: \"FOTO AKTIEF - PORTRET REPORTAGE STUDIO\"."
+            }
+          ],
+          "groundingLabel": "Commercial Signage"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-medium-aided-89fbab3d5e",
+          "label": "Characteristic Belgian ribbon development (lintbebouwing)",
+          "text": "Characteristic Belgian ribbon development (lintbebouwing)",
+          "description": "Characteristic Belgian ribbon development (lintbebouwing) with dark brick facades, gabled roofs, and red cobblestone pavement.",
+          "groundingPhrase": "Characteristic Belgian ribbon development",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Characteristic Belgian ribbon development (lintbebouwing) with dark brick facades, gabled roofs, and red cobblestone pavement."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Characteristic Belgian ribbon development (lintbebouwing) with dark brick facades, gabled roofs, and red cobblestone pavement."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-medium-aided-ff13bca4bd",
+          "label": "Belgian utility infrastructure",
+          "text": "Belgian utility infrastructure",
+          "description": "Wooden poles, low-hanging aerial telecom cables, and standard Flemish sidewalk curbs.",
+          "groundingPhrase": "Belgian utility infrastructure",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Belgian utility infrastructure: wooden poles, low-hanging aerial telecom cables, and standard Flemish sidewalk curbs."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Belgian utility infrastructure: wooden poles, low-hanging aerial telecom cables, and standard Flemish sidewalk curbs."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-medium-aided-eaca04dc38",
+          "label": "Belgian registered vehicles",
+          "text": "Belgian registered vehicles",
+          "description": "Belgian registered vehicles with red-on-white license plates.",
+          "groundingPhrase": "Belgian registered vehicles",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Belgian registered vehicles with red-on-white license plates."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Belgian registered vehicles with red-on-white license plates."
+            }
+          ],
+          "groundingLabel": "Belgian registered vehicles; vehicles"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-medium-aided-011c45fc11",
+          "label": "Flemish Architecture & Roadway",
+          "text": "Flemish Architecture & Roadway",
+          "description": "Red brick houses, red tiled sidewalk/cycle path, Belgian vehicle plates.",
+          "groundingPhrase": "Flemish Architecture & Roadway",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Flemish Architecture & Roadway: Red brick houses, red tiled sidewalk/cycle path, Belgian vehicle plates."
+            }
+          ],
+          "groundingLabel": "Flemish Architecture"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-high-aided-ae7b390cef",
+          "label": "Road surface stencil clearly displaying 'N444'",
+          "text": "Road surface stencil clearly displaying 'N444'",
+          "description": "Road surface stencil clearly displaying 'N444'.",
+          "groundingPhrase": "Road surface stencil clearly displaying 'N444'",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4633796516231195,
+            "y": 0.6271363020402018,
+            "w": 0.059148060174188444,
+            "h": 0.14539378654420437
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Road surface asphalt stencil reading \"N444\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Road surface stencil clearly displaying 'N444'."
+            }
+          ],
+          "groundingLabel": "Road surface stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-high-aided-45712cfb05",
+          "label": "Red brick single-family gabled houses",
+          "text": "Red brick single-family gabled houses",
+          "description": "Red brick single-family gabled houses with ceramic tile roofs and brick-paved driveways.",
+          "groundingPhrase": "Red brick single-family gabled houses",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0025,
+            "y": 0.0145,
+            "w": 0.15797149643705463,
+            "h": 0.5587877989410023
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Belgian brick detached and semi-detached village houses with pitched slate roofs."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Red brick single-family gabled houses with ceramic tile roofs and brick-paved driveways."
+            }
+          ],
+          "groundingLabel": "Red brick single-family gabled houses"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-high-aided-49b1a91625",
+          "label": "Commercial shopfront 'FOTO AKTIEF'",
+          "text": "Commercial shopfront 'FOTO AKTIEF'",
+          "description": "Commercial shopfront 'FOTO AKTIEF' with portrait and reportage photography studio.",
+          "groundingPhrase": "Commercial shopfront 'FOTO AKTIEF'",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6571753760886778,
+            "y": 0.41310628873999344,
+            "w": 0.10674109263657956,
+            "h": 0.11739371126000656
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "\"Foto Aktief\" photography shop with Dutch terminology."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Commercial shopfront 'FOTO AKTIEF' with portrait and reportage photography studio."
+            }
+          ],
+          "groundingLabel": "Commercial shopfront; FOTO AKTIEF"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-high-aided-f95e07d53d",
+          "label": "Solid yellow European front and rear vehicle registration plates on multiple parked cars",
+          "text": "Solid yellow European front and rear vehicle registration plates on multiple parked cars",
+          "description": "Solid yellow European front and rear vehicle registration plates on multiple parked cars (Mercedes, VW).",
+          "groundingPhrase": "Solid yellow European front and rear vehicle registration plates on multiple parked cars",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Belgian vehicle registrations (red text on white plates)."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Solid yellow European front and rear vehicle registration plates on multiple parked cars (Mercedes, VW)."
+            }
+          ],
+          "groundingLabel": "Solid yellow European front"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-high-aided-0c71d2e0c1",
+          "label": "Flemish rural/suburban highway ribbon development",
+          "text": "Flemish rural/suburban highway ribbon development",
+          "description": "Flemish rural/suburban highway ribbon development.",
+          "groundingPhrase": "Flemish rural/suburban highway ribbon development",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Flemish rural/suburban highway ribbon development."
+            }
+          ],
+          "groundingLabel": "Flemish rural/suburban highway ribbon development"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-high-aided-8c51e7c184",
+          "label": "N444 corridor",
+          "text": "N444 corridor",
+          "description": "N444 corridor.",
+          "groundingPhrase": "N444 corridor",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "N444 corridor"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-high-aided-640967a419",
+          "label": "Flat Low Countries agricultural landscape and canal drainage ditches bordering the town",
+          "text": "Flat Low Countries agricultural landscape and canal drainage ditches bordering the town",
+          "description": "Flat Low Countries agricultural landscape and canal drainage ditches bordering the town perimeter.",
+          "groundingPhrase": "Flat Low Countries agricultural landscape and canal drainage ditches bordering the town",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Flat Low Countries agricultural landscape and canal drainage ditches bordering the town perimeter."
+            }
+          ],
+          "groundingLabel": "Flat Low Countries; agricultural landscape; canal drainage ditches"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-high-aided-a68acc2b7c",
+          "label": "Sint-Lievens-Houtem",
+          "text": "Sint-Lievens-Houtem",
+          "description": "Sint-Lievens-Houtem.",
+          "groundingPhrase": "Sint-Lievens-Houtem",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Sint-Lievens-Houtem"
+            }
+          ],
+          "groundingLabel": "Flat Low Countries"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-medium-aided-010c639690",
+          "label": "Belgian license plates featuring red characters on white plates",
+          "text": "Belgian license plates featuring red characters on white plates",
+          "description": "Belgian license plates featuring red characters on white plates.",
+          "groundingPhrase": "Belgian license plates featuring red characters on white plates",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Belgian vehicle registrations (red text on white plates)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Belgian license plates featuring red characters on white plates."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-medium-aided-fe1767e92f",
+          "label": "Asphalt road stencil reading \"N444\"",
+          "text": "Asphalt road stencil reading \"N444\"",
+          "description": "Road surface asphalt stencil reading \"N444\".",
+          "groundingPhrase": "Asphalt road stencil reading \"N444\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4623487727632621,
+            "y": 0.6230759743029938,
+            "w": 0.06259184481393515,
+            "h": 0.13440852969961609
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Road surface asphalt stencil reading \"N444\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Asphalt road stencil reading \"N444\"."
+            }
+          ],
+          "groundingLabel": "Asphalt road stencil reading"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-medium-aided-3972aa6f8f",
+          "label": "Flemish Belgian architecture",
+          "text": "Flemish Belgian architecture",
+          "description": "Belgian brick detached and semi-detached village houses with pitched slate roofs.",
+          "groundingPhrase": "Flemish Belgian architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Belgian brick detached and semi-detached village houses with pitched slate roofs."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Flemish Belgian architecture: dark red-brick houses with stepped/pitched gables and red clinker paving."
+            }
+          ],
+          "groundingLabel": "Flemish Belgian architecture; Flemis"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-medium-aided-8c51e7c184",
+          "label": "N444 corridor",
+          "text": "N444 corridor",
+          "description": "N444 corridor.",
+          "groundingPhrase": "N444 corridor",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "N444 corridor"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "N444 corridor"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-medium-aided-a68acc2b7c",
+          "label": "Sint-Lievens-Houtem",
+          "text": "Sint-Lievens-Houtem",
+          "description": "Sint-Lievens-Houtem.",
+          "groundingPhrase": "Sint-Lievens-Houtem",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Sint-Lievens-Houtem"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Sint-Lievens-Houtem"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-medium-aided-e34506ff9a",
+          "label": "Commercial storefront sign on brick facade reading \"FOTO AKTIEF - PORTRET • REPORTAGE •",
+          "text": "Commercial storefront sign on brick facade reading \"FOTO AKTIEF - PORTRET • REPORTAGE •",
+          "description": "Commercial storefront sign on brick facade reading \"FOTO AKTIEF - PORTRET • REPORTAGE • STUDIO\".",
+          "groundingPhrase": "Commercial storefront sign on brick facade reading \"FOTO AKTIEF - PORTRET • REPORTAGE •",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6138808392715756,
+            "y": 0.42447028783658314,
+            "w": 0.14746476642913697,
+            "h": 0.10936369795979825
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "\"Foto Aktief\" photography shop with Dutch terminology."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Commercial storefront sign on brick facade reading \"FOTO AKTIEF - PORTRET • REPORTAGE • STUDIO\"."
+            }
+          ],
+          "groundingLabel": "Commercial storefront sign"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-medium-aided-feb649e145",
+          "label": "Flat Flemish agricultural landscape crisscrossed by hedgerows and canal ditches",
+          "text": "Flat Flemish agricultural landscape crisscrossed by hedgerows and canal ditches",
+          "description": "Flat Flemish agricultural landscape crisscrossed by hedgerows and canal ditches.",
+          "groundingPhrase": "Flat Flemish agricultural landscape crisscrossed by hedgerows and canal ditches",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Flat Flemish agricultural landscape crisscrossed by hedgerows and canal ditches."
+            }
+          ],
+          "groundingLabel": "Flat Flemish agricultural landscape; hedgerows; canal ditches"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-8-flash-medium-aided-0c71d2e0c1",
+          "label": "Flemish rural/suburban highway ribbon development",
+          "text": "Flemish rural/suburban highway ribbon development",
+          "description": "Flemish rural/suburban highway ribbon development.",
+          "groundingPhrase": "Flemish rural/suburban highway ribbon development",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Flemish rural/suburban highway ribbon development."
+            }
+          ],
+          "groundingLabel": "flemish rural/suburban highway ribbon development"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-gpt-5-6-sol-xhigh-a17c8e75a7",
+          "label": "Dutch-language Belgian road context and route-number signage suggested Flanders",
+          "text": "Dutch-language Belgian road context and route-number signage suggested Flanders",
+          "description": "Dutch-language Belgian road context and route-number signage suggested Flanders.",
+          "groundingPhrase": "Dutch-language Belgian road context and route-number signage suggested Flanders",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Dutch-language Belgian road context and route-number signage suggested Flanders"
+            }
+          ],
+          "groundingLabel": "Dutch-language Belgian road context"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-5-6-sol-xhigh-86381536fc",
+          "label": "the decisive route reading remained ambiguous between N444",
+          "text": "the decisive route reading remained ambiguous between N444",
+          "description": "The decisive route reading remained ambiguous between N444.",
+          "groundingPhrase": "the decisive route reading remained ambiguous between N444",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.458528951486698,
+            "y": 0.6074351470661178,
+            "w": 0.06885758998435049,
+            "h": 0.16824562273696742
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "the decisive route reading remained ambiguous between N444"
+            }
+          ],
+          "groundingLabel": "the decisive route reading"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-ae359690a3",
+          "label": "narrow red cycle lanes and overhead cables. Initial belief",
+          "text": "narrow red cycle lanes and overhead cables. Initial belief",
+          "description": "Red paved cycle lanes.",
+          "groundingPhrase": "narrow red cycle lanes and overhead cables. Initial belief",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "narrow red cycle lanes and overhead cables. Initial belief: Belgian Flanders"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "red paved cycle lanes"
+            }
+          ],
+          "groundingLabel": "narrow red cycle lanes"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-99475279a8",
+          "label": "FOTO AKTIEF Dutch shop sign",
+          "text": "FOTO AKTIEF Dutch shop sign",
+          "description": "FOTO AKTIEF Dutch shop sign.",
+          "groundingPhrase": "FOTO AKTIEF Dutch shop sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6065467141726049,
+            "y": 0.4282884764987829,
+            "w": 0.15400712589073634,
+            "h": 0.08827275464879922
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "FOTO AKTIEF Dutch shop sign"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Foto Aktief Dutch sign"
+            }
+          ],
+          "groundingLabel": "FOTO AKTIEF Dutch shop sign"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-3f2daa35a5",
+          "label": "red-brick ribbon houses",
+          "text": "red-brick ribbon houses",
+          "description": "Red-brick ribbon houses with dark tiles.",
+          "groundingPhrase": "red-brick ribbon houses",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "red-brick ribbon houses with dark tiles"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "brick detached houses"
+            }
+          ],
+          "groundingLabel": "red cycle lanes; red-brick ribbon houses"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-b43d1fdfa7",
+          "label": "N44 road overlay",
+          "text": "N44 road overlay",
+          "description": "N44 road overlay.",
+          "groundingPhrase": "N44 road overlay",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.46318289786223277,
+            "y": 0.6146452859544782,
+            "w": 0.06334125098970703,
+            "h": 0.13812140831639438
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "N44 road overlay"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "N44 road overlay"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-5feed19c43",
+          "label": "overhead utility wires. Initial belief Flanders Belgium along N44",
+          "text": "overhead utility wires. Initial belief Flanders Belgium along N44",
+          "description": "Overhead utility wires. Initial belief Flanders Belgium along N44.",
+          "groundingPhrase": "overhead utility wires. Initial belief Flanders Belgium along N44",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "overhead utility wires. Initial belief Flanders Belgium along N44"
+            }
+          ],
+          "groundingLabel": "overhead utility wires"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-8f1b76da94",
+          "label": "N44 near Aalter/Knesselare",
+          "text": "N44 near Aalter/Knesselare",
+          "description": "N44 near Aalter/Knesselare.",
+          "groundingPhrase": "N44 near Aalter/Knesselare",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "N44 near Aalter/Knesselare"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-0f9c3f4117",
+          "label": "high country confidence",
+          "text": "high country confidence",
+          "description": "High country confidence.",
+          "groundingPhrase": "high country confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "high country confidence"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-96f5c2f793",
+          "label": "medium route confidence",
+          "text": "medium route confidence",
+          "description": "Medium route confidence.",
+          "groundingPhrase": "medium route confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "medium route confidence."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-f6cc425905",
+          "label": "Belgian white plates",
+          "text": "Belgian white plates",
+          "description": "Belgian white plates.",
+          "groundingPhrase": "Belgian white plates",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4093428345209818,
+            "y": 0.5552209591206806,
+            "w": 0.02692003167062551,
+            "h": 0.025697006198398986
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Belgian white plates"
+            }
+          ],
+          "groundingLabel": "Belgian white plates"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-6-astra-low-41ad5e3d95",
+          "label": "likely Aalter–Maldegem",
+          "text": "likely Aalter–Maldegem",
+          "description": "Likely Aalter–Maldegem.",
+          "groundingPhrase": "likely Aalter–Maldegem",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "likely Aalter–Maldegem"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-grok-4-6-xhigh-2bbc62fef5",
+          "label": "Grok put a marker on Belgium",
+          "text": "Grok put a marker on Belgium",
+          "description": "Grok put a marker on Belgium.",
+          "groundingPhrase": "Grok put a marker on Belgium",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Grok put a marker on Belgium."
+            }
+          ],
+          "groundingLabel": "N444"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-grok-4-6-xhigh-7c593fdc99",
+          "label": "N444 and Flemish shop/plant text gave the correct country and Ghent-region belief. After",
+          "text": "N444 and Flemish shop/plant text gave the correct country and Ghent-region belief. After",
+          "description": "N444 and Flemish shop/plant text gave the correct country and Ghent-region belief. After recovering from an initial Gulf-of-Guinea map view.",
+          "groundingPhrase": "N444 and Flemish shop/plant text gave the correct country and Ghent-region belief. After",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4593114241001565,
+            "y": 0.6280690441942364,
+            "w": 0.061815336463223736,
+            "h": 0.13173949704875754
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "N444 and Flemish shop/plant text gave the correct country and Ghent-region belief. After recovering from an initial Gulf-of-Guinea map view"
+            }
+          ],
+          "groundingLabel": "Flemish shop/plant text"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-gpt-5-6-sol-max-12a24c30b8",
+          "label": "dense Ghent-fringe road geometry",
+          "text": "dense Ghent-fringe road geometry",
+          "description": "Dense Ghent-fringe road geometry.",
+          "groundingPhrase": "dense Ghent-fringe road geometry",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "dense Ghent-fringe road geometry."
+            }
+          ],
+          "groundingLabel": "dense Ghent-fringe road geometry"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-5-6-sol-max-ac996b45da",
+          "label": "Flemish built environment",
+          "text": "Flemish built environment",
+          "description": "Flemish built environment.",
+          "groundingPhrase": "Flemish built environment",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Flemish built environment"
+            }
+          ],
+          "groundingLabel": "Flemish built environment"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-5-6-sol-max-2ecb5bf212",
+          "label": "Belgian road furniture",
+          "text": "Belgian road furniture",
+          "description": "Belgian road furniture.",
+          "groundingPhrase": "Belgian road furniture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Belgian road furniture"
+            }
+          ],
+          "groundingLabel": "Belgian road furniture"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-5-6-sol-max-2bd8cd9ea3",
+          "label": "flat green verge",
+          "text": "flat green verge",
+          "description": "Flat green verge.",
+          "groundingPhrase": "flat green verge",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "flat green verge"
+            }
+          ],
+          "groundingLabel": "flat green verge"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gpt-5-6-sol-max-0e3ca50013",
+          "label": "route/locality context",
+          "text": "route/locality context",
+          "description": "Route/locality context.",
+          "groundingPhrase": "route/locality context",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "route/locality context"
+            }
+          ],
+          "groundingLabel": "route/locality context"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-glm-5-3-flash-max-d7b965878f",
+          "label": "\"N444\" road paint (Dutch provincial),",
+          "text": "\"N444\" road paint (Dutch provincial),",
+          "description": "\"N444\" road paint (Dutch provincial),.",
+          "groundingPhrase": "\"N444\" road paint ,",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4605,
+            "y": 0.6255,
+            "w": 0.068,
+            "h": 0.192
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "\"N444\" road paint (Dutch provincial),"
+            }
+          ],
+          "groundingLabel": "\" N444\" road paint"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-glm-5-3-flash-max-4bf7bf335a",
+          "label": "church spire down the road. Belief",
+          "text": "church spire down the road. Belief",
+          "description": "Netherlands — likely Oegstgeest Rijnsburgerweg area. Placing pin at 52.1805, 4.4745.",
+          "groundingPhrase": "church spire down the road. Belief",
+          "source": "panorama",
+          "category": "landmark",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "church spire down the road. Belief: Netherlands — likely Oegstgeest Rijnsburgerweg area. Placing pin at 52.1805, 4.4745."
+            }
+          ],
+          "groundingLabel": "church spire"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-glm-5-3-flash-max-889cc8d073",
+          "label": "red parallel cycle/foot paths,",
+          "text": "red parallel cycle/foot paths,",
+          "description": "Red parallel cycle/foot paths,.",
+          "groundingPhrase": "red parallel cycle/foot paths,",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "red parallel cycle/foot paths,"
+            }
+          ],
+          "groundingLabel": "red parallel cycle/foot paths"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-glm-5-3-flash-max-1d810705b4",
+          "label": "\"FOTO AKTIEF\" shop,",
+          "text": "\"FOTO AKTIEF\" shop,",
+          "description": "\"FOTO AKTIEF\" shop,.",
+          "groundingPhrase": "\"FOTO AKTIEF\" shop,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.6133215962441315,
+            "y": 0.42133284559297657,
+            "w": 0.1527433489827856,
+            "h": 0.12069049154307826
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "\"FOTO AKTIEF\" shop,"
+            }
+          ],
+          "groundingLabel": "FOTO AKTIEF; shop"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-glm-5-3-flash-max-2ff7f4c60f",
+          "label": "red-brick houses",
+          "text": "red-brick houses",
+          "description": "Red-brick houses with tarred uppers,.",
+          "groundingPhrase": "red-brick houses",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0025,
+            "y": 0.0145,
+            "w": 0.389,
+            "h": 0.62
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "red-brick houses with tarred uppers,"
+            }
+          ],
+          "groundingLabel": "red-brick houses"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-unaided-ef7d190114",
+          "label": "Flemish gabled brick architecture",
+          "text": "Flemish gabled brick architecture",
+          "description": "Flemish gabled brick architecture.",
+          "groundingPhrase": "Flemish gabled brick architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0025,
+            "y": 0.0145,
+            "w": 0.386,
+            "h": 0.624
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Flemish gabled brick architecture"
+            }
+          ],
+          "groundingLabel": "brick architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-unaided-293925e913",
+          "label": "Belgian roadside layout",
+          "text": "Belgian roadside layout",
+          "description": "Belgian roadside layout.",
+          "groundingPhrase": "Belgian roadside layout",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Belgian roadside layout"
+            }
+          ],
+          "groundingLabel": "Belgian roadside layout"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-gemini-3-7-flash-high-unaided-0fcd749d93",
+          "label": "\"N444\" stencil",
+          "text": "\"N444\" stencil",
+          "description": "\"N444\" stencil.",
+          "groundingPhrase": "\"N444\" stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.46478873239436624,
+            "y": 0.6185457070581817,
+            "w": 0.0641627543035993,
+            "h": 0.13650116561678483
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"N444\" stencil"
+            }
+          ],
+          "groundingLabel": "N444; stencil"
         }
       ]
     }

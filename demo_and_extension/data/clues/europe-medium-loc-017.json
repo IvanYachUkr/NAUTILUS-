@@ -36,10 +36,10 @@
             "w": 0.101,
             "h": 0.17
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -77,8 +77,8 @@
           "source": "panorama",
           "category": "infrastructure",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -111,15 +111,15 @@
           "source": "panorama",
           "category": "architecture",
           "region": {
-            "x": 0.0015,
-            "y": 0.4215,
-            "w": 0.996,
-            "h": 0.359
+            "x": 0.584251968503937,
+            "y": 0.4254746598893706,
+            "w": 0.415748031496063,
+            "h": 0.3699606318831913
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -157,8 +157,8 @@
           "source": "panorama",
           "category": "signage",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -186,9 +186,9 @@
           "category": "geography",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -213,15 +213,15 @@
           "source": "panorama",
           "category": "architecture",
           "region": {
-            "x": 0.3535,
-            "y": 0.2995,
-            "w": 0.644,
+            "x": 0.7566496062992125,
+            "y": 0.2867427368316141,
+            "w": 0.24335039370078748,
             "h": 0.256
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -247,15 +247,15 @@
           "source": "panorama",
           "category": "architecture",
           "region": {
-            "x": 0.7575,
-            "y": 0.2995,
-            "w": 0.239,
-            "h": 0.256
+            "x": 0.7606496062992125,
+            "y": 0.4206940000996661,
+            "w": 0.23935039370078748,
+            "h": 0.12842736831614093
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -281,8 +281,8 @@
           "source": "panorama",
           "category": "geography",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -308,14 +308,9 @@
           "groundingPhrase": "white rendered houses",
           "source": "panorama",
           "category": "geography",
-          "region": {
-            "x": 0.3535,
-            "y": 0.2995,
-            "w": 0.645,
-            "h": 0.256
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -345,13 +340,13 @@
           "region": {
             "x": 0.0025,
             "y": 0.2695,
-            "w": 0.82,
-            "h": 0.263
+            "w": 0.39322834645669286,
+            "h": 0.21834957891064932
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null

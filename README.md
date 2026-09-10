@@ -343,9 +343,15 @@ npm run verify
 npm run build:site
 ```
 
-The build writes the GPT Sites deployment output to `demo_and_extension/dist/`. It does not publish anything. The source matches the published site's globe, model selector, and project story; local development uses the repository's original PNG images, while the current hosted version uses compressed WebP copies.
+The build writes the GPT Sites deployment output to `demo_and_extension/dist/`. It does not publish anything. The source matches the published site's globe, model selector, and project story, and both local and hosted builds use the canonical PNG starting images from the repository.
 
-The website presents the original interactive prediction runs under the **MLLM agents** selector group and the four static computer-vision baselines under **Static baselines**. Later interactive reruns and other controller conditions remain in the repository and the leaderboard above; they are not combined into the website's original-run scores or prediction pins.
+The website leaderboard presents every published model condition. The globe
+shows one coherent 25-location pin set for each condition whose exact
+coordinates are available: always that condition's best overall run, never a
+per-location mixture. Astra remains leaderboard-only until its submitted
+coordinates are validated; the Grok MCP composite remains leaderboard-only
+because it combines separate per-difficulty protocols rather than one overall
+25-location run.
 
 Create a branch for your changes and open a pull request against `main`. Friends without repository write access can fork it and submit a pull request from their fork. Keep real predictions, ground truth, and benchmark provenance intact, and regenerate `data/generated/` with the build commands instead of editing it manually.
 

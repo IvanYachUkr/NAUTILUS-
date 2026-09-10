@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,133 +24,7 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-6790c54d02",
-          "label": "Street Name on Asphalt",
-          "text": "Street Name on Asphalt",
-          "description": "Exact arterial name \"Amsterdamsestraatweg\" marked on the tarmac.",
-          "groundingPhrase": "Street Name on Asphalt",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.4385,
-            "y": 0.5405,
-            "w": 0.089,
-            "h": 0.275
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Street Name on Asphalt: \"Amsterdamsestraatweg\" painted in clear white lettering."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Avenue Name on Asphalt: Exact arterial name \"Amsterdamsestraatweg\" marked on the tarmac."
-            }
-          ],
-          "groundingLabel": "Street Name"
-        },
-        {
-          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-3d872b53ca",
-          "label": "Building Numbers & Clinic",
-          "text": "Building Numbers & Clinic",
-          "description": "Building sign reading \"FYSIO HOLLAND\" with street numbers 642 - 644 - 646.",
-          "groundingPhrase": "Building Numbers & Clinic",
-          "source": "panorama",
-          "category": "architecture",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1",
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Building Numbers & Clinic: FysioHolland building with house numbers 642 - 644 - 646."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Commercial Signage: Building sign reading \"FYSIO HOLLAND\" with street numbers 642 - 644 - 646."
-            },
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "banner \"FYSIO HOLLAND #642-646\""
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-9f8367e715",
-          "label": "Dutch Cycling Infrastructure",
-          "text": "Dutch Cycling Infrastructure",
-          "description": "Dedicated red asphalt cycle track (fietspad), yellow traffic bollards, parked Dutch commuter bikes.",
-          "groundingPhrase": "Dutch Cycling Infrastructure",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.7895,
-            "y": 0.5355,
-            "w": 0.207,
-            "h": 0.211
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1",
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Dutch Cycling Infrastructure: Dedicated red asphalt cycle track (fietspad), yellow traffic bollards, parked Dutch commuter bikes."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Dutch Cycling & Road Infrastructure: Distinct red cycle lane (fietspad), yellow traffic bollards, and prominent bicycle density."
-            },
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "red asphalt bike path (fietspad)"
-            }
-          ],
-          "groundingLabel": "Dutch Cycling Infrastructure"
-        },
-        {
-          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-8a8d50e86a",
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-4d7446dd39",
           "label": "Yellow Dutch License Plates",
           "text": "Yellow Dutch License Plates",
           "description": "Parked cars displaying standard Netherlands yellow plates.",
@@ -157,15 +32,15 @@
           "source": "panorama",
           "category": "signage",
           "region": {
-            "x": 0.9075,
-            "y": 0.1115,
+            "x": 0.314385758998435,
+            "y": 0.5337012796984276,
             "w": 0.029,
-            "h": 0.236
+            "h": 0.04553325727890481
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -186,10 +61,176 @@
               "text": "yellow Dutch plates."
             }
           ],
-          "groundingLabel": "Dutch Dutch License Plates"
+          "groundingLabel": "Yellow Dutch License Plates"
         },
         {
-          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-f63c23c99b",
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-ee1b528dda",
+          "label": "Dutch Cycling Infrastructure",
+          "text": "Dutch Cycling Infrastructure",
+          "description": "Dedicated red asphalt cycle track (fietspad), yellow traffic bollards, parked Dutch commuter bikes.",
+          "groundingPhrase": "Dutch Cycling Infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5398912363067292,
+            "y": 0.4952322057437627,
+            "w": 0.4601087636932708,
+            "h": 0.42744953127325036
+          },
+          "regionSource": "manual+manual-review+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Dutch Cycling Infrastructure: Dedicated red asphalt cycle track (fietspad), yellow traffic bollards, parked Dutch commuter bikes."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "red asphalt bike path (fietspad)"
+            }
+          ],
+          "groundingLabel": "Dutch Cycling Infrastructure"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-639dd99750",
+          "label": "Building Numbers & Clinic",
+          "text": "Building Numbers & Clinic",
+          "description": "FysioHolland building with house numbers 642 - 644 - 646.",
+          "groundingPhrase": "Building Numbers & Clinic",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.7033513302034429,
+            "y": 0.3838462625861812,
+            "w": 0.21292410015649454,
+            "h": 0.17014411487525427
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Building Numbers & Clinic: FysioHolland building with house numbers 642 - 644 - 646."
+            }
+          ],
+          "groundingLabel": "Building Numbers; Numbers"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-a6ef69a926",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "\"Amsterdamsestraatweg\" painted in clear white lettering.",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"Amsterdamsestraatweg\" painted in clear white lettering."
+            }
+          ],
+          "groundingLabel": "Street Name; Asphalt"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-a7b716bcb2",
+          "label": "banner \"FYSIO HOLLAND #642-646\"",
+          "text": "banner \"FYSIO HOLLAND #642-646\"",
+          "description": "Banner \"FYSIO HOLLAND #642-646\".",
+          "groundingPhrase": "banner \"FYSIO HOLLAND #642-646\"",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "banner \"FYSIO HOLLAND #642-646\""
+            }
+          ],
+          "groundingLabel": "banner; FYSIO HOLLAND"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-8744a3521f",
+          "label": "Road stencil \"Amsterdamsestraatweg\"",
+          "text": "Road stencil \"Amsterdamsestraatweg\"",
+          "description": "Road stencil \"Amsterdamsestraatweg\".",
+          "groundingPhrase": "Road stencil \"Amsterdamsestraatweg\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4385,
+            "y": 0.5415,
+            "w": 0.088,
+            "h": 0.272
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Amsterdamsestraatweg\""
+            }
+          ],
+          "groundingLabel": "Road stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-cd44faab57",
           "label": "Urban Geography",
           "text": "Urban Geography",
           "description": "Amsterdamsestraatweg is the historic main northwestern artery of Utrecht passing through Zuilen.",
@@ -215,52 +256,41 @@
               "text": "Urban Geography: Amsterdamsestraatweg is the historic main northwestern artery of Utrecht passing through Zuilen."
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
         },
         {
-          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-964709239e",
-          "label": "Dutch Brick Architecture",
-          "text": "Dutch Brick Architecture",
-          "description": "Dark-brick multi-unit facades, mansard dormers, and large rectangular windows.",
-          "groundingPhrase": "Dutch Brick Architecture",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.5985,
-            "y": 0.0055,
-            "w": 0.398,
-            "h": 0.621
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Dutch Brick Architecture: Dark-brick multi-unit facades, mansard dormers, and large rectangular windows."
-            }
-          ],
-          "groundingLabel": "Dutch Brick Architecture"
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
         },
         {
-          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-3a86812d65",
-          "label": "Waste Management",
-          "text": "Waste Management",
-          "description": "Dutch underground/sidewalk dual refuse bins and standard Dutch registration plates.",
-          "groundingPhrase": "Waste Management",
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-medium-aided-fb358cd873",
+          "label": "Cycling & Dutch Infrastructure",
+          "text": "Cycling & Dutch Infrastructure",
+          "description": "Yellow-headed street division bollards (paaltjes), yellow registration plates, and pedestrian curbs.",
+          "groundingPhrase": "Cycling & Dutch Infrastructure",
           "source": "panorama",
           "category": "signage",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -268,32 +298,427 @@
             "consistent": null
           },
           "sourceRuns": [
+            "r1",
+            "r2",
             "r3"
           ],
           "provenance": [
             {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Dutch road traffic fixtures: yellow-headed street division bollards (paaltjes), yellow registration plates, and pedestrian curbs."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Cycling & Dutch Infrastructure: Red asphalt cycling track (fietspad), yellow street bollards, yellow vehicle plates."
+            },
+            {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Waste Management: Dutch underground/sidewalk dual refuse bins and standard Dutch registration plates."
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Dutch road traffic fixtures: yellow-headed street division bollards (paaltjes), yellow registration plates, and pedestrian curbs."
             }
           ]
         },
         {
-          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-aided-99cae3869c",
-          "label": "Road stencil \"Amsterdamsestraatweg\"",
-          "text": "Road stencil \"Amsterdamsestraatweg\"",
-          "description": "Road stencil \"Amsterdamsestraatweg\".",
-          "groundingPhrase": "Road stencil \"Amsterdamsestraatweg\"",
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-medium-aided-35d7ca42c3",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "Asphalt text \"Amsterdamsestraatweg\".",
+          "groundingPhrase": "Street Name on Asphalt",
           "source": "panorama",
           "category": "signage",
           "region": {
-            "x": 0.4385,
+            "x": 0.4365,
             "y": 0.5405,
-            "w": 0.09,
-            "h": 0.275
+            "w": 0.06852582159624412,
+            "h": 0.2204472000396806
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Major arterial street name stenciled in roadway asphalt: \"Amsterdamsestraatweg\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Street Name on Asphalt: Asphalt text \"Amsterdamsestraatweg\"."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Major arterial street name stenciled in roadway asphalt: \"Amsterdamsestraatweg\"."
+            }
+          ],
+          "groundingLabel": "Street Name"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-medium-aided-35826954e2",
+          "label": "Commercial Signage",
+          "text": "Commercial Signage",
+          "description": "\"FYSIO HOLLAND\" with visible building house numbers 642–646.",
+          "groundingPhrase": "Commercial Signage",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.6945109546165884,
+            "y": 0.38808459401815387,
+            "w": 0.21706964006259782,
+            "h": 0.1563824463072268
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Commercial business banner: \"FYSIO HOLLAND\" with visible building house numbers 642–646."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Commercial Signage: \"FYSIO HOLLAND\" on modern brick facade."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Commercial business banner: \"FYSIO HOLLAND\" with visible building house numbers 642–646."
+            }
+          ],
+          "groundingLabel": "Cycling; Commercial Signage"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-medium-aided-ae63becbc2",
+          "label": "Traditional Dutch brick townhouse architecture (rijtjeshuizen)",
+          "text": "Traditional Dutch brick townhouse architecture (rijtjeshuizen)",
+          "description": "Traditional Dutch brick townhouse architecture (rijtjeshuizen) with grey clinker infill.",
+          "groundingPhrase": "Traditional Dutch brick townhouse architecture",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5985,
+            "y": 0.0045,
+            "w": 0.399,
+            "h": 0.625
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Traditional Dutch brick townhouse architecture (rijtjeshuizen) with grey clinker infill."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Traditional Dutch brick townhouse architecture (rijtjeshuizen) with grey clinker infill."
+            }
+          ],
+          "groundingLabel": "Traditional Dutch brick townhouse architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-medium-aided-65ad153120",
+          "label": "Dutch bicycle infrastructure",
+          "text": "Dutch bicycle infrastructure",
+          "description": "Reddish-pink cycling lane (fietspad) with dozens of parked Dutch city bikes (omafiets).",
+          "groundingPhrase": "Dutch bicycle infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5258215962441315,
+            "y": 0.47093398144933285,
+            "w": 0.30125195618153355,
+            "h": 0.4333118396904916
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Dutch bicycle infrastructure: reddish-pink cycling lane (fietspad) with dozens of parked Dutch city bikes (omafiets)."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Dutch bicycle infrastructure: reddish-pink cycling lane (fietspad) with dozens of parked Dutch city bikes (omafiets)."
+            }
+          ],
+          "groundingLabel": "Dutch bicycle infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-high-aided-f95cb676d8",
+          "label": "Red-asphalt segregated bicycle path (fietspad)",
+          "text": "Red-asphalt segregated bicycle path (fietspad)",
+          "description": "Red-asphalt segregated bicycle path (fietspad) with white dashed delineation line.",
+          "groundingPhrase": "Red-asphalt segregated bicycle path",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.5203442879499217,
+            "y": 0.45823619860125986,
+            "w": 0.3215962441314555,
+            "h": 0.4412479539705372
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Red asphalt separated cycle lane (fietspad) lined with parked bicycles."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Red-asphalt segregated bicycle path (fietspad) with white dashed delineation line."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-high-aided-2a0eafbc3d",
+          "label": "Physiotherapy clinic banner on modern brick building",
+          "text": "Physiotherapy clinic banner on modern brick building",
+          "description": "'FYSIO HOLLAND' with building numbers '642 - 644 - 646'.",
+          "groundingPhrase": "Physiotherapy clinic banner on modern brick building",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.7014928741092636,
+            "y": 0.3761965544932119,
+            "w": 0.21216706254948534,
+            "h": 0.179121107179603
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "\"FysioHolland\" physical therapy clinic at #642–646."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Physiotherapy clinic banner on modern brick building: 'FYSIO HOLLAND' with building numbers '642 - 644 - 646'."
+            }
+          ],
+          "groundingLabel": "Physiotherapy clinic banner"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-high-aided-a86b5fc2fc",
+          "label": "Road surface asphalt painted stencil",
+          "text": "Road surface asphalt painted stencil",
+          "description": "Road surface asphalt stencil reading \"Amsterdamsestraatweg\".",
+          "groundingPhrase": "Road surface asphalt painted stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4463052256532066,
+            "y": 0.5213182639463977,
+            "w": 0.057257719714964406,
+            "h": 0.24740868026801172
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Road surface asphalt stencil reading \"Amsterdamsestraatweg\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Road surface asphalt painted stencil: 'Amsterdamsestraatweg'."
+            }
+          ],
+          "groundingLabel": "Road surface asphalt"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-high-aided-e1ccce69a1",
+          "label": "Dutch yellow vehicle license plates and classic Dutch 1930s brick residential architectu",
+          "text": "Dutch yellow vehicle license plates and classic Dutch 1930s brick residential architectu",
+          "description": "Dutch yellow vehicle license plates and classic Dutch 1930s brick residential architecture on the opposite side.",
+          "groundingPhrase": "Dutch yellow vehicle license plates and classic Dutch 1930s brick residential architectu",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.30719358669833724,
+            "y": 0.5319846545710055,
+            "w": 0.033811559778305605,
+            "h": 0.039393635975808694
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Dutch architectural townhouses and yellow vehicle registration plates."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Dutch yellow vehicle license plates and classic Dutch 1930s brick residential architecture on the opposite side."
+            }
+          ],
+          "groundingLabel": "Dutch yellow vehicle license plates"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-high-aided-698e7f75d0",
+          "label": "Dutch waste sorting bins and urban street furniture",
+          "text": "Dutch waste sorting bins and urban street furniture",
+          "description": "Dutch waste sorting bins and urban street furniture.",
+          "groundingPhrase": "Dutch waste sorting bins and urban street furniture",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5327747426761678,
+            "y": 0.49825755978820035,
+            "w": 0.11330601741884405,
+            "h": 0.242
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Dutch waste sorting bins and urban street furniture."
+            }
+          ],
+          "groundingLabel": "Dutch waste; urban street furniture"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-high-aided-7a0cdc5800",
+          "label": "Straight tree-lined urban thoroughfare",
+          "text": "Straight tree-lined urban thoroughfare",
+          "description": "Straight tree-lined urban thoroughfare running northwest out of Utrecht.",
+          "groundingPhrase": "Straight tree-lined urban thoroughfare",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -306,11 +731,1415 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Road stencil \"Amsterdamsestraatweg\""
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Straight tree-lined urban thoroughfare running northwest out of Utrecht."
             }
           ],
-          "groundingLabel": "Road stencil"
+          "groundingLabel": "Straight tree-lined urban thoroughfare"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-high-aided-b6690d67ec",
+          "label": "Amsterdamsestraatweg",
+          "text": "Amsterdamsestraatweg",
+          "description": "Amsterdamsestraatweg.",
+          "groundingPhrase": "Amsterdamsestraatweg",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Amsterdamsestraatweg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-medium-aided-59518792dd",
+          "label": "Clear asphalt lettering across the roadway reading \"Amsterdamsestraatweg\"",
+          "text": "Clear asphalt lettering across the roadway reading \"Amsterdamsestraatweg\"",
+          "description": "Clear asphalt lettering across the roadway reading \"Amsterdamsestraatweg\".",
+          "groundingPhrase": "Clear asphalt lettering across the roadway reading \"Amsterdamsestraatweg\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4385,
+            "y": 0.5435,
+            "w": 0.05612114014251781,
+            "h": 0.21118173605360235
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Road surface asphalt stencil reading \"Amsterdamsestraatweg\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Clear asphalt lettering across the roadway reading \"Amsterdamsestraatweg\"."
+            }
+          ],
+          "groundingLabel": "Clear asphalt lettering"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-medium-aided-3b45be2d25",
+          "label": "Dutch yellow front-and-rear automobile registration plates",
+          "text": "Dutch yellow front-and-rear automobile registration plates",
+          "description": "Dutch architectural townhouses and yellow vehicle registration plates.",
+          "groundingPhrase": "Dutch yellow front-and-rear automobile registration plates",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.31056888361045126,
+            "y": 0.5355907174584055,
+            "w": 0.03143626286619161,
+            "h": 0.04321182463800849
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Dutch architectural townhouses and yellow vehicle registration plates."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Dutch yellow front-and-rear automobile registration plates."
+            }
+          ],
+          "groundingLabel": "Dutch yellow front-and-rear automobile registration plates"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-medium-aided-16abfc6e20",
+          "label": "Red asphalt segregated Dutch bicycle paths and distinctive yellow road-divider bollards",
+          "text": "Red asphalt segregated Dutch bicycle paths and distinctive yellow road-divider bollards",
+          "description": "Red asphalt segregated Dutch bicycle paths and distinctive yellow road-divider bollards with blue arrows.",
+          "groundingPhrase": "Red asphalt segregated Dutch bicycle paths and distinctive yellow road-divider bollards",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.5236900237529691,
+            "y": 0.49040913197319885,
+            "w": 0.4723511480601742,
+            "h": 0.5063787422520013
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Red asphalt separated cycle lane (fietspad) lined with parked bicycles."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Red asphalt segregated Dutch bicycle paths and distinctive yellow road-divider bollards with blue arrows."
+            }
+          ],
+          "groundingLabel": "segregated Dutch bicycle paths"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-medium-aided-b6690d67ec",
+          "label": "Amsterdamsestraatweg",
+          "text": "Amsterdamsestraatweg",
+          "description": "Amsterdamsestraatweg.",
+          "groundingPhrase": "Amsterdamsestraatweg",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Amsterdamsestraatweg"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Amsterdamsestraatweg"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-medium-aided-d17c5ec059",
+          "label": "Commercial health clinic sign reading \"FYSIO HOLLAND\"",
+          "text": "Commercial health clinic sign reading \"FYSIO HOLLAND\"",
+          "description": "Commercial health clinic sign reading \"FYSIO HOLLAND\".",
+          "groundingPhrase": "Commercial health clinic sign reading \"FYSIO HOLLAND\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7009093428345209,
+            "y": 0.3824086802680117,
+            "w": 0.21987648456057007,
+            "h": 0.1684847298552034
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Commercial health clinic sign reading \"FYSIO HOLLAND\"."
+            }
+          ],
+          "groundingLabel": "Commercial health clinic sign reading"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-medium-aided-4b75225c67",
+          "label": "Dark red-brick 1920s–1930s Dutch row houses",
+          "text": "Dark red-brick 1920s–1930s Dutch row houses",
+          "description": "Dark red-brick 1920s–1930s Dutch row houses with dormers and large ground-floor picture windows.",
+          "groundingPhrase": "Dark red-brick 1920s–1930s Dutch row houses",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.17886421219319087,
+            "y": 0.396985407412984,
+            "w": 0.21610213776722093,
+            "h": 0.10352903460563634
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Dark red-brick 1920s–1930s Dutch row houses with dormers and large ground-floor picture windows."
+            }
+          ],
+          "groundingLabel": "Dutch row houses"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-medium-aided-f081bd37c8",
+          "label": "\"FysioHolland\" physical therapy clinic at #642–646",
+          "text": "\"FysioHolland\" physical therapy clinic at #642–646",
+          "description": "\"FysioHolland\" physical therapy clinic at #642–646.",
+          "groundingPhrase": "\"FysioHolland\" physical therapy clinic at #642–646",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "\"FysioHolland\" physical therapy clinic at #642–646."
+            }
+          ],
+          "groundingLabel": "physical therapy clinic"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-8-flash-medium-aided-7a0cdc5800",
+          "label": "Straight tree-lined urban thoroughfare",
+          "text": "Straight tree-lined urban thoroughfare",
+          "description": "Straight tree-lined urban thoroughfare running northwest out of Utrecht.",
+          "groundingPhrase": "Straight tree-lined urban thoroughfare",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Straight tree-lined urban thoroughfare running northwest out of Utrecht."
+            }
+          ],
+          "groundingLabel": "Straight tree-lined urban thoroughfare"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-gpt-5-6-sol-xhigh-9c3bdbcda5",
+          "label": "flat dense urban form supported Utrecht",
+          "text": "flat dense urban form supported Utrecht",
+          "description": "Flat dense urban form supported Utrecht.",
+          "groundingPhrase": "flat dense urban form supported Utrecht",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "flat dense urban form supported Utrecht."
+            }
+          ],
+          "groundingLabel": "flat dense urban form"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-5-6-sol-xhigh-85fadb9999",
+          "label": "Dutch cycling/road design",
+          "text": "Dutch cycling/road design",
+          "description": "Dutch cycling/road design.",
+          "groundingPhrase": "Dutch cycling/road design",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.520366979655712,
+            "y": 0.46843611428004567,
+            "w": 0.479633020344288,
+            "h": 0.531
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Dutch cycling/road design"
+            }
+          ],
+          "groundingLabel": "Dutch cycling/road design"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-5-6-sol-xhigh-633fd24dde",
+          "label": "canal-city architecture",
+          "text": "canal-city architecture",
+          "description": "Canal-city architecture.",
+          "groundingPhrase": "canal-city architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "canal-city architecture"
+            }
+          ],
+          "groundingLabel": "canal-city architecture"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-gpt-6-astra-low-c6cc1c1278",
+          "label": "low brick Dutch urban blocks with traffic islands. Initial belief",
+          "text": "low brick Dutch urban blocks with traffic islands. Initial belief",
+          "description": "Low Dutch brick buildings. Initial belief Utrecht Netherlands from road name.",
+          "groundingPhrase": "low brick Dutch urban blocks with traffic islands. Initial belief",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "low brick Dutch urban blocks with traffic islands. Initial belief: Utrecht Amsterdamsestraatweg"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low Dutch brick buildings. Initial belief Utrecht Netherlands from road name"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-6-astra-low-6e97ee6123",
+          "label": "red segregated cycle path",
+          "text": "red segregated cycle path",
+          "description": "Red segregated cycle path.",
+          "groundingPhrase": "red segregated cycle path",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.5258982581155978,
+            "y": 0.48237881753619916,
+            "w": 0.47410174188440224,
+            "h": 0.5176211824638008
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "red segregated cycle path"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "abundant bicycles"
+            }
+          ],
+          "groundingLabel": "red segregated cycle path"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-6-astra-low-06662a4f63",
+          "label": "yellow Dutch plates",
+          "text": "yellow Dutch plates",
+          "description": "Yellow traffic-island bollards.",
+          "groundingPhrase": "yellow Dutch plates",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.30719358669833724,
+            "y": 0.5374089061206053,
+            "w": 0.03639509105304828,
+            "h": 0.031363321538809
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "yellow Dutch plates"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "yellow traffic-island bollards"
+            }
+          ],
+          "groundingLabel": "yellow Dutch plates"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-6-astra-low-08a56eb054",
+          "label": "Amsterdamsestraatweg overlay",
+          "text": "Amsterdamsestraatweg overlay",
+          "description": "Amsterdamsestraatweg road overlay.",
+          "groundingPhrase": "Amsterdamsestraatweg overlay",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4436619718309859,
+            "y": 0.5153762214175884,
+            "w": 0.05320813771518002,
+            "h": 0.2396706512573781
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Amsterdamsestraatweg overlay"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Amsterdamsestraatweg road overlay"
+            }
+          ],
+          "groundingLabel": "Amsterdamsestraatweg overlay"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-6-astra-low-17dc1cea85",
+          "label": "red separated cycle lane",
+          "text": "red separated cycle lane",
+          "description": "Red separated cycle lane.",
+          "groundingPhrase": "red separated cycle lane",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "red separated cycle lane"
+            }
+          ],
+          "groundingLabel": "red separated cycle lane"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-6-astra-low-47083556c0",
+          "label": "high country confidence",
+          "text": "high country confidence",
+          "description": "High country confidence.",
+          "groundingPhrase": "high country confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "high country confidence"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-6-astra-low-00788e26ae",
+          "label": "medium city confidence",
+          "text": "medium city confidence",
+          "description": "Medium city confidence.",
+          "groundingPhrase": "medium city confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "medium city confidence."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-6-astra-low-65c1238aa9",
+          "label": "Fiets Holland shop",
+          "text": "Fiets Holland shop",
+          "description": "Fiets Holland shop.",
+          "groundingPhrase": "Fiets Holland shop",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.8345892018779343,
+            "y": 0.4810796339467288,
+            "w": 0.09107589984350546,
+            "h": 0.0840213035067705
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Fiets Holland shop"
+            }
+          ],
+          "groundingLabel": "Fiets Holland shop"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-grok-4-6-xhigh-6366a7c8a3",
+          "label": "Dutch brick",
+          "text": "Dutch brick",
+          "description": "Dutch brick.",
+          "groundingPhrase": "Dutch brick",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.18701095461658843,
+            "y": 0.4058578443529587,
+            "w": 0.230829420970266,
+            "h": 0.07459947423242896
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Dutch brick"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-grok-4-6-xhigh-a7da66b0d7",
+          "label": "Amsterdamsestraatweg",
+          "text": "Amsterdamsestraatweg",
+          "description": "Amsterdamsestraatweg.",
+          "groundingPhrase": "Amsterdamsestraatweg",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4460093896713615,
+            "y": 0.5122017757055701,
+            "w": 0.05320813771517996,
+            "h": 0.2587173255294877
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Amsterdamsestraatweg"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-grok-4-6-xhigh-c77a55a323",
+          "label": "bicycles",
+          "text": "bicycles",
+          "description": "Bicycles.",
+          "groundingPhrase": "bicycles",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.5813998435054774,
+            "y": 0.44222461683448244,
+            "w": 0.41860015649452265,
+            "h": 0.2895347204999752
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "bicycles"
+            }
+          ],
+          "groundingLabel": "bicycles; bollards"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-grok-4-6-xhigh-25ae79e860",
+          "label": "bollards produced the exact city belief. The final pin resolved near Aurich/Emden in Ger",
+          "text": "bollards produced the exact city belief. The final pin resolved near Aurich/Emden in Ger",
+          "description": "Bollards produced the exact city belief. The final pin resolved near Aurich/Emden in Germany.",
+          "groundingPhrase": "bollards produced the exact city belief. The final pin resolved near Aurich/Emden in Ger",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "bollards produced the exact city belief. The final pin resolved near Aurich/Emden in Germany."
+            }
+          ],
+          "groundingLabel": "The final pin resolved"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-gpt-5-6-sol-max-6f108519e9",
+          "label": "Utrecht-scale urban density",
+          "text": "Utrecht-scale urban density",
+          "description": "Utrecht-scale urban density.",
+          "groundingPhrase": "Utrecht-scale urban density",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Utrecht-scale urban density."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-5-6-sol-max-b3aad97d95",
+          "label": "Dutch cycle infrastructure",
+          "text": "Dutch cycle infrastructure",
+          "description": "Dutch cycle infrastructure.",
+          "groundingPhrase": "Dutch cycle infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5428035993740219,
+            "y": 0.47418553147165315,
+            "w": 0.4302222222222222,
+            "h": 0.513572342641734
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Dutch cycle infrastructure"
+            }
+          ],
+          "groundingLabel": "Dutch cycle infrastructure"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-5-6-sol-max-9ffdd7f02c",
+          "label": "Dutch road design",
+          "text": "Dutch road design",
+          "description": "Dutch road design.",
+          "groundingPhrase": "Dutch road design",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Dutch road design"
+            }
+          ],
+          "groundingLabel": "Dutch road design"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-5-6-sol-max-9fe63fe66c",
+          "label": "brick housing",
+          "text": "brick housing",
+          "description": "Brick housing.",
+          "groundingPhrase": "brick housing",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "brick housing"
+            }
+          ],
+          "groundingLabel": "brick housing"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gpt-5-6-sol-max-0a0ad7f788",
+          "label": "flat terrain",
+          "text": "flat terrain",
+          "description": "Flat terrain.",
+          "groundingPhrase": "flat terrain",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "flat terrain"
+            }
+          ],
+          "groundingLabel": "flat terrain"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-glm-5-3-flash-max-6260044a01",
+          "label": "older Dutch housing left. Belief",
+          "text": "older Dutch housing left. Belief",
+          "description": "Utrecht's Amsterdamsestraatweg. Placing pin at 52.0975, 5.1050.",
+          "groundingPhrase": "older Dutch housing left. Belief",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.16735758998435052,
+            "y": 0.2872873369376519,
+            "w": 0.2595023474178404,
+            "h": 0.19662427458955406
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "older Dutch housing left. Belief: Utrecht's Amsterdamsestraatweg. Placing pin at 52.0975, 5.1050."
+            }
+          ],
+          "groundingLabel": "older Dutch housing"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-glm-5-3-flash-max-04e500ad8a",
+          "label": "red asphalt cycle lane,",
+          "text": "red asphalt cycle lane,",
+          "description": "Red asphalt cycle lane,.",
+          "groundingPhrase": "red asphalt cycle lane,",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.5188020344287949,
+            "y": 0.4630872228560092,
+            "w": 0.4811979655712051,
+            "h": 0.53
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "red asphalt cycle lane,"
+            }
+          ],
+          "groundingLabel": "red asphalt cycle lane"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-glm-5-3-flash-max-ccf6fab87f",
+          "label": "modern brick office",
+          "text": "modern brick office",
+          "description": "Modern brick office with porthole windows + parked bikes,.",
+          "groundingPhrase": "modern brick office",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.5884194053208138,
+            "y": 0,
+            "w": 0.4115805946791862,
+            "h": 0.5714002281632856
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "modern brick office with porthole windows + parked bikes,"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-011-glm-5-3-flash-max-ca3f2f2f11",
+          "label": "road paint \"Amsterdamse…\",",
+          "text": "road paint \"Amsterdamse…\",",
+          "description": "Road paint \"Amsterdamse…\",.",
+          "groundingPhrase": "road paint \"Amsterdamse…\",",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4365,
+            "y": 0.5385,
+            "w": 0.092,
+            "h": 0.277
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "road paint \"Amsterdamse…\","
+            }
+          ],
+          "groundingLabel": "road paint; Amsterdamse"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-glm-5-3-flash-max-c7c5f65440",
+          "label": "yellow Dutch bollards,",
+          "text": "yellow Dutch bollards,",
+          "description": "Yellow Dutch bollards,.",
+          "groundingPhrase": "yellow Dutch bollards,",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3125,
+            "y": 0.5185,
+            "w": 0.105,
+            "h": 0.25
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "yellow Dutch bollards,"
+            }
+          ],
+          "groundingLabel": "yellow Dutch bollards"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-unaided-3d882c3a2e",
+          "label": "Dutch row houses",
+          "text": "Dutch row houses",
+          "description": "Dutch row houses.",
+          "groundingPhrase": "Dutch row houses",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Dutch row houses"
+            }
+          ],
+          "groundingLabel": "Dutch row houses"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-unaided-13ac27fe7e",
+          "label": "\"Amsterdamsestraatweg\" stencil",
+          "text": "\"Amsterdamsestraatweg\" stencil",
+          "description": "\"Amsterdamsestraatweg\" stencil.",
+          "groundingPhrase": "\"Amsterdamsestraatweg\" stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.44131455399061037,
+            "y": 0.5169634442735975,
+            "w": 0.059467918622848136,
+            "h": 0.250781211249442
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"Amsterdamsestraatweg\" stencil"
+            }
+          ],
+          "groundingLabel": "Amsterdamsestraatweg; stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-unaided-3e5a70376e",
+          "label": "\"FYSIO HOLLAND\"",
+          "text": "\"FYSIO HOLLAND\"",
+          "description": "\"FYSIO HOLLAND\".",
+          "groundingPhrase": "\"FYSIO HOLLAND\"",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.8317683881064163,
+            "y": 0.48839343286543324,
+            "w": 0.07902973395931145,
+            "h": 0.06507613709637416
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"FYSIO HOLLAND\""
+            }
+          ],
+          "groundingLabel": "FYSIO HOLLAND"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-gemini-3-7-flash-high-unaided-24f0a77187",
+          "label": "red fietspad",
+          "text": "red fietspad",
+          "description": "Red fietspad.",
+          "groundingPhrase": "red fietspad",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5289514866979655,
+            "y": 0.47569565001736025,
+            "w": 0.3974960876369328,
+            "h": 0.48569019393879276
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "red fietspad"
+            }
+          ],
+          "groundingLabel": "red fietspad"
         }
       ]
     }

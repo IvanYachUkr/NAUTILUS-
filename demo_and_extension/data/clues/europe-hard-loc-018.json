@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,107 +24,16 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-daf10e99d0",
-          "label": "Greek Text on Asphalt",
-          "text": "Greek Text on Asphalt",
-          "description": "Painted letters in Greek script \"Επαρ.Οδ. Παράλιο Άστρος\" (Provincial Road of Paralio Astros).",
-          "groundingPhrase": "Greek Text on Asphalt",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.3965,
-            "y": 0.5055,
-            "w": 0.139,
-            "h": 0.31
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1",
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Greek Text on Asphalt: \"Επαρ.Οδ. ... Παράλιο...\" (Provincial Road / Επαρχιακή Οδός leading to Παράλιο Άστρος)."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Greek Road Markings: Painted letters in Greek script \"Επαρ.Οδ. Παράλιο Άστρος\" (Provincial Road of Paralio Astros)."
-            },
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Greek road stencil \"Επαρ.Οδ...\" / \"Παράλιο...\""
-            }
-          ],
-          "groundingLabel": "Greek Text"
-        },
-        {
-          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-e8ded4526c",
-          "label": "Greek Alphabet & Geography",
-          "text": "Greek Alphabet & Geography",
-          "description": "Regional road connecting to Paralio Astros, Arcadia, Peloponnese peninsula, Greece.",
-          "groundingPhrase": "Greek Alphabet & Geography",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.7565,
-            "y": 0.6625,
-            "w": 0.215,
-            "h": 0.325
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Greek Alphabet & Geography: Regional road connecting to Paralio Astros, Arcadia, Peloponnese peninsula, Greece."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Greek Alphabet: Distinct Greek orthography (Επαρ.Οδ., Παράλιο, Άστρος)."
-            }
-          ],
-          "groundingLabel": "Greek Alphabet"
-        },
-        {
-          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-79aeeb341c",
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-f937e072c3",
           "label": "Mediterranean Scrub & Flora",
           "text": "Mediterranean Scrub & Flora",
           "description": "Cypress, Greek juniper, wild olive scrub, dry limestone rocky soil.",
           "groundingPhrase": "Mediterranean Scrub & Flora",
           "source": "panorama",
           "category": "geography",
-          "region": {
-            "x": 0.0045,
-            "y": 0.3625,
-            "w": 0.454,
-            "h": 0.444
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -145,27 +55,175 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
               "text": "dry limestone terrain"
             }
-          ],
-          "groundingLabel": "Mediterranean Scrub"
+          ]
         },
         {
-          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-0cc82efc7f",
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-322771c6fe",
+          "label": "Greek road stencil \"Επαρ.Οδ...\" / \"Παράλιο...\"",
+          "text": "Greek road stencil \"Επαρ.Οδ...\" / \"Παράλιο...\"",
+          "description": "Greek road stencil \"Επαρ.Οδ...\" / \"Παράλιο...\".",
+          "groundingPhrase": "Greek road stencil \"Επαρ.Οδ...\" / \"Παράλιο...\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3965,
+            "y": 0.5005,
+            "w": 0.139,
+            "h": 0.315
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Greek road stencil \"Επαρ.Οδ...\" / \"Παράλιο...\""
+            }
+          ],
+          "groundingLabel": "Greek road stencil"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-4c7e18d79d",
+          "label": "wild cypress/juniper scrub (maquis)",
+          "text": "wild cypress/juniper scrub (maquis)",
+          "description": "Wild cypress/juniper scrub (maquis).",
+          "groundingPhrase": "wild cypress/juniper scrub",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "wild cypress/juniper scrub (maquis)"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-8e4aff6266",
+          "label": "Greek Text on Asphalt",
+          "text": "Greek Text on Asphalt",
+          "description": "\"Επαρ.Οδ. ... Παράλιο...\" (Provincial Road / Επαρχιακή Οδός leading to Παράλιο Άστρος).",
+          "groundingPhrase": "Greek Text on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Greek Text on Asphalt: \"Επαρ.Οδ. ... Παράλιο...\" (Provincial Road / Επαρχιακή Οδός leading to Παράλιο Άστρος)."
+            }
+          ],
+          "groundingLabel": "Greek text"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-3cdf4dd919",
+          "label": "Greek Alphabet & Geography",
+          "text": "Greek Alphabet & Geography",
+          "description": "Regional road connecting to Paralio Astros, Arcadia, Peloponnese peninsula, Greece.",
+          "groundingPhrase": "Greek Alphabet & Geography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Greek Alphabet & Geography: Regional road connecting to Paralio Astros, Arcadia, Peloponnese peninsula, Greece."
+            }
+          ],
+          "groundingLabel": "Greek Alphabet"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-97d428cf98",
+          "label": "tourist coach bus",
+          "text": "tourist coach bus",
+          "description": "Tourist coach bus.",
+          "groundingPhrase": "tourist coach bus",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.4855719874804381,
+            "y": 0.48266685680273796,
+            "w": 0.015622848200312997,
+            "h": 0.04936610287188136
+          },
+          "regionSource": "manual+manual-review+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "tourist coach bus."
+            }
+          ],
+          "groundingLabel": "tourist coach bus"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-8694643b3c",
           "label": "Road Infrastructure",
           "text": "Road Infrastructure",
           "description": "Single-carriageway rural highway with coarse gravel asphalt and white center/edge markings.",
           "groundingPhrase": "Road Infrastructure",
           "source": "panorama",
           "category": "signage",
-          "region": {
-            "x": 0.1345,
-            "y": 0.4955,
-            "w": 0.628,
-            "h": 0.495
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -183,21 +241,16 @@
           "groundingLabel": "Road Infrastructure"
         },
         {
-          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-b404ed3c37",
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-aa41cf736d",
           "label": "Vehicle",
           "text": "Vehicle",
           "description": "White passenger van in the distance ahead on the eastbound descent toward the Argolic Gulf.",
           "groundingPhrase": "Vehicle",
           "source": "panorama",
           "category": "infrastructure",
-          "region": {
-            "x": 0.4805,
-            "y": 0.4835,
-            "w": 0.02,
-            "h": 0.035
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -215,23 +268,168 @@
             }
           ],
           "groundingLabel": "Vehicle"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
         },
         {
-          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-3100f182d8",
-          "label": "Peloponnesian Shrubland",
-          "text": "Peloponnesian Shrubland",
-          "description": "Dense Mediterranean maquis, cypress trees (Cupressus), Kermes oak, and limestone rock outcroppings.",
-          "groundingPhrase": "Peloponnesian Shrubland",
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-medium-aided-0c5e41d12e",
+          "label": "Greek Road Markings",
+          "text": "Greek Road Markings",
+          "description": "Road surface asphalt text: \"Επαρχ. Οδ. ... - Παραδείσι ...\" (Provincial Road ... - Paradeisi).",
+          "groundingPhrase": "Greek Road Markings",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.40967057902973397,
+            "y": 0.5196572342641734,
+            "w": 0.12319327073552425,
+            "h": 0.30000992014285005
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Greek road stencil marking on asphalt: \"Επαρ. Οδ. ... / Παράλιον Άστρος...\" (Eparchiaki Odos to Paralion Astros)."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Greek Road Markings: Road surface asphalt text: \"Επαρχ. Οδ. ... - Παραδείσι ...\" (Provincial Road ... - Paradeisi)."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Greek road stencil marking on asphalt: \"Επαρ. Οδ. ... / Παράλιον Άστρος...\" (Eparchiaki Odos to Paralion Astros)."
+            }
+          ],
+          "groundingLabel": "Greek Road Markings"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-medium-aided-bee4d02103",
+          "label": "Infrastructure & Vehicles",
+          "text": "Infrastructure & Vehicles",
+          "description": "Narrow single-lane paved rural road, white tourist excursion coach driving in the distance.",
+          "groundingPhrase": "Infrastructure & Vehicles",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Single-lane rural mountain highway with distant intercity coach."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Infrastructure & Vehicles: Narrow single-lane paved rural road, white tourist excursion coach driving in the distance."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Single-lane rural mountain highway with distant intercity coach."
+            }
+          ],
+          "groundingLabel": "Infrastructure; Vehicles"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-medium-aided-243b3455a4",
+          "label": "Karstic limestone rock outcrops and reddish terra rossa soil",
+          "text": "Karstic limestone rock outcrops and reddish terra rossa soil",
+          "description": "Karstic limestone rock outcrops and reddish terra rossa soil.",
+          "groundingPhrase": "Karstic limestone rock outcrops and reddish terra rossa soil",
           "source": "panorama",
           "category": "geography",
           "region": {
-            "x": 0.0045,
-            "y": 0.3625,
-            "w": 0.453,
-            "h": 0.443
+            "x": 0.5899843505477308,
+            "y": 0.5487079013937801,
+            "w": 0.17527386541471057,
+            "h": 0.1793561827290312
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Karstic limestone rock outcrops and reddish terra rossa soil."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Karstic limestone rock outcrops and reddish terra rossa soil."
+            }
+          ],
+          "groundingLabel": "Karstic limestone rock outcrops"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-medium-aided-503e0df2a8",
+          "label": "Aegean / Peloponnesian Mediterranean shrubland",
+          "text": "Aegean / Peloponnesian Mediterranean shrubland",
+          "description": "Kermes oak (Quercus coccifera), wild olive, Aleppo pine, and tall cypresses.",
+          "groundingPhrase": "Aegean / Peloponnesian Mediterranean shrubland",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -244,68 +442,29 @@
           ],
           "provenance": [
             {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Peloponnesian Shrubland: Dense Mediterranean maquis, cypress trees (Cupressus), Kermes oak, and limestone rock outcroppings."
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Aegean / Peloponnesian Mediterranean shrubland: Kermes oak (Quercus coccifera), wild olive, Aleppo pine, and tall cypresses."
             },
             {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "wild cypress/juniper scrub (maquis)"
-            }
-          ],
-          "groundingLabel": "Peloponnesian Shrubland"
-        },
-        {
-          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-657453218d",
-          "label": "Red Terra Rossa Soil",
-          "text": "Red Terra Rossa Soil",
-          "description": "Distinctive Mediterranean karst soil bordering the uncurbed asphalt lane.",
-          "groundingPhrase": "Red Terra Rossa Soil",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.5655,
-            "y": 0.5325,
-            "w": 0.199,
-            "h": 0.3
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
-            {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Red Terra Rossa Soil: Distinctive Mediterranean karst soil bordering the uncurbed asphalt lane."
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Aegean / Peloponnesian Mediterranean shrubland: Kermes oak (Quercus coccifera), wild olive, Aleppo pine, and tall cypresses."
             }
           ],
-          "groundingLabel": "Red Terra Rossa Soil"
+          "groundingLabel": "Aegean / Peloponnesian Mediterranean shrubland"
         },
         {
-          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-aided-a6aee2341e",
-          "label": "Tour Coach",
-          "text": "Tour Coach",
-          "description": "White excursion bus traveling towards the Argolic Gulf coast.",
-          "groundingPhrase": "Tour Coach",
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-medium-aided-3ef441cb4e",
+          "label": "Arid Greek summer sunlight and clear blue skies over the Arcadian mountains",
+          "text": "Arid Greek summer sunlight and clear blue skies over the Arcadian mountains",
+          "description": "Arid Greek summer sunlight and clear blue skies over the Arcadian mountains.",
+          "groundingPhrase": "Arid Greek summer sunlight and clear blue skies over the Arcadian mountains",
           "source": "panorama",
           "category": "geography",
-          "region": {
-            "x": 0.4515,
-            "y": 0.8965,
-            "w": 0.077,
-            "h": 0.093
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -318,17 +477,1791 @@
           ],
           "provenance": [
             {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Tour Coach: White excursion bus traveling towards the Argolic Gulf coast."
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Arid Greek summer sunlight and clear blue skies over the Arcadian mountains."
             },
             {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "tourist coach bus."
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Arid Greek summer sunlight and clear blue skies over the Arcadian mountains."
             }
           ],
-          "groundingLabel": "Tour Coach"
+          "groundingLabel": "Arid Greek summer sunlight"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-medium-aided-77adb3f106",
+          "label": "Vegetation & Terrain",
+          "text": "Vegetation & Terrain",
+          "description": "Mediterranean scrubland, dense cypress trees (Cupressus sempervirens), dry limestone soil, bright sunny conditions.",
+          "groundingPhrase": "Vegetation & Terrain",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Vegetation & Terrain: Mediterranean scrubland, dense cypress trees (Cupressus sempervirens), dry limestone soil, bright sunny conditions."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-medium-aided-cf1f37860f",
+          "label": "Topography",
+          "text": "Topography",
+          "description": "Rolling hills in Southern Greece.",
+          "groundingPhrase": "Topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Topography: Rolling hills in Southern Greece."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-50478df63c",
+          "label": "Arid Mediterranean landscape",
+          "text": "Arid Mediterranean landscape",
+          "description": "Arid Mediterranean landscape with cypress/juniper scrub, kermes oak garrigue, rocky limestone terrain, and red terra rossa soil.",
+          "groundingPhrase": "Arid Mediterranean landscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Mediterranean scrubland (phrygana / garrigue), cypress trees, and rocky limestone mountain slopes."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Arid Mediterranean landscape with cypress/juniper scrub, kermes oak garrigue, rocky limestone terrain, and red terra rossa soil."
+            }
+          ],
+          "groundingLabel": "Arid Mediterranean landscape"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-d75f3a504b",
+          "label": "Two-lane rural highway",
+          "text": "Two-lane rural highway",
+          "description": "Two-lane rural highway with white edge lines winding through the Arcadian hills towards the Argolic Gulf.",
+          "groundingPhrase": "Two-lane rural highway",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Greek provincial road alignment (Επαρχιακή Οδός) winding through rural karst landscape."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Two-lane rural highway with white edge lines winding through the Arcadian hills towards the Argolic Gulf."
+            }
+          ],
+          "groundingLabel": "Two-lane rural highway; rural highway"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-2071bf9c56",
+          "label": "Greek script and provincial highway classification 'Επαρ. Οδ.' (Επαρχιακή Οδός)",
+          "text": "Greek script and provincial highway classification 'Επαρ. Οδ.' (Επαρχιακή Οδός)",
+          "description": "Greek script and provincial highway classification 'Επαρ. Οδ.' (Επαρχιακή Οδός).",
+          "groundingPhrase": "Greek script and provincial highway classification 'Επαρ. Οδ.'",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3965,
+            "y": 0.4975,
+            "w": 0.138,
+            "h": 0.318
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Greek script and provincial highway classification 'Επαρ. Οδ.' (Επαρχιακή Οδός)."
+            }
+          ],
+          "groundingLabel": "Greek script"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-201a461626",
+          "label": "Strong Aegean sunlight and characteristic dry Peloponnesian montane terrain",
+          "text": "Strong Aegean sunlight and characteristic dry Peloponnesian montane terrain",
+          "description": "Strong Aegean sunlight and characteristic dry Peloponnesian montane terrain.",
+          "groundingPhrase": "Strong Aegean sunlight and characteristic dry Peloponnesian montane terrain",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Strong Aegean sunlight and characteristic dry Peloponnesian montane terrain."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-9527c2716e",
+          "label": "Distant white tourist motorcoach on the long road vista",
+          "text": "Distant white tourist motorcoach on the long road vista",
+          "description": "Distant white tourist motorcoach on the long road vista.",
+          "groundingPhrase": "Distant white tourist motorcoach on the long road vista",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4807984956452889,
+            "y": 0.4795906421742076,
+            "w": 0.023726840855106873,
+            "h": 0.048575372029411035
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Distant white tourist motorcoach on the long road vista."
+            }
+          ],
+          "groundingLabel": "Distant white tourist motorcoach"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-3114b5f3fd",
+          "label": "Road surface asphalt painted stencil",
+          "text": "Road surface asphalt painted stencil",
+          "description": "'Επαρ. Οδ. Τρίπολης - Παραλίου Άστρους' (Provincial Road Tripoli to Paralio Astros).",
+          "groundingPhrase": "Road surface asphalt painted stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Road surface asphalt painted stencil: 'Επαρ. Οδ. Τρίπολης - Παραλίου Άστρους' (Provincial Road Tripoli to Paralio Astros)."
+            }
+          ],
+          "groundingLabel": "Road surface asphalt; stencil"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-bade81fbb4",
+          "label": "Greek road surface asphalt lettering reading \"Επαρχ. Οδ. Παραλίου...\" (Eparchiaki Odos P",
+          "text": "Greek road surface asphalt lettering reading \"Επαρχ. Οδ. Παραλίου...\" (Eparchiaki Odos P",
+          "description": "Greek road surface asphalt lettering reading \"Επαρχ. Οδ. Παραλίου...\" (Eparchiaki Odos Paraliou Astros).",
+          "groundingPhrase": "Greek road surface asphalt lettering reading \"Επαρχ. Οδ. Παραλίου...\" (Eparchiaki Odos P",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Greek road surface asphalt lettering reading \"Επαρχ. Οδ. Παραλίου...\" (Eparchiaki Odos Paraliou Astros)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-6194b6f849",
+          "label": "Astros / Arcadia",
+          "text": "Astros / Arcadia",
+          "description": "Astros / Arcadia.",
+          "groundingPhrase": "Astros / Arcadia",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Astros / Arcadia"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-high-aided-7157ad556b",
+          "label": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia",
+          "text": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia",
+          "description": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia.",
+          "groundingPhrase": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia."
+            }
+          ],
+          "groundingLabel": "Toponymic connection"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-medium-aided-11770bc4c9",
+          "label": "Strong Aegean sunlight and characteristic dry Peloponnesian montane morphology",
+          "text": "Strong Aegean sunlight and characteristic dry Peloponnesian montane morphology",
+          "description": "Strong Aegean sunlight and characteristic dry Peloponnesian montane morphology.",
+          "groundingPhrase": "Strong Aegean sunlight and characteristic dry Peloponnesian montane morphology",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Strong Aegean sunlight and characteristic dry Peloponnesian montane terrain."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Strong Aegean sunlight and characteristic dry Peloponnesian montane morphology."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-medium-aided-75aa70577d",
+          "label": "Greek road surface asphalt lettering reading \"Επαρχ.Οδ. Παράλιου Άστρους\" (Eparchiaki Od",
+          "text": "Greek road surface asphalt lettering reading \"Επαρχ.Οδ. Παράλιου Άστρους\" (Eparchiaki Od",
+          "description": "Greek road surface asphalt lettering reading \"Επαρχ.Οδ. Παράλιου Άστρους\" (Eparchiaki Odos Paraliou Astrous).",
+          "groundingPhrase": "Greek road surface asphalt lettering reading \"Επαρχ.Οδ. Παράλιου Άστρους\" (Eparchiaki Od",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.39949208234362626,
+            "y": 0.5083485030991994,
+            "w": 0.12624030087094218,
+            "h": 0.31016639062460793
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Greek road surface asphalt lettering reading \"Επαρχ. Οδ. Παραλίου...\" (Eparchiaki Odos Paraliou Astros)."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Greek road surface asphalt lettering reading \"Επαρχ.Οδ. Παράλιου Άστρους\" (Eparchiaki Odos Paraliou Astrous)."
+            }
+          ],
+          "groundingLabel": "Greek road surface asphalt"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-medium-aided-df1081274b",
+          "label": "Mediterranean scrubland (phrygana / garrigue), olive groves, cypress trees, and rocky li",
+          "text": "Mediterranean scrubland (phrygana / garrigue), olive groves, cypress trees, and rocky li",
+          "description": "Mediterranean scrubland (phrygana / garrigue), olive groves, cypress trees, and rocky limestone mountain slopes.",
+          "groundingPhrase": "Mediterranean scrubland , olive groves, cypress trees, and rocky li",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Mediterranean scrubland (phrygana / garrigue), cypress trees, and rocky limestone mountain slopes."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Mediterranean scrubland (phrygana / garrigue), olive groves, cypress trees, and rocky limestone mountain slopes."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-medium-aided-a7a4ee7d9a",
+          "label": "Greek provincial road alignment (Επαρχιακή Οδός) descending from the inland plateau towa",
+          "text": "Greek provincial road alignment (Επαρχιακή Οδός) descending from the inland plateau towa",
+          "description": "Greek provincial road alignment (Επαρχιακή Οδός) descending from the inland plateau towards the coast.",
+          "groundingPhrase": "Greek provincial road alignment descending from the inland plateau towa",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Greek provincial road alignment (Επαρχιακή Οδός) winding through rural karst landscape."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Greek provincial road alignment (Επαρχιακή Οδός) descending from the inland plateau towards the coast."
+            }
+          ],
+          "groundingLabel": "Greek provincial road alignment"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-medium-aided-45a476d9f2",
+          "label": "Xirokampi / Astros",
+          "text": "Xirokampi / Astros",
+          "description": "Xirokampi / Astros.",
+          "groundingPhrase": "Xirokampi / Astros",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Astros / Arcadia"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Xirokampi / Astros"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-medium-aided-7157ad556b",
+          "label": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia",
+          "text": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia",
+          "description": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia.",
+          "groundingPhrase": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Toponymic connection to Paralio Astros on the Argolic Gulf in North Kynouria, Arcadia."
+            }
+          ],
+          "groundingLabel": "toponymic connection"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-8-flash-medium-aided-2206e4d621",
+          "label": "Arcadia",
+          "text": "Arcadia",
+          "description": "Arcadia.",
+          "groundingPhrase": "Arcadia",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Arcadia"
+            }
+          ],
+          "groundingLabel": "Arcadia"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-xhigh-8417b1c099",
+          "label": "Dry Mediterranean mountain road",
+          "text": "Dry Mediterranean mountain road",
+          "description": "Dry Mediterranean mountain road.",
+          "groundingPhrase": "Dry Mediterranean mountain road",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md",
+              "text": "dry rocky local road"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Dry Mediterranean mountain road"
+            }
+          ],
+          "groundingLabel": "Dry Mediterranean mountain road"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-xhigh-aa235403c9",
+          "label": "juniper/maquis and a coach under strong sun. Initial/",
+          "text": "juniper/maquis and a coach under strong sun. Initial/",
+          "description": "Juniper/maquis and a coach under strong sun. Initial/.",
+          "groundingPhrase": "juniper/maquis and a coach under strong sun. Initial/",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md",
+              "text": "juniper/maquis and a coach under strong sun. Initial/"
+            }
+          ],
+          "groundingLabel": "juniper/maquis"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-xhigh-6fc346bbb1",
+          "label": "pale rocky terrain established Greece/Peloponnese",
+          "text": "pale rocky terrain established Greece/Peloponnese",
+          "description": "Pale rocky terrain established Greece/Peloponnese.",
+          "groundingPhrase": "pale rocky terrain established Greece/Peloponnese",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5993740219092333,
+            "y": 0.4868062100094241,
+            "w": 0.2543035993740218,
+            "h": 0.2285600912653143
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "pale rocky terrain established Greece/Peloponnese."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-xhigh-6b29b5ede9",
+          "label": "Greek road-label/transliteration cues",
+          "text": "Greek road-label/transliteration cues",
+          "description": "Greek road-label/transliteration cues.",
+          "groundingPhrase": "Greek road-label/transliteration cues",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3965,
+            "y": 0.4975,
+            "w": 0.139,
+            "h": 0.32
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Greek road-label/transliteration cues"
+            }
+          ],
+          "groundingLabel": "Greek road-label/transliteration cues"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-xhigh-62fb9cfd0c",
+          "label": "scrub",
+          "text": "scrub",
+          "description": "Scrub.",
+          "groundingPhrase": "scrub",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "scrub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-fee05ec60d",
+          "label": "white coach ahead and low flat horizon. Initial belief",
+          "text": "white coach ahead and low flat horizon. Initial belief",
+          "description": "Low rolling horizon. Initial belief Greece.",
+          "groundingPhrase": "white coach ahead and low flat horizon. Initial belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "white coach ahead and low flat horizon. Initial belief: Greece"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low rolling horizon. Initial belief Greece"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-cd1ce53fa4",
+          "label": "narrow gray rural road",
+          "text": "narrow gray rural road",
+          "description": "Narrow gray rural road with white edge lines.",
+          "groundingPhrase": "narrow gray rural road",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "narrow gray rural road with white edge lines"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "narrow gray road with faint white edges"
+            }
+          ],
+          "groundingLabel": "narrow gray rural road"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-9d47cff23a",
+          "label": "low island confidence. Recorder REC Round1 visible",
+          "text": "low island confidence. Recorder REC Round1 visible",
+          "description": "Low island confidence. Recorder REC Round1 visible.",
+          "groundingPhrase": "low island confidence. Recorder REC Round1 visible",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low island confidence. Recorder REC Round1 visible."
+            }
+          ],
+          "groundingLabel": "Recorder REC Round1"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-d4d0058ac5",
+          "label": "Greek provincial-road overlay ending Paradisiou-like text",
+          "text": "Greek provincial-road overlay ending Paradisiou-like text",
+          "description": "Greek provincial-road overlay ending Paradisiou-like text.",
+          "groundingPhrase": "Greek provincial-road overlay ending Paradisiou-like text",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Greek provincial-road overlay ending Paradisiou-like text"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-c7cde6bb01",
+          "label": "Rhodes plausible from Paradisi reference",
+          "text": "Rhodes plausible from Paradisi reference",
+          "description": "Rhodes plausible from Paradisi reference.",
+          "groundingPhrase": "Rhodes plausible from Paradisi reference",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Rhodes plausible from Paradisi reference"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-9489101816",
+          "label": "Greek-script Epar. Od. road overlay",
+          "text": "Greek-script Epar. Od. road overlay",
+          "description": "Greek-script Epar. Od. road overlay.",
+          "groundingPhrase": "Greek-script Epar. Od. road overlay",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3965,
+            "y": 0.5005,
+            "w": 0.13494536817102132,
+            "h": 0.3218180380938041
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Greek-script Epar. Od. road overlay"
+            }
+          ],
+          "groundingLabel": "Greek provincial-road overlay; Greek-script Epar"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-638d08a898",
+          "label": "island interior possibly Rhodes",
+          "text": "island interior possibly Rhodes",
+          "description": "Island interior possibly Rhodes.",
+          "groundingPhrase": "island interior possibly Rhodes",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "island interior possibly Rhodes"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-13bdbdc45f",
+          "label": "dry rocky pale ground",
+          "text": "dry rocky pale ground",
+          "description": "Dry rocky pale ground.",
+          "groundingPhrase": "dry rocky pale ground",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5835312747426762,
+            "y": 0.45725112298928455,
+            "w": 0.20031670625494846,
+            "h": 0.2746367537453888
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "dry rocky pale ground"
+            }
+          ],
+          "groundingLabel": "dry rocky pale ground"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-08aea5701c",
+          "label": "low evergreen/juniper woodland",
+          "text": "low evergreen/juniper woodland",
+          "description": "Low evergreen/juniper woodland.",
+          "groundingPhrase": "low evergreen/juniper woodland",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "low evergreen/juniper woodland"
+            }
+          ],
+          "groundingLabel": "low evergreen/juniper woodland"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-22a709758d",
+          "label": "dense cypress/conifer scrub",
+          "text": "dense cypress/conifer scrub",
+          "description": "Dense cypress/conifer scrub.",
+          "groundingPhrase": "dense cypress/conifer scrub",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "dense cypress/conifer scrub"
+            }
+          ],
+          "groundingLabel": "dense cypress/conifer scrub"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-8dd05fcdb5",
+          "label": "high country confidence",
+          "text": "high country confidence",
+          "description": "High country confidence.",
+          "groundingPhrase": "high country confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "high country confidence"
+            }
+          ],
+          "groundingLabel": "white coach"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-6-astra-low-5a0175b50f",
+          "label": "dry grassy shoulders",
+          "text": "dry grassy shoulders",
+          "description": "Dry grassy shoulders.",
+          "groundingPhrase": "dry grassy shoulders",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "dry grassy shoulders"
+            }
+          ],
+          "groundingLabel": "Rhodes"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-grok-4-6-xhigh-405ba000b8",
+          "label": "but several map clicks remained in Algeria",
+          "text": "but several map clicks remained in Algeria",
+          "description": "But several map clicks remained in Algeria.",
+          "groundingPhrase": "but several map clicks remained in Algeria",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "but several map clicks remained in Algeria."
+            }
+          ],
+          "groundingLabel": "several map clicks"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-grok-4-6-xhigh-a38d1ae66c",
+          "label": "Greek road text and Mediterranean vegetation produced the correct country belief",
+          "text": "Greek road text and Mediterranean vegetation produced the correct country belief",
+          "description": "Greek road text and Mediterranean vegetation produced the correct country belief.",
+          "groundingPhrase": "Greek road text and Mediterranean vegetation produced the correct country belief",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.40143114241001565,
+            "y": 0.5318290511383365,
+            "w": 0.13143270735524265,
+            "h": 0.23326196617231285
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Greek road text and Mediterranean vegetation produced the correct country belief"
+            }
+          ],
+          "groundingLabel": "Greek road text"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-max-2802ba6a20",
+          "label": "Dry Greek mountain road",
+          "text": "Dry Greek mountain road",
+          "description": "Dry scrub and southern-Greek roadscape.",
+          "groundingPhrase": "Dry Greek mountain road",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md",
+              "text": "dry scrub and southern-Greek roadscape."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Dry Greek mountain road"
+            }
+          ],
+          "groundingLabel": "Dry Greek mountain road"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-max-18a7f44e1a",
+          "label": "Greek road label Epar.Od. Papadianikon",
+          "text": "Greek road label Epar.Od. Papadianikon",
+          "description": "Greek road label Epar.Od. Papadianikon.",
+          "groundingPhrase": "Greek road label Epar.Od. Papadianikon",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3993450704225352,
+            "y": 0.5119521601111056,
+            "w": 0.13097026604068857,
+            "h": 0.28874445712018254
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md",
+              "text": "Greek road label Epar.Od. Papadianikon"
+            }
+          ],
+          "groundingLabel": "Greek road label Epar; Papadianikon"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-max-36c682c8d5",
+          "label": "sparse settlement context",
+          "text": "sparse settlement context",
+          "description": "Sparse settlement context.",
+          "groundingPhrase": "sparse settlement context",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "sparse settlement context."
+            }
+          ],
+          "groundingLabel": "sparse settlement context"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-max-bab5a1a0d4",
+          "label": "provincial road geometry",
+          "text": "provincial road geometry",
+          "description": "Provincial road geometry.",
+          "groundingPhrase": "provincial road geometry",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "provincial road geometry"
+            }
+          ],
+          "groundingLabel": "provincial road geometry"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-max-b31e14e01a",
+          "label": "pale rocky soil",
+          "text": "pale rocky soil",
+          "description": "Pale rocky soil.",
+          "groundingPhrase": "pale rocky soil",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5845070422535211,
+            "y": 0.5217251128416249,
+            "w": 0.17762128325508608,
+            "h": 0.2158623084172412
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "pale rocky soil"
+            }
+          ],
+          "groundingLabel": "pale rocky soil"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gpt-5-6-sol-max-1610087c57",
+          "label": "Mediterranean scrub",
+          "text": "Mediterranean scrub",
+          "description": "Mediterranean scrub.",
+          "groundingPhrase": "Mediterranean scrub",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Mediterranean scrub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-glm-5-3-flash-max-892ac28670",
+          "label": "\"Επαρ. Οδ. 08\" paint — Greek provincial road,",
+          "text": "\"Επαρ. Οδ. 08\" paint — Greek provincial road,",
+          "description": "\"Επαρ. Οδ. 08\" paint — Greek provincial road,.",
+          "groundingPhrase": "\"Επαρ. Οδ. 08\" paint — Greek provincial road,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.39819327073552424,
+            "y": 0.5367677942562373,
+            "w": 0.14014788732394368,
+            "h": 0.24260822875849408
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "\"Επαρ. Οδ. 08\" paint — Greek provincial road,"
+            }
+          ],
+          "groundingLabel": "Greek provincial road"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-glm-5-3-flash-max-befc4dba1e",
+          "label": "rocky phrygana scrub + dry grass,",
+          "text": "rocky phrygana scrub + dry grass,",
+          "description": "Rocky phrygana scrub + dry grass,.",
+          "groundingPhrase": "rocky phrygana scrub + dry grass,",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.5884194053208138,
+            "y": 0.5264867814096523,
+            "w": 0.17136150234741776,
+            "h": 0.2031645255691682
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "rocky phrygana scrub + dry grass,"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-glm-5-3-flash-max-003fa2acb2",
+          "label": "low rolling Mediterranean hills. Belief",
+          "text": "low rolling Mediterranean hills. Belief",
+          "description": "Central Greece. Placing pin at 38.30, 23.10.",
+          "groundingPhrase": "low rolling Mediterranean hills. Belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "low rolling Mediterranean hills. Belief: central Greece. Placing pin at 38.30, 23.10."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-glm-5-3-flash-max-9a1e44e066",
+          "label": "narrow two-lane road",
+          "text": "narrow two-lane road",
+          "description": "Narrow two-lane road with white van ahead,.",
+          "groundingPhrase": "narrow two-lane road",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "narrow two-lane road with white van ahead,"
+            }
+          ],
+          "groundingLabel": "narrow two-lane road"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-glm-5-3-flash-max-0032000c37",
+          "label": "dense cypress-type conifers,",
+          "text": "dense cypress-type conifers,",
+          "description": "Dense cypress-type conifers,.",
+          "groundingPhrase": "dense cypress-type conifers,",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "dense cypress-type conifers,"
+            }
+          ],
+          "groundingLabel": "dense cypress-type conifers"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-unaided-4fc0225b93",
+          "label": "arid Peloponnese karst terrain",
+          "text": "arid Peloponnese karst terrain",
+          "description": "Arid Peloponnese karst terrain.",
+          "groundingPhrase": "arid Peloponnese karst terrain",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "arid Peloponnese karst terrain"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-unaided-2ea0cb2fa4",
+          "label": "Greek mountain road signage",
+          "text": "Greek mountain road signage",
+          "description": "Greek mountain road signage.",
+          "groundingPhrase": "Greek mountain road signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.39726682316118933,
+            "y": 0.5133649372550965,
+            "w": 0.14185680751173713,
+            "h": 0.2781449828877536
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Greek mountain road signage"
+            }
+          ],
+          "groundingLabel": "Greek mountain road signage"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-gemini-3-7-flash-high-unaided-1ce826a0d7",
+          "label": "olive groves",
+          "text": "olive groves",
+          "description": "Olive groves.",
+          "groundingPhrase": "olive groves",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "olive groves"
+            }
+          ],
+          "groundingLabel": "olive groves"
         }
       ]
     }

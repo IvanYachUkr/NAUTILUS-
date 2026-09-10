@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,42 +24,36 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-6790c54d02",
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-58afdf9532",
           "label": "Street Name on Asphalt",
           "text": "Street Name on Asphalt",
-          "description": "Exact road name \"Carrer de Císcar\" painted in large white font on the roadway.",
+          "description": "\"Carrer de Císcar\" in Valencian script.",
           "groundingPhrase": "Street Name on Asphalt",
           "source": "panorama",
           "category": "signage",
           "region": {
             "x": 0.3655,
             "y": 0.5525,
-            "w": 0.187,
-            "h": 0.259
+            "w": 0.0680641627543036,
+            "h": 0.20979609146371708
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Street Name on Asphalt: \"Carrer de Císcar\" in Valencian script."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Street Name on Asphalt: Exact road name \"Carrer de Císcar\" painted in large white font on the roadway."
             },
             {
               "runId": "r1",
@@ -69,26 +64,30 @@
           "groundingLabel": "Street Name"
         },
         {
-          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-7b37fea3b5",
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-eab884c604",
           "label": "Valencian Ensanche Architecture",
           "text": "Valencian Ensanche Architecture",
           "description": "Classic 19th/20th-century residential facades with wrought-iron balconies.",
           "groundingPhrase": "Valencian Ensanche Architecture",
           "source": "panorama",
-          "category": "signage",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "category": "geography",
+          "region": {
+            "x": 0.0025,
+            "y": 0.0045,
+            "w": 0.348,
+            "h": 0.632
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
@@ -97,38 +96,38 @@
               "text": "Valencian Ensanche Architecture: Classic 19th/20th-century residential facades with wrought-iron balconies."
             },
             {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Valencian / Catalan Linguistics: Road naming prefix \"Carrer de...\" indicating the Valencian Community."
-            },
-            {
               "runId": "r1",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
               "text": "Valencian Catalan naming"
             }
-          ]
+          ],
+          "groundingLabel": "Valencian Ensanche Architecture"
         },
         {
-          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-89a59daa0c",
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-f0430b63bb",
           "label": "Spanish Street Furniture",
           "text": "Spanish Street Furniture",
-          "description": "Standard Spanish green Ecovidrio recycling container and grey communal refuse bins.",
+          "description": "Ecovidrio green bottle bank and urban grey waste containers.",
           "groundingPhrase": "Spanish Street Furniture",
           "source": "panorama",
           "category": "geography",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "region": {
+            "x": 0.12538419405320816,
+            "y": 0.5251805714002281,
+            "w": 0.11131142410015649,
+            "h": 0.20293611428004563
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
@@ -137,59 +136,83 @@
               "text": "Spanish Street Furniture: Ecovidrio green bottle bank and urban grey waste containers."
             },
             {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Municipal Infrastructure: Standard Spanish green Ecovidrio recycling container and grey communal refuse bins."
-            },
-            {
               "runId": "r1",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
               "text": "green Ecovidrio bins."
             }
-          ]
+          ],
+          "groundingLabel": "Spanish Street Furniture"
         },
         {
-          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-22127a4b91",
-          "label": "Commercial Signage",
-          "text": "Commercial Signage",
-          "description": "Generali Seguros branch and local boutique storefronts typical of the Gran Via/Cánovas district.",
-          "groundingPhrase": "Commercial Signage",
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-dff0717009",
+          "label": "modernist balconies in L'Eixample",
+          "text": "modernist balconies in L'Eixample",
+          "description": "Modernist balconies in L'Eixample.",
+          "groundingPhrase": "modernist balconies in L'Eixample",
           "source": "panorama",
-          "category": "signage",
+          "category": "geography",
           "region": {
-            "x": 0.9005,
-            "y": 0.0075,
-            "w": 0.096,
-            "h": 0.068
+            "x": 0.6505,
+            "y": 0.0085,
+            "w": 0.345,
+            "h": 0.292
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
-            "r2",
-            "r3"
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "modernist balconies in L'Eixample"
+            }
+          ],
+          "groundingLabel": "modernist balconies"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-367c5168f7",
+          "label": "Commercial Signage",
+          "text": "Commercial Signage",
+          "description": "Generali Seguros agency and local Valencian bars/boutiques (Malva Rocha).",
+          "groundingPhrase": "Commercial Signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5149851330203443,
+            "y": 0.417718788750558,
+            "w": 0.13837949921752735,
+            "h": 0.15416715440702347
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Commercial Signage: Generali Seguros agency and local Valencian bars/boutiques (Malva Rocha)."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Commercial Signage: Generali Seguros branch and local boutique storefronts typical of the Gran Via/Cánovas district."
             }
           ],
           "groundingLabel": "Commercial Signage"
         },
         {
-          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-cb80c16a5c",
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-d9f7016199",
           "label": "Urban Setting",
           "text": "Urban Setting",
           "description": "Leafy grid boulevard in L'Eixample / Gran Via district of Valencia.",
@@ -215,23 +238,170 @@
               "text": "Urban Setting: Leafy grid boulevard in L'Eixample / Gran Via district of Valencia."
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
         },
         {
-          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-1c85a20f9b",
-          "label": "Urban Architecture",
-          "text": "Urban Architecture",
-          "description": "Ornate Valencian modernist residential apartment blocks with wrought-iron balconies.",
-          "groundingPhrase": "Urban Architecture",
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-medium-aided-e51289cf48",
+          "label": "Commercial & Municipal Amenities",
+          "text": "Commercial & Municipal Amenities",
+          "description": "Green glass recycling igloo labeled with Generalitat Valenciana and Ajuntament de València municipal badges.",
+          "groundingPhrase": "Commercial & Municipal Amenities",
           "source": "panorama",
           "category": "geography",
           "region": {
-            "x": 0.0055,
-            "y": 0.0075,
-            "w": 0.989,
-            "h": 0.978
+            "x": 0.4932699920823436,
+            "y": 0.4106752992546864,
+            "w": 0.20190023752969127,
+            "h": 0.13330321965419456
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Green glass recycling igloo labeled with Generalitat Valenciana and Ajuntament de València municipal badges."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Commercial & Municipal Amenities: Generali Seguros office, \"Momo Rocha\", Green Ecovidrio recycling igloo."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Green glass recycling igloo labeled with Generalitat Valenciana and Ajuntament de València municipal badges."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-medium-aided-0fb2742408",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "Road surface text \"Carrer de Ciscar\" (Valencian naming convention).",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3732394366197183,
+            "y": 0.5344228956896979,
+            "w": 0.06338028169014082,
+            "h": 0.25554287981746937
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Street name stencil painted directly on the roadway asphalt: \"Carrer de Ciscar\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Street Name on Asphalt: Road surface text \"Carrer de Ciscar\" (Valencian naming convention)."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Street name stencil painted directly on the roadway asphalt: \"Carrer de Ciscar\"."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-medium-aided-5e8da0c4c9",
+          "label": "Spanish commercial and insurance storefronts (GENERALI Seguros, Mama Rocha)",
+          "text": "Spanish commercial and insurance storefronts (GENERALI Seguros, Mama Rocha)",
+          "description": "Spanish commercial and insurance storefronts (GENERALI Seguros, Mama Rocha).",
+          "groundingPhrase": "Spanish commercial and insurance storefronts",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.22222222222222224,
+            "y": 0.3868111700808492,
+            "w": 0.09467918622848198,
+            "h": 0.1428500570408214
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Spanish commercial and insurance storefronts (GENERALI Seguros, Mama Rocha)."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Spanish commercial and insurance storefronts (GENERALI Seguros, Mama Rocha)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-medium-aided-582fd3e018",
+          "label": "Classic late 19th-century Spanish Mediterranean urban architecture",
+          "text": "Classic late 19th-century Spanish Mediterranean urban architecture",
+          "description": "Classic late 19th-century Spanish Mediterranean urban architecture with wrought-iron balconies and arched ground-floor portals in L'Eixample district.",
+          "groundingPhrase": "Classic late 19th-century Spanish Mediterranean urban architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -239,33 +409,402 @@
             "consistent": null
           },
           "sourceRuns": [
+            "r1",
             "r3"
           ],
           "provenance": [
             {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Classic late 19th-century Spanish Mediterranean urban architecture with wrought-iron balconies and arched ground-floor portals in L'Eixample district."
+            },
+            {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Urban Architecture: Ornate Valencian modernist residential apartment blocks with wrought-iron balconies."
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Classic late 19th-century Spanish Mediterranean urban architecture with wrought-iron balconies and arched ground-floor portals in L'Eixample district."
+            }
+          ],
+          "groundingLabel": "19th-century Spanish Mediterranean urban architecture; Spanish Mediterranean urban"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-medium-aided-fc59be360b",
+          "label": "Road traffic infrastructure",
+          "text": "Road traffic infrastructure",
+          "description": "Yellow hatched junction box, street lighting brackets, and Spanish/EU license plates.",
+          "groundingPhrase": "Road traffic infrastructure",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Road traffic infrastructure: yellow hatched junction box, street lighting brackets, and Spanish/EU license plates."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Road traffic infrastructure: yellow hatched junction box, street lighting brackets, and Spanish/EU license plates."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-medium-aided-5a0ab3f311",
+          "label": "Urban Architecture",
+          "text": "Urban Architecture",
+          "description": "Classic Valencian Eixample architecture with ornate wrought-iron balconies and ground-floor commercial premises.",
+          "groundingPhrase": "Urban Architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Urban Architecture: Classic Valencian Eixample architecture with ornate wrought-iron balconies and ground-floor commercial premises."
             }
           ],
           "groundingLabel": "Urban Architecture"
         },
         {
-          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-aided-f298d48123",
-          "label": "modernist balconies in L'Eixample",
-          "text": "modernist balconies in L'Eixample",
-          "description": "Modernist balconies in L'Eixample.",
-          "groundingPhrase": "modernist balconies in L'Eixample",
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-medium-aided-84d0d25410",
+          "label": "Road Markings",
+          "text": "Road Markings",
+          "description": "Yellow zigzag loading zone line markings.",
+          "groundingPhrase": "Road Markings",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.2589984350547731,
+            "y": 0.6661623927384555,
+            "w": 0.16979655712050074,
+            "h": 0.33383760726154454
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Road Markings: Yellow zigzag loading zone line markings."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-high-aided-381b11a5d9",
+          "label": "Green igloo-style glass recycling bin labeled 'ecovidrio'",
+          "text": "Green igloo-style glass recycling bin labeled 'ecovidrio'",
+          "description": "Green domed \"ecovidrio\" recycling bank and Spanish yellow kerb markings.",
+          "groundingPhrase": "Green igloo-style glass recycling bin labeled 'ecovidrio'",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.1255,
+            "y": 0.5305,
+            "w": 0.111,
+            "h": 0.204
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Green domed \"ecovidrio\" recycling bank and Spanish yellow kerb markings."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Green igloo-style glass recycling bin labeled 'ecovidrio'."
+            }
+          ],
+          "groundingLabel": "Green igloo-style glass recycling bin"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-high-aided-ddda900b8d",
+          "label": "Street name stencil clearly painted on the asphalt",
+          "text": "Street name stencil clearly painted on the asphalt",
+          "description": "Asphalt road stencil reading \"Carrer de Císcar\".",
+          "groundingPhrase": "Street name stencil clearly painted on the asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3655,
+            "y": 0.5545,
+            "w": 0.062,
+            "h": 0.197
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Asphalt road stencil reading \"Carrer de Císcar\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Street name stencil clearly painted on the asphalt: 'Carrer de Císcar'."
+            }
+          ],
+          "groundingLabel": "Street name stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-high-aided-70640680a8",
+          "label": "Spanish insurance agency storefront 'GENERALI Seguros' on the curved corner building",
+          "text": "Spanish insurance agency storefront 'GENERALI Seguros' on the curved corner building",
+          "description": "Spanish insurance agency storefront 'GENERALI Seguros' on the curved corner building.",
+          "groundingPhrase": "Spanish insurance agency storefront 'GENERALI Seguros' on the curved corner building",
           "source": "panorama",
           "category": "geography",
           "region": {
-            "x": 0.8375,
-            "y": 0.0065,
-            "w": 0.158,
-            "h": 0.119
+            "x": 0.5168285827395092,
+            "y": 0.40259086802680116,
+            "w": 0.12655423594615994,
+            "h": 0.10224244021179954
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "\"GENERALI Seguros\" insurance office on the street corner."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Spanish insurance agency storefront 'GENERALI Seguros' on the curved corner building."
+            }
+          ],
+          "groundingLabel": "Spanish insurance agency storefront 'GENERALI Seguros"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-high-aided-50ec5cc702",
+          "label": "Elegant early 20th-century Eixample residential apartment facades",
+          "text": "Elegant early 20th-century Eixample residential apartment facades",
+          "description": "Elegant early 20th-century Eixample residential apartment facades with ornate iron railings.",
+          "groundingPhrase": "Elegant early 20th-century Eixample residential apartment facades",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5423594615993665,
+            "y": 0.0016060628873999347,
+            "w": 0.45764053840063346,
+            "h": 0.5316068157293784
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Elegant early 20th-century Eixample residential apartment facades with ornate iron railings."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-high-aided-6a52f759b9",
+          "label": "Catalonian/Valencian street naming convention (\"Carrer\")",
+          "text": "Catalonian/Valencian street naming convention (\"Carrer\")",
+          "description": "Catalonian/Valencian street naming convention (\"Carrer\").",
+          "groundingPhrase": "Catalonian/Valencian street naming convention",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3642121931908155,
+            "y": 0.5263118271474817,
+            "w": 0.07759303246239113,
+            "h": 0.2553639990965897
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Catalonian/Valencian street naming convention (\"Carrer\")."
+            }
+          ],
+          "groundingLabel": "Catalonian/Valencian street"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-high-aided-0366697df3",
+          "label": "Yellow cross-hatched intersection markings typical of Spanish city street junctions",
+          "text": "Yellow cross-hatched intersection markings typical of Spanish city street junctions",
+          "description": "Yellow cross-hatched intersection markings typical of Spanish city street junctions.",
+          "groundingPhrase": "Yellow cross-hatched intersection markings typical of Spanish city street junctions",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.2581155977830562,
+            "y": 0.6853120530000754,
+            "w": 0.18764845605700708,
+            "h": 0.31468794699992464
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Yellow cross-hatched intersection markings typical of Spanish city street junctions."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-high-aided-5dbf299e9a",
+          "label": "Spanish urban architecture",
+          "text": "Spanish urban architecture",
+          "description": "Spanish urban architecture with ornamental ironwork balconies, roll-down security shutters, and mature leafy street trees.",
+          "groundingPhrase": "Spanish urban architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Spanish urban architecture with ornamental ironwork balconies, roll-down security shutters, and mature leafy street trees."
+            }
+          ],
+          "groundingLabel": "Spanish urban architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-high-aided-9c1bb79b2f",
+          "label": "Carrer de Císcar",
+          "text": "Carrer de Císcar",
+          "description": "Carrer de Císcar.",
+          "groundingPhrase": "Carrer de Císcar",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -278,11 +817,1391 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "modernist balconies in L'Eixample"
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Carrer de Císcar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-medium-aided-6a52f759b9",
+          "label": "Catalonian/Valencian street naming convention (\"Carrer\")",
+          "text": "Catalonian/Valencian street naming convention (\"Carrer\")",
+          "description": "Catalonian/Valencian street naming convention (\"Carrer\").",
+          "groundingPhrase": "Catalonian/Valencian street naming convention",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3728792557403009,
+            "y": 0.5518334588069964,
+            "w": 0.056257719714964294,
+            "h": 0.22652986273181258
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Catalonian/Valencian street naming convention (\"Carrer\")."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Catalonian/Valencian street naming convention (\"Carrer\")."
             }
           ],
-          "groundingLabel": "modernist balconies"
+          "groundingLabel": "Catalonian/Valencian street naming convention"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-medium-aided-93480bb99d",
+          "label": "Modernist early 20th-century residential apartments",
+          "text": "Modernist early 20th-century residential apartments",
+          "description": "Modernist early 20th-century residential apartments with wrought-iron balconies and ground-floor commercial shops (Generali Seguros).",
+          "groundingPhrase": "Modernist early 20th-century residential apartments",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.43608590657165475,
+            "y": 0,
+            "w": 0.5639140934283453,
+            "h": 0.591
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "\"GENERALI Seguros\" insurance office on the street corner."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Modernist early 20th-century residential apartments with wrought-iron balconies and ground-floor commercial shops (Generali Seguros)."
+            }
+          ],
+          "groundingLabel": "modernist early 20th-century residential apartments"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-medium-aided-0ae07179fc",
+          "label": "Spanish municipal infrastructure",
+          "text": "Spanish municipal infrastructure",
+          "description": "Green domed \"ecovidrio\" recycling bank and Spanish yellow kerb markings.",
+          "groundingPhrase": "Spanish municipal infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.1250989707046714,
+            "y": 0.5086451353860825,
+            "w": 0.11401425178147268,
+            "h": 0.22003061557379108
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Green domed \"ecovidrio\" recycling bank and Spanish yellow kerb markings."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Spanish municipal infrastructure: green Ecovidrio dome recycling bank, yellow curbside markings."
+            }
+          ],
+          "groundingLabel": "Spanish municipal infrastructure"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-medium-aided-9c1bb79b2f",
+          "label": "Carrer de Císcar",
+          "text": "Carrer de Císcar",
+          "description": "Carrer de Císcar.",
+          "groundingPhrase": "Carrer de Císcar",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Carrer de Císcar"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Carrer de Císcar"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-medium-aided-444bf57898",
+          "label": "Clear asphalt road surface lettering directly in lane reading \"Carrer de Císcar\"",
+          "text": "Clear asphalt road surface lettering directly in lane reading \"Carrer de Císcar\"",
+          "description": "Clear asphalt road surface lettering directly in lane reading \"Carrer de Císcar\".",
+          "groundingPhrase": "Clear asphalt road surface lettering directly in lane reading \"Carrer de Císcar\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.36104513064133015,
+            "y": 0.5359482044718814,
+            "w": 0.07759303246239113,
+            "h": 0.2585761248713895
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Asphalt road stencil reading \"Carrer de Císcar\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Clear asphalt road surface lettering directly in lane reading \"Carrer de Císcar\"."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-medium-aided-50ec5cc702",
+          "label": "Elegant early 20th-century Eixample residential apartment facades",
+          "text": "Elegant early 20th-century Eixample residential apartment facades",
+          "description": "Elegant early 20th-century Eixample residential apartment facades with ornate iron railings.",
+          "groundingPhrase": "Elegant early 20th-century Eixample residential apartment facades",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Elegant early 20th-century Eixample residential apartment facades with ornate iron railings."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-8-flash-medium-aided-b1b45ab887",
+          "label": "Spanish vehicle registration plates and street tree canopy",
+          "text": "Spanish vehicle registration plates and street tree canopy",
+          "description": "Spanish vehicle registration plates and street tree canopy.",
+          "groundingPhrase": "Spanish vehicle registration plates and street tree canopy",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Spanish vehicle registration plates and street tree canopy."
+            }
+          ],
+          "groundingLabel": "Spanish vehicle registration plates; street tree canopy"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-xhigh-870463d538",
+          "label": "Valencia-scale urban form supported Valencia",
+          "text": "Valencia-scale urban form supported Valencia",
+          "description": "Valencia-scale urban form supported Valencia.",
+          "groundingPhrase": "Valencia-scale urban form supported Valencia",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Valencia-scale urban form supported Valencia."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-xhigh-67f961d561",
+          "label": "Mediterranean vegetation/light",
+          "text": "Mediterranean vegetation/light",
+          "description": "Mediterranean vegetation/light.",
+          "groundingPhrase": "Mediterranean vegetation/light",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Mediterranean vegetation/light"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-xhigh-7a13aba95d",
+          "label": "Spanish streetscape",
+          "text": "Spanish streetscape",
+          "description": "Spanish streetscape.",
+          "groundingPhrase": "Spanish streetscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Spanish streetscape"
+            }
+          ],
+          "groundingLabel": "Spanish streetscape"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-cc9b6e11d1",
+          "label": "Mediterranean balconies and arched first floor",
+          "text": "Mediterranean balconies and arched first floor",
+          "description": "Mediterranean balconies and arched first floor.",
+          "groundingPhrase": "Mediterranean balconies and arched first floor",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.6468725257323832,
+            "y": 0.002735325855103014,
+            "w": 0.33966745843230406,
+            "h": 0.3918793445255841
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Mediterranean balconies and arched first floor"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "balconies"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-ac4405d05d",
+          "label": "large curbside recycling bins. Initial belief Barcelona",
+          "text": "large curbside recycling bins. Initial belief Barcelona",
+          "description": "Large curbside recycling bins. Initial belief Barcelona.",
+          "groundingPhrase": "large curbside recycling bins. Initial belief Barcelona",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4595,
+            "y": 0.4875,
+            "w": 0.152,
+            "h": 0.192
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "large curbside recycling bins. Initial belief Barcelona"
+            }
+          ],
+          "groundingLabel": "large curbside recycling bins"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-2ad547c56d",
+          "label": "85% (Catalan/Valencian street language)",
+          "text": "85% (Catalan/Valencian street language)",
+          "description": "85% (Catalan/Valencian street language).",
+          "groundingPhrase": "85%",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "85% (Catalan/Valencian street language)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-b4ef0760e2",
+          "label": "Carrer de Ciscar road overlay",
+          "text": "Carrer de Ciscar road overlay",
+          "description": "Carrer de Ciscar road overlay.",
+          "groundingPhrase": "Carrer de Ciscar road overlay",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3645,
+            "y": 0.5525,
+            "w": 0.065,
+            "h": 0.202
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Carrer de Ciscar road overlay"
+            }
+          ],
+          "groundingLabel": "Carrer"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-e62b02f525",
+          "label": "Carrer de Girona street label",
+          "text": "Carrer de Girona street label",
+          "description": "Carrer de Girona street label.",
+          "groundingPhrase": "Carrer de Girona street label",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Carrer de Girona street label"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-102f591a93",
+          "label": "broad tree-lined grid street with ornate dark lamps. Initial belief",
+          "text": "broad tree-lined grid street with ornate dark lamps. Initial belief",
+          "description": "Valencia Eixample.",
+          "groundingPhrase": "broad tree-lined grid street with ornate dark lamps. Initial belief",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "broad tree-lined grid street with ornate dark lamps. Initial belief: Valencia Eixample"
+            }
+          ],
+          "groundingLabel": "broad tree-lined grid street"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-3eeebd74e2",
+          "label": "dense pale apartment blocks",
+          "text": "dense pale apartment blocks",
+          "description": "Dense pale apartment blocks.",
+          "groundingPhrase": "dense pale apartment blocks",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "dense pale apartment blocks"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-dace2b4468",
+          "label": "low exact street position",
+          "text": "low exact street position",
+          "description": "Low exact street position.",
+          "groundingPhrase": "low exact street position",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low exact street position."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-fd1cd0fd0a",
+          "label": "Spanish-style recycling containers",
+          "text": "Spanish-style recycling containers",
+          "description": "Spanish-style recycling containers.",
+          "groundingPhrase": "Spanish-style recycling containers",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.12299960411718136,
+            "y": 0.5292576350723983,
+            "w": 0.11457878068091845,
+            "h": 0.19039393711260008
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Spanish-style recycling containers"
+            }
+          ],
+          "groundingLabel": "Spanish-style recycling containers"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-5cdde98515",
+          "label": "high confidence city",
+          "text": "high confidence city",
+          "description": "High confidence city.",
+          "groundingPhrase": "high confidence city",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "high confidence city"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-1d8c191fe3",
+          "label": "leafy street trees",
+          "text": "leafy street trees",
+          "description": "Leafy street trees.",
+          "groundingPhrase": "leafy street trees",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "leafy street trees"
+            }
+          ],
+          "groundingLabel": "leafy street trees"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-6-astra-low-6cf45be1a6",
+          "label": "Generali storefront",
+          "text": "Generali storefront",
+          "description": "Generali storefront.",
+          "groundingPhrase": "Generali storefront",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5051464766429137,
+            "y": 0.4122813621420864,
+            "w": 0.15835312747426766,
+            "h": 0.19112148360059228
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Generali storefront"
+            }
+          ],
+          "groundingLabel": "Generali storefront"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-grok-4-6-xhigh-08fa8b2d2b",
+          "label": "Grok interpreted the Carrer de... street",
+          "text": "Grok interpreted the Carrer de... street",
+          "description": "Grok interpreted the Carrer de... street.",
+          "groundingPhrase": "Grok interpreted the Carrer de... street",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3708920187793427,
+            "y": 0.5248995585536431,
+            "w": 0.054773082942097054,
+            "h": 0.22538564555329596
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Grok interpreted the Carrer de... street"
+            }
+          ],
+          "groundingLabel": "street"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-grok-4-6-xhigh-698f83b114",
+          "label": "Eixample-style blocks as Barcelona. The coarse Spain pin resolved west of Iberia",
+          "text": "Eixample-style blocks as Barcelona. The coarse Spain pin resolved west of Iberia",
+          "description": "Eixample-style blocks as Barcelona. The coarse Spain pin resolved west of Iberia.",
+          "groundingPhrase": "Eixample-style blocks as Barcelona. The coarse Spain pin resolved west of Iberia",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Eixample-style blocks as Barcelona. The coarse Spain pin resolved west of Iberia."
+            }
+          ],
+          "groundingLabel": "Eixample-style blocks"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-max-edbe54a142",
+          "label": "Spanish text",
+          "text": "Spanish text",
+          "description": "Spanish urban fabric.",
+          "groundingPhrase": "Spanish text",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md",
+              "text": "Spanish urban fabric"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Spanish text"
+            }
+          ],
+          "groundingLabel": "Spanish text"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-max-9de7b7ca51",
+          "label": "Carrer de Cirilo Amorós",
+          "text": "Carrer de Cirilo Amorós",
+          "description": "Carrer de Cirilo Amorós.",
+          "groundingPhrase": "Carrer de Cirilo Amorós",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3683935837245696,
+            "y": 0.5432838400872972,
+            "w": 0.05963536776212833,
+            "h": 0.21297053717573533
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md",
+              "text": "Carrer de Cirilo Amorós."
+            }
+          ],
+          "groundingLabel": "Carrer"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-max-c35b9acf5d",
+          "label": "a broad urban avenue",
+          "text": "a broad urban avenue",
+          "description": "A broad urban avenue.",
+          "groundingPhrase": "a broad urban avenue",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "a broad urban avenue"
+            }
+          ],
+          "groundingLabel": "a broad urban avenue"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-max-3acc4bb2e1",
+          "label": "local transit/street furniture",
+          "text": "local transit/street furniture",
+          "description": "Local transit/street furniture.",
+          "groundingPhrase": "local transit/street furniture",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1205,
+            "y": 0.5145,
+            "w": 0.1266619718309859,
+            "h": 0.2166511085759635
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "local transit/street furniture."
+            }
+          ],
+          "groundingLabel": "local transit/street furniture"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-max-7262cdbffb",
+          "label": "dense central-city blocks",
+          "text": "dense central-city blocks",
+          "description": "Dense central-city blocks.",
+          "groundingPhrase": "dense central-city blocks",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "dense central-city blocks"
+            }
+          ],
+          "groundingLabel": "dense central-city blocks"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gpt-5-6-sol-max-7835ce62f5",
+          "label": "Mediterranean architecture",
+          "text": "Mediterranean architecture",
+          "description": "Mediterranean architecture.",
+          "groundingPhrase": "Mediterranean architecture",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Mediterranean architecture"
+            }
+          ],
+          "groundingLabel": "Mediterranean architecture"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-glm-5-3-flash-max-661926868f",
+          "label": "shop signs (MVM, red pharmacy-style sign). Belief",
+          "text": "shop signs (MVM, red pharmacy-style sign). Belief",
+          "description": "Valencia, Ensanche/Pla del Remei. Placing pin at 39.4695, -0.3740.",
+          "groundingPhrase": "shop signs . Belief",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4690367762128326,
+            "y": 0.40239702891721635,
+            "w": 0.1777323943661972,
+            "h": 0.09806388571995436
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "shop signs (MVM, red pharmacy-style sign). Belief: Valencia, Ensanche/Pla del Remei. Placing pin at 39.4695, -0.3740."
+            }
+          ],
+          "groundingLabel": "shop signs"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-glm-5-3-flash-max-a5e3db52b7",
+          "label": "road paint \"Carrer de C…\" (Valencian/Catalan),",
+          "text": "road paint \"Carrer de C…\" (Valencian/Catalan),",
+          "description": "Road paint \"Carrer de C…\" (Valencian/Catalan),.",
+          "groundingPhrase": "road paint \"Carrer de C…\" ,",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3641338028169014,
+            "y": 0.5425221715192698,
+            "w": 0.06837245696400626,
+            "h": 0.23436610287188137
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "road paint \"Carrer de C…\" (Valencian/Catalan),"
+            }
+          ],
+          "groundingLabel": "road paint"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-glm-5-3-flash-max-e3ffbab670",
+          "label": "green-lid recycling container + orange-stickered bins,",
+          "text": "green-lid recycling container + orange-stickered bins,",
+          "description": "Green-lid recycling container + orange-stickered bins,.",
+          "groundingPhrase": "green-lid recycling container + orange-stickered bins,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.12471752738654147,
+            "y": 0.4968488914240365,
+            "w": 0.11745539906103286,
+            "h": 0.23647666286394523
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "green-lid recycling container + orange-stickered bins,"
+            }
+          ],
+          "groundingLabel": "green-lid recycling container + orange-stickered bins; container + orange -stickered bin"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-glm-5-3-flash-max-4707751ac9",
+          "label": "ornate black streetlamps,",
+          "text": "ornate black streetlamps,",
+          "description": "Ornate black streetlamps,.",
+          "groundingPhrase": "ornate black streetlamps,",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "ornate black streetlamps,"
+            }
+          ],
+          "groundingLabel": "ornate black streetlamps"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-glm-5-3-flash-max-9a26910c00",
+          "label": "19th-century facades",
+          "text": "19th-century facades",
+          "description": "19th-century facades with iron balconies,.",
+          "groundingPhrase": "19th-century facades",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4205579029733959,
+            "y": 0,
+            "w": 0.577877151799687,
+            "h": 0.629
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "19th-century facades with iron balconies,"
+            }
+          ],
+          "groundingLabel": "19th-century facades"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-unaided-11fc570e81",
+          "label": "\"Carrer de Císcar\" stencil",
+          "text": "\"Carrer de Císcar\" stencil",
+          "description": "\"Carrer de Císcar\" stencil.",
+          "groundingPhrase": "\"Carrer de Císcar\" stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3701095461658842,
+            "y": 0.5296612271216705,
+            "w": 0.06338028169014082,
+            "h": 0.24919398839343287
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"Carrer de Císcar\" stencil"
+            }
+          ],
+          "groundingLabel": "Carrer de Cscar; stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-unaided-20bf4b6886",
+          "label": "Valencian moderniste facades",
+          "text": "Valencian moderniste facades",
+          "description": "Valencian moderniste facades.",
+          "groundingPhrase": "Valencian moderniste facades",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0015,
+            "y": 0.0035,
+            "w": 0.996,
+            "h": 0.635
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Valencian moderniste facades"
+            }
+          ],
+          "groundingLabel": "Valencian moderniste facades"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-gemini-3-7-flash-high-unaided-ffad9b6274",
+          "label": "\"ecovidrio\" green bin",
+          "text": "\"ecovidrio\" green bin",
+          "description": "\"ecovidrio\" green bin.",
+          "groundingPhrase": "\"ecovidrio\" green bin",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.1255,
+            "y": 0.5295,
+            "w": 0.112,
+            "h": 0.206
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"ecovidrio\" green bin"
+            }
+          ],
+          "groundingLabel": "ecovidrio; green bin"
         }
       ]
     }

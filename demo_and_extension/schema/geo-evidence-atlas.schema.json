@@ -122,6 +122,52 @@
       },
       "additionalProperties": true
     },
+    "visualClue": {
+      "type": "object",
+      "required": ["id", "label", "text", "description", "source", "category", "annotationStatus"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "text": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "source": { "enum": ["starting-image", "panorama", "map"] },
+        "category": { "enum": ["signage", "landmark", "architecture", "infrastructure", "vegetation", "geography", "linguistic"] },
+        "annotationStatus": { "enum": ["pending-grounding", "needs-review", "reviewed", "text-only", "not-grounded", "excluded"] },
+        "region": {
+          "anyOf": [
+            {
+              "type": "object",
+              "required": ["x", "y", "w", "h"],
+              "properties": {
+                "x": { "type": "number", "minimum": 0, "maximum": 1 },
+                "y": { "type": "number", "minimum": 0, "maximum": 1 },
+                "w": { "type": "number", "minimum": 0, "maximum": 1 },
+                "h": { "type": "number", "minimum": 0, "maximum": 1 }
+              },
+              "additionalProperties": false
+            },
+            { "type": "null" }
+          ]
+        },
+        "regionSource": { "type": ["string", "null"] },
+        "ratings": { "$ref": "#/$defs/ratings" },
+        "provenance": { "type": "array", "items": { "type": "object" } }
+      },
+      "additionalProperties": true
+    },
+    "clueSet": {
+      "type": "object",
+      "required": ["id", "benchmarkId", "model", "sourceRuns", "cues"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "benchmarkId": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "minLength": 1 },
+        "reasoning": { "type": "string" },
+        "sourceRuns": { "type": "array", "minItems": 1, "items": { "type": "object" } },
+        "cues": { "type": "array", "items": { "$ref": "#/$defs/visualClue" } }
+      },
+      "additionalProperties": true
+    },
     "run": {
       "type": "object",
       "required": [
@@ -309,6 +355,21 @@
         },
         "startingView": {
           "$ref": "#/$defs/streetView"
+        },
+        "startingImage": {
+          "anyOf": [
+            {
+              "type": "object",
+              "required": ["path"],
+              "properties": { "path": { "type": "string", "minLength": 1 } },
+              "additionalProperties": true
+            },
+            { "type": "null" }
+          ]
+        },
+        "clueSets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/clueSet" }
         },
         "runs": {
           "type": "array",

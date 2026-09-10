@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,41 +24,7 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-6790c54d02",
-          "label": "Street Name on Asphalt",
-          "text": "Street Name on Asphalt",
-          "description": "\"Bergagatan\" (Swedish \"-gatan\" street suffix).",
-          "groundingPhrase": "Street Name on Asphalt",
-          "source": "panorama",
-          "category": "signage",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Street Name on Asphalt: \"Bergagatan\" (Swedish \"-gatan\" street suffix)."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Street Name on Asphalt: Clearly painted road name \"Bergagatan\"."
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-1e364f6dba",
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-8bf76c4a16",
           "label": "Swedish Wooden Architecture",
           "text": "Swedish Wooden Architecture",
           "description": "Classic vertical green timber-clad villa (träpanel) with white trim, red tiled roof, and brick chimney.",
@@ -70,29 +37,23 @@
             "w": 0.305,
             "h": 0.387
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Swedish Wooden Architecture: Classic vertical green timber-clad villa (träpanel) with white trim, red tiled roof, and brick chimney."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Swedish Suffix & Nomenclature: Suffix \"-gatan\" distinct to Swedish road naming."
             },
             {
               "runId": "r1",
@@ -103,62 +64,16 @@
           "groundingLabel": "Swedish Wooden Architecture"
         },
         {
-          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-def11f86a1",
-          "label": "Nordic Residential Setting",
-          "text": "Nordic Residential Setting",
-          "description": "Vertical painted wooden siding (sage green and ochre faluröd palettes), white window trim, and dark tile roofs.",
-          "groundingPhrase": "Nordic Residential Setting",
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-1d7fd151e4",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "\"Bergagatan\" (Swedish \"-gatan\" street suffix).",
+          "groundingPhrase": "Street Name on Asphalt",
           "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.0065,
-            "y": 0.0165,
-            "w": 0.987,
-            "h": 0.969
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1",
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Nordic Residential Setting: Suburban cul-de-sac with manicured cedar/thuja hedges and Nordic lamppost design."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Swedish Residential Architecture: Vertical painted wooden siding (sage green and ochre faluröd palettes), white window trim, and dark tile roofs."
-            },
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Swedish electrical box"
-            }
-          ],
-          "groundingLabel": "Nordic Residential Setting"
-        },
-        {
-          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-4df66f46ea",
-          "label": "Vehicle Fleet",
-          "text": "Vehicle Fleet",
-          "description": "Black station wagon parked in driveway typical of Swedish suburban residential areas.",
-          "groundingPhrase": "Vehicle Fleet",
-          "source": "panorama",
-          "category": "infrastructure",
+          "category": "signage",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -166,28 +81,23 @@
             "consistent": null
           },
           "sourceRuns": [
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Vehicle Fleet: Black station wagon parked in driveway typical of Swedish suburban residential areas."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Street Fixtures: Swedish utility boxes and residential streetlamp style."
+              "text": "Street Name on Asphalt: \"Bergagatan\" (Swedish \"-gatan\" street suffix)."
             }
-          ]
+          ],
+          "groundingLabel": "Street Name"
         },
         {
-          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-0c98d4a50f",
-          "label": "Regional Location",
-          "text": "Regional Location",
-          "description": "Bergagatan situated in Uppsala, Sweden.",
-          "groundingPhrase": "Regional Location",
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-47a741421b",
+          "label": "Nordic Residential Setting",
+          "text": "Nordic Residential Setting",
+          "description": "Suburban cul-de-sac with manicured cedar/thuja hedges and Nordic lamppost design.",
+          "groundingPhrase": "Nordic Residential Setting",
           "source": "panorama",
           "category": "geography",
           "region": null,
@@ -206,94 +116,22 @@
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Regional Location: Bergagatan situated in Uppsala, Sweden."
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-6d6a45db5f",
-          "label": "Nordic Flora",
-          "text": "Nordic Flora",
-          "description": "Dense thuja hedges, birch (Betula) trees, and manicured suburban gardens.",
-          "groundingPhrase": "Nordic Flora",
-          "source": "panorama",
-          "category": "vegetation",
-          "region": {
-            "x": 0.0035,
-            "y": 0.2395,
-            "w": 0.349,
-            "h": 0.543
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Nordic Flora: Dense thuja hedges, birch (Betula) trees, and manicured suburban gardens."
+              "text": "Nordic Residential Setting: Suburban cul-de-sac with manicured cedar/thuja hedges and Nordic lamppost design."
             }
           ],
-          "groundingLabel": "Nordica Flora"
+          "groundingLabel": "Nordic Residential Setting"
         },
         {
-          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-a6fed1c550",
-          "label": "Road stencil \"Bergagatan\"",
-          "text": "Road stencil \"Bergagatan\"",
-          "description": "Road stencil \"Bergagatan\".",
-          "groundingPhrase": "Road stencil \"Bergagatan\"",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.4125,
-            "y": 0.5815,
-            "w": 0.117,
-            "h": 0.235
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1"
-          ],
-          "provenance": [
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Road stencil \"Bergagatan\""
-            }
-          ],
-          "groundingLabel": "Road stencil; Bergagatan"
-        },
-        {
-          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-1a96fa12fd",
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-c4b75d6f31",
           "label": "Scandinavian overcast lighting",
           "text": "Scandinavian overcast lighting",
           "description": "Scandinavian overcast lighting.",
           "groundingPhrase": "Scandinavian overcast lighting",
           "source": "panorama",
           "category": "infrastructure",
-          "region": {
-            "x": 0.0095,
-            "y": 0.0035,
-            "w": 0.986,
-            "h": 0.411
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -311,6 +149,1987 @@
             }
           ],
           "groundingLabel": "Scandinavian overcast lighting"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-d5a9fcd7a7",
+          "label": "Road stencil \"Bergagatan\"",
+          "text": "Road stencil \"Bergagatan\"",
+          "description": "Road stencil \"Bergagatan\".",
+          "groundingPhrase": "Road stencil \"Bergagatan\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4125,
+            "y": 0.5825,
+            "w": 0.07318153364632238,
+            "h": 0.18797053717573534
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Bergagatan\""
+            }
+          ],
+          "groundingLabel": "Road stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-b406b9cda8",
+          "label": "Swedish electrical box",
+          "text": "Swedish electrical box",
+          "description": "Swedish electrical box.",
+          "groundingPhrase": "Swedish electrical box",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.6051353677621283,
+            "y": 0.620296091463717,
+            "w": 0.06289514866979654,
+            "h": 0.20254550865532464
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Swedish electrical box"
+            }
+          ],
+          "groundingLabel": "Swedich electrical box"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-ad3832b71a",
+          "label": "Vehicle Fleet",
+          "text": "Vehicle Fleet",
+          "description": "Black station wagon parked in driveway typical of Swedish suburban residential areas.",
+          "groundingPhrase": "Vehicle Fleet",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Vehicle Fleet: Black station wagon parked in driveway typical of Swedish suburban residential areas."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-aided-5b24df104c",
+          "label": "Regional Location",
+          "text": "Regional Location",
+          "description": "Bergagatan situated in Uppsala, Sweden.",
+          "groundingPhrase": "Regional Location",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Regional Location: Bergagatan situated in Uppsala, Sweden."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-medium-aided-7f6bf396ab",
+          "label": "Swedish Suburbia",
+          "text": "Swedish Suburbia",
+          "description": "Swedish timber-clad detached villa with vertical green paneling (träfasad), red brick chimney, and tile roof (tegeltak).",
+          "groundingPhrase": "Swedish Suburbia",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Swedish timber-clad detached villa with vertical green paneling (träfasad), red brick chimney, and tile roof (tegeltak)."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Swedish Suburbia: Timber-clad houses with vertical siding (green, yellow, falu red), thuja hedges, modern Swedish streetlights."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Swedish timber-clad detached villa with vertical green paneling (träfasad), red brick chimney, and tile roof (tegeltak)."
+            }
+          ],
+          "groundingLabel": "Swedish Suburbia"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-medium-aided-052358f5d0",
+          "label": "Mid-century Swedish terraced rowhouses (radhus) in warm ochre plaster",
+          "text": "Mid-century Swedish terraced rowhouses (radhus) in warm ochre plaster",
+          "description": "Mid-century Swedish terraced rowhouses (radhus) in warm ochre plaster.",
+          "groundingPhrase": "Mid-century Swedish terraced rowhouses in warm ochre plaster",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4749608763693271,
+            "y": 0.27729279301621945,
+            "w": 0.42801251956181535,
+            "h": 0.27617677694558795
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Mid-century Swedish terraced rowhouses (radhus) in warm ochre plaster."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Mid-century Swedish terraced rowhouses (radhus) in warm ochre plaster."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-medium-aided-fd8170316c",
+          "label": "High-latitude overcast Scandinavian lighting and standard Swedish streetlamp posts",
+          "text": "High-latitude overcast Scandinavian lighting and standard Swedish streetlamp posts",
+          "description": "High-latitude overcast Scandinavian lighting and standard Swedish streetlamp posts.",
+          "groundingPhrase": "High-latitude overcast Scandinavian lighting and standard Swedish streetlamp posts",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.6551697965571205,
+            "y": 0,
+            "w": 0.03418857589984353,
+            "h": 0.8050440454342542
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "High-latitude overcast Scandinavian lighting and standard Swedish streetlamp posts."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "High-latitude overcast Scandinavian lighting and standard Swedish streetlamp posts."
+            }
+          ],
+          "groundingLabel": "High-latitude overcast Scandinavian lighting"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-medium-aided-b0ab54e42e",
+          "label": "Roadway stencil painted in white road paint",
+          "text": "Roadway stencil painted in white road paint",
+          "description": "\"Bergagatan\".",
+          "groundingPhrase": "Roadway stencil painted in white road paint",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Roadway stencil painted in white road paint: \"Bergagatan\"."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Roadway stencil painted in white road paint: \"Bergagatan\"."
+            }
+          ],
+          "groundingLabel": "Roadway stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-medium-aided-396255f7ce",
+          "label": "Nordic residential landscape",
+          "text": "Nordic residential landscape",
+          "description": "Manicured thuja hedges, lilacs, grey electrical distribution cabinet, and Swedish waste bins.",
+          "groundingPhrase": "Nordic residential landscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Nordic residential landscape: manicured thuja hedges, lilacs, grey electrical distribution cabinet, and Swedish waste bins."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Nordic residential landscape: manicured thuja hedges, lilacs, grey electrical distribution cabinet, and Swedish waste bins."
+            }
+          ],
+          "groundingLabel": "Nordic residential landscape"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-medium-aided-15de164dd8",
+          "label": "Street Name on Road",
+          "text": "Street Name on Road",
+          "description": "Asphalt text \"Bergagatan\" (Swedish naming convention).",
+          "groundingPhrase": "Street Name on Road",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4125,
+            "y": 0.5815,
+            "w": 0.07218153364632238,
+            "h": 0.18420886860770794
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Street Name on Road: Asphalt text \"Bergagatan\" (Swedish naming convention)."
+            }
+          ],
+          "groundingLabel": "Street Name"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-7dfc6a3cae",
+          "label": "Swedish environmental waste bins and street utility infrastructure",
+          "text": "Swedish environmental waste bins and street utility infrastructure",
+          "description": "Swedish grey utility pedestals, roadside black wheelie bins, and Swedish estate wagons.",
+          "groundingPhrase": "Swedish environmental waste bins and street utility infrastructure",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.31116389548693585,
+            "y": 0.5150693869356822,
+            "w": 0.05463182897862234,
+            "h": 0.06424251549599747
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Swedish grey utility pedestals, roadside black wheelie bins, and Swedish estate wagons."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Swedish environmental waste bins and street utility infrastructure."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-ca98d25a3a",
+          "label": "Road surface asphalt painted stencil",
+          "text": "Road surface asphalt painted stencil",
+          "description": "Road surface stencil reading \"Bergagatan / Bergsgatan\".",
+          "groundingPhrase": "Road surface asphalt painted stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.41330166270783847,
+            "y": 0.56967552510728,
+            "w": 0.07442596991290579,
+            "h": 0.19915179803759187
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Road surface stencil reading \"Bergagatan / Bergsgatan\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Road surface asphalt painted stencil: 'Bergagatan'."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-1477b9e60d",
+          "label": "Swedish residential suburban villas",
+          "text": "Swedish residential suburban villas",
+          "description": "Distinctive Swedish timber residential houses painted in Falun red, mustard yellow, and sage green with white trims.",
+          "groundingPhrase": "Swedish residential suburban villas",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Distinctive Swedish timber residential houses painted in Falun red, mustard yellow, and sage green with white trims."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Swedish residential suburban villas with wooden vertical paneling, green/red paint, and tiled roofs."
+            }
+          ],
+          "groundingLabel": "Swedish residential suburban villas; Swedic residential suburban; Swedich residential suburban buildings; Sweden residential suburb villas; Swedanish mixed birch"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-576ff75486",
+          "label": "Scandinavian mixed birch and Scots pine suburban vegetation",
+          "text": "Scandinavian mixed birch and Scots pine suburban vegetation",
+          "description": "Scandinavian mixed birch and Scots pine suburban vegetation.",
+          "groundingPhrase": "Scandinavian mixed birch and Scots pine suburban vegetation",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Scandinavian mixed birch and Scots pine suburban vegetation."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-9d7ba38143",
+          "label": "Flat East-Central Swedish glaciated lowland topography",
+          "text": "Flat East-Central Swedish glaciated lowland topography",
+          "description": "Flat East-Central Swedish glaciated lowland topography.",
+          "groundingPhrase": "Flat East-Central Swedish glaciated lowland topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Flat East-Central Swedish glaciated lowland topography."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-b3c638c632",
+          "label": "Swedish street naming suffix '-gatan'",
+          "text": "Swedish street naming suffix '-gatan'",
+          "description": "Swedish street naming suffix '-gatan'.",
+          "groundingPhrase": "Swedish street naming suffix '-gatan'",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.42040023752969125,
+            "y": 0.5793486536675951,
+            "w": 0.06243942992874115,
+            "h": 0.18295403899721452
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Swedish street naming suffix '-gatan'."
+            }
+          ],
+          "groundingLabel": "Swedish street"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-69a5487d17",
+          "label": "Nordic temperate residential landscape",
+          "text": "Nordic temperate residential landscape",
+          "description": "Nordic temperate residential landscape with silver birches and conifer hedges.",
+          "groundingPhrase": "Nordic temperate residential landscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Nordic temperate residential landscape with silver birches and conifer hedges."
+            }
+          ],
+          "groundingLabel": "Nordic temperate residential landscape"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-6ecc8abd73",
+          "label": "Stockholm area",
+          "text": "Stockholm area",
+          "description": "Stockholm area.",
+          "groundingPhrase": "Stockholm area",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Stockholm area"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-high-aided-e5d0d41041",
+          "label": "Bergagatan",
+          "text": "Bergagatan",
+          "description": "Bergagatan.",
+          "groundingPhrase": "Bergagatan",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Bergagatan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-medium-aided-576ff75486",
+          "label": "Scandinavian mixed birch and Scots pine suburban vegetation",
+          "text": "Scandinavian mixed birch and Scots pine suburban vegetation",
+          "description": "Scandinavian mixed birch and Scots pine suburban vegetation.",
+          "groundingPhrase": "Scandinavian mixed birch and Scots pine suburban vegetation",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Scandinavian mixed birch and Scots pine suburban vegetation."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Scandinavian mixed birch and Scots pine suburban vegetation."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-medium-aided-d15031b427",
+          "label": "Road surface stencil reading \"Bergagatan / Bergsgatan\"",
+          "text": "Road surface stencil reading \"Bergagatan / Bergsgatan\"",
+          "description": "Road surface stencil reading \"Bergagatan / Bergsgatan\".",
+          "groundingPhrase": "Road surface stencil reading \"Bergagatan / Bergsgatan\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4125,
+            "y": 0.5825,
+            "w": 0.07403642121931908,
+            "h": 0.1826059876032021
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Road surface stencil reading \"Bergagatan / Bergsgatan\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Road surface stencil reading \"Bergagatan / Bergsgatan\"."
+            }
+          ],
+          "groundingLabel": "Road surface stencil reading"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-medium-aided-9d7ba38143",
+          "label": "Flat East-Central Swedish glaciated lowland topography",
+          "text": "Flat East-Central Swedish glaciated lowland topography",
+          "description": "Flat East-Central Swedish glaciated lowland topography.",
+          "groundingPhrase": "Flat East-Central Swedish glaciated lowland topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Flat East-Central Swedish glaciated lowland topography."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Flat East-Central Swedish glaciated lowland topography."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-medium-aided-063d6c7d4f",
+          "label": "Distinctive Swedish timber residential houses",
+          "text": "Distinctive Swedish timber residential houses",
+          "description": "Distinctive Swedish timber residential houses painted in Falun red, mustard yellow, and sage green with white trims.",
+          "groundingPhrase": "Distinctive Swedish timber residential houses",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.5695,
+            "y": 0.2585,
+            "w": 0.307,
+            "h": 0.387
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Distinctive Swedish timber residential houses painted in Falun red, mustard yellow, and sage green with white trims."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Distinctive Swedish timber residential houses painted in Falun red, mustard yellow, and sage green with white trims."
+            }
+          ],
+          "groundingLabel": "Distinctive Swedish timber residential houses"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-medium-aided-cf77131483",
+          "label": "Swedish grey utility pedestals, roadside black wheelie bins, and Swedish estate wagons",
+          "text": "Swedish grey utility pedestals, roadside black wheelie bins, and Swedish estate wagons",
+          "description": "Swedish grey utility pedestals, roadside black wheelie bins, and Swedish estate wagons.",
+          "groundingPhrase": "Swedish grey utility pedestals, roadside black wheelie bins, and Swedish estate wagons",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3180700712589073,
+            "y": 0.5223482772466059,
+            "w": 0.04560095011876483,
+            "h": 0.07024206379081033
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Swedish grey utility pedestals, roadside black wheelie bins, and Swedish estate wagons."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Swedish grey utility pedestals, roadside black wheelie bins, and Swedish estate wagons."
+            }
+          ],
+          "groundingLabel": "Swedish grey utility pedestals"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-medium-aided-6ecc8abd73",
+          "label": "Stockholm area",
+          "text": "Stockholm area",
+          "description": "Stockholm area.",
+          "groundingPhrase": "Stockholm area",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Stockholm area"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-medium-aided-e5d0d41041",
+          "label": "Bergagatan",
+          "text": "Bergagatan",
+          "description": "Bergagatan.",
+          "groundingPhrase": "Bergagatan",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Bergagatan"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-8-flash-medium-aided-2eb9a6a7c1",
+          "label": "Bergsgatan",
+          "text": "Bergsgatan",
+          "description": "Bergsgatan.",
+          "groundingPhrase": "Bergsgatan",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Bergsgatan"
+            }
+          ],
+          "groundingLabel": "Bergsgatan"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-gpt-5-6-sol-xhigh-85f25bca85",
+          "label": "Swedish road/urban infrastructure and Nordic built form established Sweden",
+          "text": "Swedish road/urban infrastructure and Nordic built form established Sweden",
+          "description": "Swedish road/urban infrastructure and Nordic built form established Sweden.",
+          "groundingPhrase": "Swedish road/urban infrastructure and Nordic built form established Sweden",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Swedish road/urban infrastructure and Nordic built form established Sweden"
+            }
+          ],
+          "groundingLabel": "Swedish road/urban infrastructure"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-5-6-sol-xhigh-e5b19e7b08",
+          "label": "but the city identity was weak",
+          "text": "but the city identity was weak",
+          "description": "But the city identity was weak.",
+          "groundingPhrase": "but the city identity was weak",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "but the city identity was weak."
+            }
+          ],
+          "groundingLabel": "the city identity"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-3a1da916d2",
+          "label": "green vertical timber siding",
+          "text": "green vertical timber siding",
+          "description": "Green vertical timber siding.",
+          "groundingPhrase": "green vertical timber siding",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.5676959619952494,
+            "y": 0.4170995508042862,
+            "w": 0.20427553444180524,
+            "h": 0.1381214083163944
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "green vertical timber siding"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "green vertical timber house"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-cae4df1461",
+          "label": "southern/central small city",
+          "text": "southern/central small city",
+          "description": "Southern/central residential town.",
+          "groundingPhrase": "southern/central small city",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "southern/central small city"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "southern/central residential town"
+            }
+          ],
+          "groundingLabel": "southern/central small city"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-533bc84ebe",
+          "label": "Bergagatan road overlay",
+          "text": "Bergagatan road overlay",
+          "description": "Bergagatan road overlay.",
+          "groundingPhrase": "Bergagatan road overlay",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.41091488519398256,
+            "y": 0.5881968556300032,
+            "w": 0.07835866983372922,
+            "h": 0.1763029185174032
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Bergagatan road overlay"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Bergagatan road overlay"
+            }
+          ],
+          "groundingLabel": "Bergagatan road overlay"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-abfd0dcc18",
+          "label": "red tile roofs",
+          "text": "red tile roofs",
+          "description": "Red tile roofs.",
+          "groundingPhrase": "red tile roofs",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5735,
+            "y": 0.2595,
+            "w": 0.291,
+            "h": 0.175
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "red tile roofs"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "red tile roofs"
+            }
+          ],
+          "groundingLabel": "red tile roofs"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-f10e636226",
+          "label": "narrow unmarked suburban street. Initial belief Sweden",
+          "text": "narrow unmarked suburban street. Initial belief Sweden",
+          "description": "Narrow unmarked suburban street. Initial belief Sweden.",
+          "groundingPhrase": "narrow unmarked suburban street. Initial belief Sweden",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.2215,
+            "y": 0.4585,
+            "w": 0.54,
+            "h": 0.534
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "narrow unmarked suburban street. Initial belief Sweden"
+            }
+          ],
+          "groundingLabel": "narrow unmarked suburban street"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-1b7d85f311",
+          "label": "tentative Linkoping area 15%",
+          "text": "tentative Linkoping area 15%",
+          "description": "Tentative Linkoping area 15%.",
+          "groundingPhrase": "tentative Linkoping area 15%",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "tentative Linkoping area 15%."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-dca8ff61cd",
+          "label": "quiet residential lane",
+          "text": "quiet residential lane",
+          "description": "Quiet residential lane with clipped hedges and low multi-family blocks beyond. Initial belief: Sweden.",
+          "groundingPhrase": "quiet residential lane",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "quiet residential lane with clipped hedges and low multi-family blocks beyond. Initial belief: Sweden"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-704210d983",
+          "label": "white Scandinavian plates",
+          "text": "white Scandinavian plates",
+          "description": "White Scandinavian plates.",
+          "groundingPhrase": "white Scandinavian plates",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "white Scandinavian plates"
+            }
+          ],
+          "groundingLabel": "white Scandinavian plates"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-48c154f9ec",
+          "label": "high country confidence",
+          "text": "high country confidence",
+          "description": "High country confidence.",
+          "groundingPhrase": "high country confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "high country confidence"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-b78a0f9d73",
+          "label": "low town confidence",
+          "text": "low town confidence",
+          "description": "Low town confidence.",
+          "groundingPhrase": "low town confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low town confidence."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-6-astra-low-8790e7b7b2",
+          "label": "tall hedges",
+          "text": "tall hedges",
+          "description": "Tall hedges.",
+          "groundingPhrase": "tall hedges",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0035,
+            "y": 0.2425,
+            "w": 0.347,
+            "h": 0.54
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "tall hedges"
+            }
+          ],
+          "groundingLabel": "tall hedges"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-grok-4-6-xhigh-19ef0a1f9b",
+          "label": "Bergagatan and wooden houses correctly identified Sweden",
+          "text": "Bergagatan and wooden houses correctly identified Sweden",
+          "description": "Bergagatan and wooden houses correctly identified Sweden.",
+          "groundingPhrase": "Bergagatan and wooden houses correctly identified Sweden",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5695,
+            "y": 0.2605,
+            "w": 0.31,
+            "h": 0.39
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Bergagatan and wooden houses correctly identified Sweden."
+            }
+          ],
+          "groundingLabel": "Bergagatan; wooden houses"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-gpt-5-6-sol-max-444ce3640b",
+          "label": "a medium-city street grid",
+          "text": "a medium-city street grid",
+          "description": "A medium-city street grid.",
+          "groundingPhrase": "a medium-city street grid",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "a medium-city street grid."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-5-6-sol-max-d64e60694d",
+          "label": "Swedish residential road",
+          "text": "Swedish residential road",
+          "description": "Swedish residential road.",
+          "groundingPhrase": "Swedish residential road",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.2215,
+            "y": 0.4585,
+            "w": 0.539,
+            "h": 0.533
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Swedish residential road"
+            }
+          ],
+          "groundingLabel": "Swedish residential road"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-5-6-sol-max-407da32588",
+          "label": "Scandinavian housing",
+          "text": "Scandinavian housing",
+          "description": "Scandinavian housing.",
+          "groundingPhrase": "Scandinavian housing",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5705,
+            "y": 0.2595,
+            "w": 0.305,
+            "h": 0.386
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Scandinavian housing"
+            }
+          ],
+          "groundingLabel": "Scandinavian housing"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-5-6-sol-max-c7d5481cd1",
+          "label": "visible Bergsgatan",
+          "text": "visible Bergsgatan",
+          "description": "Visible Bergsgatan.",
+          "groundingPhrase": "visible Bergsgatan",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.41486306729264477,
+            "y": 0.5653599771836715,
+            "w": 0.07387167449139281,
+            "h": 0.20116715440702346
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "visible Bergsgatan"
+            }
+          ],
+          "groundingLabel": "visible Bergsgatan"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gpt-5-6-sol-max-5d99616c13",
+          "label": "boreal vegetation",
+          "text": "boreal vegetation",
+          "description": "Boreal vegetation.",
+          "groundingPhrase": "boreal vegetation",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "boreal vegetation"
+            }
+          ],
+          "groundingLabel": "boreal vegetation"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-glm-5-3-flash-max-3fd001b873",
+          "label": "black estate wagon + metal chimneys,",
+          "text": "black estate wagon + metal chimneys,",
+          "description": "Black estate wagon + metal chimneys,.",
+          "groundingPhrase": "black estate wagon + metal chimneys,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0,
+            "y": 0.6518773870343733,
+            "w": 0.3755868544600939,
+            "h": 0.34812261296562674
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "black estate wagon + metal chimneys,"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-glm-5-3-flash-max-93e1610105",
+          "label": "downhill slope, overcast sky. Belief",
+          "text": "downhill slope, overcast sky. Belief",
+          "description": "Sweden, hillier town — initial guess Jönköping area. Placing pin at 57.7800, 14.1700.",
+          "groundingPhrase": "downhill slope, overcast sky. Belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "downhill slope, overcast sky. Belief: Sweden, hillier town — initial guess Jönköping area. Placing pin at 57.7800, 14.1700."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-014-glm-5-3-flash-max-808cda7c93",
+          "label": "falu-green wooden house",
+          "text": "falu-green wooden house",
+          "description": "Falu-green wooden house with red tile roof,.",
+          "groundingPhrase": "falu-green wooden house",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.5705,
+            "y": 0.2595,
+            "w": 0.306,
+            "h": 0.386
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "falu-green wooden house with red tile roof,"
+            }
+          ],
+          "groundingLabel": "falu-green wooden house"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-glm-5-3-flash-max-667d22b411",
+          "label": "\"Bergagatan\" paint,",
+          "text": "\"Bergagatan\" paint,",
+          "description": "\"Bergagatan\" paint,.",
+          "groundingPhrase": "\"Bergagatan\" paint,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.418622848200313,
+            "y": 0.5566440156738257,
+            "w": 0.06572769953051644,
+            "h": 0.2111006398492138
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "\"Bergagatan\" paint,"
+            }
+          ],
+          "groundingLabel": "Bergagatan; paint"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-glm-5-3-flash-max-8a550bcc8f",
+          "label": "thuja hedges,",
+          "text": "thuja hedges,",
+          "description": "Thuja hedges,.",
+          "groundingPhrase": "thuja hedges,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0,
+            "y": 0.309037250136402,
+            "w": 0.32942097026604067,
+            "h": 0.43172461683448243
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "thuja hedges,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-unaided-42aa082ade",
+          "label": "Swedish red/timber single-family homes",
+          "text": "Swedish red/timber single-family homes",
+          "description": "Swedish red/timber single-family homes.",
+          "groundingPhrase": "Swedish red/timber single-family homes",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.5695,
+            "y": 0.2595,
+            "w": 0.308,
+            "h": 0.388
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Swedish red/timber single-family homes"
+            }
+          ],
+          "groundingLabel": "Swedish red/timber single-family homes"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-unaided-0a12a908fa",
+          "label": "\"Bergagatan\" stencil",
+          "text": "\"Bergagatan\" stencil",
+          "description": "\"Bergagatan\" stencil.",
+          "groundingPhrase": "\"Bergagatan\" stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4139280125195618,
+            "y": 0.5629929070978622,
+            "w": 0.07433489827856027,
+            "h": 0.212687862705223
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"Bergagatan\" stencil"
+            }
+          ],
+          "groundingLabel": "Bergagatan; stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-gemini-3-7-flash-high-unaided-dc166cf40a",
+          "label": "birch vegetation",
+          "text": "birch vegetation",
+          "description": "Birch vegetation.",
+          "groundingPhrase": "birch vegetation",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "birch vegetation"
+            }
+          ],
+          "groundingLabel": "birch vegetation"
         }
       ]
     }

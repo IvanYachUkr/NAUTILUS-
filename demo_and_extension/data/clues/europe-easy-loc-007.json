@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,88 +24,36 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-0281361f0f",
-          "label": "Railway Station Sign",
-          "text": "Railway Station Sign",
-          "description": "Clear lettering \"VIŠNJA GORA\" on the facade of the railway building.",
-          "groundingPhrase": "Railway Station Sign",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.7575,
-            "y": 0.6665,
-            "w": 0.213,
-            "h": 0.323
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1",
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Railway Station Sign: Station building inscribed with \"VIŠNJA GORA\"."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Station Name Plaque: Clear lettering \"VIŠNJA GORA\" on the facade of the railway building."
-            },
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Railway station sign \"VIŠNJA GORA\""
-            }
-          ],
-          "groundingLabel": "Railway Station Sign"
-        },
-        {
-          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-f0fedd9532",
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-45d634f52e",
           "label": "Slovenian Road Direction Signs",
           "text": "Slovenian Road Direction Signs",
-          "description": "Yellow directional markers pointing towards motorway access for \"Ljubljana\" and primary route to \"Novo mesto\".",
+          "description": "Yellow directional signs pointing towards motorway + Ljubljana (NW) and Novo mesto (SE).",
           "groundingPhrase": "Slovenian Road Direction Signs",
           "source": "panorama",
           "category": "signage",
           "region": {
-            "x": 0.4575,
-            "y": 0.3825,
-            "w": 0.149,
-            "h": 0.508
+            "x": 0.4626298904538341,
+            "y": 0.3944361142800456,
+            "w": 0.15986697965571203,
+            "h": 0.12657497147958932
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Slovenian Road Direction Signs: Yellow directional signs pointing towards motorway + Ljubljana (NW) and Novo mesto (SE)."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Slovenian Road Direction Sign: Yellow directional markers pointing towards motorway access for \"Ljubljana\" and primary route to \"Novo mesto\"."
             },
             {
               "runId": "r1",
@@ -115,7 +64,7 @@
           "groundingLabel": "Slovenian Road Direction Signs"
         },
         {
-          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-421abf308a",
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-38f74cd5de",
           "label": "Street Name Sign",
           "text": "Street Name Sign",
           "description": "White rectangular sign labeled \"Ulica Antona Tomšiča\".",
@@ -123,34 +72,28 @@
           "source": "panorama",
           "category": "signage",
           "region": {
-            "x": 0.4605,
-            "y": 0.3895,
-            "w": 0.103,
-            "h": 0.123
+            "x": 0.23749530516431933,
+            "y": 0.41648278855215515,
+            "w": 0.03727230046948356,
+            "h": 0.02676662863945241
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Street Name Sign: White rectangular sign labeled \"Ulica Antona Tomšiča\"."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Street Name Infrastructure: Local sign indicating \"Ulica Antona Tomšiča\"."
             },
             {
               "runId": "r1",
@@ -161,21 +104,56 @@
           "groundingLabel": "Street Name Sign"
         },
         {
-          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-77f3ee7cd6",
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-1488fa582b",
+          "label": "Railway Station Sign",
+          "text": "Railway Station Sign",
+          "description": "Station building inscribed with \"VIŠNJA GORA\".",
+          "groundingPhrase": "Railway Station Sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4717050078247261,
+            "y": 0.5027135310748475,
+            "w": 0.12886384976525822,
+            "h": 0.08128500570408215
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Railway Station Sign: Station building inscribed with \"VIŠNJA GORA\"."
+            },
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Railway station sign \"VIŠNJA GORA\""
+            }
+          ],
+          "groundingLabel": "Railway Station Sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-03c74a0e2a",
           "label": "Landscape & Flora",
           "text": "Landscape & Flora",
           "description": "Lush green rolling hills characteristic of Dolenjska (Lower Carniola).",
           "groundingPhrase": "Landscape & Flora",
           "source": "panorama",
           "category": "geography",
-          "region": {
-            "x": 0.0065,
-            "y": 0.0235,
-            "w": 0.988,
-            "h": 0.963
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -195,16 +173,16 @@
           "groundingLabel": "Landscape"
         },
         {
-          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-9004e8b24e",
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-b5f9d68653",
           "label": "Railway Track",
           "text": "Railway Track",
-          "description": "Rail electrification masts, level crossing cues, and telecom mast behind the station.",
+          "description": "Standard-gauge railway line and platform behind station building.",
           "groundingPhrase": "Railway Track",
           "source": "panorama",
           "category": "infrastructure",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -212,33 +190,971 @@
             "consistent": null
           },
           "sourceRuns": [
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Railway Track: Standard-gauge railway line and platform behind station building."
+            }
+          ],
+          "groundingLabel": "Railway Track"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-medium-aided-137c1b3f7c",
+          "label": "Slovene Highway Direction Signs",
+          "text": "Slovene Highway Direction Signs",
+          "description": "Slovenian yellow regional road signage with motorway symbols to \"Ljubljana\" and \"Novo mesto\".",
+          "groundingPhrase": "Slovene Highway Direction Signs",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4595,
+            "y": 0.3875,
+            "w": 0.1403051643192488,
+            "h": 0.1303366400476167
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Slovenian yellow regional road signage with motorway symbols to \"Ljubljana\" and \"Novo mesto\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Slovene Highway Direction Signs: Yellow signs pointing towards highway symbol + \"Ljubljana\" and \"Novo mesto\"."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Railway Corridor & Telecommunications: Rail electrification masts, level crossing cues, and telecom mast behind the station."
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Slovenian yellow regional road signage with motorway symbols to \"Ljubljana\" and \"Novo mesto\"."
+            }
+          ],
+          "groundingLabel": "Slovene Highway Direction Signs"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-medium-aided-2a50e002d4",
+          "label": "Street Name & Sign",
+          "text": "Street Name & Sign",
+          "description": "Street name sign \"Ulica Antona Tomšiča\" and railway platform/tracks adjacent to the building.",
+          "groundingPhrase": "Street Name & Sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.24062519561815338,
+            "y": 0.41489556569614605,
+            "w": 0.03648982785602503,
+            "h": 0.029941074351470656
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Street name sign \"Ulica Antona Tomšiča\" and railway platform/tracks adjacent to the building."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Street Name & Sign: \"Ulica Antona Tomšiča\" street signpost and asphalt markings."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Street name sign \"Ulica Antona Tomšiča\" and railway platform/tracks adjacent to the building."
+            }
+          ],
+          "groundingLabel": "Street Name"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-medium-aided-efa4ad9ba0",
+          "label": "Station Building Plaque",
+          "text": "Station Building Plaque",
+          "description": "Building name plaque on the station wall clearly stating \"VIŠNJA GORA\".",
+          "groundingPhrase": "Station Building Plaque",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.44921674491392805,
+            "y": 0.24699883438321513,
+            "w": 0.09555555555555556,
+            "h": 0.15439556569614604
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Building name plaque on the station wall clearly stating \"VIŠNJA GORA\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Station Building Plaque: White rectangular building plaque displaying \"VIŠNJA GORA\"."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Building name plaque on the station wall clearly stating \"VIŠNJA GORA\"."
+            }
+          ],
+          "groundingLabel": "Station Building Plaque"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-medium-aided-ef80e939f1",
+          "label": "European / Slovenian pedestrian crossing signage and infrastructure",
+          "text": "European / Slovenian pedestrian crossing signage and infrastructure",
+          "description": "European / Slovenian pedestrian crossing signage and infrastructure.",
+          "groundingPhrase": "European / Slovenian pedestrian crossing signage and infrastructure",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "European / Slovenian pedestrian crossing signage and infrastructure."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "European / Slovenian pedestrian crossing signage and infrastructure."
+            }
+          ],
+          "groundingLabel": "European / Slovenian pedestrian crossing signage"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-medium-aided-2329f08205",
+          "label": "Distinctive Slovenian architectural style",
+          "text": "Distinctive Slovenian architectural style",
+          "description": "Distinctive Slovenian architectural style with peach stucco, red-tiled roof, and surrounding rolling green hills of Lower Carniola (Dolenjska).",
+          "groundingPhrase": "Distinctive Slovenian architectural style",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Distinctive Slovenian architectural style with peach stucco, red-tiled roof, and surrounding rolling green hills of Lower Carniola (Dolenjska)."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Distinctive Slovenian architectural style with peach stucco, red-tiled roof, and surrounding rolling green hills of Lower Carniola (Dolenjska)."
+            }
+          ],
+          "groundingLabel": "Distinctive Slovenian architectural style"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-medium-aided-e4a72a492c",
+          "label": "Regional Geography",
+          "text": "Regional Geography",
+          "description": "Lower Carniola (Dolenjska), Slovenia along the main transport axis between Ljubljana and Novo Mesto.",
+          "groundingPhrase": "Regional Geography",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Regional Geography: Lower Carniola (Dolenjska), Slovenia along the main transport axis between Ljubljana and Novo Mesto."
+            }
+          ],
+          "groundingLabel": "Regional Geography"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-medium-aided-f0978499ac",
+          "label": "Railway Infrastructure",
+          "text": "Railway Infrastructure",
+          "description": "Peach-colored Slovenian Railways station building adjacent to the railway line.",
+          "groundingPhrase": "Railway Infrastructure",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Railway Infrastructure: Peach-colored Slovenian Railways station building adjacent to the railway line."
+            }
+          ],
+          "groundingLabel": "Railway Infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-a9049fc55c",
+          "label": "Prominent station building facade sign clearly reading 'VIŠNJA GORA'",
+          "text": "Prominent station building facade sign clearly reading 'VIŠNJA GORA'",
+          "description": "Prominent station building facade sign clearly reading 'VIŠNJA GORA'.",
+          "groundingPhrase": "Prominent station building facade sign clearly reading 'VIŠNJA GORA'",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.44434956452889945,
+            "y": 0.26274244021179954,
+            "w": 0.09914806017418845,
+            "h": 0.14742410098120404
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Station building sign visibly reading \"VIŠNJA GORA\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Prominent station building facade sign clearly reading 'VIŠNJA GORA'."
+            }
+          ],
+          "groundingLabel": "Prominent station building facade sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-1b59582beb",
+          "label": "Street name sign on pole",
+          "text": "Street name sign on pole",
+          "description": "Street name sign reading \"Ulica Antona Tomšiča\".",
+          "groundingPhrase": "Street name sign on pole",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.23938915281076803,
+            "y": 0.41019700619839894,
+            "w": 0.04048693586698336,
+            "h": 0.035817511104419164
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Street name sign reading \"Ulica Antona Tomšiča\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Street name sign on pole: 'Ulica Antona Tomšiča'."
+            }
+          ],
+          "groundingLabel": "Street name sign; directional sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-a9509b504d",
+          "label": "Rolling forested Slovenian hills, railway overhead catenary wires, and central European",
+          "text": "Rolling forested Slovenian hills, railway overhead catenary wires, and central European",
+          "description": "Rolling forested Slovenian hills, railway overhead catenary wires, and central European architecture.",
+          "groundingPhrase": "Rolling forested Slovenian hills, railway overhead catenary wires, and central European",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Railway tracks, catenary, and platform adjacent to the building."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Rolling forested Slovenian hills, railway overhead catenary wires, and central European architecture."
             }
           ]
         },
         {
-          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-aided-a702ad0369",
-          "label": "Slovenian Alpine/Karstic Topography",
-          "text": "Slovenian Alpine/Karstic Topography",
-          "description": "Rolling forested pre-Alpine hills and terracotta gabled settlement.",
-          "groundingPhrase": "Slovenian Alpine/Karstic Topography",
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-e08a2b0745",
+          "label": "Slovenian yellow highway directional sign pointing to 'Ljubljana motorway' and 'Novo mes",
+          "text": "Slovenian yellow highway directional sign pointing to 'Ljubljana motorway' and 'Novo mes",
+          "description": "Directional yellow signs pointing to \"Ljubljana\" (with green motorway emblem) and \"Novo mesto\".",
+          "groundingPhrase": "Slovenian yellow highway directional sign pointing to 'Ljubljana motorway' and 'Novo mes",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4595,
+            "y": 0.3855,
+            "w": 0.15846001583531275,
+            "h": 0.13118128434841525
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Directional yellow signs pointing to \"Ljubljana\" (with green motorway emblem) and \"Novo mesto\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Slovenian yellow highway directional sign pointing to 'Ljubljana motorway' and 'Novo mesto'."
+            }
+          ],
+          "groundingLabel": "Slovenian yellow highway directional sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-f183200c4a",
+          "label": "Tourist and amenity pictogram signs (hiking, camping, train station, dining)",
+          "text": "Tourist and amenity pictogram signs (hiking, camping, train station, dining)",
+          "description": "Tourist and amenity pictogram signs (hiking, camping, train station, dining).",
+          "groundingPhrase": "Tourist and amenity pictogram signs",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Tourist and amenity pictogram signs (hiking, camping, train station, dining)."
+            }
+          ],
+          "groundingLabel": "Tourist; amenity pictogram signs"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-8a5634cce7",
+          "label": "Rolling Slovenian Lower Carniolan landscape",
+          "text": "Rolling Slovenian Lower Carniolan landscape",
+          "description": "Rolling Slovenian Lower Carniolan landscape with red clay roof tiles.",
+          "groundingPhrase": "Rolling Slovenian Lower Carniolan landscape",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Rolling Slovenian Lower Carniolan landscape with red clay roof tiles."
+            }
+          ],
+          "groundingLabel": "Slovernian Lower Carniolan landscape"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-187a19a83f",
+          "label": "Ulica Antona Tomšiča",
+          "text": "Ulica Antona Tomšiča",
+          "description": "Ulica Antona Tomšiča.",
+          "groundingPhrase": "Ulica Antona Tomšiča",
           "source": "panorama",
           "category": "geography",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Ulica Antona Tomšiča"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-76325b0f66",
+          "label": "Višnja Gora",
+          "text": "Višnja Gora",
+          "description": "Višnja Gora.",
+          "groundingPhrase": "Višnja Gora",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Višnja Gora"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-2e92649a19",
+          "label": "Official train station building facade marked clearly",
+          "text": "Official train station building facade marked clearly",
+          "description": "Official train station building facade marked clearly with \"VIŠNJA GORA\".",
+          "groundingPhrase": "Official train station building facade marked clearly",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3145,
+            "y": 0.2515,
+            "w": 0.251,
+            "h": 0.246
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Station building sign visibly reading \"VIŠNJA GORA\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Official train station building facade marked clearly with \"VIŠNJA GORA\"."
+            }
+          ],
+          "groundingLabel": "Official train station building facade"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-c6b53471a2",
+          "label": "Street name sign reading \"Ulica Antona Tomšiča\"",
+          "text": "Street name sign reading \"Ulica Antona Tomšiča\"",
+          "description": "Street name sign reading \"Ulica Antona Tomšiča\".",
+          "groundingPhrase": "Street name sign reading \"Ulica Antona Tomšiča\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.239013855898654,
+            "y": 0.41459094331099905,
+            "w": 0.03924228028503564,
+            "h": 0.034272604080403515
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Street name sign reading \"Ulica Antona Tomšiča\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Street name sign reading \"Ulica Antona Tomšiča\"."
+            }
+          ],
+          "groundingLabel": "Street name sign"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-767c11efbc",
+          "label": "Yellow directional traffic signage",
+          "text": "Yellow directional traffic signage",
+          "description": "Yellow directional traffic signage indicating highway connections to \"Ljubljana\" and \"Novo mesto\".",
+          "groundingPhrase": "Yellow directional traffic signage",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4601405384006334,
+            "y": 0.39071212577479986,
+            "w": 0.15031076801266824,
+            "h": 0.12799932244221934
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Directional yellow signs pointing to \"Ljubljana\" (with green motorway emblem) and \"Novo mesto\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Yellow directional traffic signage indicating highway connections to \"Ljubljana\" and \"Novo mesto\"."
+            }
+          ],
+          "groundingLabel": "Yellow directional traffic signage; railway tracks"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-187a19a83f",
+          "label": "Ulica Antona Tomšiča",
+          "text": "Ulica Antona Tomšiča",
+          "description": "Ulica Antona Tomšiča.",
+          "groundingPhrase": "Ulica Antona Tomšiča",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Ulica Antona Tomšiča"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Ulica Antona Tomšiča"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-76325b0f66",
+          "label": "Višnja Gora",
+          "text": "Višnja Gora",
+          "description": "Višnja Gora.",
+          "groundingPhrase": "Višnja Gora",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Višnja Gora"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Višnja Gora"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-7f043b1bbe",
+          "label": "Dense green forested hills characteristic of Lower Carniola (Dolenjska)",
+          "text": "Dense green forested hills characteristic of Lower Carniola (Dolenjska)",
+          "description": "Dense green forested hills characteristic of Lower Carniola (Dolenjska).",
+          "groundingPhrase": "Dense green forested hills characteristic of Lower Carniola",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5595,
+            "y": 0.1775,
+            "w": 0.438,
+            "h": 0.377
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Dense green forested hills characteristic of Lower Carniola (Dolenjska)."
+            }
+          ],
+          "groundingLabel": "Dense green forested hills characteristic; hills characteristic"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-4cc30f87a9",
+          "label": "Railway tracks, catenary, and platform adjacent to the building",
+          "text": "Railway tracks, catenary, and platform adjacent to the building",
+          "description": "Railway tracks, catenary, and platform adjacent to the building.",
+          "groundingPhrase": "Railway tracks, catenary, and platform adjacent to the building",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.6136183689627871,
+            "y": 0.3351903435468895,
+            "w": 0.35233570863024544,
+            "h": 0.19754573515019197
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Railway tracks, catenary, and platform adjacent to the building."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-753d3ec8d9",
+          "label": "Slovenian pedestrian crossing signposts and rural Central European residential architect",
+          "text": "Slovenian pedestrian crossing signposts and rural Central European residential architect",
+          "description": "Slovenian pedestrian crossing signposts and rural Central European residential architecture.",
+          "groundingPhrase": "Slovenian pedestrian crossing signposts and rural Central European residential architect",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.21773555027711797,
+            "y": 0.43958443122788526,
+            "w": 0.038004750593824216,
+            "h": 0.061030389721197564
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Slovenian pedestrian crossing signposts and rural Central European residential architecture."
+            }
+          ],
+          "groundingLabel": "Slovenian pedestrian crossing signposts"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-8a5634cce7",
+          "label": "Rolling Slovenian Lower Carniolan landscape",
+          "text": "Rolling Slovenian Lower Carniolan landscape",
+          "description": "Rolling Slovenian Lower Carniolan landscape with red clay roof tiles.",
+          "groundingPhrase": "Rolling Slovenian Lower Carniolan landscape",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Rolling Slovenian Lower Carniolan landscape with red clay roof tiles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-gpt-5-6-sol-xhigh-07cce911a4",
+          "label": "Slovenian village/rail context",
+          "text": "Slovenian village/rail context",
+          "description": "Slovenian village/rail context.",
+          "groundingPhrase": "Slovenian village/rail context",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -251,10 +1167,726 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Slovenian Alpine/Karstic Topography: Rolling forested pre-Alpine hills and terracotta gabled settlement."
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Slovenian village/rail context"
+            }
+          ],
+          "groundingLabel": "Slovenian village/rail context"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-5-6-sol-xhigh-8e23309649",
+          "label": "green karstic hills",
+          "text": "green karstic hills",
+          "description": "Green karstic hills.",
+          "groundingPhrase": "green karstic hills",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "green karstic hills"
+            }
+          ],
+          "groundingLabel": "green karstic hills"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-gpt-6-astra-low-642614a23e",
+          "label": "Slovenian-style white village buildings/red tiles. Initial belief",
+          "text": "Slovenian-style white village buildings/red tiles. Initial belief",
+          "description": "Ivancna Gorica station.",
+          "groundingPhrase": "Slovenian-style white village buildings/red tiles. Initial belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3317683881064163,
+            "y": 0.2566588958881008,
+            "w": 0.2237871674491393,
+            "h": 0.23014731412132333
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Slovenian-style white village buildings/red tiles. Initial belief: Ivancna Gorica station"
             }
           ]
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-6-astra-low-444e0e9e3b",
+          "label": "Ljubljana and Novo mesto yellow signs",
+          "text": "Ljubljana and Novo mesto yellow signs",
+          "description": "Ljubljana and Novo mesto yellow signs.",
+          "groundingPhrase": "Ljubljana and Novo mesto yellow signs",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.456935054773083,
+            "y": 0.39461055999206385,
+            "w": 0.15660719874804382,
+            "h": 0.1312409602698279
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Ljubljana and Novo mesto yellow signs"
+            }
+          ],
+          "groundingLabel": "Ljubljana"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-6-astra-low-d3b4361b91",
+          "label": "station name appears IVANCNA GORICA",
+          "text": "station name appears IVANCNA GORICA",
+          "description": "Station name appears IVANCNA GORICA.",
+          "groundingPhrase": "station name appears IVANCNA GORICA",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.46910719874804385,
+            "y": 0.3244238629036258,
+            "w": 0.058399061032863846,
+            "h": 0.043638857199543676
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "station name appears IVANCNA GORICA"
+            }
+          ],
+          "groundingLabel": "station name"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-6-astra-low-04a9734047",
+          "label": "wooded low hills",
+          "text": "wooded low hills",
+          "description": "Wooded low hills.",
+          "groundingPhrase": "wooded low hills",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5695,
+            "y": 0.1775,
+            "w": 0.427,
+            "h": 0.262
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "wooded low hills"
+            }
+          ],
+          "groundingLabel": "wooded low hills"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-6-astra-low-a2f4a94a32",
+          "label": "railway platform",
+          "text": "railway platform",
+          "description": "Railway platform.",
+          "groundingPhrase": "railway platform",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.5801823161189358,
+            "y": 0.38842386290362585,
+            "w": 0.2741361502347418,
+            "h": 0.14913040027776403
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "railway platform"
+            }
+          ],
+          "groundingLabel": "railway platform"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-grok-4-6-xhigh-e57f0fdcf6",
+          "label": "Ljubljana/Novo mesto signs and the station name made the belief certain",
+          "text": "Ljubljana/Novo mesto signs and the station name made the belief certain",
+          "description": "Ljubljana/Novo mesto signs and the station name made the belief certain.",
+          "groundingPhrase": "Ljubljana/Novo mesto signs and the station name made the belief certain",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.323349765258216,
+            "y": 0.2656966172312881,
+            "w": 0.26393583724569636,
+            "h": 0.24302946282426469
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Ljubljana/Novo mesto signs and the station name made the belief certain."
+            }
+          ],
+          "groundingLabel": "Ljubljana/Novo mesto signs; the station name"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-gpt-5-6-sol-max-921d092194",
+          "label": "compact hillside settlement",
+          "text": "compact hillside settlement",
+          "description": "Compact hillside settlement.",
+          "groundingPhrase": "compact hillside settlement",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "compact hillside settlement"
+            }
+          ],
+          "groundingLabel": "compact hillside settlement"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-5-6-sol-max-b4a6b40e71",
+          "label": "local town geometry",
+          "text": "local town geometry",
+          "description": "Local town geometry.",
+          "groundingPhrase": "local town geometry",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "local town geometry."
+            }
+          ],
+          "groundingLabel": "local town geometry"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-5-6-sol-max-febb5668e4",
+          "label": "red-roofed buildings",
+          "text": "red-roofed buildings",
+          "description": "Red-roofed buildings.",
+          "groundingPhrase": "red-roofed buildings",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "red-roofed buildings"
+            }
+          ],
+          "groundingLabel": "red-roofed buildings"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-5-6-sol-max-02644f3814",
+          "label": "Slovenian roadscape",
+          "text": "Slovenian roadscape",
+          "description": "Slovenian roadscape.",
+          "groundingPhrase": "Slovenian roadscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Slovenian roadscape"
+            }
+          ],
+          "groundingLabel": "Slovenian roadscape"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gpt-5-6-sol-max-2d7bcf892c",
+          "label": "Dinaric vegetation",
+          "text": "Dinaric vegetation",
+          "description": "Dinaric vegetation.",
+          "groundingPhrase": "Dinaric vegetation",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Dinaric vegetation"
+            }
+          ],
+          "groundingLabel": "Dinaric vegetation"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-glm-5-3-flash-max-d5fb7020eb",
+          "label": "yellow signs \"Ljubljana\" and \"Novo mesto\",",
+          "text": "yellow signs \"Ljubljana\" and \"Novo mesto\",",
+          "description": "Yellow signs \"Ljubljana\" and \"Novo mesto\",.",
+          "groundingPhrase": "yellow signs \"Ljubljana\" and \"Novo mesto\",",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4605,
+            "y": 0.3905,
+            "w": 0.102,
+            "h": 0.122
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "yellow signs \"Ljubljana\" and \"Novo mesto\","
+            }
+          ],
+          "groundingLabel": "yellow signs"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-glm-5-3-flash-max-75160e5c5a",
+          "label": "street name \"Ulica Antona Tomašiča\",",
+          "text": "street name \"Ulica Antona Tomašiča\",",
+          "description": "Street name \"Ulica Antona Tomašiča\",.",
+          "groundingPhrase": "street name \"Ulica Antona Tomašiča\",",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.24021909233176839,
+            "y": 0.4106195129209861,
+            "w": 0.03521126760563382,
+            "h": 0.030157234264173383
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "street name \"Ulica Antona Tomašiča\","
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-007-glm-5-3-flash-max-4169c321e0",
+          "label": "telecom mast on wooded hill,",
+          "text": "telecom mast on wooded hill,",
+          "description": "Telecom mast on wooded hill,.",
+          "groundingPhrase": "telecom mast on wooded hill,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5333779342723005,
+            "y": 0.18800116561678487,
+            "w": 0.02646948356807513,
+            "h": 0.2094988343832151
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "telecom mast on wooded hill,"
+            }
+          ],
+          "groundingLabel": "telecom mast"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-glm-5-3-flash-max-b7408e0733",
+          "label": "rolling Dolenjska terrain. Belief",
+          "text": "rolling Dolenjska terrain. Belief",
+          "description": "Slovenia, on the Ljubljana–Novo mesto rail corridor, mid-section. Placing pin at 45.93, 14.95.",
+          "groundingPhrase": "rolling Dolenjska terrain. Belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "rolling Dolenjska terrain. Belief: Slovenia, on the Ljubljana–Novo mesto rail corridor, mid-section. Placing pin at 45.93, 14.95."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-easy-loc-007-glm-5-3-flash-max-2d814e9015",
+          "label": "peach station building",
+          "text": "peach station building",
+          "description": "Peach station building with red tile roof,.",
+          "groundingPhrase": "peach station building",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.3145,
+            "y": 0.2515,
+            "w": 0.251,
+            "h": 0.246
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "peach station building with red tile roof,"
+            }
+          ],
+          "groundingLabel": "peach station building"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-unaided-855714aec1",
+          "label": "Slovenian yellow signs \"Ljubljana / Novo mesto\"",
+          "text": "Slovenian yellow signs \"Ljubljana / Novo mesto\"",
+          "description": "Slovenian yellow signs \"Ljubljana / Novo mesto\".",
+          "groundingPhrase": "Slovenian yellow signs \"Ljubljana / Novo mesto\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4605,
+            "y": 0.3915,
+            "w": 0.15364319248826291,
+            "h": 0.1321105599920639
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Slovenian yellow signs \"Ljubljana / Novo mesto\""
+            }
+          ],
+          "groundingLabel": "Slovenian yellow signs"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-gemini-3-7-flash-high-unaided-aef2cc9e69",
+          "label": "\"VIŠNJA GORA\" station sign",
+          "text": "\"VIŠNJA GORA\" station sign",
+          "description": "\"VIŠNJA GORA\" station sign.",
+          "groundingPhrase": "\"VIŠNJA GORA\" station sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4720195618153365,
+            "y": 0.3329472000396806,
+            "w": 0.05266823161189357,
+            "h": 0.03527771439908736
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"VIŠNJA GORA\" station sign"
+            }
+          ],
+          "groundingLabel": "VINJA GORA; station sign"
         }
       ]
     }

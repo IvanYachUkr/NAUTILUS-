@@ -215,6 +215,46 @@ test("selected scene keeps truth, prediction, and the recorded exploration on on
   ]);
 });
 
+test("model comparison keeps one truth point and plots every selected best-run prediction", () => {
+  const comparisonRuns = [
+    {
+      id: "run-sol",
+      model: "GPT-5.6 Sol · max",
+      prediction: { lat: 48.85, lng: 2.37 },
+      errorKm: 0.4,
+    },
+    {
+      id: "run-gemini",
+      model: "Gemini 3.7 Flash · high, aided",
+      prediction: { lat: 48.86, lng: 2.36 },
+      errorKm: 1.1,
+    },
+  ];
+
+  const scene = sceneModule.buildGlobeSceneData?.({
+    cases: [paris],
+    caseItem: paris,
+    run: comparisonRuns[0],
+    comparisonRuns,
+    overview: false,
+  });
+
+  assert.equal(scene?.points.filter((point) => point.kind === "truth").length, 1);
+  assert.deepEqual(
+    scene?.points.filter((point) => point.kind === "prediction").map((point) => point.runId),
+    ["run-sol", "run-gemini"],
+  );
+  assert.equal(scene?.arcs.length, 2);
+  assert.deepEqual(scene?.labels.map((label) => label.text), [
+    "GPT-5.6 Sol · max",
+    "Gemini 3.7 Flash · high, aided",
+  ]);
+  assert.deepEqual(scene?.paths, []);
+  assert.match(scene?.arcs[0].label, /GPT-5\.6 Sol/);
+  assert.match(scene?.arcs[1].label, /Gemini 3\.7 Flash/);
+  assert.notDeepEqual(scene?.arcs[0].color, scene?.arcs[1].color);
+});
+
 test("recording-only selections never invent a prediction or error arc", () => {
   const scene = sceneModule.buildGlobeSceneData?.({
     cases: [paris],

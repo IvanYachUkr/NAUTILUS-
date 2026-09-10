@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-09T15:24:13.071Z",
+  "generatedAt": "2026-09-10T03:56:33.042Z",
   "limits": {
     "openGuessrCompetitionLocations": 20
   },
@@ -9,14 +9,17 @@
     "competitions": 3,
     "competitionParts": 3,
     "resultFiles": 25,
-    "benchmarkPredictionRuns": 75,
+    "clueDocuments": 25,
+    "clueSets": 241,
+    "clues": 1326,
+    "benchmarkPredictionRuns": 225,
     "recordings": 426,
     "matchedRecordings": 413,
     "unmatchedRecordings": 13,
     "recordingsWithPrediction": 397,
     "recordingsWithoutPrediction": 29,
     "atlasCases": 25,
-    "atlasRuns": 588,
+    "atlasRuns": 738,
     "recordingOnlyRuns": 16
   },
   "warnings": [

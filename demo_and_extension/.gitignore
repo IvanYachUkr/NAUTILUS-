@@ -4,6 +4,9 @@ coverage/
 dist/
 src/vendor/
 *.log
+.cache/
+__pycache__/
+*.pyc
 
 # Local collector audit log. It is append-only diagnostic history and is not
 # required to rebuild the atlas.

@@ -32,6 +32,7 @@ export function createGlobeController(container, options = {}) {
   let selectedCase = null;
   let selectedRun = null;
   let overviewRuns = [];
+  let comparisonRuns = [];
   let overview = true;
   let playback = null;
   let world = null;
@@ -66,6 +67,7 @@ export function createGlobeController(container, options = {}) {
       selectedCase = next.caseItem ?? null;
       selectedRun = next.run ?? null;
       overviewRuns = next.overviewRuns ?? [];
+      comparisonRuns = next.comparisonRuns ?? [];
       overview = next.overview ?? !selectedCase;
       playback = next.playback ?? null;
 
@@ -75,7 +77,7 @@ export function createGlobeController(container, options = {}) {
         renderGlobeData({ fit });
       } else if (fallbackController) {
         fallbackController.update(
-          { cases, caseItem: selectedCase, run: selectedRun, overviewRuns, overview, playback },
+          { cases, caseItem: selectedCase, run: selectedRun, overviewRuns, comparisonRuns, overview, playback },
           { fit },
         );
       } else {
@@ -180,6 +182,16 @@ export function createGlobeController(container, options = {}) {
       .pathDashGap((path) => (path.kind === "playback" ? 0.08 : 0.12))
       .pathDashAnimateTime(reducedMotion ? 0 : 2600)
       .pathTransitionDuration(reducedMotion ? 0 : 520)
+      .labelLat("lat")
+      .labelLng("lng")
+      .labelAltitude("altitude")
+      .labelText("text")
+      .labelLabel((label) => escapeHtml(label.label))
+      .labelColor("color")
+      .labelSize(0.24)
+      .labelResolution(3)
+      .labelIncludeDot(false)
+      .labelsTransitionDuration(reducedMotion ? 0 : 420)
       .onPointClick((point) => selectPoint(point))
       .onArcClick((arc) => selectPoint({ ...arc, kind: "prediction" }))
       .onPathClick((path) => selectPoint({ ...path, kind: "playback" }))
@@ -218,6 +230,7 @@ export function createGlobeController(container, options = {}) {
       caseItem: selectedCase,
       run: selectedRun,
       overviewRuns,
+      comparisonRuns,
       overview,
       playback,
     });
@@ -225,6 +238,7 @@ export function createGlobeController(container, options = {}) {
     world.pointsData(scene.points);
     world.arcsData(scene.arcs);
     world.pathsData(scene.paths);
+    world.labelsData(scene.labels ?? []);
 
     const controls = world.controls?.();
     if (controls) {
@@ -238,7 +252,7 @@ export function createGlobeController(container, options = {}) {
     if (!world) return;
     const signature = overview
       ? `overview:${cases.map((item) => item.id).join(",")}`
-      : `${selectedCase?.id ?? "none"}:${selectedRun?.id ?? "none"}`;
+      : `${selectedCase?.id ?? "none"}:${selectedRun?.id ?? "none"}:${comparisonRuns.map((item) => item.id).join(",")}`;
 
     if (!force && signature === lastFitSignature) return;
     lastFitSignature = signature;
@@ -259,10 +273,15 @@ export function createGlobeController(container, options = {}) {
       width: container.clientWidth,
       height: container.clientHeight,
     }));
-    const focus = selectedRun?.prediction && hasCoordinate(selectedRun.prediction)
-      ? midpoint(selectedCase.groundTruth, selectedRun.prediction)
-      : selectedCase.groundTruth;
-    const errorKm = selectedRun?.errorKm;
+    const comparedPredictions = comparisonRuns.map((item) => item.prediction).filter(hasCoordinate);
+    const focus = comparedPredictions.length
+      ? averageCoordinate([selectedCase.groundTruth, ...comparedPredictions])
+      : selectedRun?.prediction && hasCoordinate(selectedRun.prediction)
+        ? midpoint(selectedCase.groundTruth, selectedRun.prediction)
+        : selectedCase.groundTruth;
+    const errorKm = comparedPredictions.length
+      ? Math.max(...comparisonRuns.map((item) => Number(item.errorKm) || 0))
+      : selectedRun?.errorKm;
     const altitude = Number.isFinite(errorKm)
       ? errorKm < 5
         ? 1.18
@@ -336,7 +355,7 @@ export function createGlobeController(container, options = {}) {
       onMarkerSelect: options.onMarkerSelect,
     });
     fallbackController.update(
-      { cases, caseItem: selectedCase, run: selectedRun, overviewRuns, overview, playback },
+      { cases, caseItem: selectedCase, run: selectedRun, overviewRuns, comparisonRuns, overview, playback },
       { fit: true },
     );
 
@@ -351,6 +370,13 @@ function midpoint(a, b) {
   return {
     lat: (a.lat + b.lat) / 2,
     lng: (a.lng + b.lng) / 2,
+  };
+}
+
+function averageCoordinate(points) {
+  return {
+    lat: points.reduce((sum, point) => sum + point.lat, 0) / points.length,
+    lng: points.reduce((sum, point) => sum + point.lng, 0) / points.length,
   };
 }
 

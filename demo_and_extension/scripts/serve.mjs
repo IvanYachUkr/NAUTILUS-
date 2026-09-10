@@ -13,6 +13,7 @@ import {
   saveRecordingCheckpoint,
   saveRoundRecording,
 } from "./lib/recordings.mjs";
+import { loadClueDocuments, saveClueDocument } from "./lib/clues.mjs";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const port = Number.parseInt(process.argv[2] ?? process.env.PORT ?? "4173", 10);
@@ -121,6 +122,33 @@ async function handleApi(request, response, url) {
       maxCompetitionLocations: OPEN_GUESSR_COMPETITION_MAX_LOCATIONS,
       recordings: workspace.recordings.length,
     });
+    return;
+  }
+
+  if (request.method === "GET" && url.pathname === "/api/clues") {
+    const errors = [];
+    const documents = await loadClueDocuments({ errors });
+    if (errors.length) throw new TypeError(errors.join("\n"));
+    respondJson(response, 200, {
+      ok: true,
+      documents: documents.map((document) => ({
+        ...document,
+        imagePath: startingImagePathForAtlasLocation(document.locationId),
+      })),
+    });
+    return;
+  }
+
+  const clueDocumentMatch = /^\/api\/clues\/([^/]+)$/.exec(url.pathname);
+  if (request.method === "PUT" && clueDocumentMatch) {
+    const locationId = decodeURIComponent(clueDocumentMatch[1]);
+    const document = await readJsonBody(request, MAX_BODY_BYTES);
+    if (document?.locationId !== locationId) {
+      throw new TypeError("The URL location ID must match document.locationId.");
+    }
+    const filename = await saveClueDocument(document);
+    workspace = await buildData({ quiet: true });
+    respondJson(response, 200, { ok: true, locationId, filename });
     return;
   }
 
@@ -233,6 +261,12 @@ async function handleApi(request, response, url) {
   }
 
   respondJson(response, 404, { ok: false, error: "API endpoint not found." });
+}
+
+function startingImagePathForAtlasLocation(locationId) {
+  const match = /^(.+)--(loc-\d+)$/.exec(String(locationId));
+  if (!match) throw new TypeError(`Invalid atlas location ID: ${locationId}`);
+  return `data/starting-images/${match[1]}/${match[2].replace("-", "_")}.png`;
 }
 
 function serveStatic(response, requestUrl) {

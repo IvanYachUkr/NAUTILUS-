@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { parseGoogleMapsStreetViewUrl } from "../shared/google-maps-url.js";
 import { validateCases } from "../src/data-contract.js";
 import { RECORDED_BENCHMARKS } from "../src/project-story.js";
+import { clueDocumentsByLocation, loadClueDocuments } from "./lib/clues.mjs";
 import { matchRecordingToLocation } from "./lib/recordings.mjs";
 import {
   COMPETITIONS_DIR,
@@ -48,6 +49,7 @@ export async function buildData({
   );
 
   const resultFiles = await loadResults(locations, errors);
+  const clueDocuments = await loadClueDocuments({ errors });
   const benchmarkPredictionResults = await loadRecordedBenchmarkPredictions(
     locations,
     predictionLocationLabels,
@@ -70,6 +72,7 @@ export async function buildData({
     results,
     recordingIndex,
     predictionLocationLabels,
+    clueDocumentsByLocation: clueDocumentsByLocation(clueDocuments),
     warnings,
   });
 
@@ -116,6 +119,9 @@ export async function buildData({
       competitions: competitions.length,
       competitionParts: competitionOutputs.length,
       resultFiles: resultFiles.length,
+      clueDocuments: clueDocuments.length,
+      clueSets: clueDocuments.reduce((sum, document) => sum + document.clueSets.length, 0),
+      clues: clueDocuments.reduce((sum, document) => sum + document.clueSets.reduce((setSum, clueSet) => setSum + clueSet.cues.length, 0), 0),
       benchmarkPredictionRuns: benchmarkPredictionResults.length,
 
       recordings: recordings.length,
@@ -976,25 +982,21 @@ async function loadRecordedBenchmarkPredictions(
   const results = [];
 
   for (const benchmark of RECORDED_BENCHMARKS) {
-    // Score-only rows and composite runs are not validated per-location pins.
-    if (!benchmark.globePredictions) continue;
+    if (!benchmark.predictionSource) continue;
     const benchmarkDirectory = join(
       RECORDED_AGENT_BENCHMARK_DIR,
       benchmark.dataDirectory ?? benchmark.id,
     );
-    const files = (await listJsonFiles(benchmarkDirectory, { recursive: true }))
-      .filter((path) => {
-        const parts = relative(benchmarkDirectory, path).split(/[\\/]/);
-        // The story scores describe the original difficulty runs. Later repeats
-        // under runs/ must not become extra pins for the same model selection.
-        return parts.length === 3 && parts[1] === "rounds" &&
-          /^round-\d+\.json$/i.test(parts[2]);
-      })
-      .sort((left, right) => left.localeCompare(right));
+    const predictions = benchmark.predictionSource.type === "glm-conversation"
+      ? await loadGlmConversationPredictions(benchmark.predictionSource.path, errors)
+      : await loadRecordedDirectoryPredictions(join(benchmarkDirectory, benchmark.predictionSource.path ?? "."), errors);
 
-    for (const path of files) {
-      const input = await readJson(path);
-      const source = relative(ROOT, path).replaceAll("\\", "/");
+    if (predictions.length !== 25) {
+      errors.push(`${benchmark.id}: best run ${benchmark.bestRun?.label ?? "selection"} must resolve to exactly 25 predictions; found ${predictions.length}.`);
+      continue;
+    }
+
+    for (const { input, source } of predictions) {
       const location = locationsById.get(input.atlasLocationId);
 
       if (!location) {
@@ -1032,6 +1034,10 @@ async function loadRecordedBenchmarkPredictions(
             },
             runKind: "model-prediction",
             benchmarkId: benchmark.id,
+            bestRunId: benchmark.bestRun?.id ?? null,
+            bestRunLabel: benchmark.bestRun?.label ?? "Best run",
+            bestRunPoints: benchmark.bestRun?.points ?? null,
+            benchmarkMeanPoints: benchmark.points,
             sourcePredictionId: input.id,
             hypothesis: "",
             cues: [],
@@ -1048,6 +1054,96 @@ async function loadRecordedBenchmarkPredictions(
   }
 
   return results;
+}
+
+async function loadRecordedDirectoryPredictions(directory, errors) {
+  const localRoundFiles = (await listJsonFiles(directory, { recursive: true }))
+    .filter((path) => {
+      const parts = relative(directory, path).split(/[\\/]/);
+      return parts.length === 3 && /^europe-(?:easy|medium|hard)$/i.test(parts[0]) &&
+        parts[1] === "rounds" && /^round-\d+\.json$/i.test(parts[2]);
+    })
+    .sort((left, right) => left.localeCompare(right));
+
+  if (localRoundFiles.length === 25) {
+    return Promise.all(localRoundFiles.map(async (path) => ({
+      input: withBenchmarkAtlasLocation(await readJson(path), relative(directory, path)),
+      source: relative(ROOT, path).replaceAll("\\", "/"),
+    })));
+  }
+
+  const sessionFiles = (await listJsonFiles(directory, { recursive: true }))
+    .filter((path) => {
+      const parts = relative(directory, path).split(/[\\/]/);
+      return parts.length === 2 && /^europe-(?:easy|medium|hard)$/i.test(parts[0]) && parts[1] === "session.json";
+    })
+    .sort((left, right) => left.localeCompare(right));
+  const byLocation = new Map();
+  for (const sessionPath of sessionFiles) {
+    const session = await readJson(sessionPath);
+    for (const round of session.rounds ?? []) {
+      const candidatePaths = [
+        nonEmptyString(round.path) ? resolve(ROOT, round.path) : null,
+        join(sessionPath, "..", "rounds", `round-${String(round.competitionRound ?? round.roundIndex + 1).padStart(2, "0")}.json`),
+      ].filter(Boolean);
+      const path = candidatePaths.find((candidate) => existsSync(candidate));
+      if (!path) continue;
+      const input = await readJson(path);
+      if (!isCoordinate(input.prediction) || !nonEmptyString(input.atlasLocationId)) continue;
+      byLocation.set(input.atlasLocationId, { input, source: relative(ROOT, path).replaceAll("\\", "/") });
+    }
+  }
+  if (byLocation.size === 0 && localRoundFiles.length > 0) {
+    errors.push(`${relative(ROOT, directory)} contains ${localRoundFiles.length} canonical round files, expected 25.`);
+  }
+  return [...byLocation.values()].sort((left, right) => left.input.atlasLocationId.localeCompare(right.input.atlasLocationId));
+}
+
+function withBenchmarkAtlasLocation(input, relativePath) {
+  if (nonEmptyString(input?.atlasLocationId)) return input;
+  const match = relativePath.match(/^(europe-(easy|medium|hard))[\\/]rounds[\\/]round-(\d+)\.json$/i);
+  if (!match) return input;
+  const offsets = { easy: 0, medium: 8, hard: 17 };
+  const globalIndex = offsets[match[2].toLowerCase()] + Number.parseInt(match[3], 10);
+  return { ...input, atlasLocationId: `${match[1].toLowerCase()}--loc-${String(globalIndex).padStart(3, "0")}` };
+}
+
+async function loadGlmConversationPredictions(sourcePath, errors) {
+  const absolutePath = resolve(ROOT, sourcePath);
+  if (!existsSync(absolutePath)) {
+    errors.push(`${sourcePath}: GLM best-run conversation is missing.`);
+    return [];
+  }
+  const conversation = await readJson(absolutePath);
+  const pins = [];
+  const visit = (value) => {
+    if (!value || typeof value !== "object") return;
+    if (typeof value.title === "string" && value.title.endsWith("openguessr_submit_guess") && nonEmptyString(value.output)) {
+      try {
+        const pin = JSON.parse(value.output)?.pin;
+        if (Number.isFinite(pin?.latitude) && Number.isFinite(pin?.longitude)) {
+          const previous = pins.at(-1);
+          if (!previous || previous.lat !== pin.latitude || previous.lng !== pin.longitude) pins.push({ lat: pin.latitude, lng: pin.longitude });
+        }
+      } catch { /* Ignore non-JSON presentation fragments. */ }
+    }
+    for (const child of Object.values(value)) visit(child);
+  };
+  visit(conversation);
+  return pins.map((prediction, index) => {
+    const globalIndex = index + 1;
+    const competitionId = globalIndex <= 8 ? "europe-easy" : globalIndex <= 17 ? "europe-medium" : "europe-hard";
+    return {
+      input: {
+        id: `glm-run-2-round-${String(globalIndex).padStart(2, "0")}`,
+        atlasLocationId: `${competitionId}--loc-${String(globalIndex).padStart(3, "0")}`,
+        condition: "interactive-panorama",
+        prediction,
+        durationMs: null,
+      },
+      source: relative(ROOT, absolutePath).replaceAll("\\", "/"),
+    };
+  });
 }
 
 async function loadRecordings(
@@ -1534,6 +1630,7 @@ function compileAtlasCases({
   results,
   recordingIndex,
   predictionLocationLabels,
+  clueDocumentsByLocation,
   warnings,
 }) {
   const resultsByLocation =
@@ -1709,6 +1806,8 @@ function compileAtlasCases({
         resolveStartingImage(
           location,
         ),
+
+      clueSets: clueDocumentsByLocation.get(location.id)?.clueSets ?? [],
 
       runs,
     });

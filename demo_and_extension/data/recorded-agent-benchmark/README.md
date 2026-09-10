@@ -1,12 +1,13 @@
 # Recorded interactive-agent benchmark
 
-<<<<<<< Updated upstream
-The benchmark contains published runs for GPT-6 Astra low, GPT-5.6 Sol max, GPT-5.6 Sol xhigh, Grok 4.6 xhigh, and Gemini 3.7 Flash.
-=======
-The benchmark contains published runs for GPT-5.6 Sol max, GPT-5.6 Sol xhigh, Grok 4.6 xhigh, Gemini 3.7 Flash, and Gemini 3.8 Flash.
->>>>>>> Stashed changes
+The benchmark contains published runs for GPT-6 Astra low, GPT-5.6 Sol
+max/xhigh, Grok 4.6 xhigh, GLM-5.3-Flash + MCP, and Gemini 3.7/3.8 Flash.
 
-The top-ranking overall model runs are [`gemini-3.7-flash-high-aided/`](gemini-3.7-flash-high-aided/) (**120,203 points** 3-run mean) and [`gemini-3.7-flash-medium-aided/`](gemini-3.7-flash-medium-aided/) (**120,153 points** 3-run mean) with a pin-placement helper. The first Gemini 3.8 Flash run is under [`gemini-3.8-flash-medium-aided/`](gemini-3.8-flash-medium-aided/) (**119,061 points**, single run). The original unaided run is under [`gemini-3.7-flash-high/`](gemini-3.7-flash-high/).
+The top three-run means are [`gemini-3.8-flash-high-aided/`](gemini-3.8-flash-high-aided/)
+(**120,390.33**), [`gemini-3.7-flash-high-aided/`](gemini-3.7-flash-high-aided/)
+(**120,202.67**), and [`gemini-3.7-flash-medium-aided/`](gemini-3.7-flash-medium-aided/)
+(**120,152.67**). The original unaided control remains under
+[`gemini-3.7-flash-high/`](gemini-3.7-flash-high/).
 
 ## GPT-6 Astra low
 

@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,41 +24,7 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-6790c54d02",
-          "label": "Street Name on Asphalt",
-          "text": "Street Name on Asphalt",
-          "description": "\"Jelšová\" (Slovak Jelšová ulica with Slovak caron on 'š').",
-          "groundingPhrase": "Street Name on Asphalt",
-          "source": "panorama",
-          "category": "signage",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Street Name on Asphalt: \"Jelšová\" (Slovak Jelšová ulica with Slovak caron on 'š')."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Street Name on Asphalt: Exact Slovak road name \"Jelšová\"."
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-40bd91a30a",
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-d3823d3731",
           "label": "Slovak Valley Residential Architecture",
           "text": "Slovak Valley Residential Architecture",
           "description": "Stucco 2-story family houses with brick bases, tiled gabled roofs with snow guards (sneholamy), and private balconies.",
@@ -65,23 +32,22 @@
           "source": "panorama",
           "category": "signage",
           "region": {
-            "x": 0.0845,
-            "y": 0.0945,
-            "w": 0.352,
-            "h": 0.479
+            "x": 0.0837472613458529,
+            "y": 0.09421003422449284,
+            "w": 0.3411353677621284,
+            "h": 0.4708909032290065
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
@@ -90,20 +56,146 @@
               "text": "Slovak Valley Residential Architecture: Stucco 2-story family houses with brick bases, tiled gabled roofs with snow guards (sneholamy), and private balconies."
             },
             {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Slovak Orthography: Diacritics \"š\" and \"á\" identifying Slovak language."
-            },
-            {
               "runId": "r1",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
               "text": "Slovak mountain architecture with dark tin hipped roofs"
             }
           ],
-          "groundingLabel": "Slovak Valley"
+          "groundingLabel": "Slovak Valley Residential Architecture; Residential Architecture"
         },
         {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-f152f95f8a",
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-a44eb0caa6",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "\"Jelšová\" (Slovak Jelšová ulica with Slovak caron on 'š').",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"Jelšová\" (Slovak Jelšová ulica with Slovak caron on 'š')."
+            }
+          ],
+          "groundingLabel": "Street Name"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-a2646f4100",
+          "label": "wooden telephone pole",
+          "text": "wooden telephone pole",
+          "description": "Wooden telephone pole with meter box.",
+          "groundingPhrase": "wooden telephone pole",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.8345,
+            "y": 0.0035,
+            "w": 0.092,
+            "h": 0.672
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "wooden telephone pole with meter box."
+            }
+          ],
+          "groundingLabel": "wooden telephone pole"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-da641fdc49",
+          "label": "elevated brick basements",
+          "text": "elevated brick basements",
+          "description": "Elevated brick basements.",
+          "groundingPhrase": "elevated brick basements",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0855,
+            "y": 0.4605,
+            "w": 0.329,
+            "h": 0.111
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "elevated brick basements"
+            }
+          ],
+          "groundingLabel": "elevated brick basements"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-e6fac7a48f",
+          "label": "Road stencil \"Jelšová\"",
+          "text": "Road stencil \"Jelšová\"",
+          "description": "Road stencil \"Jelšová\".",
+          "groundingPhrase": "Road stencil \"Jelšová\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4685,
+            "y": 0.5835,
+            "w": 0.073,
+            "h": 0.232
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Jelšová\""
+            }
+          ],
+          "groundingLabel": "Road stencil \"Jelov"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-61a77cc53d",
           "label": "Utility Infrastructure",
           "text": "Utility Infrastructure",
           "description": "Built-in stone wall gas/electric distribution cabinet (SPP/plyn) and wooden telegraph post with transformer box.",
@@ -111,8 +203,8 @@
           "source": "panorama",
           "category": "architecture",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -128,50 +220,11 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Utility Infrastructure: Built-in stone wall gas/electric distribution cabinet (SPP/plyn) and wooden telegraph post with transformer box."
             }
-          ]
+          ],
+          "groundingLabel": "Utility Infrastructure"
         },
         {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-2ea600e324",
-          "label": "Mountain Setting",
-          "text": "Mountain Setting",
-          "description": "Forested Carpathian hill ridges enclosing the residential valley.",
-          "groundingPhrase": "Mountain Setting",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.4885,
-            "y": 0.3065,
-            "w": 0.155,
-            "h": 0.14
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Mountain Setting: Forested Carpathian hill ridges enclosing the residential valley."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Carpathian Mountain Setting: Steep green forested slopes enclosing the mountain basin."
-            }
-          ],
-          "groundingLabel": "Mountain Setting"
-        },
-        {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-0c98d4a50f",
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-61bfcd2a31",
           "label": "Regional Location",
           "text": "Regional Location",
           "description": "Jelšová ulica in the Banská Bystrica / Central Slovakia mountain valley region.",
@@ -199,85 +252,476 @@
           ]
         },
         {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-d1d9b12ecd",
-          "label": "Slovak Residential Architecture",
-          "text": "Slovak Residential Architecture",
-          "description": "Yellow-rendered family houses with exposed brick lower levels, wrap-around balconies, and standing-seam tin/slate roofs.",
-          "groundingPhrase": "Slovak Residential Architecture",
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-aa3255f40f",
+          "label": "Mountain Setting",
+          "text": "Mountain Setting",
+          "description": "Forested Carpathian hill ridges enclosing the residential valley.",
+          "groundingPhrase": "Mountain Setting",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4875,
+            "y": 0.3065,
+            "w": 0.156,
+            "h": 0.14
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Mountain Setting: Forested Carpathian hill ridges enclosing the residential valley."
+            }
+          ],
+          "groundingLabel": "Mountain Setting"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-medium-aided-b0499fb687",
+          "label": "Landscape & Mountain Setting",
+          "text": "Landscape & Mountain Setting",
+          "description": "Two-story building with upper wooden balcony, external concrete stairs, tiled pitched roof, and masonry ground base.",
+          "groundingPhrase": "Landscape & Mountain Setting",
           "source": "panorama",
           "category": "signage",
           "region": {
-            "x": 0.0845,
-            "y": 0.0945,
-            "w": 0.352,
-            "h": 0.479
+            "x": 0.08528951486697965,
+            "y": 0.12809384455136155,
+            "w": 0.3395931142410016,
+            "h": 0.4237885025544368
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
+            "r1",
+            "r2",
             "r3"
           ],
           "provenance": [
             {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Slovak Residential Architecture: Yellow-rendered family houses with exposed brick lower levels, wrap-around balconies, and standing-seam tin/slate roofs."
-            }
-          ],
-          "groundingLabel": "Residential Architecture; Slovaki Residential Architecture"
-        },
-        {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-9fec08e457",
-          "label": "Infrastructure",
-          "text": "Infrastructure",
-          "description": "Slovak power utility poles, outdoor electrical junction panels, and mountain roadside drainage.",
-          "groundingPhrase": "Infrastructure",
-          "source": "panorama",
-          "category": "signage",
-          "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Typical Slovak Carpathian mountain valley residential house: two-story building with upper wooden balcony, external concrete stairs, tiled pitched roof, and masonry ground base."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Landscape & Mountain Setting: Dense pine and mixed beech mountain slopes of the Western Carpathians (Veľká Fatra / Low Tatras)."
+            },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Infrastructure: Slovak power utility poles, outdoor electrical junction panels, and mountain roadside drainage."
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Typical Slovak Carpathian mountain valley residential house: two-story building with upper wooden balcony, external concrete stairs, tiled pitched roof, and masonry ground base."
             }
           ]
         },
         {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-91607efab6",
-          "label": "Road stencil \"Jelšová\"",
-          "text": "Road stencil \"Jelšová\"",
-          "description": "Road stencil \"Jelšová\".",
-          "groundingPhrase": "Road stencil \"Jelšová\"",
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-medium-aided-01d2cbda67",
+          "label": "Electrical distribution meter box on roadside utility pole",
+          "text": "Electrical distribution meter box on roadside utility pole",
+          "description": "Electrical distribution meter box on roadside utility pole with Slovak/European high-voltage warning sticker.",
+          "groundingPhrase": "Electrical distribution meter box on roadside utility pole",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.8351823161189358,
+            "y": 0,
+            "w": 0.11786932707355248,
+            "h": 0.7134889142403651
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Electrical distribution meter box on roadside utility pole with Slovak/European high-voltage warning sticker."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Electrical distribution meter box on roadside utility pole with Slovak/European high-voltage warning sticker."
+            }
+          ],
+          "groundingLabel": "Electrical distribution meter box"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-medium-aided-e3f42793ac",
+          "label": "Street name stencil painted directly on asphalt",
+          "text": "Street name stencil painted directly on asphalt",
+          "description": "\"Jelšová\" (Slovak: Jelšová ulica).",
+          "groundingPhrase": "Street name stencil painted directly on asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.47730829420970267,
+            "y": 0.5804523585139627,
+            "w": 0.06259780907668233,
+            "h": 0.1872922970090769
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Street name stencil painted directly on asphalt: \"Jelšová\" (Slovak: Jelšová ulica)."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Street name stencil painted directly on asphalt: \"Jelšová\" (Slovak: Jelšová ulica)."
+            }
+          ],
+          "groundingLabel": "Street name stencil"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-medium-aided-6bbdeaf0d2",
+          "label": "Carpathian mountainous landscape",
+          "text": "Carpathian mountainous landscape",
+          "description": "Carpathian mountainous landscape with steep lush green forested slopes framing the northern valley.",
+          "groundingPhrase": "Carpathian mountainous landscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4875,
+            "y": 0.3065,
+            "w": 0.156,
+            "h": 0.143
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Carpathian mountainous landscape with steep lush green forested slopes framing the northern valley."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Carpathian mountainous landscape with steep lush green forested slopes framing the northern valley."
+            }
+          ],
+          "groundingLabel": "Carpathian mountainous landscape"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-medium-aided-0ac7b5386d",
+          "label": "Domestic garden flora",
+          "text": "Domestic garden flora",
+          "description": "Spruce trees, manicured lawns, white river stone borders, and chainlink/masonry boundary fences.",
+          "groundingPhrase": "Domestic garden flora",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Domestic garden flora: spruce trees, manicured lawns, white river stone borders, and chainlink/masonry boundary fences."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Domestic garden flora: spruce trees, manicured lawns, white river stone borders, and chainlink/masonry boundary fences."
+            }
+          ],
+          "groundingLabel": "Domestic garden flora"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-medium-aided-fbd8c0733f",
+          "label": "Architecture & Utilities",
+          "text": "Architecture & Utilities",
+          "description": "Slovak mountain chalets with dark wood paneling, corrugated metal roofs, and concrete utility posts.",
+          "groundingPhrase": "Architecture & Utilities",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Architecture & Utilities: Slovak mountain chalets with dark wood paneling, corrugated metal roofs, and concrete utility posts."
+            }
+          ],
+          "groundingLabel": "Architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-medium-aided-83fea37859",
+          "label": "Directional Road Sign",
+          "text": "Directional Road Sign",
+          "description": "Blue road sign pointing left to \"Jelšová\" with distance markers.",
+          "groundingPhrase": "Directional Road Sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Directional Road Sign: Blue road sign pointing left to \"Jelšová\" with distance markers."
+            }
+          ],
+          "groundingLabel": "Directional Road Sign"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-ae31f1263b",
+          "label": "Road surface asphalt stencil",
+          "text": "Road surface asphalt stencil",
+          "description": "Caron diacritic on \"Jelšová\" (Alder street) is characteristic of the Slovak orthography.",
+          "groundingPhrase": "Road surface asphalt stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Caron diacritic on \"Jelšová\" (Alder street) is characteristic of the Slovak orthography."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Road surface asphalt stencil: 'Jelšová' (Slovak jelša = alder tree)."
+            }
+          ],
+          "groundingLabel": "Road surface asphalt stencil; Arterial stencil reading"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-18598b3658",
+          "label": "Slovak residential architecture",
+          "text": "Slovak residential architecture",
+          "description": "Two-story detached home with cream/ochre stucco, red brick base, modern tiled roofing, detached timber carport, and picket/stone boundary fence.",
+          "groundingPhrase": "Slovak residential architecture",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.07600950118764846,
+            "y": 0.10070516198649902,
+            "w": 0.3428345209817894,
+            "h": 0.43524304248538237
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Blue Slovak national highway signs directing towards Route 59 (\"Zvolen\" and \"Ružomberok\")."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Slovak residential architecture: two-story detached home with cream/ochre stucco, red brick base, modern tiled roofing, detached timber carport, and picket/stone boundary fence."
+            }
+          ],
+          "groundingLabel": "Slovak residential architecture; residential architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-7f03df588b",
+          "label": "Mountain topography",
+          "text": "Mountain topography",
+          "description": "Steep, heavily forested mountain slopes characteristic of the Western Carpathians / Low Tatras flanking Banská Bystrica.",
+          "groundingPhrase": "Mountain topography",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4875,
+            "y": 0.3075,
+            "w": 0.156,
+            "h": 0.141
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Banská Bystrica"
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Mountain topography: steep, heavily forested mountain slopes characteristic of the Western Carpathians / Low Tatras flanking Banská Bystrica."
+            }
+          ],
+          "groundingLabel": "Mountainous backdrop"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-689ed1d894",
+          "label": "Asphalt road surface text reading \"Jelšová\"",
+          "text": "Asphalt road surface text reading \"Jelšová\"",
+          "description": "Asphalt road surface text reading \"Jelšová\".",
+          "groundingPhrase": "Asphalt road surface text reading \"Jelšová\"",
           "source": "panorama",
           "category": "signage",
           "region": {
             "x": 0.4685,
             "y": 0.5835,
-            "w": 0.072,
+            "w": 0.071,
             "h": 0.232
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -288,28 +732,86 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Road stencil \"Jelšová\""
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Asphalt road surface text reading \"Jelšová\"."
             }
           ],
-          "groundingLabel": "Road stencil \"Jelov"
+          "groundingLabel": "Asphalt road surface text reading"
         },
         {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-fb12d46a0f",
-          "label": "elevated brick basements",
-          "text": "elevated brick basements",
-          "description": "Elevated brick basements.",
-          "groundingPhrase": "elevated brick basements",
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-bf0cd83ac0",
+          "label": "Street utility infrastructure",
+          "text": "Street utility infrastructure",
+          "description": "Pole-mounted white distribution box with yellow voltage flash, house number '7' cast into pillar.",
+          "groundingPhrase": "Street utility infrastructure",
           "source": "panorama",
           "category": "architecture",
           "region": {
-            "x": 0.0845,
-            "y": 0.4605,
-            "w": 0.331,
-            "h": 0.113
+            "x": 0.8376456848772763,
+            "y": 0,
+            "w": 0.08476128266033256,
+            "h": 0.6569692338578133
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Street utility infrastructure: pole-mounted white distribution box with yellow voltage flash, house number '7' cast into pillar."
+            }
+          ],
+          "groundingLabel": "Street utility infrastructure"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-ac5cd79bb5",
+          "label": "Up-slope intersection",
+          "text": "Up-slope intersection",
+          "description": "Up-slope intersection with European yield triangle, 40 km/h speed zone sign, and dead-end ('T') blue signage.",
+          "groundingPhrase": "Up-slope intersection",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Up-slope intersection with European yield triangle, 40 km/h speed zone sign, and dead-end ('T') blue signage."
+            }
+          ],
+          "groundingLabel": "Up-slope intersection"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-6d301a9634",
+          "label": "Jelšová ulica",
+          "text": "Jelšová ulica",
+          "description": "Jelšová ulica.",
+          "groundingPhrase": "Jelšová ulica",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -322,28 +824,840 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "elevated brick basements"
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Jelšová ulica"
             }
           ],
-          "groundingLabel": "elevated brick basements"
+          "groundingLabel": "Jelov ulica"
         },
         {
-          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-aided-6caf800bd6",
-          "label": "wooden telephone pole",
-          "text": "wooden telephone pole",
-          "description": "Wooden telephone pole with meter box.",
-          "groundingPhrase": "wooden telephone pole",
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-29f9177985",
+          "label": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská By",
+          "text": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská By",
+          "description": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská Bystrica.",
+          "groundingPhrase": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská By",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská Bystrica."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-high-aided-05d7a5b571",
+          "label": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river vall",
+          "text": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river vall",
+          "description": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river valley.",
+          "groundingPhrase": "Mountainous backdrop of the Low Tatras flanking the narrow Hron river vall",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river valley."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-medium-aided-689ed1d894",
+          "label": "Asphalt road surface text reading \"Jelšová\"",
+          "text": "Asphalt road surface text reading \"Jelšová\"",
+          "description": "Asphalt road surface text reading \"Jelšová\".",
+          "groundingPhrase": "Asphalt road surface text reading \"Jelšová\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Asphalt road surface text reading \"Jelšová\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Asphalt road surface text reading \"Jelšová\"."
+            }
+          ],
+          "groundingLabel": "Asphalt road surface text reading"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-medium-aided-e7fbab5da4",
+          "label": "Blue Slovak national highway signs directing towards Route 59 (\"Zvolen\" and \"Ružomberok\"",
+          "text": "Blue Slovak national highway signs directing towards Route 59 (\"Zvolen\" and \"Ružomberok\"",
+          "description": "Blue Slovak national highway signs directing towards Route 59 (\"Zvolen\" and \"Ružomberok\").",
+          "groundingPhrase": "Blue Slovak national highway signs directing towards Route 59 (\"Zvolen\" and \"Ružomberok\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Blue Slovak national highway signs directing towards Route 59 (\"Zvolen\" and \"Ružomberok\")."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Blue Slovak national highway signs directing towards Route 59 (\"Zvolen\" and \"Ružomberok\")."
+            }
+          ],
+          "groundingLabel": "Blue Slovak national highway signs; National highway signs"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-medium-aided-7ba0020135",
+          "label": "Caron diacritic on \"Jelšová\" (Alder street) is characteristic of the Slovak orthography",
+          "text": "Caron diacritic on \"Jelšová\" (Alder street) is characteristic of the Slovak orthography",
+          "description": "Caron diacritic on \"Jelšová\" (Alder street) is characteristic of the Slovak orthography.",
+          "groundingPhrase": "Caron diacritic on \"Jelšová\" is characteristic of the Slovak orthography",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.47268408551068886,
+            "y": 0.5712815879946799,
+            "w": 0.06571654790182102,
+            "h": 0.17506085472659294
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Caron diacritic on \"Jelšová\" (Alder street) is characteristic of the Slovak orthography."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Caron diacritic on \"Jelšová\" (Alder street) is characteristic of the Slovak orthography."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-medium-aided-553e542040",
+          "label": "Banská Bystrica",
+          "text": "Banská Bystrica",
+          "description": "Banská Bystrica.",
+          "groundingPhrase": "Banská Bystrica",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Banská Bystrica"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Banská Bystrica"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-medium-aided-6d301a9634",
+          "label": "Jelšová ulica",
+          "text": "Jelšová ulica",
+          "description": "Jelšová ulica.",
+          "groundingPhrase": "Jelšová ulica",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Jelšová ulica"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Jelšová ulica"
+            }
+          ],
+          "groundingLabel": "Jelov ulica"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-medium-aided-29f9177985",
+          "label": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská By",
+          "text": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská By",
+          "description": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská Bystrica.",
+          "groundingPhrase": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská By",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská Bystrica."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Arterial stencil reading \"Kostiviarska cesta\", matching the northern suburb of Banská Bystrica."
+            }
+          ],
+          "groundingLabel": "Arterial stencil reading"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-8-flash-medium-aided-05d7a5b571",
+          "label": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river vall",
+          "text": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river vall",
+          "description": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river valley.",
+          "groundingPhrase": "Mountainous backdrop of the Low Tatras flanking the narrow Hron river vall",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4875,
+            "y": 0.3085,
+            "w": 0.156,
+            "h": 0.141
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river valley."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Mountainous backdrop of the Low Tatras (Nízke Tatry) flanking the narrow Hron river valley."
+            }
+          ],
+          "groundingLabel": "Mountainous backdrop"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-gpt-5-6-sol-xhigh-d8e3e9b97e",
+          "label": "green upland setting",
+          "text": "green upland setting",
+          "description": "Green upland setting.",
+          "groundingPhrase": "green upland setting",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "green upland setting"
+            }
+          ],
+          "groundingLabel": "green upland setting"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-5-6-sol-xhigh-4b06752d62",
+          "label": "A Slavic village",
+          "text": "A Slavic village",
+          "description": "A Slavic village.",
+          "groundingPhrase": "A Slavic village",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "A Slavic village"
+            }
+          ],
+          "groundingLabel": "A Slavic village"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-50ab14fdf0",
+          "label": "narrow patched residential road and wire/metal fences. Initial belief",
+          "text": "narrow patched residential road and wire/metal fences. Initial belief",
+          "description": "Concrete/metal property fences.",
+          "groundingPhrase": "narrow patched residential road and wire/metal fences. Initial belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "narrow patched residential road and wire/metal fences. Initial belief: Slovakia"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "concrete/metal property fences"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-3a397b9707",
+          "label": "northern valley near Zilina",
+          "text": "northern valley near Zilina",
+          "description": "Perhaps northern valley near Zilina.",
+          "groundingPhrase": "northern valley near Zilina",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "northern valley near Zilina"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "perhaps northern valley near Zilina"
+            }
+          ],
+          "groundingLabel": "northern valley"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-0a42f77796",
+          "label": "Jelsova",
+          "text": "Jelsova",
+          "description": "Jelsova with Slovak-style diacritics road overlay.",
+          "groundingPhrase": "Jelsova",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4782264449722882,
+            "y": 0.56967552510728,
+            "w": 0.060174188440221654,
+            "h": 0.16221235162739334
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "Jelsova with Slovak-style diacritics road overlay"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "Jelsova/Jelšová road overlay"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-ee2c12e96e",
+          "label": "narrow uphill patched street",
+          "text": "narrow uphill patched street",
+          "description": "Narrow uphill patched street with overhead utilities. Initial belief Slovakia.",
+          "groundingPhrase": "narrow uphill patched street",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4228388756927949,
+            "y": 0.3575907927426033,
+            "w": 0.2170197941409343,
+            "h": 0.6424092072573967
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "narrow uphill patched street with overhead utilities. Initial belief Slovakia"
+            }
+          ],
+          "groundingLabel": "narrow patched residential road; narrow uphill patched street"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-b455b69f26",
+          "label": "detached plaster houses",
+          "text": "detached plaster houses",
+          "description": "Detached plaster houses with steep dark roofs.",
+          "groundingPhrase": "detached plaster houses",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0845,
+            "y": 0.0945,
+            "w": 0.352,
+            "h": 0.482
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "detached plaster houses with steep dark roofs"
+            }
+          ],
+          "groundingLabel": "plaster houses"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-76f5df616a",
+          "label": "large stucco houses",
+          "text": "large stucco houses",
+          "description": "Large stucco houses with balconies.",
+          "groundingPhrase": "large stucco houses",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "large stucco houses with balconies"
+            }
+          ],
+          "groundingLabel": "large stucco houses"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-012e8c3ee7",
+          "label": "medium country confidence",
+          "text": "medium country confidence",
+          "description": "Medium country confidence.",
+          "groundingPhrase": "medium country confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "medium country confidence"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-fca4135341",
+          "label": "wooded Carpathian ridge",
+          "text": "wooded Carpathian ridge",
+          "description": "Wooded Carpathian ridge.",
+          "groundingPhrase": "wooded Carpathian ridge",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "wooded Carpathian ridge"
+            }
+          ],
+          "groundingLabel": "wooded Carpathian ridge"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-ab2920ccfb",
+          "label": "concrete utility poles",
+          "text": "concrete utility poles",
+          "description": "Concrete utility poles.",
+          "groundingPhrase": "concrete utility poles",
           "source": "panorama",
           "category": "infrastructure",
           "region": {
             "x": 0.8345,
-            "y": 0.0035,
-            "w": 0.092,
+            "y": 0.0018939371126000654,
+            "w": 0.094,
             "h": 0.672
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "text": "concrete utility poles"
+            }
+          ],
+          "groundingLabel": "concrete utility poles"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-858e820aa8",
+          "label": "hilly forest backdrop",
+          "text": "hilly forest backdrop",
+          "description": "Hilly forest backdrop.",
+          "groundingPhrase": "hilly forest backdrop",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.4885,
+            "y": 0.3065,
+            "w": 0.154,
+            "h": 0.143
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "hilly forest backdrop"
+            }
+          ],
+          "groundingLabel": "hilly forest backdrop; forest backdrop"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-6-astra-low-e7ed5f2f99",
+          "label": "low city confidence",
+          "text": "low city confidence",
+          "description": "Low city confidence.",
+          "groundingPhrase": "low city confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low city confidence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-grok-4-6-xhigh-e2d0c8990a",
+          "label": "Jelsova and the mountain setting correctly identified Slovakia. The correction appeared",
+          "text": "Jelsova and the mountain setting correctly identified Slovakia. The correction appeared",
+          "description": "Jelsova and the mountain setting correctly identified Slovakia. The correction appeared on Slovakia but resolved near Oradea.",
+          "groundingPhrase": "Jelsova and the mountain setting correctly identified Slovakia. The correction appeared",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -356,11 +1670,465 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "wooden telephone pole with meter box."
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Jelsova and the mountain setting correctly identified Slovakia. The correction appeared on Slovakia but resolved near Oradea"
             }
           ],
-          "groundingLabel": "wooden telephone pole"
+          "groundingLabel": "the mountain; The correction"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-gpt-5-6-sol-max-f0768da02d",
+          "label": "Slavic place-name text read as Jelšové",
+          "text": "Slavic place-name text read as Jelšové",
+          "description": "Slavic place-name text read as Jelšové.",
+          "groundingPhrase": "Slavic place-name text read as Jelšové",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.47838419405320814,
+            "y": 0.5789915430782203,
+            "w": 0.06366353677621284,
+            "h": 0.15279113139229206
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Slavic place-name text read as Jelšové"
+            }
+          ],
+          "groundingLabel": "Slavic place-name text"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-5-6-sol-max-d9fda53276",
+          "label": "a compact settlement",
+          "text": "a compact settlement",
+          "description": "A compact settlement.",
+          "groundingPhrase": "a compact settlement",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "a compact settlement."
+            }
+          ],
+          "groundingLabel": "a compact settlement"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-5-6-sol-max-b1280fe1a9",
+          "label": "Central-European housing",
+          "text": "Central-European housing",
+          "description": "Central-European housing.",
+          "groundingPhrase": "Central-European housing",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Central-European housing"
+            }
+          ],
+          "groundingLabel": "European housing"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-5-6-sol-max-f4b11f61b1",
+          "label": "Mountain-valley road",
+          "text": "Mountain-valley road",
+          "description": "Mountain-valley road.",
+          "groundingPhrase": "Mountain-valley road",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3805,
+            "y": 0.4395,
+            "w": 0.387,
+            "h": 0.55
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Mountain-valley road"
+            }
+          ],
+          "groundingLabel": "Mountain-valley road"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gpt-5-6-sol-max-b9f1d2e535",
+          "label": "wooded slopes",
+          "text": "wooded slopes",
+          "description": "Wooded slopes.",
+          "groundingPhrase": "wooded slopes",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "wooded slopes"
+            }
+          ],
+          "groundingLabel": "wooded slopes"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-glm-5-3-flash-max-c3c66d370d",
+          "label": "sloped tidy street. Belief",
+          "text": "sloped tidy street. Belief",
+          "description": "Slovenia, Celje/Zasavje region. Placing pin at 46.2360, 15.2680.",
+          "groundingPhrase": "sloped tidy street. Belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4512699530516432,
+            "y": 0.44367444571201825,
+            "w": 0.26154460093896714,
+            "h": 0.5557616685680274
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "sloped tidy street. Belief: Slovenia, Celje/Zasavje region. Placing pin at 46.2360, 15.2680."
+            }
+          ],
+          "groundingLabel": "sloped tidy street"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-glm-5-3-flash-max-f4e3c3e2ee",
+          "label": "yellow plaster Alpine house",
+          "text": "yellow plaster Alpine house",
+          "description": "Yellow plaster Alpine house with brick base,.",
+          "groundingPhrase": "yellow plaster Alpine house",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0845,
+            "y": 0.0945,
+            "w": 0.352,
+            "h": 0.481
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "yellow plaster Alpine house with brick base,"
+            }
+          ],
+          "groundingLabel": "yellow plaster Alpine house"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-glm-5-3-flash-max-d0d70e068e",
+          "label": "\"Jelšova…\" paint — Slovenian,",
+          "text": "\"Jelšova…\" paint — Slovenian,",
+          "description": "\"Jelšova…\" paint — Slovenian,.",
+          "groundingPhrase": "\"Jelšova…\" paint — Slovenian,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4736799687010954,
+            "y": 0.5859644114875254,
+            "w": 0.06367762128325508,
+            "h": 0.1695282972074798
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "\"Jelšova…\" paint — Slovenian,"
+            }
+          ],
+          "groundingLabel": "Jelova"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-glm-5-3-flash-max-77cec84813",
+          "label": "tangled-wire wooden pole,",
+          "text": "tangled-wire wooden pole,",
+          "description": "Tangled-wire wooden pole,.",
+          "groundingPhrase": "tangled-wire wooden pole,",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.8355,
+            "y": 0.0035,
+            "w": 0.09,
+            "h": 0.674
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "tangled-wire wooden pole,"
+            }
+          ],
+          "groundingLabel": "wooden pole"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-glm-5-3-flash-max-6f3b85340c",
+          "label": "rounded forested hills,",
+          "text": "rounded forested hills,",
+          "description": "Rounded forested hills,.",
+          "groundingPhrase": "rounded forested hills,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4875,
+            "y": 0.3085,
+            "w": 0.156,
+            "h": 0.14
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "rounded forested hills,"
+            }
+          ],
+          "groundingLabel": "forested hills"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-unaided-d511fc4d89",
+          "label": "Slovak Tatra/Fatra foothill village architecture",
+          "text": "Slovak Tatra/Fatra foothill village architecture",
+          "description": "Slovak Tatra/Fatra foothill village architecture.",
+          "groundingPhrase": "Slovak Tatra/Fatra foothill village architecture",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0,
+            "y": 0.06481446852834681,
+            "w": 0.4148732394366197,
+            "h": 0.5421770745498735
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Slovak Tatra/Fatra foothill village architecture"
+            }
+          ],
+          "groundingLabel": "Slovak Tatra/Fatra foothill village architecture"
+        },
+        {
+          "id": "cue-europe-medium-loc-016-gemini-3-7-flash-high-unaided-253a043440",
+          "label": "\"Jelšová\" stencil",
+          "text": "\"Jelšová\" stencil",
+          "description": "\"Jelšová\" stencil.",
+          "groundingPhrase": "\"Jelšová\" stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.47417840375586856,
+            "y": 0.572516244233917,
+            "w": 0.07746478873239432,
+            "h": 0.1793561827290313
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"Jelšová\" stencil"
+            }
+          ],
+          "groundingLabel": "Jelov; stencil"
         }
       ]
     }

@@ -31,6 +31,24 @@ test("ground truth uses canonical static imagery while predictions keep an optio
   assert.ok(appSource.includes("safeStreetViewUrl(run.prediction)"));
 });
 
+test("prediction details pair best-run facts with model-specific image highlights", () => {
+  assert.ok(appSource.includes("What this model noticed"));
+  assert.ok(appSource.includes("run.bestRunPoints"));
+  assert.ok(appSource.includes("run.benchmarkMeanPoints"));
+  assert.ok(appSource.includes("data-highlight-clue-id"));
+  assert.ok(appSource.includes("item.benchmarkId === run.benchmarkId"));
+  assert.ok(appSource.includes("renderEvidenceView(caseItem, run, comparisonRuns)"));
+  assert.ok(appSource.includes("data-evidence-view"));
+  assert.ok(appSource.includes("data-open-model-evidence"));
+  assert.ok(appSource.includes("evidenceMarksMarkup(grounded, selectedCueId, evidenceComparisonMode)"));
+  assert.ok(appSource.includes("data-side-comparison-map"));
+  assert.ok(appSource.includes("data-toggle-comparison-map-fullscreen"));
+  assert.ok(appSource.includes("setComparisonMapFullscreen(!comparisonMapFullscreen)"));
+  assert.ok(appSource.includes("data-compare-model"));
+  assert.ok(appSource.includes("data-open-comparison-evidence"));
+  assert.ok(appSource.includes("data-close-text-clues"));
+});
+
 test("interactive playback keeps restorable video review code behind the website feature gate", () => {
   assert.ok(appSource.includes("Review captured frame"));
   assert.ok(appSource.includes("resolvePlaybackReviewMedia"));

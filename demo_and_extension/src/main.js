@@ -35,6 +35,24 @@ async function boot() {
 
   window.geoEvidenceAtlas = api;
 
+  const clueUpdateChannel = typeof BroadcastChannel === "function"
+    ? new BroadcastChannel("nautilus-clue-updates")
+    : null;
+  let clueRefreshPending = false;
+  clueUpdateChannel?.addEventListener("message", async (event) => {
+    if (event.data?.type !== "clues-updated" || clueRefreshPending) return;
+    clueRefreshPending = true;
+    try {
+      const refreshUrl = new URL(dataUrl || "./data/generated/atlas-cases.json", window.location.href);
+      refreshUrl.searchParams.set("updated", String(Date.now()));
+      api.setCases(await loadCasesFromUrl(refreshUrl.href));
+    } catch (error) {
+      console.error("Unable to refresh reviewed clues.", error);
+    } finally {
+      clueRefreshPending = false;
+    }
+  });
+
   const allowedOrigin = params.get("parentOrigin");
   const disposeBridge = installMessageBridge(api, {
     allowedOrigins: allowedOrigin
@@ -45,6 +63,7 @@ async function boot() {
   window.addEventListener(
     "pagehide",
     () => {
+      clueUpdateChannel?.close();
       disposeBridge();
     },
     { once: true },

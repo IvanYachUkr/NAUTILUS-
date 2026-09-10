@@ -11,6 +11,10 @@ npm run clues:extract -- --preset gemini-3.7-flash-high-aided
 ```
 
 Re-running extraction keeps existing regions, review states, and ratings when a clue's stable ID is unchanged.
+Available presets cover both Gemini 3.7/3.8 aided variants, GPT-5.6 Sol xhigh/max,
+GPT-6 Astra low, Grok 4.6 xhigh, GLM-5.3-Flash + MCP, and the Gemini 3.7
+high unaided control. Each preset merges the detailed reports that are actually
+available and keeps per-run provenance on every surviving clue.
 
 ## 2. Install and run Florence-2
 
@@ -31,6 +35,11 @@ npm start
 ```
 
 Open `http://127.0.0.1:4173/tools/clue-review/`. The local editor lets you move, resize, replace, approve, remove, or reclassify every box. Use `Ctrl/Cmd+S` to save the current location. Saving validates the document and rebuilds the generated atlas data.
+
+Use the model dropdown to review one model-specific clue set at a time. Draft
+boxes are never silently approved: they remain `needs-review` until you approve
+them in this editor. `not-grounded` entries are retained as an explicit queue so
+you can draw a missing box or convert the clue to text-only evidence.
 
 ## 4. Validate the website data
 

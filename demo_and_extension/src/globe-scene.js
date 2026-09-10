@@ -1,4 +1,5 @@
 import { formatDistance } from "./geo.js";
+import { comparisonColor } from "./comparison-colors.js";
 
 const DIFFICULTY_LABELS = {
   easy: "Easy",
@@ -11,12 +12,12 @@ const DIFFICULTY_COLORS = {
   medium: "#fbbf24",
   hard: "#fb7185",
 };
-
 export function buildGlobeSceneData({
   cases = [],
   caseItem = null,
   run = null,
   overviewRuns = [],
+  comparisonRuns = [],
   overview = !caseItem,
   playback = null,
 } = {}) {
@@ -74,12 +75,14 @@ export function buildGlobeSceneData({
       points,
       arcs,
       paths: [],
+      labels: [],
     };
   }
 
   const points = [];
   const arcs = [];
   const paths = [];
+  const labels = [];
   const runId = run?.id ?? null;
 
   if (hasCoordinate(caseItem.groundTruth)) {
@@ -96,35 +99,53 @@ export function buildGlobeSceneData({
     });
   }
 
-  if (run && hasCoordinate(run.prediction)) {
+  const renderedRuns = comparisonRuns.length ? comparisonRuns : run ? [run] : [];
+  renderedRuns.forEach((predictionRun, index) => {
+    if (!hasCoordinate(predictionRun.prediction)) return;
+    const color = comparisonRuns.length ? comparisonColor(predictionRun.model) : "#ff8a30";
     points.push({
       kind: "prediction",
       caseId: caseItem.id,
-      runId,
-      lat: run.prediction.lat,
-      lng: run.prediction.lng,
-      label: `${run.model} · ${formatDistance(run.errorKm)} pin error`,
-      color: "#ff8a30",
-      radius: 0.44,
-      altitude: 0.055,
+      runId: predictionRun.id,
+      lat: predictionRun.prediction.lat,
+      lng: predictionRun.prediction.lng,
+      label: `${predictionRun.model} · ${formatDistance(predictionRun.errorKm)} pin error`,
+      color,
+      radius: comparisonRuns.length ? 0.38 : 0.44,
+      altitude: 0.055 + index * 0.004,
     });
+    if (comparisonRuns.length) {
+      labels.push({
+        kind: "prediction-label",
+        caseId: caseItem.id,
+        runId: predictionRun.id,
+        lat: predictionRun.prediction.lat,
+        lng: predictionRun.prediction.lng,
+        text: predictionRun.model,
+        label: `${predictionRun.model} · ${formatDistance(predictionRun.errorKm)} pin error`,
+        color,
+        altitude: 0.078 + index * 0.012,
+      });
+    }
 
     if (hasCoordinate(caseItem.groundTruth)) {
       arcs.push({
         kind: "error",
         caseId: caseItem.id,
-        runId,
+        runId: predictionRun.id,
         startLat: caseItem.groundTruth.lat,
         startLng: caseItem.groundTruth.lng,
-        endLat: run.prediction.lat,
-        endLng: run.prediction.lng,
-        label: `${formatDistance(run.errorKm)} pin error`,
-        color: ["#b7f34a", "#ff8a30"],
+        endLat: predictionRun.prediction.lat,
+        endLng: predictionRun.prediction.lng,
+        label: comparisonRuns.length
+          ? `${predictionRun.model} · ${formatDistance(predictionRun.errorKm)} pin error`
+          : `${formatDistance(predictionRun.errorKm)} pin error`,
+        color: ["#b7f34a", color],
       });
     }
-  }
+  });
 
-  const route = (run?.exploration?.path ?? [])
+  const route = (comparisonRuns.length ? [] : run?.exploration?.path ?? [])
     .filter(hasCoordinate)
     .map((sample) => [sample.lat, sample.lng, 0.012]);
 
@@ -168,7 +189,7 @@ export function buildGlobeSceneData({
     });
   }
 
-  return { points, arcs, paths };
+  return { points, arcs, paths, labels };
 }
 
 function formatPlaybackTime(tMs = 0) {

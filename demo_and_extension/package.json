@@ -21,6 +21,9 @@
     "competition:export": "node scripts/export-competition.mjs",
     "competition:list": "node scripts/export-competition.mjs --list",
     "recordings:inspect": "node scripts/inspect-recordings.mjs",
+    "clues:extract": "node scripts/extract-clues.mjs",
+    "clues:annotate": ".cache/florence-venv/bin/python scripts/annotate-clues-florence2.py",
+    "clues:review": "node scripts/serve.mjs",
     "locations:zero-pitch": "node scripts/normalize-zero-pitch.mjs",
     "videos:repair": "node scripts/repair-video-partials.mjs"
   },

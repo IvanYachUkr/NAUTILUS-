@@ -4,6 +4,7 @@
   "clueSets": [
     {
       "id": "gemini-3.7-flash-high-aided",
+      "benchmarkId": "gemini-3-7-flash-high-aided",
       "model": "Gemini 3.7 Flash",
       "reasoning": "high, aided",
       "mergeStrategy": "canonical-model-set",
@@ -23,47 +24,7 @@
       ],
       "cues": [
         {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-6790c54d02",
-          "label": "Street Name on Asphalt",
-          "text": "Street Name on Asphalt",
-          "description": "\"Skalvej\" (Danish \"-vej\" road suffix).",
-          "groundingPhrase": "Street Name on Asphalt",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.4615,
-            "y": 0.6025,
-            "w": 0.067,
-            "h": 0.211
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r2",
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
-              "text": "Street Name on Asphalt: \"Skalvej\" (Danish \"-vej\" road suffix)."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Danish Road Name on Asphalt: Clearly painted name \"Skalvej\"."
-            }
-          ],
-          "groundingLabel": "Street Name"
-        },
-        {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-46d0a7304a",
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-f3b8301dfe",
           "label": "Wind Turbine Infrastructure",
           "text": "Wind Turbine Infrastructure",
           "description": "Modern 3-bladed commercial wind turbine and agricultural farm buildings on the western horizon.",
@@ -76,29 +37,23 @@
             "w": 0.027,
             "h": 0.06
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
           },
           "sourceRuns": [
             "r1",
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Wind Turbine Infrastructure: Modern 3-bladed commercial wind turbine and agricultural farm buildings on the western horizon."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Wind Power Infrastructure: Modern high-capacity white wind turbines visible across the open maritime horizon."
             },
             {
               "runId": "r1",
@@ -109,7 +64,7 @@
           "groundingLabel": "Wind Turbine Infrastructure"
         },
         {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-f448c876cf",
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-ea79eadc96",
           "label": "Danish Coastal / Rural Topography",
           "text": "Danish Coastal / Rural Topography",
           "description": "Sweeping green cereal pastures and low rolling coastal moraine hills.",
@@ -117,8 +72,8 @@
           "source": "panorama",
           "category": "geography",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -126,24 +81,116 @@
             "consistent": null
           },
           "sourceRuns": [
-            "r2",
-            "r3"
+            "r2"
           ],
           "provenance": [
             {
               "runId": "r2",
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Danish Coastal / Rural Topography: Sweeping green cereal pastures and low rolling coastal moraine hills."
-            },
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Danish Road Suffix: Danish spelling suffix \"-vej\" (road)."
             }
-          ]
+          ],
+          "groundingLabel": "Danish Coastal / Rural Topography"
         },
         {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-0cc82efc7f",
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-b4d7032f7a",
+          "label": "Street Name on Asphalt",
+          "text": "Street Name on Asphalt",
+          "description": "\"Skalvej\" (Danish \"-vej\" road suffix).",
+          "groundingPhrase": "Street Name on Asphalt",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "text": "Street Name on Asphalt: \"Skalvej\" (Danish \"-vej\" road suffix)."
+            }
+          ],
+          "groundingLabel": "Street Name"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-ba81f06783",
+          "label": "flat coastal agricultural fields",
+          "text": "flat coastal agricultural fields",
+          "description": "Flat coastal agricultural fields.",
+          "groundingPhrase": "flat coastal agricultural fields",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0,
+            "y": 0.4529127771439909,
+            "w": 0.38069405320813765,
+            "h": 0.535
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "flat coastal agricultural fields"
+            }
+          ],
+          "groundingLabel": "flat coastal agricultural fields"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-df74fc84c2",
+          "label": "Road stencil \"Skalvej\"",
+          "text": "Road stencil \"Skalvej\"",
+          "description": "Road stencil \"Skalvej\".",
+          "groundingPhrase": "Road stencil \"Skalvej\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4615,
+            "y": 0.6025,
+            "w": 0.069,
+            "h": 0.212
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "text": "Road stencil \"Skalvej\""
+            }
+          ],
+          "groundingLabel": "Road stencil; Skalvej"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-c336a038f1",
           "label": "Road Infrastructure",
           "text": "Road Infrastructure",
           "description": "Single narrow asphalt lane without centerlines flanked by gravel berms and wild chervil.",
@@ -151,15 +198,15 @@
           "source": "panorama",
           "category": "infrastructure",
           "region": {
-            "x": 0.0055,
-            "y": 0.0075,
-            "w": 0.989,
-            "h": 0.449
+            "x": 0.3545,
+            "y": 0.4585,
+            "w": 0.41,
+            "h": 0.529
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
+            "visible": true,
             "correct": null,
             "useful": null,
             "consistent": null
@@ -177,7 +224,7 @@
           "groundingLabel": "Road Infrastructure"
         },
         {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-0c98d4a50f",
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-dc786e683e",
           "label": "Regional Location",
           "text": "Regional Location",
           "description": "Skalvej in the Limfjorden / North Jutland (Nordjylland) farming region of Denmark.",
@@ -186,7 +233,7 @@
           "category": "geography",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -205,137 +252,7 @@
           ]
         },
         {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-2531c1b8fa",
-          "label": "Danish Agrarian Landscape",
-          "text": "Danish Agrarian Landscape",
-          "description": "Smoothly undulating green and golden grain fields without boundary fencing.",
-          "groundingPhrase": "Danish Agrarian Landscape",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.0055,
-            "y": 0.0105,
-            "w": 0.989,
-            "h": 0.977
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Danish Agrarian Landscape: Smoothly undulating green and golden grain fields without boundary fencing."
-            }
-          ],
-          "groundingLabel": "Danish Agrarian Landscape"
-        },
-        {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-53ff63bf13",
-          "label": "Road Quality & Finish",
-          "text": "Road Quality & Finish",
-          "description": "Characteristic smooth, unlined Danish narrow rural asphalt lane with light gravel shoulder and North Sea coastal cloud cover.",
-          "groundingPhrase": "Road Quality & Finish",
-          "source": "panorama",
-          "category": "infrastructure",
-          "region": null,
-          "regionSource": null,
-          "annotationStatus": "text-only",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r3"
-          ],
-          "provenance": [
-            {
-              "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md",
-              "text": "Road Quality & Finish: Characteristic smooth, unlined Danish narrow rural asphalt lane with light gravel shoulder and North Sea coastal cloud cover."
-            }
-          ]
-        },
-        {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-62e3df8a97",
-          "label": "Road stencil \"Skalvej\"",
-          "text": "Road stencil \"Skalvej\"",
-          "description": "Road stencil \"Skalvej\".",
-          "groundingPhrase": "Road stencil \"Skalvej\"",
-          "source": "panorama",
-          "category": "signage",
-          "region": {
-            "x": 0.4615,
-            "y": 0.6025,
-            "w": 0.069,
-            "h": 0.211
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1"
-          ],
-          "provenance": [
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "Road stencil \"Skalvej\""
-            }
-          ],
-          "groundingLabel": "Road stencil; Skalvej"
-        },
-        {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-b140da18e4",
-          "label": "flat coastal agricultural fields",
-          "text": "flat coastal agricultural fields",
-          "description": "Flat coastal agricultural fields.",
-          "groundingPhrase": "flat coastal agricultural fields",
-          "source": "panorama",
-          "category": "geography",
-          "region": {
-            "x": 0.0035,
-            "y": 0.4535,
-            "w": 0.992,
-            "h": 0.536
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
-          "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
-          },
-          "sourceRuns": [
-            "r1"
-          ],
-          "provenance": [
-            {
-              "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
-              "text": "flat coastal agricultural fields"
-            }
-          ],
-          "groundingLabel": "flat coastal agricultural fields"
-        },
-        {
-          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-8e22a50245",
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-aided-60b251419d",
           "label": "curved asphalt",
           "text": "curved asphalt",
           "description": "Curved asphalt with gravel margins.",
@@ -343,8 +260,8 @@
           "source": "panorama",
           "category": "geography",
           "region": null,
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "not-grounded",
+          "regionSource": null,
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -361,6 +278,1826 @@
               "text": "curved asphalt with gravel margins."
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.7-flash-medium-aided",
+      "benchmarkId": "gemini-3-7-flash-medium-aided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_7_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_7_medium_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-medium-aided-9a103d98f9",
+          "label": "Danish Coastal Farming",
+          "text": "Danish Coastal Farming",
+          "description": "Flat to gently rolling open green pastures and yellow crop fields under an Atlantic maritime sky.",
+          "groundingPhrase": "Danish Coastal Farming",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Vast, low-lying coastal moraine landscape of the Danish Limfjorden / North Sea coastal belt."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Danish Coastal Farming: Flat to gently rolling open green pastures and yellow crop fields under an Atlantic maritime sky."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Vast, low-lying coastal moraine landscape of the Danish Limfjorden / North Sea coastal belt."
+            }
+          ],
+          "groundingLabel": "Danish Coastal Farming"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-medium-aided-531e3f2b89",
+          "label": "Road Surface Text",
+          "text": "Road Surface Text",
+          "description": "\"Skalvej\" (distinctive Danish road name with -vej suffix).",
+          "groundingPhrase": "Road Surface Text",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4615,
+            "y": 0.6025,
+            "w": 0.067,
+            "h": 0.211
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Stenciled road name on asphalt: \"Skalvej\" (distinctive Danish road name with -vej suffix)."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Road Surface Text: Asphalt text \"Skalvej\" with Danish road suffix -vej."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Stenciled road name on asphalt: \"Skalvej\" (distinctive Danish road name with -vej suffix)."
+            }
+          ],
+          "groundingLabel": "Road Surface Text"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-medium-aided-27db15d85d",
+          "label": "Wind Energy",
+          "text": "Wind Energy",
+          "description": "Modern Danish commercial wind turbine erected on the flat horizon.",
+          "groundingPhrase": "Wind Energy",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0265,
+            "y": 0.4035,
+            "w": 0.027,
+            "h": 0.061
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Modern Danish commercial wind turbine erected on the flat horizon."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Wind Energy: Distant modern wind turbine on the western horizon."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Modern Danish commercial wind turbine erected on the flat horizon."
+            }
+          ],
+          "groundingLabel": "Wind Energy"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-medium-aided-7b4a7655bf",
+          "label": "Marine stratocumulus cloud deck over the Jutland peninsula",
+          "text": "Marine stratocumulus cloud deck over the Jutland peninsula",
+          "description": "Marine stratocumulus cloud deck over the Jutland peninsula.",
+          "groundingPhrase": "Marine stratocumulus cloud deck over the Jutland peninsula",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0055,
+            "y": 0.0055,
+            "w": 0.989,
+            "h": 0.448
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Marine stratocumulus cloud deck over the Jutland peninsula."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Marine stratocumulus cloud deck over the Jutland peninsula."
+            }
+          ],
+          "groundingLabel": "Marine stratocumulus cloud deck"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-medium-aided-0691ca1b95",
+          "label": "Danish agricultural mosaic",
+          "text": "Danish agricultural mosaic",
+          "description": "Vivid green rye pasture and golden barley/rape parcels.",
+          "groundingPhrase": "Danish agricultural mosaic",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "text": "Danish agricultural mosaic: vivid green rye pasture and golden barley/rape parcels."
+            },
+            {
+              "runId": "r3",
+              "report": "../benchmark_report_3_7_medium_03.md",
+              "text": "Danish agricultural mosaic: vivid green rye pasture and golden barley/rape parcels."
+            }
+          ],
+          "groundingLabel": "Danish agricultural mosaic"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-medium-aided-a5e0f7efe1",
+          "label": "Regional Profile",
+          "text": "Regional Profile",
+          "description": "Jutland (Jylland), Denmark (Limfjorden / North-West Jutland region).",
+          "groundingPhrase": "Regional Profile",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Regional Profile: Jutland (Jylland), Denmark (Limfjorden / North-West Jutland region)."
+            }
+          ],
+          "groundingLabel": "Regional Profile"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-medium-aided-3835168a92",
+          "label": "Road Character",
+          "text": "Road Character",
+          "description": "Narrow Danish rural lane without road markings.",
+          "groundingPhrase": "Road Character",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_7_medium_02.md",
+              "text": "Road Character: Narrow Danish rural lane without road markings."
+            }
+          ],
+          "groundingLabel": "Road Character"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-high-aided",
+      "benchmarkId": "gemini-3-8-flash-high-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "high, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../benchmark_report_3_8_high_01.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_high_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "../benchmark_report_3_8_high_03.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-75a01f64b8",
+          "label": "Road surface painted stencil",
+          "text": "Road surface painted stencil",
+          "description": "Road asphalt stencil clearly showing \"Skalvej\".",
+          "groundingPhrase": "Road surface painted stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Road asphalt stencil clearly showing \"Skalvej\"."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Road surface painted stencil: 'Skalvej' (Danish suffix -vej = road / street)."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-d83d343962",
+          "label": "Narrow single-lane rural asphalt lane without markings traversing extensive open flat fa",
+          "text": "Narrow single-lane rural asphalt lane without markings traversing extensive open flat fa",
+          "description": "Narrow single-lane rural asphalt lane without markings traversing extensive open flat farmland and wetland pastures.",
+          "groundingPhrase": "Narrow single-lane rural asphalt lane without markings traversing extensive open flat fa",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3535,
+            "y": 0.4585,
+            "w": 0.411,
+            "h": 0.531
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Open horizon, Atlantic coastal light, and Danish rural road profiles."
+            },
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Narrow single-lane rural asphalt lane without markings traversing extensive open flat farmland and wetland pastures."
+            }
+          ],
+          "groundingLabel": "Narrow single-lane rural asphalt lane"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-967a3664d8",
+          "label": "Distinctive low-elevation, windswept coastal plain of western Jutland (Jylland)",
+          "text": "Distinctive low-elevation, windswept coastal plain of western Jutland (Jylland)",
+          "description": "Distinctive low-elevation, windswept coastal plain of western Jutland (Jylland) with sandy verges and marram/coastal grasses.",
+          "groundingPhrase": "Distinctive low-elevation, windswept coastal plain of western Jutland",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Distinctive low-elevation, windswept coastal plain of western Jutland (Jylland) with sandy verges and marram/coastal grasses."
+            }
+          ],
+          "groundingLabel": "Distinctive low-elevation"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-4bda968d56",
+          "label": "Coastal/inlet dune and marsh landscape",
+          "text": "Coastal/inlet dune and marsh landscape",
+          "description": "Coastal/inlet dune and marsh landscape with maritime grasses, ripening rye fields, and modern wind turbines.",
+          "groundingPhrase": "Coastal/inlet dune and marsh landscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Coastal/inlet dune and marsh landscape with maritime grasses, ripening rye fields, and modern wind turbines."
+            }
+          ],
+          "groundingLabel": "Coastal/inlet dune"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-7c1c6ce2ee",
+          "label": "Crisp, clear northern maritime atmosphere",
+          "text": "Crisp, clear northern maritime atmosphere",
+          "description": "Crisp, clear northern maritime atmosphere with low cumulus cloud streets off the North Sea / Limfjorden.",
+          "groundingPhrase": "Crisp, clear northern maritime atmosphere",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Crisp, clear northern maritime atmosphere with low cumulus cloud streets off the North Sea / Limfjorden."
+            }
+          ],
+          "groundingLabel": "Crisp; clear northern maritime atmosphere"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-864d1ea1e5",
+          "label": "Danish red-brick farmhouse architecture",
+          "text": "Danish red-brick farmhouse architecture",
+          "description": "Danish red-brick farmhouse architecture with steep pitch roofs and white window mullions.",
+          "groundingPhrase": "Danish red-brick farmhouse architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Danish red-brick farmhouse architecture with steep pitch roofs and white window mullions."
+            }
+          ],
+          "groundingLabel": "Danish red-brick farmhouse architecture"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-c737166dfe",
+          "label": "The road naming suffix \"-vej\" is Danish for road or way",
+          "text": "The road naming suffix \"-vej\" is Danish for road or way",
+          "description": "The road naming suffix \"-vej\" is Danish for road or way.",
+          "groundingPhrase": "The road naming suffix \"-vej\" is Danish for road or way",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4625,
+            "y": 0.6035,
+            "w": 0.065,
+            "h": 0.209
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "The road naming suffix \"-vej\" is Danish for road or way."
+            }
+          ],
+          "groundingLabel": "The road naming suffix \"-vej"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-4ad57cbc9a",
+          "label": "Harboøre / Limfjord",
+          "text": "Harboøre / Limfjord",
+          "description": "Harboøre / Limfjord.",
+          "groundingPhrase": "Harboøre / Limfjord",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Harboøre / Limfjord"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-8b8f2c3869",
+          "label": "Skalvej",
+          "text": "Skalvej",
+          "description": "Skalvej.",
+          "groundingPhrase": "Skalvej",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../benchmark_report_3_8_high_01.md",
+              "text": "Skalvej"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-high-aided-8ddbe88c93",
+          "label": "Tall modern three-bladed white wind turbine prominently generating power on the flat hor",
+          "text": "Tall modern three-bladed white wind turbine prominently generating power on the flat hor",
+          "description": "Tall modern three-bladed white wind turbine prominently generating power on the flat horizon, hallmark of Danish renewable wind energy landscapes.",
+          "groundingPhrase": "Tall modern three-bladed white wind turbine prominently generating power on the flat hor",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0285,
+            "y": 0.4085,
+            "w": 0.023,
+            "h": 0.055
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../benchmark_report_3_8_high_02.md",
+              "text": "Tall modern three-bladed white wind turbine prominently generating power on the flat horizon, hallmark of Danish renewable wind energy landscapes."
+            }
+          ],
+          "groundingLabel": "Tall modern three-bladed white wind turbine"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash-medium-aided",
+      "benchmarkId": "gemini-3-8-flash-medium-aided",
+      "model": "Gemini 3.8 Flash",
+      "reasoning": "medium, aided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/backup_gemini/benchmark_report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "../benchmark_report_3_8_medium_02.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-medium-aided-708e6caa3d",
+          "label": "Road asphalt stencil clearly showing \"Skalvej\"",
+          "text": "Road asphalt stencil clearly showing \"Skalvej\"",
+          "description": "Road asphalt stencil clearly showing \"Skalvej\".",
+          "groundingPhrase": "Road asphalt stencil clearly showing \"Skalvej\"",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "excluded",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Road asphalt stencil clearly showing \"Skalvej\"."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Road asphalt stencil clearly showing \"Skalvej\"."
+            }
+          ],
+          "groundingLabel": "Road asphalt stencil; Open horizon"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-medium-aided-4bda968d56",
+          "label": "Coastal/inlet dune and marsh landscape",
+          "text": "Coastal/inlet dune and marsh landscape",
+          "description": "Coastal/inlet dune and marsh landscape with maritime grasses, ripening rye fields, and modern wind turbines.",
+          "groundingPhrase": "Coastal/inlet dune and marsh landscape",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Coastal/inlet dune and marsh landscape with maritime grasses, ripening rye fields, and modern wind turbines."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Coastal/inlet dune and marsh landscape with maritime grasses, ripening rye fields, and modern wind turbines."
+            }
+          ],
+          "groundingLabel": "Coastal/inlet dune"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-medium-aided-49f2da0280",
+          "label": "Open horizon, Atlantic coastal light, and Danish rural road profiles",
+          "text": "Open horizon, Atlantic coastal light, and Danish rural road profiles",
+          "description": "Open horizon, Atlantic coastal light, and Danish rural road profiles.",
+          "groundingPhrase": "Open horizon, Atlantic coastal light, and Danish rural road profiles",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Open horizon, Atlantic coastal light, and Danish rural road profiles."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Open horizon, Atlantic coastal light, and Danish rural road profiles."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-medium-aided-864d1ea1e5",
+          "label": "Danish red-brick farmhouse architecture",
+          "text": "Danish red-brick farmhouse architecture",
+          "description": "Danish red-brick farmhouse architecture with steep pitch roofs and white window mullions.",
+          "groundingPhrase": "Danish red-brick farmhouse architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Danish red-brick farmhouse architecture with steep pitch roofs and white window mullions."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Danish red-brick farmhouse architecture with steep pitch roofs and white window mullions."
+            }
+          ],
+          "groundingLabel": "Danish red-brick farmhouse architecture"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-medium-aided-c737166dfe",
+          "label": "The road naming suffix \"-vej\" is Danish for road or way",
+          "text": "The road naming suffix \"-vej\" is Danish for road or way",
+          "description": "The road naming suffix \"-vej\" is Danish for road or way.",
+          "groundingPhrase": "The road naming suffix \"-vej\" is Danish for road or way",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4625,
+            "y": 0.6035,
+            "w": 0.065,
+            "h": 0.21
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "The road naming suffix \"-vej\" is Danish for road or way."
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "The road naming suffix \"-vej\" is Danish for road or way."
+            }
+          ],
+          "groundingLabel": "The road naming suffix \"-vej"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-medium-aided-8a8d54ca62",
+          "label": "Harboøre / Skals",
+          "text": "Harboøre / Skals",
+          "description": "Harboøre / Limfjord.",
+          "groundingPhrase": "Harboøre / Skals",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Harboøre / Limfjord"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Harboøre / Skals"
+            }
+          ],
+          "groundingLabel": "Harbore / Skals"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-8-flash-medium-aided-8b8f2c3869",
+          "label": "Skalvej",
+          "text": "Skalvej",
+          "description": "Skalvej.",
+          "groundingPhrase": "Skalvej",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1",
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "text": "Skalvej"
+            },
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "text": "Skalvej"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "benchmarkId": "gpt-5-6-sol-xhigh",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-gpt-5-6-sol-xhigh-7964046cf8",
+          "label": "Flat Danish fields",
+          "text": "Flat Danish fields",
+          "description": "Flat Danish fields.",
+          "groundingPhrase": "Flat Danish fields",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0025,
+            "y": 0.4565,
+            "w": 0.995,
+            "h": 0.536
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "Flat Danish fields"
+            }
+          ],
+          "groundingLabel": "Flat Danish fields"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-5-6-sol-xhigh-c1bb68bd59",
+          "label": "road geometry",
+          "text": "road geometry",
+          "description": "Road geometry.",
+          "groundingPhrase": "road geometry",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3505,
+            "y": 0.4615,
+            "w": 0.416,
+            "h": 0.53
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "text": "road geometry"
+            }
+          ],
+          "groundingLabel": "road geometry"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low",
+      "benchmarkId": "gpt-6-astra-low",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-gpt-6-astra-low-b060f5e5f5",
+          "label": "high country confidence from vej suffix",
+          "text": "high country confidence from vej suffix",
+          "description": "High country confidence from vej suffix.",
+          "groundingPhrase": "high country confidence from vej suffix",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4584323040380048,
+            "y": 0.5873422168686793,
+            "w": 0.07521773555027715,
+            "h": 0.16542447740219332
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "high country confidence from vej suffix"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-6-astra-low-84b8c17323",
+          "label": "low dune-like ridge on right horizon",
+          "text": "low dune-like ridge on right horizon",
+          "description": "Low dune-like ridge on right horizon.",
+          "groundingPhrase": "low dune-like ridge on right horizon",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low dune-like ridge on right horizon"
+            }
+          ],
+          "groundingLabel": "low dune-like ridge"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-6-astra-low-31e7d31d76",
+          "label": "extremely flat open fields",
+          "text": "extremely flat open fields",
+          "description": "Extremely flat open fields.",
+          "groundingPhrase": "extremely flat open fields",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "extremely flat open fields"
+            }
+          ],
+          "groundingLabel": "flat open fields"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-6-astra-low-ba1290645a",
+          "label": "medium west-coast region",
+          "text": "medium west-coast region",
+          "description": "Medium west-coast region.",
+          "groundingPhrase": "medium west-coast region",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "medium west-coast region"
+            }
+          ],
+          "groundingLabel": "distant wind turbines; western coastal Den"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-6-astra-low-4e794805a7",
+          "label": "narrow unmarked asphalt",
+          "text": "narrow unmarked asphalt",
+          "description": "Narrow unmarked asphalt.",
+          "groundingPhrase": "narrow unmarked asphalt",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3555,
+            "y": 0.4585,
+            "w": 0.407,
+            "h": 0.529
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "narrow unmarked asphalt"
+            }
+          ],
+          "groundingLabel": "narrow unmarked asphalt"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-6-astra-low-e16cfd3c32",
+          "label": "low locality confidence",
+          "text": "low locality confidence",
+          "description": "Low locality confidence.",
+          "groundingPhrase": "low locality confidence",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "low locality confidence."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-6-astra-low-8177b5ef61",
+          "label": "road overlay Skalvej",
+          "text": "road overlay Skalvej",
+          "description": "Road overlay Skalvej.",
+          "groundingPhrase": "road overlay Skalvej",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.45130364212193186,
+            "y": 0.5693183392305955,
+            "w": 0.08179255740300867,
+            "h": 0.19459041632161408
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "road overlay Skalvej"
+            }
+          ],
+          "groundingLabel": "road overlay Skalvej"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-6-astra-low-ec90883829",
+          "label": "distant wind turbines and very sparse settlement. Initial hypothesis western coastal Den",
+          "text": "distant wind turbines and very sparse settlement. Initial hypothesis western coastal Den",
+          "description": "Distant wind turbines and very sparse settlement. Initial hypothesis western coastal Denmark.",
+          "groundingPhrase": "distant wind turbines and very sparse settlement. Initial hypothesis western coastal Den",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.02454473475851148,
+            "y": 0.3994328590428869,
+            "w": 0.03642121931908155,
+            "h": 0.06745464127079726
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "text": "distant wind turbines and very sparse settlement. Initial hypothesis western coastal Denmark"
+            }
+          ],
+          "groundingLabel": "Initial hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh",
+      "benchmarkId": "grok-4-6-xhigh",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-grok-4-6-xhigh-f8071f9fb3",
+          "label": "turbines",
+          "text": "turbines",
+          "description": "Turbines.",
+          "groundingPhrase": "turbines",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.02269170579029734,
+            "y": 0.39157283864887654,
+            "w": 0.032081377151799685,
+            "h": 0.08729725708050196
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "turbines"
+            }
+          ],
+          "groundingLabel": "turbines; flat fields"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-grok-4-6-xhigh-a850b6d2dd",
+          "label": "Skalvej",
+          "text": "Skalvej",
+          "description": "Skalvej.",
+          "groundingPhrase": "Skalvej",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4671361502347418,
+            "y": 0.5788651356579535,
+            "w": 0.05477308294209704,
+            "h": 0.17776895987302221
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "Skalvej"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-grok-4-6-xhigh-83046f2087",
+          "label": "flat fields produced a correct Denmark belief. The corrected marker remained in northern",
+          "text": "flat fields produced a correct Denmark belief. The corrected marker remained in northern",
+          "description": "Flat fields produced a correct Denmark belief. The corrected marker remained in northern Germany.",
+          "groundingPhrase": "flat fields produced a correct Denmark belief. The corrected marker remained in northern",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "text": "flat fields produced a correct Denmark belief. The corrected marker remained in northern Germany."
+            }
+          ],
+          "groundingLabel": "The corrected marker"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max",
+      "benchmarkId": "gpt-5-6-sol-max",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+        },
+        {
+          "runId": "r2",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+        },
+        {
+          "runId": "r3",
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-gpt-5-6-sol-max-a1fd2955d7",
+          "label": "a rendered road/name fragment read as Swedish-looking Skalva",
+          "text": "a rendered road/name fragment read as Swedish-looking Skalva",
+          "description": "A rendered road/name fragment read as Swedish-looking Skalva.",
+          "groundingPhrase": "a rendered road/name fragment read as Swedish-looking Skalva",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4640062597809077,
+            "y": 0.5756906899459353,
+            "w": 0.06494522691705788,
+            "h": 0.1841178512970586
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "a rendered road/name fragment read as Swedish-looking Skalva."
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-5-6-sol-max-cdf5dd9922",
+          "label": "Extremely flat open farmland",
+          "text": "Extremely flat open farmland",
+          "description": "Extremely flat open farmland.",
+          "groundingPhrase": "Extremely flat open farmland",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "Extremely flat open farmland"
+            }
+          ],
+          "groundingLabel": "flat open farmland"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-5-6-sol-max-549b342b1c",
+          "label": "narrow unmarked paved road",
+          "text": "narrow unmarked paved road",
+          "description": "Narrow unmarked paved road.",
+          "groundingPhrase": "narrow unmarked paved road",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.3555,
+            "y": 0.4595,
+            "w": 0.409,
+            "h": 0.53
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "narrow unmarked paved road"
+            }
+          ],
+          "groundingLabel": "narrow unmarked paved road"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-5-6-sol-max-94e205549b",
+          "label": "cloudy northern light",
+          "text": "cloudy northern light",
+          "description": "Cloudy northern light.",
+          "groundingPhrase": "cloudy northern light",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0045,
+            "y": 0.0055,
+            "w": 0.991,
+            "h": 0.448
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "cloudy northern light"
+            }
+          ],
+          "groundingLabel": "cloudy northern light"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gpt-5-6-sol-max-1c41a198ae",
+          "label": "sparse development",
+          "text": "sparse development",
+          "description": "Sparse development.",
+          "groundingPhrase": "sparse development",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r3"
+          ],
+          "provenance": [
+            {
+              "runId": "r3",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "text": "sparse development"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max",
+      "benchmarkId": "glm-5-3-flash-max",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+        },
+        {
+          "runId": "r2",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+        },
+        {
+          "runId": "r3",
+          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-glm-5-3-flash-max-160ec60c77",
+          "label": "summer cumulus, empty land. Belief",
+          "text": "summer cumulus, empty land. Belief",
+          "description": "SW Jutland near the Wadden Sea. Placing pin at 55.30, 8.70.",
+          "groundingPhrase": "summer cumulus, empty land. Belief",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "summer cumulus, empty land. Belief: SW Jutland near the Wadden Sea. Placing pin at 55.30, 8.70."
+            }
+          ],
+          "groundingLabel": "summer cumulus"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-glm-5-3-flash-max-b69c6632f2",
+          "label": "\"Skålvej\" paint — Danish,",
+          "text": "\"Skålvej\" paint — Danish,",
+          "description": "\"Skålvej\" paint — Danish,.",
+          "groundingPhrase": "\"Skålvej\" paint — Danish,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.4615,
+            "y": 0.6015,
+            "w": 0.068,
+            "h": 0.214
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "\"Skålvej\" paint — Danish,"
+            }
+          ],
+          "groundingLabel": "sklvej"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-glm-5-3-flash-max-cba493d35f",
+          "label": "wind turbine on horizon,",
+          "text": "wind turbine on horizon,",
+          "description": "Wind turbine on horizon,.",
+          "groundingPhrase": "wind turbine on horizon,",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.0275,
+            "y": 0.4065,
+            "w": 0.025,
+            "h": 0.058
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "wind turbine on horizon,"
+            }
+          ],
+          "groundingLabel": "wind turbine"
+        },
+        {
+          "id": "cue-europe-hard-loc-024-glm-5-3-flash-max-a1d8d3c396",
+          "label": "dead-flat coastal plain",
+          "text": "dead-flat coastal plain",
+          "description": "Dead-flat coastal plain with pale salt meadow,.",
+          "groundingPhrase": "dead-flat coastal plain",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "dead-flat coastal plain with pale salt meadow,"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-glm-5-3-flash-max-71a7adbba9",
+          "label": "narrow no-marking asphalt,",
+          "text": "narrow no-marking asphalt,",
+          "description": "Narrow no-marking asphalt,.",
+          "groundingPhrase": "narrow no-marking asphalt,",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3555,
+            "y": 0.4605,
+            "w": 0.409,
+            "h": 0.529
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r2"
+          ],
+          "provenance": [
+            {
+              "runId": "r2",
+              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "text": "narrow no-marking asphalt,"
+            }
+          ],
+          "groundingLabel": "narrow no-marking asphalt"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3-7-flash-high-unaided",
+      "benchmarkId": "gemini-3-7-flash-high-unaided",
+      "model": "Gemini 3.7 Flash",
+      "reasoning": "high, unaided",
+      "mergeStrategy": "canonical-model-set",
+      "sourceRuns": [
+        {
+          "runId": "r1",
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-unaided-116b60f1e6",
+          "label": "Danish North Sea coastal dune brick architecture",
+          "text": "Danish North Sea coastal dune brick architecture",
+          "description": "Danish North Sea coastal dune brick architecture.",
+          "groundingPhrase": "Danish North Sea coastal dune brick architecture",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": null,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "Danish North Sea coastal dune brick architecture"
+            }
+          ]
+        },
+        {
+          "id": "cue-europe-hard-loc-024-gemini-3-7-flash-high-unaided-f32de8b546",
+          "label": "\"42 Skalvej\" stencil",
+          "text": "\"42 Skalvej\" stencil",
+          "description": "\"42 Skalvej\" stencil.",
+          "groundingPhrase": "\"42 Skalvej\" stencil",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4616588419405321,
+            "y": 0.5915629185060265,
+            "w": 0.0696400625978091,
+            "h": 0.1666583998809583
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": null,
+            "useful": null,
+            "consistent": null
+          },
+          "sourceRuns": [
+            "r1"
+          ],
+          "provenance": [
+            {
+              "runId": "r1",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "text": "\"42 Skalvej\" stencil"
+            }
+          ],
+          "groundingLabel": "42 Skalvej; stencil"
         }
       ]
     }

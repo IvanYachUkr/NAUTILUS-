@@ -85,6 +85,33 @@ export interface EvidenceCue {
   evidenceView?: StreetViewReference;
 }
 
+export type VisualClueCategory = "signage" | "landmark" | "architecture" | "infrastructure" | "vegetation" | "geography" | "linguistic";
+export type VisualClueStatus = "pending-grounding" | "needs-review" | "reviewed" | "text-only" | "not-grounded" | "excluded";
+
+export interface ModelVisualClue {
+  id: string;
+  label: string;
+  text: string;
+  description: string;
+  source: CueSource;
+  category: VisualClueCategory;
+  annotationStatus: VisualClueStatus;
+  region?: { x: number; y: number; w: number; h: number } | null;
+  regionSource?: string | null;
+  sourceRuns?: string[];
+  ratings?: CueRatings;
+  provenance?: Array<{ runId: string; text: string }>;
+}
+
+export interface ModelClueSet {
+  id: string;
+  benchmarkId: string;
+  model: string;
+  reasoning?: string;
+  sourceRuns: Array<{ runId: string; report?: string }>;
+  cues: ModelVisualClue[];
+}
+
 export interface GeolocationRun {
   id: string;
   model: string;
@@ -118,6 +145,8 @@ export interface GeolocationCase {
   tags?: string[];
   groundTruth: Coordinate;
   startingView: StreetViewReference;
+  startingImage?: { path: string; [key: string]: unknown } | null;
+  clueSets?: ModelClueSet[];
   runs: GeolocationRun[];
 }
 

@@ -1,12 +1,12 @@
 import { formatDistance, predictionLocationLabel } from "./geo.js";
 import { explorationDistanceKm } from "./exploration.js";
 import { ensureLeaflet } from "./leaflet-loader.js";
+import { comparisonColor } from "./comparison-colors.js";
 
 const EUROPE_VIEW = {
   center: [50.3, 12.5],
   zoom: 4,
 };
-
 export function createMapController(container, options = {}) {
   if (!(container instanceof HTMLElement)) {
     throw new TypeError("A map container element is required.");
@@ -15,6 +15,7 @@ export function createMapController(container, options = {}) {
   let cases = [];
   let selectedCase = null;
   let selectedRun = null;
+  let comparisonRuns = [];
   let overview = true;
   let playback = null;
   let leaflet = null;
@@ -53,6 +54,7 @@ export function createMapController(container, options = {}) {
       cases = next.cases ?? cases;
       selectedCase = next.caseItem ?? null;
       selectedRun = next.run ?? null;
+      comparisonRuns = next.comparisonRuns ?? [];
       overview = next.overview ?? !selectedCase;
       playback = next.playback ?? playback;
 
@@ -174,13 +176,17 @@ export function createMapController(container, options = {}) {
     }
 
     if (selectedCase && selectedRun) {
-      if (selectedRun.condition !== "static-image") {
-        renderRoute(selectedRun);
+      if (comparisonRuns.length) {
+        renderComparisonSet(selectedCase, comparisonRuns);
       } else {
-        renderStaticHeading(selectedCase, selectedRun);
+        if (selectedRun.condition !== "static-image") {
+          renderRoute(selectedRun);
+        } else {
+          renderStaticHeading(selectedCase, selectedRun);
+        }
+        renderComparison(selectedCase, selectedRun);
+        renderPlayback();
       }
-      renderComparison(selectedCase, selectedRun);
-      renderPlayback();
     }
 
     if (fit) {
@@ -299,6 +305,41 @@ export function createMapController(container, options = {}) {
     predictionMarker.on("click", (event) => {
       if (event?.originalEvent) leaflet.DomEvent.stopPropagation(event.originalEvent);
       selectMapDetail("prediction", caseItem, run);
+    });
+  }
+
+  function renderComparisonSet(caseItem, runs) {
+    const truthPoint = [caseItem.groundTruth.lat, caseItem.groundTruth.lng];
+    leaflet.marker(truthPoint, {
+      keyboard: true,
+      title: `Ground truth: ${caseItem.groundTruth.label}`,
+      icon: markerIcon("truth", "T"),
+      zIndexOffset: 700,
+    }).bindTooltip("Ground truth", { direction: "top", offset: [0, -18] }).addTo(comparisonLayer);
+
+    runs.forEach((run) => {
+      if (!hasCoordinate(run.prediction)) return;
+      const color = comparisonColor(run.model);
+      const predictionPoint = [run.prediction.lat, run.prediction.lng];
+      leaflet.polyline([truthPoint, predictionPoint], {
+        color,
+        weight: 3,
+        opacity: 0.88,
+        dashArray: "7 8",
+        interactive: false,
+      }).addTo(comparisonLayer);
+      leaflet.circleMarker(predictionPoint, {
+        radius: 9,
+        weight: 3,
+        color: "#061e2b",
+        fillColor: color,
+        fillOpacity: 1,
+      }).bindTooltip(`${escapeHtml(run.model)} · ${escapeHtml(formatDistance(run.errorKm))}`, {
+        direction: "top",
+        permanent: true,
+        className: "comparison-model-tooltip",
+        opacity: 0.95,
+      }).addTo(comparisonLayer);
     });
   }
 
@@ -424,10 +465,12 @@ export function createMapController(container, options = {}) {
 
     const points = [
       [selectedCase.groundTruth.lat, selectedCase.groundTruth.lng],
-      ...(hasCoordinate(selectedRun.prediction)
-        ? [[selectedRun.prediction.lat, selectedRun.prediction.lng]]
-        : []),
-      ...(selectedRun.exploration?.path ?? []).map((point) => [point.lat, point.lng]),
+      ...(comparisonRuns.length
+        ? comparisonRuns.filter((item) => hasCoordinate(item.prediction)).map((item) => [item.prediction.lat, item.prediction.lng])
+        : hasCoordinate(selectedRun.prediction)
+          ? [[selectedRun.prediction.lat, selectedRun.prediction.lng]]
+          : []),
+      ...(comparisonRuns.length ? [] : selectedRun.exploration?.path ?? []).map((point) => [point.lat, point.lng]),
     ];
 
     if (points.length === 1) {
@@ -510,7 +553,9 @@ export function createMapController(container, options = {}) {
         : selectedRun.exploration?.samples?.length
           ? ` · ${selectedRun.exploration.samples.length} samples`
           : "";
-      status.textContent = hasCoordinate(selectedRun.prediction)
+      status.textContent = comparisonRuns.length
+        ? `${selectedCase.city} · ${comparisonRuns.length} model predictions`
+        : hasCoordinate(selectedRun.prediction)
         ? `${selectedCase.city} · ${formatDistance(selectedRun.errorKm)} error${route}`
         : `${selectedCase.city} · recording only · prediction not captured${route}`;
     } else if (selectedCase) {

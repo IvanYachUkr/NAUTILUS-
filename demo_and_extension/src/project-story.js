@@ -25,6 +25,8 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 2 (resumed)", easy: 39_900, medium: 41_142, hard: 32_488, total: 113_530 },
       { label: "Run 3 (resumed)", easy: 39_954, medium: 38_026, hard: 30_269, total: 108_249 },
     ],
+    bestRun: { id: "run-2", label: "Run 2 (resumed)", points: 113_530 },
+    predictionSource: { type: "glm-conversation", path: "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json" },
   },
   {
     id: "gpt-6-astra-low",
@@ -39,45 +41,93 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 2", easy: 39_998, medium: 44_686, hard: 35_134, total: 119_818 },
       { label: "Run 3", easy: 39_998, medium: 43_482, hard: 35_279, total: 118_759 },
     ],
+    bestRun: { id: "run-2", label: "Run 2", points: 119_818 },
+    predictionAvailability: "reported-without-validated-coordinates",
   },
   {
     id: "gemini-3-7-flash-high-aided",
     dataDirectory: "gemini-3.7-flash-high-aided",
     model: "Gemini 3.7 Flash",
     reasoning: "high, aided",
-    points: 120_029,
+    points: (120_029 + 120_624 + 119_955) / 3,
     maxPoints: 125_000,
-    sample: "1 run",
+    sample: "3 runs · mean score",
+    runs: [
+      { label: "Run 1", easy: 39_999, medium: 43_026, hard: 37_004, total: 120_029 },
+      { label: "Run 2", easy: 39_988, medium: 44_011, hard: 36_625, total: 120_624 },
+      { label: "Run 3", easy: 39_964, medium: 43_323, hard: 36_668, total: 119_955 },
+    ],
+    bestRun: { id: "r2", label: "Run 2", points: 120_624 },
+    predictionSource: { type: "recorded-directory", path: "runs/recorded-r2" },
+  },
+  {
+    id: "gemini-3-7-flash-medium-aided", dataDirectory: "gemini-3.7-flash-medium-aided",
+    model: "Gemini 3.7 Flash", reasoning: "medium, aided",
+    points: (121_264 + 117_702 + 121_492) / 3, maxPoints: 125_000, sample: "3 runs · mean score",
+    runs: [
+      { label: "Run 1", easy: 39_988, medium: 44_105, hard: 37_170, total: 121_264 },
+      { label: "Run 2", easy: 40_000, medium: 42_320, hard: 35_382, total: 117_702 },
+      { label: "Run 3", easy: 40_000, medium: 43_324, hard: 38_168, total: 121_492 },
+    ],
+    bestRun: { id: "r3", label: "Run 3", points: 121_492 },
+    predictionSource: { type: "recorded-directory", path: "runs/recorded-r3" },
+  },
+  {
+    id: "gemini-3-8-flash-high-aided", dataDirectory: "gemini-3.8-flash-high-aided",
+    model: "Gemini 3.8 Flash", reasoning: "high, aided",
+    points: (120_919 + 119_950 + 120_302) / 3, maxPoints: 125_000, sample: "3 runs · mean score",
+    runs: [
+      { label: "Run 1", easy: 39_985, medium: 43_872, hard: 37_062, total: 120_919 },
+      { label: "Run 2", easy: 39_986, medium: 43_233, hard: 36_731, total: 119_950 },
+      { label: "Run 3", easy: 39_984, medium: 43_229, hard: 37_089, total: 120_302 },
+    ],
+    bestRun: { id: "r1", label: "Run 1", points: 120_919 },
+    predictionSource: { type: "recorded-directory", path: "." },
+  },
+  {
+    id: "gemini-3-8-flash-medium-aided", dataDirectory: "gemini-3.8-flash-medium-aided",
+    model: "Gemini 3.8 Flash", reasoning: "medium, aided",
+    points: (119_061 + 119_673 + 120_677) / 3, maxPoints: 125_000, sample: "3 runs · mean score",
+    runs: [
+      { label: "Run 1", easy: 39_977, medium: 41_933, hard: 37_151, total: 119_061 },
+      { label: "Run 2", easy: 39_997, medium: 42_649, hard: 37_027, total: 119_673 },
+      { label: "Run 3", easy: 39_984, medium: 43_857, hard: 36_836, total: 120_677 },
+    ],
+    bestRun: { id: "r3", label: "Run 3", points: 120_677 },
+    predictionSource: { type: "recorded-directory", path: "runs/recorded-r3" },
   },
   {
     id: "gpt-5-6-sol-xhigh",
     dataDirectory: "gpt-5.6-sol-xhigh",
-    globePredictions: true,
     model: "GPT-5.6 Sol",
     reasoning: "xhigh",
     points: (110_273 + 107_436 + 114_716) / 3,
     maxPoints: 125_000,
     sample: "3 runs · mean score",
+    bestRun: { id: "r3", label: "Run 3", points: 114_716 },
+    predictionSource: { type: "recorded-directory", path: "runs/recorded-r3" },
   },
   {
     id: "gpt-5-6-sol-max",
     dataDirectory: "gpt-5.6-sol-max",
-    globePredictions: true,
     model: "GPT-5.6 Sol",
     reasoning: "max",
     points: (107_838 + 114_794 + 111_149) / 3,
     maxPoints: 125_000,
     sample: "3 runs · mean score",
+    bestRun: { id: "r2", label: "Run 2", points: 114_794 },
+    predictionSource: { type: "recorded-directory", path: "runs/recorded-r3" },
   },
   {
     id: "grok-4-6-xhigh",
     dataDirectory: "grok-4.6-xhigh",
-    globePredictions: true,
     model: "Grok 4.6",
     reasoning: "xhigh",
     points: (80_081 + 71_562 + 73_222) / 3,
     maxPoints: 125_000,
     sample: "3 runs · mean score",
+    bestRun: { id: "r1", label: "Run 1", points: 80_081 },
+    predictionSource: { type: "recorded-directory", path: "." },
   },
   {
     id: "grok-4-6-xhigh-mcp",
@@ -87,6 +137,7 @@ export const RECORDED_BENCHMARKS = [
     points: 105_026,
     maxPoints: 125_000,
     sample: "3 runs per difficulty · composite mean",
+    predictionAvailability: "composite-without-one-overall-run",
   },
   {
     id: "gemini-3-7-flash-high-unaided",
@@ -96,11 +147,14 @@ export const RECORDED_BENCHMARKS = [
     points: 64_350,
     maxPoints: 125_000,
     sample: "1 run",
+    bestRun: { id: "r1", label: "Run 1", points: 64_350 },
+    predictionSource: { type: "recorded-directory", path: "." },
   },
 ];
 
 export function buildProjectSnapshot(cases = [], benchmarks = RECORDED_BENCHMARKS) {
   const difficultyCounts = { easy: 0, medium: 0, hard: 0 };
+  const evidenceCounts = { reviewed: 0, textOnly: 0, excluded: 0 };
   const sceneImages = {};
 
   for (const item of cases) {
@@ -109,6 +163,13 @@ export function buildProjectSnapshot(cases = [], benchmarks = RECORDED_BENCHMARK
     }
     const imageUrl = assetImageUrl(item?.startingImage);
     if (item?.id && imageUrl) sceneImages[item.id] = imageUrl;
+    for (const clueSet of item?.clueSets ?? []) {
+      for (const cue of clueSet?.cues ?? []) {
+        if (cue?.annotationStatus === "reviewed") evidenceCounts.reviewed += 1;
+        if (cue?.annotationStatus === "text-only") evidenceCounts.textOnly += 1;
+        if (cue?.annotationStatus === "excluded") evidenceCounts.excluded += 1;
+      }
+    }
   }
 
   const leaderboard = benchmarks
@@ -122,6 +183,7 @@ export function buildProjectSnapshot(cases = [], benchmarks = RECORDED_BENCHMARK
   return {
     locationCount: cases.length,
     difficultyCounts,
+    evidenceCounts,
     sceneImages,
     leaderboard,
   };
@@ -180,6 +242,7 @@ export function projectSectionAtViewport(sections, anchorY) {
 
 export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
   const counts = snapshot.difficultyCounts ?? { easy: 0, medium: 0, hard: 0 };
+  const evidenceCounts = snapshot.evidenceCounts ?? { reviewed: 0, textOnly: 0, excluded: 0 };
   const leaderboard = snapshot.leaderboard ?? [];
 
   return `
@@ -223,18 +286,18 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           <div class="scene-triptych" aria-label="Representative benchmark scenes">
             <figure class="scene-frame scene-frame--wide">
               ${sceneImageMarkup(snapshot, "europe-easy--loc-001", "Paris street scene at Place de la Bastille")}
-              <figcaption><span>Easy · Urban</span><strong>Paris, France</strong></figcaption>
-              <button class="scene-frame__open" type="button" data-case-id="europe-easy--loc-001" aria-label="Explore Paris in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
+              <figcaption><span>Easy · Landmark evidence</span><strong>Paris, France</strong></figcaption>
+              <button class="scene-frame__open" type="button" data-case-id="europe-easy--loc-001" data-case-model="Gemini 3.7 Flash · high, aided" data-case-condition="interactive-panorama" aria-label="Explore the reviewed July Column clue in Paris"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
             <figure class="scene-frame">
               ${sceneImageMarkup(snapshot, "europe-medium--loc-009", "Residential street scene in Valencia")}
-              <figcaption><span>Medium · Urban</span><strong>Valencia, Spain</strong></figcaption>
-              <button class="scene-frame__open" type="button" data-case-id="europe-medium--loc-009" aria-label="Explore Valencia in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
+              <figcaption><span>Medium · Street-name evidence</span><strong>Valencia, Spain</strong></figcaption>
+              <button class="scene-frame__open" type="button" data-case-id="europe-medium--loc-009" data-case-model="Gemini 3.7 Flash · high, aided" data-case-condition="interactive-panorama" aria-label="Explore the reviewed Carrer de Císcar clue in Valencia"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
             <figure class="scene-frame">
               ${sceneImageMarkup(snapshot, "europe-hard--loc-018", "Rural road scene in Greece")}
-              <figcaption><span>Hard · Rural</span><strong>Peloponnese, Greece</strong></figcaption>
-              <button class="scene-frame__open" type="button" data-case-id="europe-hard--loc-018" aria-label="Explore Peloponnese in the atlas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
+              <figcaption><span>Hard · Script evidence</span><strong>Peloponnese, Greece</strong></figcaption>
+              <button class="scene-frame__open" type="button" data-case-id="europe-hard--loc-018" data-case-model="Gemini 3.7 Flash · high, aided" data-case-condition="interactive-panorama" aria-label="Explore the reviewed Greek road-label clue in Peloponnese"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </figure>
           </div>
         </section>
@@ -338,7 +401,6 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
             ${leaderboard.map(leaderboardRowMarkup).join("")}
           </div>
           <p class="results-note"><i class="ph ph-info" aria-hidden="true"></i> Each condition covers 8 easy, 9 medium, and 8 hard scenes. Repeats measure variation on these fixed locations. Grok MCP combines separate difficulty means; its Easy timer was 180 seconds and Medium/Hard 300 seconds.</p>
-          ${astraResultsMarkup(leaderboard.find((entry) => entry.id === "gpt-6-astra-low"))}
         </section>
 
         <section class="story-section evidence-section" id="evidence" data-site-section-id="evidence">
@@ -347,6 +409,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
             <div class="evidence-copy">
               <h2>Can the clue survive <em>inspection?</em></h2>
               <p>A polished explanation can still be wrong. Human review treats each reported clue as evidence to test, not prose to admire.</p>
+              <p class="evidence-audit"><strong>${formatInteger(evidenceCounts.reviewed)}</strong> image regions verified · <strong>${formatInteger(evidenceCounts.textOnly)}</strong> text-only clues retained · <strong>${formatInteger(evidenceCounts.excluded)}</strong> rejected</p>
               <div class="cue-rubric" aria-label="Cue review rubric">
                 <span><i class="ph ph-eye" aria-hidden="true"></i> Visible</span>
                 <span><i class="ph ph-check-circle" aria-hidden="true"></i> Correct</span>
@@ -358,17 +421,20 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
 
             <article class="evidence-example">
               <div class="evidence-example__image">
-                ${sceneImageMarkup(snapshot, "europe-easy--loc-001", "Bastille scene used for an evidence example")}
+                ${sceneImageMarkup(snapshot, "europe-easy--loc-001", "The reviewed July Column clue in the Paris source scene")}
               </div>
               <div class="evidence-example__body">
-                <span>Example evidence trace · Paris</span>
-                <h3>“Bastille” appears on the transit sign.</h3>
-                <p>The clue is visible in the source scene, names a precise place, and supports the final Paris hypothesis.</p>
+                <span>Reviewed evidence trace · Easy · Paris</span>
+                <h3>The gilded figure crowns the July Column.</h3>
+                <p>The statue-topped column is visibly centered in the frame. It is a distinctive landmark that supports Place de la Bastille in Paris.</p>
                 <div class="evidence-verdicts">
                   <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Visible</b>
                   <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Geographic</b>
                   <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Pin-consistent</b>
                 </div>
+                <button class="evidence-example__open" type="button" data-case-id="europe-easy--loc-001" data-case-model="Gemini 3.7 Flash · high, aided" data-case-condition="interactive-panorama">
+                  Inspect the reviewed clue <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                </button>
               </div>
             </article>
           </div>
@@ -443,24 +509,6 @@ function leaderboardRowMarkup(entry) {
         <span>${Number(entry.scorePercent).toFixed(1)}%</span>
       </div>
     </article>
-  `;
-}
-
-function astraResultsMarkup(entry) {
-  if (!entry?.runs?.length) return "";
-  return `
-    <details class="benchmark-repeat-details" open>
-      <summary>GPT-6 Astra · low reasoning · three runs</summary>
-      <p>300 seconds per round, using Chrome screenshots and visible controls. Mean: <strong>119,245.67 / 125,000</strong> (95.3965%).</p>
-      <div class="benchmark-repeat-table">
-        <table aria-label="GPT-6 Astra low individual run scores">
-          <thead><tr><th scope="col">Run</th><th scope="col">Easy</th><th scope="col">Medium</th><th scope="col">Hard</th><th scope="col">Total</th></tr></thead>
-          <tbody>${entry.runs.map((run) => `<tr><th scope="row">${escapeMarkup(run.label)}</th><td>${formatInteger(run.easy)}</td><td>${formatInteger(run.medium)}</td><td>${formatInteger(run.hard)}</td><td><strong>${formatInteger(run.total)}</strong></td></tr>`).join("")}</tbody>
-        </table>
-      </div>
-      <p>Run 1 Hard and Run 3 Medium combine completed round results with official continuation leaderboards after interruptions. The contaminated Medium attempt and the unverified crash round are excluded.</p>
-      <p><a href="https://github.com/IvanYachUkr/NAUTILUS-/tree/main/demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low" target="_blank" rel="noopener noreferrer">Reports, scores and screenshot evidence <span aria-hidden="true">↗</span></a>. Videos remain local. Astra prediction coordinates still require validation, so its results are shown here without globe pins.</p>
-    </details>
   `;
 }
 

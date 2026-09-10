@@ -14,6 +14,7 @@ export const ROOT = resolve(fileURLToPath(new URL("../..", import.meta.url)));
 export const DATA_DIR = join(ROOT, "data");
 export const COMPETITIONS_DIR = join(DATA_DIR, "competitions");
 export const RESULTS_DIR = join(DATA_DIR, "results");
+export const CLUES_DIR = join(DATA_DIR, "clues");
 export const RECORDED_AGENT_BENCHMARK_DIR = join(
   DATA_DIR,
   "recorded-agent-benchmark",
@@ -66,6 +67,7 @@ export async function ensureWorkspaceDirectories() {
     [
       COMPETITIONS_DIR,
       RESULTS_DIR,
+      CLUES_DIR,
       RECORDINGS_INBOX_DIR,
       RECORDINGS_SESSIONS_DIR,
       RECORDINGS_CHECKPOINTS_DIR,

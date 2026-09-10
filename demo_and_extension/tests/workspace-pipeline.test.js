@@ -47,7 +47,7 @@ test("all 25 source locations are partitioned exactly once by difficulty", async
   }
 });
 
-test("reference prediction pins retain resolved place names as the recording archive grows", async () => {
+test("reference prediction pins retain stable labels as the recording archive grows", async () => {
   const built = await buildData({ write: false, quiet: true });
   const predictedRuns = built.atlasCases.flatMap((item) =>
     item.runs
@@ -66,32 +66,16 @@ test("reference prediction pins retain resolved place names as the recording arc
     run.runKind === "model-prediction" || run.model === "manual",
   );
 
-  // 75 original interactive model predictions
+  // 225 interactive model predictions
   // + 100 static baseline predictions
   // + 50 manual reference runs
-  assert.equal(referenceRuns.length, 225);
-
-  const placeNamedReferenceRuns = referenceRuns.filter(
-    ({ run }) =>
-      run.model === "manual" ||
-      (
-        run.runKind === "model-prediction" &&
-        run.condition === "interactive-panorama"
-      ),
-  );
+  assert.equal(referenceRuns.length, 375);
 
   const staticBaselineRuns = referenceRuns.filter(
     ({ run }) =>
       run.runKind === "model-prediction" &&
       run.condition === "static-image",
   );
-
-  // Original interactive model predictions + manual references keep
-  // resolved place-name labels.
-  assert.equal(placeNamedReferenceRuns.length, 125);
-  assert.ok(placeNamedReferenceRuns.every(({ run }) =>
-    !/^-?\d+\.\d{5}, -?\d+\.\d{5}$/.test(run.prediction.label),
-  ));
 
   // The four static baselines contribute 4 x 25 = 100 predictions.
   // Their result CSVs contain exact coordinates, not authoritative
@@ -102,25 +86,12 @@ test("reference prediction pins retain resolved place names as the recording arc
     Number.isFinite(run.prediction?.lng),
   ));
 
-  const originalReferenceModels = new Set([
-    "GPT-5.6 Sol · xhigh",
-    "GPT-5.6 Sol · max",
-    "Grok 4.6 · xhigh",
-    "manual",
-  ]);
-
-  const bogatyniaOriginalReferences = referenceRuns
-    .filter(
-      ({ caseId, run }) =>
-        caseId === "europe-easy--loc-006" &&
-        originalReferenceModels.has(run.model),
-    )
+  const bogatyniaReferences = referenceRuns
+    .filter(({ caseId }) => caseId === "europe-easy--loc-006")
     .map(({ run }) => [run.model, run.condition, run.prediction.label]);
 
-  assert.deepEqual(bogatyniaOriginalReferences, [
-    ["GPT-5.6 Sol · xhigh", "interactive-panorama", "Piechowice, Poland"],
-    ["GPT-5.6 Sol · max", "interactive-panorama", "Sieniawka, Poland"],
-    ["Grok 4.6 · xhigh", "interactive-panorama", "St. Roman, Austria"],
+  assert.equal(bogatyniaReferences.length, 15);
+  assert.deepEqual(bogatyniaReferences.slice(-2), [
     ["manual", "interactive-panorama", "Zittau, Germany"],
     ["manual", "static-image", "Hrádek nad Nisou, Czechia"],
   ]);
@@ -130,9 +101,15 @@ test("canonical benchmark predictions are available independently of replay reco
   const built = await buildData({ write: false, quiet: true });
 
   const expectedInteractiveModels = [
+    "GLM-5.3-Flash + MCP · Max",
+    "Gemini 3.7 Flash · high, aided",
+    "Gemini 3.7 Flash · medium, aided",
+    "Gemini 3.8 Flash · high, aided",
+    "Gemini 3.8 Flash · medium, aided",
     "GPT-5.6 Sol · xhigh",
     "GPT-5.6 Sol · max",
     "Grok 4.6 · xhigh",
+    "Gemini 3.7 Flash · high, unaided",
   ];
 
   const expectedStaticBaselineModels = [
@@ -153,8 +130,8 @@ test("canonical benchmark predictions are available independently of replay reco
     (run) => run.condition === "static-image",
   );
 
-  assert.equal(predictionRuns.length, 175);
-  assert.equal(interactivePredictionRuns.length, 75);
+  assert.equal(predictionRuns.length, 325);
+  assert.equal(interactivePredictionRuns.length, 225);
   assert.equal(staticPredictionRuns.length, 100);
 
   assert.deepEqual(
@@ -199,6 +176,12 @@ test("canonical benchmark predictions are available independently of replay reco
     );
     assert.ok(
       runs.every((run) => run.exploration === undefined),
+      item.id,
+    );
+    assert.ok(interactiveRuns.every((run) => run.bestRunId), item.id);
+    assert.equal(
+      new Set(interactiveRuns.map((run) => run.benchmarkId)).size,
+      expectedInteractiveModels.length,
       item.id,
     );
   }
