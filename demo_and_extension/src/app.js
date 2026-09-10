@@ -1921,8 +1921,8 @@ function shellMarkup(cases = []) {
               <aside class="evidence-text-panel" data-evidence-text-panel hidden></aside>
             </section>
             <div class="globe-caption" aria-hidden="true">
-              <span>Europe / An experiment in seeing</span>
-              <span><i class="ph ph-hand" aria-hidden="true"></i> Drag to rotate · Scroll to zoom</span>
+              <span class="globe-caption__pointer"><i class="ph ph-hand" aria-hidden="true"></i> Drag to rotate · Scroll to zoom</span>
+              <span class="globe-caption__touch">Drag to rotate · Pinch to zoom</span>
             </div>
             <div class="map-stage" data-map></div>
 
