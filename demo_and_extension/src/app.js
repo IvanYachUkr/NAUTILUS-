@@ -429,8 +429,12 @@ export function createExplorer({
 
       const statsButton = event.target.closest("[data-stats-button]");
       if (statsButton && rootElement.contains(statsButton)) {
-        drawerMode = "stats";
-        drawerSample = null;
+        if (drawerMode === "stats") {
+          clearDrawerState();
+        } else {
+          clearDrawerState();
+          drawerMode = "stats";
+        }
         render({ fitMap: false });
         return;
       }
@@ -682,10 +686,20 @@ export function createExplorer({
     const onKeyDown = (event) => {
       if (event.key === "Escape" && comparisonMapFullscreen) {
         setComparisonMapFullscreen(false, { restoreFocus: true });
+      } else if (event.key === "Escape" && drawerMode === "stats") {
+        clearDrawerState();
+        renderDrawer(getSelectedCase(), getSelectedCase() ? getSelectedRun(getSelectedCase()) : null, getFilteredCases());
       }
     };
 
+    const onOutsideStatsTap = (event) => {
+      if (drawerMode !== "stats" || event.target.closest("[data-drawer], [data-stats-button]")) return;
+      clearDrawerState();
+      renderDrawer(getSelectedCase(), getSelectedCase() ? getSelectedRun(getSelectedCase()) : null, getFilteredCases());
+    };
+
     rootElement.addEventListener("click", onClick);
+    document.addEventListener("pointerdown", onOutsideStatsTap);
     elements.search.addEventListener("input", onSearch);
     elements.competitionFilter.addEventListener("change", onFilterChange);
     elements.countryFilter.addEventListener("change", onFilterChange);
@@ -703,6 +717,7 @@ export function createExplorer({
     updateStoryNavigation();
 
     disposers.push(() => rootElement.removeEventListener("click", onClick));
+    disposers.push(() => document.removeEventListener("pointerdown", onOutsideStatsTap));
     disposers.push(() => elements.search.removeEventListener("input", onSearch));
     disposers.push(() => elements.competitionFilter.removeEventListener("change", onFilterChange));
     disposers.push(() => elements.countryFilter.removeEventListener("change", onFilterChange));
@@ -1269,6 +1284,8 @@ export function createExplorer({
       (caseItem && run && drawerMode === "playback" && playbackAllowed);
     const layoutWasOpen = elements.mapWorkspace.classList.contains("has-drawer");
     elements.drawer.hidden = !valid;
+    elements.drawer.dataset.drawerMode = valid ? drawerMode : "";
+    rootElement.querySelector("[data-stats-button]").setAttribute("aria-expanded", String(drawerMode === "stats"));
     elements.drawer.classList.toggle("is-open", Boolean(valid));
     elements.mapWorkspace.classList.toggle("has-drawer", Boolean(valid));
     if (layoutWasOpen !== Boolean(valid)) {
@@ -1295,6 +1312,7 @@ export function createExplorer({
     }
 
     elements.drawerTitle.textContent = title;
+    elements.drawer.querySelector(".section-label").textContent = drawerMode === "stats" ? "Benchmark overview" : "Selected pin";
     elements.drawerBody.innerHTML = body;
     primeInlineVideos(elements.drawerBody);
   }
@@ -1815,10 +1833,6 @@ function shellMarkup(cases = []) {
             <span>Project</span>
             <i class="ph ph-arrow-down" aria-hidden="true"></i>
           </button>
-          <button class="stats-button header-stats" type="button" data-stats-button aria-label="Open statistics">
-            <i class="ph ph-chart-line-up" aria-hidden="true"></i>
-            <span>Statistics</span>
-          </button>
         </div>
       </header>
 
@@ -1979,6 +1993,11 @@ function shellMarkup(cases = []) {
                   <span>Condition</span>
                   <select data-condition-select></select>
                 </label>
+              </div>
+              <div class="globe-stats-slot">
+                <button class="stats-button globe-stats-button" type="button" data-stats-button aria-label="Open statistics" aria-expanded="false">
+                  <i class="ph ph-chart-line-up" aria-hidden="true"></i><span>Statistics</span>
+                </button>
               </div>
               <button class="compare-models-button" type="button" data-toggle-model-comparison hidden>
                 <i class="ph ph-stack" aria-hidden="true"></i><span>Compare models<b data-compare-models-count></b></span>
