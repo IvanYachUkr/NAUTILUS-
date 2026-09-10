@@ -162,23 +162,14 @@ test("the mobile story navigation scrolls without exposing native scrollbars", a
   assert.match(cssSource, /\.story-nav__links::\-webkit-scrollbar\s*\{[^}]*display:\s*none;/s);
 });
 
-test("story section markers and supporting labels remain readable at desktop and mobile sizes", () => {
-  const eyebrow = styleBlock(storyStylesSource, ".project-story .story-section__eyebrow");
-  const sectionNumber = styleBlock(storyStylesSource, ".project-story .story-section__eyebrow span");
-  const navigation = styleBlock(storyStylesSource, ".project-story .story-nav__links button");
-  const overline = styleBlock(storyStylesSource, ".project-story .story-overline");
-
-  assert.match(eyebrow, /font-size:\s*13px/);
-  assert.match(sectionNumber, /width:\s*44px/);
-  assert.match(sectionNumber, /height:\s*44px/);
-  assert.match(sectionNumber, /font-size:\s*12px/);
-  assert.match(navigation, /font-size:\s*12px/);
-  assert.match(overline, /font-size:\s*13px/);
-
-  const mobileStyles = storyStylesSource.slice(storyStylesSource.indexOf("@media (max-width: 680px)"));
-  assert.match(styleBlock(mobileStyles, ".project-story .story-nav__links button"), /font-size:\s*10px/);
-  assert.match(styleBlock(mobileStyles, ".project-story .story-section__eyebrow"), /font-size:\s*12px/);
-  assert.match(styleBlock(mobileStyles, ".project-story .story-section__eyebrow span"), /font-size:\s*11px/);
+test("interface text stays at least 16px across desktop and mobile styles", async () => {
+  for (const filename of ["styles.css", "story-redesign.css", "expedition.css"]) {
+    const css = await readFile(new URL(`../src/${filename}`, import.meta.url), "utf8");
+    for (const match of css.matchAll(/font-size:\s*([\d.]+)(px|rem)\b/g)) {
+      const pixels = Number(match[1]) * (match[2] === "rem" ? 16 : 1);
+      assert.ok(pixels >= 16, `${filename}: ${match[0]} is too small`);
+    }
+  }
 });
 
 test("the document requests the enlarged story typography stylesheet revision", () => {
