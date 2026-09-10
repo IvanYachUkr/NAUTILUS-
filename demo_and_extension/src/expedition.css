@@ -932,7 +932,7 @@ button, select, input { max-width: 100%; }
   margin: 0;
 }
 .atlas-app[data-view-state="overview"] .globe-caption { grid-row: 1; grid-column: 1; align-self: center; text-transform: none; }
-.globe-caption .globe-caption__touch { display: none; }
+.atlas-app[data-view-state="overview"] .globe-caption .globe-caption__touch { display: none; }
 .atlas-app[data-view-state="overview"] .map-utilities { display: contents; }
 .atlas-app[data-view-state="overview"] .map-utilities .secondary-button { grid-row: 1; grid-column: 2; justify-self: end; }
 .atlas-app[data-view-state="overview"] .map-legend { grid-row: 3; grid-column: 1 / -1; width: 100%; justify-content: space-between; }
@@ -1083,6 +1083,7 @@ button, select, input { max-width: 100%; }
   .atlas-app[data-view-state="overview"] .globe-caption { font-size: 1rem; line-height: 1.4; letter-spacing: 0; }
   .atlas-app[data-view-state="overview"] .globe-caption span { display: block; }
   .atlas-app[data-view-state="overview"] .globe-caption .globe-caption__pointer { display: none; }
+  .atlas-app[data-view-state="overview"] .globe-caption .globe-caption__touch { display: block; }
   .atlas-app[data-view-state="overview"] .globe-caption i { display: none; }
   .atlas-app[data-view-state="overview"] .map-utilities .secondary-button { padding: 8px 0 8px 8px; justify-content: flex-end; gap: 8px; text-align: right; }
   .atlas-app[data-view-state="overview"] .map-legend { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px; }
