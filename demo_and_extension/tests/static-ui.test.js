@@ -8,6 +8,7 @@ const appSource = await readFile(new URL("../src/app.js", import.meta.url), "utf
 const buildSiteSource = await readFile(new URL("../scripts/build-site.mjs", import.meta.url), "utf8");
 const indexSource = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const storyStylesSource = await readFile(new URL("../src/story-redesign.css", import.meta.url), "utf8");
+const expeditionStylesSource = await readFile(new URL("../src/expedition.css", import.meta.url), "utf8");
 
 function styleBlock(source, selector) {
   const start = source.indexOf(`${selector} {`);
@@ -189,6 +190,23 @@ test("the workflow navigation connects evenly centered controls instead of label
     /\.journey-progress li:not\(:last-child\)::after\s*\{[^}]*left:\s*50%;[^}]*width:\s*100%;/s,
   );
   assert.doesNotMatch(cssSource, /\.journey-progress li:not\(:last-child\)::after\s*\{[^}]*left:\s*calc\(100%/s);
+});
+
+test("the mobile run method is a compact two-column set of tactile stage cards", () => {
+  const mobileStart = expeditionStylesSource.lastIndexOf("@media (max-width: 680px)");
+  const mobileEnd = expeditionStylesSource.indexOf("@media (min-width: 681px)", mobileStart);
+  const mobileStyles = expeditionStylesSource.slice(mobileStart, mobileEnd);
+
+  assert.match(mobileStyles, /\.journey-progress\s*\{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/s);
+  assert.match(mobileStyles, /\.journey-progress button\s*\{[^}]*border:\s*1px solid[^}]*border-radius:\s*14px[^}]*linear-gradient/s);
+  assert.match(mobileStyles, /\.journey-progress li:not\(:last-child\)::after\s*\{[^}]*display:\s*none/s);
+  assert.match(mobileStyles, /\.journey-progress button:focus-visible\s*\{[^}]*outline:/s);
+  assert.match(expeditionStylesSource, /@keyframes\s+journey-card-arrive/);
+  assert.match(expeditionStylesSource, /prefers-reduced-motion:\s*reduce[^}]*\.journey-progress li\s*\{[^}]*animation:\s*none/s);
+
+  for (const icon of ["ph-eye", "ph-lightbulb", "ph-binoculars", "ph-map-pin"]) {
+    assert.ok(appSource.includes(icon), `Missing method icon ${icon}`);
+  }
 });
 
 test("the public website keeps raw recording review disabled and out of its package", () => {

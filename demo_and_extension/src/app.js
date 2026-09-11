@@ -1821,10 +1821,10 @@ function shellMarkup(cases = []) {
         <nav class="journey-guide" aria-label="Run method">
           <span class="journey-guide__label">Run method</span>
           <ol class="journey-progress">
-            <li><button type="button" data-method-stage="observe" aria-label="Read the Observe method stage"><span>1</span><b>Observe</b></button></li>
-            <li><button type="button" data-method-stage="hypothesize" aria-label="Read the Hypothesize method stage"><span>2</span><b>Hypothesize</b></button></li>
-            <li><button type="button" data-method-stage="explore" aria-label="Read the Explore method stage"><span>3</span><b>Explore</b></button></li>
-            <li><button type="button" data-method-stage="pin" aria-label="Read the Pin method stage"><span>4</span><b>Pin</b></button></li>
+            <li><button type="button" data-method-stage="observe" aria-label="Read the Observe method stage"><span>1</span><b>Observe</b><i class="ph ph-eye" aria-hidden="true"></i></button></li>
+            <li><button type="button" data-method-stage="hypothesize" aria-label="Read the Hypothesize method stage"><span>2</span><b>Hypothesize</b><i class="ph ph-lightbulb" aria-hidden="true"></i></button></li>
+            <li><button type="button" data-method-stage="explore" aria-label="Read the Explore method stage"><span>3</span><b>Explore</b><i class="ph ph-binoculars" aria-hidden="true"></i></button></li>
+            <li><button type="button" data-method-stage="pin" aria-label="Read the Pin method stage"><span>4</span><b>Pin</b><i class="ph ph-map-pin" aria-hidden="true"></i></button></li>
           </ol>
         </nav>
 
