@@ -1,0 +1,191 @@
+[
+  {
+    "location_id": "loc_009",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_009.png",
+    "ground_truth": {
+      "lat": 39.4667928,
+      "lon": -0.3661343,
+      "country": "Spain",
+      "city_or_region": "Valencia",
+      "difficulty": "medium",
+      "primary_clue_type": "architecture"
+    },
+    "prediction": {
+      "lat": 41.44505039846057,
+      "lon": 2.169241531867446,
+      "raw_fused_top1_lat": 41.492916107177734,
+      "raw_fused_top1_lon": 2.1452255249023438,
+      "raw_fused_top1_score": 4.668264389038086,
+      "cluster_size": 5,
+      "error_km": 307.38973779208453
+    }
+  },
+  {
+    "location_id": "loc_010",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_010.png",
+    "ground_truth": {
+      "lat": 44.4930672,
+      "lon": 11.3250143,
+      "country": "Italy",
+      "city_or_region": "Bologna",
+      "difficulty": "medium",
+      "primary_clue_type": "architecture"
+    },
+    "prediction": {
+      "lat": 44.70289890003082,
+      "lon": 10.833303202919527,
+      "raw_fused_top1_lat": 44.63905334472656,
+      "raw_fused_top1_lon": 10.92941951751709,
+      "raw_fused_top1_score": 7.058596611022949,
+      "cluster_size": 6,
+      "error_km": 45.47316895972099
+    }
+  },
+  {
+    "location_id": "loc_011",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_011.png",
+    "ground_truth": {
+      "lat": 52.1124003,
+      "lon": 5.0797161,
+      "country": "Netherlands",
+      "city_or_region": "Utrecht",
+      "difficulty": "medium",
+      "primary_clue_type": "infrastructure"
+    },
+    "prediction": {
+      "lat": 52.02639202192222,
+      "lon": 4.9642341921379165,
+      "raw_fused_top1_lat": 52.09107208251953,
+      "raw_fused_top1_lon": 5.132813453674316,
+      "raw_fused_top1_score": 6.754510879516602,
+      "cluster_size": 10,
+      "error_km": 12.421461334167269
+    }
+  },
+  {
+    "location_id": "loc_012",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_012.png",
+    "ground_truth": {
+      "lat": 50.9874591,
+      "lon": 3.7463905,
+      "country": "Belgium",
+      "city_or_region": "Merelbeke, Merelbeke-Melle",
+      "difficulty": "medium",
+      "primary_clue_type": "mixed"
+    },
+    "prediction": {
+      "lat": 50.9362129891322,
+      "lon": 3.576592318013019,
+      "raw_fused_top1_lat": 50.80964279174805,
+      "raw_fused_top1_lon": 3.0800933837890625,
+      "raw_fused_top1_score": 8.018016815185547,
+      "cluster_size": 7,
+      "error_km": 13.221477557152404
+    }
+  },
+  {
+    "location_id": "loc_013",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_013.png",
+    "ground_truth": {
+      "lat": 40.2155817,
+      "lon": -8.4337562,
+      "country": "Portugal",
+      "city_or_region": "Coimbra",
+      "difficulty": "medium",
+      "primary_clue_type": "infrastructure"
+    },
+    "prediction": {
+      "lat": 38.82246827173168,
+      "lon": -8.992824020783798,
+      "raw_fused_top1_lat": 38.660919189453125,
+      "raw_fused_top1_lon": -9.082632064819336,
+      "raw_fused_top1_score": 5.449873924255371,
+      "cluster_size": 8,
+      "error_km": 161.9688053594068
+    }
+  },
+  {
+    "location_id": "loc_014",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_014.png",
+    "ground_truth": {
+      "lat": 59.8481151,
+      "lon": 17.6140674,
+      "country": "Sweden",
+      "city_or_region": "Uppsala",
+      "difficulty": "medium",
+      "primary_clue_type": "architecture"
+    },
+    "prediction": {
+      "lat": 48.962736493443415,
+      "lon": 8.297911282933947,
+      "raw_fused_top1_lat": 49.37546920776367,
+      "raw_fused_top1_lon": 7.329385280609131,
+      "raw_fused_top1_score": 5.183718681335449,
+      "cluster_size": 3,
+      "error_km": 1351.3002886050936
+    }
+  },
+  {
+    "location_id": "loc_015",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_015.png",
+    "ground_truth": {
+      "lat": 58.3478594,
+      "lon": 26.7197804,
+      "country": "Estonia",
+      "city_or_region": "Tartu",
+      "difficulty": "medium",
+      "primary_clue_type": "mixed"
+    },
+    "prediction": {
+      "lat": 55.8991438188366,
+      "lon": 24.72900838524222,
+      "raw_fused_top1_lat": 55.93297576904297,
+      "raw_fused_top1_lon": 24.346738815307617,
+      "raw_fused_top1_score": 6.394835948944092,
+      "cluster_size": 7,
+      "error_km": 298.1324238683013
+    }
+  },
+  {
+    "location_id": "loc_016",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_016.png",
+    "ground_truth": {
+      "lat": 48.7583857,
+      "lon": 19.1412898,
+      "country": "Slovakia",
+      "city_or_region": "Banská Bystrica",
+      "difficulty": "medium",
+      "primary_clue_type": "mixed"
+    },
+    "prediction": {
+      "lat": 45.91677421152257,
+      "lon": 14.938416593324147,
+      "raw_fused_top1_lat": 45.50798034667969,
+      "raw_fused_top1_lon": 15.518982887268066,
+      "raw_fused_top1_score": 5.860410690307617,
+      "cluster_size": 5,
+      "error_km": 447.8625141820097
+    }
+  },
+  {
+    "location_id": "loc_017",
+    "image": "demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_017.png",
+    "ground_truth": {
+      "lat": 53.2819335,
+      "lon": -9.1382768,
+      "country": "Ireland",
+      "city_or_region": "Boleybeg East, County Galway",
+      "difficulty": "medium",
+      "primary_clue_type": "infrastructure"
+    },
+    "prediction": {
+      "lat": 53.450978954202355,
+      "lon": -8.00067655481732,
+      "raw_fused_top1_lat": 53.9725456237793,
+      "raw_fused_top1_lon": -8.063027381896973,
+      "raw_fused_top1_score": 5.819171905517578,
+      "cluster_size": 9,
+      "error_km": 78.02816894822223
+    }
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "dataset": "europe-medium",
+  "model": "Chipoint v2 local public street-view fused retrieval",
+  "model_repo": "chiikabu-labs/chipoint-2",
+  "pipeline": "3-tower street retrieval; top-200/tower; z-score fusion; top-64 pool; cluster-consensus prediction",
+  "reranker": "not used",
+  "device": "NVIDIA GeForce GTX 1070",
+  "retrieval_dtype": "torch.float32",
+  "gallery_chunk_rows": 500000,
+  "top_k_prediction": 10,
+  "n_images": 9,
+  "generated_at_utc": "2026-09-11T01:57:01.293748+00:00",
+  "distance_unit": "km",
+  "prediction_error": {
+    "mean_km": 301.755,
+    "median_km": 161.969,
+    "std_km": 397.936,
+    "rmse_km": 499.409,
+    "min_km": 12.421,
+    "max_km": 1351.3
+  },
+  "prediction_threshold_accuracy": {
+    "within_1_km_percent": 0.0,
+    "within_25_km_percent": 22.222,
+    "within_200_km_percent": 55.556,
+    "within_750_km_percent": 88.889,
+    "within_2500_km_percent": 100.0
+  },
+  "best_prediction_case": {
+    "location_id": "loc_011",
+    "city_or_region": "Utrecht",
+    "error_km": 12.421
+  },
+  "worst_prediction_case": {
+    "location_id": "loc_014",
+    "city_or_region": "Uppsala",
+    "error_km": 1351.3
+  },
+  "timing": {
+    "query_encoding_seconds_by_tower": {
+      "so400m256": 0.0,
+      "gopt": 7.132,
+      "dinov3": 10.744
+    },
+    "retrieval_seconds_by_tower": {
+      "so400m256": 164.23,
+      "gopt": 172.894,
+      "dinov3": 136.147
+    },
+    "total_query_encoding_seconds": 17.876,
+    "total_gallery_retrieval_seconds": 473.271
+  }
+}
