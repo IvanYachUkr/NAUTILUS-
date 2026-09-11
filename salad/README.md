@@ -175,6 +175,15 @@ After a successful merge the temporary shard indexes are deleted automatically.
 The evaluator first embeds **all query images** in the selected dataset and then
 searches their descriptors together.
 
+By default, images are read from:
+
+```text
+../demo_and_extension/data/starting-images/<dataset>/
+```
+
+The default remains unchanged. Alternative image collections can be supplied
+with `--images-root`.
+
 ### Recommended practical mode
 
 ```powershell
@@ -203,6 +212,68 @@ python .\salad_batch_eval.py `
   --top-k 5
 ```
 
+### Alternative image roots
+
+`salad_batch_eval.py` accepts an optional `--images-root` argument. The supplied
+directory must contain the benchmark split folders:
+
+```text
+<images-root>/
+├── europe-easy/
+├── europe-medium/
+└── europe-hard/
+```
+
+If `--images-root` is omitted, the original
+`demo_and_extension/data/starting-images/` directory is used.
+
+### No-location-GUI evaluation
+
+The GUI-reduced evaluation images are stored under:
+
+```text
+demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/
+```
+
+From the repository root, the three splits can be evaluated with:
+
+```powershell
+.\salad\.venv\Scripts\python.exe .\salad\salad_batch_eval.py `
+    --dataset europe-easy `
+    --index ivfflat `
+    --nprobe 64 `
+    --top-k 5 `
+    --images-root .\demo_and_extension\data\starting-images-no-gui-crop\no-location-gui `
+    --output-dir .\salad\results-no-location-gui
+```
+
+```powershell
+.\salad\.venv\Scripts\python.exe .\salad\salad_batch_eval.py `
+    --dataset europe-medium `
+    --index ivfflat `
+    --nprobe 64 `
+    --top-k 5 `
+    --images-root .\demo_and_extension\data\starting-images-no-gui-crop\no-location-gui `
+    --output-dir .\salad\results-no-location-gui
+```
+
+```powershell
+.\salad\.venv\Scripts\python.exe .\salad\salad_batch_eval.py `
+    --dataset europe-hard `
+    --index ivfflat `
+    --nprobe 64 `
+    --top-k 5 `
+    --images-root .\demo_and_extension\data\starting-images-no-gui-crop\no-location-gui `
+    --output-dir .\salad\results-no-location-gui
+```
+
+Using `--images-root` changes only the query-image source. The competition
+definitions, ground-truth extraction, SALAD model, OSV-5M reference database,
+and retrieval pipeline remain unchanged.
+
+Using a separate `--output-dir` keeps the alternative-condition results
+separate from the standard baseline outputs.
+
 ### What `nprobe` means
 
 `nprobe` is the main IVF speed/recall setting:
@@ -212,17 +283,14 @@ smaller nprobe → fewer coarse lists → faster, potentially lower recall
 larger nprobe  → more coarse lists  → slower, closer to exact FP32
 ```
 
-Start with:
-
-```text
-nprobe = 32
-```
-
 Useful comparison values are:
 
 ```text
 16, 32, 64, 128
 ```
+
+Specify `--nprobe` explicitly for reported experiments so that the retrieval
+configuration is unambiguous.
 
 ### Exact FP32 baseline
 
@@ -281,9 +349,17 @@ This is an indexing/search tradeoff, not descriptor compression.
 
 ## Input data
 
+Standard benchmark input:
+
 ```text
 ../demo_and_extension/data/competitions/<dataset>.json
 ../demo_and_extension/data/starting-images/<dataset>/
+```
+
+Alternative no-location-GUI input:
+
+```text
+../demo_and_extension/data/starting-images-no-gui-crop/no-location-gui/<dataset>/
 ```
 
 Ground-truth coordinates are extracted from each Google Maps link in the
@@ -291,7 +367,7 @@ competition JSON.
 
 ## Results
 
-Results are written under:
+Standard results are written under:
 
 ```text
 results/
@@ -310,6 +386,22 @@ Exact results use names such as:
 ```text
 salad_fp32_europe-easy.csv
 ```
+
+The no-location-GUI experiment is kept separately under:
+
+```text
+results-no-location-gui/
+```
+
+With `--nprobe 64`, for example:
+
+```text
+salad_ivfflat_nprobe64_europe-easy.csv
+salad_ivfflat_nprobe64_europe-easy_details.json
+salad_ivfflat_nprobe64_europe-easy_summary.json
+```
+
+The same naming pattern is used for `europe-medium` and `europe-hard`.
 
 ## Optional cached query descriptors
 
