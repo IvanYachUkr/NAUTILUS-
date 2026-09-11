@@ -67,9 +67,9 @@ test("reference prediction pins retain stable labels as the recording archive gr
   );
 
   // 225 interactive model predictions
-  // + 100 static baseline predictions
+  // + 200 static baseline predictions (4 models x 2 image variants x 25 locations)
   // + 50 manual reference runs
-  assert.equal(referenceRuns.length, 375);
+  assert.equal(referenceRuns.length, 475);
 
   const staticBaselineRuns = referenceRuns.filter(
     ({ run }) =>
@@ -77,10 +77,15 @@ test("reference prediction pins retain stable labels as the recording archive gr
       run.condition === "static-image",
   );
 
-  // The four static baselines contribute 4 x 25 = 100 predictions.
+  // The four static baselines contribute
+  // 4 models x 2 image variants x 25 locations = 200 predictions.
   // Their result CSVs contain exact coordinates, not authoritative
   // reverse-geocoded place labels.
-  assert.equal(staticBaselineRuns.length, 100);
+  assert.equal(staticBaselineRuns.length, 200);
+  assert.deepEqual(
+    [...new Set(staticBaselineRuns.map(({ run }) => run.imageVariant))].sort(),
+    ["no-location-gui", "original"],
+  );
   assert.ok(staticBaselineRuns.every(({ run }) =>
     Number.isFinite(run.prediction?.lat) &&
     Number.isFinite(run.prediction?.lng),
@@ -90,7 +95,7 @@ test("reference prediction pins retain stable labels as the recording archive gr
     .filter(({ caseId }) => caseId === "europe-easy--loc-006")
     .map(({ run }) => [run.model, run.condition, run.prediction.label]);
 
-  assert.equal(bogatyniaReferences.length, 15);
+  assert.equal(bogatyniaReferences.length, 19);
   assert.deepEqual(bogatyniaReferences.slice(-2), [
     ["manual", "interactive-panorama", "Zittau, Germany"],
     ["manual", "static-image", "Hrádek nad Nisou, Czechia"],
@@ -118,6 +123,10 @@ test("canonical benchmark predictions are available independently of replay reco
     "PLONK OSV-5M",
     "Chipoint v2",
   ];
+  const expectedStaticImageVariants = [
+    "original",
+    "no-location-gui",
+  ];
 
   const predictionRuns = built.atlasCases.flatMap((item) =>
     item.runs.filter((run) => run.runKind === "model-prediction"),
@@ -130,9 +139,9 @@ test("canonical benchmark predictions are available independently of replay reco
     (run) => run.condition === "static-image",
   );
 
-  assert.equal(predictionRuns.length, 325);
+  assert.equal(predictionRuns.length, 425);
   assert.equal(interactivePredictionRuns.length, 225);
-  assert.equal(staticPredictionRuns.length, 100);
+  assert.equal(staticPredictionRuns.length, 200);
 
   assert.deepEqual(
     [...new Set(interactivePredictionRuns.map((run) => run.model))],
@@ -160,11 +169,30 @@ test("canonical benchmark predictions are available independently of replay reco
       item.id,
     );
 
+    assert.equal(
+      staticRuns.length,
+      expectedStaticBaselineModels.length * expectedStaticImageVariants.length,
+      item.id,
+    );
+
     assert.deepEqual(
-      staticRuns.map((run) => run.model),
+      [...new Set(staticRuns.map((run) => run.model))],
       expectedStaticBaselineModels,
       item.id,
     );
+
+    for (const model of expectedStaticBaselineModels) {
+      const variants = staticRuns
+        .filter((run) => run.model === model)
+        .map((run) => run.imageVariant)
+        .sort();
+
+      assert.deepEqual(
+        variants,
+        [...expectedStaticImageVariants].sort(),
+        `${item.id} / ${model}`,
+      );
+    }
 
     assert.ok(
       runs.every((run) => Number.isFinite(run.prediction?.lat)),

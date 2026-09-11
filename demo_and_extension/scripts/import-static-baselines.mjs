@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -12,11 +12,31 @@ const OUTPUT_DIR = join(DEMO_ROOT, "data", "results", "static-baselines");
 
 const DATASETS = ["europe-easy", "europe-medium", "europe-hard"];
 
+const IMAGE_VARIANTS = [
+  {
+    id: "original",
+    label: "Original OpenGuessr",
+    resultDirectoryName: "results",
+    imageRoot: join(DEMO_ROOT, "data", "starting-images"),
+  },
+  {
+    id: "no-location-gui",
+    label: "No location GUI",
+    resultDirectoryName: "results-no-location-gui",
+    imageRoot: join(
+      DEMO_ROOT,
+      "data",
+      "starting-images-no-gui-crop",
+      "no-location-gui",
+    ),
+  },
+];
+
 const BASELINES = [
   {
     id: "geoclip",
     model: "GeoCLIP",
-    resultDir: join(REPO_ROOT, "geoclip", "results"),
+    baselineDir: join(REPO_ROOT, "geoclip"),
     filename: (dataset) => `geoclip_static_${dataset}.csv`,
     errorColumn: "top1_error_km",
     durationColumn: "inference_seconds",
@@ -25,7 +45,7 @@ const BASELINES = [
   {
     id: "salad",
     model: "SALAD + OSV-5M",
-    resultDir: join(REPO_ROOT, "salad", "results"),
+    baselineDir: join(REPO_ROOT, "salad"),
     filename: (dataset) => `salad_ivfflat_nprobe64_${dataset}.csv`,
     errorColumn: "top1_error_km",
     durationColumn: "inference_seconds",
@@ -35,7 +55,7 @@ const BASELINES = [
   {
     id: "plonk",
     model: "PLONK OSV-5M",
-    resultDir: join(REPO_ROOT, "plonk", "results"),
+    baselineDir: join(REPO_ROOT, "plonk"),
     filename: (dataset) => `plonk_osv5m_static_${dataset}.csv`,
     errorColumn: "prediction_error_km",
     durationColumn: "inference_seconds",
@@ -44,7 +64,7 @@ const BASELINES = [
   {
     id: "chipointv2",
     model: "Chipoint v2",
-    resultDir: join(REPO_ROOT, "chipointv2", "results"),
+    baselineDir: join(REPO_ROOT, "chipointv2"),
     filename: (dataset) => `chipointv2_local_static_${dataset}.csv`,
     errorColumn: "prediction_error_km",
     durationColumn: null,
@@ -56,122 +76,183 @@ const BASELINES = [
 export async function importStaticBaselines({ quiet = false } = {}) {
   const competitions = await loadCompetitions();
   const runsByLocation = new Map();
+  const countKey = (baselineId, imageVariant) =>
+    `${baselineId}\u0000${imageVariant}`;
+
   const importedCounts = new Map(
-    BASELINES.map((baseline) => [baseline.id, 0]),
+    BASELINES.flatMap((baseline) =>
+      IMAGE_VARIANTS.map((variant) => [
+        countKey(baseline.id, variant.id),
+        0,
+      ]),
+    ),
   );
 
   for (const baseline of BASELINES) {
-    for (const dataset of DATASETS) {
-      const csvPath = join(
-        baseline.resultDir,
-        baseline.filename(dataset),
+    for (const variant of IMAGE_VARIANTS) {
+      const resultDir = join(
+        baseline.baselineDir,
+        variant.resultDirectoryName,
       );
-      const text = await readFile(csvPath, "utf8");
-      const rows = parseCsv(text);
-      const competition = competitions.get(dataset);
 
-      if (!competition) {
-        throw new Error(
-          `Missing competition definition for ${dataset}.`,
+      for (const dataset of DATASETS) {
+        const csvPath = join(
+          resultDir,
+          baseline.filename(dataset),
         );
-      }
+        const text = await readFile(csvPath, "utf8");
+        const rows = parseCsv(text);
+        const competition = competitions.get(dataset);
 
-      for (const row of rows) {
-        const locationId = String(row.location_id ?? "").trim();
-
-        if (!locationId) {
+        if (!competition) {
           throw new Error(
-            `${relative(REPO_ROOT, csvPath)} contains a row without location_id.`,
+            `Missing competition definition for ${dataset}.`,
           );
         }
 
-        if (!competition.locationIds.has(locationId)) {
-          throw new Error(
-            `${relative(REPO_ROOT, csvPath)} references ${locationId}, ` +
-            `which is not in ${dataset}.`,
+        for (const row of rows) {
+          const locationId = String(row.location_id ?? "").trim();
+
+          if (!locationId) {
+            throw new Error(
+              `${relative(REPO_ROOT, csvPath)} contains a row without location_id.`,
+            );
+          }
+
+          if (!competition.locationIds.has(locationId)) {
+            throw new Error(
+              `${relative(REPO_ROOT, csvPath)} references ${locationId}, ` +
+              `which is not in ${dataset}.`,
+            );
+          }
+
+          const predLat = finiteNumber(
+            row.pred_lat,
+            `${baseline.model} ${dataset} ${locationId} pred_lat`,
           );
-        }
+          const predLng = finiteNumber(
+            row.pred_lon,
+            `${baseline.model} ${dataset} ${locationId} pred_lon`,
+          );
+          const reportedErrorKm = finiteNumber(
+            row[baseline.errorColumn],
+            `${baseline.model} ${dataset} ${locationId} ${baseline.errorColumn}`,
+          );
 
-        const predLat = finiteNumber(
-          row.pred_lat,
-          `${baseline.model} ${dataset} ${locationId} pred_lat`,
-        );
-        const predLng = finiteNumber(
-          row.pred_lon,
-          `${baseline.model} ${dataset} ${locationId} pred_lon`,
-        );
-        const reportedErrorKm = finiteNumber(
-          row[baseline.errorColumn],
-          `${baseline.model} ${dataset} ${locationId} ${baseline.errorColumn}`,
-        );
+          const durationSeconds =
+            baseline.durationColumn &&
+              row[baseline.durationColumn] !== ""
+              ? finiteNumber(
+                row[baseline.durationColumn],
+                `${baseline.model} ${dataset} ${locationId} ${baseline.durationColumn}`,
+              )
+              : null;
 
-        const durationSeconds =
-          baseline.durationColumn &&
-            row[baseline.durationColumn] !== ""
-            ? finiteNumber(
-              row[baseline.durationColumn],
-              `${baseline.model} ${dataset} ${locationId} ${baseline.durationColumn}`,
+          const imagePath = join(
+            variant.imageRoot,
+            dataset,
+            `${locationId}.png`,
+          );
+
+          try {
+            await access(imagePath);
+          } catch {
+            throw new Error(
+              `Missing ${variant.label} image for ${dataset}/${locationId}: ` +
+              `${relative(DEMO_ROOT, imagePath).replaceAll("\\", "/")}`,
+            );
+          }
+
+          const key = `${dataset}\u0000${locationId}`;
+
+          if (!runsByLocation.has(key)) {
+            runsByLocation.set(key, []);
+          }
+
+          const runs = runsByLocation.get(key);
+
+          if (
+            runs.some(
+              (run) =>
+                run.model === baseline.model &&
+                run.imageVariant === variant.id,
             )
-            : null;
+          ) {
+            throw new Error(
+              `${dataset}/${locationId} has duplicate ${baseline.model} ` +
+              `${variant.label} rows.`,
+            );
+          }
 
-        const key = `${dataset}\u0000${locationId}`;
+          const variantIdSuffix =
+            variant.id === "original"
+              ? ""
+              : `-${variant.id}`;
 
-        if (!runsByLocation.has(key)) {
-          runsByLocation.set(key, []);
-        }
+          runs.push({
+            id:
+              `static-baseline-${baseline.id}${variantIdSuffix}-` +
+              `${dataset}-${locationId}`,
+            model: baseline.model,
+            condition: "static-image",
+            imageVariant: variant.id,
+            inputImage: {
+              path: relative(DEMO_ROOT, imagePath).replaceAll(
+                "\\",
+                "/",
+              ),
+              variant: variant.id,
+              label: variant.label,
+            },
+            runKind: "model-prediction",
+            runStatus: "complete",
+            prediction: {
+              lat: predLat,
+              lng: predLng,
+            },
+            hypothesis: "",
+            cues: [],
+            notes: baseline.note,
+            isMock: false,
+            accuracy: {
+              country: null,
+              region: null,
+            },
+            durationSeconds,
+            baselineId: baseline.id,
+            sourceCsv: relative(REPO_ROOT, csvPath).replaceAll(
+              "\\",
+              "/",
+            ),
+            reportedErrorKm,
+          });
 
-        const runs = runsByLocation.get(key);
+          const importedCountKey = countKey(
+            baseline.id,
+            variant.id,
+          );
 
-        if (runs.some((run) => run.model === baseline.model)) {
-          throw new Error(
-            `${dataset}/${locationId} has duplicate ${baseline.model} rows.`,
+          importedCounts.set(
+            importedCountKey,
+            importedCounts.get(importedCountKey) + 1,
           );
         }
-
-        runs.push({
-          id:
-            `static-baseline-${baseline.id}-` +
-            `${dataset}-${locationId}`,
-          model: baseline.model,
-          condition: "static-image",
-          runKind: "model-prediction",
-          runStatus: "complete",
-          prediction: {
-            lat: predLat,
-            lng: predLng,
-          },
-          hypothesis: "",
-          cues: [],
-          notes: baseline.note,
-          isMock: false,
-          accuracy: {
-            country: null,
-            region: null,
-          },
-          durationSeconds,
-          baselineId: baseline.id,
-          sourceCsv: relative(REPO_ROOT, csvPath).replaceAll(
-            "\\",
-            "/",
-          ),
-          reportedErrorKm,
-        });
-
-        importedCounts.set(
-          baseline.id,
-          importedCounts.get(baseline.id) + 1,
-        );
       }
     }
   }
 
   for (const baseline of BASELINES) {
-    const count = importedCounts.get(baseline.id);
-
-    if (count !== 25) {
-      throw new Error(
-        `${baseline.model}: imported ${count} rows; expected exactly 25.`,
+    for (const variant of IMAGE_VARIANTS) {
+      const count = importedCounts.get(
+        countKey(baseline.id, variant.id),
       );
+
+      if (count !== 25) {
+        throw new Error(
+          `${baseline.model} / ${variant.label}: imported ${count} rows; ` +
+          `expected exactly 25.`,
+        );
+      }
     }
   }
 
@@ -187,6 +268,8 @@ export async function importStaticBaselines({ quiet = false } = {}) {
   });
 
   let written = 0;
+  const expectedRunsPerLocation =
+    BASELINES.length * IMAGE_VARIANTS.length;
 
   for (const dataset of DATASETS) {
     const competition = competitions.get(dataset);
@@ -200,10 +283,10 @@ export async function importStaticBaselines({ quiet = false } = {}) {
       const key = `${dataset}\u0000${locationId}`;
       const runs = runsByLocation.get(key) ?? [];
 
-      if (runs.length !== BASELINES.length) {
+      if (runs.length !== expectedRunsPerLocation) {
         throw new Error(
           `${dataset}/${locationId}: found ${runs.length} baseline runs; ` +
-          `expected ${BASELINES.length}.`,
+          `expected ${expectedRunsPerLocation}.`,
         );
       }
 
@@ -226,14 +309,17 @@ export async function importStaticBaselines({ quiet = false } = {}) {
 
   if (!quiet) {
     console.log(
-      `Imported ${BASELINES.length} static baselines across 25 locations.`,
+      `Imported ${BASELINES.length} static baselines across ` +
+      `${IMAGE_VARIANTS.length} image variants and 25 locations.`,
     );
 
     for (const baseline of BASELINES) {
-      console.log(
-        `- ${baseline.model}: ` +
-        `${importedCounts.get(baseline.id)} predictions`,
-      );
+      for (const variant of IMAGE_VARIANTS) {
+        console.log(
+          `- ${baseline.model} / ${variant.label}: ` +
+          `${importedCounts.get(countKey(baseline.id, variant.id))} predictions`,
+        );
+      }
     }
 
     console.log(`Wrote ${written} result files to:`);
@@ -244,6 +330,7 @@ export async function importStaticBaselines({ quiet = false } = {}) {
 
   return {
     baselineCount: BASELINES.length,
+    imageVariantCount: IMAGE_VARIANTS.length,
     locationCount: runsByLocation.size,
     writtenFiles: written,
     outputDir: OUTPUT_DIR,

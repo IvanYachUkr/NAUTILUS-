@@ -2266,6 +2266,12 @@
         "id": "static-baseline-geoclip-europe-easy-loc_001",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_001.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -2281,15 +2287,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 52.796,
+        "durationSeconds": 23.058,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-easy.csv",
+        "reportedErrorKm": 5.921
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-easy-loc_001",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_001.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.8736343,
+          "lng": 2.29582,
+          "label": "48.87363, 2.29582"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.356,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-easy.csv",
         "reportedErrorKm": 5.921
       },
       {
         "id": "static-baseline-salad-europe-easy-loc_001",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_001.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -2305,15 +2347,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 78.11,
+        "durationSeconds": 87.302,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-easy.csv",
         "reportedErrorKm": 929.182
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-easy-loc_001",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_001.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 46.7805658,
+          "lng": 6.6387743,
+          "label": "46.78057, 6.63877"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 73.745,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-easy.csv",
+        "reportedErrorKm": 393.944
+      },
+      {
         "id": "static-baseline-plonk-europe-easy-loc_001",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_001.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -2329,15 +2407,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 5.996,
+        "durationSeconds": 10.578,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-easy.csv",
         "reportedErrorKm": 5.433
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-easy-loc_001",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_001.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.8837585,
+          "lng": 2.3765435,
+          "label": "48.88376, 2.37654"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 4.185,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-easy.csv",
+        "reportedErrorKm": 3.554
+      },
+      {
         "id": "static-baseline-chipointv2-europe-easy-loc_001",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_001.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -2357,6 +2471,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-easy.csv",
         "reportedErrorKm": 4.804
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-easy-loc_001",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_001.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.8791947,
+          "lng": 2.3273285,
+          "label": "48.87919, 2.32733"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-easy.csv",
+        "reportedErrorKm": 4.324
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-01",
@@ -16652,6 +16796,12 @@
         "id": "static-baseline-geoclip-europe-easy-loc_002",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_002.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -16667,15 +16817,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 23.948,
+        "durationSeconds": 15.205,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-easy.csv",
+        "reportedErrorKm": 0.112
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-easy-loc_002",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_002.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.521019,
+          "lng": 13.413619,
+          "label": "52.52102, 13.41362"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.181,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-easy.csv",
         "reportedErrorKm": 0.112
       },
       {
         "id": "static-baseline-salad-europe-easy-loc_002",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_002.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -16691,15 +16877,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 73.285,
+        "durationSeconds": 82.346,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-easy.csv",
         "reportedErrorKm": 2437.092
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-easy-loc_002",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_002.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 41.0373079,
+          "lng": 28.9855473,
+          "label": "41.03731, 28.98555"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 69.129,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-easy.csv",
+        "reportedErrorKm": 1737.25
+      },
+      {
         "id": "static-baseline-plonk-europe-easy-loc_002",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_002.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -16715,15 +16937,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.999,
+        "durationSeconds": 4.003,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-easy.csv",
         "reportedErrorKm": 8.545
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-easy-loc_002",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_002.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.4631233,
+          "lng": 13.4052896,
+          "label": "52.46312, 13.40529"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.867,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-easy.csv",
+        "reportedErrorKm": 6.431
+      },
+      {
         "id": "static-baseline-chipointv2-europe-easy-loc_002",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_002.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -16743,6 +17001,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-easy.csv",
         "reportedErrorKm": 17.141
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-easy-loc_002",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_002.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.3633682,
+          "lng": 13.2585946,
+          "label": "52.36337, 13.25859"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-easy.csv",
+        "reportedErrorKm": 20.479
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-02",
@@ -30214,6 +30502,12 @@
         "id": "static-baseline-geoclip-europe-easy-loc_003",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_003.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -30229,15 +30523,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.901,
+        "durationSeconds": 14.988,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-easy.csv",
+        "reportedErrorKm": 0.624
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-easy-loc_003",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_003.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 47.7979584,
+          "lng": 13.045578,
+          "label": "47.79796, 13.04558"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.139,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-easy.csv",
         "reportedErrorKm": 0.624
       },
       {
         "id": "static-baseline-salad-europe-easy-loc_003",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_003.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -30253,15 +30583,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 73.283,
+        "durationSeconds": 82.329,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-easy.csv",
         "reportedErrorKm": 1484.163
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-easy-loc_003",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_003.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 56.8885604,
+          "lng": -4.8380148,
+          "label": "56.88856, -4.83801"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 69.14,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-easy.csv",
+        "reportedErrorKm": 1575.694
+      },
+      {
         "id": "static-baseline-plonk-europe-easy-loc_003",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_003.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -30277,15 +30643,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.351,
+        "durationSeconds": 3.993,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-easy.csv",
         "reportedErrorKm": 92.538
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-easy-loc_003",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_003.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 47.1894455,
+          "lng": 10.3730812,
+          "label": "47.18945, 10.37308"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.864,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-easy.csv",
+        "reportedErrorKm": 213.042
+      },
+      {
         "id": "static-baseline-chipointv2-europe-easy-loc_003",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_003.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -30305,6 +30707,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-easy.csv",
         "reportedErrorKm": 51.401
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-easy-loc_003",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_003.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 47.3063763,
+          "lng": 11.5349493,
+          "label": "47.30638, 11.53495"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-easy.csv",
+        "reportedErrorKm": 126.778
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-03",
@@ -42307,6 +42739,12 @@
         "id": "static-baseline-geoclip-europe-easy-loc_004",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_004.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -42322,15 +42760,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 16.832,
+        "durationSeconds": 16.318,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-easy.csv",
+        "reportedErrorKm": 0.219
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-easy-loc_004",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_004.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.8118095,
+          "lng": 14.3156996,
+          "label": "48.81181, 14.31570"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.004,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-easy.csv",
         "reportedErrorKm": 0.219
       },
       {
         "id": "static-baseline-salad-europe-easy-loc_004",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_004.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -42346,15 +42820,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 73.246,
+        "durationSeconds": 82.324,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-easy.csv",
+        "reportedErrorKm": 2170.913
+      },
+      {
+        "id": "static-baseline-salad-no-location-gui-europe-easy-loc_004",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_004.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 34.8802278,
+          "lng": 32.8393278,
+          "label": "34.88023, 32.83933"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 69.087,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-easy.csv",
         "reportedErrorKm": 2170.913
       },
       {
         "id": "static-baseline-plonk-europe-easy-loc_004",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_004.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -42370,15 +42880,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.024,
+        "durationSeconds": 3.998,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-easy.csv",
         "reportedErrorKm": 167.764
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-easy-loc_004",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_004.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.2099495,
+          "lng": 18.3097725,
+          "label": "48.20995, 18.30977"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.878,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-easy.csv",
+        "reportedErrorKm": 302.773
+      },
+      {
         "id": "static-baseline-chipointv2-europe-easy-loc_004",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_004.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -42398,6 +42944,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-easy.csv",
         "reportedErrorKm": 132.003
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-easy-loc_004",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_004.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 49.9661853,
+          "lng": 13.7348045,
+          "label": "49.96619, 13.73480"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-easy.csv",
+        "reportedErrorKm": 134.989
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-04",
@@ -52900,6 +53476,12 @@
         "id": "static-baseline-geoclip-europe-easy-loc_005",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_005.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -52915,15 +53497,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 18.046,
+        "durationSeconds": 14.965,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-easy.csv",
         "reportedErrorKm": 2021.297
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-easy-loc_005",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_005.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 44.8698616,
+          "lng": 13.8463783,
+          "label": "44.86986, 13.84638"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.058,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-easy.csv",
+        "reportedErrorKm": 0.586
+      },
+      {
         "id": "static-baseline-salad-europe-easy-loc_005",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_005.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -52939,15 +53557,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 73.253,
+        "durationSeconds": 82.32,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-easy.csv",
         "reportedErrorKm": 872.132
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-easy-loc_005",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_005.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 46.0993679,
+          "lng": 7.08336,
+          "label": "46.09937, 7.08336"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 69.101,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-easy.csv",
+        "reportedErrorKm": 545.974
+      },
+      {
         "id": "static-baseline-plonk-europe-easy-loc_005",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_005.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -52963,15 +53617,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.117,
+        "durationSeconds": 4.017,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-easy.csv",
         "reportedErrorKm": 378.538
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-easy-loc_005",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_005.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 41.4712029,
+          "lng": 13.3159828,
+          "label": "41.47120, 13.31598"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.858,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-easy.csv",
+        "reportedErrorKm": 380.593
+      },
+      {
         "id": "static-baseline-chipointv2-europe-easy-loc_005",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_005.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -52991,6 +53681,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-easy.csv",
         "reportedErrorKm": 2258.629
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-easy-loc_005",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_005.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 33.9441833,
+          "lng": 133.0690918,
+          "label": "33.94418, 133.06909"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-easy.csv",
+        "reportedErrorKm": 9346.186
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-05",
@@ -66017,6 +66737,12 @@
         "id": "static-baseline-geoclip-europe-easy-loc_006",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_006.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -66032,15 +66758,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.919,
+        "durationSeconds": 15.156,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-easy.csv",
         "reportedErrorKm": 444.599
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-easy-loc_006",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_006.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 50.8957253,
+          "lng": 5.7729721,
+          "label": "50.89573, 5.77297"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.202,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-easy.csv",
+        "reportedErrorKm": 637.86
+      },
+      {
         "id": "static-baseline-salad-europe-easy-loc_006",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_006.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -66056,15 +66818,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 73.25,
+        "durationSeconds": 82.324,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-easy.csv",
         "reportedErrorKm": 1056.739
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-easy-loc_006",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_006.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 53.5325924,
+          "lng": 20.2743534,
+          "label": "53.53259, 20.27435"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 69.093,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-easy.csv",
+        "reportedErrorKm": 472.453
+      },
+      {
         "id": "static-baseline-plonk-europe-easy-loc_006",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_006.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -66080,15 +66878,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.104,
+        "durationSeconds": 3.988,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-easy.csv",
         "reportedErrorKm": 197.049
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-easy-loc_006",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_006.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 50.0212898,
+          "lng": 20.1270103,
+          "label": "50.02129, 20.12701"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.85,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-easy.csv",
+        "reportedErrorKm": 387.486
+      },
+      {
         "id": "static-baseline-chipointv2-europe-easy-loc_006",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_006.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -66108,6 +66942,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-easy.csv",
         "reportedErrorKm": 312.062
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-easy-loc_006",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_006.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 50.2961633,
+          "lng": 19.1321345,
+          "label": "50.29616, 19.13213"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-easy.csv",
+        "reportedErrorKm": 310.818
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-06",
@@ -80283,6 +81147,12 @@
         "id": "static-baseline-geoclip-europe-easy-loc_007",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_007.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -80298,15 +81168,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 19.495,
+        "durationSeconds": 15.012,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-easy.csv",
+        "reportedErrorKm": 224.186
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-easy-loc_007",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_007.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 44.5345116,
+          "lng": 16.7663803,
+          "label": "44.53451, 16.76638"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.155,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-easy.csv",
         "reportedErrorKm": 224.186
       },
       {
         "id": "static-baseline-salad-europe-easy-loc_007",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_007.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -80322,15 +81228,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 73.255,
+        "durationSeconds": 82.317,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-easy.csv",
         "reportedErrorKm": 663.937
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-easy-loc_007",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_007.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 55.9105959,
+          "lng": -3.5426066,
+          "label": "55.91060, -3.54261"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 69.092,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-easy.csv",
+        "reportedErrorKm": 1687.179
+      },
+      {
         "id": "static-baseline-plonk-europe-easy-loc_007",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_007.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -80346,15 +81288,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.091,
+        "durationSeconds": 4.2,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-easy.csv",
         "reportedErrorKm": 57.97
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-easy-loc_007",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_007.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 46.4450493,
+          "lng": 15.3843889,
+          "label": "46.44505, 15.38439"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.868,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-easy.csv",
+        "reportedErrorKm": 73.405
+      },
+      {
         "id": "static-baseline-chipointv2-europe-easy-loc_007",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_007.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -80374,6 +81352,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-easy.csv",
         "reportedErrorKm": 627.851
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-easy-loc_007",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_007.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 45.5931736,
+          "lng": 15.5194761,
+          "label": "45.59317, 15.51948"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-easy.csv",
+        "reportedErrorKm": 72.759
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-07",
@@ -91298,6 +92306,12 @@
         "id": "static-baseline-geoclip-europe-easy-loc_008",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_008.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -91313,15 +92327,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.624,
+        "durationSeconds": 16.637,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-easy.csv",
         "reportedErrorKm": 6438.296
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-easy-loc_008",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_008.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 60.8650589,
+          "lng": 7.113647,
+          "label": "60.86506, 7.11365"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.135,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-easy.csv",
+        "reportedErrorKm": 0.294
+      },
+      {
         "id": "static-baseline-salad-europe-easy-loc_008",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_008.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -91337,15 +92387,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 73.252,
+        "durationSeconds": 82.313,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-easy.csv",
+        "reportedErrorKm": 110.254
+      },
+      {
+        "id": "static-baseline-salad-no-location-gui-europe-easy-loc_008",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_008.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 61.8418265,
+          "lng": 6.8108679,
+          "label": "61.84183, 6.81087"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 69.103,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-easy.csv",
         "reportedErrorKm": 110.254
       },
       {
         "id": "static-baseline-plonk-europe-easy-loc_008",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_008.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -91361,15 +92447,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.588,
+        "durationSeconds": 3.98,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-easy.csv",
         "reportedErrorKm": 6007.824
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-easy-loc_008",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_008.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 64.9860535,
+          "lng": -20.3661079,
+          "label": "64.98605, -20.36611"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.851,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-easy.csv",
+        "reportedErrorKm": 1456.278
+      },
+      {
         "id": "static-baseline-chipointv2-europe-easy-loc_008",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-easy/loc_008.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -91389,6 +92511,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-easy.csv",
         "reportedErrorKm": 49.202
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-easy-loc_008",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-easy/loc_008.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 60.8181175,
+          "lng": 6.809262,
+          "label": "60.81812, 6.80926"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-easy.csv",
+        "reportedErrorKm": 17.531
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-08",
@@ -101757,6 +102909,12 @@
         "id": "static-baseline-geoclip-europe-hard-loc_018",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_018.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -101772,15 +102930,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.764,
+        "durationSeconds": 15.905,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-hard.csv",
         "reportedErrorKm": 1728.587
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-hard-loc_018",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_018.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 40.395031,
+          "lng": -1.67329,
+          "label": "40.39503, -1.67329"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.722,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-hard.csv",
+        "reportedErrorKm": 2125.935
+      },
+      {
         "id": "static-baseline-salad-europe-hard-loc_018",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_018.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -101796,15 +102990,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 93.952,
+        "durationSeconds": 89.791,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-hard.csv",
+        "reportedErrorKm": 3165.927
+      },
+      {
+        "id": "static-baseline-salad-no-location-gui-europe-hard-loc_018",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_018.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 65.4982579,
+          "lng": 15.5373235,
+          "label": "65.49826, 15.53732"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 90.665,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-hard.csv",
         "reportedErrorKm": 3165.927
       },
       {
         "id": "static-baseline-plonk-europe-hard-loc_018",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_018.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -101820,15 +103050,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.974,
+        "durationSeconds": 4.228,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-hard.csv",
         "reportedErrorKm": 1029.689
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-hard-loc_018",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_018.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 35.2679062,
+          "lng": 33.6750488,
+          "label": "35.26791, 33.67505"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 4.155,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-hard.csv",
+        "reportedErrorKm": 1021.149
+      },
+      {
         "id": "static-baseline-chipointv2-europe-hard-loc_018",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_018.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -101848,6 +103114,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-hard.csv",
         "reportedErrorKm": 1267.097
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-hard-loc_018",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_018.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 42.9047832,
+          "lng": 3.0332544,
+          "label": "42.90478, 3.03325"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-hard.csv",
+        "reportedErrorKm": 1772.644
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-18",
@@ -113013,6 +114309,12 @@
         "id": "static-baseline-geoclip-europe-hard-loc_019",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_019.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -113028,15 +114330,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 16.64,
+        "durationSeconds": 15.867,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-hard.csv",
         "reportedErrorKm": 613.269
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-hard-loc_019",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_019.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 40.9117622,
+          "lng": -4.3716998,
+          "label": "40.91176, -4.37170"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.097,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-hard.csv",
+        "reportedErrorKm": 2376.602
+      },
+      {
         "id": "static-baseline-salad-europe-hard-loc_019",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_019.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -113052,15 +114390,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 90.289,
+        "durationSeconds": 89.314,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-hard.csv",
+        "reportedErrorKm": 7528.035
+      },
+      {
+        "id": "static-baseline-salad-no-location-gui-europe-hard-loc_019",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_019.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 49.8836066,
+          "lng": 136.1278375,
+          "label": "49.88361, 136.12784"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 89.456,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-hard.csv",
         "reportedErrorKm": 7528.035
       },
       {
         "id": "static-baseline-plonk-europe-hard-loc_019",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_019.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -113076,15 +114450,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.512,
+        "durationSeconds": 3.891,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-hard.csv",
         "reportedErrorKm": 396.808
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-hard-loc_019",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_019.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 46.4808769,
+          "lng": 18.0998459,
+          "label": "46.48088, 18.09985"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.885,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-hard.csv",
+        "reportedErrorKm": 485.854
+      },
+      {
         "id": "static-baseline-chipointv2-europe-hard-loc_019",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_019.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -113104,6 +114514,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-hard.csv",
         "reportedErrorKm": 510.25
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-hard-loc_019",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_019.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 43.406639,
+          "lng": 3.086024,
+          "label": "43.40664, 3.08602"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-hard.csv",
+        "reportedErrorKm": 1702.996
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-19",
@@ -128888,6 +130328,12 @@
         "id": "static-baseline-geoclip-europe-hard-loc_020",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_020.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -128903,15 +130349,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 16.82,
+        "durationSeconds": 15.228,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-hard.csv",
         "reportedErrorKm": 744.932
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-hard-loc_020",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_020.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 40.0535049,
+          "lng": 21.125679,
+          "label": "40.05350, 21.12568"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.121,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-hard.csv",
+        "reportedErrorKm": 365.16
+      },
+      {
         "id": "static-baseline-salad-europe-hard-loc_020",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_020.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -128927,15 +130409,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 90.286,
+        "durationSeconds": 89.412,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-hard.csv",
         "reportedErrorKm": 2473.579
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-hard-loc_020",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_020.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 44.0674631,
+          "lng": 10.3075879,
+          "label": "44.06746, 10.30759"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 89.463,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-hard.csv",
+        "reportedErrorKm": 1229.169
+      },
+      {
         "id": "static-baseline-plonk-europe-hard-loc_020",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_020.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -128951,15 +130469,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.472,
+        "durationSeconds": 3.896,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-hard.csv",
         "reportedErrorKm": 103.706
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-hard-loc_020",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_020.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 40.8635254,
+          "lng": 39.3218651,
+          "label": "40.86353, 39.32187"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.849,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-hard.csv",
+        "reportedErrorKm": 1204.693
+      },
+      {
         "id": "static-baseline-chipointv2-europe-hard-loc_020",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_020.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -128979,6 +130533,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-hard.csv",
         "reportedErrorKm": 1180.616
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-hard-loc_020",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_020.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 44.9434334,
+          "lng": 4.4136264,
+          "label": "44.94343, 4.41363"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-hard.csv",
+        "reportedErrorKm": 1705.979
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-20",
@@ -142993,6 +144577,12 @@
         "id": "static-baseline-geoclip-europe-hard-loc_021",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_021.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -143008,15 +144598,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.66,
+        "durationSeconds": 15.128,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-hard.csv",
         "reportedErrorKm": 11890.881
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-hard-loc_021",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_021.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 44.5183563,
+          "lng": 11.8101311,
+          "label": "44.51836, 11.81013"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.163,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-hard.csv",
+        "reportedErrorKm": 686.746
+      },
+      {
         "id": "static-baseline-salad-europe-hard-loc_021",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_021.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -143032,15 +144658,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 90.315,
+        "durationSeconds": 89.302,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-hard.csv",
         "reportedErrorKm": 1537.162
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-hard-loc_021",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_021.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 45.241075,
+          "lng": 19.6631283,
+          "label": "45.24108, 19.66313"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 89.469,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-hard.csv",
+        "reportedErrorKm": 165.562
+      },
+      {
         "id": "static-baseline-plonk-europe-hard-loc_021",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_021.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -143056,15 +144718,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.605,
+        "durationSeconds": 3.87,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-hard.csv",
         "reportedErrorKm": 868.666
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-hard-loc_021",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_021.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.1216927,
+          "lng": 21.5892677,
+          "label": "48.12169, 21.58927"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.815,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-hard.csv",
+        "reportedErrorKm": 195.624
+      },
+      {
         "id": "static-baseline-chipointv2-europe-hard-loc_021",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_021.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -143084,6 +144782,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-hard.csv",
         "reportedErrorKm": 1220.818
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-hard-loc_021",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_021.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 50.3674867,
+          "lng": 2.8242749,
+          "label": "50.36749, 2.82427"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-hard.csv",
+        "reportedErrorKm": 1332.062
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-21",
@@ -157622,6 +159350,12 @@
         "id": "static-baseline-geoclip-europe-hard-loc_022",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_022.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -157637,15 +159371,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 18.918,
+        "durationSeconds": 15.333,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-hard.csv",
         "reportedErrorKm": 1173.936
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-hard-loc_022",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_022.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 54.8505745,
+          "lng": 25.3412189,
+          "label": "54.85057, 25.34122"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.099,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-hard.csv",
+        "reportedErrorKm": 265.366
+      },
+      {
         "id": "static-baseline-salad-europe-hard-loc_022",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_022.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -157661,15 +159431,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 90.287,
+        "durationSeconds": 89.307,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-hard.csv",
         "reportedErrorKm": 689.065
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-hard-loc_022",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_022.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 59.0104834,
+          "lng": 24.7606055,
+          "label": "59.01048, 24.76061"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 89.459,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-hard.csv",
+        "reportedErrorKm": 218.548
+      },
+      {
         "id": "static-baseline-plonk-europe-hard-loc_022",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_022.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -157685,15 +159491,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.545,
+        "durationSeconds": 3.891,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-hard.csv",
         "reportedErrorKm": 879.808
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-hard-loc_022",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_022.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 59.0238609,
+          "lng": 24.6628876,
+          "label": "59.02386, 24.66289"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.838,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-hard.csv",
+        "reportedErrorKm": 222.13
+      },
+      {
         "id": "static-baseline-chipointv2-europe-hard-loc_022",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_022.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -157713,6 +159555,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-hard.csv",
         "reportedErrorKm": 1141.473
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-hard-loc_022",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_022.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 54.7484274,
+          "lng": 25.1240098,
+          "label": "54.74843, 25.12401"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-hard.csv",
+        "reportedErrorKm": 279.336
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-22",
@@ -176654,6 +178526,12 @@
         "id": "static-baseline-geoclip-europe-hard-loc_023",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_023.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -176669,15 +178547,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 16.926,
+        "durationSeconds": 15.428,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-hard.csv",
+        "reportedErrorKm": 2018.158
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-hard-loc_023",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_023.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 46.3030968,
+          "lng": -1.1066999,
+          "label": "46.30310, -1.10670"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.126,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-hard.csv",
         "reportedErrorKm": 2018.158
       },
       {
         "id": "static-baseline-salad-europe-hard-loc_023",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_023.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -176693,15 +178607,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 90.298,
+        "durationSeconds": 89.312,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-hard.csv",
+        "reportedErrorKm": 1483.641
+      },
+      {
+        "id": "static-baseline-salad-no-location-gui-europe-hard-loc_023",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_023.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 50.5888878,
+          "lng": 3.1922115,
+          "label": "50.58889, 3.19221"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 89.449,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-hard.csv",
         "reportedErrorKm": 1483.641
       },
       {
         "id": "static-baseline-plonk-europe-hard-loc_023",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_023.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -176717,15 +178667,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.495,
+        "durationSeconds": 3.861,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-hard.csv",
         "reportedErrorKm": 90.106
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-hard-loc_023",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_023.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 55.2260208,
+          "lng": 25.4722576,
+          "label": "55.22602, 25.47226"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.828,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-hard.csv",
+        "reportedErrorKm": 111.909
+      },
+      {
         "id": "static-baseline-chipointv2-europe-hard-loc_023",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_023.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -176745,6 +178731,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-hard.csv",
         "reportedErrorKm": 223.61
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-hard-loc_023",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_023.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 56.2596861,
+          "lng": 24.0443052,
+          "label": "56.25969, 24.04431"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-hard.csv",
+        "reportedErrorKm": 75.034
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-23",
@@ -188957,6 +190973,12 @@
         "id": "static-baseline-geoclip-europe-hard-loc_024",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_024.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -188972,15 +190994,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 16.962,
+        "durationSeconds": 15.466,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-hard.csv",
         "reportedErrorKm": 152.855
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-hard-loc_024",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_024.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 56.8984261,
+          "lng": 8.7605658,
+          "label": "56.89843, 8.76057"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.334,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-hard.csv",
+        "reportedErrorKm": 49.278
+      },
+      {
         "id": "static-baseline-salad-europe-hard-loc_024",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_024.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -188996,15 +191054,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 90.317,
+        "durationSeconds": 89.304,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-hard.csv",
+        "reportedErrorKm": 977.726
+      },
+      {
+        "id": "static-baseline-salad-no-location-gui-europe-hard-loc_024",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_024.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.876206,
+          "lng": 1.2320911,
+          "label": "48.87621, 1.23209"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 89.448,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-hard.csv",
         "reportedErrorKm": 977.726
       },
       {
         "id": "static-baseline-plonk-europe-hard-loc_024",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_024.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -189020,15 +191114,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.564,
+        "durationSeconds": 3.974,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-hard.csv",
         "reportedErrorKm": 96.219
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-hard-loc_024",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_024.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 55.0712357,
+          "lng": 8.9155159,
+          "label": "55.07124, 8.91552"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.851,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-hard.csv",
+        "reportedErrorKm": 176.723
+      },
+      {
         "id": "static-baseline-chipointv2-europe-hard-loc_024",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_024.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -189048,6 +191178,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-hard.csv",
         "reportedErrorKm": 620.217
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-hard-loc_024",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_024.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 55.5503138,
+          "lng": 14.4250581,
+          "label": "55.55031, 14.42506"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-hard.csv",
+        "reportedErrorKm": 406.893
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-24",
@@ -201349,6 +203509,12 @@
         "id": "static-baseline-geoclip-europe-hard-loc_025",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_025.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -201364,15 +203530,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 19.189,
+        "durationSeconds": 15.82,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-hard.csv",
+        "reportedErrorKm": 213.538
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-hard-loc_025",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_025.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 63.0883713,
+          "lng": 25.8610897,
+          "label": "63.08837, 25.86109"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.141,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-hard.csv",
         "reportedErrorKm": 213.538
       },
       {
         "id": "static-baseline-salad-europe-hard-loc_025",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_025.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -201388,15 +203590,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 90.293,
+        "durationSeconds": 89.306,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-hard.csv",
         "reportedErrorKm": 346.696
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-hard-loc_025",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_025.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 62.6203762,
+          "lng": 28.9252855,
+          "label": "62.62038, 28.92529"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 89.44,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-hard.csv",
+        "reportedErrorKm": 276.486
+      },
+      {
         "id": "static-baseline-plonk-europe-hard-loc_025",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_025.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -201412,15 +203650,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.471,
+        "durationSeconds": 3.85,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-hard.csv",
         "reportedErrorKm": 384.68
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-hard-loc_025",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_025.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 60.9608841,
+          "lng": 23.217701,
+          "label": "60.96088, 23.21770"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 4.022,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-hard.csv",
+        "reportedErrorKm": 482.478
+      },
+      {
         "id": "static-baseline-chipointv2-europe-hard-loc_025",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-hard/loc_025.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -201440,6 +203714,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-hard.csv",
         "reportedErrorKm": 1495.445
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-hard-loc_025",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-hard/loc_025.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.120849,
+          "lng": 47.27657,
+          "label": "52.12085, 47.27657"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-hard.csv",
+        "reportedErrorKm": 1837.836
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-25",
@@ -217222,6 +219526,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_009",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_009.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -217237,15 +219547,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.892,
+        "durationSeconds": 15.772,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 304.218
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_009",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_009.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 38.345829,
+          "lng": -0.485286,
+          "label": "38.34583, -0.48529"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.134,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 124.871
+      },
+      {
         "id": "static-baseline-salad-europe-medium-loc_009",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_009.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -217261,15 +219607,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 78.647,
+        "durationSeconds": 73.236,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 305.333
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_009",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_009.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 37.9663959,
+          "lng": 23.7553399,
+          "label": "37.96640, 23.75534"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 71.173,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 2098.19
+      },
+      {
         "id": "static-baseline-plonk-europe-medium-loc_009",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_009.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -217285,15 +219667,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.592,
+        "durationSeconds": 4.172,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 369.762
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_009",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_009.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 42.1711311,
+          "lng": 2.6751473,
+          "label": "42.17113, 2.67515"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 4.399,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 394.939
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_009",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_009.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -217313,6 +219731,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 303.564
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_009",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_009.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 41.4450504,
+          "lng": 2.1692415,
+          "label": "41.44505, 2.16924"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 307.39
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-09",
@@ -231593,6 +234041,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_010",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_010.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -231608,15 +234062,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.552,
+        "durationSeconds": 15.064,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 170.421
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_010",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_010.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 45.4723358,
+          "lng": 9.1738195,
+          "label": "45.47234, 9.17382"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 14.929,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 201.558
+      },
+      {
         "id": "static-baseline-salad-europe-medium-loc_010",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_010.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -231632,15 +234122,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 75.535,
+        "durationSeconds": 72.751,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 232.817
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_010",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_010.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 44.4960225,
+          "lng": 11.3625489,
+          "label": "44.49602, 11.36255"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 70.691,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 3.003
+      },
+      {
         "id": "static-baseline-plonk-europe-medium-loc_010",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_010.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -231656,15 +234182,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.052,
+        "durationSeconds": 3.854,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 234.074
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_010",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_010.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 42.6768761,
+          "lng": 11.9192009,
+          "label": "42.67688, 11.91920"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.883,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 207.412
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_010",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_010.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -231684,6 +234246,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 250.771
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_010",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_010.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 44.7028989,
+          "lng": 10.8333032,
+          "label": "44.70290, 10.83330"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 45.473
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-10",
@@ -247294,6 +249886,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_011",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_011.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -247309,15 +249907,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 16.658,
+        "durationSeconds": 14.91,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 25.926
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_011",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_011.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.3025208,
+          "lng": 4.8604679,
+          "label": "52.30252, 4.86047"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 14.953,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 25.926
       },
       {
         "id": "static-baseline-salad-europe-medium-loc_011",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_011.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -247333,15 +249967,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 75.542,
+        "durationSeconds": 72.726,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 98.917
+      },
+      {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_011",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_011.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 51.5888864,
+          "lng": 6.2399856,
+          "label": "51.58889, 6.23999"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 70.696,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 98.917
       },
       {
         "id": "static-baseline-plonk-europe-medium-loc_011",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_011.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -247357,15 +250027,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.44,
+        "durationSeconds": 3.989,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 21.295
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_011",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_011.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.1071434,
+          "lng": 4.7047739,
+          "label": "52.10714, 4.70477"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.866,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 25.694
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_011",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_011.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -247385,6 +250091,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 21.002
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_011",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_011.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.026392,
+          "lng": 4.9642342,
+          "label": "52.02639, 4.96423"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 12.421
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-11",
@@ -259616,6 +262352,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_012",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_012.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -259631,15 +262373,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.227,
+        "durationSeconds": 15.126,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 91.482
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_012",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_012.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 50.7621002,
+          "lng": 2.7559659,
+          "label": "50.76210, 2.75597"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 14.894,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 74.083
+      },
+      {
         "id": "static-baseline-salad-europe-medium-loc_012",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_012.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -259655,15 +262433,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 75.508,
+        "durationSeconds": 72.72,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 60.742
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_012",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_012.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 45.2940749,
+          "lng": 17.8077464,
+          "label": "45.29407, 17.80775"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 70.674,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 1220.063
+      },
+      {
         "id": "static-baseline-plonk-europe-medium-loc_012",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_012.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -259679,15 +262493,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.282,
+        "durationSeconds": 3.959,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 165.83
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_012",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_012.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 49.4286423,
+          "lng": 8.4578762,
+          "label": "49.42864, 8.45788"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.878,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 378.299
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_012",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_012.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -259707,6 +262557,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 20.496
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_012",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_012.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 50.936213,
+          "lng": 3.5765923,
+          "label": "50.93621, 3.57659"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 13.221
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-12",
@@ -271337,6 +274217,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_013",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_013.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -271352,15 +274238,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.45,
+        "durationSeconds": 15.387,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 47.589
+      },
+      {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_013",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_013.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 40.6046982,
+          "lng": -8.6687269,
+          "label": "40.60470, -8.66873"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 14.86,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 47.589
       },
       {
         "id": "static-baseline-salad-europe-medium-loc_013",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_013.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -271376,15 +274298,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 75.557,
+        "durationSeconds": 72.784,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 0.004
+      },
+      {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_013",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_013.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 40.2155936,
+          "lng": -8.4337989,
+          "label": "40.21559, -8.43380"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 70.682,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 0.004
       },
       {
         "id": "static-baseline-plonk-europe-medium-loc_013",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_013.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -271400,15 +274358,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.543,
+        "durationSeconds": 3.845,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 15.502
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_013",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_013.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 39.8505402,
+          "lng": -8.690896,
+          "label": "39.85054, -8.69090"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.862,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 46.093
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_013",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_013.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -271428,6 +274422,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 143.36
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_013",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_013.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 38.8224683,
+          "lng": -8.992824,
+          "label": "38.82247, -8.99282"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 161.969
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-13",
@@ -283383,6 +286407,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_014",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_014.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -283398,15 +286428,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.246,
+        "durationSeconds": 15.063,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 400.854
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_014",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_014.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 59.1827011,
+          "lng": 18.1525841,
+          "label": "59.18270, 18.15258"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.022,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 80.154
+      },
+      {
         "id": "static-baseline-salad-europe-medium-loc_014",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_014.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -283422,15 +286488,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 75.528,
+        "durationSeconds": 72.724,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 461.607
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_014",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_014.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.4586693,
+          "lng": 10.2145214,
+          "label": "48.45867, 10.21452"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 70.677,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 1354.773
+      },
+      {
         "id": "static-baseline-plonk-europe-medium-loc_014",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_014.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -283446,15 +286548,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.609,
+        "durationSeconds": 3.847,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 489.503
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_014",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_014.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 55.9195633,
+          "lng": 13.0600471,
+          "label": "55.91956, 13.06005"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.858,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 513.964
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_014",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_014.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -283474,6 +286612,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 509.68
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_014",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_014.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 48.9627365,
+          "lng": 8.2979113,
+          "label": "48.96274, 8.29791"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 1351.3
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-14",
@@ -295472,6 +298640,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_015",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_015.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -295487,15 +298661,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.386,
+        "durationSeconds": 15.038,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 170.033
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_015",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_015.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.4198837,
+          "lng": 19.4657135,
+          "label": "52.41988, 19.46571"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 14.799,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 803.352
+      },
+      {
         "id": "static-baseline-salad-europe-medium-loc_015",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_015.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -295511,15 +298721,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 75.539,
+        "durationSeconds": 72.73,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 1177.765
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_015",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_015.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 53.6591644,
+          "lng": 14.9767425,
+          "label": "53.65916, 14.97674"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 70.676,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 897.602
+      },
+      {
         "id": "static-baseline-plonk-europe-medium-loc_015",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_015.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -295535,15 +298781,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.553,
+        "durationSeconds": 3.848,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 433.589
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_015",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_015.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 53.5886726,
+          "lng": 20.3144493,
+          "label": "53.58867, 20.31445"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.892,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 663.289
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_015",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_015.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -295563,6 +298845,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 270.288
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_015",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_015.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 55.8991438,
+          "lng": 24.7290084,
+          "label": "55.89914, 24.72901"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 298.132
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-15",
@@ -312941,6 +316253,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_016",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_016.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -312956,15 +316274,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.483,
+        "durationSeconds": 15.199,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 551.585
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_016",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_016.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 44.5345116,
+          "lng": 16.7663803,
+          "label": "44.53451, 16.76638"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.025,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 503.447
+      },
+      {
         "id": "static-baseline-salad-europe-medium-loc_016",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_016.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -312980,15 +316334,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 75.524,
+        "durationSeconds": 72.726,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 75.24
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_016",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_016.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 47.3817117,
+          "lng": 17.8054611,
+          "label": "47.38171, 17.80546"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 70.698,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 182.592
+      },
+      {
         "id": "static-baseline-plonk-europe-medium-loc_016",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_016.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -313004,15 +316394,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.446,
+        "durationSeconds": 3.831,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 47.226
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_016",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_016.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 49.3318787,
+          "lng": 20.6864815,
+          "label": "49.33188, 20.68648"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.835,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 129.72
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_016",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_016.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -313032,6 +316458,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 460.643
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_016",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_016.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 45.9167742,
+          "lng": 14.9384166,
+          "label": "45.91677, 14.93842"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 447.863
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-16",
@@ -328167,6 +331623,12 @@
         "id": "static-baseline-geoclip-europe-medium-loc_017",
         "model": "GeoCLIP",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_017.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -328182,15 +331644,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 17.456,
+        "durationSeconds": 15.052,
         "baselineId": "geoclip",
         "sourceCsv": "geoclip/results/geoclip_static_europe-medium.csv",
         "reportedErrorKm": 150.072
       },
       {
+        "id": "static-baseline-geoclip-no-location-gui-europe-medium-loc_017",
+        "model": "GeoCLIP",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_017.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 52.5224342,
+          "lng": -8.519124,
+          "label": "52.52243, -8.51912"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "GeoCLIP direct image-to-coordinate static baseline.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 15.059,
+        "baselineId": "geoclip",
+        "sourceCsv": "geoclip/results-no-location-gui/geoclip_static_europe-medium.csv",
+        "reportedErrorKm": 94.23
+      },
+      {
         "id": "static-baseline-salad-europe-medium-loc_017",
         "model": "SALAD + OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_017.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -328206,15 +331704,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 75.562,
+        "durationSeconds": 72.722,
         "baselineId": "salad",
         "sourceCsv": "salad/results/salad_ivfflat_nprobe64_europe-medium.csv",
         "reportedErrorKm": 2373.707
       },
       {
+        "id": "static-baseline-salad-no-location-gui-europe-medium-loc_017",
+        "model": "SALAD + OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_017.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 53.2873083,
+          "lng": -9.5645195,
+          "label": "53.28731, -9.56452"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "SALAD top-1 OSV-5M retrieval coordinate used by the published benchmark result.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 70.694,
+        "baselineId": "salad",
+        "sourceCsv": "salad/results-no-location-gui/salad_ivfflat_nprobe64_europe-medium.csv",
+        "reportedErrorKm": 28.434
+      },
+      {
         "id": "static-baseline-plonk-europe-medium-loc_017",
         "model": "PLONK OSV-5M",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_017.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -328230,15 +331764,51 @@
           "country": null,
           "region": null
         },
-        "durationSeconds": 4.268,
+        "durationSeconds": 3.854,
         "baselineId": "plonk",
         "sourceCsv": "plonk/results/plonk_osv5m_static_europe-medium.csv",
         "reportedErrorKm": 2.861
       },
       {
+        "id": "static-baseline-plonk-no-location-gui-europe-medium-loc_017",
+        "model": "PLONK OSV-5M",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_017.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 53.2125511,
+          "lng": -9.0174494,
+          "label": "53.21255, -9.01745"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "PLONK OSV-5M final static-image prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": 3.878,
+        "baselineId": "plonk",
+        "sourceCsv": "plonk/results-no-location-gui/plonk_osv5m_static_europe-medium.csv",
+        "reportedErrorKm": 11.166
+      },
+      {
         "id": "static-baseline-chipointv2-europe-medium-loc_017",
         "model": "Chipoint v2",
         "condition": "static-image",
+        "imageVariant": "original",
+        "inputImage": {
+          "path": "data/starting-images/europe-medium/loc_017.png",
+          "variant": "original",
+          "label": "Original OpenGuessr"
+        },
         "runKind": "model-prediction",
         "runStatus": "complete",
         "prediction": {
@@ -328258,6 +331828,36 @@
         "baselineId": "chipointv2",
         "sourceCsv": "chipointv2/results/chipointv2_local_static_europe-medium.csv",
         "reportedErrorKm": 313.428
+      },
+      {
+        "id": "static-baseline-chipointv2-no-location-gui-europe-medium-loc_017",
+        "model": "Chipoint v2",
+        "condition": "static-image",
+        "imageVariant": "no-location-gui",
+        "inputImage": {
+          "path": "data/starting-images-no-gui-crop/no-location-gui/europe-medium/loc_017.png",
+          "variant": "no-location-gui",
+          "label": "No location GUI"
+        },
+        "runKind": "model-prediction",
+        "runStatus": "complete",
+        "prediction": {
+          "lat": 53.450979,
+          "lng": -8.0006766,
+          "label": "53.45098, -8.00068"
+        },
+        "hypothesis": "",
+        "cues": [],
+        "notes": "Chipoint v2 public three-tower fused retrieval final cluster-consensus prediction.",
+        "isMock": false,
+        "accuracy": {
+          "country": null,
+          "region": null
+        },
+        "durationSeconds": null,
+        "baselineId": "chipointv2",
+        "sourceCsv": "chipointv2/results-no-location-gui/chipointv2_local_static_europe-medium.csv",
+        "reportedErrorKm": 78.028
       },
       {
         "id": "benchmark-glm-5-3-flash-max-glm-run-2-round-17",
