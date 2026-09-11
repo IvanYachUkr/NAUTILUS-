@@ -478,8 +478,12 @@ export function createExplorer({
 
       const statsButton = event.target.closest("[data-stats-button]");
       if (statsButton && rootElement.contains(statsButton)) {
-        drawerMode = "stats";
-        drawerSample = null;
+        if (drawerMode === "stats") {
+          clearDrawerState();
+        } else {
+          clearDrawerState();
+          drawerMode = "stats";
+        }
         render({ fitMap: false });
         return;
       }
@@ -743,10 +747,20 @@ export function createExplorer({
     const onKeyDown = (event) => {
       if (event.key === "Escape" && comparisonMapFullscreen) {
         setComparisonMapFullscreen(false, { restoreFocus: true });
+      } else if (event.key === "Escape" && drawerMode === "stats") {
+        clearDrawerState();
+        renderDrawer(getSelectedCase(), getSelectedCase() ? getSelectedRun(getSelectedCase()) : null, getFilteredCases());
       }
     };
 
+    const onOutsideStatsTap = (event) => {
+      if (drawerMode !== "stats" || event.target.closest("[data-drawer], [data-stats-button]")) return;
+      clearDrawerState();
+      renderDrawer(getSelectedCase(), getSelectedCase() ? getSelectedRun(getSelectedCase()) : null, getFilteredCases());
+    };
+
     rootElement.addEventListener("click", onClick);
+    document.addEventListener("pointerdown", onOutsideStatsTap);
     elements.search.addEventListener("input", onSearch);
     elements.competitionFilter.addEventListener("change", onFilterChange);
     elements.countryFilter.addEventListener("change", onFilterChange);
@@ -765,6 +779,7 @@ export function createExplorer({
     updateStoryNavigation();
 
     disposers.push(() => rootElement.removeEventListener("click", onClick));
+    disposers.push(() => document.removeEventListener("pointerdown", onOutsideStatsTap));
     disposers.push(() => elements.search.removeEventListener("input", onSearch));
     disposers.push(() => elements.competitionFilter.removeEventListener("change", onFilterChange));
     disposers.push(() => elements.countryFilter.removeEventListener("change", onFilterChange));
@@ -1512,6 +1527,8 @@ export function createExplorer({
       (caseItem && run && drawerMode === "playback" && playbackAllowed);
     const layoutWasOpen = elements.mapWorkspace.classList.contains("has-drawer");
     elements.drawer.hidden = !valid;
+    elements.drawer.dataset.drawerMode = valid ? drawerMode : "";
+    rootElement.querySelector("[data-stats-button]").setAttribute("aria-expanded", String(drawerMode === "stats"));
     elements.drawer.classList.toggle("is-open", Boolean(valid));
     elements.mapWorkspace.classList.toggle("has-drawer", Boolean(valid));
     if (layoutWasOpen !== Boolean(valid)) {
@@ -1538,6 +1555,7 @@ export function createExplorer({
     }
 
     elements.drawerTitle.textContent = title;
+    elements.drawer.querySelector(".section-label").textContent = drawerMode === "stats" ? "Benchmark overview" : "Selected pin";
     elements.drawerBody.innerHTML = body;
     primeInlineVideos(elements.drawerBody);
   }
@@ -2103,10 +2121,10 @@ function shellMarkup(cases = []) {
         <nav class="journey-guide" aria-label="Run method">
           <span class="journey-guide__label">Run method</span>
           <ol class="journey-progress">
-            <li><button type="button" data-method-stage="observe" aria-label="Read the Observe method stage"><span>1</span><b>Observe</b></button></li>
-            <li><button type="button" data-method-stage="hypothesize" aria-label="Read the Hypothesize method stage"><span>2</span><b>Hypothesize</b></button></li>
-            <li><button type="button" data-method-stage="explore" aria-label="Read the Explore method stage"><span>3</span><b>Explore</b></button></li>
-            <li><button type="button" data-method-stage="pin" aria-label="Read the Pin method stage"><span>4</span><b>Pin</b></button></li>
+            <li><button type="button" data-method-stage="observe" aria-label="Read the Observe method stage"><span>1</span><b>Observe</b><i class="ph ph-eye" aria-hidden="true"></i></button></li>
+            <li><button type="button" data-method-stage="hypothesize" aria-label="Read the Hypothesize method stage"><span>2</span><b>Hypothesize</b><i class="ph ph-lightbulb" aria-hidden="true"></i></button></li>
+            <li><button type="button" data-method-stage="explore" aria-label="Read the Explore method stage"><span>3</span><b>Explore</b><i class="ph ph-binoculars" aria-hidden="true"></i></button></li>
+            <li><button type="button" data-method-stage="pin" aria-label="Read the Pin method stage"><span>4</span><b>Pin</b><i class="ph ph-map-pin" aria-hidden="true"></i></button></li>
           </ol>
         </nav>
 
@@ -2114,10 +2132,6 @@ function shellMarkup(cases = []) {
           <button class="site-jump" type="button" data-scroll-target="research" aria-label="Read the project">
             <span>Project</span>
             <i class="ph ph-arrow-down" aria-hidden="true"></i>
-          </button>
-          <button class="stats-button header-stats" type="button" data-stats-button aria-label="Open statistics">
-            <i class="ph ph-chart-line-up" aria-hidden="true"></i>
-            <span>Statistics</span>
           </button>
         </div>
       </header>
@@ -2221,8 +2235,8 @@ function shellMarkup(cases = []) {
               <aside class="evidence-text-panel" data-evidence-text-panel hidden></aside>
             </section>
             <div class="globe-caption" aria-hidden="true">
-              <span>Europe / An experiment in seeing</span>
-              <span><i class="ph ph-hand" aria-hidden="true"></i> Drag to rotate · Scroll to zoom</span>
+              <span class="globe-caption__pointer"><i class="ph ph-hand" aria-hidden="true"></i> Drag to rotate · Scroll to zoom</span>
+              <span class="globe-caption__touch">Drag to rotate · Pinch to zoom</span>
             </div>
             <div class="map-stage" data-map></div>
 
@@ -2283,6 +2297,11 @@ function shellMarkup(cases = []) {
                   <span>Image variant</span>
                   <select data-image-variant-select></select>
                 </label>
+              </div>
+              <div class="globe-stats-slot">
+                <button class="stats-button globe-stats-button" type="button" data-stats-button aria-label="Open statistics" aria-expanded="false">
+                  <i class="ph ph-chart-line-up" aria-hidden="true"></i><span>Statistics</span>
+                </button>
               </div>
               <button class="compare-models-button" type="button" data-toggle-model-comparison hidden>
                 <i class="ph ph-stack" aria-hidden="true"></i><span>Compare models<b data-compare-models-count></b></span>

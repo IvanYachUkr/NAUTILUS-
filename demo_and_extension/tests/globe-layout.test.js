@@ -16,15 +16,15 @@ test("detail globe offset biases the earth toward the lower-right corner", () =>
   );
 });
 
-test("overview globe keeps its established wide-screen framing", () => {
+test("overview globe stays centered inside its circular frame at every size", () => {
   assert.equal(typeof globeController.globeOffsetForView, "function");
 
   assert.deepEqual(
     globeController.globeOffsetForView({ overview: true, width: 1000, height: 700 }),
-    [80, 18],
+    [0, 0],
   );
   assert.deepEqual(
     globeController.globeOffsetForView({ overview: true, width: 2000, height: 900 }),
-    [110, 18],
+    [0, 0],
   );
 });

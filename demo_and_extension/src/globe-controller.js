@@ -10,11 +10,11 @@ const EARTH_BUMP_URL = new URL(
   "./vendor/earth-topology.png",
   import.meta.url,
 ).href;
-const EUROPE_VIEW = { lat: 50.4, lng: 12.2, altitude: 1.72 };
+const EUROPE_VIEW = { lat: 50.4, lng: 12.2, altitude: 1.55 };
 
 export function globeOffsetForView({ overview, width, height }) {
   if (overview) {
-    return [Math.round(Math.min(width * 0.08, 110)), 18];
+    return [0, 0];
   }
 
   return [
