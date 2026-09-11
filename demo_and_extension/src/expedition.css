@@ -1086,7 +1086,7 @@ button, select, input { max-width: 100%; }
   .app-brand small { max-width: 190px; line-height: 1.3; }
   .header-actions { flex-direction: column; gap: 0; }
   .header-stats { width: 44px; height: 44px; }
-  .journey-progress { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 8px; }
+  .journey-progress { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .journey-progress li { min-width: 0; animation: journey-card-arrive 360ms cubic-bezier(.22, .75, .28, 1) both; }
   .journey-progress li:nth-child(2) { animation-delay: 45ms; }
   .journey-progress li:nth-child(3) { animation-delay: 90ms; }
@@ -1094,69 +1094,92 @@ button, select, input { max-width: 100%; }
   .journey-progress li:not(:last-child)::after { display: none; }
   .journey-progress button {
     display: grid;
-    grid-template-columns: 20px minmax(0, 1fr);
+    grid-template-columns: 32px minmax(0, 1fr) auto;
     grid-template-rows: 1fr;
-    width: 100%;
-    min-height: 34px;
     align-items: center;
-    justify-items: stretch;
-    gap: 7px;
+    column-gap: 6px;
+    width: 100%;
+    min-height: 56px;
     overflow: hidden;
-    padding: 4px 8px;
-    border: 1px solid rgba(222, 169, 105, .38);
-    border-radius: 14px;
-    background: linear-gradient(135deg, rgba(29, 63, 73, .98), rgba(6, 24, 34, .98));
-    box-shadow: inset 0 1px rgba(255, 255, 255, .06), 0 5px 15px rgba(0, 8, 13, .2);
+    padding: 6px;
+    border: 1px solid rgba(222, 169, 105, .30);
+    border-radius: 16px;
+    background: linear-gradient(160deg, rgba(24, 58, 70, .96), rgba(7, 26, 36, .97));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), 0 6px 16px rgba(0, 8, 13, .22);
     color: #f4e8d8;
     text-align: left;
     transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
   }
-  .journey-progress button span {
-    width: 20px;
-    height: 20px;
-    border: 1px solid rgba(255, 227, 190, .4);
-    background: linear-gradient(145deg, #e4b77d, #a86c37);
-    box-shadow: 0 2px 8px rgba(0, 7, 11, .36);
-    color: #071d26;
-    font-weight: 800;
+  .journey-progress button > i {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(239, 189, 128, .40);
+    border-radius: 50%;
+    background: linear-gradient(165deg, rgba(27, 74, 86, .92), rgba(8, 30, 40, .92));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+    color: #f0c188;
+    font-size: 1.0625rem;
+    opacity: 1;
+    transform: none;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
   }
   .journey-progress button b {
-    justify-self: start;
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    overflow: hidden;
     padding: 0;
     color: inherit;
-    letter-spacing: 0;
-    line-height: 1;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.2;
+    text-align: left;
+    text-overflow: ellipsis;
+    text-transform: none;
     white-space: nowrap;
   }
-  .journey-progress li:nth-child(2) button b { letter-spacing: -.015em; }
-  .journey-progress button > i {
-    position: absolute;
-    right: 3px;
+  .journey-progress button span {
     display: block;
-    color: #efbd80;
-    font-size: 1rem;
-    opacity: .32;
-    pointer-events: none;
-    transform: rotate(-8deg);
-    transition: opacity 160ms ease, transform 160ms ease;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: rgba(239, 189, 128, .68);
+    font-family: var(--display-font);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 1;
+    transform: none;
+    transition: color 160ms ease;
   }
   .journey-progress button:hover,
   .journey-progress button:focus-visible {
-    border-color: rgba(244, 192, 127, .78);
-    background: linear-gradient(135deg, rgba(41, 82, 91, .99), rgba(8, 31, 42, .99));
-    box-shadow: inset 0 1px rgba(255, 255, 255, .1), 0 7px 20px rgba(0, 8, 13, .3);
+    border-color: rgba(244, 192, 127, .62);
+    background: linear-gradient(160deg, rgba(30, 70, 82, .97), rgba(9, 33, 44, .98));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 8px 20px rgba(0, 8, 13, .3);
     color: #fff7eb;
     transform: translateY(-1px);
   }
-  .journey-progress button:hover span,
-  .journey-progress button:focus-visible span {
-    border-color: rgba(255, 239, 216, .72);
-    background: linear-gradient(145deg, #f0c892, #bd7c42);
-    box-shadow: 0 2px 9px rgba(0, 7, 11, .42);
-    transform: none;
-  }
   .journey-progress button:hover > i,
-  .journey-progress button:focus-visible > i { opacity: .78; transform: rotate(0); }
+  .journey-progress button:focus-visible > i {
+    border-color: rgba(255, 239, 216, .6);
+    background: linear-gradient(145deg, #f0c892, #bd7c42);
+    color: #071d26;
+  }
+  .journey-progress button:hover span,
+  .journey-progress button:focus-visible span { color: #f4c07f; }
   .journey-progress button:focus-visible { outline: 2px solid #f0bd7e; outline-offset: 2px; }
   .journey-progress button:active { transform: translateY(0) scale(.985); }
   .project-entry { display: inline-flex; }
@@ -1176,7 +1199,7 @@ button, select, input { max-width: 100%; }
   .detail-drawer[data-drawer-mode="stats"], .map-workspace.has-drawer .detail-drawer[data-drawer-mode="stats"] { position: fixed; z-index: 120; inset: 16px 16px 80px; width: auto; height: auto; max-height: none; }
   .detail-drawer[data-drawer-mode="stats"] .detail-drawer__panel { max-height: none; }
   .atlas-app[data-view-state="overview"] .map-legend { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px; }
-  .atlas-app[data-view-state="overview"] .app-header { height: 160px; }
+  .atlas-app[data-view-state="overview"] .app-header { height: 208px; }
   .atlas-app[data-view-state="overview"] .app-brand { border: 1px solid var(--atlas-line); padding: 5px 8px; width: fit-content; }
   .atlas-app[data-view-state="overview"] .app-brand small { margin-top: 3px; line-height: 1.15; }
   .atlas-app[data-view-state="overview"] .header-actions { flex-direction: row; gap: 10px; }
@@ -1216,6 +1239,22 @@ button, select, input { max-width: 100%; }
   .project-story .leaderboard-row__model strong { font-size: 1.25rem; }
   .evidence-heading { top: 78px; left: 18px; right: 18px; max-width: none; text-align: left; }
   .evidence-clue-detail, .evidence-text-panel { top: 220px; max-height: calc(100% - 430px); }
+}
+@media (max-width: 360px) {
+  .journey-progress button {
+    grid-template-columns: 24px minmax(0, 1fr) auto;
+    column-gap: 3px;
+    min-height: 60px;
+    padding: 5px 3px;
+  }
+  .journey-progress button > i { width: 24px; height: 24px; font-size: 1rem; }
+  .journey-progress button b {
+    font-size: 1rem;
+    letter-spacing: -.04em;
+    line-height: 1.05;
+    white-space: nowrap;
+  }
+  .journey-progress button span { font-size: 1rem; }
 }
 @media (prefers-reduced-motion: reduce) and (max-width: 680px) {
   .journey-progress li { animation: none; }

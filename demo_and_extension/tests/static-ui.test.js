@@ -192,17 +192,27 @@ test("the workflow navigation connects evenly centered controls instead of label
   assert.doesNotMatch(cssSource, /\.journey-progress li:not\(:last-child\)::after\s*\{[^}]*left:\s*calc\(100%/s);
 });
 
-test("the mobile run method is a compact two-column set of tactile stage cards", () => {
+test("the mobile run method cards reserve separate columns for icon, label, and number", () => {
   const mobileStart = expeditionStylesSource.lastIndexOf("@media (max-width: 680px)");
   const mobileEnd = expeditionStylesSource.indexOf("@media (min-width: 681px)", mobileStart);
   const mobileStyles = expeditionStylesSource.slice(mobileStart, mobileEnd);
 
   assert.match(mobileStyles, /\.journey-progress\s*\{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/s);
-  assert.match(mobileStyles, /\.journey-progress button\s*\{[^}]*border:\s*1px solid[^}]*border-radius:\s*14px[^}]*linear-gradient/s);
+  assert.match(mobileStyles, /\.journey-progress button\s*\{[^}]*display:\s*grid;[^}]*grid-template-columns:\s*32px\s+minmax\(0,\s*1fr\)\s+auto;[^}]*grid-template-rows:\s*1fr;[^}]*border:\s*1px solid[^}]*border-radius:\s*16px[^}]*linear-gradient/s);
+  assert.match(mobileStyles, /\.journey-progress button > i\s*\{[^}]*grid-column:\s*1;[^}]*grid-row:\s*1;[^}]*border-radius:\s*50%/s);
+  assert.match(mobileStyles, /\.journey-progress button b\s*\{[^}]*grid-column:\s*2;[^}]*grid-row:\s*1;[^}]*font-size:\s*1rem;[^}]*text-align:\s*left;/s);
+  assert.match(mobileStyles, /\.journey-progress button span\s*\{[^}]*display:\s*block;[^}]*grid-column:\s*3;[^}]*grid-row:\s*1;[^}]*justify-self:\s*end;[^}]*font-family:\s*var\(--display-font\)/s);
+  assert.doesNotMatch(mobileStyles, /\.journey-progress button::after\s*\{/s);
   assert.match(mobileStyles, /\.journey-progress li:not\(:last-child\)::after\s*\{[^}]*display:\s*none/s);
   assert.match(mobileStyles, /\.journey-progress button:focus-visible\s*\{[^}]*outline:/s);
   assert.match(expeditionStylesSource, /@keyframes\s+journey-card-arrive/);
   assert.match(expeditionStylesSource, /prefers-reduced-motion:\s*reduce[^}]*\.journey-progress li\s*\{[^}]*animation:\s*none/s);
+
+  const narrowStart = expeditionStylesSource.indexOf("@media (max-width: 360px)", mobileStart);
+  const narrowEnd = expeditionStylesSource.indexOf("@media (prefers-reduced-motion", narrowStart);
+  const narrowStyles = expeditionStylesSource.slice(narrowStart, narrowEnd);
+  assert.match(narrowStyles, /\.journey-progress button\s*\{[^}]*grid-template-columns:\s*24px\s+minmax\(0,\s*1fr\)\s+auto;[^}]*column-gap:\s*3px;[^}]*padding:\s*5px\s+3px;/s);
+  assert.match(narrowStyles, /\.journey-progress button b\s*\{[^}]*font-size:\s*1rem;[^}]*letter-spacing:\s*-\.04em;[^}]*white-space:\s*nowrap;/s);
 
   for (const icon of ["ph-eye", "ph-lightbulb", "ph-binoculars", "ph-map-pin"]) {
     assert.ok(appSource.includes(icon), `Missing method icon ${icon}`);
