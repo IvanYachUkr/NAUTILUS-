@@ -9,7 +9,7 @@
   "gallery_chunk_rows": 500000,
   "top_k_prediction": 10,
   "n_images": 8,
-  "generated_at_utc": "2026-09-11T01:41:14.467974+00:00",
+  "generated_at_utc": "2026-09-11T10:56:43.846992+00:00",
   "distance_unit": "km",
   "prediction_error": {
     "mean_km": 1254.233,
@@ -38,16 +38,16 @@
   },
   "timing": {
     "query_encoding_seconds_by_tower": {
-      "so400m256": 0.0,
-      "gopt": 20.671,
-      "dinov3": 8.927
+      "so400m256": 18.971,
+      "gopt": 14.054,
+      "dinov3": 10.594
     },
     "retrieval_seconds_by_tower": {
-      "so400m256": 162.077,
-      "gopt": 169.411,
-      "dinov3": 134.85
+      "so400m256": 158.543,
+      "gopt": 175.495,
+      "dinov3": 134.626
     },
-    "total_query_encoding_seconds": 29.598,
-    "total_gallery_retrieval_seconds": 466.338
+    "total_query_encoding_seconds": 43.619,
+    "total_gallery_retrieval_seconds": 468.664
   }
 }

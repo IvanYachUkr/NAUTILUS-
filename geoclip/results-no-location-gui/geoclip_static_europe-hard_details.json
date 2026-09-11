@@ -24,7 +24,7 @@
       "score": 0.0193550047,
       "error_km": 1658.538443
     },
-    "inference_seconds": 17.455478,
+    "inference_seconds": 15.722086,
     "candidates": [
       {
         "rank": 1,
@@ -88,7 +88,7 @@
       "score": 0.0105215739,
       "error_km": 1475.613586
     },
-    "inference_seconds": 16.643017,
+    "inference_seconds": 15.096938,
     "candidates": [
       {
         "rank": 1,
@@ -152,7 +152,7 @@
       "score": 0.0311682429,
       "error_km": 49.690252
     },
-    "inference_seconds": 16.648971,
+    "inference_seconds": 15.121153,
     "candidates": [
       {
         "rank": 1,
@@ -216,7 +216,7 @@
       "score": 0.023192009,
       "error_km": 130.056343
     },
-    "inference_seconds": 17.026697,
+    "inference_seconds": 15.163361,
     "candidates": [
       {
         "rank": 1,
@@ -280,7 +280,7 @@
       "score": 0.0115474397,
       "error_km": 90.543488
     },
-    "inference_seconds": 16.644152,
+    "inference_seconds": 15.098789,
     "candidates": [
       {
         "rank": 1,
@@ -344,7 +344,7 @@
       "score": 0.0290761087,
       "error_km": 382.270506
     },
-    "inference_seconds": 16.678799,
+    "inference_seconds": 15.125742,
     "candidates": [
       {
         "rank": 1,
@@ -408,7 +408,7 @@
       "score": 0.0627214313,
       "error_km": 49.277906
     },
-    "inference_seconds": 16.815902,
+    "inference_seconds": 15.334127,
     "candidates": [
       {
         "rank": 1,
@@ -472,7 +472,7 @@
       "score": 0.0392881148,
       "error_km": 71.129827
     },
-    "inference_seconds": 16.615347,
+    "inference_seconds": 15.140551,
     "candidates": [
       {
         "rank": 1,

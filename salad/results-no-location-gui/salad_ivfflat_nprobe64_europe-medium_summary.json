@@ -3,7 +3,7 @@
   "model": "SALAD + OSV-5M",
   "index": "ivfflat",
   "n_images": 9,
-  "generated_at_utc": "2026-09-10T23:53:10.156247+00:00",
+  "generated_at_utc": "2026-09-11T10:12:13.224194+00:00",
   "distance_unit": "km",
   "top1_error": {
     "mean_km": 653.731,
@@ -66,13 +66,13 @@
     }
   },
   "timing": {
-    "model_load_seconds": 68.607,
-    "index_load_seconds": 1.029,
-    "mean_descriptor_seconds": 3.527,
-    "shared_batched_search_seconds": 460.417,
-    "amortized_search_seconds_per_image": 51.157,
-    "mean_total_seconds_per_image_amortized": 54.684,
-    "total_descriptor_seconds": 31.739,
-    "total_pipeline_seconds_excluding_model_load": 492.155
+    "model_load_seconds": 19.802,
+    "index_load_seconds": 0.894,
+    "mean_descriptor_seconds": 0.187,
+    "shared_batched_search_seconds": 70.553,
+    "amortized_search_seconds_per_image": 7.839,
+    "mean_total_seconds_per_image_amortized": 8.027,
+    "total_descriptor_seconds": 1.687,
+    "total_pipeline_seconds_excluding_model_load": 72.24
   }
 }

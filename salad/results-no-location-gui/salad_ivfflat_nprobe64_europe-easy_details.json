@@ -40,9 +40,9 @@
       "distance": 1.5824806690216064,
       "error_km": 393.9438990037655
     },
-    "descriptor_seconds": 37.93704629999411,
-    "search_seconds": 519.778635300012,
-    "inference_seconds": 557.7156816000061,
+    "descriptor_seconds": 4.7696659000066575,
+    "search_seconds": 68.97534760000417,
+    "inference_seconds": 73.74501350001083,
     "candidates": [
       {
         "rank": 1,
@@ -137,9 +137,9 @@
       "distance": 1.5865848064422607,
       "error_km": 1118.5098023411872
     },
-    "descriptor_seconds": 0.6508662999985972,
-    "search_seconds": 519.778635300012,
-    "inference_seconds": 520.4295016000106,
+    "descriptor_seconds": 0.15352659999916796,
+    "search_seconds": 68.97534760000417,
+    "inference_seconds": 69.12887420000334,
     "candidates": [
       {
         "rank": 1,
@@ -234,9 +234,9 @@
       "distance": 1.5839585065841675,
       "error_km": 82.749540720975
     },
-    "descriptor_seconds": 0.6051417999988189,
-    "search_seconds": 519.778635300012,
-    "inference_seconds": 520.3837771000108,
+    "descriptor_seconds": 0.16470860000117682,
+    "search_seconds": 68.97534760000417,
+    "inference_seconds": 69.14005620000535,
     "candidates": [
       {
         "rank": 1,
@@ -331,9 +331,9 @@
       "distance": 1.4692307710647583,
       "error_km": 423.5903128687588
     },
-    "descriptor_seconds": 0.25042219999886584,
-    "search_seconds": 519.778635300012,
-    "inference_seconds": 520.0290575000108,
+    "descriptor_seconds": 0.11152320000110194,
+    "search_seconds": 68.97534760000417,
+    "inference_seconds": 69.08687080000527,
     "candidates": [
       {
         "rank": 1,
@@ -428,9 +428,9 @@
       "distance": 1.5195281505584717,
       "error_km": 545.9744834149183
     },
-    "descriptor_seconds": 0.2778869999892777,
-    "search_seconds": 519.778635300012,
-    "inference_seconds": 520.0565223000012,
+    "descriptor_seconds": 0.12516840000171214,
+    "search_seconds": 68.97534760000417,
+    "inference_seconds": 69.10051600000588,
     "candidates": [
       {
         "rank": 1,
@@ -525,9 +525,9 @@
       "distance": 1.3210959434509277,
       "error_km": 439.5347574934312
     },
-    "descriptor_seconds": 0.43715930001053493,
-    "search_seconds": 519.778635300012,
-    "inference_seconds": 520.2157946000225,
+    "descriptor_seconds": 0.1172418999922229,
+    "search_seconds": 68.97534760000417,
+    "inference_seconds": 69.0925894999964,
     "candidates": [
       {
         "rank": 1,
@@ -622,9 +622,9 @@
       "distance": 1.5467047691345215,
       "error_km": 25.554111015427594
     },
-    "descriptor_seconds": 0.2225348999927519,
-    "search_seconds": 519.778635300012,
-    "inference_seconds": 520.0011702000047,
+    "descriptor_seconds": 0.11631890000717249,
+    "search_seconds": 68.97534760000417,
+    "inference_seconds": 69.09166650001134,
     "candidates": [
       {
         "rank": 1,
@@ -719,9 +719,9 @@
       "distance": 1.4323796033859253,
       "error_km": 110.25369619432216
     },
-    "descriptor_seconds": 0.2268910999991931,
-    "search_seconds": 519.778635300012,
-    "inference_seconds": 520.0055264000111,
+    "descriptor_seconds": 0.127949500005343,
+    "search_seconds": 68.97534760000417,
+    "inference_seconds": 69.10329710000951,
     "candidates": [
       {
         "rank": 1,

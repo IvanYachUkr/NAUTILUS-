@@ -2,7 +2,7 @@
   "dataset": "europe-easy",
   "model": "GeoCLIP",
   "n_images": 8,
-  "generated_at_utc": "2026-09-10T23:10:14.837531+00:00",
+  "generated_at_utc": "2026-09-11T09:49:18.510886+00:00",
   "distance_unit": "km",
   "top1_error": {
     "mean_km": 108.725,
@@ -41,10 +41,10 @@
     "error_km": 637.86
   },
   "timing": {
-    "model_load_seconds": 61.674,
-    "mean_inference_seconds": 18.598,
-    "median_inference_seconds": 17.44,
-    "std_inference_seconds": 2.734,
-    "total_inference_seconds": 148.787
+    "model_load_seconds": 3.33,
+    "mean_inference_seconds": 15.154,
+    "median_inference_seconds": 15.147,
+    "std_inference_seconds": 0.097,
+    "total_inference_seconds": 121.229
   }
 }
