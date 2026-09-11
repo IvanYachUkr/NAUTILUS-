@@ -152,6 +152,16 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=SCRIPT_DIR / "results",
     )
+    parser.add_argument(
+        "--images-root",
+        type=Path,
+        default=None,
+        help=(
+            "Root directory containing the dataset image folders "
+            "(e.g. europe-easy). "
+            "Default: <demo-root>/data/starting-images"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -313,12 +323,42 @@ def make_dinov3_preprocess(processor):
     return preprocess
 
 
+_SAFETENSORS_PREAD_PATCHED = False
+
+
+def use_windows_safetensors_pread() -> None:
+    """Avoid Windows access violations when loading large safetensors files."""
+    global _SAFETENSORS_PREAD_PATCHED
+
+    if os.name != "nt" or _SAFETENSORS_PREAD_PATCHED:
+        return
+
+    import safetensors.torch as safetensors_torch
+
+    original_load_file = safetensors_torch.load_file
+
+    def load_file_pread(filename, device="cpu", **kwargs):
+        kwargs["backend"] = "pread"
+        return original_load_file(
+            filename,
+            device=device,
+            **kwargs,
+        )
+
+    safetensors_torch.load_file = load_file_pread
+    _SAFETENSORS_PREAD_PATCHED = True
+
+    print("Windows safetensors workaround enabled: backend=pread")
+
+
 def load_openclip_tower(
     tag: str,
     spec: dict[str, Any],
     head_path: Path,
     device: torch.device,
 ):
+    use_windows_safetensors_pread()
+
     import open_clip
 
     print(f"\nLoading {tag}: {spec['open_clip_name']} / {spec['pretrained']}")
@@ -423,8 +463,17 @@ def load_dinov3_tower(
     return model, head, encode_batch
 
 
-def query_cache_path(dataset: str, tag: str) -> Path:
-    return QUERY_CACHE_DIR / f"{dataset}_{tag}_queries.npy"
+def query_cache_path(
+    dataset: str,
+    tag: str,
+    cache_namespace: str | None = None,
+) -> Path:
+    if cache_namespace is None:
+        return QUERY_CACHE_DIR / f"{dataset}_{tag}_queries.npy"
+
+    return QUERY_CACHE_DIR / (
+        f"{dataset}_{cache_namespace}_{tag}_queries.npy"
+    )
 
 
 def encode_dataset_for_tower(
@@ -434,8 +483,13 @@ def encode_dataset_for_tower(
     image_paths: list[Path],
     dataset: str,
     device: torch.device,
+    cache_namespace: str | None = None,
 ) -> tuple[np.ndarray, float]:
-    cache_path = query_cache_path(dataset, tag)
+    cache_path = query_cache_path(
+        dataset,
+        tag,
+        cache_namespace,
+    )
 
     if cache_path.exists():
         cached = np.load(cache_path)
@@ -1018,12 +1072,18 @@ def main() -> None:
         / "competitions"
         / f"{args.dataset}.json"
     )
-    image_dir = (
-        demo_root
-        / "data"
-        / "starting-images"
-        / args.dataset
-    )
+    if args.images_root is None:
+        images_root = demo_root / "data" / "starting-images"
+        cache_namespace = None
+    else:
+        images_root = args.images_root.expanduser().resolve()
+        cache_namespace = re.sub(
+            r"[^A-Za-z0-9._-]+",
+            "-",
+            images_root.name,
+        )
+
+    image_dir = images_root / args.dataset
 
     if not competition_path.exists():
         raise FileNotFoundError(competition_path)
@@ -1079,6 +1139,7 @@ def main() -> None:
             image_paths=image_paths,
             dataset=args.dataset,
             device=device,
+            cache_namespace=cache_namespace,
         )
 
         queries_by_tower[tag] = queries

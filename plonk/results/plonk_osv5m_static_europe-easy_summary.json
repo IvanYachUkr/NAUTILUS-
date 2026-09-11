@@ -4,7 +4,7 @@
   "checkpoint": "nicolas-dufour/PLONK_OSV_5M",
   "device": "cpu",
   "n_images": 8,
-  "generated_at_utc": "2026-09-09T00:04:29.283684+00:00",
+  "generated_at_utc": "2026-09-11T10:20:08.277805+00:00",
   "distance_unit": "km",
   "reproducibility": {
     "base_seed": 42,
@@ -36,10 +36,10 @@
     "error_km": 6007.824
   },
   "timing": {
-    "model_load_seconds": 4.437,
-    "mean_inference_seconds": 4.534,
-    "median_inference_seconds": 4.234,
-    "std_inference_seconds": 0.633,
-    "total_inference_seconds": 36.27
+    "model_load_seconds": 6.553,
+    "mean_inference_seconds": 4.845,
+    "median_inference_seconds": 4.0,
+    "std_inference_seconds": 2.168,
+    "total_inference_seconds": 38.757
   }
 }

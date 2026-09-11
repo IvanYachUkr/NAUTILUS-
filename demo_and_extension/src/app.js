@@ -40,6 +40,36 @@ const CONDITION_LABELS = {
   "interactive-panorama": "Interactive panorama",
 };
 
+const IMAGE_VARIANT_LABELS = {
+  original: "Original OpenGuessr",
+  "no-location-gui": "No location GUI",
+};
+
+const DEFAULT_IMAGE_VARIANT = "original";
+
+function runImageVariant(run) {
+  return run?.imageVariant ?? DEFAULT_IMAGE_VARIANT;
+}
+
+function imageForRun(caseItem, run) {
+  if (run?.condition === "static-image" && run?.inputImage) {
+    return run.inputImage;
+  }
+
+  return caseItem?.startingImage ?? null;
+}
+
+function runConditionLabel(run) {
+  const condition = CONDITION_LABELS[run?.condition] ?? run?.condition ?? "";
+
+  if (!isStaticBaselineModel(run?.model)) {
+    return condition;
+  }
+
+  const variant = runImageVariant(run);
+  const variantLabel = IMAGE_VARIANT_LABELS[variant] ?? variant;
+  return `${condition} · ${variantLabel}`;
+}
 
 const STATIC_BASELINE_ORDER = [
   "GeoCLIP",
@@ -106,6 +136,8 @@ export function createExplorer({
   let selectedCaseId = initialCaseId ?? hashSelection.caseId ?? null;
   let selectedModel = hashSelection.model ?? null;
   let selectedCondition = hashSelection.condition ?? null;
+  let selectedImageVariant =
+    hashSelection.imageVariant ?? DEFAULT_IMAGE_VARIANT;
 
   if (selectedCaseId && !data.some((item) => item.id === selectedCaseId)) {
     selectedCaseId = null;
@@ -117,6 +149,7 @@ export function createExplorer({
     if (initialRun) {
       selectedModel = initialRun.model;
       selectedCondition = initialRun.condition;
+      selectedImageVariant = runImageVariant(initialRun);
     }
   }
 
@@ -143,6 +176,7 @@ export function createExplorer({
         if (run) {
           selectedModel = run.model;
           selectedCondition = run.condition;
+          selectedImageVariant = runImageVariant(run);
         }
       }
       drawerMode = kind === "playback" ? "playback" : kind;
@@ -208,12 +242,19 @@ export function createExplorer({
       }
       selectedModel = run.model;
       selectedCondition = run.condition;
+      selectedImageVariant = runImageVariant(run);
       drawerSample = null;
       render({ fitMap: true });
       return api;
     },
 
-    select({ caseId, model, condition, runId } = {}) {
+    select({
+      caseId,
+      model,
+      condition,
+      imageVariant,
+      runId,
+    } = {}) {
       assertAlive();
       if (caseId !== undefined) {
         if (caseId === null || caseId === "all") {
@@ -231,9 +272,13 @@ export function createExplorer({
         if (!run) throw new RangeError(`Unknown run id: ${runId}`);
         selectedModel = run.model;
         selectedCondition = run.condition;
+        selectedImageVariant = runImageVariant(run);
       } else {
         if (model !== undefined) selectedModel = model;
         if (condition !== undefined) selectedCondition = condition;
+        if (imageVariant !== undefined) {
+          selectedImageVariant = imageVariant || DEFAULT_IMAGE_VARIANT;
+        }
       }
 
       drawerSample = null;
@@ -259,6 +304,7 @@ export function createExplorer({
       selectedCaseId = caseItem.id;
       selectedModel = run.model;
       selectedCondition = run.condition;
+      selectedImageVariant = runImageVariant(run);
       drawerMode = "playback";
       drawerSample = exploration.samples[0] ?? null;
       playbackIndex = 0;
@@ -278,6 +324,9 @@ export function createExplorer({
         runId: run?.id ?? null,
         model: run?.model ?? selectedModel,
         condition: run?.condition ?? selectedCondition,
+        imageVariant: isStaticBaselineModel(run?.model ?? selectedModel)
+          ? runImageVariant(run)
+          : null,
         query,
         filters: { ...filters },
         caseCount: data.length,
@@ -646,6 +695,15 @@ export function createExplorer({
       render({ fitMap: true });
     };
 
+    const onImageVariantChange = (event) => {
+      selectedImageVariant =
+        event.target.value || DEFAULT_IMAGE_VARIANT;
+      selectedCueId = null;
+      showTextOnlyClues = false;
+      drawerSample = null;
+      render({ fitMap: true });
+    };
+
     const onPlayToggle = () => {
       if (!EXPLORATION_PLAYBACK_ENABLED) return;
       if (playbackPlaying) {
@@ -679,6 +737,9 @@ export function createExplorer({
           : null;
       if (selection.model) selectedModel = selection.model;
       if (selection.condition) selectedCondition = selection.condition;
+      if (selection.imageVariant) {
+        selectedImageVariant = selection.imageVariant;
+      }
       clearDrawerState();
       render({ updateHash: false, fitMap: true });
     };
@@ -707,6 +768,7 @@ export function createExplorer({
     elements.sceneFilter.addEventListener("change", onFilterChange);
     elements.modelSelect.addEventListener("change", onModelChange);
     elements.conditionSelect.addEventListener("change", onConditionChange);
+    elements.imageVariantSelect.addEventListener("change", onImageVariantChange);
     elements.playToggle.addEventListener("click", onPlayToggle);
     elements.timeline.addEventListener("input", onTimelineInput);
     elements.speedSelect.addEventListener("change", onSpeedChange);
@@ -725,6 +787,7 @@ export function createExplorer({
     disposers.push(() => elements.sceneFilter.removeEventListener("change", onFilterChange));
     disposers.push(() => elements.modelSelect.removeEventListener("change", onModelChange));
     disposers.push(() => elements.conditionSelect.removeEventListener("change", onConditionChange));
+    disposers.push(() => elements.imageVariantSelect.removeEventListener("change", onImageVariantChange));
     disposers.push(() => elements.playToggle.removeEventListener("click", onPlayToggle));
     disposers.push(() => elements.timeline.removeEventListener("input", onTimelineInput));
     disposers.push(() => elements.speedSelect.removeEventListener("change", onSpeedChange));
@@ -751,7 +814,12 @@ export function createExplorer({
     const run = caseItem ? getSelectedRun(caseItem) : null;
     const overviewRuns = caseItem
       ? []
-      : overviewPredictionRuns(filteredCases, selectedModel, selectedCondition);
+      : overviewPredictionRuns(
+        filteredCases,
+        selectedModel,
+        selectedCondition,
+        selectedImageVariant,
+      );
     const overviewCaseIds = new Set(overviewRuns.map((entry) => entry.caseId));
     const mapCases = caseItem
       ? [caseItem]
@@ -797,6 +865,9 @@ export function createExplorer({
             runId: run?.id ?? null,
             model: run?.model ?? selectedModel,
             condition: run?.condition ?? selectedCondition,
+            imageVariant: isStaticBaselineModel(run?.model ?? selectedModel)
+              ? runImageVariant(run)
+              : null,
             errorKm: run?.errorKm ?? null,
           },
         }),
@@ -826,7 +897,9 @@ export function createExplorer({
 
   function renderImmersiveShell(caseItem, run, filteredCases) {
     const view = buildImmersiveView({ cases: filteredCases, caseItem, run });
-    const imageUrl = caseItem ? assetImageUrl(caseItem.startingImage) : null;
+    const imageUrl = caseItem
+      ? assetImageUrl(imageForRun(caseItem, run))
+      : null;
 
     rootElement.dataset.viewState = view.state;
     rootElement.dataset.evidenceMode = String(Boolean(evidenceMode && caseItem && run));
@@ -839,12 +912,13 @@ export function createExplorer({
     syncComparisonMapFullscreenControl();
 
     if (imageUrl && caseItem) {
-      if (elements.sceneImage.getAttribute("src") !== imageUrl) {
-        elements.sceneImage.src = imageUrl;
-      }
-      elements.sceneImage.alt = `Starting street scene in ${caseItem.city}, ${caseItem.country}`;
-      elements.sceneImage.hidden = false;
+      swapImageSourceWithoutFlicker(
+        elements.sceneImage,
+        imageUrl,
+        `Starting street scene in ${caseItem.city}, ${caseItem.country}`,
+      );
     } else {
+      elements.sceneImage.dataset.pendingSrc = "";
       elements.sceneImage.hidden = true;
       elements.sceneImage.removeAttribute("src");
       elements.sceneImage.alt = "";
@@ -1022,9 +1096,117 @@ export function createExplorer({
       return;
     }
 
+    // Keep the existing card/image DOM when only the selected run slice changes
+    // (for example Original OpenGuessr -> No location GUI). Replacing the whole
+    // list makes every image element disappear and reappear, which causes a
+    // visible flash even when the files are already cached.
+    const existingCards = [...elements.locationList.querySelectorAll(
+      ":scope > .location-card[data-case-id]",
+    )];
+    const sameCaseOrder =
+      existingCards.length === filteredCases.length &&
+      existingCards.every(
+        (card, index) => card.dataset.caseId === filteredCases[index]?.id,
+      );
+
+    if (sameCaseOrder) {
+      filteredCases.forEach((item, index) => {
+        syncLocationCard(existingCards[index], item);
+      });
+      return;
+    }
+
     elements.locationList.innerHTML = filteredCases
       .map((item) => locationCardMarkup(item))
       .join("");
+  }
+
+  function syncLocationCard(card, item) {
+    if (!card || !item) return;
+
+    const active = item.id === selectedCaseId;
+    card.classList.toggle("is-active", active);
+    card.setAttribute("aria-pressed", String(active));
+
+    const matchingRun = chooseRun(
+      item,
+      selectedModel,
+      selectedCondition,
+      selectedImageVariant,
+    );
+    const thumbnail = assetImageUrl(imageForRun(item, matchingRun));
+
+    let image = card.querySelector(".location-card__image");
+    if (thumbnail) {
+      if (!image) {
+        image = document.createElement("img");
+        image.className = "location-card__image";
+        image.alt = "";
+        image.loading = "lazy";
+        image.decoding = "async";
+        const pin = card.querySelector(".location-card__pin");
+        card.insertBefore(image, pin ?? card.firstChild);
+      }
+      swapImageSourceWithoutFlicker(image, thumbnail, "");
+    } else if (image) {
+      image.remove();
+    }
+
+    const meta = card.querySelector(".location-card__meta");
+    if (meta) {
+      meta.innerHTML = matchingRun
+        ? `<span>${escapeHtml(runConditionLabel(matchingRun))}</span><b>${hasCoordinate(matchingRun.prediction) ? escapeHtml(formatDistance(matchingRun.errorKm)) : "Recording only"}</b>`
+        : `<span>${escapeHtml(DIFFICULTY_LABELS[item.difficulty])}</span><b>Awaiting run</b>`;
+    }
+  }
+
+  function swapImageSourceWithoutFlicker(image, nextUrl, alt = "") {
+    if (!image) return;
+
+    const currentUrl = image.getAttribute("src") ?? "";
+    image.alt = alt;
+
+    if (!nextUrl) {
+      image.dataset.pendingSrc = "";
+      image.hidden = true;
+      image.removeAttribute("src");
+      return;
+    }
+
+    if (currentUrl === nextUrl) {
+      image.dataset.pendingSrc = nextUrl;
+      image.hidden = false;
+      return;
+    }
+
+    // Keep the old bitmap visible until the replacement is loaded and decoded.
+    // The token prevents a slower previous request from winning if the user
+    // switches variants quickly.
+    image.dataset.pendingSrc = nextUrl;
+    if (!currentUrl) image.hidden = true;
+
+    const preload = new Image();
+    preload.decoding = "async";
+
+    const commit = () => {
+      if (image.dataset.pendingSrc !== nextUrl) return;
+      image.src = nextUrl;
+      image.alt = alt;
+      image.hidden = false;
+    };
+
+    preload.onload = commit;
+    preload.onerror = () => {
+      if (image.dataset.pendingSrc !== nextUrl) return;
+      if (!currentUrl) image.hidden = true;
+    };
+    preload.src = nextUrl;
+
+    if (typeof preload.decode === "function") {
+      preload.decode().then(commit).catch(() => {
+        // onload remains the fallback for browsers that reject decode().
+      });
+    }
   }
 
   function renderRunControls(caseItem, run, filteredCases) {
@@ -1038,13 +1220,23 @@ export function createExplorer({
 
     if (!hasRuns) {
       elements.modelSelect.innerHTML = '<option value="">No runs yet</option>';
+      elements.conditionControl.hidden = false;
+      elements.conditionControl.style.display = "";
       elements.conditionSelect.innerHTML = '<option value="">No runs yet</option>';
       elements.conditionSelect.disabled = true;
+      elements.imageVariantControl.hidden = true;
+      elements.imageVariantControl.style.display = "none";
+      elements.imageVariantSelect.disabled = true;
+      elements.imageVariantSelect.innerHTML = "";
       return;
     }
 
     const activeModel = run?.model ?? selectedModel;
     const activeCondition = run?.condition ?? selectedCondition;
+    const activeImageVariant =
+      run?.imageVariant ??
+      selectedImageVariant ??
+      DEFAULT_IMAGE_VARIANT;
 
     const optionMarkup = (model) =>
       '<option value="' +
@@ -1076,13 +1268,52 @@ export function createExplorer({
     elements.modelSelect.innerHTML = modelGroups.join("");
 
     if (isStaticBaselineModel(activeModel)) {
+      // Static baselines only have the Static/NMPZ benchmark condition.
+      // Hide the redundant Condition control and show the image-variant control.
+      elements.conditionControl.hidden = true;
+      elements.conditionControl.style.display = "none";
       elements.conditionSelect.innerHTML =
         '<option value="static-image" selected>' +
         escapeHtml(CONDITION_LABELS["static-image"] ?? "Static image") +
         "</option>";
       elements.conditionSelect.disabled = true;
+
+      const imageVariants = unique(
+        scope
+          .filter(
+            (item) =>
+              item.model === activeModel &&
+              item.condition === "static-image",
+          )
+          .map((item) => runImageVariant(item)),
+      );
+
+      elements.imageVariantControl.hidden = false;
+      elements.imageVariantControl.style.display = "";
+      elements.imageVariantSelect.disabled = imageVariants.length <= 1;
+      elements.imageVariantSelect.innerHTML = imageVariants
+        .map(
+          (variant) =>
+            '<option value="' +
+            escapeAttribute(variant) +
+            '" ' +
+            (variant === activeImageVariant ? "selected" : "") +
+            ">" +
+            escapeHtml(IMAGE_VARIANT_LABELS[variant] ?? variant) +
+            "</option>",
+        )
+        .join("");
       return;
     }
+
+    // MLLM/agent models use benchmark conditions, not image variants.
+    // Show Condition and remove the image-variant control from the layout entirely.
+    elements.conditionControl.hidden = false;
+    elements.conditionControl.style.display = "";
+    elements.imageVariantControl.hidden = true;
+    elements.imageVariantControl.style.display = "none";
+    elements.imageVariantSelect.disabled = true;
+    elements.imageVariantSelect.innerHTML = "";
 
     const modelConditions = unique(
       scope
@@ -1150,11 +1381,11 @@ export function createExplorer({
     }
 
     if (!hasCoordinate(run.prediction)) {
-      elements.mapSubtitle.textContent = `${run.model} · ${CONDITION_LABELS[run.condition]} · recording imported · prediction not captured`;
+      elements.mapSubtitle.textContent = `${run.model} · ${runConditionLabel(run)} · recording imported · prediction not captured`;
       return;
     }
 
-    elements.mapSubtitle.textContent = `${run.model} · ${CONDITION_LABELS[run.condition]} · ${formatDistance(run.errorKm)} pin error`;
+    elements.mapSubtitle.textContent = `${run.model} · ${runConditionLabel(run)} · ${formatDistance(run.errorKm)} pin error`;
   }
 
   function renderComparison(caseItem, run, comparisonRuns = []) {
@@ -1168,7 +1399,7 @@ export function createExplorer({
 
     if (!sideMapController) {
       sideMapController = createMapController(elements.sideComparisonMap, {
-        onMarkerSelect() {},
+        onMarkerSelect() { },
       });
     }
     sideMapController.update(
@@ -1186,7 +1417,14 @@ export function createExplorer({
     elements.compareModelsCount.textContent = comparedModels.size ? ` · ${comparedModels.size}` : "";
     if (!visible) return;
 
-    const available = modelPredictionRuns(caseItem.runs);
+    const comparisonImageVariant = isStaticBaselineModel(selectedModel)
+      ? selectedImageVariant
+      : DEFAULT_IMAGE_VARIANT;
+    const available = modelPredictionRuns(caseItem.runs).filter(
+      (item) =>
+        !isStaticBaselineModel(item.model) ||
+        runImageVariant(item) === comparisonImageVariant,
+    );
     elements.modelComparisonOptions.innerHTML = available.map((item, index) => {
       const checked = comparedModels.has(item.model);
       const color = comparisonColor(item.model);
@@ -1273,7 +1511,12 @@ export function createExplorer({
       (drawerCaseId ? data.find((item) => item.id === drawerCaseId) ?? null : null);
     const detailRun = detailCase
       ? (drawerRunId ? detailCase.runs.find((item) => item.id === drawerRunId) : null) ??
-      chooseRun(detailCase, selectedModel, selectedCondition)
+      chooseRun(
+        detailCase,
+        selectedModel,
+        selectedCondition,
+        selectedImageVariant,
+      )
       : null;
     const playbackAllowed =
       EXPLORATION_PLAYBACK_ENABLED && run?.condition !== "static-image";
@@ -1508,8 +1751,12 @@ export function createExplorer({
 
   function getOverviewMapCases(filteredCases) {
     const caseIds = new Set(
-      overviewPredictionRuns(filteredCases, selectedModel, selectedCondition)
-        .map((entry) => entry.caseId),
+      overviewPredictionRuns(
+        filteredCases,
+        selectedModel,
+        selectedCondition,
+        selectedImageVariant,
+      ).map((entry) => entry.caseId),
     );
     return filteredCases.filter((item) => caseIds.has(item.id));
   }
@@ -1525,12 +1772,29 @@ export function createExplorer({
 
   function getSelectedRun(caseItem) {
     if (!caseItem) return null;
-    return chooseRun(caseItem, selectedModel, selectedCondition);
+    return chooseRun(
+      caseItem,
+      selectedModel,
+      selectedCondition,
+      selectedImageVariant,
+    );
   }
 
   function comparisonRunsForCase(caseItem) {
     if (!caseItem || !comparisonMode) return [];
-    return modelPredictionRuns(caseItem.runs).filter((item) => comparedModels.has(item.model));
+
+    const comparisonImageVariant = isStaticBaselineModel(selectedModel)
+      ? selectedImageVariant
+      : DEFAULT_IMAGE_VARIANT;
+
+    return modelPredictionRuns(caseItem.runs).filter(
+      (item) =>
+        comparedModels.has(item.model) &&
+        (
+          !isStaticBaselineModel(item.model) ||
+          runImageVariant(item) === comparisonImageVariant
+        ),
+    );
   }
 
   function ensureRunControlState(caseItem, filteredCases) {
@@ -1543,6 +1807,23 @@ export function createExplorer({
 
     if (isStaticBaselineModel(selectedModel)) {
       selectedCondition = "static-image";
+
+      const imageVariants = unique(
+        scope
+          .filter(
+            (item) =>
+              item.model === selectedModel &&
+              item.condition === "static-image",
+          )
+          .map((item) => runImageVariant(item)),
+      );
+
+      if (!imageVariants.includes(selectedImageVariant)) {
+        selectedImageVariant = imageVariants.includes(DEFAULT_IMAGE_VARIANT)
+          ? DEFAULT_IMAGE_VARIANT
+          : imageVariants[0] ?? DEFAULT_IMAGE_VARIANT;
+      }
+
       return;
     }
 
@@ -1568,11 +1849,16 @@ export function createExplorer({
 
   function locationCardMarkup(item) {
     const active = item.id === selectedCaseId;
-    const matchingRun = chooseRun(item, selectedModel, selectedCondition);
+    const matchingRun = chooseRun(
+      item,
+      selectedModel,
+      selectedCondition,
+      selectedImageVariant,
+    );
     const membership = preferredMembership(item, filters.competition);
-    const thumbnail = assetImageUrl(item.startingImage);
+    const thumbnail = assetImageUrl(imageForRun(item, matchingRun));
     const runMeta = matchingRun
-      ? `<span>${escapeHtml(CONDITION_LABELS[matchingRun.condition] ?? matchingRun.condition)}</span><b>${hasCoordinate(matchingRun.prediction) ? escapeHtml(formatDistance(matchingRun.errorKm)) : "Recording only"}</b>`
+      ? `<span>${escapeHtml(runConditionLabel(matchingRun))}</span><b>${hasCoordinate(matchingRun.prediction) ? escapeHtml(formatDistance(matchingRun.errorKm)) : "Recording only"}</b>`
       : `<span>${escapeHtml(DIFFICULTY_LABELS[item.difficulty])}</span><b>Awaiting run</b>`;
     const competitionTag = membership
       ? `<em class="location-card__competition" title="${escapeAttribute(membership.competitionName)}">${escapeHtml(compactMembershipLabel(membership))}</em>`
@@ -1599,7 +1885,12 @@ export function createExplorer({
   }
 
   function statsDrawerMarkup(filteredCases) {
-    const stats = computeStats(filteredCases, selectedModel, selectedCondition);
+    const stats = computeStats(
+      filteredCases,
+      selectedModel,
+      selectedCondition,
+      selectedImageVariant,
+    );
     const competitionName = filteredCases
       .flatMap((item) => item.competitions ?? [])
       .find((membership) => membership.competitionId === filters.competition)
@@ -1610,6 +1901,9 @@ export function createExplorer({
       competitionName,
       selectedModel,
       selectedCondition ? CONDITION_LABELS[selectedCondition] : null,
+      isStaticBaselineModel(selectedModel)
+        ? IMAGE_VARIANT_LABELS[selectedImageVariant] ?? selectedImageVariant
+        : null,
       filters.country || null,
       filters.difficulty ? DIFFICULTY_LABELS[filters.difficulty] : null,
       filters.sceneType || null,
@@ -1651,7 +1945,7 @@ export function createExplorer({
   }
 
   function truthDrawerMarkup(caseItem, run) {
-    const imageUrl = assetImageUrl(caseItem.startingImage);
+    const imageUrl = assetImageUrl(imageForRun(caseItem, run));
     const interactive = run?.condition === "interactive-panorama";
     const reviewMedia = resolvePlaybackReviewMedia({
       imageUrl,
@@ -1677,6 +1971,9 @@ export function createExplorer({
       ${visualMarkup}
       <dl class="detail-list">
         <div><dt>Condition</dt><dd>${escapeHtml(interactive ? "Interactive panorama" : "Static / NMPZ image")}</dd></div>
+        ${isStaticBaselineModel(run?.model)
+        ? `<div><dt>Image variant</dt><dd>${escapeHtml(IMAGE_VARIANT_LABELS[runImageVariant(run)] ?? runImageVariant(run))}</dd></div>`
+        : ""}
         <div><dt>Difficulty</dt><dd>${escapeHtml(DIFFICULTY_LABELS[caseItem.difficulty] ?? caseItem.difficulty)}</dd></div>
         <div><dt>Scene type</dt><dd>${escapeHtml(caseItem.sceneType || "—")}</dd></div>
         <div><dt>Coordinates</dt><dd><code>${escapeHtml(formatCoordinate(caseItem.groundTruth))}</code></dd></div>
@@ -1701,7 +1998,7 @@ export function createExplorer({
         <span class="detail-badge">${predictionAvailable ? "P" : "R"}</span>
         <div>
           <h3>${escapeHtml(predictionAvailable ? predictionLocationLabel(run.prediction) : "Recording imported")}</h3>
-          <p>${escapeHtml(run.model)} · ${escapeHtml(CONDITION_LABELS[run.condition] ?? run.condition)}</p>
+          <p>${escapeHtml(run.model)} · ${escapeHtml(runConditionLabel(run))}</p>
         </div>
       </div>
       ${predictionAvailable ? "" : `<p class="drawer-muted">The exploration was recorded, but the submitted guess coordinate was not captured. Playback is available; the prediction pin, error line, and location-error statistics are unavailable for this run.</p>`}
@@ -1711,6 +2008,9 @@ export function createExplorer({
         <div><dt>Run score</dt><dd>${Number.isFinite(run.bestRunPoints) ? `${run.bestRunPoints.toLocaleString("en-US")} / 125,000` : "—"}</dd></div>
         <div><dt>3-run mean</dt><dd>${Number.isFinite(run.benchmarkMeanPoints) ? `${Math.round(run.benchmarkMeanPoints).toLocaleString("en-US")} pts` : "—"}</dd></div>
         <div><dt>Run time</dt><dd>${run.durationSeconds === null ? "—" : `${Math.round(run.durationSeconds)} s`}</dd></div>
+        ${isStaticBaselineModel(run.model)
+        ? `<div><dt>Image variant</dt><dd>${escapeHtml(IMAGE_VARIANT_LABELS[runImageVariant(run)] ?? runImageVariant(run))}</dd></div>`
+        : ""}
         <div><dt>Country</dt><dd>${predictionAvailable ? accuracyLabel(run.accuracy?.country) : "—"}</dd></div>
         <div><dt>Region / city</dt><dd>${predictionAvailable ? accuracyLabel(run.accuracy?.region) : "—"}</dd></div>
         <div><dt>Exploration</dt><dd>${escapeHtml(route)}</dd></div>
@@ -1989,9 +2289,13 @@ function shellMarkup(cases = []) {
                   <span>Model</span>
                   <select data-model-select></select>
                 </label>
-                <label>
+                <label data-condition-control>
                   <span>Condition</span>
                   <select data-condition-select></select>
+                </label>
+                <label data-image-variant-control hidden style="display:none">
+                  <span>Image variant</span>
+                  <select data-image-variant-select></select>
                 </label>
               </div>
               <div class="globe-stats-slot">
@@ -2080,7 +2384,10 @@ function collectElements(root) {
     overviewCount: "[data-overview-count]",
     locationList: "[data-location-list]",
     modelSelect: "[data-model-select]",
+    conditionControl: "[data-condition-control]",
     conditionSelect: "[data-condition-select]",
+    imageVariantControl: "[data-image-variant-control]",
+    imageVariantSelect: "[data-image-variant-select]",
     mapWorkspace: "[data-map-workspace]",
     map: "[data-map]",
     mapEyebrow: "[data-map-eyebrow]",
@@ -2134,13 +2441,31 @@ export function modelPredictionRuns(runs = []) {
   return predictionRuns.length > 0 ? predictionRuns : availableRuns;
 }
 
-export function overviewPredictionRuns(cases = [], model = null, condition = null) {
+export function overviewPredictionRuns(
+  cases = [],
+  model = null,
+  condition = null,
+  imageVariant = DEFAULT_IMAGE_VARIANT,
+) {
   return cases.flatMap((caseItem) => {
     const runs = modelPredictionRuns(caseItem?.runs);
+
     const run = model
-      ? runs.find((item) => item.model === model && item.condition === condition) ??
-      runs.find((item) => item.model === model)
-      : chooseRun(caseItem, model, condition);
+      ? runs.find(
+        (item) =>
+          item.model === model &&
+          (!condition || item.condition === condition) &&
+          (
+            !isStaticBaselineModel(model) ||
+            runImageVariant(item) === imageVariant
+          ),
+      )
+      : chooseRun(
+        caseItem,
+        model,
+        condition,
+        imageVariant,
+      );
 
     return run && hasCoordinate(run.prediction)
       ? [{ caseId: caseItem.id, run }]
@@ -2148,8 +2473,25 @@ export function overviewPredictionRuns(cases = [], model = null, condition = nul
   });
 }
 
-function chooseRun(caseItem, model, condition) {
+function chooseRun(
+  caseItem,
+  model,
+  condition,
+  imageVariant = DEFAULT_IMAGE_VARIANT,
+) {
   const runs = modelPredictionRuns(caseItem.runs);
+
+  if (isStaticBaselineModel(model)) {
+    return (
+      runs.find(
+        (run) =>
+          run.model === model &&
+          run.condition === "static-image" &&
+          runImageVariant(run) === imageVariant,
+      ) ?? null
+    );
+  }
+
   return (
     runs.find((run) => run.model === model && run.condition === condition) ??
     runs.find((run) => run.model === model) ??
@@ -2244,9 +2586,21 @@ function hasCoordinate(value) {
   );
 }
 
-function computeStats(cases, model, condition) {
+function computeStats(
+  cases,
+  model,
+  condition,
+  imageVariant = DEFAULT_IMAGE_VARIANT,
+) {
   const runs = cases
-    .map((caseItem) => chooseRun(caseItem, model, condition))
+    .map((caseItem) =>
+      chooseRun(
+        caseItem,
+        model,
+        condition,
+        imageVariant,
+      ),
+    )
     .filter(Boolean);
   const errors = runs.map((run) => run.errorKm).filter(Number.isFinite).sort((a, b) => a - b);
   const cueRatings = runs.flatMap((run) => run.cues ?? []).map((cue) => cue.ratings ?? {});
@@ -2393,6 +2747,7 @@ function readSelectionFromHash() {
     caseId: params.get("case") || null,
     model: params.get("model") || null,
     condition: params.get("condition") || null,
+    imageVariant: params.get("imageVariant") || null,
   };
 }
 
@@ -2401,6 +2756,9 @@ function writeSelectionToHash(caseItem, run) {
   if (caseItem) params.set("case", caseItem.id);
   if (run?.model) params.set("model", run.model);
   if (run?.condition) params.set("condition", run.condition);
+  if (isStaticBaselineModel(run?.model) && run?.imageVariant) {
+    params.set("imageVariant", run.imageVariant);
+  }
 
   const next = params.toString();
   const current = window.location.hash.replace(/^#/, "");

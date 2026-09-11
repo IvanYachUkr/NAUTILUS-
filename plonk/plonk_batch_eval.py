@@ -94,6 +94,16 @@ def parse_args() -> argparse.Namespace:
         default=script_dir / "results",
         help="Directory for CSV/JSON outputs. Default: plonk/results",
     )
+    parser.add_argument(
+        "--images-root",
+        type=Path,
+        default=None,
+        help=(
+            "Root directory containing the dataset image folders "
+            "(e.g. europe-easy). "
+            "Default: <demo-root>/data/starting-images"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -466,12 +476,12 @@ def main() -> None:
         / "competitions"
         / f"{args.dataset}.json"
     )
-    image_dir = (
-        demo_root
-        / "data"
-        / "starting-images"
-        / args.dataset
-    )
+    if args.images_root is None:
+        images_root = demo_root / "data" / "starting-images"
+    else:
+        images_root = args.images_root.expanduser().resolve()
+
+    image_dir = images_root / args.dataset
     output_dir = args.output_dir.resolve()
 
     device = torch.device("cpu")

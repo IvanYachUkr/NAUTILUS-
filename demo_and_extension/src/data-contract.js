@@ -3,6 +3,7 @@ import { normalizeExploration } from "./exploration.js";
 
 const VALID_DIFFICULTIES = new Set(["easy", "medium", "hard"]);
 const VALID_CONDITIONS = new Set(["static-image", "interactive-panorama"]);
+const VALID_IMAGE_VARIANTS = new Set(["original", "no-location-gui"]);
 const VALID_SOURCES = new Set(["starting-image", "panorama", "map"]);
 const VALID_CLUE_CATEGORIES = new Set([
   "signage",
@@ -131,6 +132,43 @@ export function validateCases(input) {
         );
       }
 
+      if (
+        run?.imageVariant !== undefined &&
+        run?.imageVariant !== null &&
+        !VALID_IMAGE_VARIANTS.has(run.imageVariant)
+      ) {
+        errors.push(
+          `${runPath}.imageVariant must be original or no-location-gui.`,
+        );
+      }
+
+      if (
+        run?.imageVariant != null &&
+        run?.condition !== "static-image"
+      ) {
+        errors.push(
+          `${runPath}.imageVariant is only valid for static-image runs.`,
+        );
+      }
+
+      if (run?.inputImage !== undefined && run?.inputImage !== null) {
+        if (!isNonEmptyString(run.inputImage?.path)) {
+          errors.push(
+            `${runPath}.inputImage.path must be a non-empty string when inputImage is provided.`,
+          );
+        }
+
+        if (
+          run?.imageVariant != null &&
+          run.inputImage?.variant !== undefined &&
+          run.inputImage?.variant !== run.imageVariant
+        ) {
+          errors.push(
+            `${runPath}.inputImage.variant must match imageVariant when provided.`,
+          );
+        }
+      }
+
       if (run?.hypothesis !== undefined && typeof run.hypothesis !== "string") {
         errors.push(`${runPath}.hypothesis must be a string when provided.`);
       }
@@ -219,6 +257,8 @@ export function normalizeCases(input) {
     })),
     runs: item.runs.map((run) => ({
       ...run,
+      imageVariant: run.imageVariant ?? null,
+      inputImage: run.inputImage ? { ...run.inputImage } : null,
       confidence: run.confidence ?? null,
       durationSeconds: run.durationSeconds ?? null,
       notes: run.notes ?? "",

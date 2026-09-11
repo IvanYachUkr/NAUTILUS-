@@ -1,0 +1,50 @@
+{
+  "dataset": "europe-hard",
+  "model": "GeoCLIP",
+  "n_images": 8,
+  "generated_at_utc": "2026-09-11T09:58:48.298224+00:00",
+  "distance_unit": "km",
+  "top1_error": {
+    "mean_km": 1012.598,
+    "median_km": 525.953,
+    "std_km": 919.332,
+    "rmse_km": 1367.672,
+    "min_km": 49.278,
+    "max_km": 2376.602
+  },
+  "top1_threshold_accuracy": {
+    "within_1_km_percent": 0.0,
+    "within_25_km_percent": 0.0,
+    "within_200_km_percent": 12.5,
+    "within_750_km_percent": 62.5,
+    "within_2500_km_percent": 100.0
+  },
+  "topk_oracle": {
+    "mean_best_candidate_error_km": 488.39,
+    "median_best_candidate_error_km": 110.3,
+    "threshold_accuracy": {
+      "within_1_km_percent": 0.0,
+      "within_25_km_percent": 0.0,
+      "within_200_km_percent": 62.5,
+      "within_750_km_percent": 75.0,
+      "within_2500_km_percent": 100.0
+    }
+  },
+  "best_top1_case": {
+    "location_id": "loc_024",
+    "city_or_region": "Lemvig Municipality, Central Denmark Region",
+    "error_km": 49.278
+  },
+  "worst_top1_case": {
+    "location_id": "loc_019",
+    "city_or_region": "Vurpăr, Sibiu County",
+    "error_km": 2376.602
+  },
+  "timing": {
+    "model_load_seconds": 3.223,
+    "mean_inference_seconds": 15.225,
+    "median_inference_seconds": 15.133,
+    "std_inference_seconds": 0.201,
+    "total_inference_seconds": 121.803
+  }
+}

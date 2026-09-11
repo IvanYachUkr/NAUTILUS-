@@ -1,0 +1,53 @@
+{
+  "dataset": "europe-easy",
+  "model": "Chipoint v2 local public street-view fused retrieval",
+  "model_repo": "chiikabu-labs/chipoint-2",
+  "pipeline": "3-tower street retrieval; top-200/tower; z-score fusion; top-64 pool; cluster-consensus prediction",
+  "reranker": "not used",
+  "device": "NVIDIA GeForce GTX 1070",
+  "retrieval_dtype": "torch.float32",
+  "gallery_chunk_rows": 500000,
+  "top_k_prediction": 10,
+  "n_images": 8,
+  "generated_at_utc": "2026-09-11T10:56:43.846992+00:00",
+  "distance_unit": "km",
+  "prediction_error": {
+    "mean_km": 1254.233,
+    "median_km": 99.768,
+    "std_km": 3059.888,
+    "rmse_km": 3306.965,
+    "min_km": 4.324,
+    "max_km": 9346.186
+  },
+  "prediction_threshold_accuracy": {
+    "within_1_km_percent": 0.0,
+    "within_25_km_percent": 37.5,
+    "within_200_km_percent": 75.0,
+    "within_750_km_percent": 87.5,
+    "within_2500_km_percent": 87.5
+  },
+  "best_prediction_case": {
+    "location_id": "loc_001",
+    "city_or_region": "Paris",
+    "error_km": 4.324
+  },
+  "worst_prediction_case": {
+    "location_id": "loc_005",
+    "city_or_region": "Pula",
+    "error_km": 9346.186
+  },
+  "timing": {
+    "query_encoding_seconds_by_tower": {
+      "so400m256": 18.971,
+      "gopt": 14.054,
+      "dinov3": 10.594
+    },
+    "retrieval_seconds_by_tower": {
+      "so400m256": 158.543,
+      "gopt": 175.495,
+      "dinov3": 134.626
+    },
+    "total_query_encoding_seconds": 43.619,
+    "total_gallery_retrieval_seconds": 468.664
+  }
+}
