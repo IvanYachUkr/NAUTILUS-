@@ -2,6 +2,8 @@
 
 This folder contains the cleaned and condensed reasoning traces for the three GLM benchmark runs, together with the cross-run qualitative analysis.
 
+The separate [masked-image batch from 2026-09-11](masked_images/2026-09-11/README.md) contains all 15 static-image predictions, model notes, the complete stored chat text, and all 18 stored reasoning sections for GLM-5.3-Flash Max. A [ZIP archive](masked_images/glm-5.3-flash-max-masked-images-20260911.zip) is also available. These covered-image results are a distinct condition from the three interactive runs below.
+
 ## Structure
 
 ```text
