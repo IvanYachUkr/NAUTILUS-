@@ -12,15 +12,34 @@ const EARTH_BUMP_URL = new URL(
 ).href;
 const EUROPE_VIEW = { lat: 50.4, lng: 12.2, altitude: 1.55 };
 
-export function globeOffsetForView({ overview, width, height }) {
+export function globeOffsetForView({ overview, width, height, mobile = false }) {
   if (overview) {
     return [0, 0];
+  }
+
+  if (mobile) {
+    return [
+      Math.round(Math.min(width * 0.18, 72)),
+      Math.round(Math.max(0, height * 0.5 - 28)),
+    ];
   }
 
   return [
     Math.round(Math.min(width * 0.08, 58)),
     Math.round(Math.min(height * 0.08, 42)),
   ];
+}
+
+export function globePointOfViewForSelection({ focus, altitude, mobile = false }) {
+  if (!mobile) {
+    return { lat: focus.lat, lng: focus.lng, altitude };
+  }
+
+  return {
+    lat: Math.max(-90, focus.lat - 30),
+    lng: focus.lng,
+    altitude: Math.max(altitude, 2.25),
+  };
 }
 
 export function createGlobeController(container, options = {}) {
@@ -265,10 +284,12 @@ export function createGlobeController(container, options = {}) {
       return;
     }
 
+    const mobileDetail = isMobileDetailGlobe();
     world.globeOffset(globeOffsetForView({
       overview: false,
       width: container.clientWidth,
       height: container.clientHeight,
+      mobile: mobileDetail,
     }));
     const comparedPredictions = comparisonRuns.map((item) => item.prediction).filter(hasCoordinate);
     const focus = comparedPredictions.length
@@ -288,11 +309,11 @@ export function createGlobeController(container, options = {}) {
             ? 1.48
             : 1.72
       : 1.32;
-    const altitude = isMobileDetailGlobe()
-      ? Math.max(fittedAltitude, 1.55)
-      : fittedAltitude;
-
-    world.pointOfView({ lat: focus.lat, lng: focus.lng, altitude }, duration);
+    world.pointOfView(globePointOfViewForSelection({
+      focus,
+      altitude: fittedAltitude,
+      mobile: mobileDetail,
+    }), duration);
   }
 
   function resizeGlobe() {
