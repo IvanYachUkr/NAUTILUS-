@@ -33,5 +33,20 @@
     "NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
     "NAUTILUS_ASTRA_LOW_RUN3_20260907.md",
     "NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
-  ]
+  ],
+  "reconstruction": {
+    "source_commit": "be3313f",
+    "complete_coordinate_export": "reconstruction/all_75_predictions.csv",
+    "complete_json_export": "reconstruction/all_75_predictions.json",
+    "total_coordinate_pairs": 75,
+    "original_recorded_pairs": 11,
+    "reconstructed_pairs": 64,
+    "call_sequence_rounds": 75,
+    "browser_call_records": 1917,
+    "unobscured_exact_controls": 10,
+    "held_out_max_error_map_pixels": 0.9751,
+    "uncertainty": "Four-map-pixel engineering estimate with one-metre minimum, not a statistical confidence interval; maximum 5297 metres.",
+    "verification": "reconstruction/verify_reconstruction.py",
+    "additional_original_result_screenshots_from_chat": 2
+  }
 }
