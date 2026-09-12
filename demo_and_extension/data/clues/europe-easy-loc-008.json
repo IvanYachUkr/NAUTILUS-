@@ -1992,6 +1992,129 @@
           "ratingsReviewedAt": "2026-09-11T18:22:50.052Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-008-grok-4-6-xhigh-mcp-ac05d9d8d9",
+          "label": "FLÅM bus shelters",
+          "text": "FLÅM bus shelters",
+          "description": "Bus shelters display the place name FLÅM.",
+          "groundingPhrase": "FLÅM bus shelters",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7521773555027712,
+            "y": 0.42144093954678913,
+            "w": 0.18289786223277904,
+            "h": 0.05621220105899771
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": false,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 8 is Flåm, Norway: FLÅM bus shelters, a Norwegian flag, and Aurlandsfjord."
+            }
+          ],
+          "groundingLabel": "FLM bus shelters",
+          "ratingsReviewedAt": "2026-09-12T17:03:30.260Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-008-grok-4-6-xhigh-mcp-c4250cd6e2",
+          "label": "Norwegian flag",
+          "text": "Norwegian flag",
+          "description": "A Norwegian flag is visible near the waterfront.",
+          "groundingPhrase": "Norwegian flag",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5415,
+            "y": 0.2145,
+            "w": 0.012,
+            "h": 0.068
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 8 is Flåm, Norway: FLÅM bus shelters, a Norwegian flag, and Aurlandsfjord."
+            }
+          ],
+          "groundingLabel": "Norwegian flag",
+          "ratingsReviewedAt": "2026-09-12T17:03:33.214Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-008-grok-4-6-xhigh-mcp-f7ddc50b45",
+          "label": "Aurlandsfjord",
+          "text": "Aurlandsfjord",
+          "description": "The steep-sided Aurlandsfjord landscape is visible beyond the waterfront.",
+          "groundingPhrase": "Aurlandsfjord",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 8 is Flåm, Norway: FLÅM bus shelters, a Norwegian flag, and Aurlandsfjord."
+            }
+          ],
+          "groundingLabel": "Aurlandsfjord",
+          "ratingsReviewedAt": "2026-09-12T17:03:39.236Z"
+        }
+      ]
     }
   ]
 }

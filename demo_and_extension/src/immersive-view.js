@@ -33,6 +33,13 @@ export function nextCaseId(cases = [], currentCaseId = null) {
   return cases[(index + 1 + cases.length) % cases.length]?.id ?? cases[0]?.id ?? null;
 }
 
+export function previousCaseId(cases = [], currentCaseId = null) {
+  if (!cases.length) return null;
+  const index = cases.findIndex((item) => item.id === currentCaseId);
+  const currentIndex = index === -1 ? 0 : index;
+  return cases[(currentIndex - 1 + cases.length) % cases.length]?.id ?? cases.at(-1)?.id ?? null;
+}
+
 export function mapResetActionLabel({
   hasSelection = false,
   hasRun = false,

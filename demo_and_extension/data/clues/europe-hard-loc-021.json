@@ -2075,6 +2075,124 @@
           "groundingLabel": "451; route marker"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-021-grok-4-6-xhigh-mcp-70dadccbbb",
+          "label": "Sunflower, wheat, and corn fields",
+          "text": "Sunflower, wheat, and corn fields",
+          "description": "Sunflower, wheat, and corn crops are visible beside the road.",
+          "groundingPhrase": "Sunflower, wheat, and corn fields",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": {
+            "x": 0.0025,
+            "y": 0.4555,
+            "w": 0.9975,
+            "h": 0.2056666164772014
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Sunflowers, wheat, corn, and a black-and-white roadside post point to the Hungarian Great Plain."
+            }
+          ],
+          "groundingLabel": "Sunflower",
+          "ratingsReviewedAt": "2026-09-12T17:05:46.153Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-021-grok-4-6-xhigh-mcp-3f5c7feb7a",
+          "label": "Black-and-white roadside post",
+          "text": "Black-and-white roadside post",
+          "description": "A black-and-white roadside delineator stands beside the field road.",
+          "groundingPhrase": "Black-and-white roadside post",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Sunflowers, wheat, corn, and a black-and-white roadside post point to the Hungarian Great Plain."
+            }
+          ],
+          "groundingLabel": "Black-and-white roadside post",
+          "ratingsReviewedAt": "2026-09-12T17:06:01.205Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-021-grok-4-6-xhigh-mcp-052207dbdd",
+          "label": "Flat agricultural plain",
+          "text": "Flat agricultural plain",
+          "description": "The road crosses an exceptionally flat agricultural plain.",
+          "groundingPhrase": "Flat agricultural plain",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Round 4 is a dead-flat sunflower/wheat/corn plain."
+            }
+          ],
+          "groundingLabel": "Flat agricultural plain",
+          "ratingsReviewedAt": "2026-09-12T17:06:04.400Z"
+        }
+      ]
     }
   ]
 }

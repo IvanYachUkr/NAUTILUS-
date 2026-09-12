@@ -3321,6 +3321,134 @@
             "ratingsReviewedAt": "2026-09-12T00:26:57.634Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-001-grok-4-6-xhigh-mcp-17d3e4c9a6",
+            "label": "Bastille bus stop",
+            "text": "Bastille bus stop",
+            "description": "A bus-stop sign identifying Bastille is visible.",
+            "groundingPhrase": "Bastille bus stop",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.9091167854315123,
+              "y": 0.202863321538809,
+              "w": 0.08850791765637368,
+              "h": 0.16309079274260332
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 1 is Place de la Bastille in Paris: road marking, Bastille bus stop, and the July Column."
+              }
+            ],
+            "groundingLabel": "Bastille bus stop",
+            "ratingsReviewedAt": "2026-09-12T17:00:45.303Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-001-grok-4-6-xhigh-mcp-c8df897fc8",
+            "label": "Road marking",
+            "text": "Road marking",
+            "description": "A road marking was used as evidence for Place de la Bastille.",
+            "groundingPhrase": "Road marking",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.46926642913697547,
+              "y": 0.5371364526085974,
+              "w": 0.060424782264449695,
+              "h": 0.19465104519561344
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 1 is Place de la Bastille in Paris: road marking, Bastille bus stop, and the July Column."
+              }
+            ],
+            "groundingLabel": "Road marking",
+            "ratingsReviewedAt": "2026-09-12T17:00:55.540Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-001-grok-4-6-xhigh-mcp-6e361ea051",
+            "label": "July Column",
+            "text": "July Column",
+            "description": "The July Column is visible in the square.",
+            "groundingPhrase": "July Column",
+            "source": "panorama",
+            "category": "landmark",
+            "region": {
+              "x": 0.4615,
+              "y": 0.1865,
+              "w": 0.028,
+              "h": 0.257
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 1 is Place de la Bastille in Paris: road marking, Bastille bus stop, and the July Column."
+              }
+            ],
+            "groundingLabel": "July Column",
+            "ratingsReviewedAt": "2026-09-12T17:00:58.434Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -3591,20 +3719,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-easy--loc-001",
+        "id": "benchmark-gpt-6-astra-low-run2-easy-01",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 48.852292,
+          "lng": 2.369515,
+          "label": "48.85229, 2.36951"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-easy-01",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -18136,6 +18268,169 @@
             "ratingsReviewedAt": "2026-09-11T17:29:25.100Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-mcp-aed82c67a6",
+            "label": "Berlin 030 phone number",
+            "text": "Berlin 030 phone number",
+            "description": "A displayed telephone number uses Berlin's 030 area code.",
+            "groundingPhrase": "Berlin 030 phone number",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.56215360253365,
+              "y": 0.44071369419558837,
+              "w": 0.08076009501187653,
+              "h": 0.0626364526085974
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 2 is Alexanderplatz, Berlin: Fernsehturm, U-Bahn sign, Galeria, Berlin 030 number."
+              }
+            ],
+            "groundingLabel": "Berlin 030 phone number",
+            "ratingsReviewedAt": "2026-09-12T17:01:42.662Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-mcp-18343486e5",
+            "label": "U-Bahn sign",
+            "text": "U-Bahn sign",
+            "description": "A blue U-Bahn station sign is visible at Alexanderplatz.",
+            "groundingPhrase": "U-Bahn sign",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.6793349168646081,
+              "y": 0.39895605912319004,
+              "w": 0.05463182897862229,
+              "h": 0.09154558458179629
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 2 is Alexanderplatz, Berlin: Fernsehturm, U-Bahn sign, Galeria, Berlin 030 number."
+              }
+            ],
+            "groundingLabel": "U-Bahn sign",
+            "ratingsReviewedAt": "2026-09-12T17:01:36.587Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-mcp-acbe04694d",
+            "label": "Galeria",
+            "text": "Galeria",
+            "description": "Galeria branding is visible on a building at Alexanderplatz.",
+            "groundingPhrase": "Galeria",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.6893772763262074,
+              "y": 0.35019745790358603,
+              "w": 0.05409065716547906,
+              "h": 0.08286234284423699
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 2 is Alexanderplatz, Berlin: Fernsehturm, U-Bahn sign, Galeria, Berlin 030 number."
+              }
+            ],
+            "groundingLabel": "Galeria",
+            "ratingsReviewedAt": "2026-09-12T17:01:30.340Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-mcp-cf927b5ebf",
+            "label": "Fernsehturm",
+            "text": "Fernsehturm",
+            "description": "Berlin's television tower is visible above Alexanderplatz.",
+            "groundingPhrase": "Fernsehturm",
+            "source": "panorama",
+            "category": "landmark",
+            "region": {
+              "x": 0.43784639746634996,
+              "y": 0.0038645888228060928,
+              "w": 0.034837688044338844,
+              "h": 0.24733368465958996
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 2 is Alexanderplatz, Berlin: Fernsehturm, U-Bahn sign, Galeria, Berlin 030 number."
+              }
+            ],
+            "groundingLabel": "Fernsehturm",
+            "ratingsReviewedAt": "2026-09-12T17:01:48.940Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -18406,20 +18701,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-easy--loc-002",
+        "id": "benchmark-gpt-6-astra-low-run2-easy-02",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 52.520413,
+          "lng": 13.414777,
+          "label": "52.52041, 13.41478"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-easy-02",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -31940,6 +32239,99 @@
             "ratingsReviewedAt": "2026-09-11T17:52:30.384Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-003-grok-4-6-xhigh-mcp-b50a58e3da",
+            "label": "Salzach River",
+            "text": "Salzach River",
+            "description": "The Salzach River runs between the viewpoint and the fortress.",
+            "groundingPhrase": "Salzach River",
+            "source": "panorama",
+            "category": "geography",
+            "region": {
+              "x": 0.18241765637371335,
+              "y": 0.4931059876032021,
+              "w": 0.8175823436262867,
+              "h": 0.307
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 3 is Salzburg from Kapuzinerberg: Hohensalzburg Fortress across the Salzach."
+              }
+            ],
+            "groundingLabel": "Salzach River",
+            "ratingsReviewedAt": "2026-09-12T17:16:37.558Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-003-grok-4-6-xhigh-mcp-67d040902f",
+            "label": "Hohensalzburg Fortress",
+            "text": "Hohensalzburg Fortress",
+            "description": "Hohensalzburg Fortress is visible across the city.",
+            "groundingPhrase": "Hohensalzburg Fortress",
+            "source": "panorama",
+            "category": "landmark",
+            "region": {
+              "x": 0.5494018210609659,
+              "y": 0.35325801149338754,
+              "w": 0.12511638954869359,
+              "h": 0.12839325955481945
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 3 is Salzburg from Kapuzinerberg: Hohensalzburg Fortress across the Salzach."
+              }
+            ],
+            "groundingLabel": "Hohensalzburg Fortress",
+            "ratingsReviewedAt": "2026-09-12T17:16:31.281Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -32210,20 +32602,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-easy--loc-003",
+        "id": "benchmark-gpt-6-astra-low-run2-easy-03",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 47.801416,
+          "lng": 13.048996,
+          "label": "47.80142, 13.04900"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-easy-03",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -44151,6 +44547,129 @@
             "ratingsReviewedAt": "2026-09-11T17:59:42.130Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-004-grok-4-6-xhigh-mcp-8333b26b10",
+            "label": "Castle-terrace saint statue",
+            "text": "Castle-terrace saint statue",
+            "description": "A saint statue stands on the castle terrace.",
+            "groundingPhrase": "Castle-terrace saint statue",
+            "source": "panorama",
+            "category": "landmark",
+            "region": {
+              "x": 0.2485,
+              "y": 0.1865,
+              "w": 0.136,
+              "h": 0.553
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 4 looks like Český Krumlov Castle: red roofs, Vltava weir, and a castle-terrace saint statue."
+              }
+            ],
+            "groundingLabel": "Castle-terrace saint statue",
+            "ratingsReviewedAt": "2026-09-12T17:16:44.406Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-004-grok-4-6-xhigh-mcp-6fb2de8188",
+            "label": "Red roofs",
+            "text": "Red roofs",
+            "description": "Dense red-tiled roofs are visible below the castle viewpoint.",
+            "groundingPhrase": "Red roofs",
+            "source": "panorama",
+            "category": "architecture",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 4 looks like Český Krumlov Castle: red roofs, Vltava weir, and a castle-terrace saint statue."
+              }
+            ],
+            "groundingLabel": "Red roofs",
+            "ratingsReviewedAt": "2026-09-12T17:16:46.993Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-004-grok-4-6-xhigh-mcp-2ba66f2d3d",
+            "label": "Vltava weir",
+            "text": "Vltava weir",
+            "description": "A weir is visible across the Vltava River below.",
+            "groundingPhrase": "Vltava weir",
+            "source": "panorama",
+            "category": "geography",
+            "region": {
+              "x": 0.5726433095803641,
+              "y": 0.5307725287962057,
+              "w": 0.206,
+              "h": 0.2716666917613993
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 4 looks like Český Krumlov Castle: red roofs, Vltava weir, and a castle-terrace saint statue."
+              }
+            ],
+            "groundingLabel": "Vltava weir",
+            "ratingsReviewedAt": "2026-09-12T17:16:53.683Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -44421,20 +44940,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-easy--loc-004",
+        "id": "benchmark-gpt-6-astra-low-run2-easy-04",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 48.812651,
+          "lng": 14.312996,
+          "label": "48.81265, 14.31300"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-easy-04",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -54765,6 +55288,99 @@
             "ratingsReviewedAt": "2026-09-11T18:05:04.482Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-005-grok-4-6-xhigh-mcp-7366562b01",
+            "label": "Yellow Croatian directional sign",
+            "text": "Yellow Croatian directional sign",
+            "description": "A yellow Croatian directional road sign is visible beside the arena.",
+            "groundingPhrase": "Yellow Croatian directional sign",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.7505,
+              "y": 0.3765,
+              "w": 0.069,
+              "h": 0.102
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 5 is the Pula Arena in Croatia: Roman amphitheater plus a yellow Croatian directional sign."
+              }
+            ],
+            "groundingLabel": "Yellow Croatian directional sign",
+            "ratingsReviewedAt": "2026-09-12T17:02:37.443Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-005-grok-4-6-xhigh-mcp-5c85409915",
+            "label": "Roman amphitheater",
+            "text": "Roman amphitheater",
+            "description": "The large Roman amphitheater identifies the Pula Arena.",
+            "groundingPhrase": "Roman amphitheater",
+            "source": "panorama",
+            "category": "landmark",
+            "region": {
+              "x": 0.3065,
+              "y": 0.2485,
+              "w": 0.159,
+              "h": 0.172
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 5 is the Pula Arena in Croatia: Roman amphitheater plus a yellow Croatian directional sign."
+              }
+            ],
+            "groundingLabel": "Roman amphitheater",
+            "ratingsReviewedAt": "2026-09-12T17:02:41.711Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -55035,20 +55651,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-easy--loc-005",
+        "id": "benchmark-gpt-6-astra-low-run2-easy-05",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 44.874455,
+          "lng": 13.849301,
+          "label": "44.87445, 13.84930"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-easy-05",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -69549,6 +70169,64 @@
             "ratingsReviewedAt": "2026-09-12T00:40:40.428Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-006-grok-4-6-xhigh-mcp-13da35c7bb",
+            "label": "B178 road designation",
+            "text": "B178 road designation",
+            "description": "The B178 designation is visible at a German–Polish border crossing near Zittau.",
+            "groundingPhrase": "B178 road designation",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.7210067300079176,
+              "y": 0.6824403498205727,
+              "w": 0.10718012668250204,
+              "h": 0.18425643052523275
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 6 is a German–Polish border on B178 near Zittau."
+              }
+            ],
+            "groundingLabel": "B178 road designation",
+            "ratingsReviewedAt": "2026-09-12T17:02:59.531Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -69819,20 +70497,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-easy--loc-006",
+        "id": "benchmark-gpt-6-astra-low-run2-easy-06",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 50.900883,
+          "lng": 14.845575,
+          "label": "50.90088, 14.84558"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-easy-06",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -85350,6 +86032,410 @@
             "ratingsReviewedAt": "2026-09-12T00:47:58.797Z"
           }
         ]
+      },
+      {
+        "id": "gemini-3-8-flash-high-aided-static-covered",
+        "benchmarkId": "gemini-3-8-flash-high-aided-static-covered",
+        "model": "Gemini 3.8 Flash",
+        "reasoning": "high, aided",
+        "condition": "static-image-covered",
+        "publicationStatus": "published",
+        "imagePath": "data/starting-images-covered/google_road_marking_cover/europe-easy/loc_007.png",
+        "mergeStrategy": "single-covered-static-run",
+        "sourceRuns": [
+          {
+            "runId": "covered-static-r1",
+            "report": "../newEvalReport_3_8_high.md"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-static-covered-c63f4d9ddd",
+            "label": "Building Station Plaque",
+            "text": "Building Station Plaque",
+            "description": "The salmon/peach-colored station building directly ahead bears the clear municipal name sign VIŠNJA GORA.",
+            "groundingPhrase": "Building Station Plaque",
+            "source": "starting-image",
+            "category": "signage",
+            "region": {
+              "x": 0.324028899445764,
+              "y": 0.250317586388617,
+              "w": 0.22858590657165478,
+              "h": 0.25660606288739995
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_high.md",
+                "text": "Building Station Plaque: The salmon/peach-colored station building directly ahead bears the clear municipal name sign VIŠNJA GORA"
+              }
+            ],
+            "groundingLabel": "Station Plaque",
+            "ratingsReviewedAt": "2026-09-12T17:19:38.670Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-static-covered-cf186c7a42",
+            "label": "Directional Road Sign",
+            "text": "Directional Road Sign",
+            "description": "Yellow intersection sign with green motorway symbol pointing left towards Ljubljana (the capital of Slovenia) and Novo mesto, with recreational camping/dining pictograms below.",
+            "groundingPhrase": "Directional Road Sign",
+            "source": "starting-image",
+            "category": "signage",
+            "region": {
+              "x": 0.4570399841646872,
+              "y": 0.39528772365680437,
+              "w": 0.15912826603325417,
+              "h": 0.12296976084719817
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_high.md",
+                "text": "Directional Road Sign: Yellow intersection sign with green motorway symbol pointing left towards Ljubljana (the capital of Slovenia) and Novo mesto, with recreational camping/dining pictograms below"
+              }
+            ],
+            "groundingLabel": "Directional Road Sign",
+            "ratingsReviewedAt": "2026-09-12T17:19:49.253Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-static-covered-a85f19284b",
+            "label": "Street Name Sign",
+            "text": "Street Name Sign",
+            "description": "Blue rectangular street plaque mounted on the pedestrian crossing pole reading Ulica Antona Tomšiča.",
+            "groundingPhrase": "Street Name Sign",
+            "source": "starting-image",
+            "category": "signage",
+            "region": {
+              "x": 0.23832145684877276,
+              "y": 0.41341062510978943,
+              "w": 0.038004750593824244,
+              "h": 0.03533338352279858
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_high.md",
+                "text": "Street Name Sign: Blue rectangular street plaque mounted on the pedestrian crossing pole reading Ulica Antona Tomšiča"
+              }
+            ],
+            "groundingLabel": "Street Name Sign",
+            "ratingsReviewedAt": "2026-09-12T17:20:05.153Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-static-covered-be7051e039",
+            "label": "Regional Landscape & Architecture",
+            "text": "Regional Landscape & Architecture",
+            "description": "Typical Slovenian Subalpine / Lower Carniolan hilly landscape with red-tile pitched roofing, railway infrastructure, and Slovenian road sign typography.",
+            "groundingPhrase": "Regional Landscape & Architecture",
+            "source": "starting-image",
+            "category": "signage",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_high.md",
+                "text": "Regional Landscape & Architecture: Typical Slovenian Subalpine / Lower Carniolan hilly landscape with red-tile pitched roofing, railway infrastructure, and Slovenian road sign typography"
+              }
+            ],
+            "groundingLabel": "Regional Landscape",
+            "ratingsReviewedAt": "2026-09-12T17:19:53.963Z"
+          }
+        ]
+      },
+      {
+        "id": "gemini-3-8-flash-medium-aided-static-covered",
+        "benchmarkId": "gemini-3-8-flash-medium-aided-static-covered",
+        "model": "Gemini 3.8 Flash",
+        "reasoning": "medium, aided",
+        "condition": "static-image-covered",
+        "publicationStatus": "published",
+        "imagePath": "data/starting-images-covered/google_road_marking_cover/europe-easy/loc_007.png",
+        "mergeStrategy": "single-covered-static-run",
+        "sourceRuns": [
+          {
+            "runId": "covered-static-r1",
+            "report": "../newEvalReport_3_8_medium.md"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-static-covered-6a87dd6dae",
+            "label": "Station Signboard",
+            "text": "Station Signboard",
+            "description": "The railway station building clearly displays the town name \"VIŠNJA GORA\" on its exterior wall.",
+            "groundingPhrase": "Station Signboard",
+            "source": "starting-image",
+            "category": "signage",
+            "region": {
+              "x": 0.3200700712589073,
+              "y": 0.2535297121634169,
+              "w": 0.208,
+              "h": 0.255
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_medium.md",
+                "text": "Station Signboard: The railway station building clearly displays the town name \"VIŠNJA GORA\" on its exterior wall"
+              }
+            ],
+            "groundingLabel": "Station Signboard",
+            "ratingsReviewedAt": "2026-09-12T17:20:19.111Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-static-covered-eb94ecbe12",
+            "label": "Directional Road Sign",
+            "text": "Directional Road Sign",
+            "description": "Official yellow Slovenian road signage points left toward \"Ljubljana\" (with a green motorway icon) and right toward \"Novo mesto\".",
+            "groundingPhrase": "Directional Road Sign",
+            "source": "starting-image",
+            "category": "signage",
+            "region": {
+              "x": 0.4570399841646872,
+              "y": 0.3872574092198047,
+              "w": 0.17475534441805227,
+              "h": 0.13642432683379757
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_medium.md",
+                "text": "Directional Road Sign: Official yellow Slovenian road signage points left toward \"Ljubljana\" (with a green motorway icon) and right toward \"Novo mesto\""
+              }
+            ],
+            "groundingLabel": "Directional Road Sign",
+            "ratingsReviewedAt": "2026-09-12T17:20:25.006Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-static-covered-72831a8b44",
+            "label": "Street Name Sign",
+            "text": "Street Name Sign",
+            "description": "A blue-and-white local street sign reads \"Ulica Antona Tomšiča\".",
+            "groundingPhrase": "Street Name Sign",
+            "source": "starting-image",
+            "category": "signage",
+            "region": {
+              "x": 0.2367379255740301,
+              "y": 0.4150166879971894,
+              "w": 0.04196357878068094,
+              "h": 0.03372732063539863
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_medium.md",
+                "text": "Street Name Sign: A blue-and-white local street sign reads \"Ulica Antona Tomšiča\""
+              }
+            ],
+            "groundingLabel": "Street Name Sign",
+            "ratingsReviewedAt": "2026-09-12T17:20:30.090Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-static-covered-73f5f2b179",
+            "label": "Tourist Directional Sign",
+            "text": "Tourist Directional Sign",
+            "description": "White directional arrows below indicate local facilities (camping, camper vans, pool/swimming, and restaurant).",
+            "groundingPhrase": "Tourist Directional Sign",
+            "source": "starting-image",
+            "category": "signage",
+            "region": {
+              "x": 0.46951702296120346,
+              "y": 0.5033501468041858,
+              "w": 0.14330958036421226,
+              "h": 0.0819092072573967
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_medium.md",
+                "text": "Tourist Directional Sign: White directional arrows below indicate local facilities (camping, camper vans, pool/swimming, and restaurant)"
+              }
+            ],
+            "groundingLabel": "Tourist Directional Sign",
+            "ratingsReviewedAt": "2026-09-12T17:20:34.621Z"
+          }
+        ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-007-grok-4-6-xhigh-mcp-433aecc627",
+            "label": "Ljubljana and Novo mesto signs",
+            "text": "Ljubljana and Novo mesto signs",
+            "description": "Directional signs point toward Ljubljana and Novo mesto.",
+            "groundingPhrase": "Ljubljana and Novo mesto signs",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.4605,
+              "y": 0.3895,
+              "w": 0.143,
+              "h": 0.193
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 7 is Slovenia: signs to Ljubljana and Novo mesto, likely Višnja Gora station."
+              }
+            ],
+            "groundingLabel": "Ljubljana",
+            "ratingsReviewedAt": "2026-09-12T17:03:08.441Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-007-grok-4-6-xhigh-mcp-5c25432543",
+            "label": "Višnja Gora station sign",
+            "text": "Višnja Gora station sign",
+            "description": "The railway-station sign reads Višnja Gora.",
+            "groundingPhrase": "Višnja Gora station sign",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.32779097387173395,
+              "y": 0.2785013425681949,
+              "w": 0.20585906571654788,
+              "h": 0.19593967226279208
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Station sign reads Višnja Gora."
+              }
+            ],
+            "groundingLabel": "Vinja Gora station sign",
+            "ratingsReviewedAt": "2026-09-12T17:03:17.396Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -85620,20 +86706,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-easy--loc-007",
+        "id": "benchmark-gpt-6-astra-low-run2-easy-07",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 45.957808,
+          "lng": 14.742401,
+          "label": "45.95781, 14.74240"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-easy-07",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -96791,6 +97881,129 @@
             "ratingsReviewedAt": "2026-09-11T18:22:50.052Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-easy-loc-008-grok-4-6-xhigh-mcp-ac05d9d8d9",
+            "label": "FLÅM bus shelters",
+            "text": "FLÅM bus shelters",
+            "description": "Bus shelters display the place name FLÅM.",
+            "groundingPhrase": "FLÅM bus shelters",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.7521773555027712,
+              "y": 0.42144093954678913,
+              "w": 0.18289786223277904,
+              "h": 0.05621220105899771
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": false,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 8 is Flåm, Norway: FLÅM bus shelters, a Norwegian flag, and Aurlandsfjord."
+              }
+            ],
+            "groundingLabel": "FLM bus shelters",
+            "ratingsReviewedAt": "2026-09-12T17:03:30.260Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-008-grok-4-6-xhigh-mcp-c4250cd6e2",
+            "label": "Norwegian flag",
+            "text": "Norwegian flag",
+            "description": "A Norwegian flag is visible near the waterfront.",
+            "groundingPhrase": "Norwegian flag",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.5415,
+              "y": 0.2145,
+              "w": 0.012,
+              "h": 0.068
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 8 is Flåm, Norway: FLÅM bus shelters, a Norwegian flag, and Aurlandsfjord."
+              }
+            ],
+            "groundingLabel": "Norwegian flag",
+            "ratingsReviewedAt": "2026-09-12T17:03:33.214Z"
+          },
+          {
+            "id": "cue-europe-easy-loc-008-grok-4-6-xhigh-mcp-f7ddc50b45",
+            "label": "Aurlandsfjord",
+            "text": "Aurlandsfjord",
+            "description": "The steep-sided Aurlandsfjord landscape is visible beyond the waterfront.",
+            "groundingPhrase": "Aurlandsfjord",
+            "source": "panorama",
+            "category": "geography",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "easy-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "easy-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+                "text": "Round 8 is Flåm, Norway: FLÅM bus shelters, a Norwegian flag, and Aurlandsfjord."
+              }
+            ],
+            "groundingLabel": "Aurlandsfjord",
+            "ratingsReviewedAt": "2026-09-12T17:03:39.236Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -97061,20 +98274,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-easy--loc-008",
+        "id": "benchmark-gpt-6-astra-low-run2-easy-08",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 60.864184,
+          "lng": 7.118146,
+          "label": "60.86418, 7.11815"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-easy-08",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -108548,6 +109765,124 @@
             "ratingsReviewedAt": "2026-09-12T00:58:33.832Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-hard-loc-018-grok-4-6-xhigh-mcp-ff27af0560",
+            "label": "Mediterranean pine and maquis",
+            "text": "Mediterranean pine and maquis",
+            "description": "Pine trees and Mediterranean maquis vegetation surround the road.",
+            "groundingPhrase": "Mediterranean pine and maquis",
+            "source": "panorama",
+            "category": "vegetation",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Clues are solid: Greek Eparchiaki Odos – Parakampsi, pine/maquis, dry grassland."
+              }
+            ],
+            "groundingLabel": "Mediterranean pine",
+            "ratingsReviewedAt": "2026-09-12T17:03:54.431Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-018-grok-4-6-xhigh-mcp-b0c27d0e74",
+            "label": "Greek provincial-road text",
+            "text": "Greek provincial-road text",
+            "description": "Greek script identifies the road as an Eparchiaki Odos or provincial road.",
+            "groundingPhrase": "Greek provincial-road text",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.3975,
+              "y": 0.5385,
+              "w": 0.135,
+              "h": 0.273
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Clues are solid: Greek Eparchiaki Odos – Parakampsi, pine/maquis, dry grassland."
+              }
+            ],
+            "groundingLabel": "Greek provincial-road text",
+            "ratingsReviewedAt": "2026-09-12T17:04:02.666Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-018-grok-4-6-xhigh-mcp-62b9578603",
+            "label": "Dry grassland",
+            "text": "Dry grassland",
+            "description": "Dry, pale grassland is visible beyond the road.",
+            "groundingPhrase": "Dry grassland",
+            "source": "panorama",
+            "category": "vegetation",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Clues are solid: Greek Eparchiaki Odos – Parakampsi, pine/maquis, dry grassland."
+              }
+            ],
+            "groundingLabel": "Dry grassland",
+            "ratingsReviewedAt": "2026-09-12T17:04:05.089Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -108818,20 +110153,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-hard--loc-018",
+        "id": "benchmark-gpt-6-astra-low-run2-hard-01",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 36.333483,
+          "lng": 28.094348,
+          "label": "36.33348, 28.09435"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-hard-01",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -120148,6 +121487,124 @@
             "ratingsReviewedAt": "2026-09-11T19:15:05.893Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-hard-loc-019-grok-4-6-xhigh-mcp-2bba972cb7",
+            "label": "Romanian courtyard house",
+            "text": "Romanian courtyard house",
+            "description": "A courtyard-style village house was identified as Romanian.",
+            "groundingPhrase": "Romanian courtyard house",
+            "source": "panorama",
+            "category": "architecture",
+            "region": {
+              "x": 0.0035,
+              "y": 0.3765,
+              "w": 0.221,
+              "h": 0.117
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "The courtyard house looks Romanian."
+              }
+            ],
+            "groundingLabel": "Romanian courtyard house",
+            "ratingsReviewedAt": "2026-09-12T17:04:17.472Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-019-grok-4-6-xhigh-mcp-f6abdbcab2",
+            "label": "DJ106S road marking",
+            "text": "DJ106S road marking",
+            "description": "The painted road designation reads DJ106S.",
+            "groundingPhrase": "DJ106S road marking",
+            "source": "panorama",
+            "category": "signage",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": false,
+              "correct": false,
+              "useful": false,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Road paint reads DJ106S — a Sibiu County road in Transylvania."
+              }
+            ],
+            "groundingLabel": "DJ106S road marking",
+            "ratingsReviewedAt": "2026-09-12T17:04:24.417Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-019-grok-4-6-xhigh-mcp-aa8e0f538b",
+            "label": "Village rooftops",
+            "text": "Village rooftops",
+            "description": "Village rooftops are visible ahead along the rural road.",
+            "groundingPhrase": "Village rooftops",
+            "source": "panorama",
+            "category": "architecture",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": false,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Village rooftops are visible ahead."
+              }
+            ],
+            "groundingLabel": "Village rooftops",
+            "ratingsReviewedAt": "2026-09-12T17:04:30.274Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -120418,20 +121875,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-hard--loc-019",
+        "id": "benchmark-gpt-6-astra-low-run2-hard-02",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 46.078244,
+          "lng": 25.275069,
+          "label": "46.07824, 25.27507"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-hard-02",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -136019,6 +137480,189 @@
             "ratingsReviewedAt": "2026-09-11T19:25:48.874Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-24948af80f",
+            "label": "Forested mountain village",
+            "text": "Forested mountain village",
+            "description": "Buildings climb a steep settlement surrounded by forested mountains.",
+            "groundingPhrase": "Forested mountain village",
+            "source": "panorama",
+            "category": "geography",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Round 3 is a forested mountain village."
+              }
+            ],
+            "groundingLabel": "Forested mountain village",
+            "ratingsReviewedAt": "2026-09-12T17:04:39.094Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-a2b8deb275",
+            "label": "Yield sign",
+            "text": "Yield sign",
+            "description": "A yield sign stands among houses climbing the hillside.",
+            "groundingPhrase": "Yield sign",
+            "source": "panorama",
+            "category": "signage",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": false,
+              "correct": false,
+              "useful": false,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Houses climb the hillside past a yield sign."
+              }
+            ],
+            "groundingLabel": "Yield sign",
+            "ratingsReviewedAt": "2026-09-12T17:04:48.319Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-c2d295931d",
+            "label": "Stucco house",
+            "text": "Stucco house",
+            "description": "A stucco-clad house is visible close to the road.",
+            "groundingPhrase": "Stucco house",
+            "source": "panorama",
+            "category": "architecture",
+            "region": {
+              "x": 0.1865,
+              "y": 0.3685,
+              "w": 0.098,
+              "h": 0.138
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Closer now: stucco house, satellite dish, blue hydrant."
+              }
+            ],
+            "groundingLabel": "Stucco house",
+            "ratingsReviewedAt": "2026-09-12T17:04:51.829Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-f4ffed6240",
+            "label": "Satellite dish",
+            "text": "Satellite dish",
+            "description": "A satellite dish is mounted on or near a house.",
+            "groundingPhrase": "Satellite dish",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": false,
+              "correct": false,
+              "useful": false,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Closer now: stucco house, satellite dish, blue hydrant."
+              }
+            ],
+            "groundingLabel": "Satellite dish",
+            "ratingsReviewedAt": "2026-09-12T17:05:21.065Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-498096406c",
+            "label": "Blue hydrant",
+            "text": "Blue hydrant",
+            "description": "A blue hydrant is visible beside the road.",
+            "groundingPhrase": "Blue hydrant",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": {
+              "x": 0.40230839271575614,
+              "y": 0.5521061381715977,
+              "w": 0.020583531274742675,
+              "h": 0.06284850309919948
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Closer now: stucco house, satellite dish, blue hydrant."
+              }
+            ],
+            "groundingLabel": "Blue hydrant",
+            "ratingsReviewedAt": "2026-09-12T17:05:32.165Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -136289,20 +137933,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-hard--loc-020",
+        "id": "benchmark-gpt-6-astra-low-run2-hard-03",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 41.679924,
+          "lng": 24.578716,
+          "label": "41.67992, 24.57872"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-hard-03",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -150283,6 +151931,124 @@
             "groundingLabel": "451; route marker"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-hard-loc-021-grok-4-6-xhigh-mcp-70dadccbbb",
+            "label": "Sunflower, wheat, and corn fields",
+            "text": "Sunflower, wheat, and corn fields",
+            "description": "Sunflower, wheat, and corn crops are visible beside the road.",
+            "groundingPhrase": "Sunflower, wheat, and corn fields",
+            "source": "panorama",
+            "category": "vegetation",
+            "region": {
+              "x": 0.0025,
+              "y": 0.4555,
+              "w": 0.9975,
+              "h": 0.2056666164772014
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Sunflowers, wheat, corn, and a black-and-white roadside post point to the Hungarian Great Plain."
+              }
+            ],
+            "groundingLabel": "Sunflower",
+            "ratingsReviewedAt": "2026-09-12T17:05:46.153Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-021-grok-4-6-xhigh-mcp-3f5c7feb7a",
+            "label": "Black-and-white roadside post",
+            "text": "Black-and-white roadside post",
+            "description": "A black-and-white roadside delineator stands beside the field road.",
+            "groundingPhrase": "Black-and-white roadside post",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": false,
+              "correct": false,
+              "useful": false,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Sunflowers, wheat, corn, and a black-and-white roadside post point to the Hungarian Great Plain."
+              }
+            ],
+            "groundingLabel": "Black-and-white roadside post",
+            "ratingsReviewedAt": "2026-09-12T17:06:01.205Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-021-grok-4-6-xhigh-mcp-052207dbdd",
+            "label": "Flat agricultural plain",
+            "text": "Flat agricultural plain",
+            "description": "The road crosses an exceptionally flat agricultural plain.",
+            "groundingPhrase": "Flat agricultural plain",
+            "source": "panorama",
+            "category": "geography",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Round 4 is a dead-flat sunflower/wheat/corn plain."
+              }
+            ],
+            "groundingLabel": "Flat agricultural plain",
+            "ratingsReviewedAt": "2026-09-12T17:06:04.400Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -150553,20 +152319,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-hard--loc-021",
+        "id": "benchmark-gpt-6-astra-low-run2-hard-04",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 46.697309,
+          "lng": 20.022675,
+          "label": "46.69731, 20.02267"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-hard-04",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -165039,6 +166809,94 @@
             "ratingsReviewedAt": "2026-09-11T21:27:11.172Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-hard-loc-022-grok-4-6-xhigh-mcp-4f5d455c96",
+            "label": "Straight dirt track",
+            "text": "Straight dirt track",
+            "description": "A straight unpaved track runs through the scene.",
+            "groundingPhrase": "Straight dirt track",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": {
+              "x": 0.3765,
+              "y": 0.4505,
+              "w": 0.21,
+              "h": 0.444
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Round 5 is a straight dirt track through temperate scrub."
+              }
+            ],
+            "groundingLabel": "Straight dirt track",
+            "ratingsReviewedAt": "2026-09-12T17:06:17.196Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-022-grok-4-6-xhigh-mcp-1e237117a9",
+            "label": "Temperate scrub",
+            "text": "Temperate scrub",
+            "description": "Dense temperate scrub vegetation borders the track.",
+            "groundingPhrase": "Temperate scrub",
+            "source": "panorama",
+            "category": "vegetation",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Round 5 is a straight dirt track through temperate scrub."
+              }
+            ],
+            "groundingLabel": "Temperate scrub",
+            "ratingsReviewedAt": "2026-09-12T17:06:24.478Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -165309,20 +167167,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-hard--loc-022",
+        "id": "benchmark-gpt-6-astra-low-run2-hard-05",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 56.640657,
+          "lng": 24.477573,
+          "label": "56.64066, 24.47757"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-hard-05",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -185575,6 +187437,99 @@
             "ratingsReviewedAt": "2026-09-12T01:07:16.912Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-hard-loc-023-grok-4-6-xhigh-mcp-352c94fcca",
+            "label": "Soviet-style farm ruins",
+            "text": "Soviet-style farm ruins",
+            "description": "Ruined agricultural buildings with a Soviet-era appearance stand beside the road.",
+            "groundingPhrase": "Soviet-style farm ruins",
+            "source": "panorama",
+            "category": "architecture",
+            "region": {
+              "x": 0.2895,
+              "y": 0.4265,
+              "w": 0.147,
+              "h": 0.065
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Road 3426 is painted on the gravel, with Soviet-style farm ruins."
+              }
+            ],
+            "groundingLabel": "Soviet-style farm ruins",
+            "ratingsReviewedAt": "2026-09-12T17:06:32.173Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-023-grok-4-6-xhigh-mcp-2d91d4a120",
+            "label": "Road number 3426",
+            "text": "Road number 3426",
+            "description": "The number 3426 is painted on the gravel road.",
+            "groundingPhrase": "Road number 3426",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.4215,
+              "y": 0.6225,
+              "w": 0.107,
+              "h": 0.191
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Road 3426 is painted on the gravel, with Soviet-style farm ruins."
+              }
+            ],
+            "groundingLabel": "Road number",
+            "ratingsReviewedAt": "2026-09-12T17:06:35.488Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -185845,20 +187800,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-hard--loc-023",
+        "id": "benchmark-gpt-6-astra-low-run2-hard-06",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 55.615532,
+          "lng": 23.801898,
+          "label": "55.61553, 23.80190"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-hard-06",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -199694,6 +201653,64 @@
             "ratingsReviewedAt": "2026-09-12T01:13:08.106Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-hard-loc-024-grok-4-6-xhigh-mcp-fda8f42679",
+            "label": "Skalvej road label",
+            "text": "Skalvej road label",
+            "description": "The Danish road name Skalvej is visible.",
+            "groundingPhrase": "Skalvej road label",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.46530760095011875,
+              "y": 0.6037432683379758,
+              "w": 0.06121654790182113,
+              "h": 0.14249879545283456
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Road paint reads Skalvej — Danish."
+              }
+            ],
+            "groundingLabel": "Skalvej road label",
+            "ratingsReviewedAt": "2026-09-12T17:17:09.193Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -199964,20 +201981,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-hard--loc-024",
+        "id": "benchmark-gpt-6-astra-low-run2-hard-07",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 56.251844,
+          "lng": 8.17072,
+          "label": "56.25184, 8.17072"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-hard-07",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -213424,6 +215445,129 @@
             "ratingsReviewedAt": "2026-09-12T01:17:26.028Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-mcp-fff0e6bccb",
+            "label": "Boreal pine and birch",
+            "text": "Boreal pine and birch",
+            "description": "Pine and birch trees form a boreal forest beside the road.",
+            "groundingPhrase": "Boreal pine and birch",
+            "source": "panorama",
+            "category": "vegetation",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Boreal pine/birch, white lines, and a visible car hood point to Finland."
+              }
+            ],
+            "groundingLabel": "Boreal pine",
+            "ratingsReviewedAt": "2026-09-12T17:07:01.108Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-mcp-fcae637891",
+            "label": "Visible car hood",
+            "text": "Visible car hood",
+            "description": "The survey vehicle's hood is visible at the bottom of the panorama.",
+            "groundingPhrase": "Visible car hood",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": {
+              "x": 0.2345,
+              "y": 0.8435,
+              "w": 0.458,
+              "h": 0.15
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Boreal pine/birch, white lines, and a visible car hood point to Finland."
+              }
+            ],
+            "groundingLabel": "Visible car hood",
+            "ratingsReviewedAt": "2026-09-12T17:07:07.529Z"
+          },
+          {
+            "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-mcp-798d96195f",
+            "label": "White road lines",
+            "text": "White road lines",
+            "description": "White centre and edge lines mark the paved road.",
+            "groundingPhrase": "White road lines",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": {
+              "x": 0.4564026128266033,
+              "y": 0.43889393711260005,
+              "w": 0.12540775930324627,
+              "h": 0.47793929584180284
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "hard-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "hard-r1",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+                "text": "Boreal pine/birch, white lines, and a visible car hood point to Finland."
+              }
+            ],
+            "groundingLabel": "White road lines",
+            "ratingsReviewedAt": "2026-09-12T17:07:17.728Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -213694,20 +215838,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-hard--loc-025",
+        "id": "benchmark-gpt-6-astra-low-run2-hard-08",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 61.566133,
+          "lng": 25.701551,
+          "label": "61.56613, 25.70155"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-hard-08",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -231043,6 +233191,134 @@
             "ratingsReviewedAt": "2026-09-12T02:15:44.570Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-009-grok-4-6-xhigh-mcp-b307138a4e",
+            "label": "Green igloo recycling bin",
+            "text": "Green igloo recycling bin",
+            "description": "A large green igloo-shaped recycling container is visible on the street.",
+            "groundingPhrase": "Green igloo recycling bin",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": {
+              "x": 0.1265,
+              "y": 0.5305,
+              "w": 0.11,
+              "h": 0.204
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Round 1 is on: Catalan Carrer de and a green igloo bin point to Barcelona."
+              }
+            ],
+            "groundingLabel": "Green igloo recycling bin; bin",
+            "ratingsReviewedAt": "2026-09-12T17:17:20.684Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-009-grok-4-6-xhigh-mcp-47e9648929",
+            "label": "Catalan Carrer de text",
+            "text": "Catalan Carrer de text",
+            "description": "A street label begins with the Catalan words Carrer de.",
+            "groundingPhrase": "Catalan Carrer de text",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.36975455265241486,
+              "y": 0.5386835303269844,
+              "w": 0.06413301662707838,
+              "h": 0.2360912444477904
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Round 1 is on: Catalan Carrer de and a green igloo bin point to Barcelona."
+              }
+            ],
+            "groundingLabel": "Catalan Carrer",
+            "ratingsReviewedAt": "2026-09-12T17:17:27.749Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-009-grok-4-6-xhigh-mcp-1909c025ef",
+            "label": "Red corner street plaque",
+            "text": "Red corner street plaque",
+            "description": "A red street plaque is mounted at the building corner.",
+            "groundingPhrase": "Red corner street plaque",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.5201900237529691,
+              "y": 0.4101984993349896,
+              "w": 0.13460015835312755,
+              "h": 0.11563652789279527
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "There's a red corner plaque."
+              }
+            ],
+            "groundingLabel": "Red corner street plaque",
+            "ratingsReviewedAt": "2026-09-12T17:17:34.071Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -231313,20 +233589,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-009",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-01",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 39.465708,
+          "lng": -0.365384,
+          "label": "39.46571, -0.36538"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-01",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -247332,6 +249612,64 @@
             "ratingsReviewedAt": "2026-09-12T01:26:30.694Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-010-grok-4-6-xhigh-mcp-9ced4e4801",
+            "label": "Via Francesco road label",
+            "text": "Via Francesco road label",
+            "description": "An Italian road label begins with Via Francesco.",
+            "groundingPhrase": "Via Francesco road label",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.4837688044338876,
+              "y": 0.5161986499033853,
+              "w": 0.05700712589073631,
+              "h": 0.2585761248713895
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Round 2 is Italy (Via Francesco…)."
+              }
+            ],
+            "groundingLabel": "Via Francesco road label",
+            "ratingsReviewedAt": "2026-09-12T17:08:11.497Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -247602,20 +249940,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-010",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-02",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 44.49328,
+          "lng": 11.326157,
+          "label": "44.49328, 11.32616"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-02",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -264819,6 +267161,99 @@
             "ratingsReviewedAt": "2026-09-12T01:34:01.960Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-011-grok-4-6-xhigh-mcp-14f65a287f",
+            "label": "Red bicycle lane",
+            "text": "Red bicycle lane",
+            "description": "A red-surfaced bicycle lane runs alongside the street.",
+            "groundingPhrase": "Red bicycle lane",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": {
+              "x": 0.5490265241488519,
+              "y": 0.5084697608471982,
+              "w": 0.4509734758511481,
+              "h": 0.4915302391528018
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Round 3 is the Netherlands — Amsterdamsestraatweg and a red bike lane."
+              }
+            ],
+            "groundingLabel": "Red bicycle lane",
+            "ratingsReviewedAt": "2026-09-12T17:17:43.484Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-011-grok-4-6-xhigh-mcp-319bb63503",
+            "label": "Amsterdamsestraatweg label",
+            "text": "Amsterdamsestraatweg label",
+            "description": "The Dutch street name Amsterdamsestraatweg is visible.",
+            "groundingPhrase": "Amsterdamsestraatweg label",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.44734758511480605,
+              "y": 0.5210168385655851,
+              "w": 0.05146476642913694,
+              "h": 0.2553639990965896
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Round 3 is the Netherlands — Amsterdamsestraatweg and a red bike lane."
+              }
+            ],
+            "groundingLabel": "Amsterdamsestraatweg label",
+            "ratingsReviewedAt": "2026-09-12T17:17:48.433Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -265089,20 +267524,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-011",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-03",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 52.1041,
+          "lng": 5.094219,
+          "label": "52.10410, 5.09422"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-03",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -278870,6 +281309,99 @@
             "ratingsReviewedAt": "2026-09-12T01:40:25.997Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-012-grok-4-6-xhigh-mcp-3f729360ab",
+            "label": "FOTO AKTIEF sign",
+            "text": "FOTO AKTIEF sign",
+            "description": "A storefront or roadside sign reads FOTO AKTIEF.",
+            "groundingPhrase": "FOTO AKTIEF sign",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.6769596199524941,
+              "y": 0.424653065321589,
+              "w": 0.08630245447347584,
+              "h": 0.059424326833797614
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "N44 plus FOTO AKTIEF looks like Flanders."
+              }
+            ],
+            "groundingLabel": "FOTO AKTIEF sign",
+            "ratingsReviewedAt": "2026-09-12T17:17:55.206Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-012-grok-4-6-xhigh-mcp-779f789ae9",
+            "label": "N44 road label",
+            "text": "N44 road label",
+            "description": "The road is labelled N44.",
+            "groundingPhrase": "N44 road label",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.46239113222486145,
+              "y": 0.6093502973725815,
+              "w": 0.06175771971496441,
+              "h": 0.1702426660643931
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "N44 plus FOTO AKTIEF looks like Flanders."
+              }
+            ],
+            "groundingLabel": "N44 road label",
+            "ratingsReviewedAt": "2026-09-12T17:17:59.061Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -279140,20 +281672,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-012",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-04",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 50.981359,
+          "lng": 3.744758,
+          "label": "50.98136, 3.74476"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-04",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -292257,6 +294793,247 @@
             "ratingsReviewedAt": "2026-09-12T01:47:17.542Z"
           }
         ]
+      },
+      {
+        "id": "gemini-3-8-flash-medium-aided-static-covered",
+        "benchmarkId": "gemini-3-8-flash-medium-aided-static-covered",
+        "model": "Gemini 3.8 Flash",
+        "reasoning": "medium, aided",
+        "condition": "static-image-covered",
+        "publicationStatus": "published",
+        "imagePath": "data/starting-images-covered/google_road_marking_cover/europe-medium/loc_013.png",
+        "mergeStrategy": "single-covered-static-run",
+        "sourceRuns": [
+          {
+            "runId": "covered-static-r1",
+            "report": "../newEvalReport_3_8_medium.md"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-static-covered-1ed1fc2a8f",
+            "label": "Municipal Waste Bin",
+            "text": "Municipal Waste Bin",
+            "description": "Green wheeled dumpster on the left bears the Portuguese warning stencil \"AFIXAÇÃO PROIBIDA\" (sticking posters prohibited).",
+            "groundingPhrase": "Municipal Waste Bin",
+            "source": "starting-image",
+            "category": "infrastructure",
+            "region": {
+              "x": 0.0515,
+              "y": 0.6025,
+              "w": 0.148,
+              "h": 0.145
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_medium.md",
+                "text": "Municipal Waste Bin: Green wheeled dumpster on the left bears the Portuguese warning stencil \"AFIXAÇÃO PROIBIDA\" (sticking posters prohibited)"
+              }
+            ],
+            "groundingLabel": "Municipal Waste Bin",
+            "ratingsReviewedAt": "2026-09-12T17:20:41.018Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-static-covered-06a14e7fb5",
+            "label": "Parking Sign",
+            "text": "Parking Sign",
+            "description": "Official blue parking sign labeled \"P PRIVATIVO\" (Portuguese for private parking).",
+            "groundingPhrase": "Parking Sign",
+            "source": "starting-image",
+            "category": "signage",
+            "region": {
+              "x": 0.19873317498020585,
+              "y": 0.4439258199703882,
+              "w": 0.030878859857482205,
+              "h": 0.08030314436999669
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_medium.md",
+                "text": "Parking Sign: Official blue parking sign labeled \"P PRIVATIVO\" (Portuguese for private parking)"
+              }
+            ],
+            "groundingLabel": "Sign",
+            "ratingsReviewedAt": "2026-09-12T17:21:09.039Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-static-covered-c3402fefd8",
+            "label": "Portuguese Urban Architecture",
+            "text": "Portuguese Urban Architecture",
+            "description": "Multi-story plastered stone buildings with granite door/window frames, decorative iron balustrades with potted geraniums, and patterned ceramic tile (azulejos) facade inserts.",
+            "groundingPhrase": "Portuguese Urban Architecture",
+            "source": "starting-image",
+            "category": "architecture",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_medium.md",
+                "text": "Portuguese Urban Architecture: Multi-story plastered stone buildings with granite door/window frames, decorative iron balustrades with potted geraniums, and patterned ceramic tile (azulejos) facade inserts"
+              }
+            ],
+            "groundingLabel": "Portuguese Urban Architecture",
+            "ratingsReviewedAt": "2026-09-12T17:21:01.531Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-static-covered-fa11595ab9",
+            "label": "Portuguese Pavement (Calçada)",
+            "text": "Portuguese Pavement (Calçada)",
+            "description": "Distinctive traditional Portuguese limestone cobblestone paving on pedestrian walkways.",
+            "groundingPhrase": "Portuguese Pavement",
+            "source": "starting-image",
+            "category": "geography",
+            "region": {
+              "x": 0.6582133808392716,
+              "y": 0.5891365278927952,
+              "w": 0.3417866191607284,
+              "h": 0.41086347210720475
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "covered-static-r1"
+            ],
+            "provenance": [
+              {
+                "runId": "covered-static-r1",
+                "report": "../newEvalReport_3_8_medium.md",
+                "text": "Portuguese Pavement (Calçada): Distinctive traditional Portuguese limestone cobblestone paving on pedestrian walkways"
+              }
+            ],
+            "groundingLabel": "Portuganian Pavement",
+            "ratingsReviewedAt": "2026-09-12T17:20:59.559Z"
+          }
+        ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-013-grok-4-6-xhigh-mcp-c821a31311",
+            "label": "R. Figueiredo da Foz road label",
+            "text": "R. Figueiredo da Foz road label",
+            "description": "The visible Portuguese road label was read as R. Figueiredo da Foz.",
+            "groundingPhrase": "R. Figueiredo da Foz road label",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.45288994457640536,
+              "y": 0.5274410901151848,
+              "w": 0.05463182897862234,
+              "h": 0.19915179803759187
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Granite and R. Figueiredo da Foz point to Porto."
+              }
+            ],
+            "groundingLabel": "Figueiredo da Foz road label",
+            "ratingsReviewedAt": "2026-09-12T17:18:15.584Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-013-grok-4-6-xhigh-mcp-492be03998",
+            "label": "Granite facades",
+            "text": "Granite facades",
+            "description": "Urban building facades use prominent granite stonework.",
+            "groundingPhrase": "Granite facades",
+            "source": "panorama",
+            "category": "architecture",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Round 5 is Portugal — granite facades and R. (Rua)."
+              }
+            ],
+            "groundingLabel": "Granite facades",
+            "ratingsReviewedAt": "2026-09-12T17:18:09.059Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -292527,20 +295304,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-013",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-05",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 40.215801,
+          "lng": -8.434501,
+          "label": "40.21580, -8.43450"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-05",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -306087,6 +308868,94 @@
             "ratingsReviewedAt": "2026-09-12T01:55:16.902Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-014-grok-4-6-xhigh-mcp-1a1947c46e",
+            "label": "Bergagatan road label",
+            "text": "Bergagatan road label",
+            "description": "The Swedish street name Bergagatan is visible.",
+            "groundingPhrase": "Bergagatan road label",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.4156769596199525,
+              "y": 0.5756229767371829,
+              "w": 0.0649247822644497,
+              "h": 0.17827298050139273
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Bergagatan is Swedish."
+              }
+            ],
+            "groundingLabel": "Bergagatan road label",
+            "ratingsReviewedAt": "2026-09-12T17:09:09.638Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-014-grok-4-6-xhigh-mcp-fb55872f6d",
+            "label": "House number 44",
+            "text": "House number 44",
+            "description": "The number 44 is visible on a mailbox.",
+            "groundingPhrase": "House number 44",
+            "source": "panorama",
+            "category": "signage",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": false,
+              "correct": false,
+              "useful": false,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "House number 44 is on the mailbox."
+              }
+            ],
+            "groundingLabel": "House number",
+            "ratingsReviewedAt": "2026-09-12T17:09:51.907Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -306357,20 +309226,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-014",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-06",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 59.85289,
+          "lng": 17.612693,
+          "label": "59.85289, 17.61269"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-06",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -319955,6 +322828,64 @@
             "ratingsReviewedAt": "2026-09-12T02:02:47.200Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-015-grok-4-6-xhigh-mcp-1b23a13445",
+            "label": "Sepaküla tee road label",
+            "text": "Sepaküla tee road label",
+            "description": "The Estonian street name Sepaküla tee is visible.",
+            "groundingPhrase": "Sepaküla tee road label",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.6214556611243072,
+              "y": 0.5652877236568045,
+              "w": 0.0681722090261283,
+              "h": 0.21099984943160432
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Sepaküla tee is Estonian."
+              }
+            ],
+            "groundingLabel": "Sepakla tee road label",
+            "ratingsReviewedAt": "2026-09-12T17:18:26.204Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -320225,20 +323156,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-015",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-07",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 58.350022,
+          "lng": 26.721335,
+          "label": "58.35002, 26.72133"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-07",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -339160,6 +342095,99 @@
             "ratingsReviewedAt": "2026-09-12T02:10:18.848Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-016-grok-4-6-xhigh-mcp-e5a1286ad8",
+            "label": "Jelšová road label",
+            "text": "Jelšová road label",
+            "description": "The visible road label reads Jelšová.",
+            "groundingPhrase": "Jelšová road label",
+            "source": "panorama",
+            "category": "signage",
+            "region": {
+              "x": 0.47980997624703087,
+              "y": 0.5788351025119828,
+              "w": 0.06888361045130648,
+              "h": 0.16221235162739334
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Jelšová plus forested hills look Slovak."
+              }
+            ],
+            "groundingLabel": "Jelov road label",
+            "ratingsReviewedAt": "2026-09-12T17:18:33.133Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-016-grok-4-6-xhigh-mcp-34bfaff0d8",
+            "label": "Forested hills",
+            "text": "Forested hills",
+            "description": "Forested hills rise around the road and settlement.",
+            "groundingPhrase": "Forested hills",
+            "source": "panorama",
+            "category": "geography",
+            "region": {
+              "x": 0.4885,
+              "y": 0.3105,
+              "w": 0.155,
+              "h": 0.136
+            },
+            "regionSource": "microsoft/Florence-2-large+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Jelšová plus forested hills look Slovak."
+              }
+            ],
+            "groundingLabel": "Forested hills",
+            "ratingsReviewedAt": "2026-09-12T17:18:35.593Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -339430,20 +342458,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-016",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-08",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 49.204149,
+          "lng": 18.722202,
+          "label": "49.20415, 18.72220"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-08",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,
@@ -354750,6 +357782,184 @@
             "ratingsReviewedAt": "2026-09-11T22:46:43.848Z"
           }
         ]
+      },
+      {
+        "id": "grok-4-6-xhigh-mcp",
+        "benchmarkId": "grok-4-6-xhigh-mcp",
+        "model": "Grok 4.6 + MCP",
+        "reasoning": "xhigh",
+        "mergeStrategy": "tier-best-composite",
+        "sourceRuns": [
+          {
+            "runId": "easy-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+          },
+          {
+            "runId": "medium-r2",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+          },
+          {
+            "runId": "hard-r1",
+            "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+          }
+        ],
+        "cues": [
+          {
+            "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-a8f682c5ef",
+            "label": "Bohonagh road text",
+            "text": "Bohonagh road text",
+            "description": "The place name Bohonagh is visible in the road information.",
+            "groundingPhrase": "Bohonagh road text",
+            "source": "panorama",
+            "category": "signage",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": false,
+              "correct": false,
+              "useful": false,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Road paint shows L1322 and Bohonagh."
+              }
+            ],
+            "groundingLabel": "Bohonagh road text",
+            "ratingsReviewedAt": "2026-09-12T17:10:35.446Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-11106d8a02",
+            "label": "Rahoon/Newcastle GAA sign",
+            "text": "Rahoon/Newcastle GAA sign",
+            "description": "A GAA sign identifies Rahoon/Newcastle in Galway.",
+            "groundingPhrase": "Rahoon/Newcastle GAA sign",
+            "source": "panorama",
+            "category": "signage",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "The GAA sign is Rahoon/Newcastle in Galway."
+              }
+            ],
+            "groundingLabel": "Rahoon/Newcastle GAA sign",
+            "ratingsReviewedAt": "2026-09-12T17:10:42.946Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-23dfe0ff79",
+            "label": "Yellow centre lines",
+            "text": "Yellow centre lines",
+            "description": "Yellow centre lines are painted on the road.",
+            "groundingPhrase": "Yellow centre lines",
+            "source": "panorama",
+            "category": "infrastructure",
+            "region": {
+              "x": 0.33016825019794144,
+              "y": 0.5045303144369997,
+              "w": 0.233,
+              "h": 0.345
+            },
+            "regionSource": "manual+manual-review",
+            "annotationStatus": "reviewed",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Yellow center lines and stone walls look like Ireland."
+              }
+            ],
+            "groundingLabel": "Yellow centre lines",
+            "ratingsReviewedAt": "2026-09-12T17:10:50.642Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-4494b029ed",
+            "label": "L1322 road marking",
+            "text": "L1322 road marking",
+            "description": "The road marking shows route number L1322.",
+            "groundingPhrase": "L1322 road marking",
+            "source": "panorama",
+            "category": "signage",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": false,
+              "correct": false,
+              "useful": false,
+              "consistent": false
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Road paint shows L1322 and Bohonagh."
+              }
+            ],
+            "groundingLabel": "L1322 road",
+            "ratingsReviewedAt": "2026-09-12T17:10:54.549Z"
+          },
+          {
+            "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-cb0ce9c098",
+            "label": "Stone walls",
+            "text": "Stone walls",
+            "description": "Stone walls line the roadside.",
+            "groundingPhrase": "Stone walls",
+            "source": "panorama",
+            "category": "architecture",
+            "region": null,
+            "regionSource": null,
+            "annotationStatus": "text-only",
+            "ratings": {
+              "visible": true,
+              "correct": true,
+              "useful": true,
+              "consistent": true
+            },
+            "sourceRuns": [
+              "medium-r2"
+            ],
+            "provenance": [
+              {
+                "runId": "medium-r2",
+                "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+                "text": "Yellow center lines and stone walls look like Ireland."
+              }
+            ],
+            "groundingLabel": "Stone walls",
+            "ratingsReviewedAt": "2026-09-12T17:10:57.887Z"
+          }
+        ]
       }
     ],
     "runs": [
@@ -355020,20 +358230,24 @@
         "durationSeconds": null
       },
       {
-        "id": "benchmark-gpt-6-astra-low-europe-medium--loc-017",
+        "id": "benchmark-gpt-6-astra-low-run2-medium-09",
         "model": "GPT-6 Astra · low",
         "condition": "interactive-panorama",
-        "prediction": null,
+        "prediction": {
+          "lat": 53.276229,
+          "lng": -9.092227,
+          "label": "53.27623, -9.09223"
+        },
         "runKind": "model-prediction",
         "benchmarkId": "gpt-6-astra-low",
         "bestRunId": "run-2",
         "bestRunLabel": "Run 2",
         "bestRunPoints": 119818,
         "benchmarkMeanPoints": 119245.66666666667,
-        "sourcePredictionId": null,
+        "sourcePredictionId": "run2-medium-09",
         "hypothesis": "",
         "cues": [],
-        "notes": "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+        "notes": "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
         "isMock": false,
         "accuracy": {
           "country": null,

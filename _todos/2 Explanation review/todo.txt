@@ -1,5 +1,0 @@
-Grok 4.6 + MCP xhigh doesnt have explainability human verification data
-
-Remove explanation review from all baselines: GeoCLIP, SALAD, PLONK, Chipoint v2 (global and location view)
-
-Exchange text "Positive ratings" with something like "human verified positive"

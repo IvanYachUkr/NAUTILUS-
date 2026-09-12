@@ -42,7 +42,8 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 3", easy: 39_998, medium: 43_482, hard: 35_279, total: 118_759 },
     ],
     bestRun: { id: "run-2", label: "Run 2", points: 119_818 },
-    predictionAvailability: "reported-without-validated-coordinates",
+    predictionSource: { type: "curated-json", path: "browser-predictions/predictions.json" },
+    predictionNotes: "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
   },
   {
     id: "gemini-3-7-flash-high-aided",
@@ -284,7 +285,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
             </div>
             <div class="story-intro__copy">
               <p>NAUTILUS tests whether vision-capable models can geolocate European street scenes and show evidence that a person can actually verify.</p>
-              <p>We compare the model's stated clues, its path through the panorama, and its final pin—so a confident explanation can be checked against what was visible.</p>
+              <p>We compare the model's stated clues with its final pin, so a confident explanation can be checked against what was visible.</p>
               <button class="story-cta story-cta--primary" type="button" data-scroll-target="explorer">
                 <i class="ph-fill ph-globe-hemisphere-west" aria-hidden="true"></i>
                 Explore the atlas
@@ -315,7 +316,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
           <div class="story-section__eyebrow"><span>02</span> Method</div>
           <div class="story-heading-row">
             <h2>From first glance<br /><em>to final pin.</em></h2>
-            <p>Every run uses the same four-stage protocol. The final prediction matters, but so does the path that produced it.</p>
+            <p>Every run uses the same four-stage protocol, from the fixed starting scene to one final map prediction.</p>
           </div>
 
           <figure class="method-scene" aria-hidden="true">
@@ -409,7 +410,7 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
             </header>
             ${leaderboard.map(leaderboardRowMarkup).join("")}
           </div>
-          <p class="results-note"><i class="ph ph-info" aria-hidden="true"></i> Each condition covers 8 easy, 9 medium, and 8 hard scenes. Repeats measure variation on these fixed locations. Grok MCP combines separate difficulty means; its Easy timer was 180 seconds and Medium/Hard 300 seconds.</p>
+          <p class="results-note"><i class="ph ph-info" aria-hidden="true"></i> Fixed set: 8 easy, 9 medium, and 8 hard scenes; rankings use repeat means, while Grok MCP combines difficulty-level means.</p>
         </section>
 
         <section class="story-section evidence-section" id="evidence" data-site-section-id="evidence">
@@ -418,11 +419,10 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
             <div class="evidence-copy">
               <h2>Can the clue survive <em>inspection?</em></h2>
               <p>A polished explanation can still be wrong. Human review treats each reported clue as evidence to test, not prose to admire.</p>
-              <p class="evidence-audit"><strong>${formatInteger(evidenceCounts.reviewed)}</strong> image regions verified · <strong>${formatInteger(evidenceCounts.textOnly)}</strong> text-only clues retained · <strong>${formatInteger(evidenceCounts.excluded)}</strong> rejected</p>
+              <p class="evidence-audit"><strong>${formatInteger(evidenceCounts.reviewed)}</strong> image regions verified · <strong>${formatInteger(evidenceCounts.textOnly)}</strong> text-only clues retained</p>
               <div class="cue-rubric" aria-label="Cue review rubric">
                 <span><i class="ph ph-eye" aria-hidden="true"></i> Visible</span>
                 <span><i class="ph ph-check-circle" aria-hidden="true"></i> Correct</span>
-                <span><i class="ph ph-crosshair" aria-hidden="true"></i> Specific</span>
                 <span><i class="ph ph-compass" aria-hidden="true"></i> Useful</span>
                 <span><i class="ph ph-link" aria-hidden="true"></i> Consistent</span>
               </div>
@@ -438,10 +438,11 @@ export function projectStoryMarkup(snapshot = buildProjectSnapshot()) {
                 <p>The statue-topped column is visibly centered in the frame. It is a distinctive landmark that supports Place de la Bastille in Paris.</p>
                 <div class="evidence-verdicts">
                   <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Visible</b>
-                  <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Geographic</b>
-                  <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Pin-consistent</b>
+                  <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Correct</b>
+                  <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Useful</b>
+                  <b><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Consistent</b>
                 </div>
-                <button class="evidence-example__open" type="button" data-case-id="europe-easy--loc-001" data-case-model="Gemini 3.7 Flash · high, aided" data-case-condition="interactive-panorama">
+                <button class="evidence-example__open" type="button" data-case-id="europe-easy--loc-001" data-case-model="Gemini 3.7 Flash · high, aided" data-case-condition="interactive-panorama" data-open-evidence="true">
                   Inspect the reviewed clue <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
                 </button>
               </div>

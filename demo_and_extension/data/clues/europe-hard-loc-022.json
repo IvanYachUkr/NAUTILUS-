@@ -1970,6 +1970,94 @@
           "ratingsReviewedAt": "2026-09-11T21:27:11.172Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-022-grok-4-6-xhigh-mcp-4f5d455c96",
+          "label": "Straight dirt track",
+          "text": "Straight dirt track",
+          "description": "A straight unpaved track runs through the scene.",
+          "groundingPhrase": "Straight dirt track",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.3765,
+            "y": 0.4505,
+            "w": 0.21,
+            "h": 0.444
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Round 5 is a straight dirt track through temperate scrub."
+            }
+          ],
+          "groundingLabel": "Straight dirt track",
+          "ratingsReviewedAt": "2026-09-12T17:06:17.196Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-022-grok-4-6-xhigh-mcp-1e237117a9",
+          "label": "Temperate scrub",
+          "text": "Temperate scrub",
+          "description": "Dense temperate scrub vegetation borders the track.",
+          "groundingPhrase": "Temperate scrub",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Round 5 is a straight dirt track through temperate scrub."
+            }
+          ],
+          "groundingLabel": "Temperate scrub",
+          "ratingsReviewedAt": "2026-09-12T17:06:24.478Z"
+        }
+      ]
     }
   ]
 }

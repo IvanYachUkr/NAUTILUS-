@@ -120,6 +120,32 @@ const PRESETS = {
       { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md" },
     ],
   },
+  "grok-4-6-xhigh-mcp": {
+    id: "grok-4-6-xhigh-mcp",
+    benchmarkId: "grok-4-6-xhigh-mcp",
+    model: "Grok 4.6 + MCP",
+    reasoning: "xhigh",
+    mergeStrategy: "tier-best-composite",
+    reports: [{
+      runId: "tier-best-composite",
+      path: "data/recorded-agent-benchmark/grok-4.6-xhigh/mcp-composite-best/clues.json",
+      format: "curated-clues",
+    }],
+    sourceRuns: [
+      {
+        runId: "easy-r2",
+        report: "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+      },
+      {
+        runId: "medium-r2",
+        report: "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+      },
+      {
+        runId: "hard-r1",
+        report: "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+      },
+    ],
+  },
 };
 
 const COMPETITIONS = {
@@ -153,7 +179,9 @@ for (const report of preset.reports) {
   const markdown = await readFile(absolutePath, "utf8");
   const reportItems = report.format === "glm-conversation"
     ? parseGlmConversation(JSON.parse(markdown), report.runId, report.path)
-    : parseReport(markdown, report.runId, report.path);
+    : report.format === "curated-clues"
+      ? parseCuratedClues(JSON.parse(markdown), report.path)
+      : parseReport(markdown, report.runId, report.path);
   for (const item of reportItems) {
     if (!extracted.has(item.locationId)) extracted.set(item.locationId, []);
     extracted.get(item.locationId).push(item);
@@ -196,8 +224,8 @@ for (const competition of Object.values(COMPETITIONS)) {
       benchmarkId: preset.benchmarkId ?? preset.id,
       model: preset.model,
       reasoning: preset.reasoning,
-      mergeStrategy: "canonical-model-set",
-      sourceRuns: preset.reports.map(({ runId, path }) => ({ runId, report: path })),
+      mergeStrategy: preset.mergeStrategy ?? "canonical-model-set",
+      sourceRuns: preset.sourceRuns ?? preset.reports.map(({ runId, path }) => ({ runId, report: path })),
       cues,
     };
     const setIndex = current.clueSets.findIndex((item) => item.id === clueSet.id);
@@ -379,6 +407,59 @@ function parseGlmConversation(conversation, runId, reportPath) {
         // Ignore presentation fragments that are not completed submit results.
       }
     }
+  }
+  return items;
+}
+
+function parseCuratedClues(document, fallbackReportPath) {
+  if (document?.schemaVersion !== "1.0" || !Array.isArray(document?.locations)) {
+    throw new Error(`${fallbackReportPath} must contain schemaVersion 1.0 and a locations array.`);
+  }
+
+  const items = [];
+  const seenLocations = new Set();
+  for (const location of document.locations) {
+    const locationId = String(location?.locationId ?? "").trim();
+    const runId = String(location?.sourceRun ?? "").trim();
+    const report = String(location?.report ?? fallbackReportPath).trim();
+    if (!/^europe-(?:easy|medium|hard)--loc-\d{3}$/.test(locationId)) {
+      throw new Error(`${fallbackReportPath} contains invalid locationId "${locationId}".`);
+    }
+    if (seenLocations.has(locationId)) {
+      throw new Error(`${fallbackReportPath} duplicates ${locationId}.`);
+    }
+    if (!runId || !Array.isArray(location?.clues) || location.clues.length === 0) {
+      throw new Error(`${fallbackReportPath} ${locationId} requires sourceRun and at least one clue.`);
+    }
+    seenLocations.add(locationId);
+
+    for (const clue of location.clues) {
+      const label = cleanMarkdown(clue?.label);
+      const description = cleanMarkdown(clue?.description);
+      const rawText = cleanMarkdown(clue?.sourceText);
+      if (!label || !description || !rawText) {
+        throw new Error(`${fallbackReportPath} ${locationId} contains an incomplete curated clue.`);
+      }
+      items.push({
+        locationId,
+        runId,
+        report,
+        rawText,
+        label,
+        description: sentence(description),
+        category: clue.category ?? categorize(`${label} ${description}`),
+      });
+    }
+  }
+
+  const missing = Object.values(COMPETITIONS).flatMap((competition) =>
+    Array.from({ length: competition.count }, (_, index) => {
+      const globalIndex = competition.start + index;
+      return `${competition.id}--loc-${String(globalIndex).padStart(3, "0")}`;
+    }),
+  ).filter((locationId) => !seenLocations.has(locationId));
+  if (missing.length) {
+    throw new Error(`${fallbackReportPath} is missing curated clues for: ${missing.join(", ")}`);
   }
   return items;
 }

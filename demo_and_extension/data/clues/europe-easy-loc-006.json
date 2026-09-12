@@ -3606,6 +3606,64 @@
           "ratingsReviewedAt": "2026-09-12T00:40:40.428Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-006-grok-4-6-xhigh-mcp-13da35c7bb",
+          "label": "B178 road designation",
+          "text": "B178 road designation",
+          "description": "The B178 designation is visible at a German–Polish border crossing near Zittau.",
+          "groundingPhrase": "B178 road designation",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7210067300079176,
+            "y": 0.6824403498205727,
+            "w": 0.10718012668250204,
+            "h": 0.18425643052523275
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 6 is a German–Polish border on B178 near Zittau."
+            }
+          ],
+          "groundingLabel": "B178 road designation",
+          "ratingsReviewedAt": "2026-09-12T17:02:59.531Z"
+        }
+      ]
     }
   ]
 }

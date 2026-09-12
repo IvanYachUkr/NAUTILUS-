@@ -3783,6 +3783,134 @@
           "ratingsReviewedAt": "2026-09-12T02:15:44.570Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-009-grok-4-6-xhigh-mcp-b307138a4e",
+          "label": "Green igloo recycling bin",
+          "text": "Green igloo recycling bin",
+          "description": "A large green igloo-shaped recycling container is visible on the street.",
+          "groundingPhrase": "Green igloo recycling bin",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.1265,
+            "y": 0.5305,
+            "w": 0.11,
+            "h": 0.204
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Round 1 is on: Catalan Carrer de and a green igloo bin point to Barcelona."
+            }
+          ],
+          "groundingLabel": "Green igloo recycling bin; bin",
+          "ratingsReviewedAt": "2026-09-12T17:17:20.684Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-grok-4-6-xhigh-mcp-47e9648929",
+          "label": "Catalan Carrer de text",
+          "text": "Catalan Carrer de text",
+          "description": "A street label begins with the Catalan words Carrer de.",
+          "groundingPhrase": "Catalan Carrer de text",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.36975455265241486,
+            "y": 0.5386835303269844,
+            "w": 0.06413301662707838,
+            "h": 0.2360912444477904
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Round 1 is on: Catalan Carrer de and a green igloo bin point to Barcelona."
+            }
+          ],
+          "groundingLabel": "Catalan Carrer",
+          "ratingsReviewedAt": "2026-09-12T17:17:27.749Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-009-grok-4-6-xhigh-mcp-1909c025ef",
+          "label": "Red corner street plaque",
+          "text": "Red corner street plaque",
+          "description": "A red street plaque is mounted at the building corner.",
+          "groundingPhrase": "Red corner street plaque",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.5201900237529691,
+            "y": 0.4101984993349896,
+            "w": 0.13460015835312755,
+            "h": 0.11563652789279527
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "There's a red corner plaque."
+            }
+          ],
+          "groundingLabel": "Red corner street plaque",
+          "ratingsReviewedAt": "2026-09-12T17:17:34.071Z"
+        }
+      ]
     }
   ]
 }

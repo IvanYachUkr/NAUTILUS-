@@ -2069,6 +2069,129 @@
           "ratingsReviewedAt": "2026-09-11T17:59:42.130Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-004-grok-4-6-xhigh-mcp-8333b26b10",
+          "label": "Castle-terrace saint statue",
+          "text": "Castle-terrace saint statue",
+          "description": "A saint statue stands on the castle terrace.",
+          "groundingPhrase": "Castle-terrace saint statue",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.2485,
+            "y": 0.1865,
+            "w": 0.136,
+            "h": 0.553
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 4 looks like Český Krumlov Castle: red roofs, Vltava weir, and a castle-terrace saint statue."
+            }
+          ],
+          "groundingLabel": "Castle-terrace saint statue",
+          "ratingsReviewedAt": "2026-09-12T17:16:44.406Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-004-grok-4-6-xhigh-mcp-6fb2de8188",
+          "label": "Red roofs",
+          "text": "Red roofs",
+          "description": "Dense red-tiled roofs are visible below the castle viewpoint.",
+          "groundingPhrase": "Red roofs",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 4 looks like Český Krumlov Castle: red roofs, Vltava weir, and a castle-terrace saint statue."
+            }
+          ],
+          "groundingLabel": "Red roofs",
+          "ratingsReviewedAt": "2026-09-12T17:16:46.993Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-004-grok-4-6-xhigh-mcp-2ba66f2d3d",
+          "label": "Vltava weir",
+          "text": "Vltava weir",
+          "description": "A weir is visible across the Vltava River below.",
+          "groundingPhrase": "Vltava weir",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.5726433095803641,
+            "y": 0.5307725287962057,
+            "w": 0.206,
+            "h": 0.2716666917613993
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 4 looks like Český Krumlov Castle: red roofs, Vltava weir, and a castle-terrace saint statue."
+            }
+          ],
+          "groundingLabel": "Vltava weir",
+          "ratingsReviewedAt": "2026-09-12T17:16:53.683Z"
+        }
+      ]
     }
   ]
 }

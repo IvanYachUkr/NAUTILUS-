@@ -8,6 +8,7 @@ const els = Object.fromEntries([...document.querySelectorAll("[data-location], [
 const reviewParams = new URLSearchParams(window.location.search);
 const ratingMode = reviewParams.get("mode") === "ratings";
 const conditionScope = reviewParams.get("condition");
+const clueSetScope = reviewParams.get("clueSet");
 const RATING_KEYS = ["visible", "correct", "useful", "consistent"];
 let documents = [];
 let locationIndex = 0;
@@ -26,6 +27,9 @@ async function boot() {
   documents = payload.documents ?? [];
   if (conditionScope) {
     documents = documents.filter((item) => item.clueSets?.some((set) => set.condition === conditionScope));
+  }
+  if (clueSetScope) {
+    documents = documents.filter((item) => item.clueSets?.some((set) => set.id === clueSetScope));
   }
   documents = documents.filter((item) => item.clueSets?.some(isEligibleClueSet));
   if (!documents.length) throw new Error("No clue documents were found. Run npm run clues:extract first.");
@@ -371,6 +375,7 @@ function flattenedCues() {
 }
 function isEligibleClueSet(set) {
   return (!conditionScope || set?.condition === conditionScope) &&
+    (!clueSetScope || set?.id === clueSetScope) &&
     (!ratingMode || set?.cues?.some(isRatingScopeCue));
 }
 function conditionLabel(condition) {

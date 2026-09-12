@@ -3674,6 +3674,64 @@
           "ratingsReviewedAt": "2026-09-12T02:02:47.200Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-015-grok-4-6-xhigh-mcp-1b23a13445",
+          "label": "Sepaküla tee road label",
+          "text": "Sepaküla tee road label",
+          "description": "The Estonian street name Sepaküla tee is visible.",
+          "groundingPhrase": "Sepaküla tee road label",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6214556611243072,
+            "y": 0.5652877236568045,
+            "w": 0.0681722090261283,
+            "h": 0.21099984943160432
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Sepaküla tee is Estonian."
+            }
+          ],
+          "groundingLabel": "Sepakla tee road label",
+          "ratingsReviewedAt": "2026-09-12T17:18:26.204Z"
+        }
+      ]
     }
   ]
 }

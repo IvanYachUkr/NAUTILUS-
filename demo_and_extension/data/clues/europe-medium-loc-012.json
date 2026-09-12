@@ -3643,6 +3643,99 @@
           "ratingsReviewedAt": "2026-09-12T01:40:25.997Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-012-grok-4-6-xhigh-mcp-3f729360ab",
+          "label": "FOTO AKTIEF sign",
+          "text": "FOTO AKTIEF sign",
+          "description": "A storefront or roadside sign reads FOTO AKTIEF.",
+          "groundingPhrase": "FOTO AKTIEF sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6769596199524941,
+            "y": 0.424653065321589,
+            "w": 0.08630245447347584,
+            "h": 0.059424326833797614
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "N44 plus FOTO AKTIEF looks like Flanders."
+            }
+          ],
+          "groundingLabel": "FOTO AKTIEF sign",
+          "ratingsReviewedAt": "2026-09-12T17:17:55.206Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-012-grok-4-6-xhigh-mcp-779f789ae9",
+          "label": "N44 road label",
+          "text": "N44 road label",
+          "description": "The road is labelled N44.",
+          "groundingPhrase": "N44 road label",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.46239113222486145,
+            "y": 0.6093502973725815,
+            "w": 0.06175771971496441,
+            "h": 0.1702426660643931
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "N44 plus FOTO AKTIEF looks like Flanders."
+            }
+          ],
+          "groundingLabel": "N44 road label",
+          "ratingsReviewedAt": "2026-09-12T17:17:59.061Z"
+        }
+      ]
     }
   ]
 }

@@ -3630,6 +3630,64 @@
           "ratingsReviewedAt": "2026-09-12T01:13:08.106Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-024-grok-4-6-xhigh-mcp-fda8f42679",
+          "label": "Skalvej road label",
+          "text": "Skalvej road label",
+          "description": "The Danish road name Skalvej is visible.",
+          "groundingPhrase": "Skalvej road label",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.46530760095011875,
+            "y": 0.6037432683379758,
+            "w": 0.06121654790182113,
+            "h": 0.14249879545283456
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Road paint reads Skalvej — Danish."
+            }
+          ],
+          "groundingLabel": "Skalvej road label",
+          "ratingsReviewedAt": "2026-09-12T17:17:09.193Z"
+        }
+      ]
     }
   ]
 }

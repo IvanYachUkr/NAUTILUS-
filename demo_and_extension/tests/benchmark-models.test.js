@@ -15,7 +15,8 @@ test("the explorer includes Astra and the disclosed Grok MCP tier composite", as
 
   assert.equal(astraRuns.length, 25);
   assert.ok(astraRuns.every((run) => run.runKind === "model-prediction"));
-  assert.ok(astraRuns.every((run) => run.prediction === null));
+  assert.ok(astraRuns.every((run) => Number.isFinite(run.prediction?.lat) && Number.isFinite(run.prediction?.lng)));
+  assert.ok(astraRuns.every((run) => run.bestRunId === "run-2"));
 
   assert.equal(grokMcpRuns.length, 25);
   assert.ok(grokMcpRuns.every((run) => run.runKind === "model-prediction"));

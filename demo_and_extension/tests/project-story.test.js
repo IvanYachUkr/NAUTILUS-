@@ -148,6 +148,11 @@ test("project story renders every research section with live benchmark values", 
   assert.doesNotMatch(markup, /Run 1 Hard and Run 3 Medium/);
   assert.ok(markup.includes("image regions verified"));
   assert.ok(markup.includes("The gilded figure crowns the July Column"));
+  assert.ok(markup.includes('data-open-evidence="true"'));
+  assert.ok(markup.includes("> Useful</span>"));
+  assert.ok(markup.includes("> Consistent</b>"));
+  assert.doesNotMatch(markup, /> Specific</);
+  assert.doesNotMatch(markup, /Pin-consistent/);
   assert.ok(markup.includes('data-case-model="Gemini 3.7 Flash · high, aided"'));
   assert.ok(markup.includes("https://github.com/IvanYachUkr/NAUTILUS-"));
   assert.ok(markup.includes('alt="Paris street scene at Place de la Bastille"'));

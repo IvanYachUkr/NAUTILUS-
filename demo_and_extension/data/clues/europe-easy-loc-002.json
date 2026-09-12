@@ -2116,6 +2116,169 @@
           "ratingsReviewedAt": "2026-09-11T17:29:25.100Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-mcp-aed82c67a6",
+          "label": "Berlin 030 phone number",
+          "text": "Berlin 030 phone number",
+          "description": "A displayed telephone number uses Berlin's 030 area code.",
+          "groundingPhrase": "Berlin 030 phone number",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.56215360253365,
+            "y": 0.44071369419558837,
+            "w": 0.08076009501187653,
+            "h": 0.0626364526085974
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 2 is Alexanderplatz, Berlin: Fernsehturm, U-Bahn sign, Galeria, Berlin 030 number."
+            }
+          ],
+          "groundingLabel": "Berlin 030 phone number",
+          "ratingsReviewedAt": "2026-09-12T17:01:42.662Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-mcp-18343486e5",
+          "label": "U-Bahn sign",
+          "text": "U-Bahn sign",
+          "description": "A blue U-Bahn station sign is visible at Alexanderplatz.",
+          "groundingPhrase": "U-Bahn sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6793349168646081,
+            "y": 0.39895605912319004,
+            "w": 0.05463182897862229,
+            "h": 0.09154558458179629
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 2 is Alexanderplatz, Berlin: Fernsehturm, U-Bahn sign, Galeria, Berlin 030 number."
+            }
+          ],
+          "groundingLabel": "U-Bahn sign",
+          "ratingsReviewedAt": "2026-09-12T17:01:36.587Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-mcp-acbe04694d",
+          "label": "Galeria",
+          "text": "Galeria",
+          "description": "Galeria branding is visible on a building at Alexanderplatz.",
+          "groundingPhrase": "Galeria",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.6893772763262074,
+            "y": 0.35019745790358603,
+            "w": 0.05409065716547906,
+            "h": 0.08286234284423699
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 2 is Alexanderplatz, Berlin: Fernsehturm, U-Bahn sign, Galeria, Berlin 030 number."
+            }
+          ],
+          "groundingLabel": "Galeria",
+          "ratingsReviewedAt": "2026-09-12T17:01:30.340Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-mcp-cf927b5ebf",
+          "label": "Fernsehturm",
+          "text": "Fernsehturm",
+          "description": "Berlin's television tower is visible above Alexanderplatz.",
+          "groundingPhrase": "Fernsehturm",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.43784639746634996,
+            "y": 0.0038645888228060928,
+            "w": 0.034837688044338844,
+            "h": 0.24733368465958996
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 2 is Alexanderplatz, Berlin: Fernsehturm, U-Bahn sign, Galeria, Berlin 030 number."
+            }
+          ],
+          "groundingLabel": "Fernsehturm",
+          "ratingsReviewedAt": "2026-09-12T17:01:48.940Z"
+        }
+      ]
     }
   ]
 }

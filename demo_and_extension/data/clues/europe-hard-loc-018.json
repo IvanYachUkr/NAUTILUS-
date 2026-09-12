@@ -3752,6 +3752,124 @@
           "ratingsReviewedAt": "2026-09-12T00:58:33.832Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-018-grok-4-6-xhigh-mcp-ff27af0560",
+          "label": "Mediterranean pine and maquis",
+          "text": "Mediterranean pine and maquis",
+          "description": "Pine trees and Mediterranean maquis vegetation surround the road.",
+          "groundingPhrase": "Mediterranean pine and maquis",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Clues are solid: Greek Eparchiaki Odos – Parakampsi, pine/maquis, dry grassland."
+            }
+          ],
+          "groundingLabel": "Mediterranean pine",
+          "ratingsReviewedAt": "2026-09-12T17:03:54.431Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-grok-4-6-xhigh-mcp-b0c27d0e74",
+          "label": "Greek provincial-road text",
+          "text": "Greek provincial-road text",
+          "description": "Greek script identifies the road as an Eparchiaki Odos or provincial road.",
+          "groundingPhrase": "Greek provincial-road text",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.3975,
+            "y": 0.5385,
+            "w": 0.135,
+            "h": 0.273
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Clues are solid: Greek Eparchiaki Odos – Parakampsi, pine/maquis, dry grassland."
+            }
+          ],
+          "groundingLabel": "Greek provincial-road text",
+          "ratingsReviewedAt": "2026-09-12T17:04:02.666Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-018-grok-4-6-xhigh-mcp-62b9578603",
+          "label": "Dry grassland",
+          "text": "Dry grassland",
+          "description": "Dry, pale grassland is visible beyond the road.",
+          "groundingPhrase": "Dry grassland",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Clues are solid: Greek Eparchiaki Odos – Parakampsi, pine/maquis, dry grassland."
+            }
+          ],
+          "groundingLabel": "Dry grassland",
+          "ratingsReviewedAt": "2026-09-12T17:04:05.089Z"
+        }
+      ]
     }
   ]
 }

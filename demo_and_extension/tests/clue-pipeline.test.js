@@ -103,6 +103,7 @@ test("the local review tool can load and save validated clue documents", async (
   assert.ok(server.includes('url.pathname === "/api/clues"'));
   assert.ok(server.includes("predictionsByBenchmarkId"));
   assert.ok(server.includes('request.method === "PUT" && clueDocumentMatch'));
+  assert.ok(client.includes('get("clueSet")'));
 });
 
 test("covered-static clues are published after review and retain their covered input image", async () => {
@@ -117,4 +118,23 @@ test("covered-static clues are published after review and retain their covered i
   assert.ok(coveredSets.every((set) => set.publicationStatus === "published"));
   assert.ok(coveredSets.every((set) => set.imagePath.startsWith("data/starting-images-covered/")));
   assert.ok(coveredClues.every((clue) => clue.source === "starting-image"));
+});
+
+test("the Grok MCP composite has grounded review drafts for every location", async () => {
+  const documents = await loadClueDocuments();
+  const clueSets = documents.map((document) =>
+    document.clueSets.find((set) => set.id === "grok-4-6-xhigh-mcp"),
+  );
+  const clues = clueSets.flatMap((set) => set?.cues ?? []);
+
+  assert.equal(clueSets.filter(Boolean).length, 25);
+  assert.equal(clues.length, 62);
+  assert.ok(clueSets.every((set) => set?.benchmarkId === "grok-4-6-xhigh-mcp"));
+  assert.ok(clueSets.every((set) => set?.mergeStrategy === "tier-best-composite"));
+  assert.ok(clueSets.every((set) => set?.sourceRuns.length === 3));
+  assert.ok(clues.every((clue) => clue.provenance.length === 1));
+  assert.ok(clues.every((clue) => clue.annotationStatus !== "pending-grounding"));
+  assert.ok(clues.every((clue) =>
+    clue.region || ["text-only", "excluded", "not-grounded"].includes(clue.annotationStatus),
+  ));
 });

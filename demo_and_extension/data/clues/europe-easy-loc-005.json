@@ -1869,6 +1869,99 @@
           "ratingsReviewedAt": "2026-09-11T18:05:04.482Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-005-grok-4-6-xhigh-mcp-7366562b01",
+          "label": "Yellow Croatian directional sign",
+          "text": "Yellow Croatian directional sign",
+          "description": "A yellow Croatian directional road sign is visible beside the arena.",
+          "groundingPhrase": "Yellow Croatian directional sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.7505,
+            "y": 0.3765,
+            "w": 0.069,
+            "h": 0.102
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 5 is the Pula Arena in Croatia: Roman amphitheater plus a yellow Croatian directional sign."
+            }
+          ],
+          "groundingLabel": "Yellow Croatian directional sign",
+          "ratingsReviewedAt": "2026-09-12T17:02:37.443Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-005-grok-4-6-xhigh-mcp-5c85409915",
+          "label": "Roman amphitheater",
+          "text": "Roman amphitheater",
+          "description": "The large Roman amphitheater identifies the Pula Arena.",
+          "groundingPhrase": "Roman amphitheater",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.3065,
+            "y": 0.2485,
+            "w": 0.159,
+            "h": 0.172
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 5 is the Pula Arena in Croatia: Roman amphitheater plus a yellow Croatian directional sign."
+            }
+          ],
+          "groundingLabel": "Roman amphitheater",
+          "ratingsReviewedAt": "2026-09-12T17:02:41.711Z"
+        }
+      ]
     }
   ]
 }

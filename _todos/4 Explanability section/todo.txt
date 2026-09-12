@@ -1,7 +1,0 @@
-verify again why "0" rejected are we sure? we have some clues where we didnt agree
-
-remove from the listing "visible, correct, specific, useful consistent" the category/word speciifc as it as not used during human verification
-
-below in the example of the paris example we should add the green check icon and useful. Please also rename "Pin-consistent" to "Consistent" only to avoid confusion.
-The review button "inspect the reviewed clue" should directly open the inspection page of paris not only the paris locatino it self (= to easily and directly see the boxes).
-

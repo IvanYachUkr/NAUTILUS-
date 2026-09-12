@@ -2203,6 +2203,189 @@
           "ratingsReviewedAt": "2026-09-11T19:25:48.874Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-24948af80f",
+          "label": "Forested mountain village",
+          "text": "Forested mountain village",
+          "description": "Buildings climb a steep settlement surrounded by forested mountains.",
+          "groundingPhrase": "Forested mountain village",
+          "source": "panorama",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Round 3 is a forested mountain village."
+            }
+          ],
+          "groundingLabel": "Forested mountain village",
+          "ratingsReviewedAt": "2026-09-12T17:04:39.094Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-a2b8deb275",
+          "label": "Yield sign",
+          "text": "Yield sign",
+          "description": "A yield sign stands among houses climbing the hillside.",
+          "groundingPhrase": "Yield sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Houses climb the hillside past a yield sign."
+            }
+          ],
+          "groundingLabel": "Yield sign",
+          "ratingsReviewedAt": "2026-09-12T17:04:48.319Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-c2d295931d",
+          "label": "Stucco house",
+          "text": "Stucco house",
+          "description": "A stucco-clad house is visible close to the road.",
+          "groundingPhrase": "Stucco house",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.1865,
+            "y": 0.3685,
+            "w": 0.098,
+            "h": 0.138
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Closer now: stucco house, satellite dish, blue hydrant."
+            }
+          ],
+          "groundingLabel": "Stucco house",
+          "ratingsReviewedAt": "2026-09-12T17:04:51.829Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-f4ffed6240",
+          "label": "Satellite dish",
+          "text": "Satellite dish",
+          "description": "A satellite dish is mounted on or near a house.",
+          "groundingPhrase": "Satellite dish",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Closer now: stucco house, satellite dish, blue hydrant."
+            }
+          ],
+          "groundingLabel": "Satellite dish",
+          "ratingsReviewedAt": "2026-09-12T17:05:21.065Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-020-grok-4-6-xhigh-mcp-498096406c",
+          "label": "Blue hydrant",
+          "text": "Blue hydrant",
+          "description": "A blue hydrant is visible beside the road.",
+          "groundingPhrase": "Blue hydrant",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.40230839271575614,
+            "y": 0.5521061381715977,
+            "w": 0.020583531274742675,
+            "h": 0.06284850309919948
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Closer now: stucco house, satellite dish, blue hydrant."
+            }
+          ],
+          "groundingLabel": "Blue hydrant",
+          "ratingsReviewedAt": "2026-09-12T17:05:32.165Z"
+        }
+      ]
     }
   ]
 }

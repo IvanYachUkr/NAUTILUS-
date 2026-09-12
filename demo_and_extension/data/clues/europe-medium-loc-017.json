@@ -370,6 +370,184 @@
           "ratingsReviewedAt": "2026-09-11T22:46:43.848Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-a8f682c5ef",
+          "label": "Bohonagh road text",
+          "text": "Bohonagh road text",
+          "description": "The place name Bohonagh is visible in the road information.",
+          "groundingPhrase": "Bohonagh road text",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Road paint shows L1322 and Bohonagh."
+            }
+          ],
+          "groundingLabel": "Bohonagh road text",
+          "ratingsReviewedAt": "2026-09-12T17:10:35.446Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-11106d8a02",
+          "label": "Rahoon/Newcastle GAA sign",
+          "text": "Rahoon/Newcastle GAA sign",
+          "description": "A GAA sign identifies Rahoon/Newcastle in Galway.",
+          "groundingPhrase": "Rahoon/Newcastle GAA sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "The GAA sign is Rahoon/Newcastle in Galway."
+            }
+          ],
+          "groundingLabel": "Rahoon/Newcastle GAA sign",
+          "ratingsReviewedAt": "2026-09-12T17:10:42.946Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-23dfe0ff79",
+          "label": "Yellow centre lines",
+          "text": "Yellow centre lines",
+          "description": "Yellow centre lines are painted on the road.",
+          "groundingPhrase": "Yellow centre lines",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.33016825019794144,
+            "y": 0.5045303144369997,
+            "w": 0.233,
+            "h": 0.345
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Yellow center lines and stone walls look like Ireland."
+            }
+          ],
+          "groundingLabel": "Yellow centre lines",
+          "ratingsReviewedAt": "2026-09-12T17:10:50.642Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-4494b029ed",
+          "label": "L1322 road marking",
+          "text": "L1322 road marking",
+          "description": "The road marking shows route number L1322.",
+          "groundingPhrase": "L1322 road marking",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Road paint shows L1322 and Bohonagh."
+            }
+          ],
+          "groundingLabel": "L1322 road",
+          "ratingsReviewedAt": "2026-09-12T17:10:54.549Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-017-grok-4-6-xhigh-mcp-cb0ce9c098",
+          "label": "Stone walls",
+          "text": "Stone walls",
+          "description": "Stone walls line the roadside.",
+          "groundingPhrase": "Stone walls",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Yellow center lines and stone walls look like Ireland."
+            }
+          ],
+          "groundingLabel": "Stone walls",
+          "ratingsReviewedAt": "2026-09-12T17:10:57.887Z"
+        }
+      ]
     }
   ]
 }

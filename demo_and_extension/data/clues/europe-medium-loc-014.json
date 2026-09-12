@@ -3688,6 +3688,94 @@
           "ratingsReviewedAt": "2026-09-12T01:55:16.902Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-014-grok-4-6-xhigh-mcp-1a1947c46e",
+          "label": "Bergagatan road label",
+          "text": "Bergagatan road label",
+          "description": "The Swedish street name Bergagatan is visible.",
+          "groundingPhrase": "Bergagatan road label",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4156769596199525,
+            "y": 0.5756229767371829,
+            "w": 0.0649247822644497,
+            "h": 0.17827298050139273
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Bergagatan is Swedish."
+            }
+          ],
+          "groundingLabel": "Bergagatan road label",
+          "ratingsReviewedAt": "2026-09-12T17:09:09.638Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-014-grok-4-6-xhigh-mcp-fb55872f6d",
+          "label": "House number 44",
+          "text": "House number 44",
+          "description": "The number 44 is visible on a mailbox.",
+          "groundingPhrase": "House number 44",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "House number 44 is on the mailbox."
+            }
+          ],
+          "groundingLabel": "House number",
+          "ratingsReviewedAt": "2026-09-12T17:09:51.907Z"
+        }
+      ]
     }
   ]
 }

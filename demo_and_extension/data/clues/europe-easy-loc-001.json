@@ -3775,6 +3775,134 @@
           "ratingsReviewedAt": "2026-09-12T00:26:57.634Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-001-grok-4-6-xhigh-mcp-17d3e4c9a6",
+          "label": "Bastille bus stop",
+          "text": "Bastille bus stop",
+          "description": "A bus-stop sign identifying Bastille is visible.",
+          "groundingPhrase": "Bastille bus stop",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.9091167854315123,
+            "y": 0.202863321538809,
+            "w": 0.08850791765637368,
+            "h": 0.16309079274260332
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 1 is Place de la Bastille in Paris: road marking, Bastille bus stop, and the July Column."
+            }
+          ],
+          "groundingLabel": "Bastille bus stop",
+          "ratingsReviewedAt": "2026-09-12T17:00:45.303Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-001-grok-4-6-xhigh-mcp-c8df897fc8",
+          "label": "Road marking",
+          "text": "Road marking",
+          "description": "A road marking was used as evidence for Place de la Bastille.",
+          "groundingPhrase": "Road marking",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.46926642913697547,
+            "y": 0.5371364526085974,
+            "w": 0.060424782264449695,
+            "h": 0.19465104519561344
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 1 is Place de la Bastille in Paris: road marking, Bastille bus stop, and the July Column."
+            }
+          ],
+          "groundingLabel": "Road marking",
+          "ratingsReviewedAt": "2026-09-12T17:00:55.540Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-001-grok-4-6-xhigh-mcp-6e361ea051",
+          "label": "July Column",
+          "text": "July Column",
+          "description": "The July Column is visible in the square.",
+          "groundingPhrase": "July Column",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.4615,
+            "y": 0.1865,
+            "w": 0.028,
+            "h": 0.257
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 1 is Place de la Bastille in Paris: road marking, Bastille bus stop, and the July Column."
+            }
+          ],
+          "groundingLabel": "July Column",
+          "ratingsReviewedAt": "2026-09-12T17:00:58.434Z"
+        }
+      ]
     }
   ]
 }

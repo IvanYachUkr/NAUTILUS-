@@ -1651,6 +1651,10 @@ body {
   gap: 8px;
 }
 .map-utilities .secondary-button { align-self: flex-end; }
+.map-utility-actions { display: flex; align-items: stretch; justify-content: flex-end; gap: 8px; }
+.map-utility-actions .globe-stats-slot { display: flex; }
+.map-utility-actions .stats-button,
+.map-utility-actions .secondary-button { min-height: 42px; }
 .secondary-button,
 .play-toggle,
 .next-location,
@@ -1776,6 +1780,8 @@ body {
 .next-location strong { display: block; }
 .next-location small { color: #7f97b3; font-size: 1rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .next-location strong { margin-top: 3px; max-width: 170px; overflow: hidden; font-size: 1rem; text-overflow: ellipsis; white-space: nowrap; }
+.next-location--previous { flex-direction: row; }
+.next-location--previous span { text-align: right; }
 
 .exploration-player {
   position: absolute;

@@ -47,3 +47,10 @@ test("clue rating summaries report positive, negative, rated, and unrated counts
 test("location statistics omit error buckets", () => {
   assert.ok(source.includes('selectedStatsCase ? "" : `<div class="drawer-section">'));
 });
+
+test("statistics use human-review wording and suppress empty baseline explanation panels", () => {
+  assert.ok(source.includes("Human-verified positive / rated clues"));
+  assert.ok(source.includes('stats.cueCount ? `<div class="drawer-section">'));
+  assert.ok(source.includes('stats.cueCount ? metricMarkup("Cue useful"'));
+  assert.ok(!source.includes("<h4>Interactive exploration</h4>"));
+});

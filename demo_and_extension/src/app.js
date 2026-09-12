@@ -24,6 +24,7 @@ import {
   mapLegendItems,
   mapResetActionLabel,
   nextCaseId,
+  previousCaseId,
   resolvePlaybackReviewMedia,
   shouldFocusLocationCard,
   shouldShowPlaybackMarker,
@@ -434,8 +435,23 @@ export function createExplorer({
 
       const overviewButton = event.target.closest("[data-overview]");
       if (overviewButton && rootElement.contains(overviewButton)) {
+        query = "";
+        filters = { competition: "", country: "", difficulty: "", sceneType: "" };
+        elements.search.value = "";
         enterOverview();
+        renderFilterOptions();
         render({ fitMap: true });
+        return;
+      }
+
+      const previousButton = event.target.closest("[data-previous-location]");
+      if (previousButton && rootElement.contains(previousButton)) {
+        const previousId = previousCaseId(getFilteredCases(), selectedCaseId);
+        if (previousId) {
+          selectedCaseId = previousId;
+          if (!["stats", "truth", "prediction", "playback"].includes(drawerMode)) clearDrawerState();
+          render({ focusActiveCard: true, fitMap: true });
+        }
         return;
       }
 
@@ -469,6 +485,12 @@ export function createExplorer({
         selectedCaseId = caseButton.dataset.caseId;
         if (caseButton.dataset.caseModel) selectedModel = caseButton.dataset.caseModel;
         if (caseButton.dataset.caseCondition) selectedCondition = caseButton.dataset.caseCondition;
+        if (caseButton.dataset.openEvidence === "true") {
+          evidenceMode = true;
+          evidenceComparisonMode = false;
+          showTextOnlyClues = false;
+          selectedCueId = null;
+        }
         if (!["stats", "truth", "prediction", "playback"].includes(drawerMode)) {
           clearDrawerState();
         }
@@ -483,6 +505,7 @@ export function createExplorer({
       const resetButton = event.target.closest("[data-reset-map]");
       if (resetButton && rootElement.contains(resetButton)) {
         mapController.resetView();
+        sideMapController?.resetView();
         return;
       }
 
@@ -957,6 +980,8 @@ export function createExplorer({
     elements.backOverview.hidden = view.state === "overview";
     elements.datasetBrowser.hidden = view.state === "detail";
     elements.nextLocation.hidden = view.state === "overview";
+    elements.previousLocation.hidden = view.state === "overview";
+    elements.globeStatsSlot.hidden = Boolean(evidenceMode);
     syncComparisonMapFullscreenControl();
 
     if (imageUrl && caseItem) {
@@ -979,6 +1004,11 @@ export function createExplorer({
     elements.nextLabel.textContent = nextCase
       ? `${nextCase.city}, ${nextCase.country}`
       : "Next location";
+    const previousId = previousCaseId(filteredCases, caseItem?.id ?? null);
+    const previousCase = filteredCases.find((item) => item.id === previousId) ?? null;
+    elements.previousLabel.textContent = previousCase
+      ? `${previousCase.city}, ${previousCase.country}`
+      : "Previous location";
 
   }
 
@@ -987,15 +1017,22 @@ export function createExplorer({
       ? elements.detailActions
       : elements.experienceDock;
     const controls = [
-      elements.globeStatsSlot,
       elements.compareModelsButton,
       elements.compareConditionsButton,
+      elements.previousLocation,
       elements.nextLocation,
     ];
 
     controls.forEach((control) => {
       if (control.parentElement !== destination) destination.append(control);
     });
+
+    const statsDestination = useDetailRail
+      ? elements.mapUtilityActions
+      : elements.experienceDock;
+    if (elements.globeStatsSlot.parentElement !== statsDestination) {
+      statsDestination.prepend(elements.globeStatsSlot);
+    }
 
     const runControlsDestination = useDetailRail
       ? elements.detailRunControls
@@ -1099,7 +1136,8 @@ export function createExplorer({
     elements.evidenceHeading.textContent = `${caseItem.city}, ${caseItem.country}`;
     elements.evidenceModel.textContent = evidenceComparisonMode
       ? `${evidenceRuns.length} models compared`
-      : run.model;
+      : "";
+    elements.evidenceModel.hidden = !evidenceComparisonMode;
     elements.evidenceCount.textContent = String(grounded.length);
     elements.evidenceLegend.hidden = !evidenceComparisonMode;
     elements.evidenceLegend.innerHTML = evidenceComparisonMode
@@ -1482,8 +1520,10 @@ export function createExplorer({
 
     elements.pinError.textContent = hasCoordinate(run.prediction)
       ? formatDistance(run.errorKm)
-      : "—";
-    elements.runTime.textContent = run.durationSeconds === null ? "—" : `${Math.round(run.durationSeconds)} s`;
+      : "Not captured";
+    elements.runTime.textContent = Number.isFinite(run.durationSeconds)
+      ? `${Math.round(run.durationSeconds)} s`
+      : "Not recorded";
 
     if (!sideMapController) {
       sideMapController = createMapController(elements.sideComparisonMap, {
@@ -1823,6 +1863,7 @@ export function createExplorer({
   }
 
   function getFilteredCases() {
+    const difficultyOrder = { easy: 0, medium: 1, hard: 2 };
     return data.filter((item) => {
       if (
         filters.competition &&
@@ -1863,7 +1904,10 @@ export function createExplorer({
         .join(" ")
         .toLocaleLowerCase()
         .includes(query);
-    });
+    }).sort((left, right) =>
+      (difficultyOrder[left.difficulty] ?? 99) - (difficultyOrder[right.difficulty] ?? 99) ||
+      String(left.localId ?? left.id).localeCompare(String(right.localId ?? right.id), undefined, { numeric: true })
+    );
   }
 
   function getOverviewMapCases(filteredCases) {
@@ -1989,15 +2033,10 @@ export function createExplorer({
       selectedCondition,
       selectedImageVariant,
     );
-    const membership = preferredMembership(item, filters.competition);
     const thumbnail = assetImageUrl(imageForRun(item, matchingRun));
     const runMeta = matchingRun
       ? `<span>${escapeHtml(runConditionLabel(matchingRun))}</span><b>${hasCoordinate(matchingRun.prediction) ? escapeHtml(formatDistance(matchingRun.errorKm)) : "Recording only"}</b>`
       : `<span>${escapeHtml(DIFFICULTY_LABELS[item.difficulty])}</span><b>Awaiting run</b>`;
-    const competitionTag = membership
-      ? `<em class="location-card__competition" title="${escapeAttribute(membership.competitionName)}">${escapeHtml(compactMembershipLabel(membership))}</em>`
-      : "";
-
     return `
       <button
         class="location-card ${active ? "is-active" : ""}"
@@ -2010,8 +2049,7 @@ export function createExplorer({
         <span class="location-card__pin" aria-hidden="true"></span>
         <span class="location-card__body">
           <strong>${escapeHtml(item.city)}</strong>
-          <small>${escapeHtml(item.localId ?? item.id)} · ${escapeHtml(item.country)}</small>
-          ${competitionTag}
+          <small>${escapeHtml(item.country)}</small>
         </span>
         <span class="location-card__meta">${runMeta}</span>
       </button>
@@ -2031,7 +2069,7 @@ export function createExplorer({
       ?.competitionName;
     const selectedStatsCase = getSelectedCase();
     const filterText = [
-      selectedStatsCase ? `${selectedStatsCase.city} (${selectedStatsCase.localId ?? selectedStatsCase.id})` : null,
+      selectedStatsCase ? selectedStatsCase.city : null,
       competitionName,
       selectedModel,
       selectedCondition ? CONDITION_LABELS[selectedCondition] : null,
@@ -2054,28 +2092,20 @@ export function createExplorer({
         ${metricMarkup("Mean error", formatDistance(stats.meanErrorKm), "sensitive to large misses")}
         ${metricMarkup("Country accuracy", formatPercent(stats.countryAccuracy), `${stats.countryRated} rated`)}
         ${metricMarkup("Within 25 km", formatPercent(stats.within25), "regional hit rate")}
-        ${metricMarkup("Cue useful", formatPercent(stats.cueUseful), `${stats.cueCount} cues`)}
+        ${stats.cueCount ? metricMarkup("Cue useful", formatPercent(stats.cueUseful), `${stats.cueCount} cues`) : ""}
       </div>
       ${selectedStatsCase ? "" : `<div class="drawer-section">
         <h4>Error buckets</h4>
         ${bucketMarkup(stats.bands)}
       </div>`}
-      <div class="drawer-section">
+      ${stats.cueCount ? `<div class="drawer-section">
         <h4>Explanation review</h4>
-        <p class="rating-summary-note">Positive ratings / rated clues${stats.cueRatings.visible.unrated ? ` · ${stats.cueRatings.visible.unrated} unrated clue${stats.cueRatings.visible.unrated === 1 ? "" : "s"} omitted` : ""}</p>
+        <p class="rating-summary-note">Human-verified positive / rated clues${stats.cueRatings.visible.unrated ? ` · ${stats.cueRatings.visible.unrated} unrated clue${stats.cueRatings.visible.unrated === 1 ? "" : "s"} omitted` : ""}</p>
         ${progressMarkup("Visible", stats.cueRatings.visible)}
         ${progressMarkup("Correct", stats.cueRatings.correct)}
         ${progressMarkup("Useful", stats.cueRatings.useful)}
         ${progressMarkup("Consistent", stats.cueRatings.consistent)}
-      </div>
-      <div class="drawer-section">
-        <h4>Interactive exploration</h4>
-        <dl class="detail-list">
-          <div><dt>Runs with path</dt><dd>${stats.explorationRuns}</dd></div>
-          <div><dt>Average route</dt><dd>${formatDistance(stats.meanRouteKm)}</dd></div>
-          <div><dt>Average time</dt><dd>${stats.meanDurationMs === null ? "—" : formatSeconds(stats.meanDurationMs)}</dd></div>
-        </dl>
-      </div>
+      </div>` : ""}
     `;
   }
 
@@ -2142,7 +2172,7 @@ export function createExplorer({
         <div><dt>Selected run</dt><dd>${escapeHtml(run.bestRunLabel ?? "Best overall run")}</dd></div>
         <div><dt>Run score</dt><dd>${Number.isFinite(run.bestRunPoints) ? `${run.bestRunPoints.toLocaleString("en-US")} / 125,000` : "—"}</dd></div>
         <div><dt>3-run mean</dt><dd>${Number.isFinite(run.benchmarkMeanPoints) ? `${Math.round(run.benchmarkMeanPoints).toLocaleString("en-US")} pts` : "—"}</dd></div>
-        <div><dt>Run time</dt><dd>${run.durationSeconds === null ? "—" : `${Math.round(run.durationSeconds)} s`}</dd></div>
+        <div><dt>Run time</dt><dd>${Number.isFinite(run.durationSeconds) ? `${Math.round(run.durationSeconds)} s` : "Not recorded"}</dd></div>
         ${isStaticBaselineModel(run.model)
         ? `<div><dt>Image variant</dt><dd>${escapeHtml(IMAGE_VARIANT_LABELS[runImageVariant(run)] ?? runImageVariant(run))}</dd></div>`
         : ""}
@@ -2152,12 +2182,12 @@ export function createExplorer({
         <div><dt>Coordinates</dt><dd>${predictionAvailable ? `<code>${escapeHtml(formatCoordinate(run.prediction))}</code>` : "Not captured"}</dd></div>
       </dl>
       ${predictionAvailable ? `<a class="drawer-action" href="${escapeAttribute(predictionStreetView)}" target="_blank" rel="noopener noreferrer">Open Street View at prediction ↗</a>` : ""}
-      ${modelCluesMarkup(caseItem, run, clueSet)}
+      ${isStaticBaselineModel(run.model) ? "" : modelCluesMarkup(caseItem, run, clueSet)}
       ${run.hypothesis ? `<div class="drawer-section"><h4>Initial hypothesis</h4><p>${escapeHtml(run.hypothesis)}</p></div>` : ""}
-      <div class="drawer-section">
+      ${isStaticBaselineModel(run.model) ? "" : `<div class="drawer-section">
         <h4>Reported cues</h4>
         <ol class="cue-list">${cueListMarkup(run.cues)}</ol>
-      </div>
+      </div>`}
       ${run.notes ? `<div class="drawer-section"><h4>Run notes</h4><p>${escapeHtml(run.notes)}</p></div>` : ""}
     `;
   }
@@ -2372,7 +2402,7 @@ export function shellMarkup(cases = []) {
             <section class="evidence-view" data-evidence-view hidden aria-label="Model visual evidence">
               <button class="evidence-back" type="button" data-close-evidence><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to location</button>
               <header class="evidence-heading">
-                <span><b data-evidence-count>0</b> visual clues · <strong data-evidence-model></strong></span>
+                <span><b data-evidence-count>0</b> visual clues<strong data-evidence-model></strong></span>
                 <h2 data-evidence-heading></h2>
                 <div class="evidence-model-legend" data-evidence-legend hidden></div>
                 <button type="button" data-toggle-text-clues hidden></button>
@@ -2396,10 +2426,12 @@ export function shellMarkup(cases = []) {
               <div class="map-legend" data-map-legend aria-label="Globe legend">
                 ${mapLegendMarkup(mapLegendItems({ overview: true }))}
               </div>
-              <button class="secondary-button" type="button" data-reset-map>
-                <i class="ph ph-crosshair" aria-hidden="true"></i>
-                <span data-reset-map-label>Show all predictions</span>
-              </button>
+              <div class="map-utility-actions" data-map-utility-actions>
+                <button class="secondary-button" type="button" data-reset-map>
+                  <i class="ph ph-crosshair" aria-hidden="true"></i>
+                  <span data-reset-map-label>Show all predictions</span>
+                </button>
+              </div>
             </div>
 
             <aside class="model-comparison" data-model-comparison hidden>
@@ -2455,6 +2487,10 @@ export function shellMarkup(cases = []) {
                   <i class="ph ph-chart-line-up" aria-hidden="true"></i><span>Statistics</span>
                 </button>
               </div>
+              <button class="next-location next-location--previous" type="button" data-previous-location hidden>
+                <i class="ph ph-arrow-left" aria-hidden="true"></i>
+                <span><small>Previous location</small><strong data-previous-label>Previous location</strong></span>
+              </button>
               <button class="compare-models-button" type="button" data-toggle-model-comparison hidden>
                 <i class="ph ph-stack" aria-hidden="true"></i><span>Compare models<b data-compare-models-count></b></span>
               </button>
@@ -2555,6 +2591,7 @@ function collectElements(root) {
     globeStatsSlot: "[data-globe-stats-slot]",
     mapLegend: "[data-map-legend]",
     resetMapLabel: "[data-reset-map-label]",
+    mapUtilityActions: "[data-map-utility-actions]",
     comparison: "[data-comparison]",
     sideComparisonMapShell: "[data-side-comparison-map-shell]",
     sideComparisonMap: "[data-side-comparison-map]",
@@ -2586,6 +2623,8 @@ function collectElements(root) {
     drawerBody: "[data-drawer-body]",
     nextLocation: "[data-next-location]",
     nextLabel: "[data-next-label]",
+    previousLocation: "[data-previous-location]",
+    previousLabel: "[data-previous-label]",
   };
 
   return Object.fromEntries(
@@ -2906,16 +2945,6 @@ function uniqueBy(values, keyer) {
     seen.add(key);
     return true;
   });
-}
-
-function compactMembershipLabel(membership) {
-  const name =
-    membership?.competitionShortName ??
-    membership?.competitionName ??
-    membership?.competitionId ??
-    "Competition";
-  const part = membership?.partCount > 1 ? ` · P${membership.part}` : "";
-  return `${name}${part} · R${membership?.round ?? "?"}`;
 }
 
 function preferredMembership(caseItem, competitionId) {

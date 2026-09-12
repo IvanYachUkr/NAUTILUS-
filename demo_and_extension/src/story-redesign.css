@@ -417,7 +417,11 @@
 .project-story .leaderboard-row__progress progress::-moz-progress-bar { background: #6e9df5; }
 
 .project-story .results-note {
-  max-width: 940px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  max-width: none;
   margin-top: 24px;
   padding: 18px 20px;
   border: 1px solid rgba(130, 173, 222, 0.18);

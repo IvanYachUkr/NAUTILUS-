@@ -1,9 +1,0 @@
-remove interactive exploration area for MLLMs and baselines
-(i dont think it makes sense to keep it as only very view models where able to move and the baselines dont move anyways)
-
-also remove the path statement i guess we didnt cover this in much detail (meaning that it is hard to see for others when just looking at the website)
-
-
-(I would keep the sentence in the Method section at "B Agentic Condition" where it says "the full route is recorded for replay") we acutally did it but it is hard to inspect / get results on the website so far i guess
-
-

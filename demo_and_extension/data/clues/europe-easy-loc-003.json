@@ -2057,6 +2057,99 @@
           "ratingsReviewedAt": "2026-09-11T17:52:30.384Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-003-grok-4-6-xhigh-mcp-b50a58e3da",
+          "label": "Salzach River",
+          "text": "Salzach River",
+          "description": "The Salzach River runs between the viewpoint and the fortress.",
+          "groundingPhrase": "Salzach River",
+          "source": "panorama",
+          "category": "geography",
+          "region": {
+            "x": 0.18241765637371335,
+            "y": 0.4931059876032021,
+            "w": 0.8175823436262867,
+            "h": 0.307
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 3 is Salzburg from Kapuzinerberg: Hohensalzburg Fortress across the Salzach."
+            }
+          ],
+          "groundingLabel": "Salzach River",
+          "ratingsReviewedAt": "2026-09-12T17:16:37.558Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-003-grok-4-6-xhigh-mcp-67d040902f",
+          "label": "Hohensalzburg Fortress",
+          "text": "Hohensalzburg Fortress",
+          "description": "Hohensalzburg Fortress is visible across the city.",
+          "groundingPhrase": "Hohensalzburg Fortress",
+          "source": "panorama",
+          "category": "landmark",
+          "region": {
+            "x": 0.5494018210609659,
+            "y": 0.35325801149338754,
+            "w": 0.12511638954869359,
+            "h": 0.12839325955481945
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 3 is Salzburg from Kapuzinerberg: Hohensalzburg Fortress across the Salzach."
+            }
+          ],
+          "groundingLabel": "Hohensalzburg Fortress",
+          "ratingsReviewedAt": "2026-09-12T17:16:31.281Z"
+        }
+      ]
     }
   ]
 }

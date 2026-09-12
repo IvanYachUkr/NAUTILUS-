@@ -3737,6 +3737,99 @@
           "ratingsReviewedAt": "2026-09-12T01:34:01.960Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-011-grok-4-6-xhigh-mcp-14f65a287f",
+          "label": "Red bicycle lane",
+          "text": "Red bicycle lane",
+          "description": "A red-surfaced bicycle lane runs alongside the street.",
+          "groundingPhrase": "Red bicycle lane",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.5490265241488519,
+            "y": 0.5084697608471982,
+            "w": 0.4509734758511481,
+            "h": 0.4915302391528018
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Round 3 is the Netherlands — Amsterdamsestraatweg and a red bike lane."
+            }
+          ],
+          "groundingLabel": "Red bicycle lane",
+          "ratingsReviewedAt": "2026-09-12T17:17:43.484Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-011-grok-4-6-xhigh-mcp-319bb63503",
+          "label": "Amsterdamsestraatweg label",
+          "text": "Amsterdamsestraatweg label",
+          "description": "The Dutch street name Amsterdamsestraatweg is visible.",
+          "groundingPhrase": "Amsterdamsestraatweg label",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.44734758511480605,
+            "y": 0.5210168385655851,
+            "w": 0.05146476642913694,
+            "h": 0.2553639990965896
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Round 3 is the Netherlands — Amsterdamsestraatweg and a red bike lane."
+            }
+          ],
+          "groundingLabel": "Amsterdamsestraatweg label",
+          "ratingsReviewedAt": "2026-09-12T17:17:48.433Z"
+        }
+      ]
     }
   ]
 }

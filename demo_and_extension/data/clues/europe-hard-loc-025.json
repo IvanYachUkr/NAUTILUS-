@@ -2723,6 +2723,129 @@
           "ratingsReviewedAt": "2026-09-12T01:17:26.028Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-mcp-fff0e6bccb",
+          "label": "Boreal pine and birch",
+          "text": "Boreal pine and birch",
+          "description": "Pine and birch trees form a boreal forest beside the road.",
+          "groundingPhrase": "Boreal pine and birch",
+          "source": "panorama",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Boreal pine/birch, white lines, and a visible car hood point to Finland."
+            }
+          ],
+          "groundingLabel": "Boreal pine",
+          "ratingsReviewedAt": "2026-09-12T17:07:01.108Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-mcp-fcae637891",
+          "label": "Visible car hood",
+          "text": "Visible car hood",
+          "description": "The survey vehicle's hood is visible at the bottom of the panorama.",
+          "groundingPhrase": "Visible car hood",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.2345,
+            "y": 0.8435,
+            "w": 0.458,
+            "h": 0.15
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Boreal pine/birch, white lines, and a visible car hood point to Finland."
+            }
+          ],
+          "groundingLabel": "Visible car hood",
+          "ratingsReviewedAt": "2026-09-12T17:07:07.529Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-mcp-798d96195f",
+          "label": "White road lines",
+          "text": "White road lines",
+          "description": "White centre and edge lines mark the paved road.",
+          "groundingPhrase": "White road lines",
+          "source": "panorama",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.4564026128266033,
+            "y": 0.43889393711260005,
+            "w": 0.12540775930324627,
+            "h": 0.47793929584180284
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Boreal pine/birch, white lines, and a visible car hood point to Finland."
+            }
+          ],
+          "groundingLabel": "White road lines",
+          "ratingsReviewedAt": "2026-09-12T17:07:17.728Z"
+        }
+      ]
     }
   ]
 }

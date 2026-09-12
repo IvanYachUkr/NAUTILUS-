@@ -3540,6 +3540,99 @@
           "ratingsReviewedAt": "2026-09-12T01:07:16.912Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-023-grok-4-6-xhigh-mcp-352c94fcca",
+          "label": "Soviet-style farm ruins",
+          "text": "Soviet-style farm ruins",
+          "description": "Ruined agricultural buildings with a Soviet-era appearance stand beside the road.",
+          "groundingPhrase": "Soviet-style farm ruins",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.2895,
+            "y": 0.4265,
+            "w": 0.147,
+            "h": 0.065
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Road 3426 is painted on the gravel, with Soviet-style farm ruins."
+            }
+          ],
+          "groundingLabel": "Soviet-style farm ruins",
+          "ratingsReviewedAt": "2026-09-12T17:06:32.173Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-023-grok-4-6-xhigh-mcp-2d91d4a120",
+          "label": "Road number 3426",
+          "text": "Road number 3426",
+          "description": "The number 3426 is painted on the gravel road.",
+          "groundingPhrase": "Road number 3426",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4215,
+            "y": 0.6225,
+            "w": 0.107,
+            "h": 0.191
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Road 3426 is painted on the gravel, with Soviet-style farm ruins."
+            }
+          ],
+          "groundingLabel": "Road number",
+          "ratingsReviewedAt": "2026-09-12T17:06:35.488Z"
+        }
+      ]
     }
   ]
 }

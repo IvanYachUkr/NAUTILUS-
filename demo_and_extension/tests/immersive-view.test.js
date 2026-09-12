@@ -5,6 +5,7 @@ let buildImmersiveView;
 let mapLegendItems;
 let mapResetActionLabel;
 let nextCaseId;
+let previousCaseId;
 let shouldShowPlaybackMarker;
 let shouldFocusLocationCard;
 let resolvePlaybackReviewMedia;
@@ -15,6 +16,7 @@ try {
     mapLegendItems,
     mapResetActionLabel,
     nextCaseId,
+    previousCaseId,
     resolvePlaybackReviewMedia,
     shouldFocusLocationCard,
     shouldShowPlaybackMarker,
@@ -24,6 +26,7 @@ try {
   mapLegendItems = undefined;
   mapResetActionLabel = undefined;
   nextCaseId = undefined;
+  previousCaseId = undefined;
   resolvePlaybackReviewMedia = undefined;
   shouldFocusLocationCard = undefined;
   shouldShowPlaybackMarker = undefined;
@@ -87,6 +90,13 @@ test("next-location navigation follows the filtered order and wraps", () => {
   assert.equal(nextCaseId(cases, "paris"), "berlin");
   assert.equal(nextCaseId(cases, "berlin"), "paris");
   assert.equal(nextCaseId([], "paris"), null);
+});
+
+test("previous-location navigation follows the filtered order and wraps", () => {
+  assert.equal(typeof previousCaseId, "function");
+  assert.equal(previousCaseId(cases, "berlin"), "paris");
+  assert.equal(previousCaseId(cases, "paris"), "berlin");
+  assert.equal(previousCaseId([], "paris"), null);
 });
 
 test("map reset action describes the result instead of map-fitting jargon", () => {

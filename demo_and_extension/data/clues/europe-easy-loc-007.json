@@ -3191,18 +3191,18 @@
           "source": "starting-image",
           "category": "signage",
           "region": {
-            "x": 0.7595,
-            "y": 0.6695,
-            "w": 0.208,
-            "h": 0.255
+            "x": 0.324028899445764,
+            "y": 0.250317586388617,
+            "w": 0.22858590657165478,
+            "h": 0.25660606288739995
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3214,7 +3214,8 @@
               "text": "Building Station Plaque: The salmon/peach-colored station building directly ahead bears the clear municipal name sign VIŠNJA GORA"
             }
           ],
-          "groundingLabel": "Station Plaque"
+          "groundingLabel": "Station Plaque",
+          "ratingsReviewedAt": "2026-09-12T17:19:38.670Z"
         },
         {
           "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-static-covered-cf186c7a42",
@@ -3225,18 +3226,18 @@
           "source": "starting-image",
           "category": "signage",
           "region": {
-            "x": 0.4705,
-            "y": 0.5045,
-            "w": 0.133,
-            "h": 0.078
+            "x": 0.4570399841646872,
+            "y": 0.39528772365680437,
+            "w": 0.15912826603325417,
+            "h": 0.12296976084719817
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3248,7 +3249,8 @@
               "text": "Directional Road Sign: Yellow intersection sign with green motorway symbol pointing left towards Ljubljana (the capital of Slovenia) and Novo mesto, with recreational camping/dining pictograms below"
             }
           ],
-          "groundingLabel": "Directional Road Sign"
+          "groundingLabel": "Directional Road Sign",
+          "ratingsReviewedAt": "2026-09-12T17:19:49.253Z"
         },
         {
           "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-static-covered-a85f19284b",
@@ -3259,18 +3261,18 @@
           "source": "starting-image",
           "category": "signage",
           "region": {
-            "x": 0.4605,
-            "y": 0.3895,
-            "w": 0.103,
-            "h": 0.122
+            "x": 0.23832145684877276,
+            "y": 0.41341062510978943,
+            "w": 0.038004750593824244,
+            "h": 0.03533338352279858
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3282,7 +3284,8 @@
               "text": "Street Name Sign: Blue rectangular street plaque mounted on the pedestrian crossing pole reading Ulica Antona Tomšiča"
             }
           ],
-          "groundingLabel": "Street Name Sign"
+          "groundingLabel": "Street Name Sign",
+          "ratingsReviewedAt": "2026-09-12T17:20:05.153Z"
         },
         {
           "id": "cue-europe-easy-loc-007-gemini-3-8-flash-high-aided-static-covered-be7051e039",
@@ -3292,19 +3295,14 @@
           "groundingPhrase": "Regional Landscape & Architecture",
           "source": "starting-image",
           "category": "signage",
-          "region": {
-            "x": 0.0045,
-            "y": 0.0155,
-            "w": 0.99,
-            "h": 0.969
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3316,7 +3314,8 @@
               "text": "Regional Landscape & Architecture: Typical Slovenian Subalpine / Lower Carniolan hilly landscape with red-tile pitched roofing, railway infrastructure, and Slovenian road sign typography"
             }
           ],
-          "groundingLabel": "Regional Landscape"
+          "groundingLabel": "Regional Landscape",
+          "ratingsReviewedAt": "2026-09-12T17:19:53.963Z"
         }
       ]
     },
@@ -3345,18 +3344,18 @@
           "source": "starting-image",
           "category": "signage",
           "region": {
-            "x": 0.7595,
-            "y": 0.6695,
+            "x": 0.3200700712589073,
+            "y": 0.2535297121634169,
             "w": 0.208,
             "h": 0.255
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3368,7 +3367,8 @@
               "text": "Station Signboard: The railway station building clearly displays the town name \"VIŠNJA GORA\" on its exterior wall"
             }
           ],
-          "groundingLabel": "Station Signboard"
+          "groundingLabel": "Station Signboard",
+          "ratingsReviewedAt": "2026-09-12T17:20:19.111Z"
         },
         {
           "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-static-covered-eb94ecbe12",
@@ -3379,18 +3379,18 @@
           "source": "starting-image",
           "category": "signage",
           "region": {
-            "x": 0.4705,
-            "y": 0.5045,
-            "w": 0.132,
-            "h": 0.077
+            "x": 0.4570399841646872,
+            "y": 0.3872574092198047,
+            "w": 0.17475534441805227,
+            "h": 0.13642432683379757
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3402,7 +3402,8 @@
               "text": "Directional Road Sign: Official yellow Slovenian road signage points left toward \"Ljubljana\" (with a green motorway icon) and right toward \"Novo mesto\""
             }
           ],
-          "groundingLabel": "Directional Road Sign"
+          "groundingLabel": "Directional Road Sign",
+          "ratingsReviewedAt": "2026-09-12T17:20:25.006Z"
         },
         {
           "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-static-covered-72831a8b44",
@@ -3413,18 +3414,18 @@
           "source": "starting-image",
           "category": "signage",
           "region": {
-            "x": 0.4615,
-            "y": 0.3925,
-            "w": 0.1,
-            "h": 0.116
+            "x": 0.2367379255740301,
+            "y": 0.4150166879971894,
+            "w": 0.04196357878068094,
+            "h": 0.03372732063539863
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3436,7 +3437,8 @@
               "text": "Street Name Sign: A blue-and-white local street sign reads \"Ulica Antona Tomšiča\""
             }
           ],
-          "groundingLabel": "Street Name Sign"
+          "groundingLabel": "Street Name Sign",
+          "ratingsReviewedAt": "2026-09-12T17:20:30.090Z"
         },
         {
           "id": "cue-europe-easy-loc-007-gemini-3-8-flash-medium-aided-static-covered-73f5f2b179",
@@ -3447,18 +3449,18 @@
           "source": "starting-image",
           "category": "signage",
           "region": {
-            "x": 0.4615,
-            "y": 0.3925,
-            "w": 0.101,
-            "h": 0.118
+            "x": 0.46951702296120346,
+            "y": 0.5033501468041858,
+            "w": 0.14330958036421226,
+            "h": 0.0819092072573967
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3470,7 +3472,101 @@
               "text": "Tourist Directional Sign: White directional arrows below indicate local facilities (camping, camper vans, pool/swimming, and restaurant)"
             }
           ],
-          "groundingLabel": "Tourist Directional Sign"
+          "groundingLabel": "Tourist Directional Sign",
+          "ratingsReviewedAt": "2026-09-12T17:20:34.621Z"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-easy-loc-007-grok-4-6-xhigh-mcp-433aecc627",
+          "label": "Ljubljana and Novo mesto signs",
+          "text": "Ljubljana and Novo mesto signs",
+          "description": "Directional signs point toward Ljubljana and Novo mesto.",
+          "groundingPhrase": "Ljubljana and Novo mesto signs",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4605,
+            "y": 0.3895,
+            "w": 0.143,
+            "h": 0.193
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Round 7 is Slovenia: signs to Ljubljana and Novo mesto, likely Višnja Gora station."
+            }
+          ],
+          "groundingLabel": "Ljubljana",
+          "ratingsReviewedAt": "2026-09-12T17:03:08.441Z"
+        },
+        {
+          "id": "cue-europe-easy-loc-007-grok-4-6-xhigh-mcp-5c25432543",
+          "label": "Višnja Gora station sign",
+          "text": "Višnja Gora station sign",
+          "description": "The railway-station sign reads Višnja Gora.",
+          "groundingPhrase": "Višnja Gora station sign",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.32779097387173395,
+            "y": 0.2785013425681949,
+            "w": 0.20585906571654788,
+            "h": 0.19593967226279208
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "easy-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "easy-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt",
+              "text": "Station sign reads Višnja Gora."
+            }
+          ],
+          "groundingLabel": "Vinja Gora station sign",
+          "ratingsReviewedAt": "2026-09-12T17:03:17.396Z"
         }
       ]
     }

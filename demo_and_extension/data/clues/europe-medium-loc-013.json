@@ -3559,13 +3559,13 @@
             "w": 0.148,
             "h": 0.145
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3577,7 +3577,8 @@
               "text": "Municipal Waste Bin: Green wheeled dumpster on the left bears the Portuguese warning stencil \"AFIXAÇÃO PROIBIDA\" (sticking posters prohibited)"
             }
           ],
-          "groundingLabel": "Municipal Waste Bin"
+          "groundingLabel": "Municipal Waste Bin",
+          "ratingsReviewedAt": "2026-09-12T17:20:41.018Z"
         },
         {
           "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-static-covered-06a14e7fb5",
@@ -3588,18 +3589,18 @@
           "source": "starting-image",
           "category": "signage",
           "region": {
-            "x": 0.7585,
-            "y": 0.6715,
-            "w": 0.209,
-            "h": 0.253
+            "x": 0.19873317498020585,
+            "y": 0.4439258199703882,
+            "w": 0.030878859857482205,
+            "h": 0.08030314436999669
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3611,7 +3612,8 @@
               "text": "Parking Sign: Official blue parking sign labeled \"P PRIVATIVO\" (Portuguese for private parking)"
             }
           ],
-          "groundingLabel": "Sign"
+          "groundingLabel": "Sign",
+          "ratingsReviewedAt": "2026-09-12T17:21:09.039Z"
         },
         {
           "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-static-covered-c3402fefd8",
@@ -3621,19 +3623,14 @@
           "groundingPhrase": "Portuguese Urban Architecture",
           "source": "starting-image",
           "category": "architecture",
-          "region": {
-            "x": 0.0045,
-            "y": 0.0035,
-            "w": 0.993,
-            "h": 0.974
-          },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3645,7 +3642,8 @@
               "text": "Portuguese Urban Architecture: Multi-story plastered stone buildings with granite door/window frames, decorative iron balustrades with potted geraniums, and patterned ceramic tile (azulejos) facade inserts"
             }
           ],
-          "groundingLabel": "Portuguese Urban Architecture"
+          "groundingLabel": "Portuguese Urban Architecture",
+          "ratingsReviewedAt": "2026-09-12T17:21:01.531Z"
         },
         {
           "id": "cue-europe-medium-loc-013-gemini-3-8-flash-medium-aided-static-covered-fa11595ab9",
@@ -3656,18 +3654,18 @@
           "source": "starting-image",
           "category": "geography",
           "region": {
-            "x": 0.2845,
-            "y": 0.4735,
-            "w": 0.405,
-            "h": 0.423
+            "x": 0.6582133808392716,
+            "y": 0.5891365278927952,
+            "w": 0.3417866191607284,
+            "h": 0.41086347210720475
           },
-          "regionSource": "microsoft/Florence-2-large",
-          "annotationStatus": "needs-review",
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "covered-static-r1"
@@ -3679,7 +3677,96 @@
               "text": "Portuguese Pavement (Calçada): Distinctive traditional Portuguese limestone cobblestone paving on pedestrian walkways"
             }
           ],
-          "groundingLabel": "Portuganian Pavement"
+          "groundingLabel": "Portuganian Pavement",
+          "ratingsReviewedAt": "2026-09-12T17:20:59.559Z"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-013-grok-4-6-xhigh-mcp-c821a31311",
+          "label": "R. Figueiredo da Foz road label",
+          "text": "R. Figueiredo da Foz road label",
+          "description": "The visible Portuguese road label was read as R. Figueiredo da Foz.",
+          "groundingPhrase": "R. Figueiredo da Foz road label",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.45288994457640536,
+            "y": 0.5274410901151848,
+            "w": 0.05463182897862234,
+            "h": 0.19915179803759187
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Granite and R. Figueiredo da Foz point to Porto."
+            }
+          ],
+          "groundingLabel": "Figueiredo da Foz road label",
+          "ratingsReviewedAt": "2026-09-12T17:18:15.584Z"
+        },
+        {
+          "id": "cue-europe-medium-loc-013-grok-4-6-xhigh-mcp-492be03998",
+          "label": "Granite facades",
+          "text": "Granite facades",
+          "description": "Urban building facades use prominent granite stonework.",
+          "groundingPhrase": "Granite facades",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Round 5 is Portugal — granite facades and R. (Rua)."
+            }
+          ],
+          "groundingLabel": "Granite facades",
+          "ratingsReviewedAt": "2026-09-12T17:18:09.059Z"
         }
       ]
     }

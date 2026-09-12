@@ -3748,6 +3748,64 @@
           "ratingsReviewedAt": "2026-09-12T01:26:30.694Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-medium-loc-010-grok-4-6-xhigh-mcp-9ced4e4801",
+          "label": "Via Francesco road label",
+          "text": "Via Francesco road label",
+          "description": "An Italian road label begins with Via Francesco.",
+          "groundingPhrase": "Via Francesco road label",
+          "source": "panorama",
+          "category": "signage",
+          "region": {
+            "x": 0.4837688044338876,
+            "y": 0.5161986499033853,
+            "w": 0.05700712589073631,
+            "h": 0.2585761248713895
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "medium-r2"
+          ],
+          "provenance": [
+            {
+              "runId": "medium-r2",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt",
+              "text": "Round 2 is Italy (Via Francesco…)."
+            }
+          ],
+          "groundingLabel": "Via Francesco road label",
+          "ratingsReviewedAt": "2026-09-12T17:08:11.497Z"
+        }
+      ]
     }
   ]
 }

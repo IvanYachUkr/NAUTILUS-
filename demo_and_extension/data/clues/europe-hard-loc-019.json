@@ -2175,6 +2175,124 @@
           "ratingsReviewedAt": "2026-09-11T19:15:05.893Z"
         }
       ]
+    },
+    {
+      "id": "grok-4-6-xhigh-mcp",
+      "benchmarkId": "grok-4-6-xhigh-mcp",
+      "model": "Grok 4.6 + MCP",
+      "reasoning": "xhigh",
+      "mergeStrategy": "tier-best-composite",
+      "sourceRuns": [
+        {
+          "runId": "easy-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-assisted-r2/transcript-easy.txt"
+        },
+        {
+          "runId": "medium-r2",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-medium-r2/transcript.txt"
+        },
+        {
+          "runId": "hard-r1",
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-019-grok-4-6-xhigh-mcp-2bba972cb7",
+          "label": "Romanian courtyard house",
+          "text": "Romanian courtyard house",
+          "description": "A courtyard-style village house was identified as Romanian.",
+          "groundingPhrase": "Romanian courtyard house",
+          "source": "panorama",
+          "category": "architecture",
+          "region": {
+            "x": 0.0035,
+            "y": 0.3765,
+            "w": 0.221,
+            "h": 0.117
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "The courtyard house looks Romanian."
+            }
+          ],
+          "groundingLabel": "Romanian courtyard house",
+          "ratingsReviewedAt": "2026-09-12T17:04:17.472Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-grok-4-6-xhigh-mcp-f6abdbcab2",
+          "label": "DJ106S road marking",
+          "text": "DJ106S road marking",
+          "description": "The painted road designation reads DJ106S.",
+          "groundingPhrase": "DJ106S road marking",
+          "source": "panorama",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Road paint reads DJ106S — a Sibiu County road in Transylvania."
+            }
+          ],
+          "groundingLabel": "DJ106S road marking",
+          "ratingsReviewedAt": "2026-09-12T17:04:24.417Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-019-grok-4-6-xhigh-mcp-aa8e0f538b",
+          "label": "Village rooftops",
+          "text": "Village rooftops",
+          "description": "Village rooftops are visible ahead along the rural road.",
+          "groundingPhrase": "Village rooftops",
+          "source": "panorama",
+          "category": "architecture",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "hard-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "hard-r1",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/mcp-one-shot-hard-r1/transcript.txt",
+              "text": "Village rooftops are visible ahead."
+            }
+          ],
+          "groundingLabel": "Village rooftops",
+          "ratingsReviewedAt": "2026-09-12T17:04:30.274Z"
+        }
+      ]
     }
   ]
 }
