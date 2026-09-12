@@ -1,0 +1,3 @@
+Button "All locations" doesnt work or creates the impression that it would reset the filtering so i think it should function like the "Clear filter" button
+
+so far it just reloads or something (there is a animation on the globe already visible but not all locations are acutally visible after pressing it / the filter selection is still present)

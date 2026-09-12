@@ -1,0 +1,1 @@
+Remove the location id in the statistics e.g. "(loc_010)"

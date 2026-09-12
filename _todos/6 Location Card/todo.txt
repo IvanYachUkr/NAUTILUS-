@@ -1,0 +1,4 @@
+remove location id text and id - e.g. "loc_001" "R1"
+
+and sort them by lcoation id or just easy, medium, hard
+
