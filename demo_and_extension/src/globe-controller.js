@@ -240,10 +240,7 @@ export function createGlobeController(container, options = {}) {
     world.pathsData(scene.paths);
     world.labelsData(scene.labels ?? []);
 
-    const controls = world.controls?.();
-    if (controls) {
-      controls.autoRotate = Boolean(overview && !prefersReducedMotion());
-    }
+    syncGlobeInteractionMode();
 
     if (fit) fitCurrentView(false);
   }
@@ -282,7 +279,7 @@ export function createGlobeController(container, options = {}) {
     const errorKm = comparedPredictions.length
       ? Math.max(...comparisonRuns.map((item) => Number(item.errorKm) || 0))
       : selectedRun?.errorKm;
-    const altitude = Number.isFinite(errorKm)
+    const fittedAltitude = Number.isFinite(errorKm)
       ? errorKm < 5
         ? 1.18
         : errorKm < 50
@@ -291,6 +288,9 @@ export function createGlobeController(container, options = {}) {
             ? 1.48
             : 1.72
       : 1.32;
+    const altitude = isMobileDetailGlobe()
+      ? Math.max(fittedAltitude, 1.55)
+      : fittedAltitude;
 
     world.pointOfView({ lat: focus.lat, lng: focus.lng, altitude }, duration);
   }
@@ -300,6 +300,29 @@ export function createGlobeController(container, options = {}) {
     const width = Math.max(1, container.clientWidth);
     const height = Math.max(1, container.clientHeight);
     world.width(width).height(height);
+    syncGlobeInteractionMode();
+  }
+
+  function isMobileDetailGlobe() {
+    return !overview && isMobileViewport();
+  }
+
+  function syncGlobeInteractionMode() {
+    if (!world || !surface) return;
+    const staticMobileDetail = isMobileDetailGlobe();
+    const controls = world.controls?.();
+    if (controls) {
+      controls.enabled = !staticMobileDetail;
+      controls.autoRotate = Boolean(overview && !prefersReducedMotion());
+    }
+    surface.dataset.mobileStatic = String(staticMobileDetail);
+    surface.setAttribute("role", staticMobileDetail ? "img" : "application");
+    surface.setAttribute(
+      "aria-label",
+      staticMobileDetail
+        ? "Globe view centered on the selected benchmark location"
+        : "Interactive globe showing benchmark locations, predictions, and exploration paths",
+    );
   }
 
   function selectPoint(point) {
@@ -403,4 +426,8 @@ function escapeHtml(value) {
 
 function prefersReducedMotion() {
   return window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+}
+
+function isMobileViewport() {
+  return window.matchMedia?.("(max-width: 680px)").matches ?? false;
 }
