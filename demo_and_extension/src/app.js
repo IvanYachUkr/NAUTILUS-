@@ -1,5 +1,7 @@
 import { normalizeCases, upsertCase as mergeCase } from "./data-contract.js";
 import { assetImageUrl } from "./asset-url.js";
+import { mapsEmbedApiKey } from "./maps-config.js";
+import { createStreetViewController, streetViewMarkup } from "./street-view.js";
 import {
   explorationDistanceKm,
   nearestSampleIndex,
@@ -204,6 +206,8 @@ export function createExplorer({
   });
   let sideMapController = null;
   const disposers = [];
+  const streetView = createStreetViewController(rootElement, mapsEmbedApiKey);
+  disposers.push(() => streetView.destroy());
 
   const api = {
     setCases(nextCases) {
@@ -942,6 +946,7 @@ export function createExplorer({
     const imageUrl = caseItem
       ? assetImageUrl(imageForRun(caseItem, run))
       : null;
+    streetView.setCase(caseItem);
 
     rootElement.dataset.viewState = view.state;
     rootElement.dataset.evidenceMode = String(Boolean(evidenceMode && caseItem && run));
@@ -2197,13 +2202,14 @@ export function createExplorer({
   }
 }
 
-function shellMarkup(cases = []) {
+export function shellMarkup(cases = []) {
   const projectSnapshot = buildProjectSnapshot(cases);
 
   return `
     <div class="atlas-app" data-app-shell data-view-state="overview" data-site-section-id="explorer">
       <img class="scene-backdrop" data-scene-image alt="" hidden />
       <div class="scene-vignette" aria-hidden="true"></div>
+      ${streetViewMarkup()}
 
       <header class="app-header">
         <div class="app-brand">
@@ -2235,10 +2241,17 @@ function shellMarkup(cases = []) {
       <div class="workspace">
         <aside class="location-rail" aria-label="Location selection">
           <section class="scene-story" aria-live="polite">
-            <button class="back-to-globe" type="button" data-back-overview hidden>
-              <i class="ph ph-arrow-left" aria-hidden="true"></i>
-              <span>Back to globe</span>
-            </button>
+            <div class="scene-actions">
+              <button class="back-to-globe" type="button" data-back-overview hidden>
+                <i class="ph ph-arrow-left" aria-hidden="true"></i>
+                <span>Back to globe</span>
+              </button>
+              <button class="walk-here" type="button" data-walk-here aria-haspopup="dialog" hidden>
+                <i class="ph ph-person-simple-walk" aria-hidden="true"></i>
+                <span>Walk here</span>
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+              </button>
+            </div>
 
             <div class="scene-story__heading">
               <span class="section-label" data-map-eyebrow></span>

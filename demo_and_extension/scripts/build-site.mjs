@@ -11,6 +11,7 @@ import {
 import { dirname, extname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import "./prepare-globe-assets.mjs";
+import { loadMapsEmbedKey, mapsConfigSource } from "./lib/maps-config.mjs";
 
 const projectDir = fileURLToPath(new URL("..", import.meta.url));
 const distDir = join(projectDir, "dist");
@@ -26,7 +27,8 @@ await rm(distDir, { recursive: true, force: true });
 await mkdir(clientDir, { recursive: true });
 await mkdir(serverDir, { recursive: true });
 
-const assetRevision = await contentRevision(join(projectDir, "src"));
+const mapsConfig = mapsConfigSource(await loadMapsEmbedKey(projectDir));
+const assetRevision = await contentRevision(join(projectDir, "src"), mapsConfig);
 const assetRoot = `assets/${assetRevision}`;
 
 await copyProjectPath("index.html");
@@ -35,6 +37,7 @@ if (RECORDING_REVIEW_ENABLED) {
   await copyProjectPath("frame-inspector.html");
 }
 await copyProjectPath("src", assetRoot);
+await writeFile(join(clientDir, assetRoot, "maps-config.js"), mapsConfig, "utf8");
 if (!RECORDING_REVIEW_ENABLED) {
   await rm(join(clientDir, assetRoot, "frame-inspector.js"), { force: true });
 }
@@ -144,8 +147,9 @@ async function rewriteIndexAssetPaths(assetRoot) {
   );
 }
 
-async function contentRevision(directory) {
+async function contentRevision(directory, mapsConfig) {
   const hash = createHash("sha256");
+  hash.update(mapsConfig);
   const paths = await listFiles(directory);
 
   for (const path of paths) {
