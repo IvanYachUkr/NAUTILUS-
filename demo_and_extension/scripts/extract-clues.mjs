@@ -12,9 +12,9 @@ const PRESETS = {
     model: "Gemini 3.7 Flash",
     reasoning: "high, aided",
     reports: [
-      { runId: "r2", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md" },
-      { runId: "r3", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md" },
-      { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md" },
+      { runId: "r2", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md" },
+      { runId: "r3", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-3/report.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md" },
     ],
   },
   "gemini-3.7-flash-medium-aided": {
@@ -23,9 +23,9 @@ const PRESETS = {
     model: "Gemini 3.7 Flash",
     reasoning: "medium, aided",
     reports: [
-      { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md" },
-      { runId: "r2", path: "../benchmark_report_3_7_medium_02.md" },
-      { runId: "r3", path: "../benchmark_report_3_7_medium_03.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md" },
+      { runId: "r2", path: "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md" },
+      { runId: "r3", path: "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md" },
     ],
   },
   "gemini-3.8-flash-high-aided": {
@@ -34,9 +34,9 @@ const PRESETS = {
     model: "Gemini 3.8 Flash",
     reasoning: "high, aided",
     reports: [
-      { runId: "r1", path: "../benchmark_report_3_8_high_01.md" },
-      { runId: "r2", path: "../benchmark_report_3_8_high_02.md" },
-      { runId: "r3", path: "../benchmark_report_3_8_high_03.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md" },
+      { runId: "r2", path: "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md" },
+      { runId: "r3", path: "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-3/report.md" },
     ],
   },
   "gemini-3.8-flash-medium-aided": {
@@ -45,9 +45,9 @@ const PRESETS = {
     model: "Gemini 3.8 Flash",
     reasoning: "medium, aided",
     reports: [
-      { runId: "r1", path: "../moreData/backup_gemini/benchmark_report.md" },
-      { runId: "r2", path: "../benchmark_report_3_8_medium_02.md" },
-      { runId: "r3", path: "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-1/report.md" },
+      { runId: "r2", path: "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-2/report.md" },
+      { runId: "r3", path: "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md" },
     ],
   },
   "gpt-5-6-sol-xhigh": {
@@ -55,9 +55,9 @@ const PRESETS = {
     model: "GPT-5.6 Sol",
     reasoning: "xhigh",
     reports: [
-      { runId: "r1", path: "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md" },
-      { runId: "r2", path: "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md" },
-      { runId: "r3", path: "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-1/report.md" },
+      { runId: "r2", path: "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-2/report.md" },
+      { runId: "r3", path: "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md" },
     ],
   },
   "gpt-5-6-sol-max": {
@@ -65,9 +65,9 @@ const PRESETS = {
     model: "GPT-5.6 Sol",
     reasoning: "max",
     reports: [
-      { runId: "r1", path: "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md" },
-      { runId: "r2", path: "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md" },
-      { runId: "r3", path: "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-1/report.md" },
+      { runId: "r2", path: "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-2/report.md" },
+      { runId: "r3", path: "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md" },
     ],
   },
   "gpt-6-astra-low": {
@@ -75,9 +75,9 @@ const PRESETS = {
     model: "GPT-6 Astra",
     reasoning: "low",
     reports: [
-      { runId: "r1", path: "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md" },
-      { runId: "r2", path: "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md" },
-      { runId: "r3", path: "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-1/report.md" },
+      { runId: "r2", path: "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md" },
+      { runId: "r3", path: "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md" },
     ],
   },
   "grok-4-6-xhigh": {
@@ -85,9 +85,9 @@ const PRESETS = {
     model: "Grok 4.6",
     reasoning: "xhigh",
     reports: [
-      { runId: "r1", path: "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md" },
-      { runId: "r2", path: "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md" },
-      { runId: "r3", path: "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md" },
+      { runId: "r2", path: "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-2/report.md" },
+      { runId: "r3", path: "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-3/report.md" },
     ],
   },
   "glm-5-3-flash-max": {
@@ -97,17 +97,17 @@ const PRESETS = {
     reports: [
       {
         runId: "r1",
-        path: "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json",
+        path: "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-1/conversation.json",
         format: "glm-conversation",
       },
       {
         runId: "r2",
-        path: "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+        path: "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
         format: "glm-conversation",
       },
       {
         runId: "r3",
-        path: "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json",
+        path: "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-3/conversation.json",
         format: "glm-conversation",
       },
     ],
@@ -117,7 +117,7 @@ const PRESETS = {
     model: "Gemini 3.7 Flash",
     reasoning: "high, unaided",
     reports: [
-      { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md" },
+      { runId: "r1", path: "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md" },
     ],
   },
   "grok-4-6-xhigh-mcp": {

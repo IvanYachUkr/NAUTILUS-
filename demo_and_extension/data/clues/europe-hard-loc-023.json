@@ -11,15 +11,15 @@
       "sourceRuns": [
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-3/report.md"
         },
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -52,12 +52,12 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Road Number on Gravel: \"3426\" (Lithuanian 4-digit rajoninis kelias numbering system where 34xx corresponds to Panevėžys/Kupiškis County)."
             },
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "Gravel road stencil \"3426\""
             }
           ],
@@ -93,12 +93,12 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Soviet-Era Agricultural Ruins: Concrete brick collective farm (kolkhoz) barn ruins alongside the road."
             },
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "derelict Soviet-era collective farm (kolūkis) structures."
             }
           ],
@@ -133,7 +133,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Lithuanian Gravel Plain (Žvyrkelis): Wide straight unpaved crushed stone road through expansive cereal fields."
             }
           ],
@@ -168,7 +168,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "flat open arable plains with canola/cereal crops"
             }
           ],
@@ -203,7 +203,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Flora & Shelterbelts: Spruce/pine windbreak grove on the left and open agricultural horizons under summer cloud cover."
             }
           ],
@@ -233,7 +233,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Regional Location: Road 3426 in Panevėžys / Pasvalys / Kupiškis County, northeastern Lithuania."
             }
           ],
@@ -250,15 +250,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_7_medium_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "../benchmark_report_3_7_medium_03.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -292,17 +292,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Stenciled road number on gravel: \"3426\" (Lithuanian regional road rajoninis kelias 3426)."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Road Number Markings on Gravel: Overlay markings: \"3426\" (Lithuanian rajoninis kelias 3426)."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Stenciled road number on gravel: \"3426\" (Lithuanian regional road rajoninis kelias 3426)."
             }
           ],
@@ -334,17 +334,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Typical flat Northern Lithuanian post-glacial agricultural lowland (Vidurio Lietuvos žemuma) with vast cereal crop fields."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Baltic Lowland Landscape: Extremely flat northern agricultural plains with wide wheat and rapeseed fields."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Typical flat Northern Lithuanian post-glacial agricultural lowland (Vidurio Lietuvos žemuma) with vast cereal crop fields."
             }
           ],
@@ -381,17 +381,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Ruin of Soviet-era collective farm masonry facility (kolūkis) built from white silicate bricks (silikatinės plytos)."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Rural Structures: Former Soviet-era agricultural masonry farm buildings on the roadside."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Ruin of Soviet-era collective farm masonry facility (kolūkis) built from white silicate bricks (silikatinės plytos)."
             }
           ],
@@ -422,12 +422,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Wide unpaved gravel highway (žvyrkelis) with dark spruce windbreak tree stand."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Wide unpaved gravel highway (žvyrkelis) with dark spruce windbreak tree stand."
             }
           ],
@@ -463,12 +463,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Northern European summer sky with low stratocumulus cloud canopy and overhead rural electrical transmission poles."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Northern European summer sky with low stratocumulus cloud canopy and overhead rural electrical transmission poles."
             }
           ],
@@ -498,7 +498,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Regional Profile: Panevėžys / Radviliškis / Pasvalys district in Northern Lithuania."
             }
           ],
@@ -527,7 +527,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Road Character: Wide, graded white gravel rural road."
             }
           ],
@@ -545,15 +545,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../benchmark_report_3_8_high_01.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_8_high_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "../benchmark_report_3_8_high_03.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -586,12 +586,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Soviet-era brick collective farm structures (kolūkis) and Lithuanian utility poles."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Former collective farm (kolūkis) masonry outbuildings and farm structures."
             }
           ],
@@ -622,12 +622,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Road surface asphalt stencil displaying \"3426\"."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Road surface painted route stencil: '3426'."
             }
           ],
@@ -657,12 +657,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "4-digit route numbers uniquely conform to the Lithuanian district road system (rajoniniai keliai)."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Lithuanian highway administration numbering: 4-digit route 34xx systematically allocated to local roads (rajoniniai keliai) in Radviliškis district."
             }
           ],
@@ -692,12 +692,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Flat Central Lithuanian Lowland (Lietuvos vidurio žemuma) with vast cereal fields and spruce windbreaks."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Vast agrarian landscape with oilseed rape and grain fields bordered by spruce and birch windbreaks."
             }
           ],
@@ -727,7 +727,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "White settlement entrance sign reading \"PAŠAKIAI\"."
             }
           ],
@@ -762,7 +762,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Wide unpaved agricultural gravel road traversing level Baltic glacial plain."
             }
           ],
@@ -797,7 +797,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Route 3426 / Panekelpiai"
             }
           ],
@@ -814,15 +814,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../moreData/backup_gemini/benchmark_report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_8_medium_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -850,12 +850,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Flat Central Lithuanian Lowland (Lietuvos vidurio žemuma) with vast cereal fields and spruce windbreaks."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Flat Central Lithuanian Lowland (Lietuvos vidurio žemuma) with vast cereal fields and spruce windbreaks."
             }
           ],
@@ -891,12 +891,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Soviet-era brick collective farm structures (kolūkis) and Lithuanian utility poles."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Soviet-era brick collective farm structures (kolūkis) and Lithuanian utility poles."
             }
           ],
@@ -927,12 +927,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "White settlement entrance sign reading \"PAŠAKIAI\"."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "White settlement entrance sign reading \"PAŠAKIAI\"."
             }
           ],
@@ -963,12 +963,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Road surface asphalt stencil displaying \"3426\"."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Road surface asphalt stencil displaying \"3426\"."
             }
           ],
@@ -1003,12 +1003,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Route 3426 / Panekelpiai"
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Route 3426 / Panekelpiai"
             }
           ],
@@ -1043,12 +1043,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "4-digit route numbers uniquely conform to the Lithuanian district road system (rajoniniai keliai)."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "4-digit route numbers uniquely conform to the Lithuanian district road system (rajoniniai keliai)."
             }
           ],
@@ -1066,15 +1066,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1101,7 +1101,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md",
               "text": "Soviet-era utility/road context"
             }
           ],
@@ -1131,7 +1131,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md",
               "text": "Flat Baltic farmland"
             }
           ],
@@ -1149,15 +1149,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1184,7 +1184,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "probably Radviliskis district from remembered regional road numbering"
             }
           ],
@@ -1218,7 +1218,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "low white agricultural ruins on left"
             }
           ],
@@ -1253,7 +1253,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "visible road overlay 3426"
             }
           ],
@@ -1283,7 +1283,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "broad pale gravel road"
             }
           ],
@@ -1318,7 +1318,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "scattered utility poles and distant mixed tree line. Initial hypothesis Lithuania"
             }
           ],
@@ -1348,7 +1348,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "medium-high country confidence"
             }
           ],
@@ -1379,7 +1379,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "medium district confidence"
             }
           ],
@@ -1410,7 +1410,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "low locality confidence."
             }
           ],
@@ -1447,7 +1447,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "flat cultivated fields"
             }
           ],
@@ -1465,15 +1465,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1500,7 +1500,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "but its correction landed in northern Lithuania"
             }
           ],
@@ -1537,7 +1537,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "Road number 3426 and Soviet-style farms led Grok to Latvia"
             }
           ],
@@ -1567,7 +1567,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "matching the revealed country."
             }
           ],
@@ -1587,15 +1587,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1627,7 +1627,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "Visible road overlay 3426"
             }
           ],
@@ -1662,7 +1662,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "Lithuanian gravel-road style"
             }
           ],
@@ -1692,7 +1692,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "flat agricultural landscape"
             }
           ],
@@ -1722,7 +1722,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "Baltic utility context"
             }
           ],
@@ -1756,7 +1756,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "sparse farm settlement."
             }
           ],
@@ -1774,15 +1774,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-1/conversation.json"
         },
         {
           "runId": "r2",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json"
         },
         {
           "runId": "r3",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-3/conversation.json"
         }
       ],
       "cues": [
@@ -1809,7 +1809,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "empty road + big cumulus sky. Belief: Latvia. Placing pin at 56.85, 24.50."
             }
           ],
@@ -1844,7 +1844,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "weathered white farm outbuildings,"
             }
           ],
@@ -1874,7 +1874,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "flat open farmland,"
             }
           ],
@@ -1903,7 +1903,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "spruce-lined horizon,"
             }
           ],
@@ -1937,7 +1937,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "\"3426\" painted on gravel — Baltic local-road numbering,"
             }
           ],
@@ -1954,7 +1954,7 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -1981,7 +1981,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md",
               "text": "flat agricultural Lithuanian countryside"
             }
           ],
@@ -2016,7 +2016,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md",
               "text": "\"3426\" road marker"
             }
           ],
@@ -2037,7 +2037,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/conditions/static-image-covered/runs/run-1/model_report.md"
         }
       ],
       "cues": [
@@ -2069,7 +2069,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Dead-straight gravel road through vast, very flat farmland"
             }
           ],
@@ -2099,7 +2099,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Spruce shelterbelts and treelines at field edges — nemoral/boreal transition"
             }
           ],
@@ -2134,7 +2134,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Small whitewashed farmhouse with outbuildings and a grey roof on the left"
             }
           ],
@@ -2164,7 +2164,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Lush green cereal/pasture fields under a humid overcast sky"
             }
           ],
@@ -2199,7 +2199,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Wooden power-line poles following the road; no signage"
             }
           ],
@@ -2220,7 +2220,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/conditions/static-image-covered/runs/run-1/model_report.md"
         }
       ],
       "cues": [
@@ -2252,7 +2252,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Broad gravel road through cropland is common in the Baltic countryside"
             }
           ],
@@ -2282,7 +2282,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Very flat terrain suggests a northern European plain"
             }
           ],
@@ -2317,7 +2317,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Abandoned pale masonry farm buildings suggest former Soviet agricultural infrastructure"
             }
           ],
@@ -2352,7 +2352,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Thin utility poles and sparse settlement support a rural Baltic setting"
             }
           ],
@@ -2387,7 +2387,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Mixed deciduous and conifer trees favor Lithuania or Latvia"
             }
           ],
@@ -2408,7 +2408,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/conditions/static-image-covered/runs/run-1/model_report.md"
         }
       ],
       "cues": [
@@ -2435,7 +2435,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Dead-flat cereal fields and drainage-shaped margins indicate the eastern Baltic plain"
             }
           ],
@@ -2470,7 +2470,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "A pale, well-graded gravel road is common in rural Latvia"
             }
           ],
@@ -2505,7 +2505,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Sparse wooden utility poles and long forest belts fit Latvia's Zemgale countryside"
             }
           ],
@@ -2540,7 +2540,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "A partly abandoned masonry farm building suggests a post-Soviet rural settlement pattern"
             }
           ],
@@ -2570,7 +2570,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Large open fields particularly favour the intensive agricultural belt around Jelgava"
             }
           ],
@@ -2590,7 +2590,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/conditions/static-image-covered/runs/run-1/model_report.md"
         }
       ],
       "cues": [
@@ -2622,7 +2622,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "A broad, straight light-grey gravel road is typical of rural Estonia"
             }
           ],
@@ -2652,7 +2652,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Very large rectangular crop fields suggest the consolidated agricultural landscape of the eastern Baltic"
             }
           ],
@@ -2687,7 +2687,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Sparse, thin utility poles and widely separated farmsteads fit Estonia's low population density"
             }
           ],
@@ -2722,7 +2722,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "A dark wooden gabled farmhouse beside a deteriorated white masonry farm building has a post-Soviet Estonian character"
             }
           ],
@@ -2752,7 +2752,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/conditions/static-image-covered/runs/run-1/model_report.md",
               "text": "Flat terrain with a mixed deciduous/conifer tree line points toward central/eastern Estonia"
             }
           ],
@@ -2773,7 +2773,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/conditions/static-image-covered/runs/run-1/model_report_recovered.md"
         }
       ],
       "cues": [
@@ -2805,7 +2805,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/conditions/static-image-covered/runs/run-1/model_report_recovered.md",
               "text": "Dead-straight pale gravel road through large arable fields — former collective-farm geometry"
             }
           ],
@@ -2840,7 +2840,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/conditions/static-image-covered/runs/run-1/model_report_recovered.md",
               "text": "Abandoned one-storey concrete farm sheds on the left — classic Polish PGR / Baltic kolkhoz ruins"
             }
           ],
@@ -2870,7 +2870,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/conditions/static-image-covered/runs/run-1/model_report_recovered.md",
               "text": "Flat plain, mixed woodland belt on the horizon, scattered poles — East-Central European lowland"
             }
           ],
@@ -2900,7 +2900,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/conditions/static-image-covered/runs/run-1/model_report_recovered.md",
               "text": "No hedges, no irrigation canals, no American barn/silo vocabulary"
             }
           ],
@@ -2930,7 +2930,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/conditions/static-image-covered/runs/run-1/model_report_recovered.md",
               "text": "Summer mixed grass and cereal green under a big cumulus sky"
             }
           ],
@@ -2951,7 +2951,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../newEvalReport_3_7_high.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -2983,7 +2983,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_7_high.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Baltic Gravel Road (Grantsceļš): Wide, light-grey crushed-gravel rural roadway leading across flat agricultural fields"
             }
           ],
@@ -3018,7 +3018,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_7_high.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Soviet-Era Farm Remnants: Dilapidated agricultural farm outbuildings on the left constructed from white silicate bricks (silikātķieģeļi), characteristic of former kolkhoz infrastructure"
             }
           ],
@@ -3048,7 +3048,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_7_high.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Extensive Flat Lowland Landscape: Perfectly flat plains with vast open pastures, cereal crops, and distant windbreak treelines composed of spruce, pine, and birch"
             }
           ],
@@ -3078,7 +3078,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_7_high.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "High Northern Sky & Light: Expansive Northern European summer sky with gentle stratocumulus cloud decks"
             }
           ],
@@ -3099,7 +3099,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../newEvalReport3_7_medium.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -3131,7 +3131,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport3_7_medium.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Rural Road Type: Wide, flat, light-grey unpaved gravel country road (žvyrkelis) cutting straight across vast farmland"
             }
           ],
@@ -3166,7 +3166,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport3_7_medium.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Historical Structures: Derelict Soviet-era collective farm (kolkhoz) concrete-block barns and masonry foundations on the left roadside"
             }
           ],
@@ -3196,7 +3196,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport3_7_medium.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Topography & Vegetation: Completely flat Baltic lowland plains with vast cereal crop fields bounded by distant mixed pine and spruce forests"
             }
           ],
@@ -3226,7 +3226,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport3_7_medium.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Atmosphere: Expansive open sky filled with northern summer cumulus clouds"
             }
           ],
@@ -3247,7 +3247,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../newEvalReport_3_8_high.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -3279,7 +3279,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_8_high.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Baltic Unpaved Roadway: Wide, dead-straight unpaved road composed of pale crushed limestone and light gravel (grants ceļš / kruusatee), a quintessential fixture of the Baltic countryside"
             }
           ],
@@ -3314,7 +3314,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_8_high.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Soviet Agricultural Ruins: Abandoned agricultural structure on the left constructed from white silicate building blocks with regular rectangular window bays (former Soviet kolkhoz / sovkhoz cattle shed or warehouse)"
             }
           ],
@@ -3344,7 +3344,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_8_high.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Topography & Farmland: Flat lowland agricultural plains extending uninterrupted to distant horizontal tree lines of mixed spruce (Picea abies) and birch woodland"
             }
           ],
@@ -3379,7 +3379,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_8_high.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Rural Utilities: Single-timber power poles carrying overhead rural electricity lines across expansive open crop fields"
             }
           ],
@@ -3400,7 +3400,7 @@
       "sourceRuns": [
         {
           "runId": "covered-static-r1",
-          "report": "../newEvalReport_3_8_medium.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -3432,7 +3432,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_8_medium.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Baltic Unpaved Road: Broad, straight gravel/dirt road (grunts ceļš / žvyrkelis) passing through wide, flat agricultural fields"
             }
           ],
@@ -3467,7 +3467,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_8_medium.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Former Kolkhoz / Sovkhoz Ruins: Abandoned Soviet-era collective agricultural buildings constructed from white silikat brick and concrete blocks on the left"
             }
           ],
@@ -3497,7 +3497,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_8_medium.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Topography & Vegetation: Flat glacial plains bordered by tree lines of Norway spruce (Picea abies) and silver birch (Betula pendula)"
             }
           ],
@@ -3532,7 +3532,7 @@
           "provenance": [
             {
               "runId": "covered-static-r1",
-              "report": "../newEvalReport_3_8_medium.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
               "text": "Horizon & Infrastructure: Distant low wooden utility poles along the flat tree-lined horizon under expansive overcast Baltic skies"
             }
           ],

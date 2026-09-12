@@ -1,5 +1,0 @@
-# Preserve exact evidence bytes and hashes across checkouts.
-2026-09-11/* -text -whitespace
-2026-09-11-max/* -text -whitespace
-*.zip binary
-*.sha256 -text -whitespace

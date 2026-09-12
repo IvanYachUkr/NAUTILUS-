@@ -11,15 +11,15 @@
       "sourceRuns": [
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-3/report.md"
         },
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -52,12 +52,12 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Salzach River & Bridges: River bisecting the city with arched footbridges and classical riverside facades."
             },
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "Salzach River view from Kapuzinerberg wall."
             }
           ],
@@ -92,12 +92,12 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Festung Hohensalzburg: Medieval hilltop castle dominating the skyline over the old town."
             },
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "Hohensalzburg Fortress (Festung Hohensalzburg)"
             }
           ],
@@ -131,7 +131,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "Salzburg Cathedral spires"
             }
           ],
@@ -161,7 +161,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Altstadt Architecture: Green baroque domes of Dom zu Salzburg (Salzburg Cathedral) and Franciscan Church."
             }
           ],
@@ -196,7 +196,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Alpine Backdrop: Snow-dusted Alps (Untersberg range) rising in the background."
             }
           ],
@@ -231,7 +231,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Viewpoint Location: Old stone wall parapet on the eastern cliff (Kapuzinerberg)."
             }
           ],
@@ -249,15 +249,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_7_medium_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "../benchmark_report_3_7_medium_03.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -291,17 +291,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Festung Hohensalzburg (Salzburg Fortress) perched prominently on the Festungsberg overlooking the city."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Festung Hohensalzburg (Hohensalzburg Fortress): Massive hilltop medieval/renaissance fortress overlooking the city."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Festung Hohensalzburg (Salzburg Fortress) perched prominently on the Festungsberg overlooking the city."
             }
           ],
@@ -337,17 +337,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Salzach River curving through the historic valley with pedestrian and road bridges."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Salzach River & Altstadt: Panoramic view of historic Salzburg old town with turquoise copper church domes (Salzburger Dom, St. Peter's)."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Salzach River curving through the historic valley with pedestrian and road bridges."
             }
           ],
@@ -383,17 +383,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Snow-capped Northern Limestone Alps (Berchtesgaden Alps / Untersberg) forming the mountain backdrop."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Alpine Mountain Panorama: Snow-capped Northern Limestone Alps (Untersberg massif) in the background."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Snow-capped Northern Limestone Alps (Berchtesgaden Alps / Untersberg) forming the mountain backdrop."
             }
           ],
@@ -429,12 +429,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Historic stone fortification wall and tiled corner watchtower of the Kapuzinerberg bastions (Basteiweg) in the immediate foreground."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Historic stone fortification wall and tiled corner watchtower of the Kapuzinerberg bastions (Basteiweg) in the immediate foreground."
             }
           ],
@@ -470,12 +470,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Baroque spires and turquoise domes of the Salzburg Cathedral (Salzburger Dom) and Franciscan church."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Baroque spires and turquoise domes of the Salzburg Cathedral (Salzburger Dom) and Franciscan church."
             }
           ],
@@ -505,7 +505,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Viewpoint Geometry: Stationed along historic defensive stone wall / turret on Kapuzinerberg facing south-west across the Salzach."
             }
           ],
@@ -535,7 +535,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Austrian Architecture: Characteristic Salzburg Baroque townhouses along the Giselakai."
             }
           ],
@@ -553,15 +553,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../benchmark_report_3_8_high_01.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_8_high_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "../benchmark_report_3_8_high_03.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -594,12 +594,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Distinctive Alpine backdrop of the Berchtesgaden / Untersberg Alps."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Majestic snow-capped Bavarian/Austrian Alps in the background (Untersberg massif)."
             }
           ],
@@ -634,12 +634,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "The Salzach River flowing through the center of the historic city."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Salzach river curving through the historic city center below."
             }
           ],
@@ -674,12 +674,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Hohensalzburg Fortress (Festung Hohensalzburg) prominently situated atop the Festungsberg ridge across the river."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Festung Hohensalzburg fortress perched dominantly atop Festungsberg across the river."
             }
           ],
@@ -715,12 +715,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Stone bastion fortification wall (Bastei) of Kapuzinerberg where the camera viewpoint is situated."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Historic stone parapet wall and fortified turret of the Kapuzinerberg bastion (Basteiweg)."
             }
           ],
@@ -756,12 +756,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Historic old town spires including the Salzburg Cathedral (Salzburger Dom)."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Green dome towers of the Salzburger Dom and historic Altstadt church spires."
             }
           ],
@@ -791,7 +791,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Kapuzinerberg / Basteiweg"
             }
           ],
@@ -808,15 +808,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../moreData/backup_gemini/benchmark_report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_8_medium_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -849,12 +849,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Hohensalzburg Fortress (Festung Hohensalzburg) prominently situated atop the Festungsberg ridge across the river."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Hohensalzburg Fortress (Festung Hohensalzburg) prominently situated atop the Festungsberg ridge across the river."
             }
           ],
@@ -889,12 +889,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Distinctive Alpine backdrop of the Berchtesgaden / Untersberg Alps."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Distinctive Alpine backdrop of the Berchtesgaden / Untersberg Alps."
             }
           ],
@@ -929,12 +929,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Historic old town spires including the Salzburg Cathedral (Salzburger Dom)."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Historic old town spires including the turquoise-domed Salzburg Cathedral (Salzburger Dom)."
             }
           ],
@@ -970,12 +970,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Stone bastion fortification wall (Bastei) of Kapuzinerberg where the camera viewpoint is situated."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Stone bastion fortification wall (Bastei) of Kapuzinerberg where the camera viewpoint is situated."
             }
           ],
@@ -1011,12 +1011,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "The Salzach River flowing through the center of the historic city."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "The Salzach River flowing through the center of the historic city."
             }
           ],
@@ -1046,12 +1046,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Kapuzinerberg / Basteiweg"
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Kapuzinerberg / Basteiweg"
             }
           ],
@@ -1068,15 +1068,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1103,7 +1103,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md",
               "text": "the Salzburg urban form supported Salzburg"
             }
           ],
@@ -1138,7 +1138,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md",
               "text": "Austrian historic-city architecture"
             }
           ],
@@ -1173,7 +1173,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md",
               "text": "Alpine backdrop"
             }
           ],
@@ -1191,15 +1191,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1226,7 +1226,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "steep wooded city hills"
             }
           ],
@@ -1256,7 +1256,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "Salzburg's baroque skyline"
             }
           ],
@@ -1290,7 +1290,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "the Salzach corridor"
             }
           ],
@@ -1325,7 +1325,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "Hohensalzburg Fortress"
             }
           ],
@@ -1360,7 +1360,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "Alpine backdrop."
             }
           ],
@@ -1377,15 +1377,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1412,7 +1412,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md",
               "text": "stone lookout wall and shingle turret"
             }
           ],
@@ -1447,7 +1447,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md",
               "text": "dense pastel central-European roofs. Initial belief: Salzburg"
             }
           ],
@@ -1482,7 +1482,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md",
               "text": "Hohensalzburg-like fortress on hill"
             }
           ],
@@ -1517,7 +1517,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md",
               "text": "river through baroque city"
             }
           ],
@@ -1552,7 +1552,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md",
               "text": "alpine mountains behind"
             }
           ],
@@ -1582,7 +1582,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md",
               "text": "Kapuzinerberg overlook"
             }
           ],
@@ -1599,15 +1599,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1634,7 +1634,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "old town"
             }
           ],
@@ -1669,7 +1669,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "Fortress"
             }
           ],
@@ -1704,7 +1704,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "river"
             }
           ],
@@ -1739,7 +1739,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "Alps were correctly identified. Street View arrows were swallowed and a panorama drag was needed to trigger REC. The attempted Austria correction resolved offshore in the Adriatic."
             }
           ],
@@ -1757,15 +1757,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-1/conversation.json"
         },
         {
           "runId": "r2",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json"
         },
         {
           "runId": "r3",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-3/conversation.json"
         }
       ],
       "cues": [
@@ -1797,7 +1797,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "stone battlement + turret viewpoint. Belief: Salzburg, viewed from Kapuzinerberg. Placing pin at 47.7990, 13.0520."
             }
           ],
@@ -1832,7 +1832,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "Hohensalzburg Fortress on hill,"
             }
           ],
@@ -1867,7 +1867,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "Salzach River through town,"
             }
           ],
@@ -1902,7 +1902,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "Alpine ridge on horizon,"
             }
           ],
@@ -1936,7 +1936,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "baroque old-town domes/spires,"
             }
           ],
@@ -1953,7 +1953,7 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -1980,7 +1980,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md",
               "text": "Kapuzinerberg ramparts / Basteiweg"
             }
           ],
@@ -2014,7 +2014,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md",
               "text": "Festung Hohensalzburg"
             }
           ],
@@ -2049,7 +2049,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md",
               "text": "Salzach river"
             }
           ],

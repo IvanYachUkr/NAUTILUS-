@@ -66,11 +66,11 @@ test("reference prediction pins retain stable labels as the recording archive gr
     run.runKind === "model-prediction" || run.model === "manual",
   );
 
-  // 250 interactive model predictions with coordinates
+  // 275 interactive model predictions with coordinates
   // + 200 static baseline predictions (4 models x 2 image variants x 25 locations)
   // + 131 controlled covered-static predictions
   // + 50 manual reference runs
-  assert.equal(referenceRuns.length, 631);
+  assert.equal(referenceRuns.length, 656);
 
   const staticBaselineRuns = referenceRuns.filter(
     ({ run }) =>
@@ -96,7 +96,7 @@ test("reference prediction pins retain stable labels as the recording archive gr
     .filter(({ caseId, run }) => caseId === "europe-easy--loc-006" && run.condition !== "static-image-covered")
     .map(({ run }) => [run.model, run.condition, run.prediction.label]);
 
-  assert.equal(bogatyniaReferences.length, 20);
+  assert.equal(bogatyniaReferences.length, 21);
   assert.deepEqual(bogatyniaReferences.slice(-2), [
     ["manual", "interactive-panorama", "Zittau, Germany"],
     ["manual", "static-image", "Hrádek nad Nisou, Czechia"],
@@ -204,7 +204,7 @@ test("canonical benchmark predictions are available independently of replay reco
     const unavailablePins = runs.filter((run) =>
       !Number.isFinite(run.prediction?.lat) || !Number.isFinite(run.prediction?.lng),
     );
-    assert.deepEqual(unavailablePins.map((run) => run.model), ["GPT-6 Astra · low"], item.id);
+    assert.deepEqual(unavailablePins, [], item.id);
     assert.ok(
       runs.every((run) => run.exploration === undefined),
       item.id,
@@ -225,11 +225,9 @@ test("the public atlas includes only completed covered-image clues", async () =>
   );
   const coveredClues = coveredSets.flatMap((set) => set.cues);
 
-  // Three covered clue sets currently contain only unresolved draft clues,
-  // so the public build omits those empty sets altogether.
-  assert.equal(coveredSets.length, 128);
-  assert.equal(coveredClues.length, 585);
-  assert.equal(coveredClues.filter((clue) => clue.region).length, 340);
+  assert.equal(coveredSets.length, 131);
+  assert.equal(coveredClues.length, 597);
+  assert.equal(coveredClues.filter((clue) => clue.region).length, 350);
   assert.ok(coveredClues.every((clue) =>
     clue.annotationStatus === "reviewed" || clue.annotationStatus === "text-only"
   ));

@@ -358,6 +358,11 @@ def series_from_path(relative_path: Path, dataset: str) -> tuple[str, str]:
     if not prefix:
         prefix = ["unknown"]
 
+    # Canonical storage nests evaluations as <model>/runs/run-N. Keep the
+    # public series identifier compact and independent of that storage detail.
+    if len(prefix) >= 3 and prefix[1] == "runs":
+        prefix = [prefix[0], prefix[2]]
+
     return prefix[0], "/".join(prefix)
 
 
@@ -555,37 +560,36 @@ def load_astra_rows(
     competition_order: dict[str, list[str]],
     issues: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    reports = benchmark_root / "gpt-6-astra-low" / "reports"
+    model_root = benchmark_root / "gpt-6-astra-low"
 
     specs = (
         (
             "gpt-6-astra-low/run-1",
-            "NAUTILUS_ASTRA_LOW_RUN_20260906.md",
+            model_root / "runs" / "run-1" / "report.md",
             set(DATASETS),
         ),
         (
             "gpt-6-astra-low/run-2",
-            "NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+            model_root / "runs" / "run-2" / "report.md",
             set(DATASETS),
         ),
         # Only Easy from the original Run 3 report is valid. Its original
         # Medium attempt was explicitly excluded after protocol contamination.
         (
             "gpt-6-astra-low/run-3",
-            "NAUTILUS_ASTRA_LOW_RUN3_20260907.md",
+            model_root / "runs" / "run-3" / "original-report.md",
             {"europe-easy"},
         ),
         (
             "gpt-6-astra-low/run-3",
-            "NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+            model_root / "runs" / "run-3" / "report.md",
             {"europe-medium", "europe-hard"},
         ),
     )
 
     rows: list[dict[str, Any]] = []
 
-    for series_id, filename, allowed_datasets in specs:
-        path = reports / filename
+    for series_id, path, allowed_datasets in specs:
         if not path.exists():
             issues.append(
                 {
@@ -631,7 +635,7 @@ def load_astra_rows(
                     "series_id": series_id,
                     "dataset": "",
                     "location_id": "",
-                    "file": "gpt-6-astra-low/reports/",
+                    "file": "gpt-6-astra-low/runs/",
                     "details": (
                         f"parsed {len(group)} rows / {len(unique)} unique; "
                         "expected 25"
@@ -1221,7 +1225,11 @@ def write_csv(
         newline="",
         encoding="utf-8-sig",
     ) as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
 

@@ -998,7 +998,7 @@ async function loadRecordedBenchmarkPredictions(
       continue;
     }
     const predictions = benchmark.predictionSource.type === "glm-conversation"
-      ? await loadGlmConversationPredictions(benchmark.predictionSource.path, errors)
+      ? await loadGlmConversationPredictions(join(benchmarkDirectory, benchmark.predictionSource.path), errors)
       : benchmark.predictionSource.type === "curated-json"
         ? await loadCuratedBenchmarkPredictions(join(benchmarkDirectory, benchmark.predictionSource.path), errors)
         : await loadRecordedDirectoryPredictions(join(benchmarkDirectory, benchmark.predictionSource.path ?? "."), errors);

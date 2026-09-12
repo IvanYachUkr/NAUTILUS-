@@ -10,7 +10,7 @@
       "model": "GLM-5.3-Flash + MCP · Max",
       "reasoning": "Max",
       "condition": "static-image-covered",
-      "sourceReport": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+      "sourceReport": "data/recorded-agent-benchmark/glm-5.3-flash-max/conditions/static-image-covered/runs/run-1/model_report.md",
       "predictions": [
         {
           "id": "glm-5-3-flash-max-europe-easy--loc-001",
@@ -230,7 +230,7 @@
       "model": "GPT-6 Astra · low",
       "reasoning": "low",
       "condition": "static-image-covered",
-      "sourceReport": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+      "sourceReport": "data/recorded-agent-benchmark/gpt-6-astra-low/conditions/static-image-covered/runs/run-1/model_report.md",
       "predictions": [
         {
           "id": "gpt-6-astra-low-europe-easy--loc-001",
@@ -450,7 +450,7 @@
       "model": "GPT-5.6 Sol · xhigh",
       "reasoning": "xhigh",
       "condition": "static-image-covered",
-      "sourceReport": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+      "sourceReport": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/conditions/static-image-covered/runs/run-1/model_report.md",
       "predictions": [
         {
           "id": "gpt-5-6-sol-xhigh-europe-easy--loc-001",
@@ -670,7 +670,7 @@
       "model": "GPT-5.6 Sol · max",
       "reasoning": "max",
       "condition": "static-image-covered",
-      "sourceReport": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+      "sourceReport": "data/recorded-agent-benchmark/gpt-5.6-sol-max/conditions/static-image-covered/runs/run-1/model_report.md",
       "predictions": [
         {
           "id": "gpt-5-6-sol-max-europe-easy--loc-001",
@@ -890,7 +890,7 @@
       "model": "Grok 4.6 · xhigh",
       "reasoning": "xhigh",
       "condition": "static-image-covered",
-      "sourceReport": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+      "sourceReport": "data/recorded-agent-benchmark/grok-4.6-xhigh/conditions/static-image-covered/runs/run-1/model_report_recovered.md",
       "predictions": [
         {
           "id": "grok-4-6-xhigh-europe-easy--loc-001",
@@ -1110,7 +1110,7 @@
       "model": "Gemini 3.7 Flash · high, aided",
       "reasoning": "high, aided",
       "condition": "static-image-covered",
-      "sourceReport": "../newEvalReport_3_7_high.md",
+      "sourceReport": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
       "predictions": [
         {
           "id": "gemini-3-7-flash-high-aided-europe-easy--loc-001",
@@ -1316,7 +1316,7 @@
       "model": "Gemini 3.7 Flash · medium, aided",
       "reasoning": "medium, aided",
       "condition": "static-image-covered",
-      "sourceReport": "../newEvalReport3_7_medium.md",
+      "sourceReport": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
       "predictions": [
         {
           "id": "gemini-3-7-flash-medium-aided-europe-easy--loc-001",
@@ -1522,7 +1522,7 @@
       "model": "Gemini 3.8 Flash · high, aided",
       "reasoning": "high, aided",
       "condition": "static-image-covered",
-      "sourceReport": "../newEvalReport_3_8_high.md",
+      "sourceReport": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/conditions/static-image-covered/runs/run-1/report.md",
       "predictions": [
         {
           "id": "gemini-3-8-flash-high-aided-europe-easy--loc-001",
@@ -1728,7 +1728,7 @@
       "model": "Gemini 3.8 Flash · medium, aided",
       "reasoning": "medium, aided",
       "condition": "static-image-covered",
-      "sourceReport": "../newEvalReport_3_8_medium.md",
+      "sourceReport": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/conditions/static-image-covered/runs/run-1/report.md",
       "predictions": [
         {
           "id": "gemini-3-8-flash-medium-aided-europe-easy--loc-001",

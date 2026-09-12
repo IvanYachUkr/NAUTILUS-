@@ -11,15 +11,15 @@
       "sourceRuns": [
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-3/report.md"
         },
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -47,12 +47,12 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Boreal / Wetland Flora: Dense stands of silver birch (Betula), alder (Alnus), and willow thickets in moist lowlands."
             },
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "dense silver birch (Betula pendula)"
             }
           ],
@@ -88,12 +88,12 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Unpaved Forest Track: Single-lane straight dirt/gravel track with grassy center berm and roadside drainage ditches."
             },
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "Unpaved sand/gravel track with green grass centerline strip"
             }
           ],
@@ -123,7 +123,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "lush peatland grasses and ferns."
             }
           ],
@@ -152,7 +152,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Regional Signature: Characteristic Baltic forest/peatland scenery across Latvia, Lithuania, and Southern Estonia."
             }
           ],
@@ -181,7 +181,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Northern Lighting: High clear sun angle with pale northern European skies."
             }
           ],
@@ -210,7 +210,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "grey alder"
             }
           ],
@@ -240,7 +240,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/report.md",
               "text": "Topography: Completely flat lowland terrain with high water table."
             }
           ]
@@ -268,7 +268,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/report.md",
               "text": "aspen"
             }
           ]
@@ -284,15 +284,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_7_medium_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "../benchmark_report_3_7_medium_03.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -321,17 +321,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Boreal-nemoral Baltic mixed forest flora: dense young European alder (Alnus glutinosa), silver birch (Betula pendula), and lush undergrowth."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Flora & Mixed Forest: Dense young birch, alder, willow scrub, and mature oak along an unpaved forest track."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Boreal-nemoral Baltic mixed forest flora: dense young European alder (Alnus glutinosa), silver birch (Betula pendula), and lush undergrowth."
             }
           ],
@@ -368,17 +368,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Single-lane unpaved gravel / dirt forestry track with grassy center median (gruntsceļš / meža ceļš)."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Road Character: Dual-rut gravel/dirt road with a grassy center median."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Single-lane unpaved gravel / dirt forestry track with grassy center median (gruntsceļš / meža ceļš)."
             }
           ],
@@ -410,17 +410,17 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Characteristic flat-to-undulating Baltic post-glacial plain topography."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Topography: Flat Baltic lowland terrain under high northern summer sun."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Characteristic flat-to-undulating Baltic post-glacial plain topography."
             }
           ],
@@ -450,12 +450,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Absence of formal roadside fencing, demarcating open state forest land."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Absence of formal roadside fencing, demarcating open state forest land."
             }
           ],
@@ -485,12 +485,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/report.md",
               "text": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes."
             },
             {
               "runId": "r3",
-              "report": "../benchmark_report_3_7_medium_03.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/report.md",
               "text": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes."
             }
           ],
@@ -520,7 +520,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_7_medium_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/report.md",
               "text": "Regional Characteristic: Textbook Baltic rural woodland (Vidzeme / Latgale, Latvia)."
             }
           ],
@@ -537,15 +537,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../benchmark_report_3_8_high_01.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_8_high_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "../benchmark_report_3_8_high_03.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -573,12 +573,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Pale high-latitude summer sunlight and expansive unbroken canopy."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Flat, level horizon under high pale-blue summer sky with scattered light cirrus."
             }
           ],
@@ -614,12 +614,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Unpaved rural gravel track with central grassy median strip traversing flat Baltic glacial terrain."
             }
           ],
@@ -650,12 +650,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speckled alder with fern understory."
             },
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Dense northern deciduous brushwood and secondary forest featuring white birch (Betula pendula), alder, hazel, and willow thickets."
             }
           ],
@@ -685,7 +685,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands."
             }
           ],
@@ -714,7 +714,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia."
             }
           ],
@@ -743,7 +743,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../benchmark_report_3_8_high_02.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/report.md",
               "text": "Characteristic Baltic road drainage ditches excavated along lush green grassy verges."
             }
           ],
@@ -773,7 +773,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Gaujasrēveļi / Ranka"
             }
           ],
@@ -802,7 +802,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../benchmark_report_3_8_high_01.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Vidzeme"
             }
           ],
@@ -819,15 +819,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../moreData/backup_gemini/benchmark_report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "../benchmark_report_3_8_medium_02.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -855,12 +855,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands."
             }
           ],
@@ -895,12 +895,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches."
             }
           ],
@@ -935,12 +935,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Pale high-latitude summer sunlight and expansive unbroken canopy."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Pale high-latitude summer sunlight and expansive unbroken canopy."
             }
           ],
@@ -971,12 +971,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia."
             }
           ],
@@ -1006,12 +1006,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speckled alder with fern understory."
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speckled alder with fern understory."
             }
           ],
@@ -1042,12 +1042,12 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Vidzeme"
             },
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Vidzeme"
             }
           ],
@@ -1076,7 +1076,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/report.md",
               "text": "Jaunpiebalga / Lācītes"
             }
           ],
@@ -1106,7 +1106,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "../moreData/backup_gemini/benchmark_report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/report.md",
               "text": "Gaujasrēveļi / Ranka"
             }
           ],
@@ -1123,15 +1123,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1158,7 +1158,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md",
               "text": "weak Central/Eastern-European cues produced a broad Baltic-to-Hungary ambiguity."
             }
           ],
@@ -1193,7 +1193,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md",
               "text": "Dirt orchard/hedge track"
             }
           ],
@@ -1223,7 +1223,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/report.md",
               "text": "temperate farmland"
             }
           ],
@@ -1240,15 +1240,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md"
+          "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1280,7 +1280,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "narrow gravel two-track with grassy center"
             }
           ],
@@ -1310,7 +1310,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "deciduous/birch-like roadside trees"
             }
           ],
@@ -1339,7 +1339,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "low country/locality confidence."
             }
           ],
@@ -1370,7 +1370,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "dense green hedges"
             }
           ],
@@ -1400,7 +1400,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "flat horizon"
             }
           ],
@@ -1430,7 +1430,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
+              "report": "data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/report.md",
               "text": "road markings or utility poles visible. Initial hypothesis Baltic states or rural Poland"
             }
           ],
@@ -1448,15 +1448,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1488,7 +1488,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "A straight dirt track"
             }
           ],
@@ -1518,7 +1518,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
+              "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/report.md",
               "text": "Baltic scrub led Grok to Lithuania. The correction resolved near northeast Poland while the reveal was Latvia."
             }
           ],
@@ -1536,15 +1536,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-1/report.md"
         },
         {
           "runId": "r2",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-2/report.md"
         },
         {
           "runId": "r3",
-          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md"
+          "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md"
         }
       ],
       "cues": [
@@ -1571,7 +1571,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "muted northern-European light."
             }
           ],
@@ -1601,7 +1601,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "flat fields/woodland edge"
             }
           ],
@@ -1631,7 +1631,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "wet lowland vegetation"
             }
           ],
@@ -1666,7 +1666,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "Overgrown dirt track"
             }
           ],
@@ -1696,7 +1696,7 @@
           "provenance": [
             {
               "runId": "r3",
-              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
+              "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/report.md",
               "text": "sparse development"
             }
           ],
@@ -1713,15 +1713,15 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/01-scored-run-1-sess_9d71e0f8-8159-40c5-9b5b-14fcb9698187/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-1/conversation.json"
         },
         {
           "runId": "r2",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json"
         },
         {
           "runId": "r3",
-          "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/03-scored-run-3-sess_aa42aa68-1f90-47ef-88a3-93a0c518f368/conversation.json"
+          "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-3/conversation.json"
         }
       ],
       "cues": [
@@ -1753,7 +1753,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "young hazel/birch scrub both sides,"
             }
           ],
@@ -1788,7 +1788,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "tall poplars left, flat land,"
             }
           ],
@@ -1818,7 +1818,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "cool temperate sky. Belief: NE Germany / western Poland borderlands. Placing pin at 52.40, 14.60."
             }
           ],
@@ -1853,7 +1853,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "grassy-centered gravel track,"
             }
           ],
@@ -1883,7 +1883,7 @@
           "provenance": [
             {
               "runId": "r2",
-              "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
+              "report": "data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-2/conversation.json",
               "text": "zero infrastructure,"
             }
           ],
@@ -1900,7 +1900,7 @@
       "sourceRuns": [
         {
           "runId": "r1",
-          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md"
+          "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md"
         }
       ],
       "cues": [
@@ -1932,7 +1932,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md",
               "text": "Latvian birch forest gravel road"
             }
           ],
@@ -1962,7 +1962,7 @@
           "provenance": [
             {
               "runId": "r1",
-              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md",
+              "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/report.md",
               "text": "Baltic rural farmsteads"
             }
           ],

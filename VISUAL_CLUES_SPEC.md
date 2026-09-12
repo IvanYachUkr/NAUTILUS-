@@ -26,27 +26,19 @@ The `geo-evidence-atlas.schema.json` schema already defines a `cues[]` array on 
 }
 ```
 
-**The `cues[]` field is currently empty for all models and all 25 locations.** The data exists in prose form in the run reports.
+The `cues[]` field contains the reviewed clue text, region annotations, and ratings
+that have already passed through the review tool. Run reports remain the provenance
+source for extracted clue text.
 
 ### 1.2 Report / clue text coverage
 
 | Run | Report file | Rounds | Clue bullets | Format |
 |---|---|---|---|---|
-| Gemini 3.7 Flash · high · aided · R1 | `gemini-3.7-flash-high-aided/report.md` | 28 (incl. retries) | ~48 | `- **Visual Clues**: numbered list` |
-| Gemini 3.7 Flash · high · aided · R2 | `…/runs/recorded-r2/report.md` | 25 | ~125 | `1. *Label*: text` |
-| Gemini 3.7 Flash · high · aided · R3 | `…/runs/recorded-r3/report.md` | 25 | ~125 | `1. *Label*: text` |
-| Gemini 3.7 Flash · medium · aided · R1 | `gemini-3.7-flash-medium-aided/report.md` | 25 | ~125 | `1. *Label* description` |
-| Gemini 3.8 Flash · medium · aided · R1 | `moreData/backup_gemini/benchmark_report.md` | 25 | ~134 | `**Bold Label**: text` |
-| Gemini 3.8 Flash · medium · aided · R3 | `…/runs/recorded-r3/report.md` | 25 | ~134 | `**Bold Label**: text` |
-| Gemini 3.8 Flash · high · aided · R1 | `moreData/backup_gemini/benchmark_report_gemini_3_8_flash.md` | 25 | ~128 | `**Bold Label**: text` |
-| Gemini 3.8 Flash · high · aided · R2/R3 | *(runs in progress — no report yet)* | — | — | TBD |
-| Gemini 3.7 Flash · medium · aided · R2/R3 | ❌ No report | — | — | — |
-| Gemini 3.8 Flash · medium · aided · R2 | ❌ No report | — | — | — |
-| Gemini 3.7 Flash · high · unaided · R1 | `gemini-3.7-flash-high/report.md` | 0 structured | 0 | Minimal prose only |
-| GPT-5.6 Sol (max/xhigh) all runs | `gpt-5.6-sol-*/report.md` + moreData | 25 each | ~125 each | Various |
-| GPT-6 Astra (low) all runs | `gpt-6-astra-low/reports/*.md` + moreData | 25 each | ~100 each | Prose per round |
-| Grok 4.6 (xhigh) all runs | `moreData/…/grok-4.6-xhigh/transcript*.txt` | 25 each | ~80 each | Chat transcript |
-| GLM-5.3-Flash all runs | `moreData/nautilus-glm-chats-runs-1-to-3-…` | 25 each | ~60 each | Chat logs (55 MB zip) |
+| Gemini 3.7/3.8 Flash | `data/recorded-agent-benchmark/<model>/runs/run-N/report.md` | 25 each | varies | Markdown reports |
+| GPT-5.6 Sol (max/xhigh) | `data/recorded-agent-benchmark/<model>/runs/run-N/report.md` | 25 each | ~125 each | Markdown reports |
+| GPT-6 Astra (low) | `data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-N/report.md` | 25 each | ~100 each | Prose per round |
+| Grok 4.6 (xhigh) | `data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-N/` | 25 each | ~80 each | Reports and transcripts |
+| GLM-5.3-Flash | `data/recorded-agent-benchmark/glm-5.3-flash-max/runs/run-N/conversation.json` | 25 each | ~60 each | Chat logs |
 
 **Total parseable clue bullets right now (Gemini runs only): ~819**
 **Target for full pipeline (all models, best run per model): ~1,500–2,000 clue texts → annotation boxes**
@@ -62,15 +54,12 @@ demo_and_extension/data/starting-images/
 
 25 unique images. Multiple models reference the same image with different clue sets.
 
-### 1.4 What the `moreData` folder provides
+### 1.4 Legacy source evidence
 
 ```
 moreData/
-├── backup_gemini/
-│   ├── benchmark_report.md                        # Gemini 3.8 medium R1 — full 25 rounds
-│   ├── benchmark_report_gemini_3_8_flash.md       # Gemini 3.8 high R1 — full 25 rounds
-│   └── *.png                                      # Screen captures (spawn/pinned/result per round)
-├── nautilus-other-model-decision-notes-20260908/
+├── backup_gemini/*.png                            # legacy screen captures
+└── nautilus-other-model-decision-notes-20260908/
 │   └── models/
 │       ├── gemini-3.7-flash-high/                 # reasoning_details.md + report.md
 │       ├── gemini-3.7-flash-high-aided/           # report.md
@@ -80,8 +69,11 @@ moreData/
 │       ├── grok-4.6-xhigh/                        # transcripts + shell logs
 │       ├── grok-4.6-high/
 │       └── grok-4.6-low/
-└── nautilus-glm-chats-runs-1-to-3-20260908.zip   # 55 MB — GLM chat logs (runs 1–3)
 ```
+
+Canonical reports, conversations, predictions, and covered-image runs are kept
+with their model under `data/recorded-agent-benchmark/`. The remaining
+`moreData/` material is legacy source evidence, not an input to the website build.
 
 ---
 

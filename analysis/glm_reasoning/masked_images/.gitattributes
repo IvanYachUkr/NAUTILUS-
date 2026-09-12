@@ -1,4 +1,0 @@
-# Preserve evidence bytes and SHA-256 checksums across Windows/Linux checkouts.
-2026-09-11/* -text -whitespace
-*.zip binary
-*.sha256 -text -whitespace

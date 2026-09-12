@@ -26,7 +26,7 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 3 (resumed)", easy: 39_954, medium: 38_026, hard: 30_269, total: 108_249 },
     ],
     bestRun: { id: "run-2", label: "Run 2 (resumed)", points: 113_530 },
-    predictionSource: { type: "glm-conversation", path: "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json" },
+    predictionSource: { type: "glm-conversation", path: "runs/run-2/conversation.json" },
   },
   {
     id: "gpt-6-astra-low",
@@ -42,7 +42,7 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 3", easy: 39_998, medium: 43_482, hard: 35_279, total: 118_759 },
     ],
     bestRun: { id: "run-2", label: "Run 2", points: 119_818 },
-    predictionSource: { type: "curated-json", path: "browser-predictions/predictions.json" },
+    predictionSource: { type: "curated-json", path: "runs/run-2/predictions.json" },
     predictionNotes: "Run 2 coordinates were recovered from browser result maps. Four are original numeric values; 21 are conservative map-pixel reconstructions with recorded uncertainty.",
   },
   {
@@ -59,7 +59,7 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 3", easy: 39_964, medium: 43_323, hard: 36_668, total: 119_955 },
     ],
     bestRun: { id: "r2", label: "Run 2", points: 120_624 },
-    predictionSource: { type: "recorded-directory", path: "runs/recorded-r2" },
+    predictionSource: { type: "recorded-directory", path: "runs/run-2" },
   },
   {
     id: "gemini-3-7-flash-medium-aided", dataDirectory: "gemini-3.7-flash-medium-aided",
@@ -71,7 +71,7 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 3", easy: 40_000, medium: 43_324, hard: 38_168, total: 121_492 },
     ],
     bestRun: { id: "r3", label: "Run 3", points: 121_492 },
-    predictionSource: { type: "recorded-directory", path: "runs/recorded-r3" },
+    predictionSource: { type: "recorded-directory", path: "runs/run-3" },
   },
   {
     id: "gemini-3-8-flash-high-aided", dataDirectory: "gemini-3.8-flash-high-aided",
@@ -83,7 +83,7 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 3", easy: 39_984, medium: 43_229, hard: 37_089, total: 120_302 },
     ],
     bestRun: { id: "r1", label: "Run 1", points: 120_919 },
-    predictionSource: { type: "recorded-directory", path: "." },
+    predictionSource: { type: "recorded-directory", path: "runs/run-1" },
   },
   {
     id: "gemini-3-8-flash-medium-aided", dataDirectory: "gemini-3.8-flash-medium-aided",
@@ -95,7 +95,7 @@ export const RECORDED_BENCHMARKS = [
       { label: "Run 3", easy: 39_984, medium: 43_857, hard: 36_836, total: 120_677 },
     ],
     bestRun: { id: "r3", label: "Run 3", points: 120_677 },
-    predictionSource: { type: "recorded-directory", path: "runs/recorded-r3" },
+    predictionSource: { type: "recorded-directory", path: "runs/run-3" },
   },
   {
     id: "gpt-5-6-sol-xhigh",
@@ -106,7 +106,7 @@ export const RECORDED_BENCHMARKS = [
     maxPoints: 125_000,
     sample: "3 runs · mean score",
     bestRun: { id: "r3", label: "Run 3", points: 114_716 },
-    predictionSource: { type: "recorded-directory", path: "runs/recorded-r3" },
+    predictionSource: { type: "recorded-directory", path: "runs/run-3" },
   },
   {
     id: "gpt-5-6-sol-max",
@@ -117,7 +117,7 @@ export const RECORDED_BENCHMARKS = [
     maxPoints: 125_000,
     sample: "3 runs · mean score",
     bestRun: { id: "r2", label: "Run 2", points: 114_794 },
-    predictionSource: { type: "recorded-directory", path: "runs/recorded-r3" },
+    predictionSource: { type: "recorded-directory", path: "runs/run-2" },
   },
   {
     id: "grok-4-6-xhigh",
@@ -128,7 +128,7 @@ export const RECORDED_BENCHMARKS = [
     maxPoints: 125_000,
     sample: "3 runs · mean score",
     bestRun: { id: "r1", label: "Run 1", points: 80_081 },
-    predictionSource: { type: "recorded-directory", path: "." },
+    predictionSource: { type: "recorded-directory", path: "runs/run-1" },
   },
   {
     id: "grok-4-6-xhigh-mcp",
@@ -158,7 +158,7 @@ export const RECORDED_BENCHMARKS = [
     maxPoints: 125_000,
     sample: "1 run",
     bestRun: { id: "r1", label: "Run 1", points: 64_350 },
-    predictionSource: { type: "recorded-directory", path: "." },
+    predictionSource: { type: "recorded-directory", path: "runs/run-1" },
   },
 ];
 

@@ -32,34 +32,34 @@ GLM ran through ZCode at Max reasoning with the screenshot-only coordinate MCP. 
 
 | Model | Run | Easy | Medium | Hard | **Total** | Max |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| Gemini 3.7 Flash (medium, aided) | [Original](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/report.md) | 39,988 | 44,105 | 37,170 | **121,264** | 97.0% |
-| Gemini 3.7 Flash (medium, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/recorded-r2/) | **40,000** | 42,320 | 35,382 | **117,702** | 94.2% |
-| Gemini 3.7 Flash (medium, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/recorded-r3/) | **40,000** | 43,324 | **38,168** | **121,492** | **97.2%** |
-| Gemini 3.7 Flash (high, aided) | [Original](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md) | 39,999 | 43,026 | 37,004 | **120,029** | 96.0% |
-| Gemini 3.7 Flash (high, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/) | 39,988 | **44,011** | 36,625 | **120,624** | 96.5% |
-| Gemini 3.7 Flash (high, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r3/) | 39,964 | 43,323 | 36,668 | **119,955** | 96.0% |
-| Gemini 3.8 Flash (high, aided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/) | 39,985 | 43,872 | 37,062 | **120,919** | 96.7% |
-| Gemini 3.8 Flash (high, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/recorded-r2/) | **39,986** | 43,233 | 36,731 | **119,950** | 96.0% |
-| Gemini 3.8 Flash (high, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/recorded-r3/) | 39,984 | 43,229 | **37,089** | **120,302** | 96.2% |
-| Gemini 3.8 Flash (medium, aided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/) | 39,977 | 41,933 | 37,151 | **119,061** | 95.2% |
-| Gemini 3.8 Flash (medium, aided) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r2/) | 39,997 | 42,649 | 37,027 | **119,673** | 95.7% |
-| Gemini 3.8 Flash (medium, aided) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/) | 39,984 | **43,857** | 36,836 | **120,677** | 96.5% |
-| GPT-6 Astra (low) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md) | 39,997 | 44,189 | 34,974 | **119,160** | 95.3% |
-| GPT-6 Astra (low) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md) | 39,998 | **44,686** | 35,134 | **119,818** | 95.9% |
-| GPT-6 Astra (low) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_20260907.md) | 39,998 | 43,482 | 35,279 | **118,759** | 95.0% |
+| Gemini 3.7 Flash (medium, aided) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-1/) | 39,988 | 44,105 | 37,170 | **121,264** | 97.0% |
+| Gemini 3.7 Flash (medium, aided) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-2/) | **40,000** | 42,320 | 35,382 | **117,702** | 94.2% |
+| Gemini 3.7 Flash (medium, aided) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-medium-aided/runs/run-3/) | **40,000** | 43,324 | **38,168** | **121,492** | **97.2%** |
+| Gemini 3.7 Flash (high, aided) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-1/) | 39,999 | 43,026 | 37,004 | **120,029** | 96.0% |
+| Gemini 3.7 Flash (high, aided) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-2/) | 39,988 | **44,011** | 36,625 | **120,624** | 96.5% |
+| Gemini 3.7 Flash (high, aided) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/run-3/) | 39,964 | 43,323 | 36,668 | **119,955** | 96.0% |
+| Gemini 3.8 Flash (high, aided) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-1/) | 39,985 | 43,872 | 37,062 | **120,919** | 96.7% |
+| Gemini 3.8 Flash (high, aided) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-2/) | **39,986** | 43,233 | 36,731 | **119,950** | 96.0% |
+| Gemini 3.8 Flash (high, aided) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-high-aided/runs/run-3/) | 39,984 | 43,229 | **37,089** | **120,302** | 96.2% |
+| Gemini 3.8 Flash (medium, aided) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-1/) | 39,977 | 41,933 | 37,151 | **119,061** | 95.2% |
+| Gemini 3.8 Flash (medium, aided) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-2/) | 39,997 | 42,649 | 37,027 | **119,673** | 95.7% |
+| Gemini 3.8 Flash (medium, aided) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/run-3/) | 39,984 | **43,857** | 36,836 | **120,677** | 96.5% |
+| GPT-6 Astra (low) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-1/) | 39,997 | 44,189 | 34,974 | **119,160** | 95.3% |
+| GPT-6 Astra (low) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-2/) | 39,998 | **44,686** | 35,134 | **119,818** | 95.9% |
+| GPT-6 Astra (low) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gpt-6-astra-low/runs/run-3/) | 39,998 | 43,482 | 35,279 | **118,759** | 95.0% |
 | GLM-5.3-Flash (Max) + MCP | [Run 1](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/#run-1-individual-scores) | 39,773 | 41,229 | 30,159 | **111,161** | 88.9% |
 | GLM-5.3-Flash (Max) + MCP | [Run 2 (resumed)](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/#run-2-individual-scores) | 39,900 | 41,142 | 32,488 | **113,530** | 90.8% |
 | GLM-5.3-Flash (Max) + MCP | [Run 3 (resumed)](demo_and_extension/data/recorded-agent-benchmark/glm-5.3-flash-max/#run-3-individual-scores) | 39,954 | 38,026 | 30,269 | **108,249** | 86.6% |
-| GPT-5.6 Sol (max) | [Original](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/report.md) | 39,985 | 35,485 | 32,368 | **107,838** | 86.3% |
-| GPT-5.6 Sol (max) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r3/) | 39,724 | **44,152** | 30,918 | **114,794** | **91.8%** |
-| GPT-5.6 Sol (max) | [Recorded R4](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/) | 38,482 | 41,907 | 30,760 | **111,149** | 88.9% |
-| GPT-5.6 Sol (xhigh) | [Original](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/report.md) | 39,745 | 40,155 | 30,373 | **110,273** | 88.2% |
-| GPT-5.6 Sol (xhigh) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r2/) | 39,820 | 41,265 | 26,351 | **107,436** | 85.9% |
-| GPT-5.6 Sol (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/) | 39,982 | 41,514 | 33,220 | **114,716** | **91.8%** |
-| Grok 4.6 (xhigh) | [Original](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/report.md) | 23,729 | 29,986 | 26,366 | **80,081** | 64.1% |
-| Grok 4.6 (xhigh) | [Recorded R2](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r2/) | 24,688 | 28,192 | 18,682 | **71,562** | 57.2% |
-| Grok 4.6 (xhigh) | [Recorded R3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/recorded-r3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
-| Gemini 3.7 Flash (high, unaided) | [Recorded R1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/report.md) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
+| GPT-5.6 Sol (max) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-1/) | 39,985 | 35,485 | 32,368 | **107,838** | 86.3% |
+| GPT-5.6 Sol (max) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-2/) | 39,724 | **44,152** | 30,918 | **114,794** | **91.8%** |
+| GPT-5.6 Sol (max) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/run-3/) | 38,482 | 41,907 | 30,760 | **111,149** | 88.9% |
+| GPT-5.6 Sol (xhigh) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-1/) | 39,745 | 40,155 | 30,373 | **110,273** | 88.2% |
+| GPT-5.6 Sol (xhigh) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-2/) | 39,820 | 41,265 | 26,351 | **107,436** | 85.9% |
+| GPT-5.6 Sol (xhigh) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/run-3/) | 39,982 | 41,514 | 33,220 | **114,716** | **91.8%** |
+| Grok 4.6 (xhigh) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-1/) | 23,729 | 29,986 | 26,366 | **80,081** | 64.1% |
+| Grok 4.6 (xhigh) | [Run 2](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-2/) | 24,688 | 28,192 | 18,682 | **71,562** | 57.2% |
+| Grok 4.6 (xhigh) | [Run 3](demo_and_extension/data/recorded-agent-benchmark/grok-4.6-xhigh/runs/run-3/) | 24,075 | 25,093 | 24,054 | **73,222** | 58.6% |
+| Gemini 3.7 Flash (high, unaided) | [Run 1](demo_and_extension/data/recorded-agent-benchmark/gemini-3.7-flash-high/runs/run-1/) | 18,479 | 23,721 | 22,150 | **64,350** | 51.5% |
 
 The complete-run table above represents **28 complete 25-location evaluations, or 700 official scored rounds**, including the disclosed Astra and GLM continuation composites. The Grok MCP composite adds a separate **75 scored rounds** across nine difficulty-specific games and is reported separately because it is not a single 25-round evaluation.
 
@@ -105,15 +105,16 @@ Run it from the repository root with:
 python .\analysis\calculate_agent_distance_stats.py
 ```
 
-GLM coordinate evidence can be regenerated from the raw chat archive with:
+GLM coordinate evidence can be regenerated from the canonical run folders with:
 
 ```powershell
 python .\analysis\extract_glm_final_predictions.py `
-  .\nautilus-glm-chats-runs-1-to-3-20260908.zip `
+  .\demo_and_extension\data\recorded-agent-benchmark\glm-5.3-flash-max `
   --output .\analysis\evidence\glm_final_predictions.csv
 ```
 
-The raw evidence ZIP is intentionally not required for normal analysis and should remain outside ordinary Git history. Root-level ZIP archives are ignored by Git.
+The extractor also accepts the former ZIP export format, but the repository keeps
+one unpacked canonical copy instead of a duplicate archive.
 
 Generated analysis files are stored under:
 

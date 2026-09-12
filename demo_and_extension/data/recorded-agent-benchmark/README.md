@@ -13,10 +13,10 @@ The top three-run means are [`gemini-3.8-flash-high-aided/`](gemini-3.8-flash-hi
 
 [`gpt-6-astra-low/`](gpt-6-astra-low/) adds three 25-location evaluations: **119,160**, **119,818**, and **118,759** points; mean **119,245.67 / 125,000**. Its summary, reports, and hashed screenshot evidence document the interrupted-tier composites and excluded attempts. Astra videos remain local; no Astra files were uploaded to Google Drive. Raw prediction coordinates are not yet validated for the globe.
 
-## Earlier model evidence layout
+## Run evidence layout
 
-The original published run remains directly under each earlier model directory.
-Additional runs live under `runs/recorded-rN/`. A run contains:
+Every published evaluation lives under its model's `runs/run-N/` directory.
+Model-level summaries and documentation remain in the model root. A run contains:
 
 - `README.md`: scores, recorder label, and canonical session IDs.
 - `report.md`: the detailed human-readable audit.
@@ -31,9 +31,10 @@ Additional runs live under `runs/recorded-rN/`. A run contains:
 
 The JSON contents are copied unchanged from recorder output; only destination
 filenames are normalized. Consequently, `path` and `video.path` fields still
-describe the original collector layout. Failed competition attempts and pilots
-are excluded from the published run directories, while recovery segments
-inside a completed session are retained explicitly.
+describe the original collector layout. These frozen publication copies are
+kept separate from the live collector inbox intentionally. Failed competition
+attempts and pilots are excluded from published run directories, while recovery
+segments inside a completed session are retained explicitly.
 
 ## Video capture-ID audit
 

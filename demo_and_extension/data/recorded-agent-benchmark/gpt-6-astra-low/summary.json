@@ -14,7 +14,7 @@
       "medium": 44189,
       "hard": 34974,
       "total": 119160,
-      "report": "reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md",
+      "report": "runs/run-1/report.md",
       "scoreProvenance": "Easy and Medium official leaderboards; Hard composite of six settled result scores (27800) and final-two official leaderboard (7174).",
       "competitionIds": {
         "easy": [
@@ -35,7 +35,7 @@
       "medium": 44686,
       "hard": 35134,
       "total": 119818,
-      "report": "reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
+      "report": "runs/run-2/report.md",
       "scoreProvenance": "All three official leaderboards.",
       "competitionIds": {
         "easy": [
@@ -55,7 +55,7 @@
       "medium": 43482,
       "hard": 35279,
       "total": 118759,
-      "report": "reports/NAUTILUS_ASTRA_LOW_RUN3_20260907.md",
+      "report": "runs/run-3/report.md",
       "scoreProvenance": "Easy and Hard official leaderboards; Medium composite of six settled result scores (28668) and final-three official leaderboard (14814). The contaminated original Medium attempt and unverified partial crash round are excluded.",
       "competitionIds": {
         "easy": [

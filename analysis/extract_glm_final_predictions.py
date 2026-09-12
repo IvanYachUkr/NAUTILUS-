@@ -47,7 +47,9 @@ SUBMITCHECK_SCREEN_RE = re.compile(
     r"R(?P<round>\d+)_SUBMITCHECK\.jpeg$",
     re.IGNORECASE,
 )
-RUN_DIR_RE = re.compile(r"(?:^|/)(?:\d+)-scored-run-(?P<run>\d+)-")
+RUN_DIR_RE = re.compile(
+    r"(?:^|/)(?:\d+-scored-run-(?P<legacy_run>\d+)-|runs/run-(?P<run>\d+)(?:/|$))"
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -55,7 +57,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "archive",
         type=Path,
-        help="GLM exported-chat ZIP archive.",
+        help="GLM exported-chat ZIP archive or canonical model directory.",
     )
     parser.add_argument(
         "--output",
@@ -140,33 +142,44 @@ def round_key_from_filename(
     )
 
 
-def extract_archive(archive: Path) -> list[dict[str, Any]]:
-    archive = archive.resolve()
-    archive_sha256 = hashlib.sha256(archive.read_bytes()).hexdigest()
-    rows: list[dict[str, Any]] = []
+def load_conversations(source: Path) -> tuple[list[tuple[str, bytes]], str, str]:
+    """Load the three conversations from either the legacy ZIP or run folders."""
+    source = source.resolve()
+    if source.is_dir():
+        paths = sorted(source.glob("runs/run-*/conversation.json"))
+        conversations = [
+            (path.relative_to(source).as_posix(), path.read_bytes()) for path in paths
+        ]
+        return conversations, source.name, ""
 
-    with zipfile.ZipFile(archive) as handle:
-        conversation_names = sorted(
+    source_sha256 = hashlib.sha256(source.read_bytes()).hexdigest()
+    with zipfile.ZipFile(source) as handle:
+        names = sorted(
             name
             for name in handle.namelist()
-            if name.endswith("/conversation.json")
-            and "scored-run-" in name
+            if name.endswith("/conversation.json") and "scored-run-" in name
+        )
+        conversations = [(name, handle.read(name)) for name in names]
+    return conversations, source.name, source_sha256
+
+
+def extract_source(source: Path) -> list[dict[str, Any]]:
+    conversations, source_label, source_sha256 = load_conversations(source)
+    rows: list[dict[str, Any]] = []
+
+    if len(conversations) != 3:
+        raise RuntimeError(
+            f"Expected 3 scored conversation.json files, found {len(conversations)}."
         )
 
-        if len(conversation_names) != 3:
-            raise RuntimeError(
-                f"Expected 3 scored conversation.json files, found "
-                f"{len(conversation_names)}."
-            )
-
-        for conversation_name in conversation_names:
+    for conversation_name, conversation_bytes in conversations:
             run_match = RUN_DIR_RE.search(conversation_name)
             if not run_match:
                 raise RuntimeError(
                     f"Could not determine run number from {conversation_name}."
                 )
-            run = int(run_match.group("run"))
-            conversation = json.loads(handle.read(conversation_name))
+            run = int(run_match.group("run") or run_match.group("legacy_run"))
+            conversation = json.loads(conversation_bytes)
 
             latest_verified_place: dict[str, Any] | None = None
             successful_submits_since_anchor: list[dict[str, Any]] = []
@@ -309,8 +322,8 @@ def extract_archive(archive: Path) -> list[dict[str, Any]]:
                         ),
                         "anchor_screenshot": evidence["anchor_screenshot"],
                         "source_conversation": conversation_name,
-                        "source_archive": archive.name,
-                        "source_archive_sha256": archive_sha256,
+                        "source_archive": source_label,
+                        "source_archive_sha256": source_sha256,
                     }
                 )
 
@@ -356,7 +369,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 def main() -> None:
     args = parse_args()
-    archive = args.archive.resolve()
+    source = args.archive.resolve()
     repo_root = find_repo_root(Path(__file__).resolve().parent)
     output = args.output
     if output is None:
@@ -367,7 +380,7 @@ def main() -> None:
         )
     output = output.resolve()
 
-    rows = extract_archive(archive)
+    rows = extract_source(source)
     write_csv(output, rows)
 
     preserved = sum(

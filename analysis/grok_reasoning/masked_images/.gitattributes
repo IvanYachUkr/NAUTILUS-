@@ -1,4 +1,0 @@
-# Preserve evidence bytes and hashes, including verbatim model whitespace.
-2026-09-11/* -text -whitespace
-*.zip binary
-*.sha256 -text -whitespace

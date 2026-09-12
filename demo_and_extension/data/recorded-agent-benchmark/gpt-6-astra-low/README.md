@@ -4,9 +4,9 @@ Three completed 25-location evaluations using fresh GPT-6 Astra low players, Chr
 
 | Run | Easy / 40,000 | Medium / 45,000 | Hard / 40,000 | Total / 125,000 | Share of maximum |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| [run-1](reports/NAUTILUS_ASTRA_LOW_RUN_20260906.md) | 39,997 | 44,189 | 34,974 | **119,160** | 95.3280% |
-| [run-2](reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md) | 39,998 | 44,686 | 35,134 | **119,818** | 95.8544% |
-| [run-3](reports/NAUTILUS_ASTRA_LOW_RUN3_20260907.md) | 39,998 | 43,482 | 35,279 | **118,759** | 95.0072% |
+| [Run 1](runs/run-1/) | 39,997 | 44,189 | 34,974 | **119,160** | 95.3280% |
+| [Run 2](runs/run-2/) | 39,998 | 44,686 | 35,134 | **119,818** | 95.8544% |
+| [Run 3](runs/run-3/) | 39,998 | 43,482 | 35,279 | **118,759** | 95.0072% |
 | **Mean** | **39,997.67** | **44,119.00** | **35,129.00** | **119,245.67** | **95.3965%** |
 
 Machine-readable totals and provenance: [summary.json](summary.json). SHA-256 evidence inventory: [evidence-manifest.json](evidence-manifest.json).
@@ -28,6 +28,6 @@ The reports preserve initial cues, hypotheses, guesses, errors, and controller i
 
 Run 2 has 23 locally stored videos; Run 3 has 19. Run 3 lacks video for Easy R3/R4/R8 and Medium continuation R7–R9; the latter also lack recorder JSON. The complete Hard Run 3 has all eight videos. No continuous-video completeness claim is made for Run 1.
 
-**No Astra evidence or videos were uploaded to Google Drive.** Videos remain local; this repository contains compact score and screenshot evidence. Raw recorder coordinates remain excluded. The globe uses the separately audited browser-result coordinates from the best overall run in `browser-predictions/predictions.json`; reconstructed entries retain their conservative map-pixel uncertainty.
+**No Astra evidence or videos were uploaded to Google Drive.** Videos remain local; this repository contains compact score and screenshot evidence. Raw recorder coordinates remain excluded. The globe uses the separately audited browser-result coordinates from the best overall run in `runs/run-2/predictions.json`; reconstructed entries retain their conservative map-pixel uncertainty.
 
 **Coordinate recovery, September 12:** [The browser-run archive](../../../../analysis/astra_reasoning/agentic_browser/2026-09-12/README.md) contains **all 75 coordinate predictions**: 11 original recorded pairs and 64 reconstructed submitted pins, with cues, browser-call sequences, and per-round uncertainty. The latter exact numeric originals were missing or corrupted; the reconstructions use saved result maps and are explicitly labeled. All ten unobscured original pins passed leave-one-out reconstruction checks within one map pixel. [Complete coordinate CSV](../../../../analysis/astra_reasoning/agentic_browser/2026-09-12/reconstruction/all_75_predictions.csv). [Download coordinates and cues ZIP](../../../../analysis/astra_reasoning/agentic_browser/gpt-6-astra-low-agentic-browser-coordinates-cues-20260912.zip).
