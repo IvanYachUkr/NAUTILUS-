@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-11T13:14:47.817Z",
+  "generatedAt": "2026-09-12T02:22:13.402Z",
   "limits": {
     "openGuessrCompetitionLocations": 20
   },
@@ -10,17 +10,18 @@
     "competitionParts": 3,
     "resultFiles": 25,
     "clueDocuments": 25,
-    "clueSets": 241,
-    "clues": 1326,
-    "benchmarkPredictionRuns": 225,
+    "clueSets": 372,
+    "clues": 1925,
+    "benchmarkPredictionRuns": 275,
+    "coveredStaticPredictionRuns": 131,
     "recordings": 426,
     "matchedRecordings": 413,
     "unmatchedRecordings": 13,
     "recordingsWithPrediction": 397,
     "recordingsWithoutPrediction": 29,
     "atlasCases": 25,
-    "atlasRuns": 838,
-    "recordingOnlyRuns": 16
+    "atlasRuns": 1019,
+    "recordingOnlyRuns": 41
   },
   "warnings": [
     "data/recordings/inbox/europe-easy/unmatched-location/2026-08-31T08-11-50-129Z__gemini-3-7-flash-high-v2__interactive-panorama__round-1.json could not be matched to a known location and remains indexed but unattached.",

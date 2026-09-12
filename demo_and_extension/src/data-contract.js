@@ -2,7 +2,7 @@ import { assertCoordinate, haversineKm } from "./geo.js";
 import { normalizeExploration } from "./exploration.js";
 
 const VALID_DIFFICULTIES = new Set(["easy", "medium", "hard"]);
-const VALID_CONDITIONS = new Set(["static-image", "interactive-panorama"]);
+const VALID_CONDITIONS = new Set(["static-image", "static-image-covered", "interactive-panorama"]);
 const VALID_IMAGE_VARIANTS = new Set(["original", "no-location-gui"]);
 const VALID_SOURCES = new Set(["starting-image", "panorama", "map"]);
 const VALID_CLUE_CATEGORIES = new Set([
@@ -128,7 +128,7 @@ export function validateCases(input) {
 
       if (!VALID_CONDITIONS.has(run?.condition)) {
         errors.push(
-          `${runPath}.condition must be static-image or interactive-panorama.`,
+          `${runPath}.condition must be static-image, static-image-covered, or interactive-panorama.`,
         );
       }
 

@@ -131,12 +131,20 @@ For manual reference recordings use:
 model: manual
 ```
 
-The two conditions are:
+The recorder supports these two live-run conditions:
 
 ```text
 static-image
 interactive-panorama
 ```
+
+The website also exposes the controlled post-hoc condition:
+
+```text
+static-image-covered
+```
+
+This condition uses the selected covered variants under `data/starting-images-covered/`. Its normalized predictions are imported with `npm run clues:import-covered`; its clue sets stay review-only until explicitly published.
 
 ---
 

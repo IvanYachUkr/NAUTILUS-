@@ -41,9 +41,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -61,7 +61,8 @@
               "text": "Large weathered timber barn with clay tile roof and brick base"
             }
           ],
-          "groundingLabel": "Rustic Farmstead"
+          "groundingLabel": "Rustic Farmstead",
+          "ratingsReviewedAt": "2026-09-11T19:03:13.902Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-9c787a0598",
@@ -81,9 +82,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -101,7 +102,8 @@
               "text": "vegetable garden worked by hand"
             }
           ],
-          "groundingLabel": "Pastoral Landscape"
+          "groundingLabel": "Pastoral Landscape",
+          "ratingsReviewedAt": "2026-09-11T19:03:18.769Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-cd3ae25909",
@@ -115,10 +117,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -135,7 +137,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
               "text": "rolling green pastoral hills"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:03:23.035Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-a3583b5d8c",
@@ -155,9 +158,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -169,7 +172,8 @@
               "text": "Road Markings & Streetlights: Single rural asphalt lane with dashed white centerline and slender lampposts lining the village approach."
             }
           ],
-          "groundingLabel": "Road Markings"
+          "groundingLabel": "Road Markings",
+          "ratingsReviewedAt": "2026-09-11T19:03:30.487Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-4d6c6298f9",
@@ -189,9 +193,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -203,7 +207,8 @@
               "text": "Romanian street light fixtures."
             }
           ],
-          "groundingLabel": "Romanian street light fixtures"
+          "groundingLabel": "Romanian street light fixtures",
+          "ratingsReviewedAt": "2026-09-11T19:03:41.098Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-aided-eab3c4cd74",
@@ -268,10 +273,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -295,7 +300,8 @@
               "text": "Traditional Transylvanian timber barn (șură) with large hipped weathered wood-shingle roof and brick footing."
             }
           ],
-          "groundingLabel": "Carpathian Rural Architecture; Rural Architecture"
+          "groundingLabel": "Carpathian Rural Architecture; Rural Architecture",
+          "ratingsReviewedAt": "2026-09-11T19:03:47.585Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-8b8892513c",
@@ -309,10 +315,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -335,7 +341,8 @@
               "report": "../benchmark_report_3_7_medium_03.md",
               "text": "Transylvanian Plateau / Carpathian foothill landscape: rolling green agricultural hills and broad river valleys."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:06:11.417Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-a7b1e2dcd2",
@@ -349,10 +356,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -369,7 +376,8 @@
               "report": "../benchmark_report_3_7_medium_03.md",
               "text": "Bright continental European sunshine and clear atmospheric conditions."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:06:17.708Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-242b4b5cd1",
@@ -383,10 +391,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -403,7 +411,8 @@
               "report": "../benchmark_report_3_7_medium_03.md",
               "text": "Overhead power infrastructure on wooden transmission poles."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:06:23.976Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-0ce54c64d7",
@@ -417,10 +426,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -438,7 +447,8 @@
               "text": "Rural Romanian village road layout: single carriageway, unpaved sandy verge, and roadside vegetable cultivation plots."
             }
           ],
-          "groundingLabel": "Rural Romanian village road layout"
+          "groundingLabel": "Rural Romanian village road layout",
+          "ratingsReviewedAt": "2026-09-11T19:06:28.431Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-a604335126",
@@ -458,9 +468,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -472,7 +482,8 @@
               "text": "Road & Infrastructure: Narrow paved countryside road with dashed centerline and single-wire wooden/concrete utility poles."
             }
           ],
-          "groundingLabel": "Road"
+          "groundingLabel": "Road",
+          "ratingsReviewedAt": "2026-09-11T19:06:34.168Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-324c9bd1b3",
@@ -492,9 +503,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -505,7 +516,8 @@
               "report": "../benchmark_report_3_7_medium_02.md",
               "text": "Agricultural Context: Small-scale subsistence farming with a person hand-tending garden beds along the roadside."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:06:41.664Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-medium-aided-64aedb0b1f",
@@ -519,10 +531,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r2"
@@ -534,7 +546,8 @@
               "text": "Vehicle Meta: Faint blue Google car hood characteristic of Romanian coverage."
             }
           ],
-          "groundingLabel": "Vehicle Meta"
+          "groundingLabel": "Vehicle Meta",
+          "ratingsReviewedAt": "2026-09-11T19:06:56.562Z"
         }
       ]
     },
@@ -571,10 +584,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -591,7 +604,8 @@
               "report": "../benchmark_report_3_8_high_02.md",
               "text": "Lush rolling green hills and broad agricultural floodplain valley with vegetable garden plots and hand-split timber fence posts."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:07:03.756Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-7f359e2bb9",
@@ -611,9 +625,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -631,7 +645,8 @@
               "text": "Narrow rural asphalt road with white centerline dashes, curved modern overhead streetlights, and concrete/wooden utility poles."
             }
           ],
-          "groundingLabel": "Narrow rural asphalt road"
+          "groundingLabel": "Narrow rural asphalt road",
+          "ratingsReviewedAt": "2026-09-11T19:07:10.823Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-3edc53b8ab",
@@ -645,10 +660,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -665,7 +680,8 @@
               "report": "../benchmark_report_3_8_high_02.md",
               "text": "Village approach with pedestrians walking along the road and local resident cultivating garden plot."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:07:20.383Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-5d07004f8e",
@@ -685,9 +701,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -699,7 +715,8 @@
               "text": "Monumental traditional Transylvanian elongated timber agricultural barn (șură) with red ceramic tile roofing."
             }
           ],
-          "groundingLabel": "Monumental traditional Transylvanian; wooden agricultural barn"
+          "groundingLabel": "Monumental traditional Transylvanian; wooden agricultural barn",
+          "ratingsReviewedAt": "2026-09-11T19:07:28.018Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-cb06a24970",
@@ -777,9 +794,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -791,7 +808,8 @@
               "text": "Riparian willow and poplar tree line along the valley stream."
             }
           ],
-          "groundingLabel": "Riparian willow"
+          "groundingLabel": "Riparian willow",
+          "ratingsReviewedAt": "2026-09-11T19:07:52.552Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-e999d7eca7",
@@ -805,10 +823,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -819,7 +837,8 @@
               "report": "../benchmark_report_3_8_high_01.md",
               "text": "Vurpăr / Sibiu County"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:08:25.184Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-high-aided-f088233a1d",
@@ -833,10 +852,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -847,7 +866,8 @@
               "report": "../benchmark_report_3_8_high_01.md",
               "text": "Transylvania"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:08:45.615Z"
         }
       ]
     },
@@ -890,9 +910,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -910,7 +930,8 @@
               "text": "Monumental traditional Transylvanian elongated timber agricultural barn (șură) with red ceramic tile roofing."
             }
           ],
-          "groundingLabel": "Monumental traditional Transylvanian"
+          "groundingLabel": "Monumental traditional Transylvanian",
+          "ratingsReviewedAt": "2026-09-11T19:08:53.276Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-52443edba3",
@@ -924,10 +945,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -945,7 +966,8 @@
               "text": "Linear village settlement (sat adunat) with courtyard entrance gates."
             }
           ],
-          "groundingLabel": "Linear village settlement"
+          "groundingLabel": "Linear village settlement",
+          "ratingsReviewedAt": "2026-09-11T19:09:05.674Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-665654eef9",
@@ -965,9 +987,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -985,7 +1007,8 @@
               "text": "Deciduous oak and hornbeam tree belts lining valley streams."
             }
           ],
-          "groundingLabel": "Deciduous oak"
+          "groundingLabel": "Deciduous oak",
+          "ratingsReviewedAt": "2026-09-11T19:09:15.292Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-8b0cbac6d1",
@@ -1005,9 +1028,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -1025,7 +1048,8 @@
               "text": "Romanian reinforced concrete utility poles with curved crossbars and roadside drainage ditches."
             }
           ],
-          "groundingLabel": "concrete utility poles"
+          "groundingLabel": "concrete utility poles",
+          "ratingsReviewedAt": "2026-09-11T19:09:21.072Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-775404709d",
@@ -1045,9 +1069,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -1065,7 +1089,8 @@
               "text": "Rolling green pastoral hills, undulating hay meadows, and distant Southern Carpathian mountain foothills."
             }
           ],
-          "groundingLabel": "green pastoral hills"
+          "groundingLabel": "green pastoral hills",
+          "ratingsReviewedAt": "2026-09-11T19:09:24.435Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-f088233a1d",
@@ -1079,10 +1104,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -1099,7 +1124,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Transylvania"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:09:33.844Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-e999d7eca7",
@@ -1113,10 +1139,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1127,7 +1153,8 @@
               "report": "../moreData/backup_gemini/benchmark_report.md",
               "text": "Vurpăr / Sibiu County"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:09:55.493Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-8-flash-medium-aided-eaedd2c4a7",
@@ -1141,10 +1168,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1156,7 +1183,8 @@
               "text": "Șura Mare / Slimnic"
             }
           ],
-          "groundingLabel": "ura Mare / Slimnic"
+          "groundingLabel": "ura Mare / Slimnic",
+          "ratingsReviewedAt": "2026-09-11T19:11:58.142Z"
         }
       ]
     },
@@ -1199,9 +1227,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1213,7 +1241,8 @@
               "text": "concrete utility poles with rectangular holes supported Romania."
             }
           ],
-          "groundingLabel": "concrete utility poles"
+          "groundingLabel": "concrete utility poles",
+          "ratingsReviewedAt": "2026-09-11T19:12:03.992Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-5-6-sol-xhigh-c9676e5149",
@@ -1227,10 +1256,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1242,7 +1271,8 @@
               "text": "rolling Carpathian foothills"
             }
           ],
-          "groundingLabel": "Carpathian foothills"
+          "groundingLabel": "Carpathian foothills",
+          "ratingsReviewedAt": "2026-09-11T19:12:07.672Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-5-6-sol-xhigh-778028901a",
@@ -1262,9 +1292,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1276,7 +1306,8 @@
               "text": "Pastoral lane"
             }
           ],
-          "groundingLabel": "Pastoral lane"
+          "groundingLabel": "Pastoral lane",
+          "ratingsReviewedAt": "2026-09-11T19:12:19.159Z"
         }
       ]
     },
@@ -1353,9 +1384,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2",
@@ -1373,7 +1404,8 @@
               "text": "concrete/metal utility poles and pedestrians. Initial hypothesis Romania/Transylvania"
             }
           ],
-          "groundingLabel": "sparse utility poles"
+          "groundingLabel": "sparse utility poles",
+          "ratingsReviewedAt": "2026-09-11T19:12:26.689Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-6-astra-low-7967868e33",
@@ -1393,9 +1425,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2",
@@ -1413,7 +1445,8 @@
               "text": "timber barn with steep tiled roof"
             }
           ],
-          "groundingLabel": "timber barn"
+          "groundingLabel": "timber barn",
+          "ratingsReviewedAt": "2026-09-11T19:12:30.633Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-6-astra-low-9f577d9e95",
@@ -1433,9 +1466,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2",
@@ -1473,9 +1506,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2",
@@ -1493,7 +1526,8 @@
               "text": "narrow road with dashed white center and gravel shoulders"
             }
           ],
-          "groundingLabel": "narrow paved road"
+          "groundingLabel": "narrow paved road",
+          "ratingsReviewedAt": "2026-09-11T19:12:39.814Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-6-astra-low-8814b463ad",
@@ -1505,7 +1539,7 @@
           "category": "geography",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -1521,7 +1555,10 @@
               "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
               "text": "medium country confidence"
             }
-          ]
+          ],
+          "ratingsPreviousStatus": "text-only",
+          "ratingsExclusionReason": "not-ratable",
+          "ratingsExcludedAt": "2026-09-11T19:12:43.001Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-6-astra-low-34594c572a",
@@ -1533,7 +1570,7 @@
           "category": "geography",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -1549,7 +1586,10 @@
               "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
               "text": "low locality confidence."
             }
-          ]
+          ],
+          "ratingsPreviousStatus": "text-only",
+          "ratingsExclusionReason": "not-ratable",
+          "ratingsExcludedAt": "2026-09-11T19:12:45.074Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-6-astra-low-d4216eb98b",
@@ -1563,10 +1603,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r2"
@@ -1577,7 +1617,8 @@
               "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
               "text": "Slovakia/Hungary alternatives."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T19:12:52.606Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-6-astra-low-1225e49ced",
@@ -1597,9 +1638,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1611,7 +1652,8 @@
               "text": "Transylvania foothills"
             }
           ],
-          "groundingLabel": "Transylvania foothills"
+          "groundingLabel": "Transylvania foothills",
+          "ratingsReviewedAt": "2026-09-11T19:12:57.419Z"
         }
       ]
     },
@@ -1654,9 +1696,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -1668,7 +1710,8 @@
               "text": "Carpathian farm and village cues produced a correct Romania belief and on-country marker."
             }
           ],
-          "groundingLabel": "Carpathian farm; village cues; country marker"
+          "groundingLabel": "Carpathian farm; village cues; country marker",
+          "ratingsReviewedAt": "2026-09-11T19:13:05.696Z"
         }
       ]
     },
@@ -1705,10 +1748,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1720,7 +1763,8 @@
               "text": "Eastern-European utility context"
             }
           ],
-          "groundingLabel": "European utility context"
+          "groundingLabel": "European utility context",
+          "ratingsReviewedAt": "2026-09-11T19:13:16.366Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-a83cba7670",
@@ -1734,10 +1778,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1749,7 +1793,8 @@
               "text": "sparse roadside development."
             }
           ],
-          "groundingLabel": "sparse roadside development"
+          "groundingLabel": "sparse roadside development",
+          "ratingsReviewedAt": "2026-09-11T19:13:22.019Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-f77fd678f2",
@@ -1763,10 +1808,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1778,7 +1823,8 @@
               "text": "broad agricultural basin"
             }
           ],
-          "groundingLabel": "broad agricultural basin"
+          "groundingLabel": "broad agricultural basin",
+          "ratingsReviewedAt": "2026-09-11T19:14:00.072Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-ff9cee3fdc",
@@ -1798,9 +1844,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1812,7 +1858,8 @@
               "text": "distant wooded mountains"
             }
           ],
-          "groundingLabel": "distant wooded mountains"
+          "groundingLabel": "distant wooded mountains",
+          "ratingsReviewedAt": "2026-09-11T19:14:05.909Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gpt-5-6-sol-max-23aec94c6f",
@@ -1832,9 +1879,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1846,7 +1893,8 @@
               "text": "Narrow farm road"
             }
           ],
-          "groundingLabel": "Narrow farm road"
+          "groundingLabel": "Narrow farm road",
+          "ratingsReviewedAt": "2026-09-11T19:14:11.416Z"
         }
       ]
     },
@@ -1889,9 +1937,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r2"
@@ -1903,7 +1951,8 @@
               "text": "pedestrians in bright clothes, spring green. Belief: rural Romania (Transylvania). Placing pin at 46.30, 24.80."
             }
           ],
-          "groundingLabel": "pedestrians"
+          "groundingLabel": "pedestrians",
+          "ratingsReviewedAt": "2026-09-11T19:14:23.760Z"
         },
         {
           "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-4add48f8f1",
@@ -1923,9 +1972,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1937,7 +1986,8 @@
               "text": "hay meadows + wooden post fences,"
             }
           ],
-          "groundingLabel": "hay meadows; wooden post fences"
+          "groundingLabel": "hay meadows; wooden post fences",
+          "ratingsReviewedAt": "2026-09-11T19:14:28.027Z"
         },
         {
           "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-8b55f3808f",
@@ -1957,9 +2007,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1971,7 +2021,8 @@
               "text": "concrete power poles + lone lamp,"
             }
           ],
-          "groundingLabel": "concrete power poles"
+          "groundingLabel": "concrete power poles",
+          "ratingsReviewedAt": "2026-09-11T19:14:33.098Z"
         },
         {
           "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-30a5997679",
@@ -1991,9 +2042,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -2005,7 +2056,8 @@
               "text": "rolling hills with pale distant ridge,"
             }
           ],
-          "groundingLabel": "hills"
+          "groundingLabel": "hills",
+          "ratingsReviewedAt": "2026-09-11T19:14:37.406Z"
         },
         {
           "id": "cue-europe-hard-loc-019-glm-5-3-flash-max-c84eb2be0a",
@@ -2025,9 +2077,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -2039,7 +2091,8 @@
               "text": "log barn with weathered dark roof,"
             }
           ],
-          "groundingLabel": "log barn"
+          "groundingLabel": "log barn",
+          "ratingsReviewedAt": "2026-09-11T19:14:47.227Z"
         }
       ]
     },
@@ -2074,9 +2127,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -2088,7 +2141,8 @@
               "text": "Saxon-Transylvanian village architecture"
             }
           ],
-          "groundingLabel": "Saxon; Transylvanian village architecture"
+          "groundingLabel": "Saxon; Transylvanian village architecture",
+          "ratingsReviewedAt": "2026-09-11T19:14:58.812Z"
         },
         {
           "id": "cue-europe-hard-loc-019-gemini-3-7-flash-high-unaided-59da12facf",
@@ -2102,10 +2156,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -2117,7 +2171,8 @@
               "text": "fortified church context"
             }
           ],
-          "groundingLabel": "fortified church context"
+          "groundingLabel": "fortified church context",
+          "ratingsReviewedAt": "2026-09-11T19:15:05.893Z"
         }
       ]
     }

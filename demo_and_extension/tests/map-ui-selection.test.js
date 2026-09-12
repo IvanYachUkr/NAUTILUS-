@@ -23,10 +23,15 @@ test("truth-to-prediction connector uses a dark gray tone", () => {
 });
 
 test("static runs use a non-interactive heading marker instead of route playback", () => {
-  assert.ok(source.includes('selectedRun.condition !== "static-image"'));
+  assert.ok(source.includes("!isStaticImageCondition(selectedRun.condition)"));
   assert.ok(source.includes('renderStaticHeading(selectedCase, selectedRun)'));
   assert.ok(source.includes('interactive: false'));
   assert.ok(source.includes('headingIcon(heading, "static-heading-marker")'));
   assert.ok(source.includes('zIndexOffset: 450'));
   assert.ok(source.includes('const size = isStatic ? 78 : 46;')); 
+});
+
+test("condition comparisons can label and color runs independently of model name", () => {
+  assert.ok(source.includes("run.comparisonColorKey ?? run.model"));
+  assert.ok(source.includes("run.comparisonLabel ?? run.model"));
 });

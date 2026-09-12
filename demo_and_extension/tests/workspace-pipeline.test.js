@@ -66,10 +66,11 @@ test("reference prediction pins retain stable labels as the recording archive gr
     run.runKind === "model-prediction" || run.model === "manual",
   );
 
-  // 225 interactive model predictions
+  // 250 interactive model predictions with coordinates
   // + 200 static baseline predictions (4 models x 2 image variants x 25 locations)
+  // + 131 controlled covered-static predictions
   // + 50 manual reference runs
-  assert.equal(referenceRuns.length, 475);
+  assert.equal(referenceRuns.length, 631);
 
   const staticBaselineRuns = referenceRuns.filter(
     ({ run }) =>
@@ -92,10 +93,10 @@ test("reference prediction pins retain stable labels as the recording archive gr
   ));
 
   const bogatyniaReferences = referenceRuns
-    .filter(({ caseId }) => caseId === "europe-easy--loc-006")
+    .filter(({ caseId, run }) => caseId === "europe-easy--loc-006" && run.condition !== "static-image-covered")
     .map(({ run }) => [run.model, run.condition, run.prediction.label]);
 
-  assert.equal(bogatyniaReferences.length, 19);
+  assert.equal(bogatyniaReferences.length, 20);
   assert.deepEqual(bogatyniaReferences.slice(-2), [
     ["manual", "interactive-panorama", "Zittau, Germany"],
     ["manual", "static-image", "Hrádek nad Nisou, Czechia"],
@@ -107,6 +108,7 @@ test("canonical benchmark predictions are available independently of replay reco
 
   const expectedInteractiveModels = [
     "GLM-5.3-Flash + MCP · Max",
+    "GPT-6 Astra · low",
     "Gemini 3.7 Flash · high, aided",
     "Gemini 3.7 Flash · medium, aided",
     "Gemini 3.8 Flash · high, aided",
@@ -114,6 +116,7 @@ test("canonical benchmark predictions are available independently of replay reco
     "GPT-5.6 Sol · xhigh",
     "GPT-5.6 Sol · max",
     "Grok 4.6 · xhigh",
+    "Grok 4.6 + MCP · xhigh",
     "Gemini 3.7 Flash · high, unaided",
   ];
 
@@ -138,10 +141,14 @@ test("canonical benchmark predictions are available independently of replay reco
   const staticPredictionRuns = predictionRuns.filter(
     (run) => run.condition === "static-image",
   );
+  const coveredStaticPredictionRuns = predictionRuns.filter(
+    (run) => run.condition === "static-image-covered",
+  );
 
-  assert.equal(predictionRuns.length, 425);
-  assert.equal(interactivePredictionRuns.length, 225);
+  assert.equal(predictionRuns.length, 606);
+  assert.equal(interactivePredictionRuns.length, 275);
   assert.equal(staticPredictionRuns.length, 200);
+  assert.equal(coveredStaticPredictionRuns.length, 131);
 
   assert.deepEqual(
     [...new Set(interactivePredictionRuns.map((run) => run.model))],
@@ -194,14 +201,10 @@ test("canonical benchmark predictions are available independently of replay reco
       );
     }
 
-    assert.ok(
-      runs.every((run) => Number.isFinite(run.prediction?.lat)),
-      item.id,
+    const unavailablePins = runs.filter((run) =>
+      !Number.isFinite(run.prediction?.lat) || !Number.isFinite(run.prediction?.lng),
     );
-    assert.ok(
-      runs.every((run) => Number.isFinite(run.prediction?.lng)),
-      item.id,
-    );
+    assert.deepEqual(unavailablePins.map((run) => run.model), ["GPT-6 Astra · low"], item.id);
     assert.ok(
       runs.every((run) => run.exploration === undefined),
       item.id,
@@ -213,6 +216,28 @@ test("canonical benchmark predictions are available independently of replay reco
       item.id,
     );
   }
+});
+
+test("the public atlas includes only completed covered-image clues", async () => {
+  const built = await buildData({ write: false, quiet: true });
+  const coveredSets = built.atlasCases.flatMap((item) =>
+    item.clueSets.filter((set) => set.condition === "static-image-covered"),
+  );
+  const coveredClues = coveredSets.flatMap((set) => set.cues);
+
+  // Three covered clue sets currently contain only unresolved draft clues,
+  // so the public build omits those empty sets altogether.
+  assert.equal(coveredSets.length, 128);
+  assert.equal(coveredClues.length, 585);
+  assert.equal(coveredClues.filter((clue) => clue.region).length, 340);
+  assert.ok(coveredClues.every((clue) =>
+    clue.annotationStatus === "reviewed" || clue.annotationStatus === "text-only"
+  ));
+  assert.ok(coveredClues.every((clue) =>
+    ["visible", "correct", "useful", "consistent"].every(
+      (key) => typeof clue.ratings?.[key] === "boolean",
+    )
+  ));
 });
 
 test("recording matching is restricted to the selected competition and uses the spawn coordinate", async () => {

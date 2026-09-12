@@ -1,5 +1,6 @@
 const CONDITION_LABELS = {
   "static-image": "Static image",
+  "static-image-covered": "Static images covered",
   "interactive-panorama": "Interactive panorama",
 };
 
@@ -21,7 +22,7 @@ export function buildImmersiveView({ cases = [], caseItem = null, run = null } =
       : null,
     hasPlayback:
       EXPLORATION_PLAYBACK_ENABLED &&
-      run?.condition !== "static-image" &&
+      !["static-image", "static-image-covered"].includes(run?.condition) &&
       samples.length > 0,
   };
 }

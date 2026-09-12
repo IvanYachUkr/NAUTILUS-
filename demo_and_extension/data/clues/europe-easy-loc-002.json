@@ -41,9 +41,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -60,7 +60,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
               "text": "Berlin TV Tower (Fernsehturm)"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:22:53.894Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-1610c9f422",
@@ -80,9 +81,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -100,7 +101,8 @@
               "text": "local 030 Berlin phone prefixes."
             }
           ],
-          "groundingLabel": "Commercial Signage"
+          "groundingLabel": "Commercial Signage",
+          "ratingsReviewedAt": "2026-09-11T17:23:00.255Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-ab05f460b4",
@@ -120,9 +122,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -140,7 +142,8 @@
               "text": "U-Bahn entrance \"U Alexanderplatz\""
             }
           ],
-          "groundingLabel": "U-Bahn Entrance"
+          "groundingLabel": "U-Bahn Entrance",
+          "ratingsReviewedAt": "2026-09-11T17:23:07.710Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-d7d1065052",
@@ -160,9 +163,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -174,7 +177,8 @@
               "text": "Transit & Bikes: Bright yellow BVG city buses and Nextbike sharing station."
             }
           ],
-          "groundingLabel": "Transit; Bikes"
+          "groundingLabel": "Transit; Bikes",
+          "ratingsReviewedAt": "2026-09-11T17:23:13.432Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-a6b0424150",
@@ -188,10 +192,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -203,7 +207,8 @@
               "text": "Urban Architecture: Alexanderhaus/Berolinahaus grid facades, GALERIA department store, Park Inn hotel tower."
             }
           ],
-          "groundingLabel": "Urban Architecture"
+          "groundingLabel": "Urban Architecture",
+          "ratingsReviewedAt": "2026-09-11T17:23:16.762Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-aided-60c6fd3113",
@@ -223,9 +228,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -237,7 +242,8 @@
               "text": "Alexanderhaus"
             }
           ],
-          "groundingLabel": "Alexanderhaus"
+          "groundingLabel": "Alexanderhaus",
+          "ratingsReviewedAt": "2026-09-11T17:23:19.942Z"
         }
       ]
     },
@@ -280,9 +286,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -306,7 +312,8 @@
               "text": "Berliner Fernsehturm (Berlin Television Tower) with its signature sphere and antenna spire dominating the skyline."
             }
           ],
-          "groundingLabel": "Berliner Fernsehturm"
+          "groundingLabel": "Berliner Fernsehturm",
+          "ratingsReviewedAt": "2026-09-11T17:23:27.584Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-medium-aided-0b7bbf458b",
@@ -326,9 +333,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -352,7 +359,8 @@
               "text": "Retail signage including \"GALERIA Kaufhof\" and a delivery truck with German phone number (\"030\" Berlin prefix)."
             }
           ],
-          "groundingLabel": "Commercial Vehicles"
+          "groundingLabel": "Commercial Vehicles",
+          "ratingsReviewedAt": "2026-09-11T17:23:41.595Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-medium-aided-0b9f7e4d72",
@@ -372,9 +380,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -398,7 +406,8 @@
               "text": "Blue U-Bahn station entrance sign marked \"U Alexanderplatz\"."
             }
           ],
-          "groundingLabel": "Station Signage"
+          "groundingLabel": "Station Signage",
+          "ratingsReviewedAt": "2026-09-11T17:23:54.548Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-medium-aided-58114b6fb7",
@@ -412,10 +421,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -433,7 +442,8 @@
               "text": "Signature East Berlin modernist architecture (Berolinahaus / Alexanderhaus) and Alexanderplatz pedestrian plaza paving."
             }
           ],
-          "groundingLabel": "modernist architecture"
+          "groundingLabel": "modernist architecture",
+          "ratingsReviewedAt": "2026-09-11T17:23:59.341Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-medium-aided-b7aa1d4778",
@@ -453,9 +463,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -473,7 +483,8 @@
               "text": "Berlin public transport infrastructure: elevated S-Bahn railway viaduct and yellow BVG city bus."
             }
           ],
-          "groundingLabel": "signature"
+          "groundingLabel": "signature",
+          "ratingsReviewedAt": "2026-09-11T17:24:05.610Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-medium-aided-45de9c5b37",
@@ -493,9 +504,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -506,7 +517,8 @@
               "report": "../benchmark_report_3_7_medium_02.md",
               "text": "Alexanderplatz Context: Pedestrian square with Nextbike bicycle station, Galeria Kaufhof, Park Inn hotel tower, and S-Bahn elevated railway arches."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:24:12.083Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-medium-aided-98c88a0773",
@@ -526,9 +538,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -540,7 +552,8 @@
               "text": "German Transit: Yellow BVG buses and standard German city infrastructure."
             }
           ],
-          "groundingLabel": "German Transit"
+          "groundingLabel": "German Transit",
+          "ratingsReviewedAt": "2026-09-11T17:24:16.350Z"
         }
       ]
     },
@@ -583,9 +596,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -603,7 +616,8 @@
               "text": "Large blue public transit entrance sign reading 'U Alexanderplatz'."
             }
           ],
-          "groundingLabel": "Large blue public transit entrance sign reading; Public transit entrance"
+          "groundingLabel": "Large blue public transit entrance sign reading; Public transit entrance",
+          "ratingsReviewedAt": "2026-09-11T17:24:20.572Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-high-aided-b5d45874e8",
@@ -623,9 +637,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -643,7 +657,8 @@
               "text": "Commercial logistics van displaying Berlin landline telephone code: 'Spedition & Logistik, 030 - 43 59 690'."
             }
           ],
-          "groundingLabel": "Commercial logistics van"
+          "groundingLabel": "Commercial logistics van",
+          "ratingsReviewedAt": "2026-09-11T17:24:25.365Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-high-aided-f18e3ec0ae",
@@ -663,9 +678,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -683,7 +698,8 @@
               "text": "Berliner Fernsehturm (Berlin Television Tower) towering directly overhead in the background."
             }
           ],
-          "groundingLabel": "Berliner Fernsehturm"
+          "groundingLabel": "Berliner Fernsehturm",
+          "ratingsReviewedAt": "2026-09-11T17:24:29.919Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-high-aided-ce862a7839",
@@ -703,9 +719,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -722,7 +738,8 @@
               "report": "../benchmark_report_3_8_high_02.md",
               "text": "Galeria Kaufhof, Park Inn hotel tower, and wide pedestrian plaza paved with Berlin concrete slabs."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:24:36.579Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-high-aided-490627801a",
@@ -742,9 +759,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -762,7 +779,8 @@
               "text": "Yellow BVG articulated city bus and elevated Stadtbahn red-brick viaduct to the left."
             }
           ],
-          "groundingLabel": "yellow BVG articulated city bus"
+          "groundingLabel": "yellow BVG articulated city bus",
+          "ratingsReviewedAt": "2026-09-11T17:24:41.873Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-high-aided-efbd4f6d9c",
@@ -833,9 +851,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -852,7 +870,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Galeria Kaufhof department store and distinctive Alexanderplatz architectural ensemble."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:24:49.020Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-medium-aided-b5d45874e8",
@@ -872,9 +891,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -892,7 +911,8 @@
               "text": "Commercial logistics van displaying Berlin landline telephone code: \"Spedition & Logistik, 030 - 43 59 690\"."
             }
           ],
-          "groundingLabel": "Commercial logistics van"
+          "groundingLabel": "Commercial logistics van",
+          "ratingsReviewedAt": "2026-09-11T17:24:52.785Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-medium-aided-d893af5b0d",
@@ -912,9 +932,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -931,7 +951,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Berliner Fernsehturm (Berlin TV Tower) towering directly overhead behind the commercial plaza."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:24:57.331Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-medium-aided-83034a3f65",
@@ -951,9 +972,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -971,7 +992,8 @@
               "text": "Large blue public transit entrance cube sign clearly reading \"U Alexanderplatz\"."
             }
           ],
-          "groundingLabel": "Large blue public transit entrance cube sign"
+          "groundingLabel": "Large blue public transit entrance cube sign",
+          "ratingsReviewedAt": "2026-09-11T17:25:04.801Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-medium-aided-3e64589d1c",
@@ -991,9 +1013,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -1011,7 +1033,8 @@
               "text": "Yellow BVG articulated city bus and Stadtbahn red-brick viaduct to the left."
             }
           ],
-          "groundingLabel": "yellow BVG articulated city bus"
+          "groundingLabel": "yellow BVG articulated city bus",
+          "ratingsReviewedAt": "2026-09-11T17:25:14.379Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-8-flash-medium-aided-efbd4f6d9c",
@@ -1082,10 +1105,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1097,7 +1120,8 @@
               "text": "German city architecture identified Alexanderplatz"
             }
           ],
-          "groundingLabel": "German city architecture"
+          "groundingLabel": "German city architecture",
+          "ratingsReviewedAt": "2026-09-11T17:25:21.924Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-5-6-sol-xhigh-9239f94cda",
@@ -1117,9 +1141,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1131,7 +1155,8 @@
               "text": "tram/urban plaza form"
             }
           ],
-          "groundingLabel": "tram/urban plaza form"
+          "groundingLabel": "tram/urban plaza form",
+          "ratingsReviewedAt": "2026-09-11T17:26:33.542Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-5-6-sol-xhigh-2b62f83557",
@@ -1151,9 +1176,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1165,7 +1190,8 @@
               "text": "Fernsehturm-dominated skyline"
             }
           ],
-          "groundingLabel": "Fernsehturm-dominated skyline"
+          "groundingLabel": "Fernsehturm-dominated skyline",
+          "ratingsReviewedAt": "2026-09-11T17:26:05.941Z"
         }
       ]
     },
@@ -1208,9 +1234,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1222,7 +1248,8 @@
               "text": "the plaza's modernist blocks."
             }
           ],
-          "groundingLabel": "the plaza"
+          "groundingLabel": "the plaza",
+          "ratingsReviewedAt": "2026-09-11T17:26:15.850Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-5-6-sol-max-083906ecab",
@@ -1242,9 +1269,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1256,7 +1283,8 @@
               "text": "dense bicycle parking"
             }
           ],
-          "groundingLabel": "dense bicycle parking"
+          "groundingLabel": "dense bicycle parking",
+          "ratingsReviewedAt": "2026-09-11T17:26:24.431Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-5-6-sol-max-6fdc0ff2a0",
@@ -1276,9 +1304,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1289,7 +1317,8 @@
               "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
               "text": "U Alexanderplatz"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:26:40.826Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-5-6-sol-max-cc5145b0c5",
@@ -1303,10 +1332,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1318,7 +1347,8 @@
               "text": "German text"
             }
           ],
-          "groundingLabel": "German text"
+          "groundingLabel": "German text",
+          "ratingsReviewedAt": "2026-09-11T17:26:46.968Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-5-6-sol-max-65e8c89846",
@@ -1338,9 +1368,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1351,7 +1381,8 @@
               "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
               "text": "Fernsehturm"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:26:51.767Z"
         }
       ]
     },
@@ -1394,9 +1425,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1407,7 +1438,8 @@
               "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN2_20260907.md",
               "text": "Galeria and tall modernist blocks. Initial belief: Alexanderplatz Berlin"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:26:58.526Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-6-astra-low-6ff2cc70cb",
@@ -1427,9 +1459,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1441,7 +1473,8 @@
               "text": "yellow transit vehicles"
             }
           ],
-          "groundingLabel": "yellow transit vehicles"
+          "groundingLabel": "yellow transit vehicles",
+          "ratingsReviewedAt": "2026-09-11T17:27:03.092Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-6-astra-low-3a7a501569",
@@ -1461,9 +1494,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1475,7 +1508,8 @@
               "text": "Alexanderplatz U sign"
             }
           ],
-          "groundingLabel": "Galeria"
+          "groundingLabel": "Galeria",
+          "ratingsReviewedAt": "2026-09-11T17:27:06.521Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-6-astra-low-decc6fdd83",
@@ -1495,9 +1529,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1509,7 +1543,8 @@
               "text": "German Spedition text"
             }
           ],
-          "groundingLabel": "German Spedition text"
+          "groundingLabel": "German Spedition text",
+          "ratingsReviewedAt": "2026-09-11T17:27:10.157Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gpt-6-astra-low-c1c148aed7",
@@ -1529,9 +1564,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1543,7 +1578,8 @@
               "text": "Berlin TV tower"
             }
           ],
-          "groundingLabel": "Berlin TV tower"
+          "groundingLabel": "Berlin TV tower",
+          "ratingsReviewedAt": "2026-09-11T17:27:20.043Z"
         }
       ]
     },
@@ -1578,7 +1614,7 @@
           "category": "geography",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -1595,7 +1631,10 @@
               "text": "the final pin resolved in northwest Poland."
             }
           ],
-          "groundingLabel": "the final pin resolved"
+          "groundingLabel": "the final pin resolved",
+          "ratingsPreviousStatus": "text-only",
+          "ratingsExclusionReason": "not-ratable",
+          "ratingsExcludedAt": "2026-09-11T17:27:33.288Z"
         },
         {
           "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-01623ebada",
@@ -1609,10 +1648,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -1624,7 +1663,8 @@
               "text": "Central-European tiles went blank"
             }
           ],
-          "groundingLabel": "Central-European tiles"
+          "groundingLabel": "Central-European tiles",
+          "ratingsReviewedAt": "2026-09-11T17:28:06.919Z"
         },
         {
           "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-8b556a9769",
@@ -1644,9 +1684,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1657,7 +1697,8 @@
               "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
               "text": "Galeria made the city certain. Map zooming jumped to North Africa"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:28:20.913Z"
         },
         {
           "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-8622baddc5",
@@ -1677,9 +1718,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1690,7 +1731,8 @@
               "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
               "text": "U Alexanderplatz"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:28:25.834Z"
         },
         {
           "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-cc5145b0c5",
@@ -1704,10 +1746,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1719,7 +1761,8 @@
               "text": "German text"
             }
           ],
-          "groundingLabel": "Galeria; Map; German text"
+          "groundingLabel": "Galeria; Map; German text",
+          "ratingsReviewedAt": "2026-09-11T17:28:31.173Z"
         },
         {
           "id": "cue-europe-easy-loc-002-grok-4-6-xhigh-80582db94c",
@@ -1739,9 +1782,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1752,7 +1795,8 @@
               "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
               "text": "Fernsehturm"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:28:35.501Z"
         }
       ]
     },
@@ -1795,9 +1839,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1809,7 +1853,8 @@
               "text": "twin church spires left. Belief: Berlin, Alexanderplatz. Placing pin at 52.5210, 13.4135."
             }
           ],
-          "groundingLabel": "twin church spires"
+          "groundingLabel": "twin church spires",
+          "ratingsReviewedAt": "2026-09-11T17:28:39.792Z"
         },
         {
           "id": "cue-europe-easy-loc-002-glm-5-3-flash-max-d834a3cc60",
@@ -1829,9 +1874,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1843,7 +1888,8 @@
               "text": "blue U-Bahn sign on right,"
             }
           ],
-          "groundingLabel": "blue U-Bahn sign"
+          "groundingLabel": "blue U-Bahn sign",
+          "ratingsReviewedAt": "2026-09-11T17:28:43.662Z"
         },
         {
           "id": "cue-europe-easy-loc-002-glm-5-3-flash-max-1630c436f1",
@@ -1863,9 +1909,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1877,7 +1923,8 @@
               "text": "big bicycle parking racks,"
             }
           ],
-          "groundingLabel": "big bicycle parking racks"
+          "groundingLabel": "big bicycle parking racks",
+          "ratingsReviewedAt": "2026-09-11T17:28:47.089Z"
         },
         {
           "id": "cue-europe-easy-loc-002-glm-5-3-flash-max-814ebad906",
@@ -1897,9 +1944,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1911,7 +1958,8 @@
               "text": "Bauhaus-style commercial buildings,"
             }
           ],
-          "groundingLabel": "Bauhaus-style commercial buildings"
+          "groundingLabel": "Bauhaus-style commercial buildings",
+          "ratingsReviewedAt": "2026-09-11T17:29:01.070Z"
         },
         {
           "id": "cue-europe-easy-loc-002-glm-5-3-flash-max-2cba5865cc",
@@ -1931,9 +1979,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1944,7 +1992,8 @@
               "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
               "text": "Berlin Fernsehturm with sphere ahead,"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:29:10.249Z"
         }
       ]
     },
@@ -1979,9 +2028,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1993,7 +2042,8 @@
               "text": "Spedition & Logistik (030 dial code)"
             }
           ],
-          "groundingLabel": "Spedition"
+          "groundingLabel": "Spedition",
+          "ratingsReviewedAt": "2026-09-11T17:29:19.265Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-unaided-9ad0d501ad",
@@ -2013,9 +2063,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -2027,7 +2077,8 @@
               "text": "U Alexanderplatz sign"
             }
           ],
-          "groundingLabel": "U Alexanderplatz sign"
+          "groundingLabel": "U Alexanderplatz sign",
+          "ratingsReviewedAt": "2026-09-11T17:29:22.213Z"
         },
         {
           "id": "cue-europe-easy-loc-002-gemini-3-7-flash-high-unaided-7a935e3a35",
@@ -2047,9 +2098,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -2061,7 +2112,8 @@
               "text": "Berliner Fernsehturm"
             }
           ],
-          "groundingLabel": "Berliner Fernsehturm"
+          "groundingLabel": "Berliner Fernsehturm",
+          "ratingsReviewedAt": "2026-09-11T17:29:25.100Z"
         }
       ]
     }

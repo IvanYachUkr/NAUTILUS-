@@ -96,6 +96,29 @@ export function validateClueDocument(input, source = "clue document") {
       if (!CLUE_STATUSES.has(cue?.annotationStatus)) {
         errors.push(`${cuePath}.annotationStatus is not supported.`);
       }
+      if (cue?.ratings !== undefined) {
+        if (!cue.ratings || typeof cue.ratings !== "object" || Array.isArray(cue.ratings)) {
+          errors.push(`${cuePath}.ratings must be an object.`);
+        } else {
+          for (const key of ["visible", "correct", "useful", "consistent"]) {
+            if (cue.ratings[key] !== undefined && cue.ratings[key] !== null && typeof cue.ratings[key] !== "boolean") {
+              errors.push(`${cuePath}.ratings.${key} must be boolean or null.`);
+            }
+          }
+        }
+      }
+      if (cue?.ratingsReviewedAt !== undefined && !isNonEmptyString(cue.ratingsReviewedAt)) {
+        errors.push(`${cuePath}.ratingsReviewedAt must be a non-empty ISO timestamp when provided.`);
+      }
+      if (cue?.ratingsExclusionReason !== undefined && cue.ratingsExclusionReason !== "not-ratable") {
+        errors.push(`${cuePath}.ratingsExclusionReason must be \"not-ratable\" when provided.`);
+      }
+      if (cue?.ratingsExcludedAt !== undefined && !isNonEmptyString(cue.ratingsExcludedAt)) {
+        errors.push(`${cuePath}.ratingsExcludedAt must be a non-empty ISO timestamp when provided.`);
+      }
+      if (cue?.ratingsPreviousStatus !== undefined && !["reviewed", "text-only"].includes(cue.ratingsPreviousStatus)) {
+        errors.push(`${cuePath}.ratingsPreviousStatus must be reviewed or text-only when provided.`);
+      }
       if (!Array.isArray(cue?.provenance) || cue.provenance.length === 0) {
         errors.push(`${cuePath}.provenance must be a non-empty array.`);
       }
@@ -118,6 +141,8 @@ export async function saveClueDocument(document) {
   const clean = structuredClone(document);
   delete clean.sourceFile;
   delete clean.imagePath;
+  delete clean.mapCase;
+  delete clean.predictionsByBenchmarkId;
   await writeJsonAtomic(join(CLUES_DIR, filename), clean);
   return filename;
 }

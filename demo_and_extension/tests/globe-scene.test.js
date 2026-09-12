@@ -255,6 +255,40 @@ test("model comparison keeps one truth point and plots every selected best-run p
   assert.notDeepEqual(scene?.arcs[0].color, scene?.arcs[1].color);
 });
 
+test("condition comparison uses condition-specific labels and colors", () => {
+  const comparisonRuns = [
+    {
+      id: "interactive",
+      model: "Example model",
+      comparisonLabel: "Interactive panorama",
+      comparisonColorKey: "Example model:interactive-panorama",
+      prediction: { lat: 48.85, lng: 2.37 },
+      errorKm: 0.4,
+    },
+    {
+      id: "covered",
+      model: "Example model",
+      comparisonLabel: "Static images covered",
+      comparisonColorKey: "Example model:static-image-covered",
+      prediction: { lat: 49.1, lng: 2.8 },
+      errorKm: 41,
+    },
+  ];
+  const scene = sceneModule.buildGlobeSceneData?.({
+    cases: [paris],
+    caseItem: paris,
+    run: comparisonRuns[0],
+    comparisonRuns,
+    overview: false,
+  });
+
+  assert.deepEqual(scene.labels.map((label) => label.text), [
+    "Interactive panorama",
+    "Static images covered",
+  ]);
+  assert.notDeepEqual(scene.arcs[0].color, scene.arcs[1].color);
+});
+
 test("recording-only selections never invent a prediction or error arc", () => {
   const scene = sceneModule.buildGlobeSceneData?.({
     cases: [paris],

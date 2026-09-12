@@ -17,12 +17,12 @@ function styleBlock(source, selector) {
 }
 
 test("the public site suppresses playback UI and the playback drawer", () => {
-  assert.ok(appSource.includes('const isStatic = run?.condition === "static-image";'));
+  assert.ok(appSource.includes("const isStatic = isStaticImageCondition(run?.condition);"));
   assert.ok(appSource.includes("elements.explorationPlayer.hidden = true;"));
   assert.ok(appSource.includes("mapController.setPlayback(null);"));
   assert.ok(appSource.includes("EXPLORATION_PLAYBACK_ENABLED &&"));
   assert.ok(appSource.includes("if (!EXPLORATION_PLAYBACK_ENABLED) return null;"));
-  assert.ok(appSource.includes('"Static / NMPZ · fixed view"'));
+  assert.ok(appSource.includes("isStaticImageCondition(run.condition)"));
 });
 
 test("ground truth uses canonical static imagery while predictions keep an optional Street View link", () => {
@@ -48,6 +48,15 @@ test("prediction details pair best-run facts with model-specific image highlight
   assert.ok(appSource.includes("data-compare-model"));
   assert.ok(appSource.includes("data-open-comparison-evidence"));
   assert.ok(appSource.includes("data-close-text-clues"));
+  assert.ok(appSource.includes("data-close-evidence-detail"));
+  assert.ok(appSource.includes("ratingPills(selected.clue.ratings)"));
+  assert.ok(appSource.includes("selectedCueId === nextCueId ? null : nextCueId"));
+  assert.match(expeditionStylesSource, /\.evidence-marks\s*\{[^}]*z-index:\s*1;/s);
+  assert.match(expeditionStylesSource, /\.evidence-clue-detail,[\s\S]*?z-index:\s*18;/s);
+});
+
+test("the detail header project button blends into the location header", () => {
+  assert.match(expeditionStylesSource, /\.atlas-app\[data-view-state="detail"\] \.site-jump\s*\{[^}]*background:\s*transparent;/s);
 });
 
 test("interactive playback keeps restorable video review code behind the website feature gate", () => {
@@ -128,7 +137,7 @@ test("map overview only includes cases with a prediction for the selected run sl
 });
 
 test("static/NMPZ never creates a map playback descriptor", () => {
-  assert.ok(appSource.includes('if (run?.condition === "static-image") return null;'));
+  assert.ok(appSource.includes("if (isStaticImageCondition(run?.condition)) return null;"));
 });
 
 
@@ -140,7 +149,14 @@ test("static direction remains visible without re-enabling playback", async () =
   assert.ok(cssSource.includes(".static-heading-marker .playback-marker__wrap"));
   assert.ok(cssSource.includes("width: 78px;"));
   assert.ok(mapSource.includes("const size = isStatic ? 78 : 46;"));
-  assert.ok(appSource.includes('if (run?.condition === "static-image") return null;'));
+  assert.ok(appSource.includes("if (isStaticImageCondition(run?.condition)) return null;"));
+});
+
+test("covered static images are selectable and support same-model condition comparison", () => {
+  assert.ok(appSource.includes('"static-image-covered": "Static images covered"'));
+  assert.ok(appSource.includes("data-toggle-condition-comparison"));
+  assert.ok(appSource.includes("conditionComparisonMode"));
+  assert.ok(appSource.includes("comparisonColorKey(item, true)"));
 });
 
 test("view changes inside the explorer cannot move the long project page through scroll anchoring", async () => {

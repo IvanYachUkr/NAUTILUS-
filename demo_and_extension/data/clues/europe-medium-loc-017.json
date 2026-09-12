@@ -40,9 +40,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -66,7 +66,8 @@
               "text": "Broken yellow centerline with solid white outer edge lines"
             }
           ],
-          "groundingLabel": "Irish Yellow Dashed Road Markings"
+          "groundingLabel": "Irish Yellow Dashed Road Markings",
+          "ratingsReviewedAt": "2026-09-11T22:46:08.543Z"
         },
         {
           "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-aac75ae8be",
@@ -80,10 +81,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -100,7 +101,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/report.md",
               "text": "left-hand drive"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T22:46:26.462Z"
         },
         {
           "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-2ad02b0b4a",
@@ -120,9 +122,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -146,7 +148,8 @@
               "text": "limestone dry-stone boundary walls"
             }
           ],
-          "groundingLabel": "Irish Stone Walls"
+          "groundingLabel": "Irish Stone Walls",
+          "ratingsReviewedAt": "2026-09-11T22:46:30.445Z"
         },
         {
           "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-2c95c5c8b4",
@@ -222,9 +225,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -236,7 +239,8 @@
               "text": "Irish Residential Architecture: White-rendered bungalow with multi-pane bay windows, traditional chimney pots, and slate hipped roof."
             }
           ],
-          "groundingLabel": "Irish Residential Architecture"
+          "groundingLabel": "Irish Residential Architecture",
+          "ratingsReviewedAt": "2026-09-11T22:46:34.299Z"
         },
         {
           "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-fe1c43a909",
@@ -256,9 +260,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -270,7 +274,8 @@
               "text": "Estate Entry: Iron driveway gates and stone pillar boundary."
             }
           ],
-          "groundingLabel": "Estate Entry"
+          "groundingLabel": "Estate Entry",
+          "ratingsReviewedAt": "2026-09-11T22:46:41.304Z"
         },
         {
           "id": "cue-europe-medium-loc-017-gemini-3-7-flash-high-aided-de21b989ef",
@@ -347,9 +352,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -361,7 +366,8 @@
               "text": "gorse bushes."
             }
           ],
-          "groundingLabel": "georse bushes"
+          "groundingLabel": "georse bushes",
+          "ratingsReviewedAt": "2026-09-11T22:46:43.848Z"
         }
       ]
     }

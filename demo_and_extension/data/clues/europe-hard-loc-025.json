@@ -41,9 +41,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -61,7 +61,8 @@
               "text": "Double solid white centerline with solid white outer edge lines"
             }
           ],
-          "groundingLabel": "Nordic Double Solid White Center Lines"
+          "groundingLabel": "Nordic Double Solid White Center Lines",
+          "ratingsReviewedAt": "2026-09-11T21:41:57.797Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-3710b10ddc",
@@ -81,9 +82,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -101,7 +102,8 @@
               "text": "dense boreal taiga forest (Scots pine, Norway spruce, bilberry ground cover)"
             }
           ],
-          "groundingLabel": "Boreal Taiga"
+          "groundingLabel": "Boreal Taiga",
+          "ratingsReviewedAt": "2026-09-11T21:42:22.501Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-264e58faaf",
@@ -121,9 +123,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -135,7 +137,8 @@
               "text": "smooth dark asphalt with wide snow ditches."
             }
           ],
-          "groundingLabel": "smooth dark asphalt"
+          "groundingLabel": "smooth dark asphalt",
+          "ratingsReviewedAt": "2026-09-11T21:42:26.747Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-e27f063454",
@@ -155,9 +158,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -169,7 +172,8 @@
               "text": "Camera Car Artifact: Black car hood visible at bottom of frame."
             }
           ],
-          "groundingLabel": "Camera Car Artifact"
+          "groundingLabel": "Camera Car Artifact",
+          "ratingsReviewedAt": "2026-09-11T21:42:32.101Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-6d7bf470ca",
@@ -183,10 +187,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -197,7 +201,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Regional Signature: Quintessential landscape of Finnish Lakeland / Central Finland (Keski-Suomi / Pirkanmaa / Savonia)."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:42:39.166Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-aided-5179c6f600",
@@ -211,10 +216,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -225,7 +230,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Shield Geology: Lichen-covered granite bedrock outcrop and low bilberry/lingonberry undergrowth."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:42:48.114Z"
         }
       ]
     },
@@ -262,10 +268,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1",
@@ -289,7 +295,8 @@
               "text": "Nordic boreal taiga forest dominated by tall Scots pine (Pinus sylvestris), Norway spruce (Picea abies), and silver birch (Betula pendula)."
             }
           ],
-          "groundingLabel": "Nordic Boreal Taiga"
+          "groundingLabel": "Nordic Boreal Taiga",
+          "ratingsReviewedAt": "2026-09-11T21:43:00.287Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-medium-aided-48990ef949",
@@ -309,9 +316,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -335,7 +342,8 @@
               "text": "Finnish roadway pavement markings: double solid white centerline and continuous white edge lines."
             }
           ],
-          "groundingLabel": "Road; Standard"
+          "groundingLabel": "Road; Standard",
+          "ratingsReviewedAt": "2026-09-11T21:43:06.460Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-medium-aided-181006246a",
@@ -349,10 +357,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -375,7 +383,8 @@
               "report": "../benchmark_report_3_7_medium_03.md",
               "text": "Undulating glacial moraine and esker topography typical of the Finnish Lake and Forest region."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:43:12.068Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-medium-aided-c582914d86",
@@ -389,10 +398,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -410,7 +419,8 @@
               "text": "Characteristic Scandinavian Shield ground flora: abundant wild bilberry/blueberry bushes (Vaccinium myrtillus), reindeer lichens, and granite bedrock outcrops."
             }
           ],
-          "groundingLabel": "Characteristic Scandinavian Shield ground flora"
+          "groundingLabel": "Characteristic Scandinavian Shield ground flora",
+          "ratingsReviewedAt": "2026-09-11T21:43:16.465Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-medium-aided-3c8623fb69",
@@ -424,10 +434,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -445,7 +455,8 @@
               "text": "Crisp Nordic summer lighting and visible black vehicle bonnet."
             }
           ],
-          "groundingLabel": "Crisp Nordic summer lighting"
+          "groundingLabel": "Crisp Nordic summer lighting",
+          "ratingsReviewedAt": "2026-09-11T21:43:23.268Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-medium-aided-64cfba7186",
@@ -459,10 +470,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -473,7 +484,8 @@
               "report": "../benchmark_report_3_7_medium_02.md",
               "text": "Regional Profile: Central / Northern Finland (Savo / Kainuu / North Ostrobothnia corridor)."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:43:29.875Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-medium-aided-6b38006b17",
@@ -493,9 +505,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -507,7 +519,8 @@
               "text": "Vehicle Meta: Black roof rack vehicle coverage."
             }
           ],
-          "groundingLabel": "Vehicle Meta"
+          "groundingLabel": "Vehicle Meta",
+          "ratingsReviewedAt": "2026-09-11T21:43:35.156Z"
         }
       ]
     },
@@ -544,10 +557,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -565,7 +578,8 @@
               "text": "Boreal taiga forest ecosystem: dense Scots pine (Pinus sylvestris), Norway spruce (Picea abies), silver birch (Betula pendula), and ericaceous shrub / lichen undergrowth on glacial moraine and granitic shield bedrock."
             }
           ],
-          "groundingLabel": "Boreal taiga forest ecosystem; forest ecosystem"
+          "groundingLabel": "Boreal taiga forest ecosystem; forest ecosystem",
+          "ratingsReviewedAt": "2026-09-11T21:43:45.222Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-high-aided-01c489b400",
@@ -579,10 +593,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -600,7 +614,8 @@
               "text": "Crisp Nordic summer daylight with fair-weather cumulus clouds typical of Finnish interior latitudes."
             }
           ],
-          "groundingLabel": "Crisp Nordic summer daylight"
+          "groundingLabel": "Crisp Nordic summer daylight",
+          "ratingsReviewedAt": "2026-09-11T21:43:50.486Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-high-aided-7f9685a565",
@@ -620,9 +635,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -640,7 +655,8 @@
               "text": "Double solid white center lines and solid continuous white edge lines, adhering to Finland's 2020 Road Traffic Act (Tieliikennelaki 729/2018) standards."
             }
           ],
-          "groundingLabel": "Double solid white center lines"
+          "groundingLabel": "Double solid white center lines",
+          "ratingsReviewedAt": "2026-09-11T21:43:56.082Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-high-aided-80780b2147",
@@ -654,10 +670,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -669,7 +685,8 @@
               "text": "Fennoscandian Shield terrain of Northern Ostrobothnia (Pohjois-Pohjanmaa) approaching the Kainuu border."
             }
           ],
-          "groundingLabel": "Fennoscandian Shield terrain"
+          "groundingLabel": "Fennoscandian Shield terrain",
+          "ratingsReviewedAt": "2026-09-11T21:44:22.346Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-high-aided-d8798fb5f5",
@@ -683,10 +700,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": false,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -698,7 +715,8 @@
               "text": "Regional Route near Oulu / Vaala"
             }
           ],
-          "groundingLabel": "Regional Route"
+          "groundingLabel": "Regional Route",
+          "ratingsReviewedAt": "2026-09-11T21:45:01.347Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-high-aided-95d2041ad2",
@@ -712,10 +730,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -727,7 +745,8 @@
               "text": "Ground vegetation composed of reindeer lichen (Cladonia), lingonberry heath, and moss."
             }
           ],
-          "groundingLabel": "Ground vegetation"
+          "groundingLabel": "Ground vegetation",
+          "ratingsReviewedAt": "2026-09-11T21:45:09.657Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-high-aided-12184de534",
@@ -747,9 +766,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -761,7 +780,8 @@
               "text": "Road surface white painted aerial photogrammetric calibration cross (+) on the asphalt shoulder, a diagnostic feature of Finnish regional highways (seututiet / kantatiet)."
             }
           ],
-          "groundingLabel": "Road surface"
+          "groundingLabel": "Road surface",
+          "ratingsReviewedAt": "2026-09-11T21:45:22.467Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-high-aided-278d82b424",
@@ -775,10 +795,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -790,7 +810,8 @@
               "text": "Undulating glacial terrain with gentle rises, sandy roadside ditches, and unpaved forestry tracks branching into the timber stands."
             }
           ],
-          "groundingLabel": "glacial terrain"
+          "groundingLabel": "glacial terrain",
+          "ratingsReviewedAt": "2026-09-11T21:45:28.984Z"
         }
       ]
     },
@@ -827,10 +848,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -847,7 +868,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Fennoscandian Shield terrain of Northern Ostrobothnia (Pohjois-Pohjanmaa) approaching the Kainuu border."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:45:39.545Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-medium-aided-1a00154891",
@@ -861,10 +883,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -882,7 +904,8 @@
               "text": "High-latitude Nordic summer sky and low azimuth solar illumination."
             }
           ],
-          "groundingLabel": "High-latitude Nordic summer sky; Nordic summer sky"
+          "groundingLabel": "High-latitude Nordic summer sky; Nordic summer sky",
+          "ratingsReviewedAt": "2026-09-11T21:45:46.301Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-medium-aided-38c2f94842",
@@ -902,9 +925,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -922,7 +945,8 @@
               "text": "Finnish two-lane asphalt highway profile with white edge lines, no unpaved road shoulders."
             }
           ],
-          "groundingLabel": "Finnish two-lane asphalt highway profile"
+          "groundingLabel": "Finnish two-lane asphalt highway profile",
+          "ratingsReviewedAt": "2026-09-11T21:45:51.402Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-medium-aided-95d2041ad2",
@@ -936,10 +960,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -956,7 +980,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Ground vegetation composed of reindeer lichen (Cladonia), lingonberry heath, and moss."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:46:01.805Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-medium-aided-587c3efd8d",
@@ -970,10 +995,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -991,7 +1016,8 @@
               "text": "Pristine northern taiga / boreal forest dominated by Scots pine (Pinus sylvestris) growing out of sandy glacial eskers."
             }
           ],
-          "groundingLabel": "Pristine northern taiga / boreal forest"
+          "groundingLabel": "Pristine northern taiga / boreal forest",
+          "ratingsReviewedAt": "2026-09-11T21:46:09.822Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-medium-aided-d8798fb5f5",
@@ -1005,10 +1031,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1020,7 +1046,8 @@
               "text": "Regional Route near Oulu / Vaala"
             }
           ],
-          "groundingLabel": "Regional Route"
+          "groundingLabel": "Regional Route",
+          "ratingsReviewedAt": "2026-09-11T21:46:15.163Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-medium-aided-6baf36042f",
@@ -1034,10 +1061,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1049,7 +1076,8 @@
               "text": "Route 8281 / Utajärvi"
             }
           ],
-          "groundingLabel": "Route; 821 / Utajrvi"
+          "groundingLabel": "Route; 821 / Utajrvi",
+          "ratingsReviewedAt": "2026-09-11T21:46:34.654Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-8-flash-medium-aided-36b5dfc3cf",
@@ -1063,10 +1091,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1078,7 +1106,8 @@
               "text": "Ostrobothnia"
             }
           ],
-          "groundingLabel": "Ostrobothnia"
+          "groundingLabel": "Ostrobothnia",
+          "ratingsReviewedAt": "2026-09-11T21:46:48.186Z"
         }
       ]
     },
@@ -1121,9 +1150,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1135,7 +1164,8 @@
               "text": "a large dark camera hood supported Finland."
             }
           ],
-          "groundingLabel": "a large dark camera hood"
+          "groundingLabel": "a large dark camera hood",
+          "ratingsReviewedAt": "2026-09-11T21:46:54.478Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-6f49516508",
@@ -1155,9 +1185,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1168,7 +1198,8 @@
               "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
               "text": "white Finnish-style edge/centre markings"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:46:59.180Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-7f8b59c3ca",
@@ -1182,10 +1213,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1197,7 +1228,8 @@
               "text": "Boreal pine/birch/spruce forest"
             }
           ],
-          "groundingLabel": "Boreal pine/birch/spruce forest"
+          "groundingLabel": "Boreal pine/birch/spruce forest",
+          "ratingsReviewedAt": "2026-09-11T21:47:04.437Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-463b2a0a76",
@@ -1217,9 +1249,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1231,7 +1263,8 @@
               "text": "cracked paved road"
             }
           ],
-          "groundingLabel": "cracked paved road"
+          "groundingLabel": "cracked paved road",
+          "ratingsReviewedAt": "2026-09-11T21:47:15.831Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-11876e39e2",
@@ -1245,10 +1278,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1260,7 +1293,8 @@
               "text": "rolling terrain"
             }
           ],
-          "groundingLabel": "terrain"
+          "groundingLabel": "terrain",
+          "ratingsReviewedAt": "2026-09-11T21:47:20.855Z"
         }
       ]
     },
@@ -1317,7 +1351,7 @@
           "category": "geography",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -1333,7 +1367,10 @@
               "report": "data/recorded-agent-benchmark/grok-4.6-xhigh/report.md",
               "text": "but too far south/east."
             }
-          ]
+          ],
+          "ratingsPreviousStatus": "text-only",
+          "ratingsExclusionReason": "not-ratable",
+          "ratingsExcludedAt": "2026-09-11T21:47:27.208Z"
         },
         {
           "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-3055b9f278",
@@ -1347,10 +1384,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -1362,7 +1399,8 @@
               "text": "Boreal pine/birch road cues produced a correct Finland belief and an on-Finland marker"
             }
           ],
-          "groundingLabel": "Boreal pine/birch road cues"
+          "groundingLabel": "Boreal pine/birch road cues",
+          "ratingsReviewedAt": "2026-09-11T21:47:45.126Z"
         }
       ]
     },
@@ -1405,9 +1443,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1419,7 +1457,8 @@
               "text": "Finnish-style white center/edge markings"
             }
           ],
-          "groundingLabel": "Finnish-style white center/edge markings"
+          "groundingLabel": "Finnish-style white center/edge markings",
+          "ratingsReviewedAt": "2026-09-11T21:47:53.420Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gpt-5-6-sol-max-6322bac092",
@@ -1439,9 +1478,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1453,7 +1492,8 @@
               "text": "a quiet paved highway"
             }
           ],
-          "groundingLabel": "a quiet paved highway"
+          "groundingLabel": "a quiet paved highway",
+          "ratingsReviewedAt": "2026-09-11T21:48:00.029Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gpt-5-6-sol-max-3371577b69",
@@ -1467,10 +1507,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1482,7 +1522,8 @@
               "text": "Boreal pine/birch forest"
             }
           ],
-          "groundingLabel": "Boreal pine/birch forest"
+          "groundingLabel": "Boreal pine/birch forest",
+          "ratingsReviewedAt": "2026-09-11T21:48:04.244Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gpt-5-6-sol-max-519e208902",
@@ -1496,10 +1537,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1511,7 +1552,8 @@
               "text": "rolling interior terrain"
             }
           ],
-          "groundingLabel": "interior terrain"
+          "groundingLabel": "interior terrain",
+          "ratingsReviewedAt": "2026-09-11T21:48:07.641Z"
         }
       ]
     },
@@ -1554,9 +1596,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1568,7 +1610,8 @@
               "text": "double solid center line (Nordic),"
             }
           ],
-          "groundingLabel": "double solid center line"
+          "groundingLabel": "double solid center line",
+          "ratingsReviewedAt": "2026-09-11T21:48:18.343Z"
         },
         {
           "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-98409c62a2",
@@ -1588,9 +1631,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1602,7 +1645,8 @@
               "text": "rocky ledge in left cutting,"
             }
           ],
-          "groundingLabel": "rocky ledge"
+          "groundingLabel": "rocky ledge",
+          "ratingsReviewedAt": "2026-09-11T21:48:28.139Z"
         },
         {
           "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-978b1e221b",
@@ -1622,9 +1666,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1636,7 +1680,8 @@
               "text": "hazy blue sky. Belief: Finland lakeland. Placing pin at 62.00, 25.50."
             }
           ],
-          "groundingLabel": "hazy blue sky"
+          "groundingLabel": "hazy blue sky",
+          "ratingsReviewedAt": "2026-09-11T21:48:34.799Z"
         },
         {
           "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-b8aff93b58",
@@ -1650,10 +1695,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1665,7 +1710,8 @@
               "text": "grassy verges, no poles/signs,"
             }
           ],
-          "groundingLabel": "grassy verges"
+          "groundingLabel": "grassy verges",
+          "ratingsReviewedAt": "2026-09-11T21:48:40.168Z"
         },
         {
           "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-cfde59e458",
@@ -1679,10 +1725,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1693,7 +1739,8 @@
               "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
               "text": "pine–spruce–birch boreal mix,"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:48:45.600Z"
         }
       ]
     },
@@ -1722,10 +1769,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1737,7 +1784,8 @@
               "text": "Finnish taiga boreal forest"
             }
           ],
-          "groundingLabel": "Finnish taiga boreal forest"
+          "groundingLabel": "Finnish taiga boreal forest",
+          "ratingsReviewedAt": "2026-09-11T21:49:02.534Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-unaided-b394fdfe66",
@@ -1751,10 +1799,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1766,7 +1814,8 @@
               "text": "Autori mapping coverage"
             }
           ],
-          "groundingLabel": "Autori mapping coverage"
+          "groundingLabel": "Autori mapping coverage",
+          "ratingsReviewedAt": "2026-09-11T21:49:08.069Z"
         },
         {
           "id": "cue-europe-hard-loc-025-gemini-3-7-flash-high-unaided-a62a352763",
@@ -1786,9 +1835,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1800,7 +1849,878 @@
               "text": "Finnish road profile"
             }
           ],
-          "groundingLabel": "FinnISH road profile"
+          "groundingLabel": "FinnISH road profile",
+          "ratingsReviewedAt": "2026-09-11T21:49:15.953Z"
+        }
+      ]
+    },
+    {
+      "id": "glm-5-3-flash-max-static-covered",
+      "benchmarkId": "glm-5-3-flash-max-static-covered",
+      "model": "GLM-5.3-Flash + MCP",
+      "reasoning": "Max",
+      "condition": "static-image-covered",
+      "publicationStatus": "published",
+      "imagePath": "data/starting-images-covered/map_metadata_cover/europe-hard/loc_025.png",
+      "mergeStrategy": "single-covered-static-run",
+      "sourceRuns": [
+        {
+          "runId": "covered-static-r1",
+          "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-static-covered-f74bbd7cf2",
+          "label": "Double solid white centre line on a narrow forest road",
+          "text": "Double solid white centre line on a narrow forest road",
+          "description": "A Norwegian road-marking convention.",
+          "groundingPhrase": "Double solid white centre line on a narrow forest road",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": {
+            "x": 0.4718923198733175,
+            "y": 0.4535621972947878,
+            "w": 0.10134600158353124,
+            "h": 0.4352430424853823
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Double solid white centre line on a narrow forest road — a Norwegian road-marking convention"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:13:58.844Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-static-covered-2f65b94d43",
+          "label": "Boreal pine/spruce/birch forest",
+          "text": "Boreal pine/spruce/birch forest",
+          "description": "Boreal pine/spruce/birch forest with lush green grass shoulders.",
+          "groundingPhrase": "Boreal pine/spruce/birch forest",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Boreal pine/spruce/birch forest with lush green grass shoulders"
+            }
+          ],
+          "groundingLabel": "Boreal pine/spruce/birch forest; Gravel edges",
+          "ratingsReviewedAt": "2026-09-12T01:13:48.059Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-static-covered-1d145b2c9d",
+          "label": "Gravel edges and gently winding alignment; no signage or other markings",
+          "text": "Gravel edges and gently winding alignment; no signage or other markings",
+          "description": "Gravel edges and gently winding alignment; no signage or other markings.",
+          "groundingPhrase": "Gravel edges and gently winding alignment; no signage or other markings",
+          "source": "starting-image",
+          "category": "signage",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Gravel edges and gently winding alignment; no signage or other markings"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:14:07.259Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-static-covered-c2bc06d46a",
+          "label": "Black car hood visible at the bottom of the frame",
+          "text": "Black car hood visible at the bottom of the frame",
+          "description": "Low-mounted camera pass.",
+          "groundingPhrase": "Black car hood visible at the bottom of the frame",
+          "source": "starting-image",
+          "category": "geography",
+          "region": {
+            "x": 0.2345,
+            "y": 0.8445,
+            "w": 0.46,
+            "h": 0.149
+          },
+          "regionSource": "microsoft/Florence-2-large+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Black car hood visible at the bottom of the frame — low-mounted camera pass"
+            }
+          ],
+          "groundingLabel": "Black car hood",
+          "ratingsReviewedAt": "2026-09-12T01:14:18.277Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-glm-5-3-flash-max-static-covered-d5cbba82df",
+          "label": "Fresh summer greenery under bright broken cloud; no visible development",
+          "text": "Fresh summer greenery under bright broken cloud; no visible development",
+          "description": "Fresh summer greenery under bright broken cloud; no visible development.",
+          "groundingPhrase": "Fresh summer greenery under bright broken cloud; no visible development",
+          "source": "starting-image",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/glm_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Fresh summer greenery under bright broken cloud; no visible development"
+            }
+          ],
+          "groundingLabel": "Fresh summer greenery",
+          "ratingsReviewedAt": "2026-09-12T01:13:32.945Z"
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra-low-static-covered",
+      "benchmarkId": "gpt-6-astra-low-static-covered",
+      "model": "GPT-6 Astra",
+      "reasoning": "low",
+      "condition": "static-image-covered",
+      "publicationStatus": "published",
+      "imagePath": "data/starting-images-covered/map_metadata_cover/europe-hard/loc_025.png",
+      "mergeStrategy": "single-covered-static-run",
+      "sourceRuns": [
+        {
+          "runId": "covered-static-r1",
+          "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-025-gpt-6-astra-low-static-covered-008b74bc81",
+          "label": "Pine, spruce, and birch forest strongly suggests northern Europe",
+          "text": "Pine, spruce, and birch forest strongly suggests northern Europe",
+          "description": "Pine, spruce, and birch forest strongly suggests northern Europe.",
+          "groundingPhrase": "Pine, spruce, and birch forest strongly suggests northern Europe",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Pine, spruce, and birch forest strongly suggests northern Europe"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:15:18.952Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-6-astra-low-static-covered-0d23045d20",
+          "label": "Rocky ground and shallow rolling terrain",
+          "text": "Rocky ground and shallow rolling terrain",
+          "description": "Rocky ground and shallow rolling terrain fit the Finnish lake district.",
+          "groundingPhrase": "Rocky ground and shallow rolling terrain",
+          "source": "starting-image",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Rocky ground and shallow rolling terrain fit the Finnish lake district"
+            }
+          ],
+          "groundingLabel": "Rocky ground",
+          "ratingsReviewedAt": "2026-09-12T01:15:14.452Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-6-astra-low-static-covered-0659730f4c",
+          "label": "Double white center lines and white edge lines",
+          "text": "Double white center lines and white edge lines",
+          "description": "Double white center lines and white edge lines fit a Nordic paved road.",
+          "groundingPhrase": "Double white center lines and white edge lines",
+          "source": "starting-image",
+          "category": "geography",
+          "region": {
+            "x": 0.4635696753760887,
+            "y": 0.4433181886621998,
+            "w": 0.12199129057798896,
+            "h": 0.5524242515495997
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Double white center lines and white edge lines fit a Nordic paved road"
+            }
+          ],
+          "groundingLabel": "Double white center lines",
+          "ratingsReviewedAt": "2026-09-12T01:15:07.320Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-6-astra-low-static-covered-62cdc245ea",
+          "label": "Sparse development and narrow shoulders suggest a regional forest road",
+          "text": "Sparse development and narrow shoulders suggest a regional forest road",
+          "description": "Sparse development and narrow shoulders suggest a regional forest road.",
+          "groundingPhrase": "Sparse development and narrow shoulders suggest a regional forest road",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Sparse development and narrow shoulders suggest a regional forest road"
+            }
+          ],
+          "groundingLabel": "Sparse development",
+          "ratingsReviewedAt": "2026-09-12T01:14:55.958Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-6-astra-low-static-covered-1d4f3f3244",
+          "label": "Dense boreal vegetation favors inland Finland, though Sweden remains plausible",
+          "text": "Dense boreal vegetation favors inland Finland, though Sweden remains plausible",
+          "description": "Dense boreal vegetation favors inland Finland, though Sweden remains plausible.",
+          "groundingPhrase": "Dense boreal vegetation favors inland Finland, though Sweden remains plausible",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/astra_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Dense boreal vegetation favors inland Finland, though Sweden remains plausible"
+            }
+          ],
+          "groundingLabel": "Dense boreal vegetation favors inland Finland",
+          "ratingsReviewedAt": "2026-09-12T01:14:46.560Z"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh-static-covered",
+      "benchmarkId": "gpt-5-6-sol-xhigh-static-covered",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "xhigh",
+      "condition": "static-image-covered",
+      "publicationStatus": "published",
+      "imagePath": "data/starting-images-covered/map_metadata_cover/europe-hard/loc_025.png",
+      "mergeStrategy": "single-covered-static-run",
+      "sourceRuns": [
+        {
+          "runId": "covered-static-r1",
+          "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-static-covered-a6dd502869",
+          "label": "Dense pine, spruce, and birch forest indicates boreal northern Europe",
+          "text": "Dense pine, spruce, and birch forest indicates boreal northern Europe",
+          "description": "Dense pine, spruce, and birch forest indicates boreal northern Europe.",
+          "groundingPhrase": "Dense pine, spruce, and birch forest indicates boreal northern Europe",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Dense pine, spruce, and birch forest indicates boreal northern Europe"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:15:45.863Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-static-covered-8f0e25b413",
+          "label": "White edge lines and a double solid white centre line",
+          "text": "White edge lines and a double solid white centre line",
+          "description": "White edge lines and a double solid white centre line fit current Finnish road markings.",
+          "groundingPhrase": "White edge lines and a double solid white centre line",
+          "source": "starting-image",
+          "category": "geography",
+          "region": {
+            "x": 0.45929414093428345,
+            "y": 0.44110606288739995,
+            "w": 0.12037292161520191,
+            "h": 0.451
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "White edge lines and a double solid white centre line fit current Finnish road markings"
+            }
+          ],
+          "groundingLabel": "White edge lines",
+          "ratingsReviewedAt": "2026-09-12T01:15:55.140Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-static-covered-2a275131c5",
+          "label": "The narrow, smoothly paved two-lane road and shallow drainage ditches resemble a Finnish",
+          "text": "The narrow, smoothly paved two-lane road and shallow drainage ditches resemble a Finnish",
+          "description": "The narrow, smoothly paved two-lane road and shallow drainage ditches resemble a Finnish regional route.",
+          "groundingPhrase": "The narrow, smoothly paved two-lane road and shallow drainage ditches resemble a Finnish",
+          "source": "starting-image",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.39825811559778307,
+            "y": 0.4198348766593892,
+            "w": 0.3087885985748218,
+            "h": 0.5801651233406109
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "The narrow, smoothly paved two-lane road and shallow drainage ditches resemble a Finnish regional route"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:16:18.249Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-static-covered-e1698c4fe1",
+          "label": "Low rolling terrain",
+          "text": "Low rolling terrain",
+          "description": "Low rolling terrain with small rock exposures points toward Finland's lake district.",
+          "groundingPhrase": "Low rolling terrain",
+          "source": "starting-image",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "Low rolling terrain with small rock exposures points toward Finland's lake district"
+            }
+          ],
+          "groundingLabel": "Dense pine; two-lane road; A meadow opening",
+          "ratingsReviewedAt": "2026-09-12T01:16:10.336Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-xhigh-static-covered-4b7d3ee85d",
+          "label": "A meadow opening amid managed forest makes the Jyväskylä region a plausible central-Finl",
+          "text": "A meadow opening amid managed forest makes the Jyväskylä region a plausible central-Finl",
+          "description": "A meadow opening amid managed forest makes the Jyväskylä region a plausible central-Finland placement.",
+          "groundingPhrase": "A meadow opening amid managed forest makes the Jyväskylä region a plausible central-Finl",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11/model_report.md",
+              "text": "A meadow opening amid managed forest makes the Jyväskylä region a plausible central-Finland placement"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:16:24.173Z"
+        }
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol-max-static-covered",
+      "benchmarkId": "gpt-5-6-sol-max-static-covered",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "max",
+      "condition": "static-image-covered",
+      "publicationStatus": "published",
+      "imagePath": "data/starting-images-covered/map_metadata_cover/europe-hard/loc_025.png",
+      "mergeStrategy": "single-covered-static-run",
+      "sourceRuns": [
+        {
+          "runId": "covered-static-r1",
+          "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-max-static-covered-f888ec03f3",
+          "label": "Double solid white centerlines",
+          "text": "Double solid white centerlines",
+          "description": "Double solid white centerlines with thin solid edge lines fit Finnish curve/visibility marking practice.",
+          "groundingPhrase": "Double solid white centerlines",
+          "source": "starting-image",
+          "category": "geography",
+          "region": {
+            "x": 0.4587652414885194,
+            "y": 0.4317127280483826,
+            "w": 0.13664251781472686,
+            "h": 0.5682872719516174
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "text": "Double solid white centerlines with thin solid edge lines fit Finnish curve/visibility marking practice"
+            }
+          ],
+          "groundingLabel": "Double solid white centerlines; Dense pine",
+          "ratingsReviewedAt": "2026-09-12T01:16:45.977Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-max-static-covered-606e57bc09",
+          "label": "The narrow but high-quality two-lane road has the minimal shoulders common on Finnish re",
+          "text": "The narrow but high-quality two-lane road has the minimal shoulders common on Finnish re",
+          "description": "The narrow but high-quality two-lane road has the minimal shoulders common on Finnish regional routes.",
+          "groundingPhrase": "The narrow but high-quality two-lane road has the minimal shoulders common on Finnish re",
+          "source": "starting-image",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.4251781472684085,
+            "y": 0.40056212201059,
+            "w": 0.3262074425969913,
+            "h": 0.5994378779894101
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "text": "The narrow but high-quality two-lane road has the minimal shoulders common on Finnish regional routes"
+            }
+          ],
+          "groundingLabel": "The narrow but high-quality two-lane road",
+          "ratingsReviewedAt": "2026-09-12T01:16:57.370Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-max-static-covered-32ba26112b",
+          "label": "Dense pine, birch, and spruce form a classic boreal Finnish forest mix",
+          "text": "Dense pine, birch, and spruce form a classic boreal Finnish forest mix",
+          "description": "Dense pine, birch, and spruce form a classic boreal Finnish forest mix.",
+          "groundingPhrase": "Dense pine, birch, and spruce form a classic boreal Finnish forest mix",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "text": "Dense pine, birch, and spruce form a classic boreal Finnish forest mix"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:17:01.636Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-max-static-covered-7c51fa39e7",
+          "label": "Shallow exposed rock and a rolling glacial landform point to Finnish Lakeland",
+          "text": "Shallow exposed rock and a rolling glacial landform point to Finnish Lakeland",
+          "description": "Shallow exposed rock and a rolling glacial landform point to Finnish Lakeland.",
+          "groundingPhrase": "Shallow exposed rock and a rolling glacial landform point to Finnish Lakeland",
+          "source": "starting-image",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "text": "Shallow exposed rock and a rolling glacial landform point to Finnish Lakeland"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:17:04.420Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-gpt-5-6-sol-max-static-covered-989f2efa6b",
+          "label": "A small meadow pocket amid continuous managed forest is plausible around Central Finland",
+          "text": "A small meadow pocket amid continuous managed forest is plausible around Central Finland",
+          "description": "A small meadow pocket amid continuous managed forest is plausible around Central Finland's Jyväskylä region.",
+          "groundingPhrase": "A small meadow pocket amid continuous managed forest is plausible around Central Finland",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/sol_reasoning/masked_images/2026-09-11-max/model_report.md",
+              "text": "A small meadow pocket amid continuous managed forest is plausible around Central Finland's Jyväskylä region"
+            }
+          ],
+          "groundingLabel": "A small meadow pocket",
+          "ratingsReviewedAt": "2026-09-12T01:17:09.085Z"
+        }
+      ]
+    },
+    {
+      "id": "grok-4-6-xhigh-static-covered",
+      "benchmarkId": "grok-4-6-xhigh-static-covered",
+      "model": "Grok 4.6",
+      "reasoning": "xhigh",
+      "condition": "static-image-covered",
+      "publicationStatus": "published",
+      "imagePath": "data/starting-images-covered/map_metadata_cover/europe-hard/loc_025.png",
+      "mergeStrategy": "single-covered-static-run",
+      "sourceRuns": [
+        {
+          "runId": "covered-static-r1",
+          "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md"
+        }
+      ],
+      "cues": [
+        {
+          "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-static-covered-1b2bc96404",
+          "label": "Scots pine with orange bark mixed with birch",
+          "text": "Scots pine with orange bark mixed with birch",
+          "description": "Fennoscandian boreal/esker forest.",
+          "groundingPhrase": "Scots pine with orange bark mixed with birch",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "text": "Scots pine with orange bark mixed with birch — Fennoscandian boreal/esker forest"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T02:10:38.655Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-static-covered-f2efd3ece3",
+          "label": "Two-lane asphalt",
+          "text": "Two-lane asphalt",
+          "description": "Two-lane asphalt with a double white no-passing line and grassy sandy verge.",
+          "groundingPhrase": "Two-lane asphalt",
+          "source": "starting-image",
+          "category": "infrastructure",
+          "region": {
+            "x": 0.35583570863024544,
+            "y": 0.423682413611383,
+            "w": 0.390007521773555,
+            "h": 0.576317586388617
+          },
+          "regionSource": "manual+manual-review",
+          "annotationStatus": "reviewed",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "text": "Two-lane asphalt with a double white no-passing line and grassy sandy verge"
+            }
+          ],
+          "groundingLabel": "Two-lane asphalt; lane asphalt; Dense wall",
+          "ratingsReviewedAt": "2026-09-12T01:17:41.853Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-static-covered-b0b39a7561",
+          "label": "Dense wall of pine/spruce on both sides, gentle curve, no buildings or agriculture in fr",
+          "text": "Dense wall of pine/spruce on both sides, gentle curve, no buildings or agriculture in fr",
+          "description": "Dense wall of pine/spruce on both sides, gentle curve, no buildings or agriculture in frame.",
+          "groundingPhrase": "Dense wall of pine/spruce on both sides, gentle curve, no buildings or agriculture in fr",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "text": "Dense wall of pine/spruce on both sides, gentle curve, no buildings or agriculture in frame"
+            }
+          ],
+          "ratingsReviewedAt": "2026-09-12T01:17:46.083Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-static-covered-605436b5cf",
+          "label": "Midsummer undergrowth; not Mediterranean, not temperate-broadleaf only",
+          "text": "Midsummer undergrowth; not Mediterranean, not temperate-broadleaf only",
+          "description": "Midsummer undergrowth; not Mediterranean, not temperate-broadleaf only.",
+          "groundingPhrase": "Midsummer undergrowth; not Mediterranean, not temperate-broadleaf only",
+          "source": "starting-image",
+          "category": "geography",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "text": "Midsummer undergrowth; not Mediterranean, not temperate-broadleaf only"
+            }
+          ],
+          "groundingLabel": "Midsummer undergrowth",
+          "ratingsReviewedAt": "2026-09-12T01:17:50.268Z"
+        },
+        {
+          "id": "cue-europe-hard-loc-025-grok-4-6-xhigh-static-covered-ad9a8a0d53",
+          "label": "Road quality and forest composition",
+          "text": "Road quality and forest composition",
+          "description": "Road quality and forest composition match Finnish regional roads slightly more than Swedish Norrland (very close).",
+          "groundingPhrase": "Road quality and forest composition",
+          "source": "starting-image",
+          "category": "vegetation",
+          "region": null,
+          "regionSource": null,
+          "annotationStatus": "text-only",
+          "ratings": {
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
+          },
+          "sourceRuns": [
+            "covered-static-r1"
+          ],
+          "provenance": [
+            {
+              "runId": "covered-static-r1",
+              "report": "../analysis/grok_reasoning/masked_images/2026-09-11/model_report_recovered.md",
+              "text": "Road quality and forest composition match Finnish regional roads slightly more than Swedish Norrland (very close)"
+            }
+          ],
+          "groundingLabel": "Road quality",
+          "ratingsReviewedAt": "2026-09-12T01:17:26.028Z"
         }
       ]
     }

@@ -14,6 +14,7 @@ import {
   saveRoundRecording,
 } from "./lib/recordings.mjs";
 import { loadClueDocuments, saveClueDocument } from "./lib/clues.mjs";
+import { haversineKm } from "../src/geo.js";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const port = Number.parseInt(process.argv[2] ?? process.env.PORT ?? "4173", 10);
@@ -134,6 +135,7 @@ async function handleApi(request, response, url) {
       documents: documents.map((document) => ({
         ...document,
         imagePath: startingImagePathForAtlasLocation(document.locationId),
+        ...clueReviewMapContext(document.locationId),
       })),
     });
     return;
@@ -261,6 +263,34 @@ async function handleApi(request, response, url) {
   }
 
   respondJson(response, 404, { ok: false, error: "API endpoint not found." });
+}
+
+function clueReviewMapContext(locationId) {
+  const caseItem = workspace.atlasCases.find((item) => item.id === locationId);
+  if (!caseItem) return { mapCase: null, predictionsByBenchmarkId: {} };
+  const predictionsByBenchmarkId = {};
+  for (const run of caseItem.runs ?? []) {
+    if (run.runKind !== "model-prediction" || !run.benchmarkId || predictionsByBenchmarkId[run.benchmarkId]) continue;
+    predictionsByBenchmarkId[run.benchmarkId] = {
+      id: run.id,
+      model: run.model,
+      condition: run.condition,
+      prediction: run.prediction,
+      errorKm: run.prediction ? haversineKm(caseItem.groundTruth, run.prediction) : null,
+      bestRunId: run.bestRunId ?? null,
+      bestRunLabel: run.bestRunLabel ?? null,
+    };
+  }
+  return {
+    mapCase: {
+      id: caseItem.id,
+      city: caseItem.city,
+      country: caseItem.country,
+      groundTruth: caseItem.groundTruth,
+      startingView: caseItem.startingView,
+    },
+    predictionsByBenchmarkId,
+  };
 }
 
 function startingImagePathForAtlasLocation(locationId) {

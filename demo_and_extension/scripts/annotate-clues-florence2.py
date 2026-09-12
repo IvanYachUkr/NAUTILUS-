@@ -35,7 +35,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--images", type=Path, default=DEFAULT_IMAGES_DIR)
     parser.add_argument("--model", default="microsoft/Florence-2-large")
     parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
-    parser.add_argument("--clue-set", default="gemini-3.7-flash-high-aided")
+    parser.add_argument("--clue-set", action="append", dest="clue_sets", default=[])
+    parser.add_argument("--clue-set-suffix", default=None, help="Annotate every clue set whose ID ends with this value.")
     parser.add_argument("--max-items", type=int, default=None)
     parser.add_argument("--force", action="store_true", help="Replace existing Florence draft regions.")
     parser.add_argument(
@@ -72,46 +73,57 @@ def main() -> None:
     files = sorted(args.clues.glob("*.json"))
     for clue_path in files:
         document = json.loads(clue_path.read_text(encoding="utf-8"))
-        clue_set = next((item for item in document.get("clueSets", []) if item.get("id") == args.clue_set), None)
-        if clue_set is None:
-            continue
-        image_path = image_path_for_location(args.images, document["locationId"])
-        image = Image.open(image_path).convert("RGB")
-        changed = False
-
-        candidates = [
-            clue for clue in clue_set.get("cues", [])
-            if clue.get("annotationStatus") not in {"text-only", "excluded"}
-            and (args.force or clue.get("annotationStatus") == "pending-grounding")
+        requested_sets = set(args.clue_sets or ([] if args.clue_set_suffix else ["gemini-3.7-flash-high-aided"]))
+        clue_sets = [
+            item for item in document.get("clueSets", [])
+            if item.get("id") in requested_sets
+            or (args.clue_set_suffix and str(item.get("id", "")).endswith(args.clue_set_suffix))
         ]
-        if args.max_items is not None:
-            candidates = candidates[:max(0, args.max_items - processed)]
+        if not clue_sets:
+            continue
+        changed = False
+        image_cache = {}
+        for clue_set in clue_sets:
+            candidates = [
+                clue for clue in clue_set.get("cues", [])
+                if clue.get("annotationStatus") not in {"text-only", "excluded"}
+                and (args.force or clue.get("annotationStatus") == "pending-grounding")
+            ]
+            if args.max_items is not None:
+                candidates = candidates[:max(0, args.max_items - processed)]
 
-        if candidates:
-            phrases = [clue.get("groundingPhrase") or clue.get("label") or clue["text"] for clue in candidates]
-            proposals = ground_phrases(model, processor, image, phrases, device)
-            changed = True
+            if candidates:
+                image_path = image_path_for_clue_set(args.images, document["locationId"], clue_set)
+                if image_path not in image_cache:
+                    image_cache[image_path] = Image.open(image_path).convert("RGB")
+                image = image_cache[image_path]
+                phrases = [clue.get("groundingPhrase") or clue.get("label") or clue["text"] for clue in candidates]
+                proposals = ground_phrases(model, processor, image, phrases, device)
+                changed = True
 
-            for index, (clue, phrase) in enumerate(zip(candidates, phrases, strict=True)):
-                matches = proposals.get(index, [])
-                processed += 1
-                if not matches:
-                    clue["region"] = None
+                for index, (clue, phrase) in enumerate(zip(candidates, phrases, strict=True)):
+                    matches = proposals.get(index, [])
+                    processed += 1
+                    if not matches:
+                        clue["region"] = None
+                        clue["regionSource"] = args.model
+                        clue["annotationStatus"] = "not-grounded"
+                        clue.pop("groundingLabel", None)
+                        print(f"[{processed}] no box  {document['locationId']} · {clue['label']}", flush=True)
+                        continue
+
+                    boxes = [match[0] for match in matches]
+                    box = union_boxes(boxes)
+                    grounding_labels = list(dict.fromkeys(match[1] for match in matches if match[1]))
+                    clue["region"] = normalize_box(box, image.width, image.height)
                     clue["regionSource"] = args.model
-                    clue["annotationStatus"] = "not-grounded"
-                    clue.pop("groundingLabel", None)
-                    print(f"[{processed}] no box  {document['locationId']} · {clue['label']}", flush=True)
-                    continue
+                    clue["annotationStatus"] = "needs-review"
+                    clue["groundingLabel"] = "; ".join(grounding_labels) or phrase
+                    grounded += 1
+                    print(f"[{processed}] grounded {document['locationId']} · {clue['label']}", flush=True)
 
-                boxes = [match[0] for match in matches]
-                box = union_boxes(boxes)
-                grounding_labels = list(dict.fromkeys(match[1] for match in matches if match[1]))
-                clue["region"] = normalize_box(box, image.width, image.height)
-                clue["regionSource"] = args.model
-                clue["annotationStatus"] = "needs-review"
-                clue["groundingLabel"] = "; ".join(grounding_labels) or phrase
-                grounded += 1
-                print(f"[{processed}] grounded {document['locationId']} · {clue['label']}", flush=True)
+            if args.max_items is not None and processed >= args.max_items:
+                break
 
         if changed:
             write_json_atomic(clue_path, document)
@@ -197,7 +209,13 @@ def normalize_box(box, width: int, height: int) -> dict[str, float]:
     }
 
 
-def image_path_for_location(images_dir: Path, location_id: str) -> Path:
+def image_path_for_clue_set(images_dir: Path, location_id: str, clue_set: dict) -> Path:
+    configured = clue_set.get("imagePath")
+    if configured:
+        path = PROJECT_DIR / configured
+        if not path.is_file():
+            raise FileNotFoundError(f"No clue-set image for {location_id}: {path}")
+        return path
     competition, local_id = location_id.split("--", 1)
     path = images_dir / competition / f"{local_id.replace('-', '_')}.png"
     if not path.is_file():

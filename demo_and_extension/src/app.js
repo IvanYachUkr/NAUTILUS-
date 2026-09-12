@@ -37,6 +37,7 @@ import {
 
 const CONDITION_LABELS = {
   "static-image": "Static image",
+  "static-image-covered": "Static images covered",
   "interactive-panorama": "Interactive panorama",
 };
 
@@ -52,11 +53,25 @@ function runImageVariant(run) {
 }
 
 function imageForRun(caseItem, run) {
-  if (run?.condition === "static-image" && run?.inputImage) {
+  if (isStaticImageCondition(run?.condition) && run?.inputImage) {
     return run.inputImage;
   }
 
   return caseItem?.startingImage ?? null;
+}
+
+function isStaticImageCondition(condition) {
+  return condition === "static-image" || condition === "static-image-covered";
+}
+
+function comparisonColorKey(run, compareConditions = false) {
+  return compareConditions ? `${run?.model}:${run?.condition}` : run?.model;
+}
+
+function comparisonRunLabel(run, compareConditions = false) {
+  return compareConditions
+    ? CONDITION_LABELS[run?.condition] ?? run?.condition ?? "Condition"
+    : run?.model ?? "Model";
 }
 
 function runConditionLabel(run) {
@@ -123,6 +138,7 @@ export function createExplorer({
   let evidenceComparisonMode = false;
   let showTextOnlyClues = false;
   let comparisonMode = false;
+  let conditionComparisonMode = false;
   let comparisonMapFullscreen = false;
   let comparedModels = new Set();
   let playbackIndex = 0;
@@ -330,7 +346,7 @@ export function createExplorer({
         query,
         filters: { ...filters },
         caseCount: data.length,
-        visibleCaseCount: getStatsCases(caseItem, filteredCases).length,
+        visibleCaseCount: caseItem ? 1 : getOverviewMapCases(filteredCases).length,
         errorKm: run?.errorKm ?? null,
         drawer: drawerMode,
         playbackIndex: run?.exploration?.samples?.length ? playbackIndex : null,
@@ -534,14 +550,34 @@ export function createExplorer({
         return;
       }
 
+      const closeEvidenceDetailButton = event.target.closest("[data-close-evidence-detail]");
+      if (closeEvidenceDetailButton && rootElement.contains(closeEvidenceDetailButton)) {
+        selectedCueId = null;
+        const caseItem = getSelectedCase();
+        renderEvidenceView(caseItem, caseItem ? getSelectedRun(caseItem) : null, comparisonRunsForCase(caseItem));
+        return;
+      }
+
       const compareButton = event.target.closest("[data-toggle-model-comparison]");
       if (compareButton && rootElement.contains(compareButton)) {
         const caseItem = getSelectedCase();
         if (caseItem) {
           comparisonMode = !comparisonMode;
+          conditionComparisonMode = false;
           if (comparisonMode && comparedModels.size === 0) {
             modelPredictionRuns(caseItem.runs).forEach((item) => comparedModels.add(item.model));
           }
+          render({ fitMap: true });
+        }
+        return;
+      }
+
+      const compareConditionsButton = event.target.closest("[data-toggle-condition-comparison]");
+      if (compareConditionsButton && rootElement.contains(compareConditionsButton)) {
+        const caseItem = getSelectedCase();
+        if (caseItem) {
+          conditionComparisonMode = !conditionComparisonMode;
+          comparisonMode = false;
           render({ fitMap: true });
         }
         return;
@@ -556,6 +592,7 @@ export function createExplorer({
       const comparisonCloseButton = event.target.closest("[data-close-model-comparison]");
       if (comparisonCloseButton && rootElement.contains(comparisonCloseButton)) {
         comparisonMode = false;
+        conditionComparisonMode = false;
         render({ fitMap: true });
         return;
       }
@@ -581,7 +618,8 @@ export function createExplorer({
 
       const clueButton = event.target.closest("[data-highlight-clue-id]");
       if (clueButton && rootElement.contains(clueButton)) {
-        selectedCueId = clueButton.dataset.highlightClueId;
+        const nextCueId = clueButton.dataset.highlightClueId;
+        selectedCueId = evidenceMode && selectedCueId === nextCueId ? null : nextCueId;
         if (evidenceMode) {
           const caseItem = getSelectedCase();
           renderEvidenceView(caseItem, caseItem ? getSelectedRun(caseItem) : null, comparisonRunsForCase(caseItem));
@@ -747,6 +785,10 @@ export function createExplorer({
     const onKeyDown = (event) => {
       if (event.key === "Escape" && comparisonMapFullscreen) {
         setComparisonMapFullscreen(false, { restoreFocus: true });
+      } else if (event.key === "Escape" && evidenceMode && selectedCueId) {
+        selectedCueId = null;
+        const caseItem = getSelectedCase();
+        renderEvidenceView(caseItem, caseItem ? getSelectedRun(caseItem) : null, comparisonRunsForCase(caseItem));
       } else if (event.key === "Escape" && drawerMode === "stats") {
         clearDrawerState();
         renderDrawer(getSelectedCase(), getSelectedCase() ? getSelectedRun(getSelectedCase()) : null, getFilteredCases());
@@ -1004,9 +1046,9 @@ export function createExplorer({
         .filter((clue) => clue.annotationStatus !== "excluded")
         .map((clue) => ({
           clue,
-          color: comparisonColor(item.model),
+          color: comparisonColor(item.comparisonColorKey ?? item.model),
           key: evidenceComparisonMode ? `${item.id}::${clue.id}` : clue.id,
-          model: item.model,
+          model: item.comparisonLabel ?? item.model,
         }));
     });
     const grounded = items
@@ -1014,7 +1056,7 @@ export function createExplorer({
       .map((item, index) => ({ ...item, number: index + 1 }));
     const nonSpatial = items.filter(({ clue }) => !clue.region);
     const selected = items.find((item) => item.key === selectedCueId) ?? null;
-    const imageUrl = assetImageUrl(caseItem.startingImage);
+    const imageUrl = assetImageUrl(imageForRun(caseItem, run));
 
     elements.evidenceImage.src = imageUrl || "";
     elements.evidenceImage.alt = evidenceComparisonMode
@@ -1028,7 +1070,7 @@ export function createExplorer({
     elements.evidenceCount.textContent = String(grounded.length);
     elements.evidenceLegend.hidden = !evidenceComparisonMode;
     elements.evidenceLegend.innerHTML = evidenceComparisonMode
-      ? evidenceRuns.map((item) => `<span style="--comparison-color:${comparisonColor(item.model)}"><i aria-hidden="true"></i>${escapeHtml(item.model)}</span>`).join("")
+      ? evidenceRuns.map((item) => `<span style="--comparison-color:${comparisonColor(item.comparisonColorKey ?? item.model)}"><i aria-hidden="true"></i>${escapeHtml(item.comparisonLabel ?? item.model)}</span>`).join("")
       : "";
     elements.evidenceTextToggle.hidden = nonSpatial.length === 0;
     elements.evidenceTextToggle.textContent = `Non-spatial clues · ${nonSpatial.length}`;
@@ -1037,7 +1079,14 @@ export function createExplorer({
     elements.evidenceTextPanel.innerHTML = `<header><h3>Non-spatial evidence</h3><button type="button" data-close-text-clues aria-label="Close non-spatial evidence"><i class="ph ph-x" aria-hidden="true"></i></button></header><p>Reported clues that Florence could not localize reliably stay visible here without invented boxes.</p><ul>${nonSpatial.map((item) => `<li style="--comparison-color:${item.color}">${evidenceComparisonMode ? `<small>${escapeHtml(item.model)}</small>` : ""}<strong>${escapeHtml(item.clue.label)}</strong><span>${escapeHtml(item.clue.description)}</span></li>`).join("")}</ul>`;
     elements.evidenceDetail.hidden = !selected;
     elements.evidenceDetail.style.setProperty("--comparison-color", selected?.color ?? "");
-    elements.evidenceDetail.innerHTML = selected ? `<small>${escapeHtml(evidenceComparisonMode ? `${selected.model} · ${clueStatusLabel(selected.clue.annotationStatus)}` : clueStatusLabel(selected.clue.annotationStatus))}</small><h3>${escapeHtml(selected.clue.label)}</h3><p>${escapeHtml(selected.clue.description)}</p>` : "";
+    elements.evidenceDetail.innerHTML = selected ? `
+      <header class="evidence-clue-detail__header">
+        <small>${escapeHtml(evidenceComparisonMode ? `${selected.model} · ${clueStatusLabel(selected.clue.annotationStatus)}` : clueStatusLabel(selected.clue.annotationStatus))}</small>
+        <button type="button" data-close-evidence-detail aria-label="Close clue description"><i class="ph ph-x" aria-hidden="true"></i></button>
+      </header>
+      <h3>${escapeHtml(selected.clue.label)}</h3>
+      <p>${escapeHtml(selected.clue.description)}</p>
+      <div class="cue-ratings cue-ratings--detail" aria-label="Clue rating verdicts">${ratingPills(selected.clue.ratings)}</div>` : "";
   }
 
   function renderFilterOptions() {
@@ -1381,7 +1430,7 @@ export function createExplorer({
     }
 
     if (!hasCoordinate(run.prediction)) {
-      elements.mapSubtitle.textContent = `${run.model} · ${runConditionLabel(run)} · recording imported · prediction not captured`;
+      elements.mapSubtitle.textContent = `${run.model} · ${runConditionLabel(run)} · prediction coordinate unavailable`;
       return;
     }
 
@@ -1410,20 +1459,46 @@ export function createExplorer({
   }
 
   function renderModelComparison(caseItem, comparisonRuns) {
-    const visible = Boolean(caseItem && comparisonMode && !evidenceMode);
+    const compareConditions = conditionComparisonMode;
+    const visible = Boolean(caseItem && (comparisonMode || compareConditions) && !evidenceMode);
     elements.modelComparison.hidden = !visible;
     elements.compareModelsButton.hidden = !caseItem || evidenceMode;
-    elements.compareModelsButton.classList.toggle("is-active", visible);
-    elements.compareModelsCount.textContent = comparedModels.size ? ` · ${comparedModels.size}` : "";
+    elements.compareModelsButton.classList.toggle("is-active", comparisonMode && visible);
+    elements.compareModelsCount.textContent = comparisonMode && comparisonRuns.length ? ` · ${comparisonRuns.length}` : "";
+    const conditionRuns = caseItem
+      ? modelPredictionRuns(caseItem.runs).filter((item) => item.model === selectedModel)
+      : [];
+    const conditionCount = unique(conditionRuns.map((item) => item.condition)).length;
+    elements.compareConditionsButton.hidden = !caseItem || evidenceMode || conditionCount < 2;
+    elements.compareConditionsButton.classList.toggle("is-active", compareConditions && visible);
+    elements.compareConditionsCount.textContent = conditionCount >= 2 ? ` · ${conditionCount}` : "";
     if (!visible) return;
+
+    elements.modelComparisonTitle.textContent = compareConditions ? "Compare conditions" : "Compare models";
+    elements.modelComparisonIntro.textContent = compareConditions
+      ? `The predictions from ${selectedModel} are shown for every evaluated condition at this location.`
+      : "Select models to place their best-run predictions together on the globe.";
+
+    if (compareConditions) {
+      elements.modelComparisonOptions.innerHTML = comparisonRuns.map((item) => {
+        const label = comparisonRunLabel(item, true);
+        const color = comparisonColor(comparisonColorKey(item, true));
+        return `<div class="model-comparison__condition">
+          <i style="--comparison-color:${color}" aria-hidden="true"></i>
+          <span><strong>${escapeHtml(label)}</strong><small>${escapeHtml(formatDistance(item.errorKm))} error</small></span>
+        </div>`;
+      }).join("");
+      elements.modelComparisonClues.innerHTML = `<p>${comparisonRuns.length} condition predictions are visible on the map. Covered-image clues remain in the review tool until their annotations and ratings are approved.</p>`;
+      return;
+    }
 
     const comparisonImageVariant = isStaticBaselineModel(selectedModel)
       ? selectedImageVariant
       : DEFAULT_IMAGE_VARIANT;
     const available = modelPredictionRuns(caseItem.runs).filter(
       (item) =>
-        !isStaticBaselineModel(item.model) ||
-        runImageVariant(item) === comparisonImageVariant,
+        item.condition === selectedCondition &&
+        (!isStaticBaselineModel(item.model) || runImageVariant(item) === comparisonImageVariant),
     );
     elements.modelComparisonOptions.innerHTML = available.map((item, index) => {
       const checked = comparedModels.has(item.model);
@@ -1440,13 +1515,15 @@ export function createExplorer({
       return total + (clueSet?.cues ?? []).filter((clue) => clue.annotationStatus !== "excluded" && clue.region).length;
     }, 0);
     elements.modelComparisonClues.innerHTML = comparisonRuns.length
-      ? `<p>${comparisonRuns.length} model predictions are visible on the globe. Open the shared scene to compare their ${comparisonClueCount} image annotations using the same colors.</p><button class="comparison-evidence-action" type="button" data-open-comparison-evidence>Compare clues on the image <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>`
+      ? comparisonClueCount
+        ? `<p>${comparisonRuns.length} model predictions are visible on the globe. Open the shared scene to compare their ${comparisonClueCount} image annotations using the same colors.</p><button class="comparison-evidence-action" type="button" data-open-comparison-evidence>Compare clues on the image <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>`
+        : `<p>${comparisonRuns.length} model predictions are visible on the globe. Clue annotations for this condition are still in review.</p>`
       : `<p>Select at least one model to compare its prediction and reported clues.</p>`;
   }
 
   function renderExplorationPlayer(caseItem, run) {
     const samples = run?.exploration?.samples ?? [];
-    const isStatic = run?.condition === "static-image";
+    const isStatic = isStaticImageCondition(run?.condition);
 
     if (!EXPLORATION_PLAYBACK_ENABLED || (caseItem && run && isStatic)) {
       stopPlayback();
@@ -1519,7 +1596,7 @@ export function createExplorer({
       )
       : null;
     const playbackAllowed =
-      EXPLORATION_PLAYBACK_ENABLED && run?.condition !== "static-image";
+      EXPLORATION_PLAYBACK_ENABLED && !isStaticImageCondition(run?.condition);
     const valid =
       drawerMode === "stats" ||
       (drawerMode === "truth" && Boolean(detailCase)) ||
@@ -1566,6 +1643,7 @@ export function createExplorer({
     evidenceMode = false;
     evidenceComparisonMode = false;
     comparisonMode = false;
+    conditionComparisonMode = false;
     showTextOnlyClues = false;
     selectedCueId = null;
     if (drawerMode !== "stats") {
@@ -1673,7 +1751,7 @@ export function createExplorer({
 
   function getPlaybackDescriptor(run) {
     if (!EXPLORATION_PLAYBACK_ENABLED) return null;
-    if (run?.condition === "static-image") return null;
+    if (isStaticImageCondition(run?.condition)) return null;
     const samples = run?.exploration?.samples ?? [];
     if (!samples.length) return null;
 
@@ -1762,7 +1840,13 @@ export function createExplorer({
   }
 
   function getStatsCases(caseItem, filteredCases) {
-    return caseItem ? [caseItem] : getOverviewMapCases(filteredCases);
+    if (caseItem) return [caseItem];
+    return filteredCases.filter((item) => chooseRun(
+      item,
+      selectedModel,
+      selectedCondition,
+      selectedImageVariant,
+    ));
   }
 
   function getSelectedCase() {
@@ -1781,7 +1865,17 @@ export function createExplorer({
   }
 
   function comparisonRunsForCase(caseItem) {
-    if (!caseItem || !comparisonMode) return [];
+    if (!caseItem || (!comparisonMode && !conditionComparisonMode)) return [];
+
+    if (conditionComparisonMode) {
+      return modelPredictionRuns(caseItem.runs)
+        .filter((item) => item.model === selectedModel)
+        .map((item) => ({
+          ...item,
+          comparisonColorKey: comparisonColorKey(item, true),
+          comparisonLabel: comparisonRunLabel(item, true),
+        }));
+    }
 
     const comparisonImageVariant = isStaticBaselineModel(selectedModel)
       ? selectedImageVariant
@@ -1790,6 +1884,7 @@ export function createExplorer({
     return modelPredictionRuns(caseItem.runs).filter(
       (item) =>
         comparedModels.has(item.model) &&
+        item.condition === selectedCondition &&
         (
           !isStaticBaselineModel(item.model) ||
           runImageVariant(item) === comparisonImageVariant
@@ -1915,23 +2010,24 @@ export function createExplorer({
         <p class="drawer-muted">Current slice: ${escapeHtml(filterText || "all visible locations")}</p>
       </div>
       <div class="stat-grid">
-        ${metricMarkup("Visible cases", String(stats.caseCount), `${stats.pinRunCount} predictions in the current map view`)}
+        ${metricMarkup("Benchmark cases", String(stats.caseCount), `${stats.pinRunCount} predictions with coordinates`)}
         ${metricMarkup("Median error", formatDistance(stats.medianErrorKm), "robust location score")}
         ${metricMarkup("Mean error", formatDistance(stats.meanErrorKm), "sensitive to large misses")}
         ${metricMarkup("Country accuracy", formatPercent(stats.countryAccuracy), `${stats.countryRated} rated`)}
         ${metricMarkup("Within 25 km", formatPercent(stats.within25), "regional hit rate")}
         ${metricMarkup("Cue useful", formatPercent(stats.cueUseful), `${stats.cueCount} cues`)}
       </div>
-      <div class="drawer-section">
+      ${selectedStatsCase ? "" : `<div class="drawer-section">
         <h4>Error buckets</h4>
         ${bucketMarkup(stats.bands)}
-      </div>
+      </div>`}
       <div class="drawer-section">
         <h4>Explanation review</h4>
-        ${progressMarkup("Visible", stats.cueVisible)}
-        ${progressMarkup("Correct", stats.cueCorrect)}
-        ${progressMarkup("Useful", stats.cueUseful)}
-        ${progressMarkup("Consistent", stats.cueConsistent)}
+        <p class="rating-summary-note">Positive ratings / rated clues${stats.cueRatings.visible.unrated ? ` · ${stats.cueRatings.visible.unrated} unrated clue${stats.cueRatings.visible.unrated === 1 ? "" : "s"} omitted` : ""}</p>
+        ${progressMarkup("Visible", stats.cueRatings.visible)}
+        ${progressMarkup("Correct", stats.cueRatings.correct)}
+        ${progressMarkup("Useful", stats.cueRatings.useful)}
+        ${progressMarkup("Consistent", stats.cueRatings.consistent)}
       </div>
       <div class="drawer-section">
         <h4>Interactive exploration</h4>
@@ -1970,7 +2066,7 @@ export function createExplorer({
       </div>
       ${visualMarkup}
       <dl class="detail-list">
-        <div><dt>Condition</dt><dd>${escapeHtml(interactive ? "Interactive panorama" : "Static / NMPZ image")}</dd></div>
+        <div><dt>Condition</dt><dd>${escapeHtml(runConditionLabel(run))}</dd></div>
         ${isStaticBaselineModel(run?.model)
         ? `<div><dt>Image variant</dt><dd>${escapeHtml(IMAGE_VARIANT_LABELS[runImageVariant(run)] ?? runImageVariant(run))}</dd></div>`
         : ""}
@@ -1982,8 +2078,8 @@ export function createExplorer({
   }
 
   function predictionDrawerMarkup(caseItem, run) {
-    const route = run.condition === "static-image"
-      ? "Static / NMPZ · fixed view"
+    const route = isStaticImageCondition(run.condition)
+      ? `${runConditionLabel(run)} · fixed view`
       : run.exploration?.path?.length > 1
         ? `${run.exploration.path.length} positions · ${formatDistance(explorationDistanceKm(run.exploration))}`
         : run.exploration?.samples?.length
@@ -1997,11 +2093,11 @@ export function createExplorer({
       <div class="detail-hero detail-hero--prediction">
         <span class="detail-badge">${predictionAvailable ? "P" : "R"}</span>
         <div>
-          <h3>${escapeHtml(predictionAvailable ? predictionLocationLabel(run.prediction) : "Recording imported")}</h3>
+          <h3>${escapeHtml(predictionAvailable ? predictionLocationLabel(run.prediction) : "Prediction unavailable")}</h3>
           <p>${escapeHtml(run.model)} · ${escapeHtml(runConditionLabel(run))}</p>
         </div>
       </div>
-      ${predictionAvailable ? "" : `<p class="drawer-muted">The exploration was recorded, but the submitted guess coordinate was not captured. Playback is available; the prediction pin, error line, and location-error statistics are unavailable for this run.</p>`}
+      ${predictionAvailable ? "" : `<p class="drawer-muted">The submitted guess coordinate was not independently validated. The model and its reviewed evidence remain available, but no prediction pin, error line, or location-error statistic is shown.</p>`}
       <dl class="detail-list">
         <div><dt>Pin error</dt><dd>${predictionAvailable ? escapeHtml(formatDistance(run.errorKm)) : "—"}</dd></div>
         <div><dt>Selected run</dt><dd>${escapeHtml(run.bestRunLabel ?? "Best overall run")}</dd></div>
@@ -2017,7 +2113,7 @@ export function createExplorer({
         <div><dt>Coordinates</dt><dd>${predictionAvailable ? `<code>${escapeHtml(formatCoordinate(run.prediction))}</code>` : "Not captured"}</dd></div>
       </dl>
       ${predictionAvailable ? `<a class="drawer-action" href="${escapeAttribute(predictionStreetView)}" target="_blank" rel="noopener noreferrer">Open Street View at prediction ↗</a>` : ""}
-      ${modelCluesMarkup(caseItem, clueSet)}
+      ${modelCluesMarkup(caseItem, run, clueSet)}
       ${run.hypothesis ? `<div class="drawer-section"><h4>Initial hypothesis</h4><p>${escapeHtml(run.hypothesis)}</p></div>` : ""}
       <div class="drawer-section">
         <h4>Reported cues</h4>
@@ -2027,12 +2123,12 @@ export function createExplorer({
     `;
   }
 
-  function modelCluesMarkup(caseItem, clueSet) {
+  function modelCluesMarkup(caseItem, run, clueSet) {
     if (!clueSet) return `<div class="drawer-section"><h4>Visual evidence</h4><p class="drawer-muted">No model-authored clue report is available for this run.</p></div>`;
     const clues = (clueSet.cues ?? []).filter((clue) => clue.annotationStatus !== "excluded");
     if (!selectedCueId || !clues.some((clue) => clue.id === selectedCueId)) selectedCueId = clues[0]?.id ?? null;
     const selected = clues.find((clue) => clue.id === selectedCueId) ?? null;
-    const imageUrl = assetImageUrl(caseItem.startingImage);
+    const imageUrl = assetImageUrl(imageForRun(caseItem, run));
     const reviewed = clues.filter((clue) => clue.annotationStatus === "reviewed").length;
     const grounded = clues.filter((clue) => clue.region).length;
     return `
@@ -2040,7 +2136,7 @@ export function createExplorer({
         <h4>What this model noticed</h4>
         <p class="drawer-muted">${clueSet.sourceRuns.length} source run${clueSet.sourceRuns.length === 1 ? "" : "s"} merged · ${grounded} image highlight${grounded === 1 ? "" : "s"} · ${reviewed} reviewed</p>
         ${imageUrl ? clueEvidenceMarkup(imageUrl, clues, selectedCueId, caseItem) : ""}
-        ${selected ? `<article class="selected-clue-card"><small>${escapeHtml(selected.category)} · ${escapeHtml(clueStatusLabel(selected.annotationStatus))}</small><h3>${escapeHtml(selected.label)}</h3><p>${escapeHtml(selected.description)}</p></article>` : ""}
+        ${selected ? `<article class="selected-clue-card"><small>${escapeHtml(selected.category)} · ${escapeHtml(clueStatusLabel(selected.annotationStatus))}</small><h3>${escapeHtml(selected.label)}</h3><p>${escapeHtml(selected.description)}</p><div class="cue-ratings cue-ratings--detail" aria-label="Clue rating verdicts">${ratingPills(selected.ratings)}</div></article>` : ""}
         <ol class="visual-clue-list">${clues.map((clue, index) => `<li><button type="button" class="${clue.id === selectedCueId ? "is-active" : ""}" data-highlight-clue-id="${escapeAttribute(clue.id)}"><span>${index + 1}</span><strong>${escapeHtml(clue.label)}</strong><small>${clue.region ? "Image highlight" : "Text clue"} · ${escapeHtml(clueStatusLabel(clue.annotationStatus))}</small></button></li>`).join("")}</ol>
       </div>`;
   }
@@ -2251,8 +2347,8 @@ function shellMarkup(cases = []) {
             </div>
 
             <aside class="model-comparison" data-model-comparison hidden>
-              <header><div><span>Location comparison</span><h2>Compare models</h2></div><button type="button" data-close-model-comparison aria-label="Close model comparison"><i class="ph ph-x" aria-hidden="true"></i></button></header>
-              <p>Select models to place their best-run predictions together on the globe.</p>
+              <header><div><span>Location comparison</span><h2 data-model-comparison-title>Compare models</h2></div><button type="button" data-close-model-comparison aria-label="Close comparison"><i class="ph ph-x" aria-hidden="true"></i></button></header>
+              <p data-model-comparison-intro>Select models to place their best-run predictions together on the globe.</p>
               <div class="model-comparison__options" data-model-comparison-options></div>
               <div class="model-comparison__clues" data-model-comparison-clues></div>
             </aside>
@@ -2305,6 +2401,9 @@ function shellMarkup(cases = []) {
               </div>
               <button class="compare-models-button" type="button" data-toggle-model-comparison hidden>
                 <i class="ph ph-stack" aria-hidden="true"></i><span>Compare models<b data-compare-models-count></b></span>
+              </button>
+              <button class="compare-models-button" type="button" data-toggle-condition-comparison hidden>
+                <i class="ph ph-arrows-left-right" aria-hidden="true"></i><span>Compare conditions<b data-compare-conditions-count></b></span>
               </button>
               <button class="next-location" type="button" data-next-location hidden>
                 <span><small>Continue exploring</small><strong data-next-label>Next location</strong></span>
@@ -2404,10 +2503,14 @@ function collectElements(root) {
     pinError: "[data-pin-error]",
     runTime: "[data-run-time]",
     modelComparison: "[data-model-comparison]",
+    modelComparisonTitle: "[data-model-comparison-title]",
+    modelComparisonIntro: "[data-model-comparison-intro]",
     modelComparisonOptions: "[data-model-comparison-options]",
     modelComparisonClues: "[data-model-comparison-clues]",
     compareModelsButton: "[data-toggle-model-comparison]",
     compareModelsCount: "[data-compare-models-count]",
+    compareConditionsButton: "[data-toggle-condition-comparison]",
+    compareConditionsCount: "[data-compare-conditions-count]",
     explorationPlayer: "[data-exploration-player]",
     playerEyebrow: "[data-player-eyebrow]",
     playToggle: "[data-play-toggle]",
@@ -2493,10 +2596,13 @@ function chooseRun(
   }
 
   return (
-    runs.find((run) => run.model === model && run.condition === condition) ??
-    runs.find((run) => run.model === model) ??
-    runs.find((run) => run.condition === condition) ??
-    runs[0]
+    (model && condition
+      ? runs.find((run) => run.model === model && run.condition === condition) ?? null
+      : null) ??
+    (!condition ? runs.find((run) => run.model === model) : null) ??
+    (!model ? runs.find((run) => run.condition === condition) : null) ??
+    (!model && !condition ? runs[0] : null) ??
+    null
   );
 }
 
@@ -2574,6 +2680,23 @@ function ratingPills(ratings = {}) {
     .join("");
 }
 
+export function summarizeClueRatings(clues = []) {
+  return Object.fromEntries(
+    ["visible", "correct", "useful", "consistent"].map((key) => {
+      const values = clues.map((clue) => clue?.ratings?.[key]);
+      const rated = values.filter((value) => typeof value === "boolean");
+      const positive = rated.filter(Boolean).length;
+      return [key, {
+        positive,
+        negative: rated.length - positive,
+        rated: rated.length,
+        unrated: values.length - rated.length,
+        ratio: ratio(positive, rated.length),
+      }];
+    }),
+  );
+}
+
 function hasCoordinate(value) {
   return Boolean(
     value &&
@@ -2592,18 +2715,21 @@ function computeStats(
   condition,
   imageVariant = DEFAULT_IMAGE_VARIANT,
 ) {
-  const runs = cases
-    .map((caseItem) =>
-      chooseRun(
-        caseItem,
-        model,
-        condition,
-        imageVariant,
-      ),
-    )
-    .filter(Boolean);
+  const selections = cases
+    .map((caseItem) => ({
+      caseItem,
+      run: chooseRun(caseItem, model, condition, imageVariant),
+    }))
+    .filter(({ run }) => Boolean(run));
+  const runs = selections.map(({ run }) => run);
   const errors = runs.map((run) => run.errorKm).filter(Number.isFinite).sort((a, b) => a - b);
-  const cueRatings = runs.flatMap((run) => run.cues ?? []).map((cue) => cue.ratings ?? {});
+  const clues = selections.flatMap(({ caseItem, run }) => {
+    const clueSet = (caseItem.clueSets ?? []).find(
+      (item) => item.benchmarkId === run.benchmarkId || item.id === run.benchmarkId,
+    );
+    return (clueSet?.cues ?? []).filter((clue) => clue.annotationStatus !== "excluded");
+  });
+  const cueRatings = summarizeClueRatings(clues);
   const explorations = runs.map((run) => run.exploration).filter((exploration) => exploration?.path?.length > 1);
 
   return {
@@ -2617,11 +2743,12 @@ function computeStats(
     within750: ratio(errors.filter((km) => km <= 750).length, errors.length),
     countryAccuracy: booleanRatio(runs.map((run) => run.accuracy?.country)),
     countryRated: runs.filter((run) => typeof run.accuracy?.country === "boolean").length,
-    cueCount: cueRatings.length,
-    cueVisible: booleanRatio(cueRatings.map((ratings) => ratings.visible)),
-    cueCorrect: booleanRatio(cueRatings.map((ratings) => ratings.correct)),
-    cueUseful: booleanRatio(cueRatings.map((ratings) => ratings.useful)),
-    cueConsistent: booleanRatio(cueRatings.map((ratings) => ratings.consistent)),
+    cueCount: clues.length,
+    cueRatings,
+    cueVisible: cueRatings.visible.ratio,
+    cueCorrect: cueRatings.correct.ratio,
+    cueUseful: cueRatings.useful.ratio,
+    cueConsistent: cueRatings.consistent.ratio,
     bands: summarizeBands(errors),
     explorationRuns: explorations.length,
     meanRouteKm: mean(explorations.map((exploration) => explorationDistanceKm(exploration))),
@@ -2658,12 +2785,16 @@ function bucketMarkup(bands) {
     </div>`).join("")}</div>`;
 }
 
-function progressMarkup(label, value) {
-  const percent = value === null ? 0 : Math.round(value * 100);
+function progressMarkup(label, summary) {
+  const percent = summary.ratio === null ? 0 : Math.round(summary.ratio * 100);
+  const count = summary.rated ? `${summary.positive} / ${summary.rated}` : "—";
+  const title = summary.rated
+    ? `${summary.positive} yes, ${summary.negative} no${summary.unrated ? `, ${summary.unrated} unrated` : ""}`
+    : "No rated clues";
   return `
-    <div class="progress-row">
+    <div class="progress-row" title="${escapeAttribute(title)}">
       <span>${escapeHtml(label)}</span>
-      <b>${value === null ? "—" : `${percent}%`}</b>
+      <b>${escapeHtml(count)}</b>
       <i><em style="width:${percent}%"></em></i>
     </div>
   `;

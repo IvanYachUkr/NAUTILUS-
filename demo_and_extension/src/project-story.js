@@ -137,7 +137,16 @@ export const RECORDED_BENCHMARKS = [
     points: 105_026,
     maxPoints: 125_000,
     sample: "3 runs per difficulty · composite mean",
-    predictionAvailability: "composite-without-one-overall-run",
+    bestRun: {
+      id: "tier-best-composite",
+      label: "Best available run per difficulty (composite)",
+      points: 110_534,
+    },
+    predictionSource: {
+      type: "curated-json",
+      path: "mcp-composite-best/predictions.json",
+    },
+    predictionNotes: "Best available complete run is selected independently for each difficulty because this condition was evaluated as separate Easy, Medium, and Hard runs. The Medium round-1 marker is the recorded default Gulf of Guinea pin after a timeout.",
   },
   {
     id: "gemini-3-7-flash-high-unaided",

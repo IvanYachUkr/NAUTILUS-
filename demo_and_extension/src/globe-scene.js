@@ -102,14 +102,17 @@ export function buildGlobeSceneData({
   const renderedRuns = comparisonRuns.length ? comparisonRuns : run ? [run] : [];
   renderedRuns.forEach((predictionRun, index) => {
     if (!hasCoordinate(predictionRun.prediction)) return;
-    const color = comparisonRuns.length ? comparisonColor(predictionRun.model) : "#ff8a30";
+    const comparisonLabel = predictionRun.comparisonLabel ?? predictionRun.model;
+    const color = comparisonRuns.length
+      ? comparisonColor(predictionRun.comparisonColorKey ?? predictionRun.model)
+      : "#ff8a30";
     points.push({
       kind: "prediction",
       caseId: caseItem.id,
       runId: predictionRun.id,
       lat: predictionRun.prediction.lat,
       lng: predictionRun.prediction.lng,
-      label: `${predictionRun.model} · ${formatDistance(predictionRun.errorKm)} pin error`,
+      label: `${comparisonLabel} · ${formatDistance(predictionRun.errorKm)} pin error`,
       color,
       radius: comparisonRuns.length ? 0.38 : 0.44,
       altitude: 0.055 + index * 0.004,
@@ -121,8 +124,8 @@ export function buildGlobeSceneData({
         runId: predictionRun.id,
         lat: predictionRun.prediction.lat,
         lng: predictionRun.prediction.lng,
-        text: predictionRun.model,
-        label: `${predictionRun.model} · ${formatDistance(predictionRun.errorKm)} pin error`,
+        text: comparisonLabel,
+        label: `${comparisonLabel} · ${formatDistance(predictionRun.errorKm)} pin error`,
         color,
         altitude: 0.078 + index * 0.012,
       });
@@ -138,7 +141,7 @@ export function buildGlobeSceneData({
         endLat: predictionRun.prediction.lat,
         endLng: predictionRun.prediction.lng,
         label: comparisonRuns.length
-          ? `${predictionRun.model} · ${formatDistance(predictionRun.errorKm)} pin error`
+          ? `${comparisonLabel} · ${formatDistance(predictionRun.errorKm)} pin error`
           : `${formatDistance(predictionRun.errorKm)} pin error`,
         color: ["#b7f34a", color],
       });

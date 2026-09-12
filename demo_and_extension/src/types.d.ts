@@ -1,5 +1,5 @@
 export type Difficulty = "easy" | "medium" | "hard";
-export type RunCondition = "static-image" | "interactive-panorama";
+export type RunCondition = "static-image" | "static-image-covered" | "interactive-panorama";
 export type CueSource = "starting-image" | "panorama" | "map";
 
 export interface Coordinate {

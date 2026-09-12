@@ -26,3 +26,19 @@ static-images-covered/
 The purpose of these variants is to test how model predictions and reasoning change when selected artificial map/interface cues are unavailable and the model must rely more strongly on the remaining visual scene information.
 
 Additional intervention types can be added later as parallel folders, for example to cover other selected visual clues.
+
+## Import and review
+
+From `demo_and_extension/`, normalize the covered-run predictions and reported clues with:
+
+```text
+npm run clues:import-covered
+```
+
+Generate Florence draft boxes for every covered clue set with:
+
+```text
+npm run clues:annotate-covered
+```
+
+The imported clue sets use `publicationStatus: "review-only"`. They are available in the local reviewer at `/tools/clue-review/?condition=static-image-covered` but are intentionally omitted from the main website until annotation review and interpretability ratings are complete.

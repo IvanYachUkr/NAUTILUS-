@@ -41,9 +41,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -61,7 +61,8 @@
               "text": "Roman Amphitheatre (Pula Arena)"
             }
           ],
-          "groundingLabel": "Pula Arena"
+          "groundingLabel": "Pula Arena",
+          "ratingsReviewedAt": "2026-09-11T17:59:47.257Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-63295d020c",
@@ -81,9 +82,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -101,7 +102,8 @@
               "text": "yellow bilingual Croatian/Italian street signage (\"Centar / Centro\", \"Galižana / Gallesano\")."
             }
           ],
-          "groundingLabel": "Bilingual Istrian Direction Sign"
+          "groundingLabel": "Bilingual Istrian Direction Sign",
+          "ratingsReviewedAt": "2026-09-11T17:59:52.762Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-cb2432e630",
@@ -115,10 +117,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -129,7 +131,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Mediterranean Vegetation: Mediterranean pines, cypresses, and landscaped park grounds."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T17:59:58.794Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-6a48c57305",
@@ -149,9 +152,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -162,7 +165,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Infrastructure: Roundabout intersection with coach bus and passenger cars."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T18:00:09.776Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-aided-ca8f84e35f",
@@ -233,9 +237,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -258,7 +262,8 @@
               "report": "../benchmark_report_3_7_medium_03.md",
               "text": "Pulska Arena (Roman Amphitheatre of Pula) prominently visible across the park with its characteristic arched exterior facade."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T18:00:14.582Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-medium-aided-1ecf91b945",
@@ -278,9 +283,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -304,7 +309,8 @@
               "text": "Yellow Istrian bilingual (Croatian/Italian) directional signage: \"Centar / Centro\", \"Verudela\", \"Galižana / Gallesano\"."
             }
           ],
-          "groundingLabel": "Croatian Bilingual Direction Sign"
+          "groundingLabel": "Croatian Bilingual Direction Sign",
+          "ratingsReviewedAt": "2026-09-11T18:00:18.799Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-medium-aided-42800b36d9",
@@ -318,10 +324,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -339,7 +345,8 @@
               "text": "European / Croatian road infrastructure: standard blue parking signs, one-way markers, and tourist coach parking."
             }
           ],
-          "groundingLabel": "European / Croatian road infrastructure"
+          "groundingLabel": "European / Croatian road infrastructure",
+          "ratingsReviewedAt": "2026-09-11T18:00:26.021Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-medium-aided-e516d83e4a",
@@ -353,10 +360,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -374,7 +381,8 @@
               "text": "Mediterranean urban landscape with tall cypress trees (Cupressus sempervirens), umbrella pines, and oleander bushes."
             }
           ],
-          "groundingLabel": "Mediterranean urban landscape"
+          "groundingLabel": "Mediterranean urban landscape",
+          "ratingsReviewedAt": "2026-09-11T18:00:29.503Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-medium-aided-04cab63da5",
@@ -388,10 +396,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -423,10 +431,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -437,7 +445,8 @@
               "report": "../benchmark_report_3_7_medium_02.md",
               "text": "Adriatic Coastal Flora: Mediterranean stone pines (Pinus pinea), tall cypresses, manicured park greenery."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T18:00:43.176Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-medium-aided-b6e010f392",
@@ -451,10 +460,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -466,7 +475,8 @@
               "text": "Istrian Signage Conventions: Official bilingual Croatian/Italian nomenclature unique to the Istrian peninsula."
             }
           ],
-          "groundingLabel": "Istrian Signage Conventions"
+          "groundingLabel": "Istrian Signage Conventions",
+          "ratingsReviewedAt": "2026-09-11T18:00:50.526Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-medium-aided-d5d56c8fe6",
@@ -537,9 +547,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -557,7 +567,8 @@
               "text": "Imposing limestone facade of the Roman Pula Arena (Pulska Arena) clearly visible on the hillside across the park."
             }
           ],
-          "groundingLabel": "limestone facade"
+          "groundingLabel": "limestone facade",
+          "ratingsReviewedAt": "2026-09-11T18:00:58.364Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-8-flash-high-aided-ec78820ecc",
@@ -577,9 +588,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -597,7 +608,8 @@
               "text": "Bilingual Croatian/Italian yellow road sign pointing to 'Centar / Centro', 'Verudela', and 'Galižana / Gallesano'."
             }
           ],
-          "groundingLabel": "Italian yellow road sign"
+          "groundingLabel": "Italian yellow road sign",
+          "ratingsReviewedAt": "2026-09-11T18:01:01.824Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-8-flash-high-aided-8f4a71da79",
@@ -617,9 +629,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -637,7 +649,8 @@
               "text": "Mediterranean stone roundabout curb, tall cypress and stone pine trees of Valerijin park."
             }
           ],
-          "groundingLabel": "Mediterranean stone roundabout curb"
+          "groundingLabel": "Mediterranean stone roundabout curb",
+          "ratingsReviewedAt": "2026-09-11T18:01:09.620Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-8-flash-high-aided-d419ebefde",
@@ -651,10 +664,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -666,7 +679,8 @@
               "text": "Distinctive Istrian coastal urban topography bordering the Adriatic port."
             }
           ],
-          "groundingLabel": "Distinctive Istrian coastal urban topography"
+          "groundingLabel": "Distinctive Istrian coastal urban topography",
+          "ratingsReviewedAt": "2026-09-11T18:01:16.352Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-8-flash-high-aided-fb2d2da481",
@@ -686,9 +700,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -700,7 +714,8 @@
               "text": "Croatian vehicle registrations and Istrian architectural masonry."
             }
           ],
-          "groundingLabel": "Croatian vehicle registrations"
+          "groundingLabel": "Croatian vehicle registrations",
+          "ratingsReviewedAt": "2026-09-11T18:01:26.342Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-8-flash-high-aided-4febf32a10",
@@ -777,9 +792,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -791,7 +806,8 @@
               "text": "Tourist coach bus (TOUKS) and coastal harbor atmosphere along the Riva corridor."
             }
           ],
-          "groundingLabel": "Tourist coach bus"
+          "groundingLabel": "Tourist coach bus",
+          "ratingsReviewedAt": "2026-09-11T18:01:33.564Z"
         }
       ]
     },
@@ -869,9 +885,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -889,7 +905,8 @@
               "text": "Monumental Roman amphitheater (Pulska Arena) with double-tiered limestone arches dominating the left view."
             }
           ],
-          "groundingLabel": "Monumental Roman amphitheater"
+          "groundingLabel": "Monumental Roman amphitheater",
+          "ratingsReviewedAt": "2026-09-11T18:01:37.045Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-8-flash-medium-aided-fb2d2da481",
@@ -909,9 +926,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -929,7 +946,8 @@
               "text": "Croatian vehicle registrations and Istrian architectural masonry."
             }
           ],
-          "groundingLabel": "Croatian vehicle registrations"
+          "groundingLabel": "Croatian vehicle registrations",
+          "ratingsReviewedAt": "2026-09-11T18:01:40.681Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-8-flash-medium-aided-569a5ae376",
@@ -983,9 +1001,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -1003,7 +1021,8 @@
               "text": "Bilingual Croatian/Italian street signage indicating \"Centar / Centro\" and \"Galižana / Gallesano\"."
             }
           ],
-          "groundingLabel": "Bilingual Croatian/Italian street signage; Italian street sign"
+          "groundingLabel": "Bilingual Croatian/Italian street signage; Italian street sign",
+          "ratingsReviewedAt": "2026-09-11T18:01:43.469Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-8-flash-medium-aided-4febf32a10",
@@ -1045,10 +1064,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1060,7 +1079,8 @@
               "text": "Roundabout junction between Flavijevska ulica and coastal boulevard adjacent to Park pod Arenom."
             }
           ],
-          "groundingLabel": "Roundabout junction; coastal boulevard adjacent"
+          "groundingLabel": "Roundabout junction; coastal boulevard adjacent",
+          "ratingsReviewedAt": "2026-09-11T18:01:47.118Z"
         }
       ]
     },
@@ -1097,10 +1117,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1112,7 +1132,8 @@
               "text": "Croatian urban context identified the Pula Arena."
             }
           ],
-          "groundingLabel": "Croatian urban context"
+          "groundingLabel": "Croatian urban context",
+          "ratingsReviewedAt": "2026-09-11T18:01:53.338Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-5-6-sol-xhigh-85e914e7fc",
@@ -1132,9 +1153,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1146,7 +1167,8 @@
               "text": "The large Roman amphitheatre"
             }
           ],
-          "groundingLabel": "The large Roman amphitheatre"
+          "groundingLabel": "The large Roman amphitheatre",
+          "ratingsReviewedAt": "2026-09-11T18:02:04.835Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-5-6-sol-xhigh-2f3ba14573",
@@ -1160,10 +1182,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1174,7 +1196,8 @@
               "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
               "text": "Adriatic light/vegetation"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T18:02:11.679Z"
         }
       ]
     },
@@ -1217,9 +1240,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1231,7 +1254,8 @@
               "text": "Monumental Roman amphitheatre stonework"
             }
           ],
-          "groundingLabel": "Monumental Roman amphitheatre stonework"
+          "groundingLabel": "Monumental Roman amphitheatre stonework",
+          "ratingsReviewedAt": "2026-09-11T18:02:20.723Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-5-6-sol-max-890b7aca9c",
@@ -1251,9 +1275,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1265,7 +1289,8 @@
               "text": "traffic around the arena."
             }
           ],
-          "groundingLabel": "traffic"
+          "groundingLabel": "traffic",
+          "ratingsReviewedAt": "2026-09-11T18:02:32.204Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-5-6-sol-max-69282a62fd",
@@ -1279,10 +1304,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1294,7 +1319,8 @@
               "text": "dense urban surroundings"
             }
           ],
-          "groundingLabel": "dense urban surroundings"
+          "groundingLabel": "dense urban surroundings",
+          "ratingsReviewedAt": "2026-09-11T18:02:38.936Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-5-6-sol-max-c616e70659",
@@ -1308,10 +1334,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1322,7 +1348,8 @@
               "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
               "text": "Mediterranean vegetation"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T18:02:42.797Z"
         }
       ]
     },
@@ -1359,10 +1386,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1374,7 +1401,8 @@
               "text": "broad coach-access road and cypress trees. Initial belief: Pula Arena"
             }
           ],
-          "groundingLabel": "broad coach-access road"
+          "groundingLabel": "broad coach-access road",
+          "ratingsReviewedAt": "2026-09-11T18:02:53.240Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-6-astra-low-ff1b40a93d",
@@ -1394,9 +1422,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1408,7 +1436,8 @@
               "text": "intact Roman amphitheatre outer wall"
             }
           ],
-          "groundingLabel": "Intact Roman amphitheatre outer wall"
+          "groundingLabel": "Intact Roman amphitheatre outer wall",
+          "ratingsReviewedAt": "2026-09-11T18:02:56.954Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-6-astra-low-751dd7c3cd",
@@ -1422,10 +1451,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1437,7 +1466,8 @@
               "text": "landscaped Mediterranean park"
             }
           ],
-          "groundingLabel": "mediterranean park"
+          "groundingLabel": "mediterranean park",
+          "ratingsReviewedAt": "2026-09-11T18:03:03.504Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-6-astra-low-571633faa3",
@@ -1457,9 +1487,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1471,7 +1501,8 @@
               "text": "yellow directional sign"
             }
           ],
-          "groundingLabel": "yellow directional sign"
+          "groundingLabel": "yellow directional sign",
+          "ratingsReviewedAt": "2026-09-11T18:03:07.462Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gpt-6-astra-low-f65a92cfb3",
@@ -1491,9 +1522,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1505,7 +1536,8 @@
               "text": "right-side traffic"
             }
           ],
-          "groundingLabel": "right-side traffic"
+          "groundingLabel": "right-side traffic",
+          "ratingsReviewedAt": "2026-09-11T18:03:23.483Z"
         }
       ]
     },
@@ -1548,9 +1580,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1562,7 +1594,8 @@
               "text": "Amphitheatre and Slavic road text correctly identified Pula"
             }
           ],
-          "groundingLabel": "Amphitheatre; Slavic road text"
+          "groundingLabel": "Amphitheatre; Slavic road text",
+          "ratingsReviewedAt": "2026-09-11T18:03:39.843Z"
         }
       ]
     },
@@ -1599,10 +1632,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r2"
@@ -1614,7 +1647,8 @@
               "text": "flag-lined street toward old town. Belief: Pula, Croatia, beside the Arena. Placing pin at 44.8730, 13.8495."
             }
           ],
-          "groundingLabel": "flag-lined street"
+          "groundingLabel": "flag-lined street",
+          "ratingsReviewedAt": "2026-09-11T18:04:24.392Z"
         },
         {
           "id": "cue-europe-easy-loc-005-glm-5-3-flash-max-0ff44d6dd4",
@@ -1628,10 +1662,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1643,7 +1677,8 @@
               "text": "Mediterranean stone pines and park,"
             }
           ],
-          "groundingLabel": "Mediterranean stone pines"
+          "groundingLabel": "Mediterranean stone pines",
+          "ratingsReviewedAt": "2026-09-11T18:04:36.228Z"
         },
         {
           "id": "cue-europe-easy-loc-005-glm-5-3-flash-max-645daa6bb9",
@@ -1663,9 +1698,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1696,9 +1731,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1710,7 +1745,8 @@
               "text": "yellow Croatian road sign,"
             }
           ],
-          "groundingLabel": "yellow Croatian road sign"
+          "groundingLabel": "yellow Croatian road sign",
+          "ratingsReviewedAt": "2026-09-11T18:04:44.691Z"
         },
         {
           "id": "cue-europe-easy-loc-005-glm-5-3-flash-max-d25abb448a",
@@ -1730,9 +1766,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1744,7 +1780,8 @@
               "text": "white tour coach,"
             }
           ],
-          "groundingLabel": "white tour coach"
+          "groundingLabel": "white tour coach",
+          "ratingsReviewedAt": "2026-09-11T18:04:51.935Z"
         }
       ]
     },
@@ -1779,9 +1816,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1793,7 +1830,8 @@
               "text": "bilingual Istrian sign (Centar/Verudela/Galižana)"
             }
           ],
-          "groundingLabel": "bilingual Istrian sign"
+          "groundingLabel": "bilingual Istrian sign",
+          "ratingsReviewedAt": "2026-09-11T18:05:00.062Z"
         },
         {
           "id": "cue-europe-easy-loc-005-gemini-3-7-flash-high-unaided-3eb70a237d",
@@ -1813,9 +1851,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1827,7 +1865,8 @@
               "text": "Pula Arena (Roman amphitheater)"
             }
           ],
-          "groundingLabel": "Pula Arena"
+          "groundingLabel": "Pula Arena",
+          "ratingsReviewedAt": "2026-09-11T18:05:04.482Z"
         }
       ]
     }

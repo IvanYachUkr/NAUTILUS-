@@ -63,6 +63,17 @@ test("validation accepts omitted or null confidence scores", () => {
   assert.deepEqual(validateCases([caseWithRun({ confidence: undefined })]), []);
 });
 
+test("validation accepts the controlled covered-static condition and its input image", () => {
+  const item = caseWithRun({
+    condition: "static-image-covered",
+    inputImage: {
+      path: "data/starting-images-covered/google_road_marking_cover/europe-easy/loc_001.png",
+      intervention: "google-road-marking-cover",
+    },
+  });
+  assert.deepEqual(validateCases([item]), []);
+});
+
 test("validation rejects duplicate case ids", () => {
   const duplicate = [atlasCases[0], { ...atlasCases[1], id: atlasCases[0].id }];
   const errors = validateCases(duplicate);

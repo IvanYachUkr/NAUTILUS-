@@ -179,7 +179,7 @@ export function createMapController(container, options = {}) {
       if (comparisonRuns.length) {
         renderComparisonSet(selectedCase, comparisonRuns);
       } else {
-        if (selectedRun.condition !== "static-image") {
+        if (!isStaticImageCondition(selectedRun.condition)) {
           renderRoute(selectedRun);
         } else {
           renderStaticHeading(selectedCase, selectedRun);
@@ -319,7 +319,8 @@ export function createMapController(container, options = {}) {
 
     runs.forEach((run) => {
       if (!hasCoordinate(run.prediction)) return;
-      const color = comparisonColor(run.model);
+      const color = comparisonColor(run.comparisonColorKey ?? run.model);
+      const label = run.comparisonLabel ?? run.model;
       const predictionPoint = [run.prediction.lat, run.prediction.lng];
       leaflet.polyline([truthPoint, predictionPoint], {
         color,
@@ -334,7 +335,7 @@ export function createMapController(container, options = {}) {
         color: "#061e2b",
         fillColor: color,
         fillOpacity: 1,
-      }).bindTooltip(`${escapeHtml(run.model)} · ${escapeHtml(formatDistance(run.errorKm))}`, {
+      }).bindTooltip(`${escapeHtml(label)} · ${escapeHtml(formatDistance(run.errorKm))}`, {
         direction: "top",
         permanent: true,
         className: "comparison-model-tooltip",
@@ -582,6 +583,10 @@ function hasCoordinate(value) {
       value.lng >= -180 &&
       value.lng <= 180,
   );
+}
+
+function isStaticImageCondition(condition) {
+  return condition === "static-image" || condition === "static-image-covered";
 }
 
 function playbackTooltip(sample) {

@@ -55,7 +55,11 @@ export async function buildData({
     predictionLocationLabels,
     errors,
   );
-  const results = [...resultFiles, ...benchmarkPredictionResults];
+  const coveredStaticResults = await loadCoveredStaticPredictions(
+    locations,
+    errors,
+  );
+  const results = [...resultFiles, ...benchmarkPredictionResults, ...coveredStaticResults];
   const rawRecordings = await loadRecordings(warnings);
 
   const recordings = resolveRecordingLocations(
@@ -123,6 +127,7 @@ export async function buildData({
       clueSets: clueDocuments.reduce((sum, document) => sum + document.clueSets.length, 0),
       clues: clueDocuments.reduce((sum, document) => sum + document.clueSets.reduce((setSum, clueSet) => setSum + clueSet.cues.length, 0), 0),
       benchmarkPredictionRuns: benchmarkPredictionResults.length,
+      coveredStaticPredictionRuns: coveredStaticResults.length,
 
       recordings: recordings.length,
 
@@ -982,14 +987,21 @@ async function loadRecordedBenchmarkPredictions(
   const results = [];
 
   for (const benchmark of RECORDED_BENCHMARKS) {
-    if (!benchmark.predictionSource) continue;
     const benchmarkDirectory = join(
       RECORDED_AGENT_BENCHMARK_DIR,
       benchmark.dataDirectory ?? benchmark.id,
     );
+    if (!benchmark.predictionSource) {
+      for (const location of locations) {
+        results.push(buildUnavailableBenchmarkPrediction(benchmark, location));
+      }
+      continue;
+    }
     const predictions = benchmark.predictionSource.type === "glm-conversation"
       ? await loadGlmConversationPredictions(benchmark.predictionSource.path, errors)
-      : await loadRecordedDirectoryPredictions(join(benchmarkDirectory, benchmark.predictionSource.path ?? "."), errors);
+      : benchmark.predictionSource.type === "curated-json"
+        ? await loadCuratedBenchmarkPredictions(join(benchmarkDirectory, benchmark.predictionSource.path), errors)
+        : await loadRecordedDirectoryPredictions(join(benchmarkDirectory, benchmark.predictionSource.path ?? "."), errors);
 
     if (predictions.length !== 25) {
       errors.push(`${benchmark.id}: best run ${benchmark.bestRun?.label ?? "selection"} must resolve to exactly 25 predictions; found ${predictions.length}.`);
@@ -1026,11 +1038,7 @@ async function loadRecordedBenchmarkPredictions(
             condition: input.condition,
             prediction: {
               ...prediction,
-              label: resolvePredictionLocationLabel(
-                null,
-                { id: input.id, prediction },
-                predictionLocationLabels,
-              ),
+              label: input.prediction.label ?? resolvePredictionLocationLabel(null, { id: input.id, prediction }, predictionLocationLabels),
             },
             runKind: "model-prediction",
             benchmarkId: benchmark.id,
@@ -1041,7 +1049,7 @@ async function loadRecordedBenchmarkPredictions(
             sourcePredictionId: input.id,
             hypothesis: "",
             cues: [],
-            notes: "Canonical submitted benchmark pin; replay media is not required for this prediction.",
+            notes: benchmark.predictionNotes ?? "Canonical submitted benchmark pin; replay media is not required for this prediction.",
             isMock: false,
             accuracy: { country: null, region: null },
             durationSeconds: Number.isFinite(input.durationMs)
@@ -1054,6 +1062,116 @@ async function loadRecordedBenchmarkPredictions(
   }
 
   return results;
+}
+
+async function loadCoveredStaticPredictions(locations, errors) {
+  const path = join(DATA_DIR, "covered-static-benchmark", "results.json");
+  if (!existsSync(path)) return [];
+
+  const sourceFile = relative(ROOT, path).replaceAll("\\", "/");
+  const input = await readJson(path);
+  const locationsById = new Map(locations.map((location) => [location.id, location]));
+  const results = [];
+
+  if (!Array.isArray(input?.models)) {
+    errors.push(`${sourceFile}: models must be an array.`);
+    return results;
+  }
+
+  for (const model of input.models) {
+    if (!nonEmptyString(model?.benchmarkId) || !nonEmptyString(model?.model)) {
+      errors.push(`${sourceFile}: each covered-static model needs benchmarkId and model.`);
+      continue;
+    }
+    for (const prediction of model.predictions ?? []) {
+      const location = locationsById.get(prediction.locationId);
+      if (!location) {
+        errors.push(`${sourceFile}: ${model.benchmarkId} references unknown location ${prediction.locationId}.`);
+        continue;
+      }
+      if (!isCoordinate(prediction.prediction)) {
+        errors.push(`${sourceFile}: ${model.benchmarkId}/${prediction.locationId} has no valid prediction.`);
+        continue;
+      }
+      if (!nonEmptyString(prediction.inputImage?.path) || !existsSync(resolve(ROOT, prediction.inputImage.path))) {
+        errors.push(`${sourceFile}: ${model.benchmarkId}/${prediction.locationId} has no valid covered input image.`);
+        continue;
+      }
+
+      results.push({
+        schemaVersion: "1.0",
+        atlasLocationId: location.id,
+        locationId: location.localId,
+        sourceFile,
+        runs: [{
+          id: `covered-${model.benchmarkId}-${location.localId}`,
+          model: model.model,
+          condition: "static-image-covered",
+          inputImage: prediction.inputImage,
+          prediction: prediction.prediction,
+          confidence: Number.isFinite(prediction.confidence) ? prediction.confidence : null,
+          runKind: "model-prediction",
+          benchmarkId: model.benchmarkId,
+          bestRunId: "covered-static-r1",
+          bestRunLabel: "Covered static-image run",
+          bestRunPoints: null,
+          benchmarkMeanPoints: null,
+          sourcePredictionId: prediction.id ?? null,
+          hypothesis: "",
+          cues: [],
+          notes: "Single controlled static-image run with selected map/interface evidence covered.",
+          isMock: false,
+          accuracy: { country: null, region: null },
+          durationSeconds: null,
+        }],
+      });
+    }
+  }
+
+  return results;
+}
+
+function buildUnavailableBenchmarkPrediction(benchmark, location) {
+  return {
+    schemaVersion: "1.0",
+    atlasLocationId: location.id,
+    locationId: location.localId,
+    sourceFile: `data/recorded-agent-benchmark/${benchmark.dataDirectory ?? benchmark.id}/summary.json`,
+    runs: [{
+      id: `benchmark-${benchmark.id}-${location.id}`,
+      model: `${benchmark.model} · ${benchmark.reasoning}`,
+      condition: "interactive-panorama",
+      prediction: null,
+      runKind: "model-prediction",
+      benchmarkId: benchmark.id,
+      bestRunId: benchmark.bestRun?.id ?? null,
+      bestRunLabel: benchmark.bestRun?.label ?? "Best reported run",
+      bestRunPoints: benchmark.bestRun?.points ?? null,
+      benchmarkMeanPoints: benchmark.points,
+      sourcePredictionId: null,
+      hypothesis: "",
+      cues: [],
+      notes: "This model is included in the explorer and its reviewed clue set is available, but its submitted pin coordinates were not independently validated. No prediction marker or error line is shown.",
+      isMock: false,
+      accuracy: { country: null, region: null },
+      durationSeconds: null,
+    }],
+  };
+}
+
+async function loadCuratedBenchmarkPredictions(path, errors) {
+  if (!existsSync(path)) {
+    errors.push(`${relative(ROOT, path)}: curated benchmark predictions are missing.`);
+    return [];
+  }
+  const input = await readJson(path);
+  const predictions = Array.isArray(input) ? input : input.predictions;
+  if (!Array.isArray(predictions)) {
+    errors.push(`${relative(ROOT, path)}: predictions must be an array.`);
+    return [];
+  }
+  const source = relative(ROOT, path).replaceAll("\\", "/");
+  return predictions.map((item) => ({ input: item, source }));
 }
 
 async function loadRecordedDirectoryPredictions(directory, errors) {
@@ -1807,7 +1925,15 @@ function compileAtlasCases({
           location,
         ),
 
-      clueSets: clueDocumentsByLocation.get(location.id)?.clueSets ?? [],
+      clueSets: (clueDocumentsByLocation.get(location.id)?.clueSets ?? [])
+        .filter((clueSet) => clueSet.publicationStatus !== "review-only")
+        .map((clueSet) => ({
+          ...clueSet,
+          cues: (clueSet.cues ?? []).filter((clue) =>
+            clue.annotationStatus === "reviewed" || clue.annotationStatus === "text-only"
+          ),
+        }))
+        .filter((clueSet) => clueSet.cues.length > 0),
 
       runs,
     });

@@ -715,13 +715,14 @@ code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
 .progress-row,
 .bucket-row {
   display: grid;
-  grid-template-columns: 84px 42px minmax(0, 1fr);
+  grid-template-columns: 92px 96px minmax(0, 1fr);
   align-items: center;
   gap: 8px;
   margin-top: 7px;
   color: var(--muted-strong);
   font-size: 1rem;
 }
+.rating-summary-note { margin: -2px 0 9px; color: var(--muted); font-size: 1rem; }
 .progress-row b,
 .bucket-row b { text-align: right; font-variant-numeric: tabular-nums; }
 .progress-row i,

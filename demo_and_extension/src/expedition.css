@@ -13,6 +13,11 @@
   --header-height: 88px;
 }
 
+.atlas-app[data-view-state="detail"] .site-jump {
+  background: transparent;
+  backdrop-filter: none;
+}
+
 html, body { background: var(--atlas-ink); }
 ::selection { background: var(--atlas-accent); color: var(--atlas-ink); }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible,
@@ -64,7 +69,7 @@ html.explorer-detail-open body { height: 100%; overflow: hidden; }
   max-height: calc(100vh - 74px);
 }
 .evidence-canvas > img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.evidence-marks { position: absolute; inset: 0; }
+.evidence-marks { position: absolute; z-index: 1; inset: 0; }
 .evidence-mark {
   position: absolute;
   min-width: 20px;
@@ -128,12 +133,16 @@ html.explorer-detail-open body { height: 100%; overflow: hidden; }
 .evidence-model-legend span { display: inline-flex; align-items: center; gap: 4px; color: #c8d4d6; font-size: 1rem; }
 .evidence-model-legend i { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--comparison-color); }
 .evidence-clue-detail,
-.evidence-text-panel { position: absolute; z-index: 8; right: 18px; width: min(380px, calc(100% - 36px)); padding: 16px; border: 1px solid rgba(255, 173, 102, .55); background: rgba(3, 20, 29, .94); color: var(--atlas-paper); backdrop-filter: blur(14px); }
+.evidence-text-panel { position: absolute; z-index: 18; right: 18px; width: min(380px, calc(100% - 36px)); padding: 16px; border: 1px solid rgba(255, 173, 102, .55); background: rgba(3, 20, 29, .94); color: var(--atlas-paper); backdrop-filter: blur(14px); }
 .evidence-view[data-comparison="true"] .evidence-clue-detail { border-color: var(--comparison-color); }
 .evidence-clue-detail { top: 112px; }
+.evidence-clue-detail__header { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.evidence-clue-detail__header button { display: grid; width: 34px; height: 34px; flex: 0 0 34px; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.25); background: transparent; color: var(--atlas-paper); }
+.evidence-clue-detail__header button:hover { border-color: var(--atlas-accent); background: rgba(255,255,255,.08); }
 .evidence-clue-detail small { color: var(--atlas-accent); font-size: 1rem; letter-spacing: .09em; text-transform: uppercase; }
 .evidence-clue-detail h3 { margin: 6px 0; font-size: 17px; }
 .evidence-clue-detail p { margin: 0; color: #c3d0d2; font-size: 1rem; line-height: 1.55; }
+.evidence-clue-detail .cue-ratings--detail { margin-top: 14px; }
 .evidence-text-panel { top: 112px; bottom: 94px; overflow-y: auto; }
 .evidence-text-panel > header { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
 .evidence-text-panel h3 { margin: 0; font-family: var(--display-font); font-size: 28px; font-weight: 400; }
@@ -483,6 +492,8 @@ html.explorer-comparison-map-fullscreen body { overflow: hidden; }
 .model-comparison__options { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .model-comparison__options label { display: grid; grid-template-columns: 16px 8px minmax(0,1fr); gap: 7px; align-items: center; min-height: 48px; padding: 7px; border: 1px solid var(--atlas-line); cursor: pointer; }
 .model-comparison__options label > i { width: 8px; height: 8px; border-radius: 50%; background: var(--comparison-color); }
+.model-comparison__condition { display: grid; grid-template-columns: 8px minmax(0,1fr); gap: 10px; align-items: center; min-height: 48px; padding: 8px 10px; border: 1px solid var(--atlas-line); }
+.model-comparison__condition > i { width: 8px; height: 8px; border-radius: 50%; background: var(--comparison-color); }
 .model-comparison__options span,
 .model-comparison__options strong,
 .model-comparison__options small { display: block; min-width: 0; }
@@ -879,6 +890,7 @@ html.explorer-comparison-map-fullscreen body { overflow: hidden; }
 .selected-clue-card small { text-transform: uppercase; letter-spacing: .08em; opacity: .72; }
 .selected-clue-card h3 { margin: 7px 0; font-size: 18px; }
 .selected-clue-card p { margin: 0; line-height: 1.55; }
+.selected-clue-card .cue-ratings--detail { margin-top: 13px; }
 .visual-clue-list { display: grid; gap: 7px; margin: 14px 0 0; padding: 0; list-style: none; }
 .visual-clue-list button { display: grid; width: 100%; grid-template-columns: 24px 1fr; gap: 3px 9px; align-items: center; padding: 10px; border: 1px solid rgba(255,255,255,.12); background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .visual-clue-list button > span { grid-row: 1 / 3; display: grid; width: 23px; height: 23px; place-items: center; border-radius: 50%; background: rgba(217,255,107,.16); font-size: 1rem; }

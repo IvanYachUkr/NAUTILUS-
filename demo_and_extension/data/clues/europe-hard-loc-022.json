@@ -35,10 +35,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -56,7 +56,8 @@
               "text": "dense silver birch (Betula pendula)"
             }
           ],
-          "groundingLabel": "Boreal / Wetland Flora"
+          "groundingLabel": "Boreal / Wetland Flora",
+          "ratingsReviewedAt": "2026-09-11T21:05:14.669Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-5923fbdd73",
@@ -76,9 +77,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -96,7 +97,8 @@
               "text": "Unpaved sand/gravel track with green grass centerline strip"
             }
           ],
-          "groundingLabel": "Unpaved Forest Track"
+          "groundingLabel": "Unpaved Forest Track",
+          "ratingsReviewedAt": "2026-09-11T21:05:21.962Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-4e5c124a65",
@@ -139,10 +141,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -153,7 +155,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Regional Signature: Characteristic Baltic forest/peatland scenery across Latvia, Lithuania, and Southern Estonia."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:05:30.018Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-2e5dd75690",
@@ -167,10 +170,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -181,7 +184,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.7-flash-high-aided/runs/recorded-r2/report.md",
               "text": "Northern Lighting: High clear sun angle with pale northern European skies."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:05:37.584Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-74957efae5",
@@ -195,10 +199,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -210,7 +214,8 @@
               "text": "grey alder"
             }
           ],
-          "groundingLabel": "grey alder"
+          "groundingLabel": "grey alder",
+          "ratingsReviewedAt": "2026-09-11T21:05:45.303Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-aided-7b91640b3a",
@@ -303,10 +308,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -330,7 +335,8 @@
               "text": "Boreal-nemoral Baltic mixed forest flora: dense young European alder (Alnus glutinosa), silver birch (Betula pendula), and lush undergrowth."
             }
           ],
-          "groundingLabel": "Flora"
+          "groundingLabel": "Flora",
+          "ratingsReviewedAt": "2026-09-11T21:05:56.225Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-75bec7016f",
@@ -350,9 +356,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -376,7 +382,8 @@
               "text": "Single-lane unpaved gravel / dirt forestry track with grassy center median (gruntsceļš / meža ceļš)."
             }
           ],
-          "groundingLabel": "Road Character"
+          "groundingLabel": "Road Character",
+          "ratingsReviewedAt": "2026-09-11T21:06:00.926Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-834d06b0e6",
@@ -390,10 +397,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -416,7 +423,8 @@
               "report": "../benchmark_report_3_7_medium_03.md",
               "text": "Characteristic flat-to-undulating Baltic post-glacial plain topography."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:06:07.700Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-236e54a7a4",
@@ -430,10 +438,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -450,7 +458,8 @@
               "report": "../benchmark_report_3_7_medium_03.md",
               "text": "Absence of formal roadside fencing, demarcating open state forest land."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:07:11.020Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-a4e8cd94f9",
@@ -464,10 +473,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -485,7 +494,8 @@
               "text": "Soft, diffuse northern summer sunlight typical of Latvian 57° N latitudes."
             }
           ],
-          "groundingLabel": "diffuse northern summer sunlight typical"
+          "groundingLabel": "diffuse northern summer sunlight typical",
+          "ratingsReviewedAt": "2026-09-11T21:07:17.853Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-medium-aided-50d129fa88",
@@ -499,10 +509,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -551,10 +561,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -572,7 +582,8 @@
               "text": "Flat, level horizon under high pale-blue summer sky with scattered light cirrus."
             }
           ],
-          "groundingLabel": "level horizon"
+          "groundingLabel": "level horizon",
+          "ratingsReviewedAt": "2026-09-11T21:07:30.053Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-a9e0b98b91",
@@ -591,10 +602,10 @@
           "regionSource": "manual+manual-review",
           "annotationStatus": "reviewed",
           "ratings": {
-            "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -612,7 +623,8 @@
               "text": "Unpaved rural gravel track with central grassy median strip traversing flat Baltic glacial terrain."
             }
           ],
-          "groundingLabel": "Unpaved rural gravel track; northern"
+          "groundingLabel": "Unpaved rural gravel track; northern",
+          "ratingsReviewedAt": "2026-09-11T21:07:36.415Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-b9bc62d462",
@@ -626,10 +638,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -647,7 +659,8 @@
               "text": "Dense northern deciduous brushwood and secondary forest featuring white birch (Betula pendula), alder, hazel, and willow thickets."
             }
           ],
-          "groundingLabel": "Dense northern deciduous brushwood; northern decidu; northern decor"
+          "groundingLabel": "Dense northern deciduous brushwood; northern decidu; northern decor",
+          "ratingsReviewedAt": "2026-09-11T21:07:50.996Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-1ca8eebb66",
@@ -661,10 +674,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -675,7 +688,8 @@
               "report": "../benchmark_report_3_8_high_01.md",
               "text": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:07:59.235Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-db9054070f",
@@ -689,10 +703,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -703,7 +717,8 @@
               "report": "../benchmark_report_3_8_high_01.md",
               "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:08:36.437Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-f6d355e56d",
@@ -717,10 +732,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -732,7 +747,8 @@
               "text": "Characteristic Baltic road drainage ditches excavated along lush green grassy verges."
             }
           ],
-          "groundingLabel": "Characteristic Baltic road drainage ditches; lush green grassy verges"
+          "groundingLabel": "Characteristic Baltic road drainage ditches; lush green grassy verges",
+          "ratingsReviewedAt": "2026-09-11T21:08:44.045Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-1bca024fed",
@@ -746,10 +762,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -760,7 +776,8 @@
               "report": "../benchmark_report_3_8_high_01.md",
               "text": "Gaujasrēveļi / Ranka"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:14:44.906Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-high-aided-bd7cf0b593",
@@ -774,10 +791,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -788,7 +805,8 @@
               "report": "../benchmark_report_3_8_high_01.md",
               "text": "Vidzeme"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:15:01.946Z"
         }
       ]
     },
@@ -825,10 +843,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -845,7 +863,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Absence of stone fences or mountainous relief, indicating Baltic moraine lowlands."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:15:11.935Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-b43301c409",
@@ -865,9 +884,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -884,7 +903,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Unpaved sandy-gravel dual-rut forest road bounded by shallow ditches."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:18:48.629Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-850ab027f8",
@@ -904,9 +924,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -924,7 +944,8 @@
               "text": "Pale high-latitude summer sunlight and expansive unbroken canopy."
             }
           ],
-          "groundingLabel": "Pale high-latitude summer sunlight"
+          "groundingLabel": "Pale high-latitude summer sunlight",
+          "ratingsReviewedAt": "2026-09-11T21:18:52.559Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-db9054070f",
@@ -938,10 +959,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -958,7 +979,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Glaciated flat-to-undulating terrain characteristic of the Vidzeme Upland in Eastern/Central Latvia."
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:18:58.192Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-ddf87789d8",
@@ -972,10 +994,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1",
@@ -993,7 +1015,8 @@
               "text": "Hemiboreal mixed forest composed of silver birch (Betula pendula), Scots pine, and speckled alder with fern understory."
             }
           ],
-          "groundingLabel": "Hemiboreal mixed forest"
+          "groundingLabel": "Hemiboreal mixed forest",
+          "ratingsReviewedAt": "2026-09-11T21:19:03.501Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-bd7cf0b593",
@@ -1007,10 +1030,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1",
@@ -1027,7 +1050,8 @@
               "report": "data/recorded-agent-benchmark/gemini-3.8-flash-medium-aided/runs/recorded-r3/report.md",
               "text": "Vidzeme"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:19:12.164Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-045fef6d86",
@@ -1041,10 +1065,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1056,7 +1080,8 @@
               "text": "Jaunpiebalga / Lācītes"
             }
           ],
-          "groundingLabel": "Jaunpiebalga / Lctes"
+          "groundingLabel": "Jaunpiebalga / Lctes",
+          "ratingsReviewedAt": "2026-09-11T21:19:38.640Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-8-flash-medium-aided-1bca024fed",
@@ -1070,10 +1095,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1084,7 +1109,8 @@
               "report": "../moreData/backup_gemini/benchmark_report.md",
               "text": "Gaujasrēveļi / Ranka"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:19:57.150Z"
         }
       ]
     },
@@ -1121,10 +1147,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": false,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1136,7 +1162,8 @@
               "text": "weak Central/Eastern-European cues produced a broad Baltic-to-Hungary ambiguity."
             }
           ],
-          "groundingLabel": "weak Central/Eastern-European cues"
+          "groundingLabel": "weak Central/Eastern-European cues",
+          "ratingsReviewedAt": "2026-09-11T21:23:08.950Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-5-6-sol-xhigh-ce71521e8d",
@@ -1156,9 +1183,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1170,7 +1197,8 @@
               "text": "Dirt orchard/hedge track"
             }
           ],
-          "groundingLabel": "Dirt orchard/hedge track"
+          "groundingLabel": "Dirt orchard/hedge track",
+          "ratingsReviewedAt": "2026-09-11T21:21:52.247Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-5-6-sol-xhigh-912fd2973c",
@@ -1184,10 +1212,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1198,7 +1226,8 @@
               "report": "data/recorded-agent-benchmark/gpt-5.6-sol-xhigh/runs/recorded-r3/report.md",
               "text": "temperate farmland"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:23:20.139Z"
         }
       ]
     },
@@ -1241,9 +1270,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1255,7 +1284,8 @@
               "text": "narrow gravel two-track with grassy center"
             }
           ],
-          "groundingLabel": "narrow gravel two-track; road markings"
+          "groundingLabel": "narrow gravel two-track; road markings",
+          "ratingsReviewedAt": "2026-09-11T21:24:32.508Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-6-astra-low-8999d043a0",
@@ -1269,10 +1299,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1283,7 +1313,8 @@
               "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
               "text": "deciduous/birch-like roadside trees"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:24:37.407Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-6-astra-low-8b5d2761ce",
@@ -1295,7 +1326,7 @@
           "category": "geography",
           "region": null,
           "regionSource": null,
-          "annotationStatus": "text-only",
+          "annotationStatus": "excluded",
           "ratings": {
             "visible": null,
             "correct": null,
@@ -1311,7 +1342,10 @@
               "report": "data/recorded-agent-benchmark/gpt-6-astra-low/reports/NAUTILUS_ASTRA_LOW_RUN3_CLEAN_20260907.md",
               "text": "low country/locality confidence."
             }
-          ]
+          ],
+          "ratingsPreviousStatus": "text-only",
+          "ratingsExclusionReason": "not-ratable",
+          "ratingsExcludedAt": "2026-09-11T21:24:40.016Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-6-astra-low-0df436624d",
@@ -1325,10 +1359,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1340,7 +1374,8 @@
               "text": "dense green hedges"
             }
           ],
-          "groundingLabel": "dense green hedges"
+          "groundingLabel": "dense green hedges",
+          "ratingsReviewedAt": "2026-09-11T21:24:56.958Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-6-astra-low-458896d742",
@@ -1354,10 +1389,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1369,7 +1404,8 @@
               "text": "flat horizon"
             }
           ],
-          "groundingLabel": "flat horizon"
+          "groundingLabel": "flat horizon",
+          "ratingsReviewedAt": "2026-09-11T21:25:01.578Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-6-astra-low-1cfb3a9bcf",
@@ -1383,10 +1419,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": false,
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1398,7 +1434,8 @@
               "text": "road markings or utility poles visible. Initial hypothesis Baltic states or rural Poland"
             }
           ],
-          "groundingLabel": "Initial hypothesis Baltic states"
+          "groundingLabel": "Initial hypothesis Baltic states",
+          "ratingsReviewedAt": "2026-09-11T21:25:08.510Z"
         }
       ]
     },
@@ -1441,9 +1478,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -1455,7 +1492,8 @@
               "text": "A straight dirt track"
             }
           ],
-          "groundingLabel": "A straight dirt track"
+          "groundingLabel": "A straight dirt track",
+          "ratingsReviewedAt": "2026-09-11T21:25:14.457Z"
         },
         {
           "id": "cue-europe-hard-loc-022-grok-4-6-xhigh-7e9e59b99d",
@@ -1469,10 +1507,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r1"
@@ -1484,7 +1522,8 @@
               "text": "Baltic scrub led Grok to Lithuania. The correction resolved near northeast Poland while the reveal was Latvia."
             }
           ],
-          "groundingLabel": "Baltic scrub; The correction resolved"
+          "groundingLabel": "Baltic scrub; The correction resolved",
+          "ratingsReviewedAt": "2026-09-11T21:25:24.523Z"
         }
       ]
     },
@@ -1521,10 +1560,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1536,7 +1575,8 @@
               "text": "muted northern-European light."
             }
           ],
-          "groundingLabel": "European light"
+          "groundingLabel": "European light",
+          "ratingsReviewedAt": "2026-09-11T21:25:39.814Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-8155793591",
@@ -1550,10 +1590,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1565,7 +1605,8 @@
               "text": "flat fields/woodland edge"
             }
           ],
-          "groundingLabel": "flat fields/woodland edge"
+          "groundingLabel": "flat fields/woodland edge",
+          "ratingsReviewedAt": "2026-09-11T21:25:45.843Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-19a7b341e6",
@@ -1579,10 +1620,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": false
           },
           "sourceRuns": [
             "r3"
@@ -1594,7 +1635,8 @@
               "text": "wet lowland vegetation"
             }
           ],
-          "groundingLabel": "wet lowland vegetation"
+          "groundingLabel": "wet lowland vegetation",
+          "ratingsReviewedAt": "2026-09-11T21:25:52.256Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-ddd5d31372",
@@ -1614,9 +1656,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1628,7 +1670,8 @@
               "text": "Overgrown dirt track"
             }
           ],
-          "groundingLabel": "Overgrown dirt track"
+          "groundingLabel": "Overgrown dirt track",
+          "ratingsReviewedAt": "2026-09-11T21:25:56.089Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gpt-5-6-sol-max-1c41a198ae",
@@ -1642,10 +1685,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r3"
@@ -1656,7 +1699,8 @@
               "report": "data/recorded-agent-benchmark/gpt-5.6-sol-max/runs/recorded-r4/report.md",
               "text": "sparse development"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:26:00.813Z"
         }
       ]
     },
@@ -1699,9 +1743,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1713,7 +1757,8 @@
               "text": "young hazel/birch scrub both sides,"
             }
           ],
-          "groundingLabel": "young hazel/birch scrub"
+          "groundingLabel": "young hazel/birch scrub",
+          "ratingsReviewedAt": "2026-09-11T21:26:07.234Z"
         },
         {
           "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-7173623edd",
@@ -1733,9 +1778,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": false,
+            "useful": false,
+            "consistent": false
           },
           "sourceRuns": [
             "r2"
@@ -1747,7 +1792,8 @@
               "text": "tall poplars left, flat land,"
             }
           ],
-          "groundingLabel": "tall poplars"
+          "groundingLabel": "tall poplars",
+          "ratingsReviewedAt": "2026-09-11T21:26:36.281Z"
         },
         {
           "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-a7eef2adf5",
@@ -1761,10 +1807,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1776,7 +1822,8 @@
               "text": "cool temperate sky. Belief: NE Germany / western Poland borderlands. Placing pin at 52.40, 14.60."
             }
           ],
-          "groundingLabel": "cool temperate sky"
+          "groundingLabel": "cool temperate sky",
+          "ratingsReviewedAt": "2026-09-11T21:26:42.470Z"
         },
         {
           "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-d0878fcc9c",
@@ -1796,9 +1843,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1810,7 +1857,8 @@
               "text": "grassy-centered gravel track,"
             }
           ],
-          "groundingLabel": "grassy-centered gravel track"
+          "groundingLabel": "grassy-centered gravel track",
+          "ratingsReviewedAt": "2026-09-11T21:26:47.359Z"
         },
         {
           "id": "cue-europe-hard-loc-022-glm-5-3-flash-max-a05bc2e9fe",
@@ -1824,10 +1872,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": false,
+            "consistent": true
           },
           "sourceRuns": [
             "r2"
@@ -1838,7 +1886,8 @@
               "report": "../moreData/nautilus-glm-chats-runs-1-to-3-20260908/02-scored-run-2-sess_28305553-ee2b-4a26-9d33-b8012b912e68/conversation.json",
               "text": "zero infrastructure,"
             }
-          ]
+          ],
+          "ratingsReviewedAt": "2026-09-11T21:26:53.322Z"
         }
       ]
     },
@@ -1873,9 +1922,9 @@
           "annotationStatus": "reviewed",
           "ratings": {
             "visible": true,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "correct": false,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -1887,7 +1936,8 @@
               "text": "Latvian birch forest gravel road"
             }
           ],
-          "groundingLabel": "Latvian birch; forest gravel road"
+          "groundingLabel": "Latvian birch; forest gravel road",
+          "ratingsReviewedAt": "2026-09-11T21:27:05.675Z"
         },
         {
           "id": "cue-europe-hard-loc-022-gemini-3-7-flash-high-unaided-f10c205dd0",
@@ -1901,10 +1951,10 @@
           "regionSource": null,
           "annotationStatus": "text-only",
           "ratings": {
-            "visible": null,
-            "correct": null,
-            "useful": null,
-            "consistent": null
+            "visible": true,
+            "correct": true,
+            "useful": true,
+            "consistent": true
           },
           "sourceRuns": [
             "r1"
@@ -1916,7 +1966,8 @@
               "text": "Baltic rural farmsteads"
             }
           ],
-          "groundingLabel": "Baltic rural farmsteads"
+          "groundingLabel": "Baltic rural farmsteads",
+          "ratingsReviewedAt": "2026-09-11T21:27:11.172Z"
         }
       ]
     }
