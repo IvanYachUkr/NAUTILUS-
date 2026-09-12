@@ -1370,7 +1370,8 @@ button, select, input { max-width: 100%; }
 
 /* Location mode is a focused, full-height workspace with controls close to their context. */
 .detail-brand,
-.detail-actions { display: none; }
+.detail-actions,
+.detail-run-controls { display: none; }
 
 .atlas-app[data-view-state="detail"] .app-header { display: none; }
 .atlas-app[data-view-state="detail"] .workspace {
@@ -1586,5 +1587,88 @@ button, select, input { max-width: 100%; }
     bottom: 12px;
     left: 12px;
     width: auto;
+  }
+}
+
+/* Location controls sit with the location; the globe legend occupies the image banner edge. */
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .detail-run-controls {
+  display: block;
+  width: 100%;
+  margin-block: auto;
+  padding: 14px 0;
+  border-block: 1px solid rgba(156, 184, 190, .22);
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .detail-run-controls .run-controls {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(110px, .8fr) minmax(0, 1.2fr);
+  gap: 10px;
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .detail-run-controls .run-controls label {
+  min-width: 0;
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .detail-run-controls .run-controls label > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #9fb3bb;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .detail-run-controls .run-controls select {
+  width: 100%;
+  height: 38px;
+  min-height: 38px;
+  padding: 7px 28px 7px 10px;
+  border-color: rgba(156, 184, 190, .4);
+  background: rgba(9, 38, 51, .82);
+  font-size: .86rem;
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .comparison-bar {
+  margin-top: 0;
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .experience-dock {
+  display: none;
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-utilities {
+  display: block;
+  top: auto;
+  right: auto;
+  bottom: 16px;
+  left: 16px;
+  width: min(520px, calc(100% - 32px));
+  max-width: none;
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-utilities .secondary-button {
+  display: none;
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-legend {
+  width: 100%;
+  max-width: none;
+  justify-content: space-between;
+  gap: 10px 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(156, 184, 190, .34);
+  background: rgba(4, 24, 35, .88);
+  box-shadow: 0 10px 30px rgba(0, 8, 13, .18);
+  backdrop-filter: blur(12px);
+}
+.atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-legend span {
+  font-size: .82rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .detail-run-controls {
+    margin-block: 24px;
+  }
+  .atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-utilities {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: auto;
+  }
+  .atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-legend {
+    justify-content: flex-start;
   }
 }

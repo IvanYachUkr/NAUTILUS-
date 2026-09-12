@@ -286,11 +286,11 @@ export function createGlobeController(container, options = {}) {
       ? errorKm < 5
         ? 1.18
         : errorKm < 50
-          ? 1.36
+          ? 1.28
           : errorKm < 500
-            ? 1.64
-            : 2.02
-      : 1.42;
+            ? 1.48
+            : 1.72
+      : 1.32;
 
     world.pointOfView({ lat: focus.lat, lng: focus.lng, altitude }, duration);
   }

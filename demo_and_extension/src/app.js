@@ -996,6 +996,17 @@ export function createExplorer({
     controls.forEach((control) => {
       if (control.parentElement !== destination) destination.append(control);
     });
+
+    const runControlsDestination = useDetailRail
+      ? elements.detailRunControls
+      : elements.experienceDock;
+    if (elements.runControls.parentElement !== runControlsDestination) {
+      if (useDetailRail) {
+        runControlsDestination.append(elements.runControls);
+      } else {
+        runControlsDestination.prepend(elements.runControls);
+      }
+    }
   }
 
   function setComparisonMapFullscreen(next, { restoreFocus = false } = {}) {
@@ -2297,6 +2308,8 @@ export function shellMarkup(cases = []) {
 
             <div class="detail-actions" data-detail-actions aria-label="Location tools"></div>
 
+            <div class="detail-run-controls" data-detail-run-controls aria-label="Model and image controls"></div>
+
             <footer class="comparison-bar" data-comparison hidden>
               <div class="side-comparison-map-shell" data-side-comparison-map-shell>
                 <div class="side-comparison-map" data-side-comparison-map aria-label="Ground truth and model prediction map"></div>
@@ -2423,7 +2436,7 @@ export function shellMarkup(cases = []) {
             </section>
 
             <div class="experience-dock" data-experience-dock aria-label="Run and location controls">
-              <div class="run-controls" aria-label="Run controls">
+              <div class="run-controls" data-run-controls aria-label="Run controls">
                 <label>
                   <span>Model</span>
                   <select data-model-select></select>
@@ -2536,7 +2549,9 @@ function collectElements(root) {
     mapTitle: "[data-map-title]",
     mapSubtitle: "[data-map-subtitle]",
     detailActions: "[data-detail-actions]",
+    detailRunControls: "[data-detail-run-controls]",
     experienceDock: "[data-experience-dock]",
+    runControls: "[data-run-controls]",
     globeStatsSlot: "[data-globe-stats-slot]",
     mapLegend: "[data-map-legend]",
     resetMapLabel: "[data-reset-map-label]",
