@@ -29,7 +29,7 @@ test("overview globe stays centered inside its circular frame at every size", ()
   );
 });
 
-test("mobile detail globe peeks up from the bottom with the selected pin in view", () => {
+test("mobile detail globe stays centered and continent-focused inside its compact corner", () => {
   assert.deepEqual(
     globeController.globeOffsetForView({
       overview: false,
@@ -37,7 +37,7 @@ test("mobile detail globe peeks up from the bottom with the selected pin in view
       height: 480,
       mobile: true,
     }),
-    [70, 212],
+    [0, 0],
   );
 
   assert.deepEqual(
@@ -46,6 +46,6 @@ test("mobile detail globe peeks up from the bottom with the selected pin in view
       altitude: 1.48,
       mobile: true,
     }),
-    { lat: 25, lng: 12, altitude: 2.25 },
+    { lat: 37, lng: 12, altitude: 1.68 },
   );
 });

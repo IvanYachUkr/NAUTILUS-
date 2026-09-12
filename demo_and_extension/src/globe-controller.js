@@ -18,10 +18,7 @@ export function globeOffsetForView({ overview, width, height, mobile = false }) 
   }
 
   if (mobile) {
-    return [
-      Math.round(Math.min(width * 0.18, 72)),
-      Math.round(Math.max(0, height * 0.5 - 28)),
-    ];
+    return [0, 0];
   }
 
   return [
@@ -36,9 +33,9 @@ export function globePointOfViewForSelection({ focus, altitude, mobile = false }
   }
 
   return {
-    lat: Math.max(-90, focus.lat - 30),
+    lat: Math.max(-90, focus.lat - 18),
     lng: focus.lng,
-    altitude: Math.max(altitude, 2.25),
+    altitude: Math.max(altitude, 1.68),
   };
 }
 

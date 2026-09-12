@@ -843,7 +843,12 @@ export function createExplorer({
     elements.speedSelect.addEventListener("change", onSpeedChange);
     window.addEventListener("hashchange", onHashChange);
     window.addEventListener("scroll", onStoryPositionChange, { passive: true });
-    window.addEventListener("resize", onStoryPositionChange);
+    const onViewportResize = () => {
+      onStoryPositionChange();
+      syncDetailControlPlacement(rootElement.dataset.viewState === "detail" && !evidenceMode);
+      mapController.invalidateSize();
+    };
+    window.addEventListener("resize", onViewportResize);
     window.addEventListener("keydown", onKeyDown);
     updateStoryNavigation();
 
@@ -862,7 +867,7 @@ export function createExplorer({
     disposers.push(() => elements.speedSelect.removeEventListener("change", onSpeedChange));
     disposers.push(() => window.removeEventListener("hashchange", onHashChange));
     disposers.push(() => window.removeEventListener("scroll", onStoryPositionChange));
-    disposers.push(() => window.removeEventListener("resize", onStoryPositionChange));
+    disposers.push(() => window.removeEventListener("resize", onViewportResize));
     disposers.push(() => window.removeEventListener("keydown", onKeyDown));
     disposers.push(() => {
       if (storyNavigationFrame) window.cancelAnimationFrame(storyNavigationFrame);
@@ -1027,13 +1032,6 @@ export function createExplorer({
       if (control.parentElement !== destination) destination.append(control);
     });
 
-    const statsDestination = useDetailRail
-      ? elements.mapUtilityActions
-      : elements.experienceDock;
-    if (elements.globeStatsSlot.parentElement !== statsDestination) {
-      statsDestination.prepend(elements.globeStatsSlot);
-    }
-
     const runControlsDestination = useDetailRail
       ? elements.detailRunControls
       : elements.experienceDock;
@@ -1043,6 +1041,17 @@ export function createExplorer({
       } else {
         runControlsDestination.prepend(elements.runControls);
       }
+    }
+
+    const statsInDetailControls = useDetailRail && window.matchMedia("(max-width: 680px)").matches;
+    const statsDestination = statsInDetailControls
+      ? elements.detailRunControls
+      : useDetailRail
+        ? elements.mapUtilityActions
+        : elements.experienceDock;
+    if (elements.globeStatsSlot.parentElement !== statsDestination) {
+      if (statsInDetailControls) statsDestination.append(elements.globeStatsSlot);
+      else statsDestination.prepend(elements.globeStatsSlot);
     }
   }
 
@@ -1144,7 +1153,7 @@ export function createExplorer({
       ? evidenceRuns.map((item) => `<span style="--comparison-color:${comparisonColor(item.comparisonColorKey ?? item.model)}"><i aria-hidden="true"></i>${escapeHtml(item.comparisonLabel ?? item.model)}</span>`).join("")
       : "";
     elements.evidenceTextToggle.hidden = nonSpatial.length === 0;
-    elements.evidenceTextToggle.innerHTML = `<i class="ph-fill ph-sparkle" aria-hidden="true"></i><span>Non-spatial clues · ${nonSpatial.length}</span>`;
+    elements.evidenceTextToggle.innerHTML = `<i class="ph-fill ph-sparkle" aria-hidden="true"></i><span class="evidence-text-toggle__full">Non-spatial clues · ${nonSpatial.length}</span><span class="evidence-text-toggle__compact">Text clues · ${nonSpatial.length}</span>`;
     elements.evidenceTextToggle.setAttribute(
       "aria-label",
       `${showTextOnlyClues ? "Hide" : "Open"} ${nonSpatial.length} non-spatial ${nonSpatial.length === 1 ? "clue" : "clues"}`,
@@ -2406,7 +2415,7 @@ export function shellMarkup(cases = []) {
             <section class="evidence-view" data-evidence-view hidden aria-label="Model visual evidence">
               <button class="evidence-back" type="button" data-close-evidence><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to location</button>
               <header class="evidence-heading">
-                <span><b data-evidence-count>0</b> visual clues<strong data-evidence-model></strong></span>
+                <span><b data-evidence-count>0</b><span class="evidence-count-label evidence-count-label--full"> visual clues</span><span class="evidence-count-label evidence-count-label--compact"> cues</span><strong data-evidence-model></strong></span>
                 <h2 data-evidence-heading></h2>
                 <div class="evidence-model-legend" data-evidence-legend hidden></div>
                 <button type="button" data-toggle-text-clues aria-controls="non-spatial-evidence" hidden></button>
