@@ -1144,7 +1144,11 @@ export function createExplorer({
       ? evidenceRuns.map((item) => `<span style="--comparison-color:${comparisonColor(item.comparisonColorKey ?? item.model)}"><i aria-hidden="true"></i>${escapeHtml(item.comparisonLabel ?? item.model)}</span>`).join("")
       : "";
     elements.evidenceTextToggle.hidden = nonSpatial.length === 0;
-    elements.evidenceTextToggle.textContent = `Non-spatial clues · ${nonSpatial.length}`;
+    elements.evidenceTextToggle.innerHTML = `<i class="ph-fill ph-sparkle" aria-hidden="true"></i><span>Non-spatial clues · ${nonSpatial.length}</span>`;
+    elements.evidenceTextToggle.setAttribute(
+      "aria-label",
+      `${showTextOnlyClues ? "Hide" : "Open"} ${nonSpatial.length} non-spatial ${nonSpatial.length === 1 ? "clue" : "clues"}`,
+    );
     elements.evidenceTextToggle.setAttribute("aria-expanded", String(showTextOnlyClues));
     elements.evidenceTextPanel.hidden = !showTextOnlyClues;
     elements.evidenceTextPanel.innerHTML = `<header><h3>Non-spatial evidence</h3><button type="button" data-close-text-clues aria-label="Close non-spatial evidence"><i class="ph ph-x" aria-hidden="true"></i></button></header><p>Reported clues that Florence could not localize reliably stay visible here without invented boxes.</p><ul>${nonSpatial.map((item) => `<li style="--comparison-color:${item.color}">${evidenceComparisonMode ? `<small>${escapeHtml(item.model)}</small>` : ""}<strong>${escapeHtml(item.clue.label)}</strong><span>${escapeHtml(item.clue.description)}</span></li>`).join("")}</ul>`;
@@ -2405,7 +2409,7 @@ export function shellMarkup(cases = []) {
                 <span><b data-evidence-count>0</b> visual clues<strong data-evidence-model></strong></span>
                 <h2 data-evidence-heading></h2>
                 <div class="evidence-model-legend" data-evidence-legend hidden></div>
-                <button type="button" data-toggle-text-clues hidden></button>
+                <button type="button" data-toggle-text-clues aria-controls="non-spatial-evidence" hidden></button>
               </header>
               <div class="evidence-image-stage">
                 <div class="evidence-canvas">
@@ -2414,7 +2418,7 @@ export function shellMarkup(cases = []) {
                 </div>
               </div>
               <article class="evidence-clue-detail" data-evidence-detail hidden></article>
-              <aside class="evidence-text-panel" data-evidence-text-panel hidden></aside>
+              <aside class="evidence-text-panel" id="non-spatial-evidence" data-evidence-text-panel hidden></aside>
             </section>
             <div class="globe-caption" aria-hidden="true">
               <span class="globe-caption__pointer"><i class="ph ph-hand" aria-hidden="true"></i> Drag to rotate · Scroll to zoom</span>
@@ -2539,8 +2543,10 @@ function evidenceMarksMarkup(items, selectedId, comparison = false) {
     const statusClass = clue.annotationStatus === "reviewed" ? "is-reviewed" : "is-draft";
     const selectedClass = key === selectedId ? "is-active" : "";
     const comparisonClass = comparison ? "is-comparison" : "";
+    const tooltipPlacementClass = clue.region.y > 0.46 ? "evidence-tooltip--above" : "evidence-tooltip--below";
+    const tooltipAlignmentClass = clue.region.x + clue.region.w > 0.78 ? "evidence-tooltip--end" : "";
     const layer = Math.round(1000 - clue.region.w * clue.region.h * 900);
-    return `<button type="button" class="evidence-mark ${statusClass} ${comparisonClass} ${selectedClass}" data-highlight-clue-id="${escapeAttribute(key)}" aria-label="${escapeAttribute(`${number}. ${comparison ? `${model}. ` : ""}${clue.label}`)}" style="--comparison-color:${color};left:${clue.region.x * 100}%;top:${clue.region.y * 100}%;width:${clue.region.w * 100}%;height:${clue.region.h * 100}%;z-index:${layer}">
+    return `<button type="button" class="evidence-mark ${statusClass} ${comparisonClass} ${selectedClass} ${tooltipPlacementClass} ${tooltipAlignmentClass}" data-highlight-clue-id="${escapeAttribute(key)}" aria-label="${escapeAttribute(`${number}. ${comparison ? `${model}. ` : ""}${clue.label}`)}" style="--comparison-color:${color};left:${clue.region.x * 100}%;top:${clue.region.y * 100}%;width:${clue.region.w * 100}%;height:${clue.region.h * 100}%;z-index:${layer}">
       <span>${number}</span><em>${escapeHtml(comparison ? `${model} · ${clue.label}` : clue.label)}</em>
     </button>`;
   }).join("");
