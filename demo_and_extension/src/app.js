@@ -2488,7 +2488,7 @@ export function shellMarkup(cases = []) {
                 </button>
               </div>
               <button class="next-location next-location--previous" type="button" data-previous-location hidden>
-                <i class="ph ph-arrow-left" aria-hidden="true"></i>
+                <i class="ph-fill ph-arrow-fat-left" aria-hidden="true"></i>
                 <span><small>Previous location</small><strong data-previous-label>Previous location</strong></span>
               </button>
               <button class="compare-models-button" type="button" data-toggle-model-comparison hidden>
@@ -2499,7 +2499,7 @@ export function shellMarkup(cases = []) {
               </button>
               <button class="next-location" type="button" data-next-location hidden>
                 <span><small>Continue exploring</small><strong data-next-label>Next location</strong></span>
-                <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                <i class="ph-fill ph-arrow-fat-right" aria-hidden="true"></i>
               </button>
             </div>
           </section>
