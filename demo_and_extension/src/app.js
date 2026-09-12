@@ -952,6 +952,7 @@ export function createExplorer({
     rootElement.dataset.evidenceMode = String(Boolean(evidenceMode && caseItem && run));
     elements.appShell.dataset.viewState = view.state;
     elements.appShell.dataset.evidenceMode = String(Boolean(evidenceMode && caseItem && run));
+    syncDetailControlPlacement(view.state === "detail" && !evidenceMode);
     document.documentElement.classList.toggle("explorer-detail-open", view.state === "detail");
     elements.backOverview.hidden = view.state === "overview";
     elements.datasetBrowser.hidden = view.state === "detail";
@@ -979,6 +980,22 @@ export function createExplorer({
       ? `${nextCase.city}, ${nextCase.country}`
       : "Next location";
 
+  }
+
+  function syncDetailControlPlacement(useDetailRail) {
+    const destination = useDetailRail
+      ? elements.detailActions
+      : elements.experienceDock;
+    const controls = [
+      elements.globeStatsSlot,
+      elements.compareModelsButton,
+      elements.compareConditionsButton,
+      elements.nextLocation,
+    ];
+
+    controls.forEach((control) => {
+      if (control.parentElement !== destination) destination.append(control);
+    });
   }
 
   function setComparisonMapFullscreen(next, { restoreFocus = false } = {}) {
@@ -1426,7 +1443,13 @@ export function createExplorer({
       ? `${membership.competitionName} · ${membership.partCount > 1 ? `Part ${membership.part}/${membership.partCount} · ` : ""}Round ${membership.round}`
       : "Unassigned competition";
 
-    elements.mapEyebrow.textContent = `${competitionLabel} · ${DIFFICULTY_LABELS[caseItem.difficulty]} · ${humanizeLabel(caseItem.sceneType)}`;
+    const difficultyLabel = DIFFICULTY_LABELS[caseItem.difficulty];
+    const metadata = [competitionLabel];
+    if (!competitionLabel.toLocaleLowerCase().includes(difficultyLabel.toLocaleLowerCase())) {
+      metadata.push(difficultyLabel);
+    }
+    metadata.push(humanizeLabel(caseItem.sceneType));
+    elements.mapEyebrow.textContent = metadata.join(" · ");
     elements.mapTitle.textContent = `${caseItem.city}, ${caseItem.country}`;
 
     if (!run) {
@@ -2241,6 +2264,11 @@ export function shellMarkup(cases = []) {
       <div class="workspace">
         <aside class="location-rail" aria-label="Location selection">
           <section class="scene-story" aria-live="polite">
+            <div class="detail-brand" aria-label="NAUTILUS">
+              <i class="ph ph-compass" aria-hidden="true"></i>
+              <strong>NAUTILUS</strong>
+            </div>
+
             <div class="scene-actions">
               <button class="back-to-globe" type="button" data-back-overview hidden>
                 <i class="ph ph-arrow-left" aria-hidden="true"></i>
@@ -2266,6 +2294,8 @@ export function shellMarkup(cases = []) {
                 <i class="ph ph-arrow-down-right" aria-hidden="true"></i>
               </button>
             </div>
+
+            <div class="detail-actions" data-detail-actions aria-label="Location tools"></div>
 
             <footer class="comparison-bar" data-comparison hidden>
               <div class="side-comparison-map-shell" data-side-comparison-map-shell>
@@ -2392,7 +2422,7 @@ export function shellMarkup(cases = []) {
               <div class="sample-readout" data-sample-readout></div>
             </section>
 
-            <div class="experience-dock" aria-label="Run and location controls">
+            <div class="experience-dock" data-experience-dock aria-label="Run and location controls">
               <div class="run-controls" aria-label="Run controls">
                 <label>
                   <span>Model</span>
@@ -2407,7 +2437,7 @@ export function shellMarkup(cases = []) {
                   <select data-image-variant-select></select>
                 </label>
               </div>
-              <div class="globe-stats-slot">
+              <div class="globe-stats-slot" data-globe-stats-slot>
                 <button class="stats-button globe-stats-button" type="button" data-stats-button aria-label="Open statistics" aria-expanded="false">
                   <i class="ph ph-chart-line-up" aria-hidden="true"></i><span>Statistics</span>
                 </button>
@@ -2505,6 +2535,9 @@ function collectElements(root) {
     mapEyebrow: "[data-map-eyebrow]",
     mapTitle: "[data-map-title]",
     mapSubtitle: "[data-map-subtitle]",
+    detailActions: "[data-detail-actions]",
+    experienceDock: "[data-experience-dock]",
+    globeStatsSlot: "[data-globe-stats-slot]",
     mapLegend: "[data-map-legend]",
     resetMapLabel: "[data-reset-map-label]",
     comparison: "[data-comparison]",
