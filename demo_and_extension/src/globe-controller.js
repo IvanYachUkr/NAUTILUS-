@@ -33,9 +33,9 @@ export function globePointOfViewForSelection({ focus, altitude, mobile = false }
   }
 
   return {
-    lat: Math.max(-90, focus.lat - 18),
+    lat: focus.lat,
     lng: focus.lng,
-    altitude: Math.max(altitude, 1.68),
+    altitude: Math.min(altitude, 0.42),
   };
 }
 
@@ -289,11 +289,13 @@ export function createGlobeController(container, options = {}) {
       mobile: mobileDetail,
     }));
     const comparedPredictions = comparisonRuns.map((item) => item.prediction).filter(hasCoordinate);
-    const focus = comparedPredictions.length
-      ? averageCoordinate([selectedCase.groundTruth, ...comparedPredictions])
-      : selectedRun?.prediction && hasCoordinate(selectedRun.prediction)
-        ? midpoint(selectedCase.groundTruth, selectedRun.prediction)
-        : selectedCase.groundTruth;
+    const focus = mobileDetail && selectedRun?.prediction && hasCoordinate(selectedRun.prediction)
+      ? selectedRun.prediction
+      : comparedPredictions.length
+        ? averageCoordinate([selectedCase.groundTruth, ...comparedPredictions])
+        : selectedRun?.prediction && hasCoordinate(selectedRun.prediction)
+          ? midpoint(selectedCase.groundTruth, selectedRun.prediction)
+          : selectedCase.groundTruth;
     const errorKm = comparedPredictions.length
       ? Math.max(...comparisonRuns.map((item) => Number(item.errorKm) || 0))
       : selectedRun?.errorKm;

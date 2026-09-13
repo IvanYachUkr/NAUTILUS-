@@ -2382,10 +2382,10 @@ button, select, input { max-width: 100%; }
   }
 
   .atlas-app[data-view-state="detail"] .map-stage {
-    right: 6px;
-    bottom: 6px;
-    width: clamp(78px, 22vw, 96px);
-    height: clamp(78px, 22vw, 96px);
+    right: -62px;
+    bottom: -62px;
+    width: clamp(190px, 52vw, 230px);
+    height: clamp(190px, 52vw, 230px);
   }
   .atlas-app[data-view-state="detail"] .scene-clue-summary {
     top: 6px;
