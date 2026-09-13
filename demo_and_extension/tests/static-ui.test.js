@@ -157,6 +157,8 @@ test("covered static images are selectable and support same-model condition comp
   assert.ok(appSource.includes("data-toggle-condition-comparison"));
   assert.ok(appSource.includes("conditionComparisonMode"));
   assert.ok(appSource.includes("comparisonColorKey(item, true)"));
+  assert.ok(appSource.includes("elements.compareConditionsButton.hidden = !caseItem || evidenceMode;"));
+  assert.ok(appSource.includes("elements.compareConditionsButton.disabled = conditionCount < 2;"));
 });
 
 test("view changes inside the explorer cannot move the long project page through scroll anchoring", async () => {

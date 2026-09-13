@@ -17,9 +17,11 @@
 - Walk here: passed. It remains visible without an embedded Maps key and uses a Google Maps fallback URL.
 - Comparison controls: passed. Compare models and Compare conditions share one equal-height row on mobile.
 - Selector density: passed. The model track is wider, the condition fits in its narrower track, and custom arrows no longer reserve excess text space.
+- Selector menus: passed. Detail and evidence-mode selects use the dark palette, and the full condition label fits without a detached native overflow label.
+- Condition comparison: passed. The control remains in the layout; models with one recorded condition show an accurate disabled `· 1` state instead of making the button disappear.
 - Mobile width: passed. The internal scroll rail no longer exposes a right-side gutter.
 - Mobile scene: passed. One 1920 x 945 scene scales to the viewport at its natural aspect ratio rather than being cropped.
-- Scene overlays: passed. The evidence control is a compact 5 clues button, the legend is a thin single row, and mobile shows a moderately zoomed quarter-to-half globe centered on the predicted pin and clipped at the bottom-right edge.
+- Scene overlays: passed. The evidence control is a compact clues button, the legend is a thin single row, and mobile shows only a small curved segment of a lightly zoomed globe whose center sits beyond the image's bottom-right edge.
 - Desktop preservation: passed. The full-bleed backdrop remains active and the mobile scene copy stays hidden.
 - Console: no errors observed during responsive QA.
 

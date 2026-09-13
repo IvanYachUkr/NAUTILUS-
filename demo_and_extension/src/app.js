@@ -1561,9 +1561,16 @@ export function createExplorer({
       ? modelPredictionRuns(caseItem.runs).filter((item) => item.model === selectedModel)
       : [];
     const conditionCount = unique(conditionRuns.map((item) => item.condition)).length;
-    elements.compareConditionsButton.hidden = !caseItem || evidenceMode || conditionCount < 2;
+    elements.compareConditionsButton.hidden = !caseItem || evidenceMode;
+    elements.compareConditionsButton.disabled = conditionCount < 2;
+    elements.compareConditionsButton.setAttribute(
+      "aria-label",
+      conditionCount < 2
+        ? "Compare conditions unavailable: only one condition is recorded for this model"
+        : `Compare ${conditionCount} conditions`,
+    );
     elements.compareConditionsButton.classList.toggle("is-active", compareConditions && visible);
-    elements.compareConditionsCount.textContent = conditionCount >= 2 ? ` · ${conditionCount}` : "";
+    elements.compareConditionsCount.textContent = conditionCount ? ` · ${conditionCount}` : "";
     if (!visible) return;
 
     elements.modelComparisonTitle.textContent = compareConditions ? "Compare conditions" : "Compare models";
