@@ -1,7 +1,6 @@
 import { normalizeCases, upsertCase as mergeCase } from "./data-contract.js";
 import { assetImageUrl } from "./asset-url.js";
-import { mapsEmbedApiKey } from "./maps-config.js";
-import { createStreetViewController, streetViewMarkup } from "./street-view.js";
+import { createStreetViewController } from "./street-view.js";
 import {
   explorationDistanceKm,
   nearestSampleIndex,
@@ -207,7 +206,7 @@ export function createExplorer({
   });
   let sideMapController = null;
   const disposers = [];
-  const streetView = createStreetViewController(rootElement, mapsEmbedApiKey);
+  const streetView = createStreetViewController(rootElement);
   disposers.push(() => streetView.destroy());
 
   const api = {
@@ -2295,8 +2294,6 @@ export function shellMarkup(cases = []) {
     <div class="atlas-app" data-app-shell data-view-state="overview" data-site-section-id="explorer">
       <img class="scene-backdrop" data-scene-image alt="" hidden />
       <div class="scene-vignette" aria-hidden="true"></div>
-      ${streetViewMarkup()}
-
       <header class="app-header">
         <div class="app-brand">
           <i class="ph ph-compass app-brand__mark" aria-hidden="true"></i>
@@ -2337,7 +2334,7 @@ export function shellMarkup(cases = []) {
                 <i class="ph ph-arrow-left" aria-hidden="true"></i>
                 <span>Back to globe</span>
               </button>
-              <button class="walk-here" type="button" data-walk-here aria-haspopup="dialog" hidden>
+              <button class="walk-here" type="button" data-walk-here aria-label="Open this location in Google Maps" hidden>
                 <i class="ph ph-person-simple-walk" aria-hidden="true"></i>
                 <span>Walk here</span>
                 <i class="ph ph-arrow-up-right" aria-hidden="true"></i>

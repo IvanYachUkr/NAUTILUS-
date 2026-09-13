@@ -2445,26 +2445,27 @@ button, select, input { max-width: 100%; }
     right: auto;
     bottom: 6px;
     left: 6px;
-    width: min(188px, calc(100% - 116px));
+    width: min(310px, calc(100% - 72px));
     min-width: 0;
   }
   .atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-utilities .map-legend {
     display: grid;
     min-height: 28px;
-    grid-template-columns: repeat(3, minmax(0, auto));
+    grid-template-columns: repeat(3, max-content);
     align-items: center;
-    gap: 5px;
-    padding: 4px 6px;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 5px 9px;
   }
   .atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-legend span {
-    gap: 3px;
-    font-size: .49rem;
+    gap: 4px;
+    font-size: .62rem;
     line-height: 1.1;
     white-space: nowrap;
   }
   .atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-legend i {
     flex: 0 0 auto;
-    transform: scale(.72);
+    transform: scale(.8);
     transform-origin: center;
   }
 }
