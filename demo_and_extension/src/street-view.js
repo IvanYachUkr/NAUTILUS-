@@ -1,12 +1,21 @@
 import { buildStreetViewUrl } from "./geo.js";
 
+export function walkHereUrl(caseItem) {
+  if (!caseItem) return null;
+
+  try {
+    return buildStreetViewUrl(caseItem.startingView ?? caseItem.groundTruth);
+  } catch {
+    return null;
+  }
+}
+
 export function mapsEmbedUrl(caseItem, apiKey, mode = "streetview") {
   if (!caseItem || typeof apiKey !== "string" || !apiKey.trim()) return null;
   if (!["streetview", "view"].includes(mode)) return null;
 
   try {
-    const view = caseItem.startingView ?? caseItem.groundTruth;
-    const source = new URL(buildStreetViewUrl(view));
+    const source = new URL(walkHereUrl(caseItem));
     const url = new URL(`https://www.google.com/maps/embed/v1/${mode}`);
     url.searchParams.set("key", apiKey.trim());
     const position = source.searchParams.get("viewpoint");
@@ -81,10 +90,15 @@ export function createStreetViewController(root, apiKey) {
   function onClick(event) {
     const button = event.target.closest("button");
     if (!button || !root.contains(button)) return;
-    if (button === trigger && load()) {
-      title.textContent = `${selectedCase.city}, ${selectedCase.country}`;
-      external.href = buildStreetViewUrl(selectedCase.startingView ?? selectedCase.groundTruth);
-      dialog.showModal();
+    if (button === trigger) {
+      const externalUrl = walkHereUrl(selectedCase);
+      if (!externalUrl) return;
+      if (load()) {
+        title.textContent = `${selectedCase.city}, ${selectedCase.country}`;
+        dialog.showModal();
+      } else {
+        window.open(externalUrl, "_blank", "noopener,noreferrer");
+      }
     } else if (button.hasAttribute("data-street-view-close")) {
       dialog.close();
     } else if (button.hasAttribute("data-street-view-mode")) {
@@ -104,7 +118,10 @@ export function createStreetViewController(root, apiKey) {
         unload();
       }
       selectedCase = caseItem;
-      trigger.hidden = !mapsEmbedUrl(caseItem, apiKey);
+      const externalUrl = walkHereUrl(caseItem);
+      trigger.hidden = !externalUrl;
+      if (externalUrl) external.href = externalUrl;
+      else external.removeAttribute("href");
     },
     destroy() {
       if (dialog.open) dialog.close();

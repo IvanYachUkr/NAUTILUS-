@@ -990,16 +990,16 @@ export function createExplorer({
     syncComparisonMapFullscreenControl();
 
     if (imageUrl && caseItem) {
-      swapImageSourceWithoutFlicker(
-        elements.sceneImage,
-        imageUrl,
-        `Starting street scene in ${caseItem.city}, ${caseItem.country}`,
-      );
+      const sceneAlt = `Starting street scene in ${caseItem.city}, ${caseItem.country}`;
+      swapImageSourceWithoutFlicker(elements.sceneImage, imageUrl, sceneAlt);
+      swapImageSourceWithoutFlicker(elements.detailSceneImage, imageUrl, sceneAlt);
     } else {
-      elements.sceneImage.dataset.pendingSrc = "";
-      elements.sceneImage.hidden = true;
-      elements.sceneImage.removeAttribute("src");
-      elements.sceneImage.alt = "";
+      for (const image of [elements.sceneImage, elements.detailSceneImage]) {
+        image.dataset.pendingSrc = "";
+        image.hidden = true;
+        image.removeAttribute("src");
+        image.alt = "";
+      }
     }
 
     renderEvidenceSummary(caseItem, run);
@@ -2408,6 +2408,7 @@ export function shellMarkup(cases = []) {
 
         <main class="map-workspace" data-map-workspace>
           <section class="map-panel">
+            <img class="detail-scene-media" data-detail-scene-image alt="" hidden />
             <button class="scene-clue-summary" type="button" data-scene-clue-summary data-open-model-evidence hidden>
               <span>Visual evidence · <b data-scene-clue-model></b></span>
               <strong><b data-scene-clue-count>0</b> clues <i class="ph ph-arrow-up-right" aria-hidden="true"></i></strong>
@@ -2565,6 +2566,7 @@ function collectElements(root) {
   const selectors = {
     appShell: "[data-app-shell]",
     sceneImage: "[data-scene-image]",
+    detailSceneImage: "[data-detail-scene-image]",
     sceneClueSummary: "[data-scene-clue-summary]",
     sceneClueCount: "[data-scene-clue-count]",
     sceneClueModel: "[data-scene-clue-model]",
