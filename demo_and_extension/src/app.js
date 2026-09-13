@@ -1458,7 +1458,9 @@ export function createExplorer({
       ? modelConditions
       : unique(scope.map((item) => item.condition));
 
-    elements.conditionSelect.disabled = conditions.length === 0;
+    // A one-item native select only opens a detached browser popup without
+    // offering a choice. Keep its value readable but make it inert.
+    elements.conditionSelect.disabled = conditions.length <= 1;
     elements.conditionSelect.innerHTML = conditions
       .map(
         (condition) =>

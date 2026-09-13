@@ -32,9 +32,13 @@ export function globePointOfViewForSelection({ focus, altitude, mobile = false }
     return { lat: focus.lat, lng: focus.lng, altitude };
   }
 
+  // On phones the globe itself sits mostly beyond the lower-right edge of the
+  // scene. Aim the camera south-east of the selected point so the pin rotates
+  // onto the small, visible upper-left curve instead of disappearing with the
+  // globe's centre.
   return {
-    lat: focus.lat,
-    lng: focus.lng,
+    lat: Math.max(-70, Math.min(70, focus.lat - 38)),
+    lng: ((focus.lng + 25 + 540) % 360) - 180,
     altitude: 1.45,
   };
 }
@@ -176,7 +180,7 @@ export function createGlobeController(container, options = {}) {
       .pointLabel((point) => escapeHtml(point.label))
       .pointColor("color")
       .pointAltitude("altitude")
-      .pointRadius("radius")
+      .pointRadius((point) => point.radius * (isMobileDetailGlobe() ? 2.4 : 1))
       .pointResolution(18)
       .pointsTransitionDuration(reducedMotion ? 0 : 560)
       .arcLabel((arc) => escapeHtml(arc.label))

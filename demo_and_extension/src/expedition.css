@@ -2403,10 +2403,10 @@ button, select, input { max-width: 100%; }
   }
 
   .atlas-app[data-view-state="detail"] .map-stage {
-    right: -68px;
-    bottom: -68px;
-    width: clamp(160px, 44vw, 190px);
-    height: clamp(160px, 44vw, 190px);
+    right: -80px;
+    bottom: -116px;
+    width: clamp(156px, 42vw, 184px);
+    height: clamp(156px, 42vw, 184px);
   }
   .atlas-app[data-view-state="detail"] .scene-clue-summary {
     top: 6px;
@@ -2431,6 +2431,14 @@ button, select, input { max-width: 100%; }
     width: 24px;
     height: 24px;
     font-size: 12px;
+  }
+
+  .atlas-app[data-view-state="detail"] .run-controls select:disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 1;
+    color: #edf3ef;
+    -webkit-text-fill-color: #edf3ef;
   }
 
   .atlas-app[data-view-state="detail"]:not([data-evidence-mode="true"]) .map-utilities {

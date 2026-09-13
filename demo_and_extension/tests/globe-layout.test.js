@@ -46,6 +46,6 @@ test("mobile detail globe uses a modest zoom around the selected pin", () => {
       altitude: 1.48,
       mobile: true,
     }),
-    { lat: 55, lng: 12, altitude: 1.45 },
+    { lat: 17, lng: 37, altitude: 1.45 },
   );
 });
