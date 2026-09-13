@@ -19,7 +19,7 @@
 - Selector density: passed. The model track is wider, the condition fits in its narrower track, and custom arrows no longer reserve excess text space.
 - Mobile width: passed. The internal scroll rail no longer exposes a right-side gutter.
 - Mobile scene: passed. One 1920 x 945 scene scales to the viewport at its natural aspect ratio rather than being cropped.
-- Scene overlays: passed. The evidence control is a compact 5 clues button, the legend is a thin single row, and mobile shows only a cropped, tightly zoomed globe fragment centered on the predicted pin at the bottom-right edge.
+- Scene overlays: passed. The evidence control is a compact 5 clues button, the legend is a thin single row, and mobile shows a moderately zoomed quarter-to-half globe centered on the predicted pin and clipped at the bottom-right edge.
 - Desktop preservation: passed. The full-bleed backdrop remains active and the mobile scene copy stays hidden.
 - Console: no errors observed during responsive QA.
 

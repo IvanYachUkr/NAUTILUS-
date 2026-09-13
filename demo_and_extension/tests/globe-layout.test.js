@@ -29,7 +29,7 @@ test("overview globe stays centered inside its circular frame at every size", ()
   );
 });
 
-test("mobile detail globe zooms tightly around the selected pin", () => {
+test("mobile detail globe uses a modest zoom around the selected pin", () => {
   assert.deepEqual(
     globeController.globeOffsetForView({
       overview: false,
@@ -46,6 +46,6 @@ test("mobile detail globe zooms tightly around the selected pin", () => {
       altitude: 1.48,
       mobile: true,
     }),
-    { lat: 55, lng: 12, altitude: 0.42 },
+    { lat: 55, lng: 12, altitude: 1.02 },
   );
 });

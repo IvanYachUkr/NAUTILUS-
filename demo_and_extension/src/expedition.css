@@ -2382,8 +2382,8 @@ button, select, input { max-width: 100%; }
   }
 
   .atlas-app[data-view-state="detail"] .map-stage {
-    right: -62px;
-    bottom: -62px;
+    right: -60px;
+    bottom: -60px;
     width: clamp(190px, 52vw, 230px);
     height: clamp(190px, 52vw, 230px);
   }

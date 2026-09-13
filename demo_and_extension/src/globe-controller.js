@@ -35,7 +35,7 @@ export function globePointOfViewForSelection({ focus, altitude, mobile = false }
   return {
     lat: focus.lat,
     lng: focus.lng,
-    altitude: Math.min(altitude, 0.42),
+    altitude: Math.min(altitude, 1.02),
   };
 }
 
